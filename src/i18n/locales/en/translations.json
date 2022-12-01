@@ -1,0 +1,18 @@
+{
+  "pages": {
+    "home": "Home",
+    "map": "Map",
+    "about": "About"
+  },
+  "lang": {
+    "ru": "RU",
+    "en": "EN"
+  },
+  "tabs": {
+    "air": "Air quality",
+    "uv": "UV Factor",
+    "noise": "Noise",
+    "humidity": "Humidity",
+    "pressure": "Pressure"
+  }
+}
