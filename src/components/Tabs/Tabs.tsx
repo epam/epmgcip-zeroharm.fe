@@ -9,13 +9,16 @@ import {
 } from "@chakra-ui/react";
 import Card from "../../_UI/Card/Card";
 import { ReactComponent as SadIcon } from "../../assets/icons/harm-sad.svg";
-import { useTranslationKeys } from "../../hooks/useTranslationKeys";
-import { useMemo } from "react";
-import translations from "../../i18n/locales/en/translations.json";
 import { t } from "i18next";
 
 const Tabs = () => {
-  const tabs = [t("tabs.air"), t("tabs.uv"), t("tabs.noise"), t("tabs.humidity"), t("tabs.pressure")];
+  const tabs = [
+    t("tabs.air"),
+    t("tabs.uv"),
+    t("tabs.noise"),
+    t("tabs.humidity"),
+    t("tabs.pressure"),
+  ];
   const colors = ["violet", "ruby", "red", "orange", "yellow", "blue"];
   // UI
   const selected = { color: "white", borderBottom: "3px solid white" };

@@ -3,7 +3,6 @@ import Wrapper from "../../_UI/Wrapper/Wrapper";
 import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
 import { ReactComponent as InfoFill } from "../../assets/icons/harm-info_fill.svg";
 import { Progress } from "../../_UI/Progress/Progress";
-import { theme } from "../../theme/Theme";
 import dayjs from "dayjs";
 
 type IndexDateType = {
