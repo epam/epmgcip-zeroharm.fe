@@ -1,8 +1,18 @@
 {
   "pages": {
-    "home": "Home",
-    "map": "Map",
-    "about": "About"
+    "home": {
+      "name": "Home",
+      "get_tips": "Get daily tips",
+      "protect": "Protect your health from the environmental pollution effects",
+      "open_map": "Open a map",
+      "chose_location": "Not your location? You may choose yours from the list."
+    },
+    "map": {
+      "name": "Map"
+    },
+    "about": {
+      "name": "About"
+    }
   },
   "lang": {
     "ru": "RU",
@@ -14,5 +24,11 @@
     "noise": "Noise",
     "humidity": "Humidity",
     "pressure": "Pressure"
+  },
+  "locations": {
+    "tash_navoi": "Tashkent, 18 А Navoi Avenue (Landmark: Tech University)",
+    "tash_skrajna": "Tashkent, ul. Skrajna 7, Szczecin 70-886 (Landmark: Revera Restaurant)",
+    "tash_mlynarska": "Tashkent, ul. Młynarska 142, Bydgoszcz 85-376 (Landmark: Seafood Market)",
+    "tash_szajnochy": "Tashkent, ul. Szajnochy 103, Bydgoszcz 85-738 (Landmark: Museum)"
   }
 }

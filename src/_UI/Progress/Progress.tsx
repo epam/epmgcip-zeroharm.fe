@@ -35,9 +35,6 @@ export const Progress: React.FC<ProgressType> = ({
     <ChakraProgress
       value={value}
       colorScheme={colorScheme}
-      bg="gray.700"
-      h="4px"
-      borderRadius="2px"
       {...gradientStyles}
     />
   );

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import Card from "../../_UI/Card/Card";
 import { BiRightArrowAlt } from "react-icons/bi";
-import { ReactComponent as SadIcon } from "../../assets/icons/harm-sad.svg";
+import { ReactComponent as SadIcon } from "../../assets/icons/forcards/harm-disappointed-face.svg";
 import { ReactComponent as Circles } from "../../assets/images/circles.svg";
 
 const Greetings = () => {
@@ -35,7 +35,7 @@ const Greetings = () => {
       </Box>
       <Box zIndex="10" maxWidth="400">
         <Card
-          color="red.200"
+          color="red"
           subheading="Air Quality tip"
           heading="Very poor air"
           icon={<SadIcon />}
