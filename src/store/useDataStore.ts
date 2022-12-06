@@ -1,11 +1,15 @@
 import create from "zustand";
 
 interface IDataStore {
-  selectedLocation: string;
-  setSelectedLocation: (selectedLocation: string) => void;
+  location: string;
+  language: string;
+  setLocation: (location: string) => void;
+  setLanguage: (language: string) => void;
 }
 
 export const useDataStore = create<IDataStore>((set) => ({
-  selectedLocation: "",
-  setSelectedLocation: (selectedLocation: string) => set({ selectedLocation }),
+  location: "",
+  language: "",
+  setLocation: (location: string) => set({ location }),
+  setLanguage: (language: string) => set({ language }),
 }));

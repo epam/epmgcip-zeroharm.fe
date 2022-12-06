@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
-import { ReactComponent as InfoFill } from "../../assets/icons/harm-info_fill.svg";
+import { ReactComponent as InfoFill } from "../../assets/icons/filled/harm-info-fill.svg";
 import { Progress } from "../../_UI/Progress/Progress";
 
 type IndexDateType = {

@@ -8,7 +8,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Card from "../../_UI/Card/Card";
-import { ReactComponent as SadIcon } from "../../assets/icons/harm-sad.svg";
+import { ReactComponent as SadIcon } from "../../assets/icons/forcards/harm-disappointed-face.svg";
 import { t } from "i18next";
 
 const Tabs = () => {
