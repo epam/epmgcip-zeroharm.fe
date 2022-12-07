@@ -8,6 +8,7 @@ import { lineHeights } from "./foundations/lineHeights";
 // Components
 import { Button } from "./components/Button";
 import { Progress } from "./components/Progress";
+import { Tooltip } from "./components/Tooltip";
 
 const overrides = {
   styles,
@@ -18,6 +19,7 @@ const overrides = {
   components: {
     Button,
     Progress,
+    Tooltip,
   },
 };
 

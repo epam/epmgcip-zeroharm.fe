@@ -25,6 +25,7 @@ const CardBody = chakra(Flex, {
     gap: "16px",
     borderRadius: "0 0 8px 8px",
     padding: "24px",
+    color: "black",
   },
 });
 const CardText = chakra(Flex, {
@@ -50,15 +51,21 @@ const CardHeading = chakra(Box, {
     lineHeight: "36px",
   },
 });
-const CardIcon = chakra(Box, {
-  baseStyle: {
-    opacity: ".2",
-    position: "absolute",
-    right: "18px",
-    top: "50%",
-    transform: "translate(0, -50%)",
-  },
-});
+
+const CardIconBox: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <chakra.div
+    sx={{
+      opacity: ".2",
+      position: "absolute",
+      right: "18px",
+      top: "50%",
+      transform: "translate(0, -50%)",
+      svg: { width: "124px", height: "100%" },
+    }}
+  >
+    {children}
+  </chakra.div>
+);
 
 const Card: React.FC<CardType> = ({
   color,
@@ -74,11 +81,9 @@ const Card: React.FC<CardType> = ({
           <CardSubHeading>{subheading}</CardSubHeading>
           <CardHeading>{heading}</CardHeading>
         </CardText>
-        <CardIcon>{icon}</CardIcon>
+        <CardIconBox>{icon}</CardIconBox>
       </CardHeader>
-      <CardBody color="black" bg={`${color}.50`}>
-        {children}
-      </CardBody>
+      <CardBody bg={`${color}.50`}>{children}</CardBody>
     </Box>
   );
 };
