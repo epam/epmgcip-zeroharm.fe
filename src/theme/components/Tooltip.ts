@@ -5,6 +5,6 @@ export const Tooltip = defineStyleConfig({
     border: '1px solid #606266',
     bg: '#48494D',
     color: 'white',
-    lineHeight: '16px'
+    lineHeight: '16px',
   },
 });
