@@ -9,16 +9,10 @@ import {
 } from "@chakra-ui/react";
 import Card from "../../_UI/Card/Card";
 import { ReactComponent as SadIcon } from "../../assets/icons/forcards/harm-disappointed-face.svg";
-import { t } from "i18next";
+import { useTranslationKeys } from "../../hooks/useTranslationKeys";
 
 const Tabs = () => {
-  const tabs = [
-    t("tabs.air"),
-    t("tabs.uv"),
-    t("tabs.noise"),
-    t("tabs.humidity"),
-    t("tabs.pressure"),
-  ];
+  const tabs = useTranslationKeys("tabs");
   const colors = ["violet", "ruby", "red", "orange", "yellow", "blue"];
   // UI
   const selected = { color: "white", borderBottom: "3px solid white" };
