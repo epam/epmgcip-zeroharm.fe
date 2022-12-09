@@ -10,7 +10,12 @@ type IndexDateType = {
   title?: string;
 };
 
-export const Indicator: React.FC<IndexDateType> = ({ children,color,size,title }) => {
+export const Indicator: React.FC<IndexDateType> = ({
+  children,
+  color,
+  size,
+  title,
+}) => {
   const label =
     "Air quality index — is used by government agencies to communicate to the public how polluted the air " +
     "currently is or how polluted it is forecast to become. " +
@@ -19,21 +24,20 @@ export const Indicator: React.FC<IndexDateType> = ({ children,color,size,title }
     "increase air pollution. Pollutants tested include ozone, nitrogen dioxide, sulphur dioxide, among others.";
   return (
     <>
-      <Flex justifyContent="space-between" fontSize="12px" alignItems="center" pb="8px">
-        <Flex gap="10px" maxWidth="80px">
-          <Text>{title}</Text>
-          <Box w="24" opacity=".5">
-            <Tooltip
-              sx={{ borderRadius: "8px", padding: "1rem" }}
-              hasArrow
-              bg="gray.700"
-              label={label}
-              placement="right-start"
-            >
+      <Flex
+        justifyContent="space-between"
+        fontSize="12px"
+        alignItems="center"
+        pb="8px"
+      >
+        <Tooltip label={label} hasArrow placement="right-start" variant="default">
+          <Flex gap="10px" maxWidth="80px">
+            <Text>{title}</Text>
+            <Box w="24" opacity=".5">
               <InfoFill style={{ width: 16, height: 16 }} />
-            </Tooltip>
-          </Box>
-        </Flex>
+            </Box>
+          </Flex>
+        </Tooltip>
         <Box flex="1">
           <Progress colorScheme={color} value={size} />
         </Box>
