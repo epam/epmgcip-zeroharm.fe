@@ -15,14 +15,15 @@ export const Select: React.FC = () => {
   const placeHolder = location || "Select location";
   return (
     <InputGroup mt="8px">
-      <InputLeftElement pointerEvents="none" children={<IconMapPoint />} />
+      <InputLeftElement
+        pointerEvents="none"
+        color="gray.400"
+        children={<IconMapPoint />}
+      />
       <ChakraSelect
         placeholder={placeHolder}
-        bg="gray.700"
-        focusBorderColor="white"
-        border="none"
-        style={{ paddingInlineStart: "40px" }}
         onChange={(e) => setLocation(e.target.value)}
+        focusBorderColor="white"
       >
         {locations?.map((location) => (
           <option key={location} value={location}>
