@@ -29,9 +29,10 @@ export const Indicator: React.FC<IndexDateType> = ({
         fontSize="12px"
         alignItems="center"
         pb="8px"
+        gap="24px"
       >
         <Tooltip label={label} hasArrow placement="right-start" variant="default">
-          <Flex gap="10px" maxWidth="80px">
+          <Flex gap="10px" maxWidth="80px" fontSize="16px">
             <Text>{title}</Text>
             <Box w="24" opacity=".5">
               <InfoFill style={{ width: 16, height: 16 }} />
@@ -42,7 +43,7 @@ export const Indicator: React.FC<IndexDateType> = ({
           <Progress colorScheme={color} value={size} />
         </Box>
         <Flex gap="6px" flex="0 0 80px" justifyContent="flex-end">
-          <Text color="white" fontWeight="700">
+          <Text color="white" fontWeight="700" fontSize="16px">
             {size}
           </Text>
           <Text color="gray.400">µg/m³</Text>
