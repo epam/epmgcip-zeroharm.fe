@@ -1,8 +1,8 @@
 import * as React from "react";
-import Wrapper from "../../_UI/Wrapper/Wrapper";
+import Wrapper from "@UI/Wrapper/Wrapper";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import dayjs from "dayjs";
-import { Indicator } from "../Indicator/Indicator";
+import { Indicator } from "@UI/Indicator/Indicator";
 
 type IndexDateType = {
   children?: React.ReactNode;

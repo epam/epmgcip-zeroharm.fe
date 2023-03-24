@@ -2,8 +2,8 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Flex, Spacer } from "@chakra-ui/react";
-import logo from "../../assets/images/logo--new.svg";
-import ChangeLanguage from "../ChangeLanguage/ChangeLanguage";
+import logo from "@/assets/images/logo--new.svg";
+import ChangeLanguage from "@Components/ChangeLanguage/ChangeLanguage";
 
 const Navigation: React.FC = () => {
   const { t } = useTranslation();

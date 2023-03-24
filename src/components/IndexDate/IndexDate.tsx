@@ -1,8 +1,8 @@
 import * as React from "react";
-import Wrapper from "../../_UI/Wrapper/Wrapper";
+import Wrapper from "@UI/Wrapper/Wrapper";
 import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
-import { ReactComponent as InfoFill } from "../../assets/icons/filled/harm-info-fill.svg";
-import { Progress } from "../../_UI/Progress/Progress";
+import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
+import { Progress } from "@UI/Progress/Progress";
 import dayjs from "dayjs";
 
 type IndexDateType = {

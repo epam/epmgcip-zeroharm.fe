@@ -1,8 +1,8 @@
 import { Button, Flex, Heading, Text, Box } from "@chakra-ui/react";
-import { ReactComponent as IconLocal } from "../../assets/icons/filled/harm-local.svg";
-import { Popup } from "../../_UI/Popup/Popup";
+import { ReactComponent as IconLocal } from "@/assets/icons/filled/harm-local.svg";
+import { Popup } from "@UI/Popup/Popup";
 import { Link } from "react-router-dom";
-import { Select } from "../Select/Select";
+import { Select } from "@Components/Select/Select";
 import { t } from "i18next";
 
 const Selector = () => {
@@ -30,7 +30,9 @@ const Selector = () => {
         justifyContent="space-between"
       >
         <Link to="/map">
-          <Button leftIcon={<IconLocal />}>{t("pages.home.open_map")}</Button>
+          <Button leftIcon={<IconLocal width="24px" height="24px" />}>
+            {t("pages.home.open_map")}
+          </Button>
         </Link>
         <Box>
           <Popup isOpen={true}>

@@ -1,6 +1,6 @@
 import * as React from "react";
-import LayoutHomePage from "../components/Layouts/LayoutHomePage";
-import Navigation from "../components/Navigation/Navigation";
+import LayoutHomePage from "@Components/Layouts/LayoutHomePage";
+import Navigation from "@Components/Navigation/Navigation";
 
 const Page404 = () => {
   return (

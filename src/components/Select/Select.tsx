@@ -4,13 +4,13 @@ import {
   InputLeftElement,
   Select as ChakraSelect,
 } from "@chakra-ui/react";
-import { ReactComponent as IconMapPoint } from "../../assets/icons/stroke/harm-local-two.svg";
-import { useDataStore } from "../../store/useDataStore";
-import { useTranslationKeys } from "../../hooks/useTranslationKeys";
+import { ReactComponent as IconMapPoint } from "@/assets/icons/stroke/harm-local-two.svg";
+import { useDataStore } from "@/store/useDataStore";
+import { useTranslationValues } from "@/hooks/useTranslationValues";
 
 export const Select: React.FC = () => {
   const { location, setLocation } = useDataStore();
-  const locations = useTranslationKeys("locations");
+  const locations = useTranslationValues("locations");
 
   const placeHolder = location || "Select location";
   return (

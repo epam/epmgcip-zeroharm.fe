@@ -7,6 +7,7 @@ type CardType = {
   heading?: string;
   icon?: React.ReactNode;
   children?: React.ReactNode;
+  height?: string;
 };
 
 const CardHeader = chakra(Flex, {
@@ -52,39 +53,57 @@ const CardHeading = chakra(Box, {
   },
 });
 
-const CardIconBox: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <chakra.div
-    sx={{
-      opacity: ".2",
-      position: "absolute",
-      right: "18px",
-      top: "50%",
-      transform: "translate(0, -50%)",
-      svg: { width: "124px", height: "100%" },
-    }}
-  >
-    {children}
-  </chakra.div>
-);
+// const CardIconBox: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+//   <chakra.div
+//     sx={{
+//       opacity: ".2",
+//       position: "absolute",
+//       right: "18px",
+//       top: "50%",
+//       transform: "translate(0, -50%)",
+//       svg: { width: "124px", height: "100%" },
+//     }}
+//   >
+//     {children}
+//   </chakra.div>
+// );
+
+const CardIconBox = chakra("div", {
+  shouldForwardProp: (prop) => !["sample"].includes(prop),
+  baseStyle: {
+    opacity: ".2",
+    position: "absolute",
+    right: "18px",
+    top: "50%",
+    transform: "translate(0, -50%)",
+    svg: { width: "124px", height: "100%" },
+  },
+});
 
 const Card: React.FC<CardType> = ({
   color,
   subheading,
   heading,
   icon,
+  height,
   children,
 }) => {
+  console.log(icon);
   return (
-    <Box>
+    <>
       <CardHeader bg={`${color}.500`}>
         <CardText>
           <CardSubHeading>{subheading}</CardSubHeading>
           <CardHeading>{heading}</CardHeading>
         </CardText>
-        <CardIconBox>{icon}</CardIconBox>
+        <CardIconBox>
+          {icon}
+        </CardIconBox>
       </CardHeader>
-      <CardBody bg={`${color}.50`}>{children}</CardBody>
-    </Box>
+      <CardBody bg={`${color}.50`} h={height}>
+        {children}
+      </CardBody>
+    </>
   );
 };
 

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Flex, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import { useDataStore } from "../../store/useDataStore";
+import { useDataStore } from "@/store/useDataStore";
 
 const ChangeLanguage: FC = () => {
   const { t, i18n } = useTranslation();

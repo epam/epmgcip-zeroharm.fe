@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
-import Card from "../../_UI/Card/Card";
+import Card from "@UI/Card/Card";
 import { BiRightArrowAlt } from "react-icons/bi";
-import { ReactComponent as SadIcon } from "../../assets/icons/forcards/harm-disappointed-face.svg";
-import { ReactComponent as Circles } from "../../assets/images/circles.svg";
+import { ReactComponent as SadIcon } from "@/assets/icons/forcards/harm-disappointed-face.svg";
+import { ReactComponent as Circles } from "@/assets/images/circles.svg";
 
 const Greetings = () => {
   const Body = () => (

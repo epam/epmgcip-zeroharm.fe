@@ -1,19 +1,19 @@
-import * as React from "react";
 import {
   Tabs as ChakraTabs,
   Tab,
   TabList,
   TabPanel,
   TabPanels,
-  Text,
 } from "@chakra-ui/react";
-import Card from "../../_UI/Card/Card";
-import { ReactComponent as SadIcon } from "../../assets/icons/forcards/harm-disappointed-face.svg";
-import { useTranslationKeys } from "../../hooks/useTranslationKeys";
+import { useTranslationValues } from "@/hooks/useTranslationValues";
+import { useTranslationKeys } from "@/hooks/useTranslationKeys";
+import { useState } from "react";
+import Cards from "@UI/Card/Cards";
 
 const Tabs = () => {
-  const tabs = useTranslationKeys("tabs");
-  const colors = ["violet", "ruby", "red", "orange", "yellow", "blue"];
+  const tabValues = useTranslationValues("tabs");
+  const tabKeys = useTranslationKeys("tabs");
+  const [currentTab, setCurrentTab] = useState(tabKeys[0]);
   // UI
   const selected = { color: "white", borderBottom: "3px solid white" };
   const hover = { color: "white" };
@@ -21,7 +21,7 @@ const Tabs = () => {
   return (
     <ChakraTabs variant="unstyled">
       <TabList>
-        {tabs.map((tab) => (
+        {tabValues.map((tab, index) => (
           <Tab
             key={tab}
             p="0"
@@ -31,6 +31,7 @@ const Tabs = () => {
             textAlign="center"
             _selected={selected}
             _hover={hover}
+            onClick={() => setCurrentTab(tabKeys[index])}
           >
             {tab}
           </Tab>
@@ -38,20 +39,9 @@ const Tabs = () => {
       </TabList>
 
       <TabPanels>
-        {colors.map((color, i) => (
-          <TabPanel key={color} p="24px 0 0">
-            <Card
-              color={color}
-              subheading={`${tabs[i]} tip`}
-              heading={`Very poor ${tabs[i]}`}
-              icon={<SadIcon />}
-            >
-              <Text fontWeight="700">WHY AND WHAT TO DO?</Text>
-              <Text>
-                Health warnings of emergency conditions. The entire population
-                is more likely to be affected.
-              </Text>
-            </Card>
+        {tabKeys.map((tab: any) => (
+          <TabPanel key={tab} p="24px 0 0">
+            <Cards cardsKey={currentTab} />
           </TabPanel>
         ))}
       </TabPanels>

@@ -30,5 +30,38 @@
     "tash_skrajna": "Tashkent, ul. Skrajna 7, Szczecin 70-886 (Landmark: Revera Restaurant)",
     "tash_mlynarska": "Tashkent, ul. Młynarska 142, Bydgoszcz 85-376 (Landmark: Seafood Market)",
     "tash_szajnochy": "Tashkent, ul. Szajnochy 103, Bydgoszcz 85-738 (Landmark: Museum)"
+  },
+  "cards": {
+    "noise": [
+      {
+        "icon": "<ReducingFromAppliancesNoise />",
+        "title": "Reducing from appliances noise",
+        "subtitle": "WHY and what to do?",
+        "text": "Items, such as air conditioning units, heaters, fans, and other appliances, can contribute to overall noise levels in the home. Try turning them off more often or setting a timer, so they only switch on at certain times."
+      },
+      {
+        "icon": "<ReducingFromAppliancesNoise />",
+        "title": "Reducing from noise",
+        "subtitle": "WHY and what to do?",
+        "text": "Consider the volume and duration of noise from music, televisions, radios, and video games. Avoid having unnecessary noise playing in the background for long periods, or listening to sounds at too high a volume. It may be useful to set aside dedicated time for watching TV or listening to music."
+      }
+    ],
+    "air": [
+      {
+        "icon": "<ReducingFromAppliancesNoise />",
+        "title": "Reducing from appliances air",
+        "subtitle": "WHY and what to do?",
+        "text": "Items, such as air conditioning units, heaters, fans, and other appliances, can contribute to overall noise levels in the home. Try turning them off more often or setting a timer, so they only switch on at certain times."
+      },
+      {
+        "icon": "<ReducingFromAppliancesNoise />",
+        "title": "Reducing from air",
+        "subtitle": "WHY and what to do?",
+        "text": "Consider the volume and duration of noise from music, televisions, radios, and video games. Avoid having unnecessary noise playing in the background for long periods, or listening to sounds at too high a volume. It may be useful to set aside dedicated time for watching TV or listening to music."
+      }
+    ],
+    "uv": [],
+    "humidity": [],
+    "pressure": []
   }
 }

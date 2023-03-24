@@ -1,8 +1,8 @@
 import * as React from "react";
-import Navigation from "../components/Navigation/Navigation";
-import Greetings from "../components/Greetings/Greetings";
-import LayoutHomePage from "../components/Layouts/LayoutHomePage";
-import Selector from "../components/Selector/Selector";
+import Navigation from "@Components/Navigation/Navigation";
+import Greetings from "@Components/Greetings/Greetings";
+import LayoutHomePage from "@Components/Layouts/LayoutHomePage";
+import Selector from "@Components/Selector/Selector";
 
 const PageHome = () => {
   return (

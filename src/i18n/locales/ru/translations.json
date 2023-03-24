@@ -30,5 +30,38 @@
     "tash_skrajna": "Ташкент, ул. Скрайна 7, Щецин 70-886 (Ориентир: ресторан Ревера)",
     "tash_mlynarska": "Ташкент, ул. Млынарская 142, Быдгощ 85-376 (Ориентир: рынок морепродуктов)",
     "tash_szajnochy": "Ташкент, ул. Шайночи 103, Быдгощ 85-738 (Ориентир: Музей)"
+  },
+  "cards": {
+    "noise": [
+      {
+        "icon": "harm-air-conditioning.svg",
+        "title": "Reducing from appliances noise",
+        "subtitle": "WHY and what to do?",
+        "text": "Items, such as air conditioning units, heaters, fans, and other appliances, can contribute to overall noise levels in the home. Try turning them off more often or setting a timer, so they only switch on at certain times."
+      },
+      {
+        "icon": "harm-music-rhythm.svg",
+        "title": "Reducing from appliances noise",
+        "subtitle": "WHY and what to do?",
+        "text": "Consider the volume and duration of noise from music, televisions, radios, and video games. Avoid having unnecessary noise playing in the background for long periods, or listening to sounds at too high a volume. It may be useful to set aside dedicated time for watching TV or listening to music."
+      }
+    ],
+    "air": [
+      {
+        "icon": "harm-air-conditioning.svg",
+        "title": "Reducing from appliances noise",
+        "subtitle": "WHY and what to do?",
+        "text": "Items, such as air conditioning units, heaters, fans, and other appliances, can contribute to overall noise levels in the home. Try turning them off more often or setting a timer, so they only switch on at certain times."
+      },
+      {
+        "icon": "harm-music-rhythm.svg",
+        "title": "Reducing from appliances noise",
+        "subtitle": "WHY and what to do?",
+        "text": "Consider the volume and duration of noise from music, televisions, radios, and video games. Avoid having unnecessary noise playing in the background for long periods, or listening to sounds at too high a volume. It may be useful to set aside dedicated time for watching TV or listening to music."
+      }
+    ],
+    "uv": [],
+    "humidity": [],
+    "pressure": []
   }
 }

@@ -6,6 +6,7 @@ import { fonts } from "./foundations/fonts";
 import { fontSizes } from "./foundations/fontSizes";
 import { lineHeights } from "./foundations/lineHeights";
 import { sizes } from "./foundations/sizes";
+import { semanticTokens } from "./foundations/semanticTokens";
 // Components
 import { Button } from "./components/Button";
 import { Progress } from "./components/Progress";
@@ -20,6 +21,7 @@ const overrides = {
   fontSizes,
   lineHeights,
   sizes,
+  semanticTokens,
   components: {
     Button,
     Progress,

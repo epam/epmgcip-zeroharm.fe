@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Box, Divider, Flex, Text, Tooltip } from "@chakra-ui/react";
-import { ReactComponent as InfoFill } from "../../assets/icons/filled/harm-info-fill.svg";
-import { Progress } from "../../_UI/Progress/Progress";
+import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
+import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
+import { Progress } from "@UI/Progress/Progress";
 
 type IndexDateType = {
   children?: React.ReactNode;
@@ -11,7 +11,6 @@ type IndexDateType = {
 };
 
 export const Indicator: React.FC<IndexDateType> = ({
-  children,
   color,
   size,
   title,

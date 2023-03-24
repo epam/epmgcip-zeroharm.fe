@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Page404, PageHome, PageAbout, PageMap } from "../../pages";
+import { Page404, PageHome, PageAbout, PageMap } from "@/pages";
 import i18n from "i18next";
-import "../../i18n/i18n";
-import { useDataStore } from "../../store/useDataStore";
+import "@/i18n/i18n";
+import { useDataStore } from "@/store/useDataStore";
 
 function App() {
   const { language } = useDataStore();
