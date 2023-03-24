@@ -11,6 +11,7 @@ export const Tooltip = defineStyleConfig({
     borderWidth: "1px",
     borderStyle: "solid",
     borderColor: "gray.600",
+    fontSize: "14px",
   },
   variants: {
     default: {

@@ -14,7 +14,7 @@ export const Indicators: React.FC<IndexDateType> = ({ children }) => {
   return (
     <Wrapper>
       <Flex justifyContent="space-between" gap="10px" pb="10px">
-        <Text fontSize="16px" fontWeight="700">
+        <Text fontSize="12px" fontWeight="700" textTransform= "uppercase">
           Indicators
         </Text>
         <Box color="gray.400" fontSize="12px">
