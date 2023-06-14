@@ -27,6 +27,7 @@ const ChangeLanguage: FC = () => {
           <option
             key={language}
             value={language}
+            selected={language === i18n.language}
           >
             {language}
           </option>
