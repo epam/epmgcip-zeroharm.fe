@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { useDataStore } from "@/store/useDataStore";
 import { Select as ChakraSelect } from "@chakra-ui/react";
-import { useTranslationValues } from "@/hooks/useTranslationValues";
+import { useTranslationKeys } from "@/hooks/useTranslationKeys";
 
 const ChangeLanguage: FC = () => {
   const { i18n } = useTranslation();
@@ -13,20 +13,26 @@ const ChangeLanguage: FC = () => {
     i18n.changeLanguage(lang).then();
   };
 
-  const languages = useTranslationValues("lang");
+  const languages = useTranslationKeys("lang");
 
   return (
-    <ChakraSelect
-      size="xs"
-      onChange={(e) => handleChange(e.target.value)}
-      focusBorderColor="white"
-    >
-      {languages?.map((language) => (
-        <option key={language} value={language}>
-          {language}
-        </option>
-      ))}
-    </ChakraSelect>
+    <>
+      <ChakraSelect
+        size="xs"
+        onChange={(e) => handleChange(e.target.value)}
+        focusBorderColor="white"
+        textTransform={"uppercase"}
+      >
+        {languages?.map((language) => (
+          <option
+            key={language}
+            value={language}
+          >
+            {language}
+          </option>
+        ))}
+      </ChakraSelect>
+    </>
   );
 };
 
