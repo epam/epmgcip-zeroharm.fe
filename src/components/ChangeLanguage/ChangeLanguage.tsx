@@ -1,28 +1,39 @@
 import { FC } from "react";
-import { Flex, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { useDataStore } from "@/store/useDataStore";
+import { Select as ChakraSelect } from "@chakra-ui/react";
+import { useTranslationKeys } from "@/hooks/useTranslationKeys";
 
 const ChangeLanguage: FC = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const { setLanguage } = useDataStore();
-  const activeLangColor = (lang: string) =>
-    lang === i18n.language ? "white" : "gray.400";
 
-  const handleClick = (lang: string) => {
-    setLanguage(lang);
+  const handleChange = (lang: string) => {
+    setLanguage(lang.toLowerCase());
     i18n.changeLanguage(lang).then();
   };
 
+  const languages = useTranslationKeys("lang");
+
   return (
-    <Flex gap="8px">
-      <Text fontSize="harm.h1" onClick={() => handleClick("ru")} color={activeLangColor("ru")}>
-        {t("lang.ru")}
-      </Text>
-      <Text onClick={() => handleClick("en")} color={activeLangColor("en")}>
-        {t("lang.en")}
-      </Text>
-    </Flex>
+    <>
+      <ChakraSelect
+        size="xs"
+        onChange={(e) => handleChange(e.target.value)}
+        focusBorderColor="white"
+        textTransform={"uppercase"}
+      >
+        {languages?.map((language) => (
+          <option
+            key={language}
+            value={language}
+            selected={language === i18n.language}
+          >
+            {language}
+          </option>
+        ))}
+      </ChakraSelect>
+    </>
   );
 };
 

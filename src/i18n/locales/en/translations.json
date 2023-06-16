@@ -15,8 +15,9 @@
     }
   },
   "lang": {
+    "en": "EN",
     "ru": "RU",
-    "en": "EN"
+    "uz": "UZ"
   },
   "tabs": {
     "air": "Air quality",
