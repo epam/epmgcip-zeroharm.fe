@@ -10,7 +10,7 @@ type IndexDateType = {
 };
 
 export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
-  const currentTimeAndDAte = dayjs().format("hh:mm, MMM D");
+  const currentTimeAndDAte = dayjs().format("HH:mm, MMM D");
   const label =
     "Air quality index — is used by government agencies to communicate to the public how polluted the air " +
     "currently is or how polluted it is forecast to become. " +
