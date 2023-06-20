@@ -3,14 +3,14 @@ import Wrapper from "@UI/Wrapper/Wrapper";
 import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
 import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
 import { Progress } from "@UI/Progress/Progress";
-import dayjs from "dayjs";
+import getDate from "@/hooks/getDate";
 
 type IndexDateType = {
   children?: React.ReactNode;
 };
 
 export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
-  const currentTimeAndDAte = dayjs().format("HH:mm, MMM D");
+  const currentTimeAndDAte = getDate(24)
   const label =
     "Air quality index — is used by government agencies to communicate to the public how polluted the air " +
     "currently is or how polluted it is forecast to become. " +
