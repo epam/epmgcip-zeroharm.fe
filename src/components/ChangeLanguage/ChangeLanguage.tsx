@@ -22,13 +22,10 @@ const ChangeLanguage: FC = () => {
         onChange={(e) => handleChange(e.target.value)}
         focusBorderColor="white"
         textTransform={"uppercase"}
+        defaultValue={i18n.language}
       >
         {languages?.map((language) => (
-          <option
-            key={language}
-            value={language}
-            selected={language === i18n.language}
-          >
+          <option key={language} value={language}>
             {language}
           </option>
         ))}
