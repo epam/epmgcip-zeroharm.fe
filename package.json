@@ -16,6 +16,7 @@
     "@types/node": "^16.18.3",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
+    "chakra-react-select": "^4.6.0",
     "dayjs": "^1.11.6",
     "emotion-rgba": "^0.0.11",
     "eslint": "^8.26.0",
