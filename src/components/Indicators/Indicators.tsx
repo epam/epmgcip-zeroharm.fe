@@ -9,7 +9,7 @@ type IndexDateType = {
 };
 
 export const Indicators: React.FC<IndexDateType> = ({ children }) => {
-  const currentTimeAndDAte = getDate(24);
+  const currentTimeAndDAte = getDate();
   const colors = ["red", "orange", "green"];
   return (
     <Wrapper>
