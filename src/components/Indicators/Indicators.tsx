@@ -1,7 +1,7 @@
 import * as React from "react";
 import Wrapper from "@UI/Wrapper/Wrapper";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import dayjs from "dayjs";
+import getDate from "@/hooks/getDate";
 import { Indicator } from "@UI/Indicator/Indicator";
 
 type IndexDateType = {
@@ -9,12 +9,12 @@ type IndexDateType = {
 };
 
 export const Indicators: React.FC<IndexDateType> = ({ children }) => {
-  const currentTimeAndDAte = dayjs().format("hh:mm, MMM D");
+  const currentTimeAndDAte = getDate();
   const colors = ["red", "orange", "green"];
   return (
     <Wrapper>
       <Flex justifyContent="space-between" gap="10px" pb="10px">
-        <Text fontSize="12px" fontWeight="700" textTransform= "uppercase">
+        <Text fontSize="12px" fontWeight="700" textTransform="uppercase">
           Indicators
         </Text>
         <Box color="gray.400" fontSize="12px">
