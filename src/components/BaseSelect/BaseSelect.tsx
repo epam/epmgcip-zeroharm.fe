@@ -27,7 +27,8 @@ const getSelectComponentStyleConfig = (styles: any) => (provided: any, state: an
 
 const BaseSelectStyleConfig = {
   container: {
-    bg: 'gray.700'
+    bg: 'gray.700',
+    zIndex: '2'
   },
   menuList: {
     bg: 'gray.700',

@@ -37,6 +37,7 @@ export const Select: React.FC = () => {
     <InputGroup mt="8px" zIndex="1">
       <InputLeftElement
         color="gray.400"
+        zIndex="3"
         children={<IconMapPoint />}
       />
       <BaseSelect
