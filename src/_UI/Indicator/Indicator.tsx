@@ -2,6 +2,7 @@ import * as React from "react";
 import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
 import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
 import { Progress } from "@UI/Progress/Progress";
+import { t } from "i18next";
 
 type IndexDateType = {
   children?: React.ReactNode;
@@ -10,17 +11,10 @@ type IndexDateType = {
   title?: string;
 };
 
-export const Indicator: React.FC<IndexDateType> = ({
-  color,
-  size,
-  title,
-}) => {
-  const label =
-    "Air quality index — is used by government agencies to communicate to the public how polluted the air " +
-    "currently is or how polluted it is forecast to become. " +
-    "AQI information is obtained by averaging readings from an air quality sensor, " +
-    "which can increase due to vehicle traffic, forest fires, or anything that can " +
-    "increase air pollution. Pollutants tested include ozone, nitrogen dioxide, sulphur dioxide, among others.";
+export const Indicator: React.FC<IndexDateType> = ({ color, size, title }) => {
+  const hint = title?.toLowerCase();
+  
+  const label = t(`hints.${hint}`)
   return (
     <>
       <Flex
@@ -30,7 +24,12 @@ export const Indicator: React.FC<IndexDateType> = ({
         pb="8px"
         gap="24px"
       >
-        <Tooltip label={label} hasArrow placement="right-start" variant="default">
+        <Tooltip
+          label={label}
+          hasArrow
+          placement="right-start"
+          variant="default"
+        >
           <Flex gap="10px" maxWidth="80px" fontSize="16px">
             <Text>{title}</Text>
             <Box w="24" opacity=".5">

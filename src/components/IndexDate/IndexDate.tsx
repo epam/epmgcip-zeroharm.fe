@@ -4,19 +4,16 @@ import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
 import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
 import { Progress } from "@UI/Progress/Progress";
 import getDate from "@/hooks/getDate";
+import { t } from "i18next";
 
 type IndexDateType = {
   children?: React.ReactNode;
 };
 
 export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
-  const currentTimeAndDAte = getDate()
-  const label =
-    "Air quality index — is used by government agencies to communicate to the public how polluted the air " +
-    "currently is or how polluted it is forecast to become. " +
-    "AQI information is obtained by averaging readings from an air quality sensor, " +
-    "which can increase due to vehicle traffic, forest fires, or anything that can " +
-    "increase air pollution. Pollutants tested include ozone, nitrogen dioxide, sulphur dioxide, among others.";
+  const currentTimeAndDAte = getDate();
+  const label = t("hints.air_quality");
+
   return (
     <Wrapper>
       <Flex justifyContent="space-between" fontSize="12px">
