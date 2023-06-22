@@ -83,7 +83,7 @@ export const  BaseSelect: React.FC<SelectPropsT> = (props: SelectPropsT) => {
   return (
     <Select
       options={opts}
-      defaultValue={val}
+      value={val}
       chakraStyles={selectStyles}
       isDisabled={isDisabled}
       onChange={onChange}
