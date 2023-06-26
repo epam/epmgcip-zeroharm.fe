@@ -5,16 +5,16 @@ import { Progress } from "@UI/Progress/Progress";
 import { t } from "i18next";
 
 type IndexDateType = {
+  title: string;
   children?: React.ReactNode;
   color?: string;
   size?: number;
-  title?: string;
 };
 
-export const Indicator: React.FC<IndexDateType> = ({ color, size, title }) => {
-  const hint = title?.toLowerCase();
-  
-  const label = t(`hints.${hint}`)
+export const Indicator: React.FC<IndexDateType> = ({ title, color, size }) => {
+  const hint = title.toLowerCase();
+
+  const label = t(`hints.${hint}`);
   return (
     <>
       <Flex
