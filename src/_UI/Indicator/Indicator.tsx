@@ -13,8 +13,8 @@ type IndexDateType = {
 
 export const Indicator: React.FC<IndexDateType> = ({ title, color, size }) => {
   const hint = title.toLowerCase();
-
   const label = t(`hints.${hint}`);
+
   return (
     <>
       <Flex
