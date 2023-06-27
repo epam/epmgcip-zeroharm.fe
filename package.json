@@ -43,7 +43,7 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject",
-    "lint": "npx eslint src/**/*.tsx",
+    "lint": "npx eslint src/**/*.ts{,x}",
     "prepare": "husky install"
   },
   "browserslist": {
