@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import { Box, Flex } from "@chakra-ui/react";
 import * as React from "react";
 import { useState } from "react";
@@ -9,6 +10,7 @@ type PopupType = {
 
 export const Popup: React.FC<PopupType> = ({ isOpen = false, children }) => {
   const [open, setOpen] = useState(isOpen);
+
   return (
     <Flex
       direction="column"

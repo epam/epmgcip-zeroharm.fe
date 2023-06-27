@@ -1,14 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "@fontsource/inter/400.css"
-import "@fontsource/inter/700.css"
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/700.css";
 import App from "./components/App/App";
 import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 import theme from "./theme";
-
-console.log(theme);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

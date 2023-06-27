@@ -12,7 +12,6 @@ import { Button } from "./components/Button";
 import { Progress } from "./components/Progress";
 import { Tooltip } from "./components/Tooltip";
 import { Divider } from "./components/Divider";
-import { Select } from "./components/Select";
 
 const overrides = {
   styles,
@@ -27,7 +26,6 @@ const overrides = {
     Progress,
     Tooltip,
     Divider,
-    Select,
   },
 };
 

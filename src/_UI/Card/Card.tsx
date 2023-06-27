@@ -88,7 +88,6 @@ const Card: React.FC<CardType> = ({
   height,
   children,
 }) => {
-  console.log(icon);
   return (
     <>
       <CardHeader bg={`${color}.500`}>

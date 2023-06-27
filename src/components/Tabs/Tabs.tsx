@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Tabs as ChakraTabs,
   Tab,
@@ -5,16 +6,13 @@ import {
   TabPanel,
   TabPanels,
 } from "@chakra-ui/react";
-import { useTranslationValues } from "@/hooks/useTranslationValues";
-import { useTranslationKeys } from "@/hooks/useTranslationKeys";
-import { useState } from "react";
 import Cards from "@UI/Card/Cards";
+import { getTranslationValues, getTranslationKeys } from "@/helpers";
 
 const Tabs = () => {
-  const tabValues = useTranslationValues("tabs");
-  const tabKeys = useTranslationKeys("tabs");
+  const tabValues = getTranslationValues("tabs");
+  const tabKeys = getTranslationKeys("tabs");
   const [currentTab, setCurrentTab] = useState(tabKeys[0]);
-  // UI
   const selected = { color: "white", borderBottom: "3px solid white" };
   const hover = { color: "white" };
 

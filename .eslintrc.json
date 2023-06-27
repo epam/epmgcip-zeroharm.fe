@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ],
+  "rules": {
+    "quotes": 2,
+    "no-trailing-spaces": 2,
+    "no-console": 1,
+    "padding-line-between-statements": [2, {
+      "blankLine": "always",
+      "prev": "*",
+      "next": "return"
+    }],
+    "eol-last": 2,
+    "semi": 2
+  }
+}

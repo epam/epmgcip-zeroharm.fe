@@ -64,6 +64,7 @@ const PageAbout = () => {
       </Container>
     </>
   );
+
   return <LayoutAboutPage header={<Navigation />} main={<About />} />;
 };
 
