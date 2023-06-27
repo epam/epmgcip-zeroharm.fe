@@ -5,7 +5,7 @@ import {
 import { t } from "i18next";
 import { ReactComponent as IconMapPoint } from "@/assets/icons/stroke/harm-local-two.svg";
 import { BaseSelect } from "../BaseSelect/BaseSelect";
-import { getTranslationKeys } from "@/helpers";
+import { getTranslationValues } from "@/helpers";
 
 const selectStyleConfig = {
   container: {
@@ -31,10 +31,10 @@ const selectStyleConfig = {
 
 export const LocationSelect: React.FC = () => {
   const defaultAddress = t("locations.tash_navoi");
-  const locationKeys = getTranslationKeys("locations");
-  const locations = locationKeys.map((locationKey: string) => ({
-    label: t(`locations.${locationKey}`),
-    value: locationKey
+  const locationValues = getTranslationValues("locations");
+  const locations = locationValues.map((locationValue: string) => ({
+    label: locationValue,
+    value: locationValue
   }));
 
   return (

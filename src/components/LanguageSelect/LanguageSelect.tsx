@@ -11,8 +11,9 @@ const selectStyleConfig = {
 };
 
 const LanguageSelect: FC = () => {
-  const { i18n, t } = useTranslation();
   const { setLanguage } = useDataStore();
+  const { i18n, t } = useTranslation();
+
   const languageKeys = getTranslationKeys("lang");
   const languages = languageKeys.map((languageKey: string) => ({
     label: t(`lang.${languageKey}`),
@@ -22,7 +23,7 @@ const LanguageSelect: FC = () => {
   const handleChange = (lang: { label: string, value: string }) => {
     const { value } = lang;
 
-    setLanguage(value.toLowerCase());
+    setLanguage(value);
     i18n.changeLanguage(value).then();
   };
 
