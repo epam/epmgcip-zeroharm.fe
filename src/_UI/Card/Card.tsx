@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Flex, Box, chakra } from "@chakra-ui/react";
+import TestIcon from "@/_UI/Card/TestIcon";
 
 type CardType = {
   color?: string;
@@ -88,16 +89,18 @@ const Card: React.FC<CardType> = ({
   height,
   children,
 }) => {
-  console.log(icon);
+  // console.log(icon);
   return (
     <>
       <CardHeader bg={`${color}.500`}>
         <CardText>
           <CardSubHeading>{subheading}</CardSubHeading>
-          <CardHeading>{heading}</CardHeading>
+          <CardHeading>{heading}
+          </CardHeading>
         </CardText>
         <CardIconBox>
-          {icon}
+          {/* {icon} */}
+          <TestIcon name="harm-cook" />
         </CardIconBox>
       </CardHeader>
       <CardBody bg={`${color}.50`} h={height}>
