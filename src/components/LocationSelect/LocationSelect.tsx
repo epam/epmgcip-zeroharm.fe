@@ -2,36 +2,40 @@ import {
   InputGroup,
   InputLeftElement,
 } from "@chakra-ui/react";
-import { ReactComponent as IconMapPoint } from "@/assets/icons/stroke/harm-local-two.svg";
-import { useTranslationValues } from "@/hooks/useTranslationValues";
 import { t } from "i18next";
+import { ReactComponent as IconMapPoint } from "@/assets/icons/stroke/harm-local-two.svg";
 import { BaseSelect } from "../BaseSelect/BaseSelect";
+import { getTranslationKeys } from "@/helpers";
 
 const selectStyleConfig = {
   container: {
-    cursor: 'auto'
+    cursor: "auto"
   },
   control: {
-    cursor: 'auto !important',
-    opacity: '1 !important',
+    cursor: "auto !important",
+    opacity: "1 !important",
   },
   dropdownIndicator: {
-    display: 'none'
+    display: "none"
   },
   inputContainer: {
-    paddingLeft: '30px'
+    paddingLeft: "30px"
   },
   placeholder: {
-    paddingLeft: '30px'
+    paddingLeft: "30px"
   },
   singleValue: {
-    paddingLeft: '30px'
+    paddingLeft: "30px"
   }
-}
+};
 
-export const Select: React.FC = () => {
+export const LocationSelect: React.FC = () => {
   const defaultAddress = t("locations.tash_navoi");
-  const locations = useTranslationValues("locations");
+  const locationKeys = getTranslationKeys("locations");
+  const locations = locationKeys.map((locationKey: string) => ({
+    label: t(`locations.${locationKey}`),
+    value: locationKey
+  }));
 
   return (
     <InputGroup mt="8px" zIndex="1">

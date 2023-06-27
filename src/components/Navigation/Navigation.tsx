@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Flex, Spacer, Box } from "@chakra-ui/react";
 import logo from "@/assets/images/logo--new.svg";
-import ChangeLanguage from "@Components/ChangeLanguage/ChangeLanguage";
+import LanguageSelect from "@/components/LanguageSelect/LanguageSelect";
 
 const Navigation: React.FC = () => {
   const { t } = useTranslation();
@@ -18,7 +18,7 @@ const Navigation: React.FC = () => {
         <Box flexShrink={0}>
           <Link to="/about">{t("pages.about.name")}</Link>
         </Box>
-        <ChangeLanguage />
+        <LanguageSelect />
       </Flex>
     </Flex>
   );

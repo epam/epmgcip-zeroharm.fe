@@ -3,7 +3,7 @@ import Wrapper from "@UI/Wrapper/Wrapper";
 import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
 import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
 import { Progress } from "@UI/Progress/Progress";
-import getDate from "@/hooks/getDate";
+import { getDate } from "@/helpers";
 import { t } from "i18next";
 
 type IndexDateType = {

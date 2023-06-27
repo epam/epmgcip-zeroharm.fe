@@ -9,6 +9,7 @@ type PopupType = {
 
 export const Popup: React.FC<PopupType> = ({ isOpen = false, children }) => {
   const [open, setOpen] = useState(isOpen);
+
   return (
     <Flex
       direction="column"
@@ -22,7 +23,7 @@ export const Popup: React.FC<PopupType> = ({ isOpen = false, children }) => {
       position="relative"
       top="-10px"
       _before={{
-        content: '""',
+        content: "",
         boxSize: "12px",
         left: "calc(50%-6px)",
         top: "-6px",

@@ -8,6 +8,7 @@ const styles = {
 
 const Map: React.FC = () => {
   const coordinates: [number, number] = [41.31286390094148, 69.24438328843463];
+
   return (
     <Flex >
       <MapContainer style={styles} center={coordinates} zoom={13} scrollWheelZoom={false}>

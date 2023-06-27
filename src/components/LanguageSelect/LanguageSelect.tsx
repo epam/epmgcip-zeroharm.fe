@@ -2,17 +2,22 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { useDataStore } from "@/store/useDataStore";
 import { BaseSelect } from "../BaseSelect/BaseSelect";
-import { useTranslationKeys } from "@/hooks/useTranslationKeys";
+import { getTranslationKeys } from "@/helpers";
 
 const selectStyleConfig = {
   control: {
-    minHeight: 'auto'
+    minHeight: "auto"
   }
-}
+};
 
-const ChangeLanguage: FC = () => {
-  const { i18n } = useTranslation();
+const LanguageSelect: FC = () => {
+  const { i18n, t } = useTranslation();
   const { setLanguage } = useDataStore();
+  const languageKeys = getTranslationKeys("lang");
+  const languages = languageKeys.map((languageKey: string) => ({
+    label: t(`lang.${languageKey}`),
+    value: languageKey
+  }));
 
   const handleChange = (lang: { label: string, value: string }) => {
     const { value } = lang;
@@ -20,8 +25,6 @@ const ChangeLanguage: FC = () => {
     setLanguage(value.toLowerCase());
     i18n.changeLanguage(value).then();
   };
-
-  const languages = useTranslationKeys("lang");
 
   return (
     <>
@@ -35,4 +38,4 @@ const ChangeLanguage: FC = () => {
   );
 };
 
-export default ChangeLanguage;
+export default LanguageSelect;

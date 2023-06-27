@@ -1,7 +1,7 @@
 import * as React from "react";
 import Wrapper from "@UI/Wrapper/Wrapper";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import getDate from "@/hooks/getDate";
+import { getDate } from "@/helpers";
 import { Indicator } from "@UI/Indicator/Indicator";
 
 type IndexDateType = {
@@ -27,6 +27,7 @@ export const Indicators: React.FC<IndexDateType> = ({ children }) => {
         (i) => {
           const randLength = Math.floor(Math.random() * 90);
           const color = colors[Math.floor(Math.random() * colors.length)];
+
           return (
             <Indicator size={randLength} title={i} key={i} color={color} />
           );
