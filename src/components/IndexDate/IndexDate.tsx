@@ -3,7 +3,8 @@ import Wrapper from "@UI/Wrapper/Wrapper";
 import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
 import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
 import { Progress } from "@UI/Progress/Progress";
-import getDate from "@/hooks/getDate";
+import { useDataStore } from "@/store/useDataStore";
+import { getDate } from "@/helpers";
 import { t } from "i18next";
 
 type IndexDateType = {
@@ -11,14 +12,18 @@ type IndexDateType = {
 };
 
 export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
+  const { parameter } = useDataStore();
   const currentTimeAndDAte = getDate();
-  const label = t("hints.air_quality");
+  const label = t(`hints.${parameter}`);
+  const currentIndexName = t(`indexes.${parameter}`);
 
   return (
     <Wrapper>
       <Flex justifyContent="space-between" fontSize="12px">
         <Flex gap="10px">
-          <Text>AIR QUALITY INDEX</Text>
+          <Text textTransform="uppercase">
+            { currentIndexName }
+          </Text>
           <Box w="24" opacity=".5">
             <Tooltip
               sx={{ borderRadius: "8px", padding: "1rem" }}

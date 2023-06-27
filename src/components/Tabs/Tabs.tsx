@@ -5,16 +5,18 @@ import {
   TabPanel,
   TabPanels,
 } from "@chakra-ui/react";
-import { useTranslationValues } from "@/hooks/useTranslationValues";
-import { useTranslationKeys } from "@/hooks/useTranslationKeys";
-import { useState } from "react";
+import { t } from "i18next";
 import Cards from "@UI/Card/Cards";
+import { getTranslationKeys } from "@/helpers";
+import { useDataStore } from "@/store/useDataStore";
 
 const Tabs = () => {
-  const tabValues = useTranslationValues("tabs");
-  const tabKeys = useTranslationKeys("tabs");
-  const [currentTab, setCurrentTab] = useState(tabKeys[0]);
-  // UI
+  const { parameter, setParameter } = useDataStore();
+
+  const tabKeys = getTranslationKeys("tabs").filter(tab => !["uv", "noise_pollution"].includes(tab));
+  const tabValues = tabKeys.map(tabKey => t(`tabs.${tabKey}`));
+  const currentTab = parameter || tabKeys[0];
+
   const selected = { color: "white", borderBottom: "3px solid white" };
   const hover = { color: "white" };
 
@@ -31,7 +33,7 @@ const Tabs = () => {
             textAlign="center"
             _selected={selected}
             _hover={hover}
-            onClick={() => setCurrentTab(tabKeys[index])}
+            onClick={() => setParameter(tabKeys[index])}
           >
             {tab}
           </Tab>

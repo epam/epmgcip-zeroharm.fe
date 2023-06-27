@@ -16,6 +16,7 @@
     "@types/node": "^16.18.3",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
+    "chakra-react-select": "^4.6.0",
     "dayjs": "^1.11.6",
     "emotion-rgba": "^0.0.11",
     "eslint": "^8.26.0",
@@ -41,13 +42,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "craco eject",
+    "lint": "npx eslint src/**/*.ts{,x}",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
@@ -63,6 +60,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^6.5.1",
-    "@types/leaflet": "^1.9.0"
+    "@types/leaflet": "^1.9.0",
+    "husky": "^8.0.3"
   }
 }

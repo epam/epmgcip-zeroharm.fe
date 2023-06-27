@@ -2,7 +2,7 @@ import { Button, Flex, Heading, Text, Box } from "@chakra-ui/react";
 import { ReactComponent as IconLocal } from "@/assets/icons/filled/harm-local.svg";
 import { Popup } from "@UI/Popup/Popup";
 import { Link } from "react-router-dom";
-import { Select } from "@Components/Select/Select";
+import { LocationSelect } from "@/components/LocationSelect/LocationSelect";
 import { t } from "i18next";
 
 const Selector = () => {
@@ -21,7 +21,7 @@ const Selector = () => {
       <Heading as="h1" fontSize="headers.h1">
         {t("pages.home.protect")}
       </Heading>
-      <Select />
+      <LocationSelect />
       <Flex
         direction="row"
         position="relative"

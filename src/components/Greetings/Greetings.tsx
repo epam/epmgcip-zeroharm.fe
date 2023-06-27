@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import Card from "@UI/Card/Card";
@@ -22,6 +21,7 @@ const Greetings = () => {
       </Link>
     </>
   );
+
   return (
     <Flex
       p="140px 80px 0 80px"
