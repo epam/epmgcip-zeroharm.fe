@@ -6346,6 +6346,11 @@
   "resolved" "https://registry.npmjs.org/human-signals/-/human-signals-2.1.0.tgz"
   "version" "2.1.0"
 
+"husky@^8.0.3":
+  "integrity" "sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg=="
+  "resolved" "https://registry.npmjs.org/husky/-/husky-8.0.3.tgz"
+  "version" "8.0.3"
+
 "i18next@^22.0.5", "i18next@>= 19.0.0":
   "integrity" "sha512-8TGPgM3pAD+VRsMtUMNknRz3kzqwp/gPALrWMsDnmC1mKqJwpWyooQRLMcbTwq8z8YwSmuj+ZYvc+xCuEpkssA=="
   "resolved" "https://registry.npmjs.org/i18next/-/i18next-22.5.1.tgz"

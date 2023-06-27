@@ -4,7 +4,7 @@ import { Flex } from "@chakra-ui/react";
 
 const styles = {
   zIndex: 1,
-}
+};
 
 const Map: React.FC = () => {
   const coordinates: [number, number] = [41.31286390094148, 69.24438328843463];
