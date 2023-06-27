@@ -36,33 +36,159 @@
     "noise": [
       {
         "icon": "<ReducingFromAppliancesNoise />",
-        "title": "Reducing from appliances noise",
+        "title": "Safe noise level",
         "subtitle": "WHY and what to do?",
-        "text": "Items, such as air conditioning units, heaters, fans, and other appliances, can contribute to overall noise levels in the home. Try turning them off more often or setting a timer, so they only switch on at certain times."
+        "text": "Safe noise level. Enjoy comfort!"
       },
       {
         "icon": "<ReducingFromAppliancesNoise />",
-        "title": "Reducing from noise",
+        "title": "Moderate noise level",
         "subtitle": "WHY and what to do?",
-        "text": "Consider the volume and duration of noise from music, televisions, radios, and video games. Avoid having unnecessary noise playing in the background for long periods, or listening to sounds at too high a volume. It may be useful to set aside dedicated time for watching TV or listening to music."
+        "text": "The noise level is slightly above the norm. Try to find a quieter place if you are outside, or turn off electrical appliances, music devices if you are indoors to reduce the noise load."
+      },
+      {
+        "icon": "<ReducingFromAppliancesNoise />",
+        "title": "Elevated noise level",
+        "subtitle": "WHY and what to do?",
+        "text": "Increased noise level: try to go into the room. If you are indoors, turn down the volume of your audio, video, and household appliances."
+      },
+      {
+        "icon": "<ReducingFromAppliancesNoise />",
+        "title": "High noise level",
+        "subtitle": "WHY and what to do?",
+        "text": "High noise level. Turn off household appliances, audio and video equipment. Use earplugs if necessary."
+      },
+      {
+        "icon": "<ReducingFromAppliancesNoise />",
+        "title": "Hazardous noise",
+        "subtitle": "WHY and what to do?",
+        "text": "Dangerous noise level. Move away from the source of the noise, use earplugs or ear protectors to reduce the noise load."
+      },
+      {
+        "icon": "<ReducingFromAppliancesNoise />",
+        "title": "Extremely high noise pollution",
+        "subtitle": "WHY and what to do?",
+        "text": "Extremely high noise pollution can cause hearing loss. Try to escape from the noise source, find a place with thick walls, use protective headphones."
       }
     ],
     "air": [
       {
         "icon": "<ReducingFromAppliancesNoise />",
-        "title": "Reducing from appliances air",
+        "title": "Normal air quality",
         "subtitle": "WHY and what to do?",
-        "text": "Items, such as air conditioning units, heaters, fans, and other appliances, can contribute to overall noise levels in the home. Try turning them off more often or setting a timer, so they only switch on at certain times."
+        "text": "Air is clean. It is safe to be outdoors even for people with diseases of the respiratory system."
       },
       {
         "icon": "<ReducingFromAppliancesNoise />",
-        "title": "Reducing from air",
+        "title": "Moderate air quality",
         "subtitle": "WHY and what to do?",
-        "text": "Consider the volume and duration of noise from music, televisions, radios, and video games. Avoid having unnecessary noise playing in the background for long periods, or listening to sounds at too high a volume. It may be useful to set aside dedicated time for watching TV or listening to music."
+        "text": "Air is quite clean, but some indicators can be increased. It is safe to be outside but people with respiratory or allergic diseases can feel discomfort."
+      },
+      {
+        "icon": "<ReducingFromAppliancesNoise />",
+        "title": "High level of air pollution",
+        "subtitle": "WHY and what to do?",
+        "text": "One or more pollution indicators are above normal. People with respiratory and allergic diseases need respiratory protection."
+      },
+      {
+        "icon": "<ReducingFromAppliancesNoise />",
+        "title": "Rather dangerous level of air pollution",
+        "subtitle": "WHY and what to do?",
+        "text": "The level of air pollution is above average. People with respiratory and allergic diseases need serious protection and may need medicines. Even if you don’t have respiratory or allergic diseases, use a respirator."
+      },
+      {
+        "icon": "<ReducingFromAppliancesNoise />",
+        "title": "Hazardous air pollution",
+        "subtitle": "WHY and what to do?",
+        "text": "Dangerous level of air pollution. Try to enter the room or use respiratory protection: a respirator, a mask. Don't go out unless necessary."
+      },
+      {
+        "icon": "<ReducingFromAppliancesNoise />",
+        "title": "Extremely aggressive air pollution",
+        "subtitle": "WHY and what to do?",
+        "text": "Maximum concentration of harmful substances in the air! Stay indoors, use personal protection equipment: a respirator with a cleaning valve, filters or a special cartridge, even indoors."
       }
     ],
-    "uv": [],
-    "humidity": [],
-    "pressure": []
+    "uv": [
+      {
+        "title": "Safe UV index",
+        "subtitle": "WHY and what to do?",
+        "text": "Safe level of UV radiation. You can stay outdoors safe without the use of protective equipment."
+      },
+      {
+        "title": "Moderate UV index",
+        "subtitle": "WHY and what to do?",
+        "text": "Increased UV index. Do not be in the open sun, while outdoors, choose shady places. Apply protective cream SPF 10-SPF 20 to exposed areas of the body 15 minutes before going outdoors."
+      },
+      {
+        "title": "High UV-index",
+        "subtitle": "WHY and what to do?",
+        "text": "High UV index. Do not be in the open sun, while outdoors, choose shady places. Apply protective cream SPF 30 - SPF 40 to exposed areas of the body 15 minutes before going outside. Use a sun umbrella, cap or hat with a visor, closed clothing."
+      },
+      {
+        "title": "Adverse UV-index",
+        "subtitle": "WHY and what to do?",
+        "text": "Unsafe UV index. Avoid open unshaded spaces. Apply a protective cream of at least SPF-50 to exposed areas of the body 15 minutes before going outside. Use a sun umbrella, cap or hat with a visor, closed clothing."
+      },
+      {
+        "title": "Hazardous UV",
+        "subtitle": "WHY and what to do?",
+        "text": "Dangerous level of UV radiation. Don't go out unless necessary. Apply a protective cream of at least SPF-50 to exposed areas of the body 15 minutes before going outside. Use a sun umbrella, cap or hat with a visor, closed clothing. This level of UV rays cause skin cancer even with short exposure."
+      },
+      {
+        "title": "Extremely aggressive UV radiation",
+        "subtitle": "WHY and what to do?",
+        "text": "Extreme levels of UV radiation. Do not leave room before sunset. Hang curtains indoors. UV rays of this level, even with short exposure, cause skin cancer."
+      }
+    ],
+    "humidity": [
+      {
+        "title": "High humidity",
+        "subtitle": "WHY and what to do?",
+        "text": "Increased air humidity can negatively affect the well-being of people with cardiovascular diseases, asthma. If possible, use a dehumidifier. Ventilate the room every hour, move the curtains from the window so that light can enter the room."
+      },
+      {
+        "title": "Normal humidity",
+        "subtitle": "WHY and what to do?",
+        "text": "Optimum air humidity! Enjoy a walk or stay indoors enjoying comfortable air quality!"
+      },
+      {
+        "title": "Extremely dry air",
+        "subtitle": "WHY and what to do?",
+        "text": "Too dry air negatively affects the mucous membranes, increases the concentration of harmful substances in the air. People with respiratory and allergic diseases, bronchial diseases experience discomfort. Use an indoor humidifier. Drink more water of room temperature. In the absence of a humidifier, wet the textiles and hang them in the room. With a combination of low humidity and high air temperature, arrange containers with water all over the room. As it evaporates, it will raise the level of humidity in the room."
+      }
+    ],
+    "pressure": [
+      {
+        "title": "Low air pressure",
+        "subtitle": "WHY and what to do?",
+        "text": "It brings discomfort to people with diseases of the cardiovascular system, respiratory system, musculoskeletal system and diabetes mellitus, people in the recovery period after diseases or operations, weather-sensitive people, hypotensive patients. In the absence of contraindications, it is recommended to do a short physical workout, take a short walk, take a contrast shower. Postpone active physical activity, give preference to low-carb foods."
+      },
+      {
+        "title": "Normal pressure",
+        "subtitle": "WHY and what to do?",
+        "text": "Enjoy this day!"
+      },
+      {
+        "title": "High air pressure",
+        "subtitle": "WHY and what to do?",
+        "text": "Brings discomfort to people with allergies, cardiovascular diseases, asthma and hypertension, especially in combination with dry calm weather. Try to avoid increased physical activity, drink more water, add foods and vitamins containing potassium (K) and magnesium (Mg) to your diet."
+      }
+    ]
+  },
+  "hints": {
+    "air_quality": "The Air Quality Index (AQI) is a scale used to communicate the level of air pollution in a particular region. It provides a standardized way to quantify and report the quality of the air to the general public, making it easier to understand the potential health impacts of air pollution. The AQI ranges from 0 to 500, where lower values represent better air quality and higher values indicate poorer air quality. The index is typically divided into color-coded categories, each associated with a specific level of health concern.",
+    "pm2.5": "Particulate Matter 2.5 microns or smaller: PM2.5 is a type of air pollution that consists of small particles that can penetrate deep into the lungs and cause respiratory and cardiovascular problems in humans, including asthma, heart attacks, and lung cancer. PM2.5 is mainly produced by burning fossil fuels, industrial processes, and natural sources such as wildfires and dust storms.",
+    "pm10": "PM10 are very small particles found in dust and smoke. They have a diameter of 10 micrometres (0.01 mm) or smaller. PM10 particles are a common air pollutant and are small enough to get into your throat and lungs. High levels of PM10 can make you cough, your nose run and eyes sting. People with heart or lung conditions might have more symptoms when PM10 levels are high. Symptoms can include wheezing, chest tightness or difficulty breathing.",
+    "pm1": "PM1 are extremely fine particulates with a diameter of fewer than 1 microns. These are significantly smaller than PM 2.5. Their size is 70-100 times smaller than the diameter of a human hair. PM1 particles cannot be filtered by the lungs and can cross the blood-brain barrier.",
+    "no": "Nitrogen Oxides are a family of poisonous, highly reactive gases. These gases form when fuel is burned at high temperatures. NOx pollution is emitted by automobiles, trucks and various non-road vehicles (e.g., construction equipment).",
+    "no2": "Nitrogen Dioxide (NO2) is one of a group of highly reactive gases. Breathing air with a high concentration of NO2 can irritate airways in the human respiratory system. Such exposures over short periods can aggravate respiratory diseases, particularly asthma, leading to respiratory symptoms (such as coughing, wheezing or difficulty breathing), hospital admissions and visits to emergency rooms.",
+    "nh3": "Ammonia (NH3), colorless, pungent gas composed of nitrogen and hydrogen. High levels of ammonia can irritate and burn the skin, mouth, throat, lungs, and eyes. Very high levels of ammonia can damage the lungs or cause death.",
+    "co": "Carbon monoxide (CO) is a colorless, odorless, and toxic gas that can cause health problems in humans, including headaches, dizziness, nausea, confusion, and even death at high concentrations. CO is mainly produced by the incomplete combustion of fossil fuels, such as in car engines, and is a significant source of air pollution.",
+    "o3": "Ozone (O3) is a highly reactive gas composed of three oxygen atoms. Breathing ground-level ozone can trigger a variety of health problems including chest pain, coughing, throat irritation, and congestion. It can worsen bronchitis, emphysema, and asthma. Ozone also can reduce lung function and inflame the lining of the lungs. Repeated exposure may permanently scar lung tissue.",
+    "uv_index": "UV-index is an international standard measurement of the strength of the sunburn-produced ultraviolet (UV) radiation at a particular place and time. It estimates the level of sun UV radiation hazard for human's skin.",
+    "noise_pollution": "Noise pollution is unwanted or excessive sound that can have deleterious effects on human health, wildlife, and environmental quality.",
+    "humidity": "Humidity is the concentration of water vapor present in the air.",
+    "air_pressure": "Air pressure is the force exerted by air, whether compressed or unconfined, on any surface in contact with it."
   }
 }
