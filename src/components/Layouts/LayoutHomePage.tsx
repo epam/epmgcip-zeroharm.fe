@@ -5,12 +5,14 @@ type LayoutHomePageType = {
   header: React.ReactNode;
   aside: React.ReactNode;
   main: React.ReactNode;
+  footer: React.ReactNode;
 };
 
 const LayoutHomePage: React.FC<LayoutHomePageType> = ({
   header,
   aside,
   main,
+  footer,
 }) => {
   return (
     <Flex direction="column">
@@ -25,6 +27,9 @@ const LayoutHomePage: React.FC<LayoutHomePageType> = ({
           {main}
         </Box>
       </Flex>
+      <Box as="footer" p="16px 24px" height="64px" pos="fixed" bottom={"0"} bgColor={"grey"} w="100%">
+        {footer}
+      </Box>
     </Flex>
   );
 };
