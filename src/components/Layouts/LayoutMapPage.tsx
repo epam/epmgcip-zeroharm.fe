@@ -28,16 +28,7 @@ const LayoutMapPage: React.FC<LayoutMapPageType> = ({
             {main}
           </Box>
         </Flex>
-        <Box
-          as="footer"
-          p="16px 24px"
-          height="64px"
-          pos="fixed"
-          bottom={"0"}
-          bgColor={"grey"}
-          w="100%"
-          zIndex={2}
-        >
+        <Box as="footer">
           {footer}
         </Box>
       </Flex>

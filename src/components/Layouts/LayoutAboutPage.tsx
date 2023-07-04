@@ -7,18 +7,22 @@ type LayoutAboutPageType = {
   footer: React.ReactNode;
 };
 
-const LayoutAboutPage: React.FC<LayoutAboutPageType> = ({ header, main, footer }) => {
+const LayoutAboutPage: React.FC<LayoutAboutPageType> = ({
+  header,
+  main,
+  footer,
+}) => {
   return (
     <>
       <Flex direction="column">
-        <Box as="header" p="16px 24px" height="64px" >
+        <Box as="header" p="16px 24px" height="64px">
           {header}
         </Box>
         <Box as="main" flex="1">
           {main}
         </Box>
       </Flex>
-      <Box as="footer" p="16px 24px" height="64px" pos="fixed" bottom={"0"} bgColor={"grey"}  w="100%">
+      <Box as="footer" bottom="0">
         {footer}
       </Box>
     </>

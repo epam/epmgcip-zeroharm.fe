@@ -27,7 +27,7 @@ const LayoutHomePage: React.FC<LayoutHomePageType> = ({
           {main}
         </Box>
       </Flex>
-      <Box as="footer" p="16px 24px" height="64px" pos="fixed" bottom={"0"} bgColor={"grey"} w="100%">
+      <Box as="footer">
         {footer}
       </Box>
     </Flex>
