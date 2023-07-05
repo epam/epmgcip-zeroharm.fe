@@ -10,6 +10,7 @@ const TestIcon = (props: IconProps) => {
   if (SvgIcon) {
     return <SvgIcon />;
   }
+
   return null;
 };
 
