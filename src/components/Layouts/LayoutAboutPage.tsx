@@ -18,13 +18,13 @@ const LayoutAboutPage: React.FC<LayoutAboutPageType> = ({
         <Box as="header" p="16px 24px" height="64px">
           {header}
         </Box>
-        <Box as="main" flex="1">
+        <Box as="main" flex="1" pb="64px">
           {main}
         </Box>
+        <Box as="footer" bottom="0">
+          {footer}
+        </Box>
       </Flex>
-      <Box as="footer" bottom="0">
-        {footer}
-      </Box>
     </>
   );
 };

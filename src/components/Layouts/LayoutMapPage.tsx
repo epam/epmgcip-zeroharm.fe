@@ -28,7 +28,7 @@ const LayoutMapPage: React.FC<LayoutMapPageType> = ({
             {main}
           </Box>
         </Flex>
-        <Box as="footer">
+        <Box as="footer" pos="initial" >
           {footer}
         </Box>
       </Flex>
