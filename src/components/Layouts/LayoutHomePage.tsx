@@ -17,7 +17,7 @@ const LayoutHomePage: React.FC<LayoutHomePageType> = ({
       <Box as="header" p="16px 24px" height="64px">
         {header}
       </Box>
-      <Flex maxWidth="1280" m="auto" w="100%">
+      <Flex maxWidth="1280" m="auto" w="100%" pt="64px">
         <Box as="aside" flex="1">
           {aside}
         </Box>
