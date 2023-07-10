@@ -16,12 +16,16 @@ const Tabs = () => {
   const tabKeys = getTranslationKeys("tabs").filter(tab => !["uv", "noise_pollution"].includes(tab));
   const tabValues = tabKeys.map(tabKey => t(`tabs.${tabKey}`));
   const currentTab = parameter || tabKeys[0];
+  const defaultTabIndex = tabKeys.indexOf(parameter) || 0;
 
   const selected = { color: "white", borderBottom: "3px solid white" };
   const hover = { color: "white" };
 
   return (
-    <ChakraTabs variant="unstyled">
+    <ChakraTabs
+      defaultIndex={defaultTabIndex}
+      variant="unstyled"
+    >
       <TabList>
         {tabValues.map((tab, index) => (
           <Tab
