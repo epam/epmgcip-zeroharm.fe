@@ -61,6 +61,7 @@ const CardNavigationBox: FC<{ children?: ReactNode; jc?: string }> = ({
 };
 
 const Cards: FC<CardsType> = ({ cardsKey }) => {
+  console.log("🚀 ~ file: Cards.tsx:64 ~ cardsKey:", cardsKey);
   const cardsTrans: any = translations?.cards;
   const cards = cardsTrans[cardsKey];
   const [cardIndex, setCardIndex] = useState(0);
@@ -71,8 +72,8 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
 
   const currentCard = cards[cardIndex];
 
-  const handleClick = (value: any) => {
-    setCardIndex((previous: any) => previous + value);
+  const handleClick = (value: number) => {
+    setCardIndex((previous: number) => previous + value);
   };
 
   return (

@@ -38,7 +38,7 @@ const Greetings = () => {
           color="red"
           subheading="Air Quality tip"
           heading="Very poor air"
-          icon={<SadIcon />}
+          icon="harm-disappointed-face"
         >
           <Body />
         </Card>
