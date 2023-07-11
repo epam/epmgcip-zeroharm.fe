@@ -16,10 +16,10 @@ const LayoutHomePage: React.FC<LayoutHomePageType> = ({
 }) => {
   return (
     <Flex direction="column">
-      <Box as="header" p="16px 24px" height="64px">
+      <Box as="header" top="0">
         {header}
       </Box>
-      <Flex maxWidth="1280" m="auto" w="100%">
+      <Flex maxWidth="1280" m="auto" w="100%" pt="64px">
         <Box as="aside" flex="1">
           {aside}
         </Box>
@@ -27,7 +27,7 @@ const LayoutHomePage: React.FC<LayoutHomePageType> = ({
           {main}
         </Box>
       </Flex>
-      <Box as="footer">
+      <Box as="footer" bottom="0">
         {footer}
       </Box>
     </Flex>

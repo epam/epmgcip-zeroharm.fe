@@ -15,10 +15,10 @@ const LayoutAboutPage: React.FC<LayoutAboutPageType> = ({
   return (
     <>
       <Flex direction="column">
-        <Box as="header" p="16px 24px" height="64px">
+        <Box as="header" top="0">
           {header}
         </Box>
-        <Box as="main" flex="1" pb="64px">
+        <Box as="main" flex="1" pt="64px">
           {main}
         </Box>
         <Box as="footer" bottom="0">
