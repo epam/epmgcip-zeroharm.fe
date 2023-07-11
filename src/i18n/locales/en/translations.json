@@ -20,9 +20,9 @@
     "uz": "Uz"
   },
   "tabs": {
-    "air": "Air quality",
+    "air_quality": "Air quality",
     "uv": "UV Factor",
-    "noise": "Noise",
+    "noise_pollution": "Noise",
     "humidity": "Humidity",
     "pressure": "Pressure"
   },
@@ -33,7 +33,7 @@
     "tash_szajnochy": "Tashkent, ul. Szajnochy 103, Bydgoszcz 85-738 (Landmark: Museum)"
   },
   "cards": {
-    "noise": [
+    "noise_pollution": [
       {
         "icon": "<ReducingFromAppliancesNoise />",
         "title": "Safe noise level",
@@ -71,7 +71,7 @@
         "text": "Extremely high noise pollution can cause hearing loss. Try to escape from the noise source, find a place with thick walls, use protective headphones."
       }
     ],
-    "air": [
+    "air_quality": [
       {
         "icon": "<ReducingFromAppliancesNoise />",
         "title": "Normal air quality",
@@ -186,9 +186,16 @@
     "nh3": "Ammonia (NH3), colorless, pungent gas composed of nitrogen and hydrogen. High levels of ammonia can irritate and burn the skin, mouth, throat, lungs, and eyes. Very high levels of ammonia can damage the lungs or cause death.",
     "co": "Carbon monoxide (CO) is a colorless, odorless, and toxic gas that can cause health problems in humans, including headaches, dizziness, nausea, confusion, and even death at high concentrations. CO is mainly produced by the incomplete combustion of fossil fuels, such as in car engines, and is a significant source of air pollution.",
     "o3": "Ozone (O3) is a highly reactive gas composed of three oxygen atoms. Breathing ground-level ozone can trigger a variety of health problems including chest pain, coughing, throat irritation, and congestion. It can worsen bronchitis, emphysema, and asthma. Ozone also can reduce lung function and inflame the lining of the lungs. Repeated exposure may permanently scar lung tissue.",
-    "uv_index": "UV-index is an international standard measurement of the strength of the sunburn-produced ultraviolet (UV) radiation at a particular place and time. It estimates the level of sun UV radiation hazard for human's skin.",
+    "uv": "UV-index is an international standard measurement of the strength of the sunburn-produced ultraviolet (UV) radiation at a particular place and time. It estimates the level of sun UV radiation hazard for human's skin.",
     "noise_pollution": "Noise pollution is unwanted or excessive sound that can have deleterious effects on human health, wildlife, and environmental quality.",
     "humidity": "Humidity is the concentration of water vapor present in the air.",
-    "air_pressure": "Air pressure is the force exerted by air, whether compressed or unconfined, on any surface in contact with it."
+    "pressure": "Air pressure is the force exerted by air, whether compressed or unconfined, on any surface in contact with it."
+  },
+  "indexes": {
+    "air_quality": "air quality index",
+    "uv": "uv index",
+    "noise_pollution": "noise pollution index",
+    "humidity": "humidity index",
+    "pressure": "air pressure index"
   }
 }

@@ -6,14 +6,16 @@ export const styles = {
       height: "100%",
       minHeight: "100vh",
     },
-    "html, body, header": {
+    "html, body, header, footer": {
       backgroundColor: "#252526",
       color: "white",
     },
-    header: {
-      position: "fixed",
-      top: 0,
-      width: "100%",
+    "header, footer": {
+      height: "64px",
+      pos: "fixed",
+      w: "100%",
+      p: "16px 24px",
+      zIndex: "2",
     },
     a: {
       color: "white",

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Tabs as ChakraTabs,
   Tab,
@@ -6,18 +5,27 @@ import {
   TabPanel,
   TabPanels,
 } from "@chakra-ui/react";
+import { t } from "i18next";
 import Cards from "@UI/Card/Cards";
-import { getTranslationValues, getTranslationKeys } from "@/helpers";
+import { getTranslationKeys } from "@/helpers";
+import { useDataStore } from "@/store/useDataStore";
 
 const Tabs = () => {
-  const tabValues = getTranslationValues("tabs");
-  const tabKeys = getTranslationKeys("tabs");
-  const [currentTab, setCurrentTab] = useState(tabKeys[0]);
+  const { parameter, setParameter } = useDataStore();
+
+  const tabKeys = getTranslationKeys("tabs").filter(tab => !["uv", "noise_pollution"].includes(tab));
+  const tabValues = tabKeys.map(tabKey => t(`tabs.${tabKey}`));
+  const currentTab = parameter || tabKeys[0];
+  const defaultTabIndex = tabKeys.indexOf(parameter) || 0;
+
   const selected = { color: "white", borderBottom: "3px solid white" };
   const hover = { color: "white" };
 
   return (
-    <ChakraTabs variant="unstyled">
+    <ChakraTabs
+      defaultIndex={defaultTabIndex}
+      variant="unstyled"
+    >
       <TabList>
         {tabValues.map((tab, index) => (
           <Tab
@@ -29,7 +37,7 @@ const Tabs = () => {
             textAlign="center"
             _selected={selected}
             _hover={hover}
-            onClick={() => setCurrentTab(tabKeys[index])}
+            onClick={() => setParameter(tabKeys[index])}
           >
             {tab}
           </Tab>
