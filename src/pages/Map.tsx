@@ -2,6 +2,7 @@ import * as React from "react";
 import LayoutMapPage from "@Components/Layouts/LayoutMapPage";
 import Navigation from "@Components/Navigation/Navigation";
 import Aside from "@Components/Aside/Aside";
+import Footer from "@Components/Footer/Footer";
 import Map from "@Components/Map/Map";
 
 const PageMap = () => {
@@ -10,6 +11,7 @@ const PageMap = () => {
       header={<Navigation />}
       aside={<Aside />}
       main={<Map />}
+      footer={<Footer />}
     />
   );
 };

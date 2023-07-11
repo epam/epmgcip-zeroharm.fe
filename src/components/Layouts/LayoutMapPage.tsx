@@ -5,12 +5,14 @@ type LayoutMapPageType = {
   header: React.ReactNode;
   aside: React.ReactNode;
   main: React.ReactNode;
+  footer: React.ReactNode;
 };
 
 const LayoutMapPage: React.FC<LayoutMapPageType> = ({
   header,
   aside,
   main,
+  footer,
 }) => {
   return (
     <>
@@ -26,6 +28,9 @@ const LayoutMapPage: React.FC<LayoutMapPageType> = ({
             {main}
           </Box>
         </Flex>
+        <Box as="footer" pos="initial" >
+          {footer}
+        </Box>
       </Flex>
     </>
   );
