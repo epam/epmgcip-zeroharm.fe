@@ -18,12 +18,16 @@ const Tabs = () => {
   );
   const tabValues = tabKeys.map((tabKey) => t(`tabs.${tabKey}`));
   const currentTab = parameter || tabKeys[0];
+  const defaultTabIndex = tabKeys.indexOf(currentTab);
 
   const selected = { color: "white", borderBottom: "3px solid white" };
   const hover = { color: "white" };
 
   return (
-    <ChakraTabs variant="unstyled">
+    <ChakraTabs
+      defaultIndex={defaultTabIndex}
+      variant="unstyled"
+    >
       <TabList>
         {tabValues.map((tab, index) => (
           <Tab

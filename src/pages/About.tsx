@@ -3,6 +3,7 @@ import { Container, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import LayoutAboutPage from "@Components/Layouts/LayoutAboutPage";
 import Navigation from "@Components/Navigation/Navigation";
 import aboutImage from "@/assets/images/about.jpg";
+import Footer from "@/components/Footer/Footer";
 
 const PageAbout = () => {
   const About = () => (
@@ -65,7 +66,13 @@ const PageAbout = () => {
     </>
   );
 
-  return <LayoutAboutPage header={<Navigation />} main={<About />} />;
+  return (
+    <LayoutAboutPage
+      header={<Navigation />}
+      main={<About />}
+      footer={<Footer />}
+    />
+  );
 };
 
 export default PageAbout;
