@@ -10,7 +10,9 @@ const Navigation: React.FC = () => {
 
   return (
     <Flex>
-      <img src={logo} alt="logo" width={135} />
+      <Link to="/">
+        <img src={logo} alt="logo" width={135} />
+      </Link>
       <Spacer />
       <Flex p="4px" gap="32px">
         <Link to="/">{t("pages.home.name")}</Link>
