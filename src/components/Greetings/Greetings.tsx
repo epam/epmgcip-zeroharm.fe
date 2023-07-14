@@ -8,7 +8,7 @@ const Greetings = () => {
 
   return (
     <Flex
-      p="140px 80px 0 80px"
+      p="120px 80px 0 80px"
       direction="column"
       gap="32px"
       alignItems="flex-end"
