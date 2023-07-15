@@ -11,7 +11,7 @@ type IndexDateType = {
 export const Indicators: React.FC<IndexDateType> = ({ children }) => {
   const currentTimeAndDAte = getDate();
   const colors = ["red", "orange", "green"];
-  const hints = ["PM2.5", "PM10", "PM1", "NO", "NO2", "NH3", "CO", "O3"];
+  const hints = ["PM2.5", "PM10", "PM1", "NO", "NO2", "NH3", "CO", "O3", "SO2"];
 
   return (
     <Wrapper>
