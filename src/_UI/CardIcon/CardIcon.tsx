@@ -8,9 +8,9 @@ const CardIcon = (props: CardIconProps) => {
 
   const { error, loading, SvgIcon } = useDynamicSVGImport(name);
 
-  // if (error) {
-  //   return <p> "This is error.."</p>;
-  // }
+  if (error) {
+    return <p>"This is error.."</p>;
+  }
 
   if (loading) {
     return <p>"Loading...";</p>;
@@ -23,7 +23,7 @@ const CardIcon = (props: CardIconProps) => {
     return <p>"No SVGIcon";</p>;
   }
 
-  return <p>Nothing to return</p>;
+  return null;
 };
 
 export default CardIcon;
