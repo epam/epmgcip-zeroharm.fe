@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Page404, PageHome, PageAbout, PageMap } from "@/pages";
+import { Page404, PageHome, PageAbout, PageMap, PageForm } from "@/pages";
 import i18n from "i18next";
 import "@/i18n/i18n";
 import { useDataStore } from "@/store/useDataStore";
@@ -17,6 +17,7 @@ function App() {
         <Route index element={<PageHome />} />
         <Route path="about" element={<PageAbout />} />
         <Route path="map" element={<PageMap />} />
+        <Route path="form" element={<PageForm />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </>
