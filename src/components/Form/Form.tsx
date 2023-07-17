@@ -6,6 +6,7 @@ import {
   Input,
   Button,
   Textarea,
+  Checkbox,
 } from "@chakra-ui/react";
 
 export const Form = () => {
@@ -60,6 +61,10 @@ export const Form = () => {
         <FormErrorMessage>
           {errors.feedback && errors.feedback.message?.toString()}
         </FormErrorMessage>
+      </FormControl>
+      <FormControl>
+        <FormLabel htmlFor="response">I want to get a response</FormLabel>
+        <Checkbox id="response" />
       </FormControl>
       <Button mt={4} colorScheme="teal" isLoading={isSubmitting} type="submit">
         Send
