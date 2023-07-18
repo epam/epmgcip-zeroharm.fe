@@ -1,11 +1,12 @@
 import * as React from "react";
 import { Flex, Box, chakra } from "@chakra-ui/react";
+import CardIcon from "../CardIcon/CardIcon";
 
 type CardType = {
   color?: string;
   subheading?: string;
   heading?: string;
-  icon?: React.ReactNode;
+  icon: string;
   children?: React.ReactNode;
   height?: string;
 };
@@ -53,21 +54,6 @@ const CardHeading = chakra(Box, {
   },
 });
 
-// const CardIconBox: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-//   <chakra.div
-//     sx={{
-//       opacity: ".2",
-//       position: "absolute",
-//       right: "18px",
-//       top: "50%",
-//       transform: "translate(0, -50%)",
-//       svg: { width: "124px", height: "100%" },
-//     }}
-//   >
-//     {children}
-//   </chakra.div>
-// );
-
 const CardIconBox = chakra("div", {
   shouldForwardProp: (prop) => !["sample"].includes(prop),
   baseStyle: {
@@ -88,6 +74,7 @@ const Card: React.FC<CardType> = ({
   height,
   children,
 }) => {
+
   return (
     <>
       <CardHeader bg={`${color}.500`}>
@@ -96,7 +83,7 @@ const Card: React.FC<CardType> = ({
           <CardHeading>{heading}</CardHeading>
         </CardText>
         <CardIconBox>
-          {icon}
+          <CardIcon name={icon} />
         </CardIconBox>
       </CardHeader>
       <CardBody bg={`${color}.50`} h={height}>

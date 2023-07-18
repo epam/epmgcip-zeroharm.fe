@@ -1,4 +1,4 @@
-import { useState, ReactNode, FC } from "react";
+import { useState, ReactNode, FC, useEffect } from "react";
 import { Flex, Box, chakra, Text } from "@chakra-ui/react";
 import translations from "@/i18n/locales/en/translations.json";
 
@@ -64,15 +64,18 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
   const cardsTrans: any = translations?.cards;
   const cards = cardsTrans[cardsKey];
   const [cardIndex, setCardIndex] = useState(0);
+  const [currentCard, setCurrentCard] = useState(cards[cardIndex]);
+
+  useEffect(() => {
+    setCurrentCard(cards[cardIndex]);
+  }, [cardIndex]);
 
   const isNavigation = cards.length > 0;
   const isLeftActive = cardIndex > 0;
   const isRightActive = cardIndex < cards.length - 1;
 
-  const currentCard = cards[cardIndex];
-
-  const handleClick = (value: any) => {
-    setCardIndex((previous: any) => previous + value);
+  const handleClick = (value: number) => {
+    setCardIndex((previous: number) => previous + value);
   };
 
   return (

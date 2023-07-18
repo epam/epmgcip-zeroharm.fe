@@ -8,10 +8,11 @@ type IndexDateType = {
   children?: React.ReactNode;
 };
 
+const hints = ["PM2.5", "PM10", "NO2", "CO", "O3", "SO2"];
+
 export const Indicators: React.FC<IndexDateType> = ({ children }) => {
   const currentTimeAndDAte = getDate();
   const colors = ["red", "orange", "green"];
-  const hints = ["PM2.5", "PM10", "PM1", "NO", "NO2", "NH3", "CO", "O3"];
 
   return (
     <Wrapper>
@@ -23,16 +24,12 @@ export const Indicators: React.FC<IndexDateType> = ({ children }) => {
           {currentTimeAndDAte}
         </Box>
       </Flex>
-      {hints.map(
-        (i) => {
-          const randLength = Math.floor(Math.random() * 90);
-          const color = colors[Math.floor(Math.random() * colors.length)];
+      {hints.map((i) => {
+        const randLength = Math.floor(Math.random() * 90);
+        const color = colors[Math.floor(Math.random() * colors.length)];
 
-          return (
-            <Indicator size={randLength} title={i} key={i} color={color} />
-          );
-        }
-      )}
+        return <Indicator size={randLength} title={i} key={i} color={color} />;
+      })}
     </Wrapper>
   );
 };

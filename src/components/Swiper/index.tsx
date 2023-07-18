@@ -8,7 +8,7 @@ const mockSwiperData = [
   {
     heading: "Very poor air",
     subheading: "Air Quality tip",
-    icon: <SadIcon />,
+    icon: "harm-worried-face",
     question: "WHY AND WHAT TO DO?",
     text: "Health warnings of emergency conditions. The entire population is more likely to be affected.",
     parameter: "air_quality",
@@ -17,7 +17,7 @@ const mockSwiperData = [
   {
     heading: "Very poor air_1",
     subheading: "Air Quality tip_1",
-    icon: <SadIcon />,
+    icon: "harm-worried-face",
     question: "WHY AND WHAT TO DO?_1",
     text: "Health warnings of emergency conditions. The entire population is more likely to be affected._1",
     parameter: "humidity",
@@ -26,7 +26,7 @@ const mockSwiperData = [
   {
     heading: "Very poor air_2",
     subheading: "Air Quality tip_2",
-    icon: <SadIcon />,
+    icon: "harm-worried-face",
     question: "WHY AND WHAT TO DO?_2",
     text: "Health warnings of emergency conditions. The entire population is more likely to be affected._1",
     parameter: "pressure",
