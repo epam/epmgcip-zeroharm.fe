@@ -26,7 +26,7 @@ export const Form = () => {
         <FormLabel htmlFor="name">First name</FormLabel>
         <Input
           id="name"
-          placeholder="name"
+          placeholder="Mary"
           {...register("name", {
             required: "This is required",
             minLength: { value: 4, message: "Minimum length should be 4" },
@@ -40,7 +40,7 @@ export const Form = () => {
         <FormLabel htmlFor="feedback">Email</FormLabel>
         <Input
           id="email"
-          placeholder="email"
+          placeholder="mary@epam.com"
           {...register("email", {
             required: "This is required",
           })}
@@ -53,7 +53,7 @@ export const Form = () => {
         <FormLabel htmlFor="feedback">My feedback *</FormLabel>
         <Textarea
           id="feedback"
-          placeholder="feedback"
+          placeholder="Write your feedback or suggestion here"
           {...register("feedback", {
             required: "This is required",
           })}
