@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   Tabs as ChakraTabs,
   Tab,
@@ -20,6 +21,10 @@ const Tabs = () => {
 
   const selected = { color: "white", borderBottom: "3px solid white" };
   const hover = { color: "white" };
+
+  useEffect(() => {
+    setParameter(currentTab);
+  }, []);
 
   return (
     <ChakraTabs

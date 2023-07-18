@@ -2,25 +2,22 @@ import * as React from "react";
 import { Progress as ChakraProgress, ProgressProps } from "@chakra-ui/react";
 
 type ProgressType = ProgressProps & {
-  isGradient?: boolean;
+  withPointer?: boolean;
+  pointerPosition?: number
 };
 
 export const Progress: React.FC<ProgressType> = ({
   colorScheme,
   value,
-  isGradient,
+  withPointer,
+  pointerPosition
 }) => {
-  const gradientStyles = isGradient && {
-    bgGradient:
-      "linear-gradient(90deg, #339944 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #7D5BA6 100%);",
-    overflow: "visible",
-    bg: "none",
-    colorScheme: "none",
+  const withPointerStyles = withPointer && {
     _before: {
       content: "''",
       position: "absolute",
-      top: "-2px",
-      left: `calc(${value || 0}% - 2px)`,
+      top: "-3px",
+      left: `calc(${pointerPosition}% - 8px)`,
       boxSize: "8px",
       zIndex: "10",
       bg: "white",
@@ -33,9 +30,11 @@ export const Progress: React.FC<ProgressType> = ({
 
   return (
     <ChakraProgress
+      w="100%"
+      overflow="initial"
       value={value}
       colorScheme={colorScheme}
-      {...gradientStyles}
+      {...withPointerStyles}
     />
   );
 };
