@@ -15,7 +15,7 @@
     },
     "footer": {
       "text": "All data is provided in collaboration with the",
-      "link": "Center of Hydrometeorological Service of the Republic of Uzbekistan (Uzhydromet)", 
+      "link": "Center of Hydrometeorological Service of the Republic of Uzbekistan (Uzhydromet)",
       "button": "Leave a feedback"
     }
   },
@@ -197,6 +197,7 @@
     "nh3": "Ammonia (NH3), colorless, pungent gas composed of nitrogen and hydrogen. High levels of ammonia can irritate and burn the skin, mouth, throat, lungs, and eyes. Very high levels of ammonia can damage the lungs or cause death.",
     "co": "Carbon monoxide (CO) is a colorless, odorless, and toxic gas that can cause health problems in humans, including headaches, dizziness, nausea, confusion, and even death at high concentrations. CO is mainly produced by the incomplete combustion of fossil fuels, such as in car engines, and is a significant source of air pollution.",
     "o3": "Ozone (O3) is a highly reactive gas composed of three oxygen atoms. Breathing ground-level ozone can trigger a variety of health problems including chest pain, coughing, throat irritation, and congestion. It can worsen bronchitis, emphysema, and asthma. Ozone also can reduce lung function and inflame the lining of the lungs. Repeated exposure may permanently scar lung tissue.",
+    "so2": "Sulfur Dioxide (SO2) is a highly reactive, heavy colorless and poisonous gas that causes eyes irritation, inflammation of respiratory organs, asthma and chronic bronchitis aggravation and can lead to shortness of breath, wheezing and suffocation. SO2 is produced by burning fossil fuels, smelting mineral ores and is emitted by transport vehicles.",
     "uv": "UV-index is an international standard measurement of the strength of the sunburn-produced ultraviolet (UV) radiation at a particular place and time. It estimates the level of sun UV radiation hazard for human's skin.",
     "noise_pollution": "Noise pollution is unwanted or excessive sound that can have deleterious effects on human health, wildlife, and environmental quality.",
     "humidity": "Humidity is the concentration of water vapor present in the air.",
