@@ -78,37 +78,37 @@
     ],
     "air_quality": [
       {
-        "icon": "<ReducingFromAppliancesNoise />",
+        "icon": "harm-slightly-smiling-face",
         "title": "Normal air quality",
         "subtitle": "WHY and what to do?",
         "text": "Air is clean. It is safe to be outdoors even for people with diseases of the respiratory system."
       },
       {
-        "icon": "<ReducingFromAppliancesNoise />",
+        "icon": "harm-neutral-face",
         "title": "Moderate air quality",
         "subtitle": "WHY and what to do?",
         "text": "Air is quite clean, but some indicators can be increased. It is safe to be outside but people with respiratory or allergic diseases can feel discomfort."
       },
       {
-        "icon": "<ReducingFromAppliancesNoise />",
+        "icon": "harm-worried-face",
         "title": "High level of air pollution",
         "subtitle": "WHY and what to do?",
         "text": "One or more pollution indicators are above normal. People with respiratory and allergic diseases need respiratory protection."
       },
       {
-        "icon": "<ReducingFromAppliancesNoise />",
+        "icon": "harm-more-worried-face",
         "title": "Rather dangerous level of air pollution",
         "subtitle": "WHY and what to do?",
         "text": "The level of air pollution is above average. People with respiratory and allergic diseases need serious protection and may need medicines. Even if you don’t have respiratory or allergic diseases, use a respirator."
       },
       {
-        "icon": "<ReducingFromAppliancesNoise />",
+        "icon": "harm-disappointed-face",
         "title": "Hazardous air pollution",
         "subtitle": "WHY and what to do?",
         "text": "Dangerous level of air pollution. Try to enter the room or use respiratory protection: a respirator, a mask. Don't go out unless necessary."
       },
       {
-        "icon": "<ReducingFromAppliancesNoise />",
+        "icon": "harm-loudly-crying-face",
         "title": "Extremely aggressive air pollution",
         "subtitle": "WHY and what to do?",
         "text": "Maximum concentration of harmful substances in the air! Stay indoors, use personal protection equipment: a respirator with a cleaning valve, filters or a special cartridge, even indoors."
@@ -148,16 +148,19 @@
     ],
     "humidity": [
       {
+        "icon": "harm-neutral-face",
         "title": "High humidity",
         "subtitle": "WHY and what to do?",
         "text": "Increased air humidity can negatively affect the well-being of people with cardiovascular diseases, asthma. If possible, use a dehumidifier. Ventilate the room every hour, move the curtains from the window so that light can enter the room."
       },
       {
+        "icon": "harm-slightly-smiling-face",
         "title": "Normal humidity",
         "subtitle": "WHY and what to do?",
         "text": "Optimum air humidity! Enjoy a walk or stay indoors enjoying comfortable air quality!"
       },
       {
+        "icon": "harm-disappointed-face",
         "title": "Extremely dry air",
         "subtitle": "WHY and what to do?",
         "text": "Too dry air negatively affects the mucous membranes, increases the concentration of harmful substances in the air. People with respiratory and allergic diseases, bronchial diseases experience discomfort. Use an indoor humidifier. Drink more water of room temperature. In the absence of a humidifier, wet the textiles and hang them in the room. With a combination of low humidity and high air temperature, arrange containers with water all over the room. As it evaporates, it will raise the level of humidity in the room."
@@ -165,16 +168,19 @@
     ],
     "pressure": [
       {
+        "icon": "harm-disappointed-face",
         "title": "Low air pressure",
         "subtitle": "WHY and what to do?",
         "text": "It brings discomfort to people with diseases of the cardiovascular system, respiratory system, musculoskeletal system and diabetes mellitus, people in the recovery period after diseases or operations, weather-sensitive people, hypotensive patients. In the absence of contraindications, it is recommended to do a short physical workout, take a short walk, take a contrast shower. Postpone active physical activity, give preference to low-carb foods."
       },
       {
+        "icon": "harm-slightly-smiling-face",
         "title": "Normal pressure",
         "subtitle": "WHY and what to do?",
         "text": "Enjoy this day!"
       },
       {
+        "icon": "harm-worried-face",
         "title": "High air pressure",
         "subtitle": "WHY and what to do?",
         "text": "Brings discomfort to people with allergies, cardiovascular diseases, asthma and hypertension, especially in combination with dry calm weather. Try to avoid increased physical activity, drink more water, add foods and vitamins containing potassium (K) and magnesium (Mg) to your diet."
