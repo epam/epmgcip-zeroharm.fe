@@ -19,25 +19,25 @@
       "button": ""
     },
     "form": {
-      "required_notification": "",
-      "incorrectly_notification": "",
+      "required_notification": "Taklif yuborish uchun barcha kerakli maydonlarni toʻldiring!",
+      "incorrectly_notification": "Maydonni toʻgʻri toʻldiring.",
       "name": {
-        "label": "",
-        "placeholder": "",
+        "label": "Ism",
+        "placeholder": "Feruza",
         "tip": ""
       },
       "email": {
-        "label": "",
-        "placeholder": "",
+        "label": "email",
+        "placeholder": "mary@epam.com",
         "tip": ""
       },
       "feedback": {
-        "label": "",
-        "placeholder": "",
+        "label": "Ko'rib chiqish",
+        "placeholder": "Xizmat haqida o'z takliflaringizni, fikr-mulohazalaringizni shu yerda yozing",
         "tip": ""
       },
       "checkbox": {
-        "label": "",
+        "label": "Men javob olmoqchiman",
         "tip": ""
       }
     }
