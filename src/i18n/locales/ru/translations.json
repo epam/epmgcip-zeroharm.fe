@@ -17,6 +17,29 @@
       "text": "Все данные предоставлены при поддержке",
       "link": "Центра Гидрометеорологической Cлужбы Республики Узбекистан (Узгидромет)",
       "button": "Добавить отзыв"
+    },
+    "form": {
+      "required_notification": "Заполните все обязательные поля для отправки предложения!",
+      "incorrectly_notification": "Заполните поле корректно.",
+      "name": {
+        "label": "Имя",
+        "placeholder": "Мария",
+        "tip": ""
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "mary@epam.com",
+        "tip": ""
+      },
+      "feedback": {
+        "label": "Отзыв",
+        "placeholder": "Напишите свои предложения, отзыв о сервисе здесь",
+        "tip": ""
+      },
+      "checkbox": {
+        "label": "I want to get a response",
+        "tip": "Check if you want to receive a response from our team"
+      }
     }
   },
   "lang": {

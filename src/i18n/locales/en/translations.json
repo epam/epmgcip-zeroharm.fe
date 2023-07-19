@@ -17,6 +17,29 @@
       "text": "All data is provided in collaboration with the",
       "link": "Center of Hydrometeorological Service of the Republic of Uzbekistan (Uzhydromet)",
       "button": "Leave a feedback"
+    },
+    "form": {
+      "required_notification": "Fill in all the required fields to submit your feedback!",
+      "incorrectly_notification": "Fill in the field correctly",
+      "name": {
+        "label": "Name",
+        "placeholder": "Mary",
+        "tip": "Write your name here"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "mary@epam.com",
+        "tip": "Write your email here"
+      },
+      "feedback": {
+        "label": "My feedback",
+        "placeholder": "Write your feedback or suggestion here",
+        "tip": "We are glad to receive feedback from you! Write your feedback or suggestion here, use no more than 500 symbols!"
+      },
+      "checkbox": {
+        "label": "I want to get a response",
+        "tip": "Check if you want to receive a response from our team"
+      }
     }
   },
   "lang": {
