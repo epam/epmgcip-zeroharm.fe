@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import {
+  Box,
   FormErrorMessage,
   FormLabel,
   FormControl,
@@ -7,7 +8,10 @@ import {
   Button,
   Textarea,
   Checkbox,
+  Flex,
+  Tooltip,
 } from "@chakra-ui/react";
+import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
 
 export const Form = () => {
   const {
@@ -23,7 +27,19 @@ export const Form = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <FormControl isInvalid={Boolean(errors.name)}>
-        <FormLabel htmlFor="name">First name</FormLabel>
+        <Flex gap="10px" fontSize="16px">
+          <Tooltip
+            label="Write your name here"
+            hasArrow
+            placement="right-start"
+            variant="default"
+          >
+            <Box w="6" opacity=".5">
+              <InfoFill style={{ width: 16, height: 16 }} />
+            </Box>
+          </Tooltip>
+          <FormLabel htmlFor="name">First name</FormLabel>
+        </Flex>
         <Input
           id="name"
           placeholder="Mary"
@@ -37,7 +53,19 @@ export const Form = () => {
         </FormErrorMessage>
       </FormControl>
       <FormControl isInvalid={Boolean(errors.email)}>
-        <FormLabel htmlFor="feedback">Email</FormLabel>
+        <Flex gap="10px" fontSize="16px">
+          <Tooltip
+            label="Write your email here"
+            hasArrow
+            placement="right-start"
+            variant="default"
+          >
+            <Box w="6" opacity=".5">
+              <InfoFill style={{ width: 16, height: 16 }} />
+            </Box>
+          </Tooltip>
+          <FormLabel htmlFor="feedback">Email</FormLabel>
+        </Flex>
         <Input
           id="email"
           placeholder="mary@epam.com"
@@ -50,7 +78,19 @@ export const Form = () => {
         </FormErrorMessage>
       </FormControl>
       <FormControl isInvalid={Boolean(errors.feedback)}>
-        <FormLabel htmlFor="feedback">My feedback *</FormLabel>
+        <Flex gap="10px" fontSize="16px">
+          <Tooltip
+            label="We are glad to receive feedback from you! Write your feedback or suggestion here, use no more than 500 symbols!"
+            hasArrow
+            placement="right-start"
+            variant="default"
+          >
+            <Box w="6" opacity=".5">
+              <InfoFill style={{ width: 16, height: 16 }} />
+            </Box>
+          </Tooltip>
+          <FormLabel htmlFor="feedback">My feedback *</FormLabel>
+        </Flex>
         <Textarea
           id="feedback"
           placeholder="Write your feedback or suggestion here"
@@ -63,8 +103,20 @@ export const Form = () => {
         </FormErrorMessage>
       </FormControl>
       <FormControl>
-        <FormLabel htmlFor="response">I want to get a response</FormLabel>
-        <Checkbox id="response" />
+        <Flex gap="10px" fontSize="16px">
+          <Tooltip
+            label="Check if you want to receive a response from our team"
+            hasArrow
+            placement="right-start"
+            variant="default"
+          >
+            <Box w="6" opacity=".5">
+              <InfoFill style={{ width: 16, height: 16 }} />
+            </Box>
+          </Tooltip>
+          <Checkbox id="response" />
+          <FormLabel htmlFor="response">I want to get a response</FormLabel>
+        </Flex>
       </FormControl>
       <Button mt={4} colorScheme="teal" isLoading={isSubmitting} type="submit">
         Send
