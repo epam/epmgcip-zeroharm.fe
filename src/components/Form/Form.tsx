@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import {
   Box,
   FormErrorMessage,
@@ -13,14 +13,20 @@ import {
 } from "@chakra-ui/react";
 import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
 
+type FormData = {
+  name: string;
+  email: string;
+  feedback: string;
+  response: boolean;
+};
 export const Form = () => {
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
-  } = useForm();
+  } = useForm<FormData>();
 
-  const onSubmit = (values: any) => {
+  const onSubmit: SubmitHandler<FormData> = (values) => {
     console.log(values);
   };
 
@@ -114,7 +120,7 @@ export const Form = () => {
               <InfoFill style={{ width: 16, height: 16 }} />
             </Box>
           </Tooltip>
-          <Checkbox id="response" />
+          <Checkbox id="response" {...register("response")} />
           <FormLabel htmlFor="response">I want to get a response</FormLabel>
         </Flex>
       </FormControl>
