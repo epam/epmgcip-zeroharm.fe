@@ -23,11 +23,16 @@ export const Form = () => {
   const {
     handleSubmit,
     register,
+    getValues,
     formState: { errors, isSubmitting },
   } = useForm<FormData>();
 
   const onSubmit: SubmitHandler<FormData> = (values) => {
     console.log(values);
+  };
+
+  const required = (value: string) => {
+    return !value && getValues("response") ? "Fill in all the required fields to submit your feedback!" : true;
   };
 
   return (
@@ -50,8 +55,9 @@ export const Form = () => {
           id="name"
           placeholder="Mary"
           {...register("name", {
-            required: "This is required",
-            minLength: { value: 4, message: "Minimum length should be 4" },
+            validate: {
+              required,
+            },
           })}
         />
         <FormErrorMessage>
@@ -76,7 +82,9 @@ export const Form = () => {
           id="email"
           placeholder="mary@epam.com"
           {...register("email", {
-            required: "This is required",
+            validate: {
+              required,
+            },
           })}
         />
         <FormErrorMessage>
@@ -101,7 +109,7 @@ export const Form = () => {
           id="feedback"
           placeholder="Write your feedback or suggestion here"
           {...register("feedback", {
-            required: "This is required",
+            required: "Fill in all the required fields to submit your feedback!",
           })}
         />
         <FormErrorMessage>
