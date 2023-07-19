@@ -37,8 +37,8 @@
         "tip": ""
       },
       "checkbox": {
-        "label": "I want to get a response",
-        "tip": "Check if you want to receive a response from our team"
+        "label": " Я хочу получить ответ",
+        "tip": ""
       }
     }
   },
