@@ -32,7 +32,9 @@ export const Form = () => {
   };
 
   const required = (value: string) => {
-    return !value && getValues("response") ? "Fill in all the required fields to submit your feedback!" : true;
+    return !value && getValues("response")
+      ? "Fill in all the required fields to submit your feedback!"
+      : true;
   };
 
   return (
@@ -55,6 +57,10 @@ export const Form = () => {
           id="name"
           placeholder="Mary"
           {...register("name", {
+            pattern: {
+              value: /^[A-Za-z А-Яа-я]{0,50}$/,
+              message: "Fill in the field correctly",
+            },
             validate: {
               required,
             },
@@ -109,7 +115,8 @@ export const Form = () => {
           id="feedback"
           placeholder="Write your feedback or suggestion here"
           {...register("feedback", {
-            required: "Fill in all the required fields to submit your feedback!",
+            required:
+              "Fill in all the required fields to submit your feedback!",
           })}
         />
         <FormErrorMessage>
