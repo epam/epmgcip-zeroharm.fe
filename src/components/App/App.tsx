@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import i18n from "i18next";
-
 import { Page404, PageHome, PageAbout, PageMap } from "@/pages";
 import { useDataStore } from "@/store/useDataStore";
 import { useFetch } from "@/hooks";
