@@ -10,12 +10,13 @@ type IndexDateType = {
   children?: React.ReactNode;
 };
 
+const hints = ["PM2.5", "PM10", "NO2", "CO", "O3", "SO2"];
+
 export const Indicators: React.FC<IndexDateType> = ({ children }) => {
   const { parametersValues } = useDataStore();
 
   const currentTimeAndDAte = getDate();
   const colors = ["red", "orange", "green"];
-  const hints = ["PM2.5", "PM10", "NO2", "CO", "O3", "SO2"];
 
   return (
     <Wrapper>

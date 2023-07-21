@@ -14,8 +14,10 @@ import { useDataStore } from "@/store/useDataStore";
 const Tabs = () => {
   const { parameter, setParameter } = useDataStore();
 
-  const tabKeys = getTranslationKeys("tabs").filter(tab => !["uv", "noise_pollution"].includes(tab));
-  const tabValues = tabKeys.map(tabKey => t(`tabs.${tabKey}`));
+  const tabKeys = getTranslationKeys("tabs").filter(
+    (tab) => !["uv", "noise_pollution"].includes(tab)
+  );
+  const tabValues = tabKeys.map((tabKey) => t(`tabs.${tabKey}`));
   const currentTab = parameter || tabKeys[0];
   const defaultTabIndex = tabKeys.indexOf(currentTab);
 
