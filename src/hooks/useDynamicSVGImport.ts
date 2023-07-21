@@ -18,7 +18,7 @@ const useDynamicSVGImport = (name: string) => {
     importIcon();
   }, [name]);
 
-  return { SvgIcon };
+  return SvgIcon;
 };
 
 export default useDynamicSVGImport;

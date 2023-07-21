@@ -6,7 +6,7 @@ interface CardIconProps {
 const CardIcon = (props: CardIconProps) => {
   const { name } = props;
 
-  const { SvgIcon } = useDynamicSVGImport(name);
+  const SvgIcon = useDynamicSVGImport(name);
 
   if (SvgIcon) {
     return <SvgIcon />;
