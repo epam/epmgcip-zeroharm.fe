@@ -1,11 +1,10 @@
 import useDynamicSVGImport from "../../hooks/useDynamicSVGImport";
-interface CardIconProps {
+
+type CardIconProps = {
   name: string;
-}
+};
 
-const CardIcon = (props: CardIconProps) => {
-  const { name } = props;
-
+const CardIcon: React.FC<CardIconProps> = ({ name }) => {
   const SvgIcon = useDynamicSVGImport(name);
 
   if (SvgIcon) {
