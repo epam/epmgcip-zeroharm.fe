@@ -2,6 +2,7 @@
 import { Box, Flex } from "@chakra-ui/react";
 import * as React from "react";
 import { useState } from "react";
+import { t } from "i18next";
 
 type PopupType = {
   isOpen?: boolean;
@@ -40,7 +41,7 @@ export const Popup: React.FC<PopupType> = ({ isOpen = false, children }) => {
         fontWeight="700"
         cursor="pointer"
       >
-        Close
+        {t("pages.home.close")}
       </Box>
     </Flex>
   );

@@ -5,7 +5,8 @@
       "get_tips": "",
       "protect": "",
       "open_map": "",
-      "chose_location": ""
+      "chose_location": "",
+      "close": ""
     },
     "map": {
       "name": ""

@@ -5,7 +5,8 @@
       "get_tips": "Get daily tips",
       "protect": "Protect your health from the environmental pollution effects",
       "open_map": "Open a map",
-      "chose_location": "Not your location? You may choose yours from the list."
+      "chose_location": "Not your location? You may choose yours from the list.",
+      "close": "Close"
     },
     "map": {
       "name": "Map"
