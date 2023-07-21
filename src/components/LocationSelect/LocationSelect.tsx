@@ -7,6 +7,7 @@ import { getTranslationValues } from "@/helpers";
 const selectStyleConfig = {
   container: {
     cursor: "auto",
+    width: "100%"
   },
   control: {
     cursor: "auto !important",
