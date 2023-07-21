@@ -8,7 +8,7 @@ import { t } from "i18next";
 const Selector = () => {
   return (
     <Flex
-      p="140px 0 0 80px"
+      p="70px 0 0 80px"
       direction="column"
       gap="16px"
       maxWidth="540px"
