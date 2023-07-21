@@ -4,26 +4,11 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { getDate } from "@/helpers";
 import { Indicator } from "@UI/Indicator/Indicator";
 import { useDataStore } from "@/store/useDataStore";
+import { particlesAliases, ParticlesAliasesKeyType } from "@/constants";
 
 type IndexDateType = {
   children?: React.ReactNode;
 };
-
-const mapKeysToParticleNames = {
-  "PM2.5": "pm2_5",
-  "PM10": "pm10",
-  "PM1": "",
-  "NO": "",
-  "NO2": "nitrogen_dioxide",
-  "NH3": "",
-  "CO": "carbon_monoxide",
-  "O3": "ozone",
-  "SO2": "sulfur_dioxide"
-};
-
-type ParticleType = keyof typeof mapKeysToParticleNames;
-type ParticleNames = "pm2_5" | "pm10" | "nitrogen_dioxide" | "carbon_monoxide" | "ozone" | "sulfur_dioxide";
-
 
 export const Indicators: React.FC<IndexDateType> = ({ children }) => {
   const { parametersValues } = useDataStore();
@@ -45,8 +30,8 @@ export const Indicators: React.FC<IndexDateType> = ({ children }) => {
       {hints.map(
         (hint) => {
           const color = colors[Math.floor(Math.random() * colors.length)];
-          const particleName = mapKeysToParticleNames[hint as ParticleType];
-          const particleValue = parametersValues[particleName as ParticleNames] || 0;
+          const particleName = particlesAliases[hint as ParticlesAliasesKeyType];
+          const particleValue = parametersValues[particleName];
           const particleValueStr = String(particleValue);
           const roundedParticleValue = parseFloat(particleValueStr.slice(0, particleValueStr.indexOf(".") + 3));
 
