@@ -5,16 +5,10 @@ import {
   Link as ChakraLink,
   Button,
   useDisclosure,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
 } from "@chakra-ui/react";
 import { t } from "i18next";
 import Form from "../Form/Form";
+import Modal from "@/_UI/Modal/Modal";
 
 const Footer: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -30,20 +24,8 @@ const Footer: React.FC = () => {
       <Button size="xs" onClick={onOpen}>
         {t("pages.footer.button")}
       </Button>
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader w={"initial"} pos={"initial"}>Help us be better</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Form />
-          </ModalBody>
-          <ModalFooter w={"initial"} pos={"initial"}>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
-              Send Feedback
-            </Button>
-          </ModalFooter>
-        </ModalContent>
+      <Modal isOpen={isOpen} onClose={onClose} title=" Help us be better" textBtn="Send Feedback">
+        <Form />
       </Modal>
     </Flex>
   );
