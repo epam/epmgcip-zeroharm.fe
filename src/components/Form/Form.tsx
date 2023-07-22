@@ -119,6 +119,7 @@ export const Form = () => {
           id="feedback"
           placeholder="Write your feedback or suggestion here"
           {...register("feedback", {
+            maxLength: {value: 500, message: "Fill in the field correctly"},
             required:
               "Fill in all the required fields to submit your feedback!",
           })}
