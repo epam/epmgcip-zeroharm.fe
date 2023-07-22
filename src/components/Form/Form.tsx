@@ -88,6 +88,10 @@ export const Form = () => {
           id="email"
           placeholder="mary@epam.com"
           {...register("email", {
+            pattern: {
+              value: /[a-z0-9_-]+@[a-z]+\.[a-z]{2,4}/g,
+              message: "Fill in the field correctly",
+            },
             validate: {
               required,
             },
