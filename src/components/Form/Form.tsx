@@ -19,6 +19,7 @@ type FormData = {
   feedback: string;
   response: boolean;
 };
+
 export const Form = () => {
   const {
     handleSubmit,
@@ -58,7 +59,7 @@ export const Form = () => {
           placeholder="Mary"
           {...register("name", {
             pattern: {
-              value: /^[A-Za-z А-Яа-я]{0,50}$/,
+              value: /^[A-Za-z А-Яа-я]{2,50}$/,
               message: "Fill in the field correctly",
             },
             validate: {
@@ -88,8 +89,10 @@ export const Form = () => {
           id="email"
           placeholder="mary@epam.com"
           {...register("email", {
+            minLength: 2,
+            maxLength: 50,
             pattern: {
-              value: /[a-z0-9_-]+@[a-z]+\.[a-z]{2,4}/g,
+              value: /[A-Za-zА-Яа-я0-9_-]+@[A-Za-zА-Яа-я]+\.[A-Za-zА-Яа-я]{2,4}/g,
               message: "Fill in the field correctly",
             },
             validate: {
@@ -119,7 +122,10 @@ export const Form = () => {
           id="feedback"
           placeholder="Write your feedback or suggestion here"
           {...register("feedback", {
-            maxLength: {value: 500, message: "Fill in the field correctly"},
+                        pattern: {
+              value: /[A-Za-zА-Яа-я0-9 !@~#$№%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{6,500}/g,
+              message: "Fill in the field correctly",
+            },
             required:
               "Fill in all the required fields to submit your feedback!",
           })}
