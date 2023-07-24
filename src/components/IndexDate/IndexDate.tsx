@@ -13,7 +13,7 @@ type IndexDateType = {
 };
 
 export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
-  const { parameter, parametersValues } = useDataStore() || {};
+  const { parameter, parametersValues } = useDataStore();
   const currentTimeAndDAte = getDate();
   const label = t(`hints.${parameter}`);
   const currentParameterName = t(`indexes.${parameter}`);
