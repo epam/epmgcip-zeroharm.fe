@@ -1,5 +1,5 @@
 import {
-  Modal as ChakraModal,
+  Modal,
   ModalOverlay,
   ModalContent,
   ModalHeader,
@@ -7,7 +7,7 @@ import {
   ModalBody,
   ModalFooter,
   Button,
-  useDisclosure,
+  Divider,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
@@ -19,7 +19,7 @@ type ModalProps = {
   children?: ReactNode;
 };
 
-const Modal: React.FC<ModalProps> = ({
+const BaseModal: React.FC<ModalProps> = ({
   isOpen,
   onClose,
   textBtn = "Send",
@@ -27,22 +27,24 @@ const Modal: React.FC<ModalProps> = ({
   children,
 }) => {
   return (
-    <ChakraModal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader w={"initial"} pos={"initial"}>
-          {title}
-        </ModalHeader>
-        <ModalCloseButton />
-        <ModalBody>{children}</ModalBody>
-        <ModalFooter w={"initial"} pos={"initial"}>
+        <ModalHeader>{title}</ModalHeader>
+        <ModalCloseButton size="lg" />
+        <ModalBody>
+          <Divider />
+          {children}
+          <Divider />
+        </ModalBody>
+        <ModalFooter w={"initial"} pos={"initial"} borderBottomRadius={"lg"}>
           <Button mr={3} onClick={onClose}>
             {textBtn}
           </Button>
         </ModalFooter>
       </ModalContent>
-    </ChakraModal>
+    </Modal>
   );
 };
 
-export default Modal;
+export default BaseModal;

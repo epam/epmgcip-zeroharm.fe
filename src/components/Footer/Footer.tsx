@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { t } from "i18next";
 import Form from "../Form/Form";
-import Modal from "@/_UI/Modal/Modal";
+import Modal from "@/components/BaseModal/BaseModal";
 
 const Footer: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
