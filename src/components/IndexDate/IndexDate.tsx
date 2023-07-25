@@ -21,8 +21,17 @@ export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
   const currentParameterValue = parametersValues[parameterKey] || 0;
 
   const indexGroups = indexesConfig[parameter as ParametersAliasesKeyType];
-  const absoluteMin = indexGroups?.[0]?.range?.min;
-  const absoluteMax = indexGroups?.[indexGroups.length - 1]?.range?.max;
+  const firstGroup = indexGroups?.[0];
+  const lastGroup = indexGroups?.[indexGroups.length - 1];
+  const absoluteMin = firstGroup?.range?.min;
+  const absoluteMax = lastGroup?.range?.max;
+  const isCurrentValueMax = currentParameterValue >= absoluteMax;
+  const minMaxTitlePath = isCurrentValueMax ?  lastGroup?.titleTranslationPath : firstGroup?.titleTranslationPath;
+
+  const parameterTitlePath = indexGroups?.find(({ range: { min, max } }) => {
+    return currentParameterValue >= min && currentParameterValue <= max;
+  })?.titleTranslationPath;
+  const title = t(parameterTitlePath ? parameterTitlePath : minMaxTitlePath);
 
   return (
     <Wrapper>
@@ -52,7 +61,7 @@ export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
         fontSize="16px"
         fontWeight="700"
       >
-        <Text>Too poor air</Text>
+        <Text>{ title }</Text>
         <Text>{ currentParameterValue }</Text>
       </Flex>
       <Flex
