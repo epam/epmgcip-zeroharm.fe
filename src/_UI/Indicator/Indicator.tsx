@@ -42,7 +42,7 @@ export const Indicator: React.FC<IndexDateType> = ({ title, color, size }) => {
         </Box>
         <Flex gap="6px" flex="0 0 80px" justifyContent="flex-end">
           <Text color="white" fontWeight="700" fontSize="16px">
-            {size}
+            { String(size) }
           </Text>
           <Text color="gray.400">µg/m³</Text>
         </Flex>
