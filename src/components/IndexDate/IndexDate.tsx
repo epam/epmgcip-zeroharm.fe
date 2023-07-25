@@ -1,8 +1,9 @@
-import * as React from "react";
+import React from "react";
 import Wrapper from "@UI/Wrapper/Wrapper";
 import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
 import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
 import { Progress } from "@UI/Progress/Progress";
+import { indexesConfig, groupsColors, parametersAliases, ParametersAliasesKeyType } from "@/constants";
 import { useDataStore } from "@/store/useDataStore";
 import { getDate } from "@/helpers";
 import { t } from "i18next";
@@ -12,17 +13,23 @@ type IndexDateType = {
 };
 
 export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
-  const { parameter } = useDataStore();
+  const { parameter, parametersValues } = useDataStore();
   const currentTimeAndDAte = getDate();
   const label = t(`hints.${parameter}`);
-  const currentIndexName = t(`indexes.${parameter}`);
+  const currentParameterName = t(`indexes.${parameter}`);
+  const parameterKey = parametersAliases[parameter as ParametersAliasesKeyType];
+  const currentParameterValue = parametersValues[parameterKey] || 0;
+
+  const indexGroups = indexesConfig[parameter as ParametersAliasesKeyType];
+  const absoluteMin = indexGroups?.[0]?.range?.min;
+  const absoluteMax = indexGroups?.[indexGroups.length - 1]?.range?.max;
 
   return (
     <Wrapper>
       <Flex justifyContent="space-between" fontSize="12px">
         <Flex gap="10px">
           <Text textTransform="uppercase">
-            { currentIndexName }
+            { currentParameterName }
           </Text>
           <Box w="24" opacity=".5">
             <Tooltip
@@ -46,9 +53,48 @@ export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
         fontWeight="700"
       >
         <Text>Too poor air</Text>
-        <Text>22</Text>
+        <Text>{ currentParameterValue }</Text>
       </Flex>
-      <Progress isGradient value={20} />
+      <Flex
+        justifyContent="space-between"
+        gap="5px"
+      >
+        {
+          indexGroups?.map(({ groupName, range }, idx) => {
+            const color = groupsColors[groupName];
+            const { min, max } = range;
+            const isFirstRange = idx === 0;
+            const isLastRange = idx === indexGroups.length - 1;
+            const withinRange = (min <= currentParameterValue) && (currentParameterValue <= max);
+            const isAbsoluteMin = (currentParameterValue <= absoluteMin) && isFirstRange;
+            const isAbsoluteMax = (currentParameterValue >= absoluteMax) && isLastRange;
+            const withPointer = isAbsoluteMin || isAbsoluteMax || withinRange;
+
+            if (withPointer) {
+              const divider = isAbsoluteMax ? currentParameterValue : max;
+              const pointerPosition = Math.round(currentParameterValue / divider * 100);
+
+              return (
+                <Progress
+                  key={groupName}
+                  colorScheme={color}
+                  value={100}
+                  withPointer
+                  pointerPosition={pointerPosition}
+                />
+              );
+            }
+
+            return (
+              <Progress
+                key={groupName}
+                colorScheme={color}
+                value={100}
+              />
+            );
+          })
+        }
+      </Flex>
       {children}
     </Wrapper>
   );
