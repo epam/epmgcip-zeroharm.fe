@@ -10,6 +10,7 @@ import {
   Checkbox,
   Flex,
   Tooltip,
+  Divider,
 } from "@chakra-ui/react";
 import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
 
@@ -40,6 +41,7 @@ export const Form = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <Divider mb={6} borderColor="gray.700" />
       <FormControl isInvalid={Boolean(errors.name)}>
         <Flex gap="10px" fontSize="16px">
           <Tooltip
@@ -52,7 +54,7 @@ export const Form = () => {
               <InfoFill style={{ width: 16, height: 16 }} />
             </Box>
           </Tooltip>
-          <FormLabel htmlFor="name">First name</FormLabel>
+          <FormLabel htmlFor="name">Name</FormLabel>
         </Flex>
         <Input
           id="name"
@@ -92,7 +94,8 @@ export const Form = () => {
             minLength: 2,
             maxLength: 50,
             pattern: {
-              value: /[A-Za-zА-Яа-я0-9_-]+@[A-Za-zА-Яа-я]+\.[A-Za-zА-Яа-я]{2,4}/g,
+              value:
+                /[A-Za-zА-Яа-я0-9_-]+@[A-Za-zА-Яа-я]+\.[A-Za-zА-Яа-я]{2,4}/g,
               message: "Fill in the field correctly",
             },
             validate: {
@@ -122,8 +125,9 @@ export const Form = () => {
           id="feedback"
           placeholder="Write your feedback or suggestion here"
           {...register("feedback", {
-                        pattern: {
-              value: /[A-Za-zА-Яа-я0-9 !@~#$№%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{6,500}/g,
+            pattern: {
+              value:
+                /[A-Za-zА-Яа-я0-9 !@~#$№%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{6,500}/g,
               message: "Fill in the field correctly",
             },
             required:
@@ -150,6 +154,7 @@ export const Form = () => {
           <FormLabel htmlFor="response">I want to get a response</FormLabel>
         </Flex>
       </FormControl>
+      <Divider mb={6} borderColor="gray.700" />
       <Button mt={4} colorScheme="teal" isLoading={isSubmitting} type="submit">
         Send
       </Button>
