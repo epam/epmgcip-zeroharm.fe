@@ -7,7 +7,6 @@ import {
   ModalBody,
   ModalFooter,
   Button,
-  Divider,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
@@ -30,11 +29,8 @@ const BaseModal: React.FC<ModalProps> = ({
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader fontSize="headers.h3" padding={"10px 16px"}>
-          {title}
-        </ModalHeader>
+        <ModalHeader fontSize="headers.h3">{title}</ModalHeader>
         <ModalCloseButton size="lg" top={"3"} />
-        <Divider variant={"white"}/>
         <ModalBody>{children}</ModalBody>
         {textBtn && (
           <ModalFooter w={"initial"} pos={"initial"} borderBottomRadius={"lg"}>

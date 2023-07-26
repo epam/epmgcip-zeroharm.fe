@@ -8,7 +8,9 @@ export const Modal = defineStyleConfig({
         position: "initial",
         zIndex: "initial",
         borderTopRadius: "lg",
-        padding: 7,
+        paddingX: 7,
+        paddingTop: 7,
+        paddingBottom: 5,
       },
       overlay: {
         bgColor: "rgba(37,37,38, 0.9)",
