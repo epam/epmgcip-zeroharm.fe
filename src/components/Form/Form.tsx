@@ -124,6 +124,8 @@ export const Form = () => {
           <FormLabel htmlFor="feedback">My feedback *</FormLabel>
         </Flex>
         <Textarea
+          h={178}
+          bgColor="gray.700"
           id="feedback"
           placeholder="Write your feedback or suggestion here"
           {...register("feedback", {
