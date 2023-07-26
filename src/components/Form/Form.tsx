@@ -57,6 +57,7 @@ export const Form = () => {
           <FormLabel htmlFor="name">Name</FormLabel>
         </Flex>
         <Input
+          variant={"gray"}
           id="name"
           placeholder="Mary"
           {...register("name", {
@@ -88,6 +89,7 @@ export const Form = () => {
           <FormLabel htmlFor="feedback">Email</FormLabel>
         </Flex>
         <Input
+          variant={"gray"}
           id="email"
           placeholder="mary@epam.com"
           {...register("email", {

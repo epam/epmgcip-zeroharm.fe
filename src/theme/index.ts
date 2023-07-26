@@ -13,6 +13,7 @@ import { Progress } from "./components/Progress";
 import { Tooltip } from "./components/Tooltip";
 import { Divider } from "./components/Divider";
 import { Modal } from "./components/Modal";
+import { Input } from "./components/Input";
 
 const overrides = {
   styles,
@@ -27,7 +28,8 @@ const overrides = {
     Progress,
     Tooltip,
     Divider,
-    Modal
+    Modal,
+    Input
   },
 };
 
