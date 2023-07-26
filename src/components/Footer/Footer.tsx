@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { t } from "i18next";
 import Form from "../Form/Form";
-import Modal from "@/components/BaseModal/BaseModal";
+import BaseModal from "@/components/BaseModal/BaseModal";
 
 const Footer: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -24,9 +24,9 @@ const Footer: React.FC = () => {
       <Button size="xs" onClick={onOpen}>
         {t("pages.footer.button")}
       </Button>
-      <Modal isOpen={isOpen} onClose={onClose} title=" Help us be better" textBtn="Send Feedback">
+      <BaseModal isOpen={isOpen} onClose={onClose} title="Help us be better">
         <Form />
-      </Modal>
+      </BaseModal>
     </Flex>
   );
 };
