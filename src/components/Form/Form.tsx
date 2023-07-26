@@ -67,6 +67,7 @@ export const Form = () => {
           variant={"gray"}
           id="name"
           placeholder="Mary"
+          _placeholder={{ color: "gray.300" }}
           {...register("name", {
             pattern: {
               value: /^[A-Za-z А-Яа-я]{2,50}$/,
@@ -102,6 +103,7 @@ export const Form = () => {
           variant={"gray"}
           id="email"
           placeholder="mary@epam.com"
+          _placeholder={{ color: "gray.300" }}
           {...register("email", {
             minLength: 2,
             maxLength: 50,
@@ -139,8 +141,11 @@ export const Form = () => {
         <Textarea
           h={178}
           bgColor="gray.700"
+          border={0}
+          focusBorderColor="white"
           id="feedback"
           placeholder="Write your feedback or suggestion here"
+          _placeholder={{ color: "gray.300" }}
           {...register("feedback", {
             pattern: {
               value:
