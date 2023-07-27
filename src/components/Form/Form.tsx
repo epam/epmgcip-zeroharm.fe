@@ -195,7 +195,7 @@ export const Form = () => {
         </Flex>
       </FormControl>
       <Divider mb={4} borderColor="gray.700" />
-      <Button mt={4} colorScheme="teal" isLoading={isSubmitting} type="submit">
+      <Button isLoading={isSubmitting} type="submit" padding="16px 24px">
         Send feedback
       </Button>
     </form>

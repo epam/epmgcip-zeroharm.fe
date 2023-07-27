@@ -17,6 +17,7 @@ export const Modal = defineStyleConfig({
       },
       body: {
         bgColor: "gray.900",
+        paddingBottom: 6
       },
       dialog: {
         position: "relative",
