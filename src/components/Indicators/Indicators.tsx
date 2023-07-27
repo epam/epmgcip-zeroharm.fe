@@ -4,7 +4,7 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { getDate } from "@/helpers";
 import { Indicator } from "@UI/Indicator/Indicator";
 import { useDataStore } from "@/store/useDataStore";
-import { particlesAliases, ParticlesAliasesKeyType } from "@/constants";
+import { particlesAliases, ParticlesAliasesKeyType, groupsColors, indexesConfig, GroupsColorsKeyType } from "@/constants";
 
 type IndexDateType = {
   children?: React.ReactNode;
@@ -16,7 +16,7 @@ export const Indicators: React.FC<IndexDateType> = ({ children }) => {
   const { parametersValues } = useDataStore();
 
   const currentTimeAndDAte = getDate();
-  const colors = ["red", "orange", "green"];
+  const particlesGroups = indexesConfig.air_quality;
 
   return (
     <Wrapper>
@@ -30,14 +30,24 @@ export const Indicators: React.FC<IndexDateType> = ({ children }) => {
       </Flex>
       {hints.map(
         (hint) => {
-          const color = colors[Math.floor(Math.random() * colors.length)];
           const particleName = particlesAliases[hint as ParticlesAliasesKeyType];
           const particleValue = parametersValues[particleName];
+          const max = particlesGroups[particlesGroups.length - 1].range.max;
+          const isAbsoluteMax = Number(particleValue) > max;
+          const lastGroupName = particlesGroups[particlesGroups.length - 1].groupName;
+          const particleGroupName = particlesGroups.find(({ range }) => {
+            const { min, max } = range;
+
+            return min <= Number(particleValue) && Number(particleValue) <= max;
+          })?.groupName;
+          const groupName = isAbsoluteMax ? lastGroupName : particleGroupName;
+          const color = groupsColors[groupName as GroupsColorsKeyType];
           const particleValueStr = String(particleValue);
           const roundedParticleValue = parseFloat(particleValueStr.slice(0, particleValueStr.indexOf(".") + 3));
+          const size = isNaN(roundedParticleValue) ? 0 : roundedParticleValue;
 
           return (
-            <Indicator size={roundedParticleValue} title={hint} key={hint} color={color} />
+            <Indicator size={size} title={hint} key={hint} color={color} />
           );
         }
       )}
