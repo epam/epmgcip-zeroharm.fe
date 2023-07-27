@@ -3,7 +3,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import { BiRightArrowAlt } from "react-icons/bi";
-
 import Card from "@UI/Card/Card";
 import { useDataStore } from "@/store/useDataStore";
 

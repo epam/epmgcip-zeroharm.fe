@@ -1,38 +1,8 @@
 import React, { useState, useEffect } from "react";
-
 import { SwiperItem } from "../SwiperItem";
-
-import { ReactComponent as SadIcon } from "@/assets/icons/forcards/harm-disappointed-face.svg";
-
-const mockSwiperData = [
-  {
-    heading: "Very poor air",
-    subheading: "Air Quality tip",
-    icon: "harm-worried-face",
-    question: "WHY AND WHAT TO DO?",
-    text: "Health warnings of emergency conditions. The entire population is more likely to be affected.",
-    parameter: "air_quality",
-    color: "red"
-  },
-  {
-    heading: "Very poor air_1",
-    subheading: "Air Quality tip_1",
-    icon: "harm-worried-face",
-    question: "WHY AND WHAT TO DO?_1",
-    text: "Health warnings of emergency conditions. The entire population is more likely to be affected._1",
-    parameter: "humidity",
-    color: "orange"
-  },
-  {
-    heading: "Very poor air_2",
-    subheading: "Air Quality tip_2",
-    icon: "harm-worried-face",
-    question: "WHY AND WHAT TO DO?_2",
-    text: "Health warnings of emergency conditions. The entire population is more likely to be affected._1",
-    parameter: "pressure",
-    color: "green"
-  }
-];
+import { useDataStore } from "@/store/useDataStore";
+import { indexesConfig, groupsColors, ParametersAliasesKeyType, GroupsColorsKeyType } from "@/constants";
+import { t } from "i18next";
 
 const INTERVAL = 3000;
 const INITIAL_CURRENT_INDEX = 0;
@@ -40,12 +10,53 @@ const INITIAL_CURRENT_INDEX = 0;
 export const Swiper: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(INITIAL_CURRENT_INDEX);
 
-  const currentItem = mockSwiperData?.[currentIndex];
-  const { heading, subheading, icon, question, text, parameter, color } = currentItem || {};
+  const { parametersValues } = useDataStore();
+
+  const { aqi, air_pressure, humidity } = parametersValues;
+  const isDataLoaded = Boolean(aqi || air_pressure || humidity);
+  const mapValueToConfigName = {
+    air_quality: aqi,
+    pressure: air_pressure,
+    humidity: humidity
+  };
+
+  const cardsData = Object.entries(mapValueToConfigName).map(([ key, value ]) => {
+    const indexGroups = indexesConfig[key as ParametersAliasesKeyType];
+    const rangeGroup = indexGroups.find(({ range }) => {
+      const { min, max } = range;
+
+      return min <= Number(value) && Number(value) <= max;
+    });
+    const isAbsoluteMax = Number(value) > indexGroups[indexGroups.length - 1].range.max;
+    const outRangeGroup = isAbsoluteMax ? indexGroups[indexGroups.length - 1] : indexGroups[0];
+    const group = rangeGroup || outRangeGroup;
+    const { headingTranslationPath, questionTranslationPath, textTranslationPath, groupName, icon } = group || {};
+
+    return {
+      heading: t(headingTranslationPath ?? ""),
+      subheading: t(`tips.${key}`),
+      question: t(questionTranslationPath ?? ""),
+      text: t(textTranslationPath ?? ""),
+      parameter: key,
+      color: groupsColors[groupName as GroupsColorsKeyType],
+      icon: icon || "harm-neutral-face"
+    };
+  });
+
+  const currentItem = cardsData?.[currentIndex];
+  const {
+    heading,
+    subheading,
+    question,
+    text,
+    icon,
+    parameter,
+    color
+  } = currentItem || {};
 
   useEffect(() => {
     const evaluateNextCurrentIndex = (currentIndex: number) => {
-      if (currentIndex < mockSwiperData.length - 1) {
+      if (isDataLoaded && currentIndex < cardsData.length - 1) {
         return ++currentIndex;
       }
 
@@ -61,7 +72,7 @@ export const Swiper: React.FC = () => {
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [isDataLoaded, cardsData.length]);
 
   return (
     <SwiperItem

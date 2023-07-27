@@ -1,0 +1,243 @@
+{
+  "pages": {
+    "home": {
+      "name": "",
+      "get_tips": "",
+      "protect": "",
+      "open_map": "",
+      "chose_location": ""
+    },
+    "map": {
+      "name": ""
+    },
+    "about": {
+      "name": ""
+    },
+    "footer": {
+      "text": "",
+      "link": "",
+      "button": ""
+    },
+    "form": {
+      "required_notification": "Taklif yuborish uchun barcha kerakli maydonlarni toʻldiring!",
+      "incorrectly_notification": "Maydonni toʻgʻri toʻldiring.",
+      "name": {
+        "label": "Ism",
+        "placeholder": "Feruza",
+        "tip": ""
+      },
+      "email": {
+        "label": "email",
+        "placeholder": "mary@epam.com",
+        "tip": ""
+      },
+      "feedback": {
+        "label": "Ko'rib chiqish",
+        "placeholder": "Xizmat haqida o'z takliflaringizni, fikr-mulohazalaringizni shu yerda yozing",
+        "tip": ""
+      },
+      "checkbox": {
+        "label": "Men javob olmoqchiman",
+        "tip": ""
+      }
+    }
+  },
+  "lang": {
+    "en": "",
+    "ru": "",
+    "uz": ""
+  },
+  "tabs": {
+    "air_quality": "",
+    "uv": "",
+    "noise_pollution": "",
+    "humidity": "",
+    "pressure": ""
+  },
+  "locations": {
+    "tash_furkata": "Toshkent, Furkat ko’chasi, 8",
+    "tash_navoi": "",
+    "tash_skrajna": "",
+    "tash_mlynarska": "",
+    "tash_szajnochy": ""
+  },
+  "cards": {
+    "noise_pollution": [
+      {
+        "icon": "",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "",
+        "title": "",
+        "subtitle": "",
+        "text": " "
+      },
+      {
+        "icon": "",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      }
+    ],
+    "air_quality": [
+      {
+        "icon": "harm-slightly-smiling-face",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "harm-neutral-face",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "harm-worried-face",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "harm-more-worried-face",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "harm-disappointed-face",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "harm-loudly-crying-face",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      }
+    ],
+    "uv": [
+      {
+        "icon": "",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      }
+    ],
+    "humidity": [
+      {
+        "icon": "harm-neutral-face",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "harm-slightly-smiling-face",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "harm-disappointed-face",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      }
+    ],
+    "pressure": [
+      {
+        "icon": "harm-disappointed-face",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "harm-slightly-smiling-face",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "harm-worried-face",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      }
+    ]
+  },
+  "hints": {
+    "air_quality": "",
+    "pm2.5": "",
+    "pm10": "",
+    "pm1": "",
+    "no": "",
+    "no2": "",
+    "nh3": "",
+    "co": "",
+    "o3": "",
+    "so2": "",
+    "uv": "",
+    "noise_pollution": "",
+    "humidity": "",
+    "pressure": ""
+  },
+  "indexes": {
+    "air_quality": "",
+    "uv": "",
+    "noise_pollution": "",
+    "humidity": "",
+    "pressure": ""
+  }
+}
