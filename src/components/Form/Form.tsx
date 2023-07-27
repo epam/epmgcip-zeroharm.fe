@@ -46,7 +46,7 @@ export const Form = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Divider mb={4} borderColor="gray.700" />
-      <FormControl isInvalid={Boolean(errors.name)} pb={4}>
+      <FormControl isInvalid={Boolean(errors.name)} mb={2}>
         <Flex fontSize="16px">
           <Tooltip
             label="Write your name here"
@@ -79,11 +79,13 @@ export const Form = () => {
             },
           })}
         />
-        <FormErrorMessage>
-          {errors.name && errors.name.message?.toString()}
-        </FormErrorMessage>
+        <Box h="6" pt="1">
+          <FormErrorMessage mt="0">
+            {errors.name && errors.name.message?.toString()}
+          </FormErrorMessage>
+        </Box>
       </FormControl>
-      <FormControl isInvalid={Boolean(errors.email)} pb={4}>
+      <FormControl isInvalid={Boolean(errors.email)} mb={2}>
         <Flex fontSize="16px">
           <Tooltip
             label="Write your email here"
@@ -119,11 +121,13 @@ export const Form = () => {
             },
           })}
         />
-        <FormErrorMessage>
-          {errors.email && errors.email.message?.toString()}
-        </FormErrorMessage>
+        <Box h="6" pt="1">
+          <FormErrorMessage mt="0">
+            {errors.email && errors.email.message?.toString()}
+          </FormErrorMessage>
+        </Box>
       </FormControl>
-      <FormControl isInvalid={Boolean(errors.feedback)} pb={4}>
+      <FormControl isInvalid={Boolean(errors.feedback)} mb={2}>
         <Flex fontSize="16px">
           <Tooltip
             label="We are glad to receive feedback from you! Write your feedback or suggestion here, use no more than 500 symbols!"
@@ -158,9 +162,11 @@ export const Form = () => {
               "Fill in all the required fields to submit your feedback!",
           })}
         />
-        <FormErrorMessage>
-          {errors.feedback && errors.feedback.message?.toString()}
-        </FormErrorMessage>
+        <Box h="6" pt="1">
+          <FormErrorMessage mt="0">
+            {errors.feedback && errors.feedback.message?.toString()}
+          </FormErrorMessage>
+        </Box>
       </FormControl>
       <FormControl pb={6}>
         <Flex fontSize="16px">
