@@ -5,6 +5,7 @@ const { GREEN, YELLOW, ORANGE, LIGHT_RED, RED, PURPLE, BLUE } = indexesGroupsNam
 export const airQualityIndexConfig = [
   {
     groupName: GREEN,
+    titleTranslationPath: "cards.air_quality.0.title",
     range: {
       min: 0,
       max: 50,
@@ -12,6 +13,7 @@ export const airQualityIndexConfig = [
   },
   {
     groupName: YELLOW,
+    titleTranslationPath: "cards.air_quality.1.title",
     range: {
       min: 51,
       max: 100,
@@ -19,6 +21,7 @@ export const airQualityIndexConfig = [
   },
   {
     groupName: ORANGE,
+    titleTranslationPath: "cards.air_quality.2.title",
     range: {
       min: 101,
       max: 150,
@@ -26,6 +29,7 @@ export const airQualityIndexConfig = [
   },
   {
     groupName: LIGHT_RED,
+    titleTranslationPath: "cards.air_quality.3.title",
     range: {
       min: 151,
       max: 300,
@@ -33,6 +37,7 @@ export const airQualityIndexConfig = [
   },
   {
     groupName: RED,
+    titleTranslationPath: "cards.air_quality.4.title",
     range: {
       min: 301,
       max: 400,
@@ -40,6 +45,7 @@ export const airQualityIndexConfig = [
   },
   {
     groupName: PURPLE,
+    titleTranslationPath: "cards.air_quality.5.title",
     range: {
       min: 401,
       max: 500,
@@ -50,6 +56,7 @@ export const airQualityIndexConfig = [
 export const airPressureIndexConfig = [
   {
     groupName: BLUE,
+    titleTranslationPath: "cards.pressure.0.title",
     range: {
       min: 669,
       max: 754
@@ -57,6 +64,7 @@ export const airPressureIndexConfig = [
   },
   {
     groupName: GREEN,
+    titleTranslationPath: "cards.pressure.1.title",
     range: {
       min: 755,
       max: 765
@@ -64,6 +72,7 @@ export const airPressureIndexConfig = [
   },
   {
     groupName: RED,
+    titleTranslationPath: "cards.pressure.2.title",
     range: {
       min: 766,
       max: 812
@@ -74,6 +83,7 @@ export const airPressureIndexConfig = [
 export const humidityIndexConfig = [
   {
     groupName: RED,
+    titleTranslationPath: "cards.humidity.2.title",
     range: {
       min: 0,
       max: 39
@@ -81,6 +91,7 @@ export const humidityIndexConfig = [
   },
   {
     groupName: GREEN,
+    titleTranslationPath: "cards.humidity.1.title",
     range: {
       min: 40,
       max: 70
@@ -88,6 +99,7 @@ export const humidityIndexConfig = [
   },
   {
     groupName: BLUE,
+    titleTranslationPath: "cards.humidity.0.title",
     range: {
       min: 71,
       max: 100
