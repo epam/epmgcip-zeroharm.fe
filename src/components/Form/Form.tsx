@@ -13,7 +13,7 @@ import {
   Divider,
   Text,
 } from "@chakra-ui/react";
-import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
+import { ReactComponent as QuestionMark } from "@/assets/icons/stroke/harm-question.svg";
 
 type FormData = {
   name: string;
@@ -54,8 +54,8 @@ export const Form = () => {
             placement="right-start"
             variant="default"
           >
-            <Box w="6" opacity=".5">
-              <InfoFill style={{ width: 16, height: 16 }} />
+            <Box w="6" mr="2">
+              <QuestionMark style={{ width: 20, height: 20 }} />
             </Box>
           </Tooltip>
           <FormLabel mr={0} htmlFor="name">
@@ -93,8 +93,8 @@ export const Form = () => {
             placement="right-start"
             variant="default"
           >
-            <Box w="6" opacity=".5">
-              <InfoFill style={{ width: 16, height: 16 }} />
+            <Box w="6" mr="2">
+              <QuestionMark style={{ width: 20, height: 20 }} />
             </Box>
           </Tooltip>
           <FormLabel mr={0} htmlFor="feedback">
@@ -135,8 +135,8 @@ export const Form = () => {
             placement="right-start"
             variant="default"
           >
-            <Box w="6" opacity=".5">
-              <InfoFill style={{ width: 16, height: 16 }} />
+            <Box w="6" mr="2">
+              <QuestionMark style={{ width: 20, height: 20 }} />
             </Box>
           </Tooltip>
           <FormLabel mr={0} htmlFor="feedback">
@@ -176,8 +176,8 @@ export const Form = () => {
             placement="right-start"
             variant="default"
           >
-            <Box w="6" opacity=".5">
-              <InfoFill style={{ width: 16, height: 16 }} />
+            <Box w="6" mr="2">
+              <QuestionMark style={{ width: 20, height: 20 }} />
             </Box>
           </Tooltip>
           <Checkbox id="response" {...register("response")} />
