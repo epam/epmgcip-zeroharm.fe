@@ -45,7 +45,7 @@ export const Form = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Divider mb={6} borderColor="gray.700" />
+      <Divider mb={4} borderColor="gray.700" />
       <FormControl isInvalid={Boolean(errors.name)} pb={4}>
         <Flex fontSize="16px">
           <Tooltip
@@ -65,9 +65,10 @@ export const Form = () => {
         </Flex>
         <Input
           variant={"gray"}
+          size="lg"
           id="name"
           placeholder="Mary"
-          _placeholder={{ color: "gray.300" }}
+          _placeholder={{ color: "gray.300", fontSize: "16px" }}
           {...register("name", {
             pattern: {
               value: /^[A-Za-z А-Яа-я]{2,50}$/,
@@ -101,9 +102,10 @@ export const Form = () => {
         </Flex>
         <Input
           variant={"gray"}
+          size="lg"
           id="email"
           placeholder="mary@epam.com"
-          _placeholder={{ color: "gray.300" }}
+          _placeholder={{ color: "gray.300", fontSize: "16px" }}
           {...register("email", {
             minLength: 2,
             maxLength: 50,
@@ -139,13 +141,13 @@ export const Form = () => {
           <Text color="red">*</Text>
         </Flex>
         <Textarea
-          h={178}
+          h={100}
           bgColor="gray.700"
           border={0}
           focusBorderColor="white"
           id="feedback"
           placeholder="Write your feedback or suggestion here"
-          _placeholder={{ color: "gray.300" }}
+          _placeholder={{ color: "gray.300", fontSize: "16px" }}
           {...register("feedback", {
             pattern: {
               value:
@@ -180,7 +182,7 @@ export const Form = () => {
       </FormControl>
       <Divider mb={6} borderColor="gray.700" />
       <Button mt={4} colorScheme="teal" isLoading={isSubmitting} type="submit">
-        Send
+        Send feedback
       </Button>
     </form>
   );

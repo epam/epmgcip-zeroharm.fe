@@ -26,7 +26,7 @@ const BaseModal: React.FC<ModalProps> = ({
   children,
 }) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} size="lg">
       <ModalOverlay />
       <ModalContent>
         <ModalHeader fontSize="headers.h3">{title}</ModalHeader>
