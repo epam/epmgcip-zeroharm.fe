@@ -11,3 +11,5 @@ export const groupsColors = {
   [PURPLE]: "violet",
   [BLUE]: "blue",
 };
+
+export type GroupsColorsKeyType = keyof typeof groupsColors;
