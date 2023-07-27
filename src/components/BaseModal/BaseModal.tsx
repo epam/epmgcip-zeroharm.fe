@@ -13,7 +13,6 @@ import { ReactNode } from "react";
 type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  textBtn?: string;
   title?: string;
   children: ReactNode;
 };
@@ -22,7 +21,6 @@ const BaseModal: React.FC<ModalProps> = ({
   isOpen,
   onClose,
   title,
-  textBtn,
   children,
 }) => {
   return (
@@ -31,14 +29,7 @@ const BaseModal: React.FC<ModalProps> = ({
       <ModalContent>
         <ModalHeader fontSize="headers.h3">{title}</ModalHeader>
         <ModalCloseButton size="lg" top={"3"} />
-        <ModalBody>{children}</ModalBody>
-        {textBtn && (
-          <ModalFooter w={"initial"} pos={"initial"} borderBottomRadius={"lg"}>
-            <Button mr={3} onClick={onClose}>
-              {textBtn}
-            </Button>
-          </ModalFooter>
-        )}
+        <ModalBody borderBottomRadius="lg">{children}</ModalBody>
       </ModalContent>
     </Modal>
   );
