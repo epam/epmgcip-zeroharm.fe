@@ -54,7 +54,7 @@ export const Form = () => {
             placement="right-start"
             variant="default"
           >
-            <Box w="6" mr="2">
+            <Box w="6" mr="2" opacity=".5">
               <QuestionMark style={{ width: 20, height: 20 }} />
             </Box>
           </Tooltip>
@@ -93,7 +93,7 @@ export const Form = () => {
             placement="right-start"
             variant="default"
           >
-            <Box w="6" mr="2">
+            <Box w="6" mr="2" opacity=".5">
               <QuestionMark style={{ width: 20, height: 20 }} />
             </Box>
           </Tooltip>
@@ -135,7 +135,7 @@ export const Form = () => {
             placement="right-start"
             variant="default"
           >
-            <Box w="6" mr="2">
+            <Box w="6" mr="2" opacity=".5">
               <QuestionMark style={{ width: 20, height: 20 }} />
             </Box>
           </Tooltip>
@@ -168,7 +168,7 @@ export const Form = () => {
           </FormErrorMessage>
         </Box>
       </FormControl>
-      <FormControl pb={6}>
+      <FormControl pb={4}>
         <Flex fontSize="16px">
           <Tooltip
             label="Check if you want to receive a response from our team"
@@ -176,17 +176,25 @@ export const Form = () => {
             placement="right-start"
             variant="default"
           >
-            <Box w="6" mr="2">
+            <Box w="6" mr="2" opacity=".5">
               <QuestionMark style={{ width: 20, height: 20 }} />
             </Box>
           </Tooltip>
-          <Checkbox id="response" {...register("response")} />
-          <FormLabel mr={0} htmlFor="response">
+          <Checkbox
+            colorScheme="whiteAlpha"
+            iconColor="black"
+            size="lg"
+            spacing="20px"
+            id="response"
+            {...register("response")}
+            mr="2"
+          />
+          <FormLabel mr={0} mb={0} htmlFor="response">
             I want to get a response
           </FormLabel>
         </Flex>
       </FormControl>
-      <Divider mb={6} borderColor="gray.700" />
+      <Divider mb={4} borderColor="gray.700" />
       <Button mt={4} colorScheme="teal" isLoading={isSubmitting} type="submit">
         Send feedback
       </Button>
