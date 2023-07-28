@@ -1,17 +1,27 @@
-import { defineStyleConfig } from "@chakra-ui/react";
+import { inputAnatomy } from "@chakra-ui/anatomy";
+import { createMultiStyleConfigHelpers, defineStyle } from "@chakra-ui/react";
 
-export const Input = defineStyleConfig({
+const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
+  inputAnatomy.keys
+);
+
+export const Input = defineMultiStyleConfig({
   variants: {
     gray: {
       field: {
+        _placeholder: {
+          color: "gray.300",
+          fontSize: "16px",
+        },
         backgroundColor: "gray.700",
-        ":focus": {
-          border: "1px"
+        _focus: {
+          border: "1px",
         },
       },
     },
-    defaultProps: {
-      variant: "gray",
-    },
+  },
+  defaultProps: {
+    size: "lg",
+    variant: "gray",
   },
 });

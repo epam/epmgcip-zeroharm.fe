@@ -64,11 +64,8 @@ export const Form = () => {
           {watchResponse && <Text color="red">*</Text>}
         </Flex>
         <Input
-          variant={"gray"}
-          size="lg"
           id="name"
           placeholder="Mary"
-          _placeholder={{ color: "gray.300", fontSize: "16px" }}
           {...register("name", {
             pattern: {
               value: /^[A-Za-z А-Яа-я]{2,50}$/,
@@ -105,11 +102,8 @@ export const Form = () => {
           {watchResponse && <Text color="red">*</Text>}
         </Flex>
         <Input
-          variant={"gray"}
-          size="lg"
           id="email"
           placeholder="mary@epam.com"
-          _placeholder={{ color: "gray.300", fontSize: "16px" }}
           {...register("email", {
             minLength: 2,
             maxLength: 50,
