@@ -80,9 +80,11 @@ export const Form = () => {
           })}
         />
         <Box h="6" pt="1">
-          <FormErrorMessage mt="0" fontSize={"md"}>
-            {errors.name && errors.name.message?.toString()}
-          </FormErrorMessage>
+          {watchResponse && (
+            <FormErrorMessage mt="0" fontSize={"md"}>
+              {errors.name && errors.name.message?.toString()}
+            </FormErrorMessage>
+          )}
         </Box>
       </FormControl>
       <FormControl isInvalid={Boolean(errors.email)} mb={2}>
@@ -98,7 +100,7 @@ export const Form = () => {
             </Box>
           </Tooltip>
           <FormLabel mr={0} mb={0} htmlFor="feedback">
-            Email{" "}
+            Email
           </FormLabel>
           {watchResponse && <Text color="red">*</Text>}
         </Flex>
@@ -122,9 +124,11 @@ export const Form = () => {
           })}
         />
         <Box h="6" pt="1">
-          <FormErrorMessage mt="0" fontSize={"md"}>
-            {errors.email && errors.email.message?.toString()}
-          </FormErrorMessage>
+          {watchResponse && (
+            <FormErrorMessage mt="0" fontSize={"md"}>
+              {errors.email && errors.email.message?.toString()}
+            </FormErrorMessage>
+          )}
         </Box>
       </FormControl>
       <FormControl isInvalid={Boolean(errors.feedback)} mb={2}>
@@ -183,9 +187,9 @@ export const Form = () => {
           <Checkbox
             size="lg"
             spacing="20px"
+            mr="2"
             id="response"
             {...register("response")}
-            mr="2"
           />
           <FormLabel mr={0} mb={0} htmlFor="response">
             I want to get a response
