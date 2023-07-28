@@ -80,7 +80,7 @@ export const Form = () => {
           })}
         />
         <Box h="6" pt="1">
-          <FormErrorMessage mt="0">
+          <FormErrorMessage mt="0" fontSize={"md"}>
             {errors.name && errors.name.message?.toString()}
           </FormErrorMessage>
         </Box>
@@ -122,7 +122,7 @@ export const Form = () => {
           })}
         />
         <Box h="6" pt="1">
-          <FormErrorMessage mt="0">
+          <FormErrorMessage mt="0" fontSize={"md"}>
             {errors.email && errors.email.message?.toString()}
           </FormErrorMessage>
         </Box>
@@ -163,7 +163,7 @@ export const Form = () => {
           })}
         />
         <Box h="6" pt="1">
-          <FormErrorMessage mt="0">
+          <FormErrorMessage mt="0" fontSize={"md"}>
             {errors.feedback && errors.feedback.message?.toString()}
           </FormErrorMessage>
         </Box>
