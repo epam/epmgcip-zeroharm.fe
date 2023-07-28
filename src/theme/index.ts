@@ -14,6 +14,7 @@ import { Tooltip } from "./components/Tooltip";
 import { Divider } from "./components/Divider";
 import { Modal } from "./components/Modal";
 import { Input } from "./components/Input";
+import { Checkbox } from "./components/Checkbox";
 
 const overrides = {
   styles,
@@ -29,7 +30,8 @@ const overrides = {
     Tooltip,
     Divider,
     Modal,
-    Input
+    Input,
+    Checkbox,
   },
 };
 

@@ -47,7 +47,7 @@ export const Form = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Divider mb={4} borderColor="gray.700" />
       <FormControl isInvalid={Boolean(errors.name)} mb={2}>
-       <Flex mb={2} align={"center"} >
+        <Flex mb={2} align={"center"}>
           <Tooltip
             label="Write your name here"
             hasArrow
@@ -86,7 +86,7 @@ export const Form = () => {
         </Box>
       </FormControl>
       <FormControl isInvalid={Boolean(errors.email)} mb={2}>
-       <Flex mb={2} align={"center"} >
+        <Flex mb={2} align={"center"}>
           <Tooltip
             label="Write your email here"
             hasArrow
@@ -128,7 +128,7 @@ export const Form = () => {
         </Box>
       </FormControl>
       <FormControl isInvalid={Boolean(errors.feedback)} mb={2}>
-       <Flex mb={2} align={"center"} >
+        <Flex mb={2} align={"center"}>
           <Tooltip
             label="We are glad to receive feedback from you! Write your feedback or suggestion here, use no more than 500 symbols!"
             hasArrow
@@ -169,7 +169,7 @@ export const Form = () => {
         </Box>
       </FormControl>
       <FormControl pb={4}>
-       <Flex mb={2} align={"center"} >
+        <Flex mb={2} align={"center"}>
           <Tooltip
             label="Check if you want to receive a response from our team"
             hasArrow
@@ -181,8 +181,6 @@ export const Form = () => {
             </Box>
           </Tooltip>
           <Checkbox
-            colorScheme="whiteAlpha"
-            iconColor="black"
             size="lg"
             spacing="20px"
             id="response"
