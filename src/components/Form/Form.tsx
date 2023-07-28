@@ -11,9 +11,9 @@ import {
   Flex,
   Tooltip,
   Divider,
-  Text,
 } from "@chakra-ui/react";
 import { ReactComponent as QuestionMark } from "@/assets/icons/stroke/harm-question.svg";
+import { InputLabel } from "@/_UI/InputLabel/InputLabel";
 
 type FormData = {
   name: string;
@@ -47,22 +47,12 @@ export const Form = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Divider mb={4} borderColor="gray.700" />
       <FormControl isInvalid={Boolean(errors.name)} mb={2}>
-        <Flex mb={2} align={"center"}>
-          <Tooltip
-            label="Write your name here"
-            hasArrow
-            placement="right-start"
-            variant="light"
-          >
-            <Box w="6" mr="2" opacity=".5">
-              <QuestionMark style={{ width: 20, height: 20 }} />
-            </Box>
-          </Tooltip>
-          <FormLabel mr={0} mb={0} htmlFor="name">
-            Name
-          </FormLabel>
-          {watchResponse && <Text color="red">*</Text>}
-        </Flex>
+        <InputLabel
+          tooltipText="Write your name here"
+          label="Name"
+          htmlFor="name"
+          response={watchResponse}
+        />
         <Input
           id="name"
           placeholder="Mary"
@@ -85,22 +75,12 @@ export const Form = () => {
         </Box>
       </FormControl>
       <FormControl isInvalid={Boolean(errors.email)} mb={2}>
-        <Flex mb={2} align={"center"}>
-          <Tooltip
-            label="Write your email here"
-            hasArrow
-            placement="right-start"
-            variant="light"
-          >
-            <Box w="6" mr="2" opacity=".5">
-              <QuestionMark style={{ width: 20, height: 20 }} />
-            </Box>
-          </Tooltip>
-          <FormLabel mr={0} mb={0} htmlFor="feedback">
-            Email
-          </FormLabel>
-          {watchResponse && <Text color="red">*</Text>}
-        </Flex>
+        <InputLabel
+          tooltipText="Write your email here"
+          label="Email"
+          htmlFor="email"
+          response={watchResponse}
+        />
         <Input
           id="email"
           placeholder="mary@epam.com"
@@ -126,22 +106,12 @@ export const Form = () => {
         </Box>
       </FormControl>
       <FormControl isInvalid={Boolean(errors.feedback)} mb={2}>
-        <Flex mb={2} align={"center"}>
-          <Tooltip
-            label="We are glad to receive feedback from you! Write your feedback or suggestion here, use no more than 500 symbols!"
-            hasArrow
-            placement="right-start"
-            variant="light"
-          >
-            <Box w="6" mr="2" opacity=".5">
-              <QuestionMark style={{ width: 20, height: 20 }} />
-            </Box>
-          </Tooltip>
-          <FormLabel mr={0} mb={0} htmlFor="feedback">
-            My feedback
-          </FormLabel>
-          <Text color="red">*</Text>
-        </Flex>
+        <InputLabel
+          tooltipText="We are glad to receive feedback from you! Write your feedback or suggestion here, use no more than 500 symbols!"
+          label="My feedback"
+          htmlFor="feedback"
+          response={watchResponse}
+        />
         <Textarea
           h={100}
           bgColor="gray.700"
