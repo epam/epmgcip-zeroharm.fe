@@ -28,7 +28,7 @@ const BaseModal: React.FC<ModalProps> = ({
       <ModalOverlay />
       <ModalContent>
         <ModalHeader fontSize="headers.h3">{title}</ModalHeader>
-        <ModalCloseButton size="lg" top={"3"} />
+        <ModalCloseButton size="lg" top={"3"} opacity=".5"/>
         <ModalBody borderBottomRadius="lg">{children}</ModalBody>
       </ModalContent>
     </Modal>
