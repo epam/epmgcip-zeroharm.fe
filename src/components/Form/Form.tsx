@@ -52,7 +52,7 @@ export const Form = () => {
             label="Write your name here"
             hasArrow
             placement="right-start"
-            variant="default"
+            variant="light"
           >
             <Box w="6" mr="2" opacity=".5">
               <QuestionMark style={{ width: 20, height: 20 }} />
@@ -90,7 +90,7 @@ export const Form = () => {
             label="Write your email here"
             hasArrow
             placement="right-start"
-            variant="default"
+            variant="light"
           >
             <Box w="6" mr="2" opacity=".5">
               <QuestionMark style={{ width: 20, height: 20 }} />
@@ -131,7 +131,7 @@ export const Form = () => {
             label="We are glad to receive feedback from you! Write your feedback or suggestion here, use no more than 500 symbols!"
             hasArrow
             placement="right-start"
-            variant="default"
+            variant="light"
           >
             <Box w="6" mr="2" opacity=".5">
               <QuestionMark style={{ width: 20, height: 20 }} />
@@ -172,7 +172,7 @@ export const Form = () => {
             label="Check if you want to receive a response from our team"
             hasArrow
             placement="right-start"
-            variant="default"
+            variant="light"
           >
             <Box w="6" mr="2" opacity=".5">
               <QuestionMark style={{ width: 20, height: 20 }} />
