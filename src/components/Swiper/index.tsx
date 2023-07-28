@@ -1,48 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { SwiperItem } from "../SwiperItem";
 import { useDataStore } from "@/store/useDataStore";
-import { indexesConfig, groupsColors, ParametersAliasesKeyType, GroupsColorsKeyType } from "@/constants";
+import { groupsColors, ParametersAliasesKeyType, GroupsColorsKeyType } from "@/constants";
+import { getParameterGroup } from "@/helpers";
 import { t } from "i18next";
 
 const INTERVAL = 3000;
 const INITIAL_CURRENT_INDEX = 0;
 
+type CardType = {
+  heading: string,
+  subheading: string,
+  question: string,
+  text: string,
+  parameter: string,
+  color: string,
+  icon: string
+}
+
 export const Swiper: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(INITIAL_CURRENT_INDEX);
+  const [cardsData, setCardsData] = useState<CardType[] | []>([]);
 
   const { parametersValues } = useDataStore();
 
   const { aqi, air_pressure, humidity } = parametersValues;
   const isDataLoaded = Boolean(aqi || air_pressure || humidity);
-  const mapValueToConfigName = {
-    air_quality: aqi,
-    pressure: air_pressure,
-    humidity: humidity
-  };
-
-  const cardsData = Object.entries(mapValueToConfigName).map(([ key, value ]) => {
-    const indexGroups = indexesConfig[key as ParametersAliasesKeyType];
-    const rangeGroup = indexGroups.find(({ range }) => {
-      const { min, max } = range;
-
-      return min <= Number(value) && Number(value) <= max;
-    });
-    const isAbsoluteMax = Number(value) > indexGroups[indexGroups.length - 1].range.max;
-    const outRangeGroup = isAbsoluteMax ? indexGroups[indexGroups.length - 1] : indexGroups[0];
-    const group = rangeGroup || outRangeGroup;
-    const { headingTranslationPath, questionTranslationPath, textTranslationPath, groupName, icon } = group || {};
-
-    return {
-      heading: t(headingTranslationPath ?? ""),
-      subheading: t(`tips.${key}`),
-      question: t(questionTranslationPath ?? ""),
-      text: t(textTranslationPath ?? ""),
-      parameter: key,
-      color: groupsColors[groupName as GroupsColorsKeyType],
-      icon: icon || "harm-neutral-face"
-    };
-  });
-
   const currentItem = cardsData?.[currentIndex];
   const {
     heading,
@@ -56,7 +39,7 @@ export const Swiper: React.FC = () => {
 
   useEffect(() => {
     const evaluateNextCurrentIndex = (currentIndex: number) => {
-      if (isDataLoaded && currentIndex < cardsData.length - 1) {
+      if (cardsData.length && currentIndex < cardsData.length - 1) {
         return ++currentIndex;
       }
 
@@ -72,7 +55,35 @@ export const Swiper: React.FC = () => {
     return () => {
       clearInterval(intervalId);
     };
-  }, [isDataLoaded, cardsData.length]);
+  }, [cardsData.length]);
+
+  useEffect(() => {
+    if (isDataLoaded) {
+      const mapValueToConfigName = {
+        air_quality: aqi,
+        pressure: air_pressure,
+        humidity: humidity
+      };
+
+      const cardsData = Object.entries(mapValueToConfigName).map(([ key, value ]) => {
+        const group = getParameterGroup(Number(value), key as ParametersAliasesKeyType);
+        const { headingTranslationPath, questionTranslationPath, textTranslationPath, groupName, icon } = group || {};
+
+        return {
+          heading: t(headingTranslationPath ?? ""),
+          subheading: t(`tips.${key}`),
+          question: t(questionTranslationPath ?? ""),
+          text: t(textTranslationPath ?? ""),
+          parameter: key,
+          color: groupsColors[groupName as GroupsColorsKeyType],
+          icon: icon || "harm-neutral-face"
+        };
+      });
+
+      setCardsData(cardsData);
+    }
+
+  }, [isDataLoaded, aqi, air_pressure, humidity]);
 
   return (
     <SwiperItem
