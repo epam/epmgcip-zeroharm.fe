@@ -27,9 +27,8 @@ export const Form = () => {
     handleSubmit,
     register,
     watch,
-    getValues,
     formState: { errors, isSubmitting },
-  } = useForm<FormData>();
+  } = useForm<FormData>({ mode: "onBlur" });
 
   const onSubmit: SubmitHandler<FormData> = (values) => {
     console.log(values);
@@ -38,7 +37,7 @@ export const Form = () => {
   const watchResponse = watch("response", false);
 
   const required = (value?: string) => {
-    return !value && getValues("response")
+    return !value && watchResponse
       ? "Fill in all the required fields to submit your feedback!"
       : true;
   };
@@ -67,11 +66,11 @@ export const Form = () => {
           })}
         />
         <Box h="6" pt="1">
-          {watchResponse && (
+          {
             <FormErrorMessage mt="0" fontSize={"md"}>
               {errors.name && errors.name.message?.toString()}
             </FormErrorMessage>
-          )}
+          }
         </Box>
       </FormControl>
       <FormControl isInvalid={Boolean(errors.email)} mb={2}>
@@ -98,11 +97,11 @@ export const Form = () => {
           })}
         />
         <Box h="6" pt="1">
-          {watchResponse && (
+          {
             <FormErrorMessage mt="0" fontSize={"md"}>
               {errors.email && errors.email.message?.toString()}
             </FormErrorMessage>
-          )}
+          }
         </Box>
       </FormControl>
       <FormControl isInvalid={Boolean(errors.feedback)} mb={2}>
