@@ -1,6 +1,7 @@
 import { useState, ReactNode, FC, useEffect } from "react";
 import { Flex, Box, chakra, Text } from "@chakra-ui/react";
 import translations from "@/i18n/locales/en/translations.json";
+import { t } from "i18next";
 
 import { ReactComponent as RightArrowIcon } from "@/assets/icons/stroke/harm-arrow-right.svg";
 import { ReactComponent as LeftArrowIcon } from "@/assets/icons/stroke/harm-arrow-left.svg";
@@ -64,12 +65,8 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
   const cardsTrans: any = translations?.cards;
   const cards = cardsTrans[cardsKey];
   const [cardIndex, setCardIndex] = useState(0);
-  const [currentCard, setCurrentCard] = useState(cards[cardIndex]);
 
-  useEffect(() => {
-    setCurrentCard(cards[cardIndex]);
-  }, [cardIndex]);
-
+  const translationPath = `cards.${cardsKey}.${cardIndex}`;
   const isNavigation = cards.length > 0;
   const isLeftActive = cardIndex > 0;
   const isRightActive = cardIndex < cards.length - 1;
@@ -86,17 +83,14 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
         </CardStep>
       )}
       <Card
-        heading={currentCard?.title}
-        subheading={currentCard?.subtitle}
+        heading={t(`${translationPath}.title`)}
+        subheading={t(`tips.${cardsKey}`)}
         color="red"
-        icon={currentCard?.icon}
+        icon={t(`${translationPath}.icon`)}
         height={isNavigation ? "290px" : "auto"}
       >
-        <Text fontWeight="700">WHY AND WHAT TO DO?</Text>
-        <Text>
-          Health warnings of emergency conditions. The entire population is more
-          likely to be affected.
-        </Text>
+        <Text fontWeight="700" casing={"uppercase"}>{t(`${translationPath}.subtitle`)}</Text>
+        <Text>{t(`${translationPath}.text`)}</Text>
       </Card>
       {isNavigation && (
         <CardNavigation>
