@@ -68,6 +68,7 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
 
   useEffect(() => {
     setCurrentCard(cards[cardIndex]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cardIndex]);
 
   const isNavigation = cards.length > 0;
