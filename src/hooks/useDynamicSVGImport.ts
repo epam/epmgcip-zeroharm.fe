@@ -12,6 +12,7 @@ const useDynamicSVGImport = (name: string) => {
         ImportedIconRef.current = icon.ReactComponent;
         setSvgIcon(ImportedIconRef.current);
       } catch (err) {
+        // eslint-disable-next-line no-console
         console.log(err);
       }
     };
