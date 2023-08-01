@@ -63,37 +63,31 @@
   "cards": {
     "noise_pollution": [
       {
-       
         "title": "Xavfsiz shovqin darajasi",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Xavfsiz shovqin darajasi. Qulaylikdan bahramand bo'ling!"
       },
       {
-       
         "title": "Shovqin darajasi biroz oshgan",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": " Shovqin darajasi me'yordan biroz yuqori. Agar siz tashqarida bo'lsangiz, tinchroq joy topishga harakat qiling yoki bino ichida bo'lsangiz, shovqin yukini kamaytirish uchun elektr va musiqa jihozlarini o'chiring."
       },
       {
-       
         "title": "Shovqin darajasi oshgan",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": " Shovqin darajasi oshgan: bino ichiga kirishga harakat qiling. Agar bino ichida bo'lsangiz, yoqilgan audio va video uskunalar, maishiy texnikaning ovozini pasaytiring."
       },
       {
-       
         "title": " Shovqin yuqori darajada",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Shovqin yuqori darajada. Maishiy, audio va video texnikani o'chiring. Kerak bo'lsa, quloq tiqinlaridan foydalaning."
       },
       {
-       
         "title": "Xavfli shovqin darajasi",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Xavfli shovqin darajasi. Shovqin yukini kamaytirish uchun shovqin manbasidan uzoqlashing, quloq tiqinlaridan yoki himoya quloqchinidan foydalaning."
       },
       {
-       
         "title": "Juda yuqori shovqin darajasi",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Juda yuqori darajadagi shovqindan ifloslanish darajasi eshitish qobiliyatini yo'qotishga olib kelishi mumkin. Shovqin manbasidan uzoqlashishga harakat qiling, qalin devorli joy toping, maxsus himoya quloqchinidan foydalaning."
@@ -139,37 +133,31 @@
     ],
     "uv": [
       {
-       
         "title": "Xavfsiz UB-indeks",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "UB nurlanishi xavfsiz darajada. Himoya vositalaridan foydalanmasdan tashqarida bo'lish mumkin."
       },
       {
-       
         "title": " UB-indeks ko'rsatkichlari oshgan ",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "UB-index ko'rsatkichlari oshgan. Quyosh tagida yurmang, ochiq havoda soyali joylarni tanlang. Tashqariga chiqishdan 15 daqiqa oldin badaningizni kiyim bilan qoplanmagan joylariga SPF 10- SPF 20 himoya kremini surting."
       },
       {
-       
         "title": "Yuqori UB-indeks",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Yuqori UB-indeks. Quyosh tagida yurmang, ochiq havoda soyali joylarni tanlang. Tashqariga chiqishdan 15 daqiqa oldin badaningizni kiyim bilan qoplanmagan joylariga SPF 30- SPF 40 himoya kremini surting. Quyosh soyabonidan foydalaning, qalpoq yoki visorli shlyapa, yopiq kiyim kiying."
       },
       {
-       
         "title": "Zararli UB-indeks",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Zararli UB-indeks. Ochiq havoda soyasiz joylarda qolmang. Tashqariga chiqishdan 15 daqiqa oldin badaningizni kiyim bilan qoplanmagan joylariga SPF 50 dan kam bo'lmagan himoya kremini surting. Quyosh soyabonidan foydalaning, qalpoq yoki visorli shlyapa, yopiq kiyim kiying."
       },
       {
-       
         "title": "Xavfli UB-indeks",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "UB nurlanishi xavfli darajada. Zarurat bo'lmasa uydan chiqmang. Tashqariga chiqishdan 15 daqiqa oldin badaningizni kiyim bilan qoplanmagan joylariga SPF 50 dan kam bo'lmagan himoya kremini surting. Quyosh soyabonidan foydalaning, qalpoq yoki visorli shlyapa, yopiq kiyim kiying. Ushbu darajadagi UB nurlari, hatto qisqa muddatdagi ta'siri bilan ham, teri saratoniga olib kelishi mumkin."
       },
       {
-       
         "title": "O'ta agressiv UB nurlanish",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Ekstremal darajadagi UB nurlanish. Quyosh botmagunicha bino ichidan chiqmang. Bino xonalaridagi pardalarni yoping. Ushbu darajadagi UB nurlari, hatto qisqa muddatdagi ta'siri bilan ham, teri saratoniga olib kelishi mumkin."
