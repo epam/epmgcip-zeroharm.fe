@@ -4,6 +4,7 @@ import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
 import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
 import { Progress } from "@UI/Progress/Progress";
 import { indexesConfig, groupsColors, parametersAliases, ParametersAliasesKeyType } from "@/constants";
+import { getParameterGroup } from "@/helpers";
 import { useDataStore } from "@/store/useDataStore";
 import { getDate } from "@/helpers";
 import { t } from "i18next";
@@ -20,18 +21,12 @@ export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
   const parameterKey = parametersAliases[parameter as ParametersAliasesKeyType];
   const currentParameterValue = parametersValues[parameterKey] || 0;
 
-  const indexGroups = indexesConfig[parameter as ParametersAliasesKeyType];
-  const firstGroup = indexGroups?.[0];
-  const lastGroup = indexGroups?.[indexGroups.length - 1];
-  const absoluteMin = firstGroup?.range?.min;
-  const absoluteMax = lastGroup?.range?.max;
-  const isCurrentValueMax = currentParameterValue >= absoluteMax;
-  const minMaxTitlePath = isCurrentValueMax ?  lastGroup?.titleTranslationPath : firstGroup?.titleTranslationPath;
+  const { titleTranslationPath } = getParameterGroup(currentParameterValue, parameter as ParametersAliasesKeyType) || {};
+  const title = t(titleTranslationPath || "");
 
-  const parameterTitlePath = indexGroups?.find(({ range: { min, max } }) => {
-    return currentParameterValue >= min && currentParameterValue <= max;
-  })?.titleTranslationPath;
-  const title = t(parameterTitlePath ? parameterTitlePath : minMaxTitlePath);
+  const indexGroups = indexesConfig[parameter as ParametersAliasesKeyType];
+  const absoluteMin =  indexGroups?.[0]?.range?.min;
+  const absoluteMax = indexGroups?.[indexGroups.length - 1]?.range?.max;
 
   return (
     <Wrapper>
@@ -75,8 +70,8 @@ export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
             const isFirstRange = idx === 0;
             const isLastRange = idx === indexGroups.length - 1;
             const withinRange = (min <= currentParameterValue) && (currentParameterValue <= max);
-            const isAbsoluteMin = (currentParameterValue <= absoluteMin) && isFirstRange;
-            const isAbsoluteMax = (currentParameterValue >= absoluteMax) && isLastRange;
+            const isAbsoluteMin = (0 <= currentParameterValue) && (currentParameterValue < absoluteMin) && isFirstRange;
+            const isAbsoluteMax = (currentParameterValue > absoluteMax) && isLastRange;
             const withPointer = isAbsoluteMin || isAbsoluteMax || withinRange;
 
             if (withPointer) {
