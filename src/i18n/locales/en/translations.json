@@ -64,37 +64,31 @@
   "cards": {
     "noise_pollution": [
       {
-        "icon": "",
         "title": "Safe noise level",
         "subtitle": "WHY and what to do?",
         "text": "Safe noise level. Enjoy comfort!"
       },
       {
-        "icon": "",
         "title": "Moderate noise level",
         "subtitle": "WHY and what to do?",
         "text": "The noise level is slightly above the norm. Try to find a quieter place if you are outside, or turn off electrical appliances, music devices if you are indoors to reduce the noise load."
       },
       {
-        "icon": "",
         "title": "Elevated noise level",
         "subtitle": "WHY and what to do?",
         "text": "Increased noise level: try to go into the room. If you are indoors, turn down the volume of your audio, video, and household appliances."
       },
       {
-        "icon": "",
         "title": "High noise level",
         "subtitle": "WHY and what to do?",
         "text": "High noise level. Turn off household appliances, audio and video equipment. Use earplugs if necessary."
       },
       {
-        "icon": "",
         "title": "Hazardous noise",
         "subtitle": "WHY and what to do?",
         "text": "Dangerous noise level. Move away from the source of the noise, use earplugs or ear protectors to reduce the noise load."
       },
       {
-        "icon": "",
         "title": "Extremely high noise pollution",
         "subtitle": "WHY and what to do?",
         "text": "Extremely high noise pollution can cause hearing loss. Try to escape from the noise source, find a place with thick walls, use protective headphones."
@@ -140,37 +134,31 @@
     ],
     "uv": [
       {
-        "icon": "",
         "title": "Safe UV index",
         "subtitle": "WHY and what to do?",
         "text": "Safe level of UV radiation. You can stay outdoors safe without the use of protective equipment."
       },
       {
-        "icon": "",
         "title": "Moderate UV index",
         "subtitle": "WHY and what to do?",
         "text": "Increased UV index. Do not be in the open sun, while outdoors, choose shady places. Apply protective cream SPF 10-SPF 20 to exposed areas of the body 15 minutes before going outdoors."
       },
       {
-        "icon": "",
         "title": "High UV-index",
         "subtitle": "WHY and what to do?",
         "text": "High UV index. Do not be in the open sun, while outdoors, choose shady places. Apply protective cream SPF 30 - SPF 40 to exposed areas of the body 15 minutes before going outside. Use a sun umbrella, cap or hat with a visor, closed clothing."
       },
       {
-        "icon": "",
         "title": "Adverse UV-index",
         "subtitle": "WHY and what to do?",
         "text": "Unsafe UV index. Avoid open unshaded spaces. Apply a protective cream of at least SPF-50 to exposed areas of the body 15 minutes before going outside. Use a sun umbrella, cap or hat with a visor, closed clothing."
       },
       {
-        "icon": "",
         "title": "Hazardous UV",
         "subtitle": "WHY and what to do?",
         "text": "Dangerous level of UV radiation. Don't go out unless necessary. Apply a protective cream of at least SPF-50 to exposed areas of the body 15 minutes before going outside. Use a sun umbrella, cap or hat with a visor, closed clothing. This level of UV rays cause skin cancer even with short exposure."
       },
       {
-        "icon": "",
         "title": "Extremely aggressive UV radiation",
         "subtitle": "WHY and what to do?",
         "text": "Extreme levels of UV radiation. Do not leave room before sunset. Hang curtains indoors. UV rays of this level, even with short exposure, cause skin cancer."
