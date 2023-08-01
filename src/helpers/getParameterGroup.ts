@@ -15,7 +15,11 @@ type GroupType = {
 
 type ParameterGroupType = GroupType | undefined;
 
-export const getParameterGroup = (parameterValue: number, groupName: ParametersAliasesKeyType): ParameterGroupType => {
+export const getParameterGroup = (parameterValue: any, groupName: ParametersAliasesKeyType): ParameterGroupType => {
+  if (!parameterValue) {
+    return undefined;
+  }
+
   const parameterGroupsConfigs = indexesConfig[groupName];
 
   const groupWithinRangeValue = parameterGroupsConfigs?.find(config => {
