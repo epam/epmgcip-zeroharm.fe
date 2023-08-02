@@ -35,17 +35,15 @@ export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
           <Text textTransform="uppercase">
             { currentParameterName }
           </Text>
-          <Box w="24" opacity=".5">
-            <Tooltip
-              sx={{ borderRadius: "8px", padding: "1rem" }}
-              hasArrow
-              bg="gray.700"
-              label={label}
-              placement="right-start"
-            >
-              <InfoFill style={{ width: 16, height: 16 }} />
-            </Tooltip>
-          </Box>
+          <Tooltip
+            sx={{ borderRadius: "8px", padding: "1rem" }}
+            hasArrow
+            bg="gray.700"
+            label={label}
+            placement="right-start"
+          >
+            <InfoFill style={{ width: 16, height: 16 }} opacity=".5"/>
+          </Tooltip>
         </Flex>
         <Box color="gray.400">{currentTimeAndDAte}</Box>
       </Flex>
