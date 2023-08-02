@@ -1,0 +1,230 @@
+{
+  "pages": {
+    "home": {
+      "name": "Asosiy",
+      "get_tips": "Kundalik maslahat oling",
+      "protect": "Sog'lig'ingizni atrof-muhit ifloslanishi asoratlaridan himoya qiling",
+      "open_map": "Xaritani ochish",
+      "chose_location": "Sizning joylashuvingiz emasmi? Ro'yxatdan o'z joylashuvingizni tanlashingiz mumkin"
+    },
+    "map": {
+      "name": "Xarita"
+    },
+    "about": {
+      "name": "Biz haqimizda"
+    },
+    "footer": {
+      "text": "",
+      "link": "",
+      "button": ""
+    },
+    "form": {
+      "required_notification": "Taklif yuborish uchun barcha kerakli maydonlarni to'ldiring!",
+      "incorrectly_notification": "Maydonni to'g'ri to'ldiring.",
+      "name": {
+        "label": "Ism",
+        "placeholder": "Feruza",
+        "tip": ""
+      },
+      "email": {
+        "label": "email",
+        "placeholder": "feruza@epam.com",
+        "tip": ""
+      },
+      "feedback": {
+        "label": "Ko'rib chiqish",
+        "placeholder": "Xizmat haqida o'z takliflaringizni, fikr-mulohazalaringizni shu yerda yozing",
+        "tip": ""
+      },
+      "checkbox": {
+        "label": "Men javob olmoqchiman",
+        "tip": ""
+      }
+    }
+  },
+  "lang": {
+    "ru": "Ru",
+    "en": "En",
+    "uz": "Uz"
+  },
+  "tabs": {
+    "air_quality": "Havoning sifati",
+    "uv": "UB faktori",
+    "noise_pollution": "Shovqin",
+    "humidity": "Namlik",
+    "pressure": "Bosim"
+  },
+  "locations": {
+    "tash_navoi": "Toshkent, Navoiy shoh ko'chasi, 18 А (Mo'ljal uchun: Texnika universiteti)",
+    "tash_skrajna": "",
+    "tash_mlynarska": "",
+    "tash_szajnochy": ""
+  },
+  "cards": {
+    "noise_pollution": [
+      {
+        "title": "Xavfsiz shovqin darajasi",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Xavfsiz shovqin darajasi. Qulaylikdan bahramand bo'ling!"
+      },
+      {
+        "title": "Shovqin darajasi biroz oshgan",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": " Shovqin darajasi me'yordan biroz yuqori. Agar siz tashqarida bo'lsangiz, tinchroq joy topishga harakat qiling yoki bino ichida bo'lsangiz, shovqin yukini kamaytirish uchun elektr va musiqa jihozlarini o'chiring."
+      },
+      {
+        "title": "Shovqin darajasi oshgan",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": " Shovqin darajasi oshgan: bino ichiga kirishga harakat qiling. Agar bino ichida bo'lsangiz, yoqilgan audio va video uskunalar, maishiy texnikaning ovozini pasaytiring."
+      },
+      {
+        "title": " Shovqin yuqori darajada",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Shovqin yuqori darajada. Maishiy, audio va video texnikani o'chiring. Kerak bo'lsa, quloq tiqinlaridan foydalaning."
+      },
+      {
+        "title": "Xavfli shovqin darajasi",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Xavfli shovqin darajasi. Shovqin yukini kamaytirish uchun shovqin manbasidan uzoqlashing, quloq tiqinlaridan yoki himoya quloqchinidan foydalaning."
+      },
+      {
+        "title": "Juda yuqori shovqin darajasi",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Juda yuqori darajadagi shovqindan ifloslanish darajasi eshitish qobiliyatini yo'qotishga olib kelishi mumkin. Shovqin manbasidan uzoqlashishga harakat qiling, qalin devorli joy toping, maxsus himoya quloqchinidan foydalaning."
+      }
+    ],
+    "air_quality": [
+      {
+        "icon": "harm-slightly-smiling-face",
+        "title": "Sifati belgilangan me'yor doirasida",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Toza havo. Tashqarida bo'lish xavfsiz, nafas olish tizimi kasalliklariga duchor bo'lganlar uchun ham."
+      },
+      {
+        "icon": "harm-neutral-face",
+        "title": "O'rtacha havo sifati",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Havo yetarli darajada toza, lekin ba'zi ko'rsatkichlar oshgan bo'lishi mumkin. Tashqarida bo'lish xavfsiz, ammo nafas olish muammolari va allergik reaksiyalari bo'lishi mumkin bo'lgan odamlar noqulaylik his qilishlari mumkin."
+      },
+      {
+        "icon": "harm-worried-face",
+        "title": "Yuqori darajadagi havo ifloslanishi",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Ifloslanish indeksining bir yoki bir nechta ko'rstakichlari me'yordan oshgan. Nafas olish tizimi va allergik kasalliklarga chalingan odamlar nafas olish yo'llarini himoya qilishlari lozim."
+      },
+      {
+        "icon": "harm-more-worried-face",
+        "title": "Yetarlicha xavfli darajadagi havo ifloslanishi",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Havoning ifloslanish darajasi o'rtachadan yuqori. Nafas olish tizimi va allergik kasalliklarga chalingan odamlar uchun yaxshi himoya vositalari va dori-darmonlar kerak. Sizda nafas olish tizimi va allergik kasalliklari bo'lmasa ham respiratordan foydalaning."
+      },
+      {
+        "icon": "harm-disappointed-face",
+        "title": "Xavfli darajadagi havo ifloslanishi",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": " Xavfli darajadagi havo ifloslanishi. Bino ichiga kirishga harakat qiling yoki nafas yo'llarini himoya qiluvchi vositalar: respirator, niqob taqing.  Iloji boricha tashqariga chiqmang."
+      },
+      {
+        "icon": "harm-loudly-crying-face",
+        "title": "Ekstremal darajadagi havo ifloslanishi",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Havodagi zararli moddalarning konsentratsiyasi maksimal darajada! Bino ichida qoling, shaxsiy himoya vositalari: tozalash klapanli, filtrlovchi yoki maxsus patronli respiratorlardan bino ichida ham foydalaning."
+      }
+    ],
+    "uv": [
+      {
+        "title": "Xavfsiz UB-indeks",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "UB nurlanishi xavfsiz darajada. Himoya vositalaridan foydalanmasdan tashqarida bo'lish mumkin."
+      },
+      {
+        "title": " UB-indeks ko'rsatkichlari oshgan ",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "UB-index ko'rsatkichlari oshgan. Quyosh tagida yurmang, ochiq havoda soyali joylarni tanlang. Tashqariga chiqishdan 15 daqiqa oldin badaningizni kiyim bilan qoplanmagan joylariga SPF 10- SPF 20 himoya kremini surting."
+      },
+      {
+        "title": "Yuqori UB-indeks",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Yuqori UB-indeks. Quyosh tagida yurmang, ochiq havoda soyali joylarni tanlang. Tashqariga chiqishdan 15 daqiqa oldin badaningizni kiyim bilan qoplanmagan joylariga SPF 30- SPF 40 himoya kremini surting. Quyosh soyabonidan foydalaning, qalpoq yoki visorli shlyapa, yopiq kiyim kiying."
+      },
+      {
+        "title": "Zararli UB-indeks",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Zararli UB-indeks. Ochiq havoda soyasiz joylarda qolmang. Tashqariga chiqishdan 15 daqiqa oldin badaningizni kiyim bilan qoplanmagan joylariga SPF 50 dan kam bo'lmagan himoya kremini surting. Quyosh soyabonidan foydalaning, qalpoq yoki visorli shlyapa, yopiq kiyim kiying."
+      },
+      {
+        "title": "Xavfli UB-indeks",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "UB nurlanishi xavfli darajada. Zarurat bo'lmasa uydan chiqmang. Tashqariga chiqishdan 15 daqiqa oldin badaningizni kiyim bilan qoplanmagan joylariga SPF 50 dan kam bo'lmagan himoya kremini surting. Quyosh soyabonidan foydalaning, qalpoq yoki visorli shlyapa, yopiq kiyim kiying. Ushbu darajadagi UB nurlari, hatto qisqa muddatdagi ta'siri bilan ham, teri saratoniga olib kelishi mumkin."
+      },
+      {
+        "title": "O'ta agressiv UB nurlanish",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Ekstremal darajadagi UB nurlanish. Quyosh botmagunicha bino ichidan chiqmang. Bino xonalaridagi pardalarni yoping. Ushbu darajadagi UB nurlari, hatto qisqa muddatdagi ta'siri bilan ham, teri saratoniga olib kelishi mumkin."
+      }
+    ],
+    "humidity": [
+      {
+        "icon": "harm-neutral-face",
+        "title": "Havo namligi oshgan",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Havo namligining oshishi yurak-qon tomir kassalliklari va ziqnafaslik hastaligigia uchragan insonlarning holatiga salbiy ta'sir ko'rsatishi mumkin. Iloji bo'lsa havo quritgichidan foydalaning. Xonani har soatda shamollating, pardalarni ochib qo'ying."
+      },
+      {
+        "icon": "harm-slightly-smiling-face",
+        "title": "Havo namligi normal holatda",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Optimal darajadagi havo namligi! Ochiq havodagi sayrdan yoki bino ichida qulay haroratdan bahramand bo'ling!"
+      },
+      {
+        "icon": "harm-disappointed-face",
+        "title": "Haddan tashqari quruq havo",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Haddan tashqari quruq havo shilliq qavatlarga salbiy ta'sir ko'rsatib, havodagi zararli moddalar konsentratsiyasini oshiradi. Nafas olish tizimi, allergik va bronx kasalliklariga chalingan odamlar noqulaylikni his qilishadi. Bino ichida havo namlagichidan foydalaning. Xona haroratidagi suvdan ko'proq iching. Havo namlagichi bo'lmagan hollarda matolarni ho'llab, xona ichida osib qo'ying. Havoning namlik darajasi past, harorati esa yuqori bo'lgan hollarda xona ichiga suv bilan to'ldirilgan idishlarni joylashtiring – ushbu suvning bug'lanishi xonadagi namlik darajasini oshiradi."
+      }
+    ],
+    "pressure": [
+      {
+        "icon": "harm-disappointed-face",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "harm-slightly-smiling-face",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      },
+      {
+        "icon": "harm-worried-face",
+        "title": "",
+        "subtitle": "",
+        "text": ""
+      }
+    ]
+  },
+  "hints": {
+    "air_quality": "Havo sifati indeksi (AQI) — bu ma'lum bir hududdagi havoning ifloslanish darajasini aniqlash uchun qo'llaniladigan ko'rsatkichlar shkalasi. U havo sifatini miqdoriy baholash va keng jamoatchilikka yetkazish jarayonining standartlashtirilgan usulini ta'minlaydi, bu esa havo ifloslanishining salomatlik uchun potensial oqibatlarini tushunishni osonlashtiradi. AQI ko'rsatkichlari 0 dan 500 gacha o'zgarib turadi, bunda qiymatlar qancha past bo'lsa, havo sifati shuncha yaxshiligini va qancha yuqori bo'lsa, havo sifati shuncha yomonligini anglatadi. Indeks odatda ranglar bilan kodlangan toifalarga bo'linib, ularning har biri muayyan darajadagi sog'liq muammolari bilan bog'langan.",
+    "pm2.5": "2,5 mikron yoki undan kichikroq o'lchamdagi qattiq zarrachalar: PM2.5 – bu o'pkaga chuqur singib, odamlarda nafas olish va yurak-qon tomir kasalliklarini, jumladan, ziqnafaslik, yurak xuruji va o'pka saratonini keltirib chiqarishi mumkin bo'lgan, mayda zarrachalardan tashkil topgan havo ifloslanishining bir turi. PM2.5 asosan qazib olinadigan yoqilg'ining yonishi, sanoat jarayonlari hamda o'rmon yong'inlari va chang bo'ronlari kabi tabiiy manbalardan hosil bo'ladi.",
+    "pm10": "PM10 – bu chang va tutun tarkibida mavjud bo'lgan juda mayda zarrachalar. Ularning diametri 10 mikrometr (0,01 mm) yoki undan kichik. PM10 zarrachalari oddiy havo ifloslantiruvchisi bo'lib, tomoq va o'pkaga singishi uchun yetarlicha kichikdir. PM10 ning yuqori miqdori yo'talni, burun oqishini va ko'zni achitish hissiyotlarini keltirib chiqarishi mumkin. PM10 darajasi yuqori bo'lganda yurak yoki o'pka kasalligi bilan og'rigan odamlarda ko'proq alomatlar yuzaga kelishi mumkin. Bu alomatlar ichiga xirillash, ko'krak qafasida siqilish hissi yoki nafas olishni qiyinlashishi kirishi mumkin.",
+    "pm1": "PM1 - bu diametri 1 mikrondan kichik bo'lgan o'ta mayda zarrachalarning havodagi mavjudlik darajasi. Ular PM 2.5 dan sezilarli darajada kichikroq. Ularning o'lchami inson sochining diametridan 70-100 marta kichik. PM1 zarralari o'pka tomonidan filtrlanmaydi va gematoensefalik to'sig'ini kesib o'tishi mumkin.",
+    "no": "Azot oksidlari (NO) - bu yuqori reaksion qobiliyatga ega bo'lgan zaharli gazlar guruhidir. Bu gazlar qizdirilganda zaharli moddalar ajratadi. NO bilan ifloslanish holati avtomobillar, og'ir yuk mashinalari va sanoat asbob-uskunalari (masalan, qurilish texnikalari) faoliyati natijasida kelib chiqadi.",
+    "no2": "Azot dioksidi (NO2) – bu yuqori reaksion qobiliyatga ega bo'lgan xavfli gazlardan biridir. Tarkibida yuqori miqdorgdi azot dioksid bo'lgan havo bilan nafas olinganda, inson nafas olish organlarining shilliq qavatlari shikastlanadi. Uning qisqa vaqt mobaynida ta'siri natijasida ziqnafaslik kabi nafas olish tizimi kasalliklarini, shuningdek, quyidagi alomatlarni keltirib chiqarishi mumkin: yo'tal, xirillash, nafas olishda qiyinalish. Professional tibbiy yordam ko'rsatish zaruratini tug'dirishi mumkin.",
+    "nh3": "Ammiak (NH3), azot va vodoroddan tashkil topgan rangsiz o'yuvchi gaz. Yuqori miqdordagi ammiak terining, og'iz, tomoq, o'pka va ko'zlarning shilliq qavatini shikastlab, ularning kuyishiga olib kelishi mumkin. Havodagi ammiakning juda yuqori miqdori o'pkaga zarar yetkazishi va o'limga olib kelishi mumkin.",
+    "co": "Is gazi (CO) bu rangsiz, zaharli gaz bo'lib, odamlar sog'lig'i bilan bog'liq muammolarga, jumladan, bosh og'rig'i, bosh aylanishi, ko'ngil aynashi, chalkashlik tug'dirishi va yuqori konsentratsiyalarda hatto o'limga sabab bo'lishi mumkin. CO havo ifloslanishining asosiy manbai bo'lib, u asosan qazib olinadigan yoqilg'ining to'liq yonmasligi natijasida, masalan, avtomobil dvigatellarining ishlashi jarayonlarida hosil bo'ladi.",
+    "o3": "Ozon (O3) uchta kislorod atomidan tashkil topgan yuqori reaktiv gazdir. Ozon bilan nafas olish natijasida ko'krak og'rig'i, yo'tal, tomoq tirnalishi va burun bitishi kabi turli xil sog'liqqa oid muammolar yuzaga kelishi mumkin. U bronxit, emfizema va ziqnafaslik kasalliklarini og'irlshtirishi mumkin. Shu bilan birga, ozon o'pka funktsiyasini sustlashishi va o'pka shilliq qavatining yallig'lanishiga olib kelishi mumkin. Ozonning takroriy ta'siri o'pka to'qimalarining batamom chandiqlarga aylanishiga olib kelishi mumkin.",
+    "so2": "",
+    "uv": "UB indeksi - xalqaro standartlarga muvofiq, muayyan joy va vaqtdagi quyosh nurlari spektrida ultrabinafsha nurlanish darajasini tavsiflovchi ko'rsatkich. UB indeksi inson terisi uchun Quyoshdan tarqaluvchi ultrabinafsha nurlanish xavfini baholash imkonini beradi.",
+    "noise_pollution": "Shovqin bilan ifloslanish – bu inson salomatligiga, yovvoyi tabiatga va atrof-muhit sifatiga salbiy ta'sir ko'rsatishi mumkin bo'lgan istalmagan yoki haddan tashqari intensiv tovushdir.",
+    "humidity": "Namlik – bu havoda mavjud bo'lgan suv bug'ining konsentratsiyasi.",
+    "pressure": "Havo bosimi - bu siqilgan yoki siqilmagan holdagi havoning u bilan tegingan har qanday sirtga ta'sir qiluvchi kuch."
+  },
+  "indexes": {
+    "air_quality": "Havo sifati ko'rsatkichi",
+    "uv": "UB ko'rsatkichi",
+    "noise_pollution": "Shovqin bilan ifloslanish ko'rsatgichi",
+    "humidity": "Namlik ko'rsatkichi",
+    "pressure": "Havo bosimi ko'rsatkichi"
+  }
+}
