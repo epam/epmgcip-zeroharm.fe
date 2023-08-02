@@ -65,8 +65,14 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
   const cardsTrans: any = translations?.cards;
   const cards = cardsTrans[cardsKey];
   const [cardIndex, setCardIndex] = useState(0);
+  const [currentCard, setCurrentCard] = useState(cards[cardIndex]);
 
   const translationPath = `cards.${cardsKey}.${cardIndex}`;
+  useEffect(() => {
+    setCurrentCard(cards[cardIndex]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cardIndex]);
+
   const isNavigation = cards.length > 0;
   const isLeftActive = cardIndex > 0;
   const isRightActive = cardIndex < cards.length - 1;
@@ -83,6 +89,7 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
         </CardStep>
       )}
       <Card
+        // heading={currentCard?.title}
         heading={t(`${translationPath}.title`)}
         subheading={t(`tips.${cardsKey}`)}
         color="red"

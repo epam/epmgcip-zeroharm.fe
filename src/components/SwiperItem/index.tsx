@@ -28,7 +28,7 @@ export const SwiperItem: React.FC<SwiperItemDataT> = (props) => {
         <Text>{text}</Text>
         <Link to="/map" onClick={() => setParameter(parameter)}>
           <Flex alignItems="center" justifyContent="flex-end" color="gray.950">
-            <Text fontWeight="700">{t("pages.home.detailed_info")}</Text>
+            <Text fontWeight="700">{ t("detailed_info") }</Text>
             <Icon width="40px" height="30px" as={BiRightArrowAlt} />
           </Flex>
         </Link>

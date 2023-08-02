@@ -1,10 +1,10 @@
 import * as React from "react";
 import Wrapper from "@UI/Wrapper/Wrapper";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { getDate } from "@/helpers";
+import { getDate, getParameterGroup } from "@/helpers";
 import { Indicator } from "@UI/Indicator/Indicator";
 import { useDataStore } from "@/store/useDataStore";
-import { particlesAliases, ParticlesAliasesKeyType, groupsColors, indexesConfig, GroupsColorsKeyType } from "@/constants";
+import { particlesAliases, ParticlesAliasesKeyType, groupsColors, GroupsColorsKeyType } from "@/constants";
 
 type IndexDateType = {
   children?: React.ReactNode;
@@ -16,7 +16,6 @@ export const Indicators: React.FC<IndexDateType> = ({ children }) => {
   const { parametersValues } = useDataStore();
 
   const currentTimeAndDAte = getDate();
-  const particlesGroups = indexesConfig.air_quality;
 
   return (
     <Wrapper>
@@ -31,17 +30,9 @@ export const Indicators: React.FC<IndexDateType> = ({ children }) => {
       {hints.map(
         (hint) => {
           const particleName = particlesAliases[hint as ParticlesAliasesKeyType];
-          const particleValue = parametersValues[particleName];
-          const max = particlesGroups[particlesGroups.length - 1].range.max;
-          const isAbsoluteMax = Number(particleValue) > max;
-          const lastGroupName = particlesGroups[particlesGroups.length - 1].groupName;
-          const particleGroupName = particlesGroups.find(({ range }) => {
-            const { min, max } = range;
-
-            return min <= Number(particleValue) && Number(particleValue) <= max;
-          })?.groupName;
-          const groupName = isAbsoluteMax ? lastGroupName : particleGroupName;
-          const color = groupsColors[groupName as GroupsColorsKeyType];
+          const particleValue = Number(parametersValues[particleName]);
+          const { groupName } = getParameterGroup(particleValue, "air_quality") || {};
+          const color = groupsColors?.[groupName as GroupsColorsKeyType];
           const particleValueStr = String(particleValue);
           const roundedParticleValue = parseFloat(particleValueStr.slice(0, particleValueStr.indexOf(".") + 3));
           const size = isNaN(roundedParticleValue) ? 0 : roundedParticleValue;

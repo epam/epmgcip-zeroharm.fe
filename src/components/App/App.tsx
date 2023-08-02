@@ -10,7 +10,7 @@ import "@/i18n/i18n";
 function App() {
   const { language, setParametersValues } = useDataStore();
 
-  useFetch(`${process.env.REACT_APP_ZERO_HARM_URL}/v1/pollution?station_id=1`, setParametersValues);
+  useFetch(`${process.env.REACT_APP_ZERO_HARM_URL}/v1/pollutions?station_id=1`, setParametersValues);
 
   useEffect(() => {
     i18n.changeLanguage(language).then();

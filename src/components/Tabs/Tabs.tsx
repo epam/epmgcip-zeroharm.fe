@@ -26,6 +26,7 @@ const Tabs = () => {
 
   useEffect(() => {
     setParameter(currentTab);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -54,7 +55,7 @@ const Tabs = () => {
       <TabPanels>
         {tabKeys.map((tab: any) => (
           <TabPanel key={tab} p="24px 0 0">
-            <Cards cardsKey={currentTab} />
+            <Cards cardsKey={tab} />
           </TabPanel>
         ))}
       </TabPanels>
