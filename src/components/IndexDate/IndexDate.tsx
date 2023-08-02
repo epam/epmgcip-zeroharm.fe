@@ -42,7 +42,7 @@ export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
             label={label}
             placement="right-start"
           >
-            <InfoFill style={{ width: 16, height: 16 }} />
+            <InfoFill style={{ width: 16, height: 16 }} opacity=".5"/>
           </Tooltip>
         </Flex>
         <Box color="gray.400">{currentTimeAndDAte}</Box>
