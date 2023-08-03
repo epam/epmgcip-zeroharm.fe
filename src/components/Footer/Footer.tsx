@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
       <Button size="xs" onClick={onOpen}>
         {t("pages.footer.button")}
       </Button>
-      <BaseModal isOpen={isOpen} onClose={onClose} title="Help us be better">
+      <BaseModal isOpen={isOpen} onClose={onClose} title={t("pages.form.title") ?? ""}>
         <Form />
       </BaseModal>
     </Flex>
