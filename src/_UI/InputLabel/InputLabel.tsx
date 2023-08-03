@@ -1,12 +1,14 @@
 import { Box, FormLabel, Flex, Tooltip, Text } from "@chakra-ui/react";
 import { ReactComponent as QuestionMark } from "@/assets/icons/stroke/harm-question.svg";
 
-export const InputLabel = (props: {
+type InputLabelProps = {
   tooltipText: string;
   label: string;
   htmlFor: string;
   response: boolean;
-}) => {
+}
+
+export const InputLabel:  React.FC<InputLabelProps> = (props) => {
   const { tooltipText, label, htmlFor, response } = props;
 
   return (
