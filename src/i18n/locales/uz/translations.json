@@ -23,22 +23,18 @@
       "incorrectly_notification": "Maydonni to'g'ri to'ldiring.",
       "name": {
         "label": "Ism",
-        "placeholder": "Feruza",
-        "tip": ""
+        "placeholder": "Feruza"
       },
       "email": {
-        "label": "email",
-        "placeholder": "feruza@epam.com",
-        "tip": ""
+        "label": "Email",
+        "placeholder": "feruza@epam.com"
       },
       "feedback": {
         "label": "Ko'rib chiqish",
-        "placeholder": "Xizmat haqida o'z takliflaringizni, fikr-mulohazalaringizni shu yerda yozing",
-        "tip": ""
+        "placeholder": "Xizmat haqida o'z takliflaringizni, fikr-mulohazalaringizni shu yerda yozing"
       },
       "checkbox": {
-        "label": "Men javob olmoqchiman",
-        "tip": ""
+        "label": "Men javob olmoqchiman"
       }
     }
   },

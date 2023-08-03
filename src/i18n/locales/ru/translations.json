@@ -24,22 +24,18 @@
       "incorrectly_notification": "Заполните поле корректно.",
       "name": {
         "label": "Имя",
-        "placeholder": "Мария",
-        "tip": ""
+        "placeholder": "Мария"
       },
       "email": {
         "label": "Email",
-        "placeholder": "mary@epam.com",
-        "tip": ""
+        "placeholder": "mary@epam.com"
       },
       "feedback": {
         "label": "Отзыв",
-        "placeholder": "Напишите свои предложения, отзыв о сервисе здесь",
-        "tip": ""
+        "placeholder": "Напишите свои предложения, отзыв о сервисе здесь"
       },
       "checkbox": {
-        "label": " Я хочу получить ответ",
-        "tip": ""
+        "label": " Я хочу получить ответ"
       }
     }
   },

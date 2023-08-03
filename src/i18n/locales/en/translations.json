@@ -20,12 +20,13 @@
       "button": "Leave a feedback"
     },
     "form": {
+      "title": "Help us be better",
       "required_notification": "Fill in all the required fields to submit your feedback!",
       "incorrectly_notification": "Fill in the field correctly",
       "name": {
         "label": "Name",
         "placeholder": "Mary",
-        "tip": "Write your name here"
+        "tip": "Write your name here."
       },
       "email": {
         "label": "Email",
@@ -40,7 +41,8 @@
       "checkbox": {
         "label": "I want to get a response",
         "tip": "Check if you want to receive a response from our team"
-      }
+      },
+      "button": "Send feedback"
     }
   },
   "lang": {
