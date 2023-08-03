@@ -30,7 +30,7 @@ export const Form = () => {
     formState: { errors, isSubmitting },
   } = useForm<FormData>({ mode: "onBlur" });
 
-  const onSubmit: SubmitHandler<FormData> = (values) => {
+  const onSubmit: SubmitHandler<FormData> = (values: FormData) => {
     console.log(values);
   };
 
