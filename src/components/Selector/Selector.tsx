@@ -35,7 +35,7 @@ const Selector = () => {
           </Button>
         </Link>
         <Box>
-          <Popup isOpen={true}>
+          <Popup isOpen={false}>
             <Text>{t("pages.home.chose_location")}</Text>
           </Popup>
         </Box>

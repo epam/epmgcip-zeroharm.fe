@@ -5,7 +5,7 @@ import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import Card from "@UI/Card/Card";
 import { useDataStore } from "@/store/useDataStore";
-
+import { t } from "i18next";
 
 type SwiperItemDataT = {
   heading: string;
@@ -28,7 +28,7 @@ export const SwiperItem: React.FC<SwiperItemDataT> = (props) => {
         <Text>{text}</Text>
         <Link to="/map" onClick={() => setParameter(parameter)}>
           <Flex alignItems="center" justifyContent="flex-end" color="gray.950">
-            <Text fontWeight="700">Detailed Information</Text>
+            <Text fontWeight="700">{ t("detailed_info") }</Text>
             <Icon width="40px" height="30px" as={BiRightArrowAlt} />
           </Flex>
         </Link>
