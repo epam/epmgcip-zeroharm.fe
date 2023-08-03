@@ -4,8 +4,8 @@ import CardIcon from "../CardIcon/CardIcon";
 
 type CardType = {
   color?: string;
-  subheading?: string;
-  heading?: string;
+  heading: string;
+  subheading: string;
   icon: string;
   children?: React.ReactNode;
   height?: string;
@@ -74,7 +74,6 @@ const Card: React.FC<CardType> = ({
   height,
   children,
 }) => {
-
   return (
     <>
       <CardHeader bg={`${color}.500`}>

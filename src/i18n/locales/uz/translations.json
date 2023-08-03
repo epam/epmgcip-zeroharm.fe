@@ -226,5 +226,6 @@
     "noise_pollution": "Shovqin bilan ifloslanish ko'rsatgichi",
     "humidity": "Namlik ko'rsatkichi",
     "pressure": "Havo bosimi ko'rsatkichi"
-  }
+  },
+  "detailed_info": ""
 }
