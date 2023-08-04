@@ -13,32 +13,24 @@
     "about": {
       "name": "Biz haqimizda"
     },
-    "footer": {
-      "text": "",
-      "link": "",
-      "button": ""
-    },
+    "footer": {},
     "form": {
       "required_notification": "Taklif yuborish uchun barcha kerakli maydonlarni to'ldiring!",
       "incorrectly_notification": "Maydonni to'g'ri to'ldiring.",
       "name": {
         "label": "Ism",
-        "placeholder": "Feruza",
-        "tip": ""
+        "placeholder": "Feruza"
       },
       "email": {
         "label": "email",
-        "placeholder": "feruza@epam.com",
-        "tip": ""
+        "placeholder": "feruza@epam.com"
       },
       "feedback": {
         "label": "Ko'rib chiqish",
-        "placeholder": "Xizmat haqida o'z takliflaringizni, fikr-mulohazalaringizni shu yerda yozing",
-        "tip": ""
+        "placeholder": "Xizmat haqida o'z takliflaringizni, fikr-mulohazalaringizni shu yerda yozing"
       },
       "checkbox": {
-        "label": "Men javob olmoqchiman",
-        "tip": ""
+        "label": "Men javob olmoqchiman"
       }
     }
   },
@@ -55,10 +47,7 @@
     "pressure": "Bosim"
   },
   "locations": {
-    "tash_navoi": "Toshkent, Navoiy shoh ko'chasi, 18 А (Mo'ljal uchun: Texnika universiteti)",
-    "tash_skrajna": "",
-    "tash_mlynarska": "",
-    "tash_szajnochy": ""
+    "tash_navoi": "Toshkent, Navoiy shoh ko'chasi, 18 А (Mo'ljal uchun: Texnika universiteti)"
   },
   "cards": {
     "noise_pollution": [
@@ -185,22 +174,13 @@
     ],
     "pressure": [
       {
-        "icon": "harm-disappointed-face",
-        "title": "",
-        "subtitle": "",
-        "text": ""
+        "icon": "harm-disappointed-face"
       },
       {
-        "icon": "harm-slightly-smiling-face",
-        "title": "",
-        "subtitle": "",
-        "text": ""
+        "icon": "harm-slightly-smiling-face"
       },
       {
-        "icon": "harm-worried-face",
-        "title": "",
-        "subtitle": "",
-        "text": ""
+        "icon": "harm-worried-face"
       }
     ]
   },
@@ -214,7 +194,6 @@
     "nh3": "Ammiak (NH3), azot va vodoroddan tashkil topgan rangsiz o'yuvchi gaz. Yuqori miqdordagi ammiak terining, og'iz, tomoq, o'pka va ko'zlarning shilliq qavatini shikastlab, ularning kuyishiga olib kelishi mumkin. Havodagi ammiakning juda yuqori miqdori o'pkaga zarar yetkazishi va o'limga olib kelishi mumkin.",
     "co": "Is gazi (CO) bu rangsiz, zaharli gaz bo'lib, odamlar sog'lig'i bilan bog'liq muammolarga, jumladan, bosh og'rig'i, bosh aylanishi, ko'ngil aynashi, chalkashlik tug'dirishi va yuqori konsentratsiyalarda hatto o'limga sabab bo'lishi mumkin. CO havo ifloslanishining asosiy manbai bo'lib, u asosan qazib olinadigan yoqilg'ining to'liq yonmasligi natijasida, masalan, avtomobil dvigatellarining ishlashi jarayonlarida hosil bo'ladi.",
     "o3": "Ozon (O3) uchta kislorod atomidan tashkil topgan yuqori reaktiv gazdir. Ozon bilan nafas olish natijasida ko'krak og'rig'i, yo'tal, tomoq tirnalishi va burun bitishi kabi turli xil sog'liqqa oid muammolar yuzaga kelishi mumkin. U bronxit, emfizema va ziqnafaslik kasalliklarini og'irlshtirishi mumkin. Shu bilan birga, ozon o'pka funktsiyasini sustlashishi va o'pka shilliq qavatining yallig'lanishiga olib kelishi mumkin. Ozonning takroriy ta'siri o'pka to'qimalarining batamom chandiqlarga aylanishiga olib kelishi mumkin.",
-    "so2": "",
     "uv": "UB indeksi - xalqaro standartlarga muvofiq, muayyan joy va vaqtdagi quyosh nurlari spektrida ultrabinafsha nurlanish darajasini tavsiflovchi ko'rsatkich. UB indeksi inson terisi uchun Quyoshdan tarqaluvchi ultrabinafsha nurlanish xavfini baholash imkonini beradi.",
     "noise_pollution": "Shovqin bilan ifloslanish – bu inson salomatligiga, yovvoyi tabiatga va atrof-muhit sifatiga salbiy ta'sir ko'rsatishi mumkin bo'lgan istalmagan yoki haddan tashqari intensiv tovushdir.",
     "humidity": "Namlik – bu havoda mavjud bo'lgan suv bug'ining konsentratsiyasi.",
@@ -226,6 +205,5 @@
     "noise_pollution": "Shovqin bilan ifloslanish ko'rsatgichi",
     "humidity": "Namlik ko'rsatkichi",
     "pressure": "Havo bosimi ko'rsatkichi"
-  },
-  "detailed_info": ""
+  }
 }
