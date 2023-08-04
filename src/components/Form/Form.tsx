@@ -43,6 +43,8 @@ export const Form = () => {
       : true;
   };
 
+  console.log(t("pages.footer.texta"));
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Divider mb={4} borderColor="gray.700" />
@@ -55,7 +57,7 @@ export const Form = () => {
         />
         <Input
           id="name"
-          placeholder={t("pages.form.name.placeholder") ?? ""}
+          placeholder={t("pages.form.name.placeholder")}
           {...register("name", {
             pattern: {
               value: /^[A-Za-z А-Яа-я]{2,50}$/,
@@ -83,7 +85,7 @@ export const Form = () => {
         />
         <Input
           id="email"
-          placeholder={t("pages.form.email.placeholder") ?? ""}
+          placeholder={t("pages.form.email.placeholder")}
           {...register("email", {
             minLength: 2,
             maxLength: 50,
@@ -118,7 +120,7 @@ export const Form = () => {
           border={0}
           focusBorderColor="white"
           id="feedback"
-          placeholder={t("pages.form.feedback.placeholder") ?? ""}
+          placeholder={t("pages.form.feedback.placeholder")}
           _placeholder={{ color: "gray.300", fontSize: "16px" }}
           {...register("feedback", {
             pattern: {
@@ -126,7 +128,7 @@ export const Form = () => {
                 /[A-Za-zА-Яа-я0-9 !@~#$№%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{6,500}/g,
               message: t("pages.form.incorrectly_notification"),
             },
-            required: t("pages.form.required_notification") ?? "",
+            required: t("pages.form.required_notification"),
           })}
         />
         <Box h="6" pt="1">
@@ -161,7 +163,7 @@ export const Form = () => {
       </FormControl>
       <Divider mb={4} borderColor="gray.700" />
       <Button isLoading={isSubmitting} type="submit" padding="16px 24px">
-      {t("pages.form.button")}
+        {t("pages.form.button")}
       </Button>
     </form>
   );
