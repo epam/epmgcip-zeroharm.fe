@@ -58,9 +58,9 @@
   "locations": {
     "tash_furkata": "Tashkent, 8 Furkata str.",
     "tash_navoi": "Tashkent, 18 А Navoi Avenue (Landmark: Tech University)",
-    "tash_skrajna": "Tashkent, ul. Skrajna 7, Szczecin 70-886 (Landmark: Revera Restaurant)",
-    "tash_mlynarska": "Tashkent, ul. Młynarska 142, Bydgoszcz 85-376 (Landmark: Seafood Market)",
-    "tash_szajnochy": "Tashkent, ul. Szajnochy 103, Bydgoszcz 85-738 (Landmark: Museum)"
+    "tash_skrajna": "Tashkent, 7 Skrajna str., Szczecin 70-886 (Landmark: Revera Restaurant)",
+    "tash_mlynarska": "Tashkent, 142 Młynarska str., Bydgoszcz 85-376 (Landmark: Seafood Market)",
+    "tash_szajnochy": "Tashkent, 103 Szajnochy str., Bydgoszcz 85-738 (Landmark: Museum)"
   },
   "cards": {
     "noise_pollution": [
