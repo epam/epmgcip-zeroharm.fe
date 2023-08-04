@@ -1,3 +1,4 @@
+import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import {
   Box,
@@ -27,6 +28,7 @@ export const Form = () => {
     handleSubmit,
     register,
     watch,
+    clearErrors,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({ mode: "onBlur" });
 
@@ -41,6 +43,10 @@ export const Form = () => {
       ? "Fill in all the required fields to submit your feedback!"
       : true;
   };
+
+  React.useEffect(() => {
+    !watchResponse && clearErrors(["name", "email"]);
+  }, [watchResponse]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
