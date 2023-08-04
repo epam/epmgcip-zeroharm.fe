@@ -25,21 +25,21 @@
       "name": {
         "label": "Name",
         "placeholder": "Mary",
-        "tip": "Write your name here"
+        "tip": "Write your name here. Use 2-50 symbols in Latin or Cyrillic alphabet."
       },
       "email": {
         "label": "Email",
         "placeholder": "mary@epam.com",
-        "tip": "Write your email here"
+        "tip": "Write your email here. Use 7-50 symbols in Latin alphabet."
       },
       "feedback": {
         "label": "My feedback",
         "placeholder": "Write your feedback or suggestion here",
-        "tip": "We are glad to receive feedback from you! Write your feedback or suggestion here, use no more than 500 symbols!"
+        "tip": "We are glad to receive feedback from you! Write your feedback or suggestion here, use 6-500 symbols in Latin or Cyrillic alphabet!"
       },
       "checkbox": {
         "label": "I want to get a response",
-        "tip": "Check if you want to receive a response from our team"
+        "tip": "Check if you want to receive a response from our team."
       }
     }
   },
