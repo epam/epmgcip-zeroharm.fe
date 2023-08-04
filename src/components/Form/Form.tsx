@@ -39,6 +39,8 @@ export const Form = () => {
   const watchResponse = watch("response", false);
 
   const required = (value?: string) => {
+    // return !value && watchResponse
+    // return !value && watchResponse
     return !value && watchResponse
       ? "Fill in all the required fields to submit your feedback!"
       : true;
@@ -90,10 +92,10 @@ export const Form = () => {
           id="email"
           placeholder="mary@epam.com"
           {...register("email", {
-            maxLength: 50,
+            minLength: { value: 7, message: "Fill in the field correctly" },
+            maxLength: { value: 50, message: "Fill in the field correctly" },
             pattern: {
-              value:
-                /[A-Za-zА-Яа-я0-9_-]+@[A-Za-zА-Яа-я]+\.[A-Za-zА-Яа-я]{2,4}/g,
+              value: / [\w-]+@[\w-]+\.[\w]{2,4}/g,
               message: "Fill in the field correctly",
             },
             validate: {
