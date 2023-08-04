@@ -84,7 +84,6 @@ export const Form = () => {
           id="email"
           placeholder="mary@epam.com"
           {...register("email", {
-            minLength: 2,
             maxLength: 50,
             pattern: {
               value:
