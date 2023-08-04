@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import {
   Box,
@@ -27,6 +28,7 @@ export const Form = () => {
     handleSubmit,
     register,
     watch,
+    clearErrors,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({ mode: "onBlur" });
 
@@ -42,6 +44,10 @@ export const Form = () => {
       : true;
   };
 
+  useEffect(() => {
+    !watchResponse && clearErrors(["name", "email"]);
+  }, [watchResponse]);
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Divider mb={4} borderColor="gray.700" />
@@ -50,7 +56,7 @@ export const Form = () => {
           tooltipText="Write your name here"
           label="Name"
           htmlFor="name"
-          response={watchResponse}
+          required={watchResponse}
         />
         <Input
           id="name"
@@ -78,13 +84,12 @@ export const Form = () => {
           tooltipText="Write your email here"
           label="Email"
           htmlFor="email"
-          response={watchResponse}
+          required={watchResponse}
         />
         <Input
           id="email"
           placeholder="mary@epam.com"
           {...register("email", {
-            minLength: 2,
             maxLength: 50,
             pattern: {
               value:
@@ -109,7 +114,7 @@ export const Form = () => {
           tooltipText="We are glad to receive feedback from you! Write your feedback or suggestion here, use no more than 500 symbols!"
           label="My feedback"
           htmlFor="feedback"
-          response={watchResponse}
+          required
         />
         <Textarea
           h={100}
