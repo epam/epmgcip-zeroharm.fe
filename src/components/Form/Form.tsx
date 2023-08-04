@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import {
   Box,
@@ -44,7 +44,7 @@ export const Form = () => {
       : true;
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     !watchResponse && clearErrors(["name", "email"]);
   }, [watchResponse]);
 
