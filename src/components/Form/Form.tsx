@@ -50,7 +50,7 @@ export const Form = () => {
           tooltipText="Write your name here"
           label="Name"
           htmlFor="name"
-          response={watchResponse}
+          required={watchResponse}
         />
         <Input
           id="name"
@@ -78,7 +78,7 @@ export const Form = () => {
           tooltipText="Write your email here"
           label="Email"
           htmlFor="email"
-          response={watchResponse}
+          required={watchResponse}
         />
         <Input
           id="email"
@@ -108,7 +108,7 @@ export const Form = () => {
           tooltipText="We are glad to receive feedback from you! Write your feedback or suggestion here, use no more than 500 symbols!"
           label="My feedback"
           htmlFor="feedback"
-          response={watchResponse}
+          required
         />
         <Textarea
           h={100}

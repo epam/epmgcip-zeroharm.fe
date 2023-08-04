@@ -5,11 +5,11 @@ type InputLabelProps = {
   tooltipText: string;
   label: string;
   htmlFor: string;
-  response: boolean;
+  required: boolean;
 }
 
 export const InputLabel:  React.FC<InputLabelProps> = (props) => {
-  const { tooltipText, label, htmlFor, response } = props;
+  const { tooltipText, label, htmlFor, required } = props;
 
   return (
     <Flex mb={2} align={"center"}>
@@ -26,7 +26,7 @@ export const InputLabel:  React.FC<InputLabelProps> = (props) => {
       <FormLabel mr={0} mb={0} htmlFor={htmlFor}>
         {label}
       </FormLabel>
-      {response && <Text color="red">*</Text>}
+      {required && <Text color="red">*</Text>}
     </Flex>
   );
 };
