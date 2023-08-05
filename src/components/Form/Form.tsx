@@ -36,21 +36,17 @@ export const Form = () => {
   const requiredErrorMessage = t("pages.form.required_notification");
   const invalidInputErrorMessage = t("pages.form.incorrectly_notification");
 
-  const onSubmit: SubmitHandler<FormData> = (values: FormData) => {
-    console.log(values);
-  };
+  const onSubmit: SubmitHandler<FormData> = (values: FormData) => {};
 
   const watchResponse = watch("response", false);
 
   const required = (value?: string) => {
-    return !value && watchResponse
-      ? requiredErrorMessage
-      : true;
+    return !value && watchResponse ? requiredErrorMessage : true;
   };
 
   useEffect(() => {
     !watchResponse && clearErrors(["name", "email"]);
-  }, [watchResponse]);
+  }, [watchResponse, clearErrors]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -137,6 +133,7 @@ export const Form = () => {
           {...register("feedback", {
             pattern: {
               value:
+                //eslint-disable-next-line
                 /[A-Za-zА-Яа-я0-9 !@~#$№%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{6,500}/g,
               message: invalidInputErrorMessage,
             },
