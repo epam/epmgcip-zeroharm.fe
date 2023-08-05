@@ -22,7 +22,7 @@
         "placeholder": "Feruza"
       },
       "email": {
-        "label": "email",
+        "label": "Email",
         "placeholder": "feruza@epam.com"
       },
       "feedback": {
