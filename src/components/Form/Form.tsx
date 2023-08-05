@@ -33,6 +33,9 @@ export const Form = () => {
     formState: { errors, isSubmitting },
   } = useForm<FormData>({ mode: "onBlur" });
 
+  const requiredErrorMessage = t("pages.form.required_notification");
+  const invalidInputErrorMessage = t("pages.form.incorrectly_notification");
+
   const onSubmit: SubmitHandler<FormData> = (values: FormData) => {
     console.log(values);
   };
@@ -40,10 +43,8 @@ export const Form = () => {
   const watchResponse = watch("response", false);
 
   const required = (value?: string) => {
-    // return !value && watchResponse
-    // return !value && watchResponse
     return !value && watchResponse
-      ? t("pages.form.required_notification")
+      ? requiredErrorMessage
       : true;
   };
 
@@ -67,7 +68,7 @@ export const Form = () => {
           {...register("name", {
             pattern: {
               value: /^[A-Za-z А-Яа-я]{2,50}$/,
-              message: t("pages.form.incorrectly_notification"),
+              message: invalidInputErrorMessage,
             },
             validate: {
               required,
@@ -93,11 +94,17 @@ export const Form = () => {
           id="email"
           placeholder={t("pages.form.email.placeholder")}
           {...register("email", {
-            minLength: { value: 7, message:t("pages.form.incorrectly_notification")},
-            maxLength: { value: 50, message: t("pages.form.incorrectly_notification")},
+            minLength: {
+              value: 7,
+              message: invalidInputErrorMessage,
+            },
+            maxLength: {
+              value: 50,
+              message: invalidInputErrorMessage,
+            },
             pattern: {
               value: / [\w-]+@[\w-]+\.[\w]{2,4}/g,
-              message: t("pages.form.incorrectly_notification"),
+              message: invalidInputErrorMessage,
             },
             validate: {
               required,
@@ -131,9 +138,9 @@ export const Form = () => {
             pattern: {
               value:
                 /[A-Za-zА-Яа-я0-9 !@~#$№%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{6,500}/g,
-              message: t("pages.form.incorrectly_notification"),
+              message: invalidInputErrorMessage,
             },
-            required: t("pages.form.required_notification"),
+            required: requiredErrorMessage,
           })}
         />
         <Box h="6" pt="1">
