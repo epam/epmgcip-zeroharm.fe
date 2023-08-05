@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { ReactComponent as QuestionMark } from "@/assets/icons/stroke/harm-question.svg";
 import { InputLabel } from "@/_UI/InputLabel/InputLabel";
+import { t } from "i18next";
 
 type FormData = {
   name: string;
@@ -42,7 +43,7 @@ export const Form = () => {
     // return !value && watchResponse
     // return !value && watchResponse
     return !value && watchResponse
-      ? "Fill in all the required fields to submit your feedback!"
+      ? t("pages.form.required_notification")
       : true;
   };
 
@@ -55,18 +56,18 @@ export const Form = () => {
       <Divider mb={4} borderColor="gray.700" />
       <FormControl isInvalid={Boolean(errors.name)} mb={2}>
         <InputLabel
-          tooltipText="Write your name here"
-          label="Name"
+          tooltipText={t("pages.form.name.tip")}
+          label={t("pages.form.name.label")}
           htmlFor="name"
           required={watchResponse}
         />
         <Input
           id="name"
-          placeholder="Mary"
+          placeholder={t("pages.form.name.placeholder")}
           {...register("name", {
             pattern: {
               value: /^[A-Za-z А-Яа-я]{2,50}$/,
-              message: "Fill in the field correctly",
+              message: t("pages.form.incorrectly_notification"),
             },
             validate: {
               required,
@@ -83,20 +84,20 @@ export const Form = () => {
       </FormControl>
       <FormControl isInvalid={Boolean(errors.email)} mb={2}>
         <InputLabel
-          tooltipText="Write your email here"
-          label="Email"
+          tooltipText={t("pages.form.email.tip")}
+          label={t("pages.form.email.label")}
           htmlFor="email"
           required={watchResponse}
         />
         <Input
           id="email"
-          placeholder="mary@epam.com"
+          placeholder={t("pages.form.email.placeholder")}
           {...register("email", {
-            minLength: { value: 7, message: "Fill in the field correctly" },
-            maxLength: { value: 50, message: "Fill in the field correctly" },
+            minLength: { value: 7, message:t("pages.form.incorrectly_notification")},
+            maxLength: { value: 50, message: t("pages.form.incorrectly_notification")},
             pattern: {
               value: / [\w-]+@[\w-]+\.[\w]{2,4}/g,
-              message: "Fill in the field correctly",
+              message: t("pages.form.incorrectly_notification"),
             },
             validate: {
               required,
@@ -113,8 +114,8 @@ export const Form = () => {
       </FormControl>
       <FormControl isInvalid={Boolean(errors.feedback)} mb={2}>
         <InputLabel
-          tooltipText="We are glad to receive feedback from you! Write your feedback or suggestion here, use no more than 500 symbols!"
-          label="My feedback"
+          tooltipText={t("pages.form.feedback.tip")}
+          label={t("pages.form.feedback.label")}
           htmlFor="feedback"
           required
         />
@@ -124,16 +125,15 @@ export const Form = () => {
           border={0}
           focusBorderColor="white"
           id="feedback"
-          placeholder="Write your feedback or suggestion here"
+          placeholder={t("pages.form.feedback.placeholder")}
           _placeholder={{ color: "gray.300", fontSize: "16px" }}
           {...register("feedback", {
             pattern: {
               value:
                 /[A-Za-zА-Яа-я0-9 !@~#$№%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{6,500}/g,
-              message: "Fill in the field correctly",
+              message: t("pages.form.incorrectly_notification"),
             },
-            required:
-              "Fill in all the required fields to submit your feedback!",
+            required: t("pages.form.required_notification"),
           })}
         />
         <Box h="6" pt="1">
@@ -145,7 +145,7 @@ export const Form = () => {
       <FormControl pb={4}>
         <Flex mb={2} align={"center"}>
           <Tooltip
-            label="Check if you want to receive a response from our team"
+            label={t("pages.form.checkbox.tip")}
             hasArrow
             placement="right-start"
             variant="light"
@@ -162,13 +162,13 @@ export const Form = () => {
             {...register("response")}
           />
           <FormLabel mr={0} mb={0} htmlFor="response">
-            I want to get a response
+            {t("pages.form.checkbox.label")}
           </FormLabel>
         </Flex>
       </FormControl>
       <Divider mb={4} borderColor="gray.700" />
       <Button isLoading={isSubmitting} type="submit" padding="16px 24px">
-        Send feedback
+        {t("pages.form.button")}
       </Button>
     </form>
   );
