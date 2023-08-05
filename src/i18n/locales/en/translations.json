@@ -5,7 +5,7 @@
       "get_tips": "Get daily tips",
       "protect": "Protect your health from the environmental pollution effects",
       "open_map": "Open a map",
-      "chose_location": "Not your location? You may choose yours from the list.",
+      "choose_location": "Not your location? You may choose yours from the list.",
       "close": "Close"
     },
     "map": {
@@ -26,17 +26,17 @@
       "name": {
         "label": "Name",
         "placeholder": "Mary",
-        "tip": "Write your name here."
+        "tip": "Write your name here. Use 2-50 symbols in Latin or Cyrillic alphabet."
       },
       "email": {
         "label": "Email",
         "placeholder": "mary@epam.com",
-        "tip": "Write your email here"
+        "tip": "Write your email here. Use 7-50 symbols in Latin alphabet."
       },
       "feedback": {
         "label": "My feedback",
         "placeholder": "Write your feedback or suggestion here",
-        "tip": "We are glad to receive feedback from you! Write your feedback or suggestion here, use no more than 500 symbols!"
+        "tip": "We are glad to receive feedback from you! Write your feedback or suggestion here, use 6-500 symbols in Latin or Cyrillic alphabet!"
       },
       "checkbox": {
         "label": "I want to get a response",
@@ -60,9 +60,9 @@
   "locations": {
     "tash_furkata": "Tashkent, 8 Furkata str.",
     "tash_navoi": "Tashkent, 18 А Navoi Avenue (Landmark: Tech University)",
-    "tash_skrajna": "Tashkent, ul. Skrajna 7, Szczecin 70-886 (Landmark: Revera Restaurant)",
-    "tash_mlynarska": "Tashkent, ul. Młynarska 142, Bydgoszcz 85-376 (Landmark: Seafood Market)",
-    "tash_szajnochy": "Tashkent, ul. Szajnochy 103, Bydgoszcz 85-738 (Landmark: Museum)"
+    "tash_skrajna": "Tashkent, 7 Skrajna str., Szczecin 70-886 (Landmark: Revera Restaurant)",
+    "tash_mlynarska": "Tashkent, 142 Młynarska str., Bydgoszcz 85-376 (Landmark: Seafood Market)",
+    "tash_szajnochy": "Tashkent, 103 Szajnochy str., Bydgoszcz 85-738 (Landmark: Museum)"
   },
   "cards": {
     "noise_pollution": [
