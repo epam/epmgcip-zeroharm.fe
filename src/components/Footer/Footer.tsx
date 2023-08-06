@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
           {t("pages.footer.link")}{" "}
         </ChakraLink>
       </Text>
-      <Button size="xs" onClick={onOpen}>
+      <Button size="xs" onClick={onOpen} variant="gradient">
         {t("pages.footer.button")}
       </Button>
       <BaseModal isOpen={isOpen} onClose={onClose} title={t("pages.form.title")}>
