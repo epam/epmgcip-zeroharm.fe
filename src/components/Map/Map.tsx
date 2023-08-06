@@ -11,7 +11,12 @@ const Map: FC = () => {
 
   return (
     <Flex >
-      <MapContainer style={styles} center={coordinates} zoom={13} scrollWheelZoom={false}>
+      <MapContainer
+        style={styles}
+        center={coordinates}
+        zoom={13}
+        scrollWheelZoom={false}
+      >
         <TileLayer
           attribution=""
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

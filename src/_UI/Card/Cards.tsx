@@ -40,7 +40,7 @@ const CardNavigation: FC<{ children?: ReactNode }> = ({ children }) => {
         }
       }}
     >
-      {children}
+      { children }
     </chakra.div>
   );
 };
@@ -56,7 +56,7 @@ const CardNavigationBox: FC<{ children?: ReactNode; jc?: string }> = ({
       boxSize="56px"
       position="relative"
     >
-      {children}
+      { children }
     </Flex>
   );
 };
@@ -77,11 +77,11 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
 
   return (
     <Box position="relative">
-      {isNavigation && (
+      { isNavigation && (
         <CardStep>
-          {cardIndex + 1} / {cards.length}
+          { cardIndex + 1 } / { cards.length }
         </CardStep>
-      )}
+      ) }
       <Card
         heading={t(`${translationPath}.title`)}
         subheading={t(`tips.${cardsKey}`)}
@@ -89,21 +89,28 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
         iconName={t(`${translationPath}.icon`)}
         height={isNavigation ? "290px" : "auto"}
       >
-        <Text fontWeight="700" casing={"uppercase"}>{t(`${translationPath}.subtitle`)}</Text>
-        <Text>{t(`${translationPath}.text`)}</Text>
+        <Text
+          fontWeight="700"
+          casing={"uppercase"}
+        >
+          { t(`${translationPath}.subtitle`) }
+        </Text>
+        <Text>{ t(`${translationPath}.text`) }</Text>
       </Card>
-      {isNavigation && (
+      { isNavigation && (
         <CardNavigation>
           <CardNavigationBox jc="flex-start">
-            {isLeftActive && <LeftArrowIcon onClick={() => handleClick(-1)} />}
+            { isLeftActive && (
+              <LeftArrowIcon onClick={() => handleClick(-1)} />
+            ) }
           </CardNavigationBox>
           <CardNavigationBox jc="flex-end">
-            {isRightActive && (
+            { isRightActive && (
               <RightArrowIcon onClick={() => handleClick(+1)} />
-            )}
+            ) }
           </CardNavigationBox>
         </CardNavigation>
-      )}
+      ) }
     </Box>
   );
 };

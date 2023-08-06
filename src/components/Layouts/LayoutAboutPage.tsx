@@ -16,13 +16,18 @@ const LayoutAboutPage: FC<LayoutAboutPageType> = ({
     <>
       <Flex direction="column">
         <Box as="header" top="0">
-          {header}
+          { header }
         </Box>
-        <Box as="main" flex="1" pt="64px" pb="64px">
-          {main}
+        <Box
+          as="main"
+          flex="1"
+          pt="64px"
+          pb="64px"
+        >
+          { main }
         </Box>
         <Box as="footer" bottom="0">
-          {footer}
+          { footer }
         </Box>
       </Flex>
     </>

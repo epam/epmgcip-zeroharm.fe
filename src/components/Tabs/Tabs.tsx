@@ -35,7 +35,7 @@ const Tabs = () => {
       variant="unstyled"
     >
       <TabList>
-        {tabValues.map((tab, index) => (
+        { tabValues.map((tab, index) => (
           <Tab
             key={tab}
             p="0"
@@ -47,17 +47,20 @@ const Tabs = () => {
             _hover={hover}
             onClick={() => setParameter(tabKeys[index])}
           >
-            {tab}
+            { tab }
           </Tab>
-        ))}
+        )) }
       </TabList>
 
       <TabPanels>
-        {tabKeys.map((tab: any) => (
-          <TabPanel key={tab} p="24px 0 0">
+        { tabKeys.map((tab: any) => (
+          <TabPanel
+            key={tab}
+            p="24px 0 0"
+          >
             <Cards cardsKey={tab} />
           </TabPanel>
-        ))}
+        )) }
       </TabPanels>
     </ChakraTabs>
   );

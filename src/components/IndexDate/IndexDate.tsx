@@ -29,7 +29,10 @@ export const IndexDate: FC<IndexDateType> = ({ children }) => {
 
   return (
     <Wrapper>
-      <Flex justifyContent="space-between" fontSize="12px">
+      <Flex
+        justifyContent="space-between"
+        fontSize="12px"
+      >
         <Flex gap="10px">
           <Text textTransform="uppercase">
             { currentParameterName }
@@ -41,10 +44,14 @@ export const IndexDate: FC<IndexDateType> = ({ children }) => {
             label={label}
             placement="right-start"
           >
-            <InfoFill style={{ width: 16, height: 16 }} opacity=".5"/>
+            <InfoFill
+              width="16px"
+              height="16px"
+              opacity=".5"
+            />
           </Tooltip>
         </Flex>
-        <Box color="gray.400">{currentTimeAndDAte}</Box>
+        <Box color="gray.400">{ currentTimeAndDAte }</Box>
       </Flex>
       <Flex
         justifyContent="space-between"
@@ -96,7 +103,7 @@ export const IndexDate: FC<IndexDateType> = ({ children }) => {
           })
         }
       </Flex>
-      {children}
+      { children }
     </Wrapper>
   );
 };

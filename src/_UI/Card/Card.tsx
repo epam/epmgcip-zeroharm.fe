@@ -78,15 +78,18 @@ export const Card: FC<CardType> = ({
     <>
       <CardHeader bg={`${color}.500`}>
         <CardText>
-          <CardSubHeading>{subheading}</CardSubHeading>
-          <CardHeading>{heading}</CardHeading>
+          <CardSubHeading>{ subheading }</CardSubHeading>
+          <CardHeading>{ heading }</CardHeading>
         </CardText>
         <CardIconBox>
           <CardIcon name={iconName} />
         </CardIconBox>
       </CardHeader>
-      <CardBody bg={`${color}.50`} h={height}>
-        {children}
+      <CardBody
+        bg={`${color}.50`}
+        h={height}
+      >
+        { children }
       </CardBody>
     </>
   );

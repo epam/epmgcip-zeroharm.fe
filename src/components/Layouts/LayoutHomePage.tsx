@@ -17,18 +17,23 @@ const LayoutHomePage: FC<LayoutHomePageType> = ({
   return (
     <Flex direction="column">
       <Box as="header" top="0">
-        {header}
+        { header }
       </Box>
-      <Flex maxWidth="1280" m="auto" w="100%" pt="64px">
+      <Flex
+        maxWidth="1280"
+        m="auto"
+        w="100%"
+        pt="64px"
+      >
         <Box as="aside" flex="1">
-          {aside}
+          { aside }
         </Box>
         <Box as="main" flex="1">
-          {main}
+          { main }
         </Box>
       </Flex>
       <Box as="footer" bottom="0">
-        {footer}
+        { footer }
       </Box>
     </Flex>
   );

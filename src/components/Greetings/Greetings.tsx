@@ -11,7 +11,12 @@ const Greetings = () => {
       alignItems="flex-end"
       position="relative"
     >
-      <Box zIndex="1" position="absolute" top="-25px" right="125px">
+      <Box
+        zIndex="1"
+        position="absolute"
+        top="-25px"
+        right="125px"
+      >
         <Circles />
       </Box>
       <Swiper />

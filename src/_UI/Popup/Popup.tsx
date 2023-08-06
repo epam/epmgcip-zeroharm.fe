@@ -33,14 +33,14 @@ export const Popup: FC<PopupType> = ({ isOpen = false, children }) => {
         position: "absolute"
       }}
     >
-      {children}
+      { children }
       <Box
         onClick={() => setOpen(false)}
         textAlign="right"
         fontWeight="700"
         cursor="pointer"
       >
-        {t("pages.home.close")}
+        { t("pages.home.close") }
       </Box>
     </Flex>
   );

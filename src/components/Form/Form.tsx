@@ -51,8 +51,14 @@ export const Form = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Divider mb={4} borderColor="gray.700" />
-      <FormControl isInvalid={Boolean(errors.name)} mb={2}>
+      <Divider
+        mb={4}
+        borderColor="gray.700"
+      />
+      <FormControl
+        isInvalid={Boolean(errors.name)}
+        mb={2}
+      >
         <InputLabel
           tooltipText={t("pages.form.name.tip")}
           label={t("pages.form.name.label")}
@@ -74,13 +80,19 @@ export const Form = () => {
         />
         <Box h="6" pt="1">
           {
-            <FormErrorMessage mt="0" fontSize={"md"}>
-              {errors.name && errors.name.message?.toString()}
+            <FormErrorMessage
+              mt="0"
+              fontSize={"md"}
+            >
+              { errors.name && errors.name.message?.toString() }
             </FormErrorMessage>
           }
         </Box>
       </FormControl>
-      <FormControl isInvalid={Boolean(errors.email)} mb={2}>
+      <FormControl
+        isInvalid={Boolean(errors.email)}
+        mb={2}
+      >
         <InputLabel
           tooltipText={t("pages.form.email.tip")}
           label={t("pages.form.email.label")}
@@ -104,13 +116,19 @@ export const Form = () => {
         />
         <Box h="6" pt="1">
           {
-            <FormErrorMessage mt="0" fontSize={"md"}>
-              {errors.email && errors.email.message?.toString()}
+            <FormErrorMessage
+              mt="0"
+              fontSize={"md"}
+            >
+              { errors.email && errors.email.message?.toString() }
             </FormErrorMessage>
           }
         </Box>
       </FormControl>
-      <FormControl isInvalid={Boolean(errors.feedback)} mb={2}>
+      <FormControl
+        isInvalid={Boolean(errors.feedback)}
+        mb={2}
+      >
         <InputLabel
           tooltipText={t("pages.form.feedback.tip")}
           label={t("pages.form.feedback.label")}
@@ -135,21 +153,34 @@ export const Form = () => {
           })}
         />
         <Box h="6" pt="1">
-          <FormErrorMessage mt="0" fontSize={"md"}>
-            {errors.feedback && errors.feedback.message?.toString()}
+          <FormErrorMessage
+            mt="0"
+            fontSize={"md"}
+          >
+            { errors.feedback && errors.feedback.message?.toString() }
           </FormErrorMessage>
         </Box>
       </FormControl>
       <FormControl pb={4}>
-        <Flex mb={2} align={"center"}>
+        <Flex
+          mb={2}
+          align={"center"}
+        >
           <Tooltip
             label={t("pages.form.checkbox.tip")}
             hasArrow
             placement="right-start"
             variant="light"
           >
-            <Box w="6" mr="2" opacity=".5">
-              <QuestionMark style={{ width: 20, height: 20 }} />
+            <Box
+              w="6"
+              mr="2"
+              opacity=".5"
+            >
+              <QuestionMark
+                width="20px"
+                height="20px"
+              />
             </Box>
           </Tooltip>
           <Checkbox
@@ -159,14 +190,25 @@ export const Form = () => {
             id="response"
             {...register("response")}
           />
-          <FormLabel mr={0} mb={0} htmlFor="response">
-            {t("pages.form.checkbox.label")}
+          <FormLabel
+            mr={0}
+            mb={0}
+            htmlFor="response"
+          >
+            { t("pages.form.checkbox.label") }
           </FormLabel>
         </Flex>
       </FormControl>
-      <Divider mb={4} borderColor="gray.700" />
-      <Button isLoading={isSubmitting} type="submit" padding="16px 24px">
-        {t("pages.form.button")}
+      <Divider
+        mb={4}
+        borderColor="gray.700"
+      />
+      <Button
+        isLoading={isSubmitting}
+        type="submit"
+        padding="16px 24px"
+      >
+        { t("pages.form.button") }
       </Button>
     </form>
   );

@@ -16,10 +16,10 @@ const Selector = () => {
       boxSizing="content-box"
     >
       <Text textTransform="uppercase" fontWeight="700">
-        {t("pages.home.get_tips")}
+        { t("pages.home.get_tips") }
       </Text>
       <Heading as="h1" fontSize="headers.h1">
-        {t("pages.home.protect")}
+        { t("pages.home.protect") }
       </Heading>
       <LocationSelect />
       <Flex
@@ -31,12 +31,14 @@ const Selector = () => {
       >
         <Link to="/map">
           <Button leftIcon={<IconLocal width="24px" height="24px" />}>
-            {t("pages.home.open_map")}
+            { t("pages.home.open_map") }
           </Button>
         </Link>
         <Box>
           <Popup isOpen={false}>
-            <Text>{t("pages.home.choose_location")}</Text>
+            <Text>
+              { t("pages.home.choose_location") }
+            </Text>
           </Popup>
         </Box>
       </Flex>

@@ -11,14 +11,24 @@ const Navigation: FC = () => {
   return (
     <Flex>
       <Link to="/">
-        <img src={logo} alt="logo" width={135} />
+        <img
+          src={logo}
+          alt="logo"
+          width={135}
+        />
       </Link>
       <Spacer />
       <Flex p="4px" gap="32px">
-        <Link to="/">{t("pages.home.name")}</Link>
-        <Link to="/map">{t("pages.map.name")}</Link>
+        <Link to="/">
+          { t("pages.home.name") }
+        </Link>
+        <Link to="/map">
+          { t("pages.map.name") }
+        </Link>
         <Box flexShrink={0}>
-          <Link to="/about">{t("pages.about.name")}</Link>
+          <Link to="/about">
+            { t("pages.about.name") }
+          </Link>
         </Box>
         <LanguageSelect />
       </Flex>

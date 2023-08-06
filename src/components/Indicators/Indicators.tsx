@@ -19,15 +19,26 @@ export const Indicators: FC<IndexDateType> = ({ children }) => {
 
   return (
     <Wrapper>
-      <Flex justifyContent="space-between" gap="10px" pb="10px">
-        <Text fontSize="12px" fontWeight="700" textTransform="uppercase">
+      <Flex
+        justifyContent="space-between"
+        gap="10px"
+        pb="10px"
+      >
+        <Text
+          fontSize="12px"
+          fontWeight="700"
+          textTransform="uppercase"
+        >
           Indicators
         </Text>
-        <Box color="gray.400" fontSize="12px">
-          {currentTimeAndDAte}
+        <Box
+          color="gray.400"
+          fontSize="12px"
+        >
+          { currentTimeAndDAte }
         </Box>
       </Flex>
-      {hints.map(
+      { hints.map(
         (hint) => {
           const particleName = particlesAliases[hint as ParticlesAliasesKeyType];
           const particleValue = Number(parametersValues[particleName]);
@@ -38,10 +49,15 @@ export const Indicators: FC<IndexDateType> = ({ children }) => {
           const size = isNaN(roundedParticleValue) ? 0 : roundedParticleValue;
 
           return (
-            <Indicator size={size} title={hint} key={hint} color={color} />
+            <Indicator
+              size={size}
+              title={hint}
+              key={hint}
+              color={color}
+            />
           );
         }
-      )}
+      ) }
     </Wrapper>
   );
 };

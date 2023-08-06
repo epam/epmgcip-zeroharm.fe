@@ -22,12 +22,21 @@ const BaseModal: FC<ModalProps> = ({
   children
 }) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="lg" isCentered>
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      size="lg"
+      isCentered
+    >
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader fontSize="headers.h3">{title}</ModalHeader>
-        <ModalCloseButton size="lg" top={"3"} opacity=".5" />
-        <ModalBody borderBottomRadius="lg">{children}</ModalBody>
+        <ModalHeader fontSize="headers.h3">{ title }</ModalHeader>
+        <ModalCloseButton
+          size="lg"
+          top={"3"}
+          opacity=".5"
+        />
+        <ModalBody borderBottomRadius="lg">{ children }</ModalBody>
       </ModalContent>
     </Modal>
   );

@@ -30,18 +30,39 @@ export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
           placement="right-start"
           variant="default"
         >
-          <Flex gap="10px" maxWidth="80px" fontSize="16px">
-            <Text>{title}</Text>
-            <Box w="24" opacity=".5">
-              <InfoFill style={{ width: 16, height: 16 }} />
+          <Flex
+            gap="10px"
+            maxWidth="80px"
+            fontSize="16px"
+          >
+            <Text>{ title }</Text>
+            <Box
+              w="24"
+              opacity=".5"
+            >
+              <InfoFill
+                width="16px"
+                height="16px"
+              />
             </Box>
           </Flex>
         </Tooltip>
         <Box flex="1">
-          <Progress colorScheme={color} value={size} />
+          <Progress
+            colorScheme={color}
+            value={size}
+          />
         </Box>
-        <Flex gap="6px" flex="0 0 80px" justifyContent="flex-end">
-          <Text color="white" fontWeight="700" fontSize="16px">
+        <Flex
+          gap="6px"
+          flex="0 0 80px"
+          justifyContent="flex-end"
+        >
+          <Text
+            color="white"
+            fontWeight="700"
+            fontSize="16px"
+          >
             { String(size) }
           </Text>
           <Text color="gray.400">µg/m³</Text>

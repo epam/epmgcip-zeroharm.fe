@@ -13,21 +13,37 @@ export const InputLabel: FC<InputLabelProps> = (props) => {
   const { tooltipText, label, htmlFor, required } = props;
 
   return (
-    <Flex mb={2} align={"center"}>
+    <Flex
+      mb={2}
+      align={"center"}
+    >
       <Tooltip
         label={tooltipText}
         hasArrow
         placement="right-start"
         variant="light"
       >
-        <Box w="6" mr="2" opacity=".5">
-          <QuestionMark style={{ width: 20, height: 20 }} />
+        <Box
+          w="6"
+          mr="2"
+          opacity=".5"
+        >
+          <QuestionMark
+            width="20px"
+            height="20px"
+          />
         </Box>
       </Tooltip>
-      <FormLabel mr={0} mb={0} htmlFor={htmlFor}>
-        {label}
+      <FormLabel
+        mr={0}
+        mb={0}
+        htmlFor={htmlFor}
+      >
+        { label }
       </FormLabel>
-      {required && <Text color="red">*</Text>}
+      { required && (
+        <Text color="red">*</Text>
+      ) }
     </Flex>
   );
 };

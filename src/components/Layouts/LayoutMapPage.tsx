@@ -18,18 +18,18 @@ const LayoutMapPage: FC<LayoutMapPageType> = ({
     <>
       <Flex direction="column">
         <Box as="header" top="0">
-          {header}
+          { header }
         </Box>
         <Flex pt="64px" >
           <Box as="aside" flex="1 0 440px">
-            {aside}
+            { aside }
           </Box>
           <Box as="main" flex="1 0 calc(100% - 440px)">
-            {main}
+            { main }
           </Box>
         </Flex>
         <Box as="footer" pos="initial" >
-          {footer}
+          { footer }
         </Box>
       </Flex>
     </>

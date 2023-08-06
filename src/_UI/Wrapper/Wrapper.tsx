@@ -7,8 +7,13 @@ type WrapperType = {
 
 const Wrapper: FC<WrapperType> = ({ children }) => {
   return (
-    <Flex direction="column" bg="gray.800" p="16px" borderRadius="8px">
-      {children}
+    <Flex
+      direction="column"
+      bg="gray.800"
+      p="16px"
+      borderRadius="8px"
+    >
+      { children }
     </Flex>
   );
 };
