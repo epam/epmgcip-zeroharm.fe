@@ -26,8 +26,7 @@ const Tabs = () => {
 
   useEffect(() => {
     setParameter(currentTab);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [currentTab]);
 
   return (
     <ChakraTabs
