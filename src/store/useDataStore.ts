@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 export interface IParametersValues {
@@ -54,7 +54,7 @@ export const useDataStore = create<IDataStore>()(
     }),
     {
       name: "language",
-      partialize: (state) => ({ language: state.language }),
+      partialize: (state) => ({ language: state.language })
     }
   )
 );

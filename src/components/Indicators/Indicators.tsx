@@ -1,4 +1,4 @@
-import * as React from "react";
+import { FC, ReactNode } from "react";
 import Wrapper from "@UI/Wrapper/Wrapper";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { getDate, getParameterGroup } from "@/helpers";
@@ -7,12 +7,12 @@ import { useDataStore } from "@/store/useDataStore";
 import { particlesAliases, ParticlesAliasesKeyType, groupsColors, GroupsColorsKeyType } from "@/constants";
 
 type IndexDateType = {
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
 const hints = ["PM2.5", "PM10", "NO2", "CO", "O3", "SO2"];
 
-export const Indicators: React.FC<IndexDateType> = ({ children }) => {
+export const Indicators: FC<IndexDateType> = ({ children }) => {
   const { parametersValues } = useDataStore();
 
   const currentTimeAndDAte = getDate();

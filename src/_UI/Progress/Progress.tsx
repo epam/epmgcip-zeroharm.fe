@@ -1,4 +1,4 @@
-import * as React from "react";
+import { FC } from "react";
 import { Progress as ChakraProgress, ProgressProps } from "@chakra-ui/react";
 
 type ProgressType = ProgressProps & {
@@ -6,7 +6,7 @@ type ProgressType = ProgressProps & {
   pointerPosition?: number
 };
 
-export const Progress: React.FC<ProgressType> = ({
+export const Progress: FC<ProgressType> = ({
   colorScheme,
   value,
   withPointer,
@@ -24,8 +24,8 @@ export const Progress: React.FC<ProgressType> = ({
       borderWidth: "2px",
       borderStyle: "solid",
       borderColor: "gray.700",
-      borderRadius: "100%",
-    },
+      borderRadius: "100%"
+    }
   };
 
   return (

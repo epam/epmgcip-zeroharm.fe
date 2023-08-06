@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Container, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import LayoutAboutPage from "@Components/Layouts/LayoutAboutPage";
 import Navigation from "@Components/Navigation/Navigation";

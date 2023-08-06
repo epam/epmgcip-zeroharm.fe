@@ -9,7 +9,7 @@ export const groupsColors = {
   [LIGHT_RED]: "red",
   [RED]: "ruby",
   [PURPLE]: "violet",
-  [BLUE]: "blue",
+  [BLUE]: "blue"
 };
 
 export type GroupsColorsKeyType = keyof typeof groupsColors;

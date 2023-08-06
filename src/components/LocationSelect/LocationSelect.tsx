@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { t } from "i18next";
 import { ReactComponent as IconMapPoint } from "@/assets/icons/stroke/harm-local-two.svg";
@@ -11,28 +12,28 @@ const selectStyleConfig = {
   },
   control: {
     cursor: "auto !important",
-    opacity: "1 !important",
+    opacity: "1 !important"
   },
   dropdownIndicator: {
-    display: "none",
+    display: "none"
   },
   inputContainer: {
-    paddingLeft: "30px",
+    paddingLeft: "30px"
   },
   placeholder: {
-    paddingLeft: "30px",
+    paddingLeft: "30px"
   },
   singleValue: {
-    paddingLeft: "30px",
-  },
+    paddingLeft: "30px"
+  }
 };
 
-export const LocationSelect: React.FC = () => {
+export const LocationSelect: FC = () => {
   const defaultAddress = t("locations.tash_furkata");
   const locationValues = getTranslationValues("locations");
   const locations = locationValues.map((locationValue: string) => ({
     label: locationValue,
-    value: locationValue,
+    value: locationValue
   }));
 
   return (

@@ -11,7 +11,7 @@ import {
   Checkbox,
   Flex,
   Tooltip,
-  Divider,
+  Divider
 } from "@chakra-ui/react";
 import { ReactComponent as QuestionMark } from "@/assets/icons/stroke/harm-question.svg";
 import { InputLabel } from "@/_UI/InputLabel/InputLabel";
@@ -30,7 +30,7 @@ export const Form = () => {
     register,
     watch,
     clearErrors,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting }
   } = useForm<FormData>({ mode: "onBlur" });
 
   const onSubmit: SubmitHandler<FormData> = (values: FormData) => {
@@ -65,11 +65,11 @@ export const Form = () => {
           {...register("name", {
             pattern: {
               value: /^[A-Za-z А-Яа-я]{2,50}$/,
-              message: t("pages.form.incorrectly_notification"),
+              message: t("pages.form.incorrectly_notification")
             },
             validate: {
-              required,
-            },
+              required
+            }
           })}
         />
         <Box h="6" pt="1">
@@ -95,11 +95,11 @@ export const Form = () => {
             pattern: {
               value:
                 /[A-Za-zА-Яа-я0-9_-]+@[A-Za-zА-Яа-я]+\.[A-Za-zА-Яа-я]{2,4}/g,
-              message: t("pages.form.incorrectly_notification"),
+              message: t("pages.form.incorrectly_notification")
             },
             validate: {
-              required,
-            },
+              required
+            }
           })}
         />
         <Box h="6" pt="1">
@@ -129,9 +129,9 @@ export const Form = () => {
             pattern: {
               value:
                 /[A-Za-zА-Яа-я0-9 !@~#$№%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{6,500}/g,
-              message: t("pages.form.incorrectly_notification"),
+              message: t("pages.form.incorrectly_notification")
             },
-            required: t("pages.form.required_notification"),
+            required: t("pages.form.required_notification")
           })}
         />
         <Box h="6" pt="1">

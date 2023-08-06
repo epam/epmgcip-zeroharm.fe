@@ -1,18 +1,18 @@
-import * as React from "react";
+import { FC, ReactNode } from "react";
 import { Flex, Box } from "@chakra-ui/react";
 
 type LayoutMapPageType = {
-  header: React.ReactNode;
-  aside: React.ReactNode;
-  main: React.ReactNode;
-  footer: React.ReactNode;
+  header: ReactNode;
+  aside: ReactNode;
+  main: ReactNode;
+  footer: ReactNode;
 };
 
-const LayoutMapPage: React.FC<LayoutMapPageType> = ({
+const LayoutMapPage: FC<LayoutMapPageType> = ({
   header,
   aside,
   main,
-  footer,
+  footer
 }) => {
   return (
     <>

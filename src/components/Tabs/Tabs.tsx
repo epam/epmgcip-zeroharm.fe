@@ -4,7 +4,7 @@ import {
   Tab,
   TabList,
   TabPanel,
-  TabPanels,
+  TabPanels
 } from "@chakra-ui/react";
 import { t } from "i18next";
 import Cards from "@UI/Card/Cards";

@@ -11,29 +11,29 @@ export const Tooltip = defineStyleConfig({
     borderWidth: "1px",
     borderStyle: "solid",
     borderColor: "gray.600",
-    fontSize: "14px",
+    fontSize: "14px"
   },
   variants: {
     default: {
       background: "gray.700",
       color: "white",
-      [$arrowBg.variable]: $bg.reference,
+      [$arrowBg.variable]: $bg.reference
     },
     light: {
       background: "white",
       color: "gray.950",
       borderColor: "gray.100",
-      [$arrowBg.variable]: "white",
+      [$arrowBg.variable]: "white"
     },
     big: {
       background: "gray.700",
       color: "white",
       lineHeight: "18px",
       fontSize: "14px",
-      [$arrowBg.variable]: $bg.reference,
+      [$arrowBg.variable]: $bg.reference
     },
     defaultProps: {
-      variant: "default",
-    },
-  },
+      variant: "default"
+    }
+  }
 });

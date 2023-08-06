@@ -1,19 +1,18 @@
-import React from "react";
+import { FC, ReactNode } from "react";
 import Wrapper from "@UI/Wrapper/Wrapper";
 import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
 import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
 import { Progress } from "@UI/Progress/Progress";
 import { indexesConfig, groupsColors, parametersAliases, ParametersAliasesKeyType } from "@/constants";
-import { getParameterGroup } from "@/helpers";
+import { getDate, getParameterGroup } from "@/helpers";
 import { useDataStore } from "@/store/useDataStore";
-import { getDate } from "@/helpers";
 import { t } from "i18next";
 
 type IndexDateType = {
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
-export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
+export const IndexDate: FC<IndexDateType> = ({ children }) => {
   const { parameter, parametersValues } = useDataStore();
   const currentTimeAndDAte = getDate();
   const label = t(`hints.${parameter}`);
@@ -25,7 +24,7 @@ export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
   const title = t(titleTranslationPath || "");
 
   const indexGroups = indexesConfig[parameter as ParametersAliasesKeyType];
-  const absoluteMin =  indexGroups?.[0]?.range?.min;
+  const absoluteMin = indexGroups?.[0]?.range?.min;
   const absoluteMax = indexGroups?.[indexGroups.length - 1]?.range?.max;
 
   return (

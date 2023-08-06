@@ -1,18 +1,18 @@
-import * as React from "react";
+import { FC, ReactNode } from "react";
 import { Flex, Box } from "@chakra-ui/react";
 
 type LayoutHomePageType = {
-  header: React.ReactNode;
-  aside: React.ReactNode;
-  main: React.ReactNode;
-  footer: React.ReactNode;
+  header: ReactNode;
+  aside: ReactNode;
+  main: ReactNode;
+  footer: ReactNode;
 };
 
-const LayoutHomePage: React.FC<LayoutHomePageType> = ({
+const LayoutHomePage: FC<LayoutHomePageType> = ({
   header,
   aside,
   main,
-  footer,
+  footer
 }) => {
   return (
     <Flex direction="column">

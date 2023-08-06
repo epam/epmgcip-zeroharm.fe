@@ -1,4 +1,4 @@
-import * as React from "react";
+import { FC, ReactNode } from "react";
 import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
 import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
 import { Progress } from "@UI/Progress/Progress";
@@ -6,12 +6,12 @@ import { t } from "i18next";
 
 type IndexDateType = {
   title: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   color?: string;
   size?: number;
 };
 
-export const Indicator: React.FC<IndexDateType> = ({ title, color, size }) => {
+export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
   const hint = title.toLowerCase();
   const label = t(`hints.${hint}`);
 

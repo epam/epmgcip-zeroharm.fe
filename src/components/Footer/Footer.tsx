@@ -1,16 +1,16 @@
-import * as React from "react";
+import { FC } from "react";
 import {
   Flex,
   Text,
   Link as ChakraLink,
   Button,
-  useDisclosure,
+  useDisclosure
 } from "@chakra-ui/react";
 import { t } from "i18next";
 import Form from "../Form/Form";
 import BaseModal from "@/components/BaseModal/BaseModal";
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (

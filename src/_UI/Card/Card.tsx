@@ -1,14 +1,14 @@
-import * as React from "react";
+import { FC, ReactNode } from "react";
 import { Flex, Box, chakra } from "@chakra-ui/react";
 import CardIcon from "../CardIcon/CardIcon";
 
-type CardType = {
-  color?: string;
+export type CardType = {
   heading: string;
   subheading: string;
-  icon: string;
-  children?: React.ReactNode;
+  iconName: string;
+  color?: string;
   height?: string;
+  children?: ReactNode;
 };
 
 const CardHeader = chakra(Flex, {
@@ -18,8 +18,8 @@ const CardHeader = chakra(Flex, {
     padding: "24px",
     position: "relative",
     minHeight: "150px",
-    height: "100%",
-  },
+    height: "100%"
+  }
 });
 const CardBody = chakra(Flex, {
   baseStyle: {
@@ -27,31 +27,31 @@ const CardBody = chakra(Flex, {
     gap: "16px",
     borderRadius: "0 0 8px 8px",
     padding: "24px",
-    color: "black",
-  },
+    color: "black"
+  }
 });
 const CardText = chakra(Flex, {
   baseStyle: {
     flexDirection: "column",
     justifyContent: "space-between",
-    flex: "1",
-  },
+    flex: "1"
+  }
 });
 const CardSubHeading = chakra(Box, {
   baseStyle: {
     opacity: "0.6",
     textTransform: "uppercase",
     fontWeight: "700",
-    fontSize: "14px",
-  },
+    fontSize: "14px"
+  }
 });
 const CardHeading = chakra(Box, {
   baseStyle: {
     textTransform: "uppercase",
     fontWeight: "700",
     fontSize: "28px",
-    lineHeight: "36px",
-  },
+    lineHeight: "36px"
+  }
 });
 
 const CardIconBox = chakra("div", {
@@ -62,17 +62,17 @@ const CardIconBox = chakra("div", {
     right: "18px",
     top: "50%",
     transform: "translate(0, -50%)",
-    svg: { width: "124px", height: "100%" },
-  },
+    svg: { width: "124px", height: "100%" }
+  }
 });
 
-const Card: React.FC<CardType> = ({
-  color,
-  subheading,
+export const Card: FC<CardType> = ({
   heading,
-  icon,
+  subheading,
+  iconName,
+  color,
   height,
-  children,
+  children
 }) => {
   return (
     <>
@@ -82,7 +82,7 @@ const Card: React.FC<CardType> = ({
           <CardHeading>{heading}</CardHeading>
         </CardText>
         <CardIconBox>
-          <CardIcon name={icon} />
+          <CardIcon name={iconName} />
         </CardIconBox>
       </CardHeader>
       <CardBody bg={`${color}.50`} h={height}>
@@ -91,5 +91,3 @@ const Card: React.FC<CardType> = ({
     </>
   );
 };
-
-export default Card;
