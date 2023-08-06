@@ -35,8 +35,8 @@ const Selector = () => {
           </Button>
         </Link>
         <Box>
-          <Popup isOpen={true}>
-            <Text>{t("pages.home.chose_location")}</Text>
+          <Popup isOpen={false}>
+            <Text>{t("pages.home.choose_location")}</Text>
           </Popup>
         </Box>
       </Flex>

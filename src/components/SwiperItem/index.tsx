@@ -7,7 +7,6 @@ import Card from "@UI/Card/Card";
 import { useDataStore } from "@/store/useDataStore";
 import { t } from "i18next";
 
-
 type SwiperItemDataT = {
   heading: string;
   subheading: string;

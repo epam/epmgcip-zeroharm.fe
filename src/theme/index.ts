@@ -12,6 +12,9 @@ import { Button } from "./components/Button";
 import { Progress } from "./components/Progress";
 import { Tooltip } from "./components/Tooltip";
 import { Divider } from "./components/Divider";
+import { Modal } from "./components/Modal";
+import { Input } from "./components/Input";
+import { Checkbox } from "./components/Checkbox";
 
 const overrides = {
   styles,
@@ -26,6 +29,9 @@ const overrides = {
     Progress,
     Tooltip,
     Divider,
+    Modal,
+    Input,
+    Checkbox,
   },
 };
 

@@ -21,7 +21,7 @@ export const Tooltip = defineStyleConfig({
     },
     light: {
       background: "white",
-      color: "black",
+      color: "gray.950",
       borderColor: "gray.100",
       [$arrowBg.variable]: "white",
     },

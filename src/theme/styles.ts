@@ -7,7 +7,7 @@ export const styles = {
       minHeight: "100vh",
     },
     "html, body, header, footer": {
-      backgroundColor: "#252526",
+      backgroundColor: "gray.900",
       color: "white",
     },
     "header, footer": {
