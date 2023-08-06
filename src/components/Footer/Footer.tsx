@@ -9,6 +9,7 @@ import {
 import { t } from "i18next";
 import Form from "../Form/Form";
 import BaseModal from "@/components/BaseModal/BaseModal";
+import { ReactComponent as StarIcon } from "@/assets/icons/stroke/harm-star.svg";
 
 const Footer: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -21,10 +22,19 @@ const Footer: React.FC = () => {
           {t("pages.footer.link")}{" "}
         </ChakraLink>
       </Text>
-      <Button size="xs" onClick={onOpen} variant="gradient">
+      <Button
+        leftIcon={<StarIcon />}
+        size="xs"
+        onClick={onOpen}
+        variant="gradient"
+      >
         {t("pages.footer.button")}
       </Button>
-      <BaseModal isOpen={isOpen} onClose={onClose} title={t("pages.form.title")}>
+      <BaseModal
+        isOpen={isOpen}
+        onClose={onClose}
+        title={t("pages.form.title")}
+      >
         <Form />
       </BaseModal>
     </Flex>
