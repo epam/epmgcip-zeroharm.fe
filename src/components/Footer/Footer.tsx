@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
       </Text>
       <Button
         leftIcon={<StarIcon />}
-        size="xs"
+        size="sm"
         onClick={onOpen}
         variant="gradient"
       >
