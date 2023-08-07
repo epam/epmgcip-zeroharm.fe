@@ -1,4 +1,4 @@
-import { useState, ReactNode, FC, useEffect } from "react";
+import { useState, ReactNode, FC } from "react";
 import { Flex, Box, chakra, Text } from "@chakra-ui/react";
 import translations from "@/i18n/locales/en/translations.json";
 import { t } from "i18next";

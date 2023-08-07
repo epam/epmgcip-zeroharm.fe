@@ -33,21 +33,20 @@ export const Form = () => {
     formState: { errors, isSubmitting },
   } = useForm<FormData>({ mode: "onBlur" });
 
-  const onSubmit: SubmitHandler<FormData> = (values: FormData) => {
-    console.log(values);
-  };
+  const requiredErrorMessage = t("pages.form.required_notification");
+  const invalidInputErrorMessage = t("pages.form.incorrectly_notification");
+
+  const onSubmit: SubmitHandler<FormData> = (values: FormData) => {};
 
   const watchResponse = watch("response", false);
 
   const required = (value?: string) => {
-    return !value && watchResponse
-      ? t("pages.form.required_notification")
-      : true;
+    return !value && watchResponse ? requiredErrorMessage : true;
   };
 
   useEffect(() => {
     !watchResponse && clearErrors(["name", "email"]);
-  }, [watchResponse]);
+  }, [watchResponse, clearErrors]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -65,7 +64,7 @@ export const Form = () => {
           {...register("name", {
             pattern: {
               value: /^[A-Za-z А-Яа-я]{2,50}$/,
-              message: t("pages.form.incorrectly_notification"),
+              message: invalidInputErrorMessage,
             },
             validate: {
               required,
@@ -91,11 +90,17 @@ export const Form = () => {
           id="email"
           placeholder={t("pages.form.email.placeholder")}
           {...register("email", {
-            maxLength: 50,
+            minLength: {
+              value: 7,
+              message: invalidInputErrorMessage,
+            },
+            maxLength: {
+              value: 50,
+              message: invalidInputErrorMessage,
+            },
             pattern: {
-              value:
-                /[A-Za-zА-Яа-я0-9_-]+@[A-Za-zА-Яа-я]+\.[A-Za-zА-Яа-я]{2,4}/g,
-              message: t("pages.form.incorrectly_notification"),
+              value: / [\w-]+@[\w-]+\.[\w]{2,4}/g,
+              message: invalidInputErrorMessage,
             },
             validate: {
               required,
@@ -128,10 +133,11 @@ export const Form = () => {
           {...register("feedback", {
             pattern: {
               value:
+                //eslint-disable-next-line
                 /[A-Za-zА-Яа-я0-9 !@~#$№%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{6,500}/g,
-              message: t("pages.form.incorrectly_notification"),
+              message: invalidInputErrorMessage,
             },
-            required: t("pages.form.required_notification"),
+            required: requiredErrorMessage,
           })}
         />
         <Box h="6" pt="1">
