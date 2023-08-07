@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import { Flex, Box } from "@chakra-ui/react";
+import { Flex, Box, Divider } from "@chakra-ui/react";
 
 type LayoutAboutPageType = {
   header: ReactNode;
@@ -27,6 +27,7 @@ const LayoutAboutPage: FC<LayoutAboutPageType> = ({
           { main }
         </Box>
         <Box as="footer" bottom="0">
+        <Divider variant="positioned" />
           { footer }
         </Box>
       </Flex>
