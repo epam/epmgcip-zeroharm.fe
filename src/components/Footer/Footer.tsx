@@ -4,7 +4,7 @@ import {
   Text,
   Link as ChakraLink,
   Button,
-  useDisclosure,
+  useDisclosure
 } from "@chakra-ui/react";
 import { t } from "i18next";
 import Form from "../Form/Form";
@@ -15,13 +15,22 @@ const Footer: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Flex p="4px" gap="32px" w="100%" justify="space-between">
-      <Text fontSize="xs">
-        {t("pages.footer.text")}{" "}
-        <ChakraLink href="https://hydromet.uz/" isExternal>
-          {t("pages.footer.link")}{" "}
+    <Flex
+      p="4px" gap="32px"
+      w="100%"
+      justify="space-between"
+    >
+          <Text fontSize="sm">
+        { t("pages.footer.text") } <br/>
+        <ChakraLink
+          href="https://hydromet.uz/"
+          isExternal
+          _hover={{ color: "#FFA01C" }}
+        >
+          { t("pages.footer.link") }
         </ChakraLink>
       </Text>
+
       <Button
         leftIcon={<StarIcon />}
         size="sm"
