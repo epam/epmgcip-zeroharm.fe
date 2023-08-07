@@ -15,7 +15,6 @@ const Map: FC = () => {
         style={styles}
         center={coordinates}
         zoom={13}
-        scrollWheelZoom={false}
       >
         <TileLayer
           attribution=""
