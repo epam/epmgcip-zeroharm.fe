@@ -16,7 +16,6 @@ const Footer: FC = () => {
 
   return (
     <Flex
-      p="4px" gap="32px"
       w="100%"
       justify="space-between"
     >

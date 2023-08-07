@@ -17,6 +17,9 @@ export const styles = {
       p: "16px 24px",
       zIndex: "2"
     },
+    footer: {
+      height: "77px"
+    },
     a: {
       color: "white"
     },

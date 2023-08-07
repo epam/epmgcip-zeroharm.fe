@@ -22,7 +22,7 @@ const LayoutAboutPage: FC<LayoutAboutPageType> = ({
           as="main"
           flex="1"
           pt="64px"
-          pb="64px"
+          pb="77px"
         >
           { main }
         </Box>
