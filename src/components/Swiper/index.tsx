@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, FC } from "react";
 import { SwiperItem } from "../SwiperItem";
 import { useDataStore } from "@/store/useDataStore";
 import { groupsColors, ParametersAliasesKeyType, GroupsColorsKeyType } from "@/constants";
@@ -8,7 +8,7 @@ import { t } from "i18next";
 const INTERVAL = 3000;
 const INITIAL_CURRENT_INDEX = 0;
 
-export const Swiper: React.FC = () => {
+export const Swiper: FC = () => {
   const [currentIndex, setCurrentIndex] = useState(INITIAL_CURRENT_INDEX);
 
   const { parametersValues } = useDataStore();
@@ -60,7 +60,7 @@ export const Swiper: React.FC = () => {
     let intervalId: ReturnType<typeof setInterval> | undefined;
 
     if (cardsData.length) {
-      intervalId  = setInterval(updateCurrentIndex, INTERVAL);
+      intervalId = setInterval(updateCurrentIndex, INTERVAL);
     }
 
     return () => {
@@ -74,7 +74,7 @@ export const Swiper: React.FC = () => {
     <SwiperItem
       heading={heading}
       subheading={subheading}
-      icon={icon}
+      iconName={icon}
       question={question}
       text={text}
       parameter={parameter}

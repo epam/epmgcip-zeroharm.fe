@@ -1,15 +1,14 @@
 /* eslint-disable quotes */
+import { useState, FC, ReactNode } from "react";
 import { Box, Flex } from "@chakra-ui/react";
-import * as React from "react";
-import { useState } from "react";
 import { t } from "i18next";
 
 type PopupType = {
   isOpen?: boolean;
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
-export const Popup: React.FC<PopupType> = ({ isOpen = false, children }) => {
+export const Popup: FC<PopupType> = ({ isOpen = false, children }) => {
   const [open, setOpen] = useState(isOpen);
 
   return (
@@ -31,17 +30,17 @@ export const Popup: React.FC<PopupType> = ({ isOpen = false, children }) => {
         top: "-6px",
         bg: "white",
         transform: "rotate(45deg)",
-        position: "absolute",
+        position: "absolute"
       }}
     >
-      {children}
+      { children }
       <Box
         onClick={() => setOpen(false)}
         textAlign="right"
         fontWeight="700"
         cursor="pointer"
       >
-        {t("pages.home.close")}
+        { t("pages.home.close") }
       </Box>
     </Flex>
   );

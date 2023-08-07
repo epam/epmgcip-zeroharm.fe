@@ -4,7 +4,7 @@ import {
   Tab,
   TabList,
   TabPanel,
-  TabPanels,
+  TabPanels
 } from "@chakra-ui/react";
 import { t } from "i18next";
 import Cards from "@UI/Card/Cards";
@@ -26,8 +26,7 @@ const Tabs = () => {
 
   useEffect(() => {
     setParameter(currentTab);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [currentTab]);
 
   return (
     <ChakraTabs
@@ -35,7 +34,7 @@ const Tabs = () => {
       variant="unstyled"
     >
       <TabList>
-        {tabValues.map((tab, index) => (
+        { tabValues.map((tab, index) => (
           <Tab
             key={tab}
             p="0"
@@ -47,17 +46,20 @@ const Tabs = () => {
             _hover={hover}
             onClick={() => setParameter(tabKeys[index])}
           >
-            {tab}
+            { tab }
           </Tab>
-        ))}
+        )) }
       </TabList>
 
       <TabPanels>
-        {tabKeys.map((tab: any) => (
-          <TabPanel key={tab} p="24px 0 0">
+        { tabKeys.map((tab: any) => (
+          <TabPanel
+            key={tab}
+            p="24px 0 0"
+          >
             <Cards cardsKey={tab} />
           </TabPanel>
-        ))}
+        )) }
       </TabPanels>
     </ChakraTabs>
   );

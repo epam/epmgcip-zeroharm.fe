@@ -5,11 +5,11 @@ export const lineHeights = {
     h3: "36px",
     h4: "32px",
     h5: "24px",
-    h6: "20px",
+    h6: "20px"
   },
   sub_header: "18px",
   large: "28px",
   medium: "24px",
   small: "18px",
-  tiny: "16px",
+  tiny: "16px"
 };

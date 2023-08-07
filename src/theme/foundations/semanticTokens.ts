@@ -6,7 +6,7 @@ export const semanticTokens = {
       11: "orange.500",
       16: "red.500",
       21: "ruby.500",
-      31: "violet.500",
-    },
-  },
+      31: "violet.500"
+    }
+  }
 };

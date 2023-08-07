@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { Select } from "chakra-react-select";
 
 const getSelectComponentStyleConfig =
@@ -19,33 +19,33 @@ const getSelectComponentStyleConfig =
       return {
         ...provided,
         ...styles,
-        ...componentStyles,
+        ...componentStyles
       };
     }
 
     return {
       ...provided,
-      ...styles,
+      ...styles
     };
   };
 
 const BaseSelectStyleConfig = {
   container: {
     bg: "gray.700",
-    zIndex: "2",
+    zIndex: "2"
   },
   menuList: {
-    bg: "gray.700",
+    bg: "gray.700"
   },
   option: {
-    bg: (state: any) => (state.isFocused ? "gray.500" : "gray.700"),
+    bg: (state: any) => (state.isFocused ? "gray.500" : "gray.700")
   },
   indicatorSeparator: {
-    display: "none",
+    display: "none"
   },
   dropdownIndicator: {
-    bg: "ray.700",
-  },
+    bg: "gray.700"
+  }
 };
 
 type OptionT = {
@@ -61,7 +61,7 @@ type SelectPropsT = {
   onChange?: (lang: any) => void;
 };
 
-export const BaseSelect: React.FC<SelectPropsT> = (props: SelectPropsT) => {
+export const BaseSelect: FC<SelectPropsT> = (props: SelectPropsT) => {
   const { defaultValue, options, styles, isDisabled, onChange } = props;
   const val = options.find(
     ({ label, value }) => label === defaultValue || value === defaultValue
@@ -77,11 +77,11 @@ export const BaseSelect: React.FC<SelectPropsT> = (props: SelectPropsT) => {
           key in styles
             ? {
                 ...styles[key],
-                ...newStyles[key],
+                ...newStyles[key]
               }
             : {
-                ...newStyles[key],
-              },
+                ...newStyles[key]
+              }
       }),
       styles
     );
@@ -90,7 +90,7 @@ export const BaseSelect: React.FC<SelectPropsT> = (props: SelectPropsT) => {
   const selectStyles = Object.entries(mergeStyleConfigs(styles)).reduce(
     (acc, [componentName, newStyles]) =>
       Object.assign(acc, {
-        [componentName]: getSelectComponentStyleConfig(newStyles),
+        [componentName]: getSelectComponentStyleConfig(newStyles)
       }),
     {}
   );

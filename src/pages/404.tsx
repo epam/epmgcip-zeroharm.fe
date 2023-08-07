@@ -1,4 +1,3 @@
-import * as React from "react";
 import LayoutHomePage from "@Components/Layouts/LayoutHomePage";
 import Navigation from "@Components/Navigation/Navigation";
 import Footer from "@/components/Footer/Footer";

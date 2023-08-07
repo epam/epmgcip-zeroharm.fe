@@ -4,25 +4,25 @@ export const styles = {
       display: "flex",
       flexDirection: "column",
       height: "100%",
-      minHeight: "100vh",
+      minHeight: "100vh"
     },
     "html, body, header, footer": {
       backgroundColor: "gray.900",
-      color: "white",
+      color: "white"
     },
     "header, footer": {
       height: "64px",
       pos: "fixed",
       w: "100%",
       p: "16px 24px",
-      zIndex: "2",
+      zIndex: "2"
     },
     a: {
-      color: "white",
+      color: "white"
     },
     ".leaflet-container": {
       width: "100%",
-      height: "100vh",
-    },
-  },
+      height: "100vh"
+    }
+  }
 };

@@ -11,17 +11,17 @@ export const Input = defineMultiStyleConfig({
       field: {
         _placeholder: {
           color: "gray.300",
-          fontSize: "16px",
+          fontSize: "16px"
         },
         backgroundColor: "gray.700",
         _focus: {
-          border: "1px",
-        },
-      },
-    },
+          border: "1px"
+        }
+      }
+    }
   },
   defaultProps: {
     size: "lg",
-    variant: "gray",
-  },
+    variant: "gray"
+  }
 });

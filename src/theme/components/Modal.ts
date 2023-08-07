@@ -10,10 +10,10 @@ export const Modal = defineStyleConfig({
         borderTopRadius: "lg",
         paddingX: 5,
         paddingTop: 5,
-        paddingBottom: 4,
+        paddingBottom: 4
       },
       overlay: {
-        bgColor: "rgba(37,37,38, 0.9)",
+        bgColor: "rgba(37,37,38, 0.9)"
       },
       body: {
         bgColor: "gray.900",
@@ -32,12 +32,12 @@ export const Modal = defineStyleConfig({
           margin: "-4px",
           borderRadius: "inherit",
           backgroundImage:
-            "linear-gradient(90deg, #339944 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #7D5BA6 100%);",
-        },
-      },
-    },
+            "linear-gradient(90deg, #339944 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #7D5BA6 100%);"
+        }
+      }
+    }
   },
   defaultProps: {
-    variant: "default",
-  },
+    variant: "default"
+  }
 });

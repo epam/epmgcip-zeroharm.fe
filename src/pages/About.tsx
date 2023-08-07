@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Container, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import LayoutAboutPage from "@Components/Layouts/LayoutAboutPage";
 import Navigation from "@Components/Navigation/Navigation";
@@ -8,10 +7,20 @@ import Footer from "@/components/Footer/Footer";
 const PageAbout = () => {
   const About = () => (
     <>
-      <Image src={aboutImage} alt="" width="100%" />
+      <Image
+        src={aboutImage}
+        alt=""
+        width="100%"
+      />
       <Container mt="12px">
-        <Flex direction="column" gap="24px">
-          <Heading as="h1" p="12px 0">
+        <Flex
+          direction="column"
+          gap="24px"
+        >
+          <Heading
+            as="h1"
+            p="12px 0"
+          >
             About the Project
           </Heading>
           <Text>
@@ -24,7 +33,10 @@ const PageAbout = () => {
             indicators are normal, we will tell you how to spend time outdoors
             with health benefits.
           </Text>
-          <Heading as="h2" fontSize="24px">
+          <Heading
+            as="h2"
+            fontSize="24px"
+          >
             Why it's important to monitor the quality of the air we breathe
           </Heading>
           <Text>
