@@ -44,7 +44,7 @@ const BaseSelectStyleConfig = {
     display: "none"
   },
   dropdownIndicator: {
-    bg: "ray.700"
+    bg: "gray.700"
   }
 };
 
