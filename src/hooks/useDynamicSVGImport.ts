@@ -1,11 +1,11 @@
-import React from "react";
+import { useState, useEffect, useRef, FC, SVGProps } from "react";
 
-const useDynamicSVGImport = (name: string) => {
+export const useDynamicSVGImport = (name: string) => {
   const ImportedIconRef =
-    React.useRef<React.FC<React.SVGProps<SVGSVGElement>>>();
-  const [SvgIcon, setSvgIcon] = React.useState<any>(null);
+    useRef<FC<SVGProps<SVGSVGElement>>>();
+  const [SvgIcon, setSvgIcon] = useState<any>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const importIcon = async (): Promise<void> => {
       try {
         const icon = await import(`../assets/icons/forcards/${name}.svg`);
@@ -21,5 +21,3 @@ const useDynamicSVGImport = (name: string) => {
 
   return SvgIcon;
 };
-
-export default useDynamicSVGImport;

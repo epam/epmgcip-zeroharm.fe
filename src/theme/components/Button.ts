@@ -4,20 +4,20 @@ const buttonDefaultStyles = {
   bg: "white",
   p: "16px",
   color: "gray.950",
-  borderRadius: "8px",
+  borderRadius: "8px"
 };
 
 const buttonDefaultStyles__hover = {
-  bg: "gray.200",
+  bg: "gray.200"
 };
 
 const buttonDefaultStyles__active = {
-  bg: "gray.200",
+  bg: "gray.200"
 };
 
 const buttonDefaultStyles__disabled = {
   bg: "gray.700",
-  color: "gray.500",
+  color: "gray.500"
 };
 
 export const Button = defineStyleConfig({
@@ -44,6 +44,6 @@ export const Button = defineStyleConfig({
     },
   },
   defaultProps: {
-    variant: "default",
-  },
+    variant: "default"
+  }
 });

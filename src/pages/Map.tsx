@@ -1,4 +1,3 @@
-import * as React from "react";
 import LayoutMapPage from "@Components/Layouts/LayoutMapPage";
 import Navigation from "@Components/Navigation/Navigation";
 import Aside from "@Components/Aside/Aside";

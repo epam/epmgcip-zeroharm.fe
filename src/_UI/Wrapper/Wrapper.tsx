@@ -1,14 +1,19 @@
-import * as React from "react";
+import { FC, ReactNode } from "react";
 import { Flex } from "@chakra-ui/react";
 
 type WrapperType = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
-const Wrapper: React.FC<WrapperType> = ({ children }) => {
+const Wrapper: FC<WrapperType> = ({ children }) => {
   return (
-    <Flex direction="column" bg="gray.800" p="16px" borderRadius="8px">
-      {children}
+    <Flex
+      direction="column"
+      bg="gray.800"
+      p="16px"
+      borderRadius="8px"
+    >
+      { children }
     </Flex>
   );
 };

@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import i18n from "i18next";
+import { changeLanguage } from "i18next";
 import { Page404, PageHome, PageAbout, PageMap } from "@/pages";
 import { useDataStore } from "@/store/useDataStore";
 import { useFetch } from "@/hooks";
 import "@/i18n/i18n";
-
 
 function App() {
   const { language, setParametersValues } = useDataStore();
@@ -13,7 +12,7 @@ function App() {
   useFetch(`${process.env.REACT_APP_ZERO_HARM_URL}/v1/pollutions?station_id=1`, setParametersValues);
 
   useEffect(() => {
-    i18n.changeLanguage(language).then();
+    changeLanguage(language).then();
   }, [language]);
 
   return (

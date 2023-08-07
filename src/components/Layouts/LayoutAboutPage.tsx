@@ -1,28 +1,33 @@
-import * as React from "react";
+import { FC, ReactNode } from "react";
 import { Flex, Box } from "@chakra-ui/react";
 
 type LayoutAboutPageType = {
-  header: React.ReactNode;
-  main: React.ReactNode;
-  footer: React.ReactNode;
+  header: ReactNode;
+  main: ReactNode;
+  footer: ReactNode;
 };
 
-const LayoutAboutPage: React.FC<LayoutAboutPageType> = ({
+const LayoutAboutPage: FC<LayoutAboutPageType> = ({
   header,
   main,
-  footer,
+  footer
 }) => {
   return (
     <>
       <Flex direction="column">
         <Box as="header" top="0">
-          {header}
+          { header }
         </Box>
-        <Box as="main" flex="1" pt="64px" pb="64px">
-          {main}
+        <Box
+          as="main"
+          flex="1"
+          pt="64px"
+          pb="64px"
+        >
+          { main }
         </Box>
         <Box as="footer" bottom="0">
-          {footer}
+          { footer }
         </Box>
       </Flex>
     </>

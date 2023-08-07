@@ -31,8 +31,8 @@ const overrides = {
     Divider,
     Modal,
     Input,
-    Checkbox,
-  },
+    Checkbox
+  }
 };
 
 export default extendTheme(overrides);

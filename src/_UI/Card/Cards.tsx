@@ -1,11 +1,11 @@
-import { useState, ReactNode, FC, useEffect } from "react";
+import { useState, ReactNode, FC } from "react";
 import { Flex, Box, chakra, Text } from "@chakra-ui/react";
 import translations from "@/i18n/locales/en/translations.json";
 import { t } from "i18next";
 
 import { ReactComponent as RightArrowIcon } from "@/assets/icons/stroke/harm-arrow-right.svg";
 import { ReactComponent as LeftArrowIcon } from "@/assets/icons/stroke/harm-arrow-left.svg";
-import Card from "./Card";
+import { Card } from "./Card";
 
 type CardsType = {
   cardsKey?: any;
@@ -18,8 +18,8 @@ const CardStep = chakra(Box, {
     position: "absolute",
     top: "24px",
     right: "24px",
-    zIndex: "100",
-  },
+    zIndex: "100"
+  }
 });
 
 const CardNavigation: FC<{ children?: ReactNode }> = ({ children }) => {
@@ -36,18 +36,18 @@ const CardNavigation: FC<{ children?: ReactNode }> = ({ children }) => {
         zIndex: "100",
         color: "gray.800",
         svg: {
-          cursor: "pointer",
-        },
+          cursor: "pointer"
+        }
       }}
     >
-      {children}
+      { children }
     </chakra.div>
   );
 };
 
 const CardNavigationBox: FC<{ children?: ReactNode; jc?: string }> = ({
   children,
-  jc,
+  jc
 }) => {
   return (
     <Flex
@@ -56,7 +56,7 @@ const CardNavigationBox: FC<{ children?: ReactNode; jc?: string }> = ({
       boxSize="56px"
       position="relative"
     >
-      {children}
+      { children }
     </Flex>
   );
 };
@@ -66,7 +66,6 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
   const cards = cardsTrans[cardsKey];
   const [cardIndex, setCardIndex] = useState(0);
   const translationPath = `cards.${cardsKey}.${cardIndex}`;
-
 
   const isNavigation = cards.length > 0;
   const isLeftActive = cardIndex > 0;
@@ -78,33 +77,40 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
 
   return (
     <Box position="relative">
-      {isNavigation && (
+      { isNavigation && (
         <CardStep>
-          {cardIndex + 1} / {cards.length}
+          { cardIndex + 1 } / { cards.length }
         </CardStep>
-      )}
+      ) }
       <Card
         heading={t(`${translationPath}.title`)}
         subheading={t(`tips.${cardsKey}`)}
         color="red"
-        icon={t(`${translationPath}.icon`)}
+        iconName={t(`${translationPath}.icon`)}
         height={isNavigation ? "290px" : "auto"}
       >
-        <Text fontWeight="700" casing={"uppercase"}>{t(`${translationPath}.subtitle`)}</Text>
-        <Text>{t(`${translationPath}.text`)}</Text>
+        <Text
+          fontWeight="700"
+          casing={"uppercase"}
+        >
+          { t(`${translationPath}.subtitle`) }
+        </Text>
+        <Text>{ t(`${translationPath}.text`) }</Text>
       </Card>
-      {isNavigation && (
+      { isNavigation && (
         <CardNavigation>
           <CardNavigationBox jc="flex-start">
-            {isLeftActive && <LeftArrowIcon onClick={() => handleClick(-1)} />}
+            { isLeftActive && (
+              <LeftArrowIcon onClick={() => handleClick(-1)} />
+            ) }
           </CardNavigationBox>
           <CardNavigationBox jc="flex-end">
-            {isRightActive && (
+            { isRightActive && (
               <RightArrowIcon onClick={() => handleClick(+1)} />
-            )}
+            ) }
           </CardNavigationBox>
         </CardNavigation>
-      )}
+      ) }
     </Box>
   );
 };

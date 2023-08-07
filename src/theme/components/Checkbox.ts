@@ -8,16 +8,16 @@ export const Checkbox = defineStyleConfig({
           bg: "white",
           border: "none",
           _hover: {
-            bg: "white",
-          },
-        },
+            bg: "white"
+          }
+        }
       },
       icon: {
-        color: "black",
-      },
-    },
+        color: "black"
+      }
+    }
   },
   defaultProps: {
-    variant: "default",
-  },
+    variant: "default"
+  }
 });

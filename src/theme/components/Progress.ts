@@ -6,11 +6,11 @@ export const Progress = defineStyleConfig({
       track: {
         bg: "gray.700",
         h: "4px",
-        borderRadius: "2px",
-      },
-    },
+        borderRadius: "2px"
+      }
+    }
   },
   defaultProps: {
-    variant: "default",
-  },
+    variant: "default"
+  }
 });

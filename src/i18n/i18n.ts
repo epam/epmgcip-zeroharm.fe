@@ -14,19 +14,19 @@ const languageFromStorage = JSON.parse(localStorage.getItem("language") ?? "")
 const resources = {
   en: {
     translation: {
-      ...english,
-    },
+      ...english
+    }
   },
   ru: {
     translation: {
-      ...russian,
-    },
+      ...russian
+    }
   },
   uz: {
     translation: {
-      ...uzbek,
-    },
-  },
+      ...uzbek
+    }
+  }
 };
 
 i18n
@@ -40,8 +40,8 @@ i18n
     // lng: window.navigator.language,
     lng: languageFromStorage || window.navigator.language,
     interpolation: {
-      escapeValue: false, // react already safes from xss
-    },
+      escapeValue: false // react already safes from xss
+    }
   });
 
 export default i18n;

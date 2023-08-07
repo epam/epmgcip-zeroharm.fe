@@ -8,7 +8,7 @@ export const airQualityIndexConfig = [
     titleTranslationPath: "cards.air_quality.0.title",
     range: {
       min: 0,
-      max: 50,
+      max: 50
     },
     icon: "harm-slightly-smiling-face",
     headingTranslationPath: "cards.air_quality.0.title",
@@ -20,7 +20,7 @@ export const airQualityIndexConfig = [
     titleTranslationPath: "cards.air_quality.1.title",
     range: {
       min: 51,
-      max: 100,
+      max: 100
     },
     icon: "harm-neutral-face",
     headingTranslationPath: "cards.air_quality.1.title",
@@ -32,7 +32,7 @@ export const airQualityIndexConfig = [
     titleTranslationPath: "cards.air_quality.2.title",
     range: {
       min: 101,
-      max: 150,
+      max: 150
     },
     icon: "harm-worried-face",
     headingTranslationPath: "cards.air_quality.2.title",
@@ -44,7 +44,7 @@ export const airQualityIndexConfig = [
     titleTranslationPath: "cards.air_quality.3.title",
     range: {
       min: 151,
-      max: 300,
+      max: 300
     },
     icon: "harm-more-worried-face",
     headingTranslationPath: "cards.air_quality.3.title",
@@ -56,7 +56,7 @@ export const airQualityIndexConfig = [
     titleTranslationPath: "cards.air_quality.4.title",
     range: {
       min: 301,
-      max: 400,
+      max: 400
     },
     icon: "harm-disappointed-face",
     headingTranslationPath: "cards.air_quality.4.title",
@@ -68,13 +68,13 @@ export const airQualityIndexConfig = [
     titleTranslationPath: "cards.air_quality.5.title",
     range: {
       min: 401,
-      max: 500,
+      max: 500
     },
     icon: "harm-loudly-crying-face",
     headingTranslationPath: "cards.air_quality.5.title",
     questionTranslationPath: "cards.air_quality.5.subtitle",
     textTranslationPath: "cards.air_quality.5.text"
-  },
+  }
 ];
 
 export const airPressureIndexConfig = [
@@ -152,7 +152,7 @@ export const humidityIndexConfig = [
     headingTranslationPath: "cards.humidity.0.title",
     questionTranslationPath: "cards.humidity.0.subtitle",
     textTranslationPath: "cards.humidity.0.text"
-  },
+  }
 ];
 
 export const indexesConfig = {

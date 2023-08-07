@@ -1,19 +1,18 @@
-import React from "react";
+import { FC, ReactNode } from "react";
 import Wrapper from "@UI/Wrapper/Wrapper";
 import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
 import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
 import { Progress } from "@UI/Progress/Progress";
 import { indexesConfig, groupsColors, parametersAliases, ParametersAliasesKeyType } from "@/constants";
-import { getParameterGroup } from "@/helpers";
+import { getDate, getParameterGroup } from "@/helpers";
 import { useDataStore } from "@/store/useDataStore";
-import { getDate } from "@/helpers";
 import { t } from "i18next";
 
 type IndexDateType = {
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
-export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
+export const IndexDate: FC<IndexDateType> = ({ children }) => {
   const { parameter, parametersValues } = useDataStore();
   const currentTimeAndDAte = getDate();
   const label = t(`hints.${parameter}`);
@@ -25,12 +24,15 @@ export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
   const title = t(titleTranslationPath || "");
 
   const indexGroups = indexesConfig[parameter as ParametersAliasesKeyType];
-  const absoluteMin =  indexGroups?.[0]?.range?.min;
+  const absoluteMin = indexGroups?.[0]?.range?.min;
   const absoluteMax = indexGroups?.[indexGroups.length - 1]?.range?.max;
 
   return (
     <Wrapper>
-      <Flex justifyContent="space-between" fontSize="12px">
+      <Flex
+        justifyContent="space-between"
+        fontSize="12px"
+      >
         <Flex gap="10px">
           <Text textTransform="uppercase">
             { currentParameterName }
@@ -42,10 +44,14 @@ export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
             label={label}
             placement="right-start"
           >
-            <InfoFill style={{ width: 16, height: 16 }} opacity=".5"/>
+            <InfoFill
+              width="16px"
+              height="16px"
+              opacity=".5"
+            />
           </Tooltip>
         </Flex>
-        <Box color="gray.400">{currentTimeAndDAte}</Box>
+        <Box color="gray.400">{ currentTimeAndDAte }</Box>
       </Flex>
       <Flex
         justifyContent="space-between"
@@ -97,7 +103,7 @@ export const IndexDate: React.FC<IndexDateType> = ({ children }) => {
           })
         }
       </Flex>
-      {children}
+      { children }
     </Wrapper>
   );
 };

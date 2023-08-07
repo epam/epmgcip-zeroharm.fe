@@ -1,4 +1,4 @@
-import * as React from "react";
+import { FC } from "react";
 import {
   Flex,
   Text,
@@ -11,7 +11,7 @@ import Form from "../Form/Form";
 import BaseModal from "@/components/BaseModal/BaseModal";
 import { ReactComponent as StarIcon } from "@/assets/icons/stroke/harm-star.svg";
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
         onClick={onOpen}
         variant="gradient"
       >
-        {t("pages.footer.button")}
+        { t("pages.footer.button") }
       </Button>
       <BaseModal
         isOpen={isOpen}

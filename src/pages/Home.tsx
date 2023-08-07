@@ -1,4 +1,3 @@
-import * as React from "react";
 import Navigation from "@Components/Navigation/Navigation";
 import Greetings from "@Components/Greetings/Greetings";
 import LayoutHomePage from "@Components/Layouts/LayoutHomePage";

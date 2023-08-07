@@ -7,10 +7,15 @@ import { useDataStore } from "@/store/useDataStore";
 
 const Aside = () => {
   const { parameter } = useDataStore();
+
   const isAirQualityParameter = parameter === "air_quality";
 
   return (
-    <Flex p="0 24px 24px" direction="column" gap="24px">
+    <Flex
+      p="0 24px 24px"
+      direction="column"
+      gap="24px"
+    >
       <LocationSelect />
       <Tabs />
       <IndexDate />
