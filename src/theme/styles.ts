@@ -12,7 +12,6 @@ export const styles = {
     },
     "header, footer": {
       height: "64px",
-      pos: "fixed",
       w: "100%",
       p: "16px 24px",
       zIndex: "2"
