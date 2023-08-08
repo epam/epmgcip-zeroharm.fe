@@ -10,12 +10,13 @@ type LayoutMapPageType = {
 
 const StyledFooter = chakra(Box, {
   baseStyle: {
-    position: "sticky",
-    bottom: 4,
+    width: "calc(100% - 32px)",
+    position: "absolute",
+    bottom: 0,
     left: 0,
     zIndex: "100",
     bgColor: "gray.900",
-    margin: 4,
+    margin: "16px",
     paddingX: 6,
     paddingY: 5,
     borderRadius: 8
@@ -34,6 +35,7 @@ const LayoutMapPage: FC<LayoutMapPageType> = ({
         <Box
           as="header"
           top="0"
+          pos="fixed"
         >
           { header }
         </Box>
@@ -51,7 +53,7 @@ const LayoutMapPage: FC<LayoutMapPageType> = ({
             mx="auto"
           >
             { main }
-            <StyledFooter>{ footer }</StyledFooter>
+             <StyledFooter as="footer">{ footer }</StyledFooter>
           </Box>
         </Flex>
       </Flex>
