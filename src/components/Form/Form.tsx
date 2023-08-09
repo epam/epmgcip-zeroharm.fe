@@ -36,7 +36,7 @@ export const Form = () => {
   const requiredErrorMessage = t("pages.form.required_notification");
   const invalidInputErrorMessage = t("pages.form.incorrectly_notification");
 
-  const onSubmit: SubmitHandler<FormData> = (values: FormData) => {};
+  const onSubmit: SubmitHandler<FormData> = (values: FormData) => { };
 
   const watchResponse = watch("response", false);
 
@@ -49,25 +49,25 @@ export const Form = () => {
   }, [watchResponse, clearErrors]);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={ handleSubmit(onSubmit) }>
       <Divider
-        mb={4}
+        mb={ 4 }
         borderColor="gray.700"
       />
       <FormControl
-        isInvalid={Boolean(errors.name)}
-        mb={2}
+        isInvalid={ Boolean(errors.name) }
+        mb={ 2 }
       >
         <InputLabel
-          tooltipText={t("pages.form.name.tip")}
-          label={t("pages.form.name.label")}
+          tooltipText={ t("pages.form.name.tip") }
+          label={ t("pages.form.name.label") }
           htmlFor="name"
-          required={watchResponse}
+          required={ watchResponse }
         />
         <Input
           id="name"
-          placeholder={t("pages.form.name.placeholder")}
-          {...register("name", {
+          placeholder={ t("pages.form.name.placeholder") }
+          { ...register("name", {
             pattern: {
               value: /^[A-Za-z А-Яа-я]{2,50}$/,
               message: invalidInputErrorMessage
@@ -75,13 +75,13 @@ export const Form = () => {
             validate: {
               required
             }
-          })}
+          }) }
         />
         <Box h="6" pt="1">
           {
             <FormErrorMessage
               mt="0"
-              fontSize={"md"}
+              fontSize={ "md" }
             >
               { errors.name && errors.name.message?.toString() }
             </FormErrorMessage>
@@ -89,19 +89,19 @@ export const Form = () => {
         </Box>
       </FormControl>
       <FormControl
-        isInvalid={Boolean(errors.email)}
-        mb={2}
+        isInvalid={ Boolean(errors.email) }
+        mb={ 2 }
       >
         <InputLabel
-          tooltipText={t("pages.form.email.tip")}
-          label={t("pages.form.email.label")}
+          tooltipText={ t("pages.form.email.tip") }
+          label={ t("pages.form.email.label") }
           htmlFor="email"
-          required={watchResponse}
+          required={ watchResponse }
         />
         <Input
           id="email"
-          placeholder={t("pages.form.email.placeholder")}
-          {...register("email", {
+          placeholder={ t("pages.form.email.placeholder") }
+          { ...register("email", {
             minLength: {
               value: 7,
               message: invalidInputErrorMessage
@@ -117,13 +117,13 @@ export const Form = () => {
             validate: {
               required
             }
-          })}
+          }) }
         />
         <Box h="6" pt="1">
           {
             <FormErrorMessage
               mt="0"
-              fontSize={"md"}
+              fontSize={ "md" }
             >
               { errors.email && errors.email.message?.toString() }
             </FormErrorMessage>
@@ -131,24 +131,24 @@ export const Form = () => {
         </Box>
       </FormControl>
       <FormControl
-        isInvalid={Boolean(errors.feedback)}
-        mb={2}
+        isInvalid={ Boolean(errors.feedback) }
+        mb={ 2 }
       >
         <InputLabel
-          tooltipText={t("pages.form.feedback.tip")}
-          label={t("pages.form.feedback.label")}
+          tooltipText={ t("pages.form.feedback.tip") }
+          label={ t("pages.form.feedback.label") }
           htmlFor="feedback"
           required
         />
         <Textarea
-          h={100}
+          h={ 100 }
           bgColor="gray.700"
-          border={0}
+          border={ 0 }
           focusBorderColor="white"
           id="feedback"
-          placeholder={t("pages.form.feedback.placeholder")}
-          _placeholder={{ color: "gray.300", fontSize: "16px" }}
-          {...register("feedback", {
+          placeholder={ t("pages.form.feedback.placeholder") }
+          _placeholder={ { color: "gray.300", fontSize: "16px" } }
+          { ...register("feedback", {
             pattern: {
               value:
                 //eslint-disable-next-line
@@ -156,24 +156,24 @@ export const Form = () => {
               message: invalidInputErrorMessage
             },
             required: requiredErrorMessage
-          })}
+          }) }
         />
         <Box h="6" pt="1">
           <FormErrorMessage
             mt="0"
-            fontSize={"md"}
+            fontSize={ "md" }
           >
             { errors.feedback && errors.feedback.message?.toString() }
           </FormErrorMessage>
         </Box>
       </FormControl>
-      <FormControl pb={4}>
+      <FormControl pb={ 4 }>
         <Flex
-          mb={2}
-          align={"center"}
+          mb={ 2 }
+          align={ "center" }
         >
           <Tooltip
-            label={t("pages.form.checkbox.tip")}
+            label={ t("pages.form.checkbox.tip") }
             hasArrow
             placement="right-start"
             variant="light"
@@ -194,11 +194,11 @@ export const Form = () => {
             spacing="20px"
             mr="2"
             id="response"
-            {...register("response")}
+            { ...register("response") }
           />
           <FormLabel
-            mr={0}
-            mb={0}
+            mr={ 0 }
+            mb={ 0 }
             htmlFor="response"
           >
             { t("pages.form.checkbox.label") }
@@ -206,11 +206,11 @@ export const Form = () => {
         </Flex>
       </FormControl>
       <Divider
-        mb={4}
+        mb={ 4 }
         borderColor="gray.700"
       />
       <Button
-        isLoading={isSubmitting}
+        isLoading={ isSubmitting }
         type="submit"
         padding="16px 24px"
       >
