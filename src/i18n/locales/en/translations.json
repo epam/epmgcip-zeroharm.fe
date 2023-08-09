@@ -9,7 +9,13 @@
       "close": "Close"
     },
     "map": {
-      "name": "Map"
+      "name": "Map",
+      "cards": {
+        "buttons": {
+          "see_more": "See more",
+          "hide": "Hide"
+        }
+      }
     },
     "about": {
       "name": "About"
