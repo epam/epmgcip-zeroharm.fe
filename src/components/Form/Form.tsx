@@ -102,20 +102,16 @@ export const Form = () => {
           id="email"
           placeholder={ t("pages.form.email.placeholder") }
           { ...register("email", {
-            minLength: {
-              value: 7,
-              message: invalidInputErrorMessage
-            },
-            maxLength: {
-              value: 50,
-              message: invalidInputErrorMessage
-            },
-            pattern: {
-              value: / [\w-]+@[\w-]+\.[\w]{2,4}/g,
-              message: invalidInputErrorMessage
-            },
             validate: {
-              required
+              required,
+              pattern: value => {
+                if (value && watchResponse && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value))
+                  return invalidInputErrorMessage;
+              },
+              length: value => {
+                if (watchResponse && value.length < 7 && value.length > 50)
+                  return invalidInputErrorMessage;
+              }
             }
           }) }
         />
