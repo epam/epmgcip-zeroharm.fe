@@ -29,6 +29,7 @@ export const Form = () => {
     handleSubmit,
     register,
     watch,
+    trigger,
     clearErrors,
     formState: { errors, isSubmitting }
   } = useForm<FormData>({ mode: "onBlur" });
@@ -45,8 +46,8 @@ export const Form = () => {
   };
 
   useEffect(() => {
-    !watchResponse && clearErrors(["name", "email"]);
-  }, [watchResponse, clearErrors]);
+    !watchResponse ? clearErrors(["name", "email"]) : trigger();
+  }, [watchResponse, clearErrors, trigger]);
 
   return (
     <form onSubmit={ handleSubmit(onSubmit) }>
