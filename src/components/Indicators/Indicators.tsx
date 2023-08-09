@@ -4,7 +4,7 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { getDate, getParameterGroup } from "@/helpers";
 import { Indicator } from "@UI/Indicator/Indicator";
 import { useDataStore } from "@/store/useDataStore";
-import { particlesAliases, ParticlesAliasesKeyType, groupsColors, GroupsColorsKeyType } from "@/constants";
+import { ParticlesAliasesKeyType, groupsColors, GroupsColorsKeyType } from "@/constants";
 
 type IndexDateType = {
   children?: ReactNode;
@@ -13,7 +13,7 @@ type IndexDateType = {
 const hints = ["PM2.5", "PM10", "NO2", "CO", "O3", "SO2"];
 
 export const Indicators: FC<IndexDateType> = ({ children }) => {
-  const { parametersValues } = useDataStore();
+  const { airComponents } = useDataStore();
 
   const currentTimeAndDAte = getDate();
 
@@ -40,9 +40,8 @@ export const Indicators: FC<IndexDateType> = ({ children }) => {
       </Flex>
       { hints.map(
         (hint) => {
-          const particleName = particlesAliases[hint as ParticlesAliasesKeyType];
-          const particleValue = Number(parametersValues[particleName]);
-          const { groupName } = getParameterGroup(particleValue, "air_quality") || {};
+          const particleValue = Number(airComponents[hint as ParticlesAliasesKeyType]);
+          const groupName = getParameterGroup(particleValue, "air_quality") || {};
           const color = groupsColors?.[groupName as GroupsColorsKeyType];
           const particleValueStr = String(particleValue);
           const roundedParticleValue = parseFloat(particleValueStr.slice(0, particleValueStr.indexOf(".") + 3));
