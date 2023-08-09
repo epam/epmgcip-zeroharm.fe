@@ -68,12 +68,12 @@ export const Form = () => {
           id="name"
           placeholder={ t("pages.form.name.placeholder") }
           { ...register("name", {
-            pattern: {
-              value: /^[A-Za-z А-Яа-я]{2,50}$/,
-              message: invalidInputErrorMessage
-            },
             validate: {
-              required
+              required,
+              pattern: value => {
+                if (value && watchResponse && !/^[A-Za-z А-Яа-я]{2,50}$/.test(value))
+                  return invalidInputErrorMessage;
+              }
             }
           }) }
         />
