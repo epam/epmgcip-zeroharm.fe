@@ -111,7 +111,7 @@ export const Form = () => {
               message: invalidInputErrorMessage
             },
             pattern: {
-              value: / [\w-]+@[\w-]+\.[\w]{2,4}/g,
+              value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
               message: invalidInputErrorMessage
             },
             validate: {
