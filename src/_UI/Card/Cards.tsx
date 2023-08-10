@@ -1,11 +1,11 @@
 import { useState, ReactNode, FC } from "react";
-import { Flex, Box, chakra, Text } from "@chakra-ui/react";
-import translations from "@/i18n/locales/en/translations.json";
+import { Flex, Box, Text, Button, chakra } from "@chakra-ui/react";
+import { Card } from "./Card";
+import { getCardData, getSubString } from "@/helpers";
+import { useParameterData } from "@/hooks";
 import { t } from "i18next";
-
 import { ReactComponent as RightArrowIcon } from "@/assets/icons/stroke/harm-arrow-right.svg";
 import { ReactComponent as LeftArrowIcon } from "@/assets/icons/stroke/harm-arrow-left.svg";
-import { Card } from "./Card";
 
 type CardsType = {
   cardsKey?: any;
@@ -62,17 +62,28 @@ const CardNavigationBox: FC<{ children?: ReactNode; jc?: string }> = ({
 };
 
 const Cards: FC<CardsType> = ({ cardsKey }) => {
-  const cardsTrans: any = translations?.cards;
-  const cards = cardsTrans[cardsKey];
   const [cardIndex, setCardIndex] = useState(0);
-  const translationPath = `cards.${cardsKey}.${cardIndex}`;
+  const [isCardOpen, setIsCardOpen] = useState(false);
+  const { currentParameterValue } = useParameterData();
 
-  const isNavigation = cards.length > 0;
+  const card = getCardData(currentParameterValue, cardsKey);
+  const { heading, subheading, tip, text, cardColor, iconName } = card;
+  const subText = getSubString(text, 120);
+  const preview = `${subText}${subText.endsWith(".") ? ".." : "..."}`;
+  const cardText = isCardOpen ? text : preview;
+  const btnText = t(isCardOpen ? "pages.map.cards.buttons.hide" : "pages.map.cards.buttons.see_more");
+
+  const cards = [card];
+  const isNavigation = cards.length > 1;
   const isLeftActive = cardIndex > 0;
   const isRightActive = cardIndex < cards.length - 1;
 
   const handleClick = (value: number) => {
     setCardIndex((previous: number) => previous + value);
+  };
+
+  const toggleCard = () => {
+    setIsCardOpen((prevState) => !prevState);
   };
 
   return (
@@ -83,19 +94,25 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
         </CardStep>
       ) }
       <Card
-        heading={t(`${translationPath}.title`)}
-        subheading={t(`tips.${cardsKey}`)}
-        color="red"
-        iconName={t(`${translationPath}.icon`)}
+        heading={heading}
+        subheading={tip}
+        color={cardColor}
+        iconName={iconName}
         height={isNavigation ? "290px" : "auto"}
       >
         <Text
           fontWeight="700"
           casing={"uppercase"}
         >
-          { t(`${translationPath}.subtitle`) }
+          { subheading }
         </Text>
-        <Text>{ t(`${translationPath}.text`) }</Text>
+        <Text>
+          { cardText }
+          { " " }
+          <Button variant="link" onClick={toggleCard}>
+            { btnText }
+          </Button>
+        </Text>
       </Card>
       { isNavigation && (
         <CardNavigation>

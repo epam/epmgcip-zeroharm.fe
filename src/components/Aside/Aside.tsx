@@ -3,10 +3,11 @@ import Tabs from "@Components/Tabs/Tabs";
 import { IndexDate } from "@Components/IndexDate/IndexDate";
 import { Indicators } from "@Components/Indicators/Indicators";
 import { LocationSelect } from "@/components/LocationSelect/LocationSelect";
-import { useDataStore } from "@/store/useDataStore";
+import { useParameterData } from "@/hooks";
 
 const Aside = () => {
-  const { parameter } = useDataStore();
+  const { parameter } = useParameterData();
+
   const isAirQualityParameter = parameter === "air_quality";
 
   return (

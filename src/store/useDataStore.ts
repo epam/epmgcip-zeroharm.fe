@@ -1,43 +1,47 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-export interface IParametersValues {
-  air_pressure: number | null;
-  aqi: number | null;
-  carbon_monoxide: number | null;
-  humidity: number | null;
-  last_update: Date | null;
-  nitrogen_dioxide: number | null;
-  ozone: number | null;
-  pm2_5: number | null;
-  pm10: number | null;
-  station_id: number | null;
-  sulfur_dioxide: number | null;
-}
+type ParametersType = {
+  "air_quality": number,
+  "humidity": number,
+  "pressure": number
+};
+
+type AirComponentsType = {
+  "PM2.5": number,
+  "PM10": number,
+  "NO2": number,
+  "CO": number,
+  "O3": number,
+  "SO2": number
+};
 
 interface IDataStore {
   location: string;
   language: string;
   parameter: string;
-  parametersValues: IParametersValues,
+  parameters: ParametersType,
+  airComponents: AirComponentsType
   setLocation: (location: string) => void;
   setLanguage: (language: string) => void;
   setParameter: (parameter: string) => void;
-  setParametersValues: (parametersValues: IParametersValues) => void
+  setParameters: (parameters: ParametersType) => void
+  setAirComponents: (airComponents: AirComponentsType) => void
 }
 
-const initialValues: IParametersValues = {
-  air_pressure: null,
-  aqi: null,
-  carbon_monoxide: null,
-  humidity: null,
-  last_update: null,
-  nitrogen_dioxide: null,
-  ozone: null,
-  pm2_5: null,
-  pm10: null,
-  station_id: null,
-  sulfur_dioxide: null
+const parametersInitial = {
+  "air_quality": 0,
+  "humidity": 0,
+  "pressure": 0
+};
+
+const airComponentsInitial = {
+  "PM2.5": 0,
+  "PM10": 0,
+  "NO2": 0,
+  "CO": 0,
+  "O3": 0,
+  "SO2": 0
 };
 
 export const useDataStore = create<IDataStore>()(
@@ -46,11 +50,13 @@ export const useDataStore = create<IDataStore>()(
       location: "",
       language: "",
       parameter: "",
-      parametersValues: initialValues,
+      parameters: parametersInitial,
+      airComponents: airComponentsInitial,
       setLocation: (location: string) => set({ location }),
       setLanguage: (language: string) => set({ language }),
       setParameter: (parameter: string) => set({ parameter }),
-      setParametersValues: (parametersValues: IParametersValues) => set({ parametersValues })
+      setParameters: (parameters: ParametersType) => set({ parameters }),
+      setAirComponents: (airComponents: AirComponentsType) => set({ airComponents })
     }),
     {
       name: "language",
