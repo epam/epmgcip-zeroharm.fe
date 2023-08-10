@@ -3,9 +3,9 @@ import Wrapper from "@UI/Wrapper/Wrapper";
 import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
 import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
 import { Progress } from "@UI/Progress/Progress";
-import { indexesConfig, groupsColors, parametersAliases, ParametersAliasesKeyType } from "@/constants";
-import { getDate, getParameterGroup } from "@/helpers";
-import { useDataStore } from "@/store/useDataStore";
+import { indexesConfig, groupsColors, ParametersAliasesKeyType } from "@/constants";
+import { getDate, getCardData } from "@/helpers";
+import { useParameterData } from "@/hooks";
 import { t } from "i18next";
 
 type IndexDateType = {
@@ -13,16 +13,10 @@ type IndexDateType = {
 };
 
 export const IndexDate: FC<IndexDateType> = ({ children }) => {
-  const { parameter, parametersValues } = useDataStore();
+  const { parameter, currentParameterValue } = useParameterData();
+
   const currentTimeAndDAte = getDate();
-  const label = t(`hints.${parameter}`);
-  const currentParameterName = t(`indexes.${parameter}`);
-  const parameterKey = parametersAliases[parameter as ParametersAliasesKeyType];
-  const currentParameterValue = parametersValues[parameterKey] || 0;
-
-  const { titleTranslationPath } = getParameterGroup(currentParameterValue, parameter as ParametersAliasesKeyType) || {};
-  const title = t(titleTranslationPath || "");
-
+  const { heading } = getCardData(currentParameterValue, parameter as ParametersAliasesKeyType) ?? "";
   const indexGroups = indexesConfig[parameter as ParametersAliasesKeyType];
   const absoluteMin = indexGroups?.[0]?.range?.min;
   const absoluteMax = indexGroups?.[indexGroups.length - 1]?.range?.max;
@@ -35,13 +29,13 @@ export const IndexDate: FC<IndexDateType> = ({ children }) => {
       >
         <Flex gap="10px">
           <Text textTransform="uppercase">
-            { currentParameterName }
+            { t(`indexes.${parameter}`) }
           </Text>
           <Tooltip
             sx={{ borderRadius: "8px", padding: "1rem" }}
             hasArrow
             bg="gray.700"
-            label={label}
+            label={t(`hints.${parameter}`)}
             placement="right-start"
           >
             <InfoFill
@@ -60,7 +54,7 @@ export const IndexDate: FC<IndexDateType> = ({ children }) => {
         fontSize="16px"
         fontWeight="700"
       >
-        <Text>{ title }</Text>
+        <Text>{ heading }</Text>
         <Text>{ currentParameterValue }</Text>
       </Flex>
       <Flex

@@ -8,7 +8,13 @@
       "choose_location": "Sizning joylashuvingiz emasmi? Ro'yxatdan o'z joylashuvingizni tanlashingiz mumkin"
     },
     "map": {
-      "name": "Xarita"
+      "name": "Xarita",
+      "cards": {
+        "buttons": {
+          "see_more": "Ko'proq ko'rish",
+          "hide": "Qamroq ko'rish"
+        }
+      }
     },
     "about": {
       "name": "Biz haqimizda"

@@ -32,6 +32,11 @@ export const Button = defineStyleConfig({
           ...buttonDefaultStyles__disabled
         }
       }
+    },
+    link: {
+      textDecoration: "underline",
+      color: "gray.800",
+      minWidth: "unset"
     }
   },
   defaultProps: {
