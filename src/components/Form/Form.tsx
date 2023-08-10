@@ -149,10 +149,18 @@ export const Form = () => {
           placeholder={t("pages.form.feedback.placeholder")}
           _placeholder={{ color: "gray.300", fontSize: "16px" }}
           {...register("feedback", {
+            minLength: {
+              value: 6,
+              message: invalidInputErrorMessage
+            },
+            maxLength: {
+              value: 500,
+              message: invalidInputErrorMessage
+            },
             pattern: {
               value:
                 //eslint-disable-next-line
-                /[A-Za-zА-Яа-я0-9 !@~#$№%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{6,500}/g,
+                /[A-Za-zА-Яа-я0-9 !@~#$№%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g,
               message: invalidInputErrorMessage
             },
             required: requiredErrorMessage
