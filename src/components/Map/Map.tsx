@@ -13,15 +13,15 @@ const Map: FC = () => {
   return (
     <Flex>
       <MapContainer
-        style={ styles }
-        center={ coordinates }
-        zoom={ 13 }
+        style={styles}
+        center={coordinates}
+        zoom={13}
       >
         <TileLayer
           attribution=""
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={ coordinates }>
+        <Marker position={coordinates}>
           <Popup>
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
