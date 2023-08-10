@@ -18,8 +18,9 @@ const Footer: FC = () => {
     <Flex
       w="100%"
       justify="space-between"
+      align="center"
     >
-          <Text fontSize="sm">
+          <Text fontSize="sm" lineHeight={"18px"}>
         { t("pages.footer.text") } <br/>
         <ChakraLink
           href="https://hydromet.uz/"

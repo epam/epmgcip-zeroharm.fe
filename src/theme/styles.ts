@@ -14,10 +14,10 @@ export const styles = {
       height: "64px",
       w: "100%",
       p: "16px 24px",
-      zIndex: "2"
+      zIndex: "sticky"
     },
     footer: {
-      height: "77px"
+      height: "76px"
     },
     a: {
       color: "white"
