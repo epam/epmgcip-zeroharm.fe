@@ -20,7 +20,7 @@ const Footer: FC = () => {
       justify="space-between"
       align="center"
     >
-          <Text fontSize="sm" lineHeight={"18px"}>
+      <Text fontSize="sm" lineHeight={"18px"}>
         { t("pages.footer.text") } <br/>
         <ChakraLink
           href="https://hydromet.uz/"
@@ -30,7 +30,6 @@ const Footer: FC = () => {
           { t("pages.footer.link") }
         </ChakraLink>
       </Text>
-
       <Button
         leftIcon={<StarIcon />}
         size="sm"
