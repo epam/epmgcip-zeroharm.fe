@@ -77,7 +77,7 @@ export const Form = () => {
             }
           })}
         />
-        <Box h="6" pt="1">
+        <Box minH="6" pt="1">
           {
             <FormErrorMessage
               mt="0"
@@ -119,7 +119,7 @@ export const Form = () => {
             }
           })}
         />
-        <Box h="6" pt="1">
+        <Box minH="6" pt="1">
           {
             <FormErrorMessage
               mt="0"
@@ -166,7 +166,7 @@ export const Form = () => {
             required: requiredErrorMessage
           })}
         />
-        <Box h="6" pt="1">
+        <Box minH="6" pt="1">
           <FormErrorMessage
             mt="0"
             fontSize={"md"}
