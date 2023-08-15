@@ -33,6 +33,15 @@ export const Button = defineStyleConfig({
         }
       }
     },
+    gradient: {
+      paddingX: 6,
+      paddingY: 5,
+      border: "2px solid transparent",
+      borderRadius: "8px",
+      backgroundImage: "linear-gradient(#252526, #252526), linear-gradient(90deg, #339944 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #7D5BA6 100%)",
+      backgroundOrigin: "border-box",
+      backgroundClip: "padding-box, border-box"
+    },
     link: {
       textDecoration: "underline",
       color: "gray.800",
