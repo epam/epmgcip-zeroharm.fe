@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
-import { IParametersValues } from "@/store/useDataStore";
+import { mapParameterData } from "@/helpers";
 
-export const useFetch = (url: string, onCompleted: (data: IParametersValues) => void) => {
-  const [fetchData, setFetchData] = useState([]);
+export const useFetch = (url: string) => {
+  const [fetchedData, setFetchedData] = useState<any>();
 
   useEffect(() => {
     const controller = new AbortController();
@@ -12,10 +12,10 @@ export const useFetch = (url: string, onCompleted: (data: IParametersValues) => 
     fetch(url, { signal })
       .then((res) => res.json())
       .then((data) => {
-        const parameters = data[0];
+        const fetched = data[0];
+        const mappedData = mapParameterData(fetched);
 
-        setFetchData(parameters);
-        onCompleted(parameters);
+        setFetchedData(mappedData);
       })
       .catch((err) => {
         if (err.name === "AbortName") {
@@ -26,7 +26,7 @@ export const useFetch = (url: string, onCompleted: (data: IParametersValues) => 
     return () => {
       controller.abort();
     };
-  }, [url, onCompleted]);
+  }, [url]);
 
-  return fetchData;
+  return fetchedData;
 };

@@ -1,48 +1,22 @@
 import { useState, useEffect, FC } from "react";
 import { SwiperItem } from "../SwiperItem";
-import { useDataStore } from "@/store/useDataStore";
-import { groupsColors, ParametersAliasesKeyType, GroupsColorsKeyType } from "@/constants";
-import { getParameterGroup } from "@/helpers";
-import { t } from "i18next";
+import { useParameterData } from "@/hooks";
+import { ParametersAliasesKeyType } from "@/constants";
+import { getCardData, getSubString } from "@/helpers";
 
 const INTERVAL = 3000;
 const INITIAL_CURRENT_INDEX = 0;
 
 export const Swiper: FC = () => {
   const [currentIndex, setCurrentIndex] = useState(INITIAL_CURRENT_INDEX);
+  const { parameters } = useParameterData();
 
-  const { parametersValues } = useDataStore();
-
-  const { aqi, air_pressure, humidity } = parametersValues;
-  const mapValueToConfigName = {
-    air_quality: aqi,
-    pressure: air_pressure,
-    humidity: humidity
-  };
-  const cardsData = Object.entries(mapValueToConfigName).map(([ key, value ]) => {
-    const group = getParameterGroup(value, key as ParametersAliasesKeyType);
-    const { headingTranslationPath, questionTranslationPath, textTranslationPath, groupName, icon } = group || {};
-
-    return {
-      heading: t(headingTranslationPath ?? ""),
-      subheading: t(`tips.${key}`),
-      question: t(questionTranslationPath ?? ""),
-      text: t(textTranslationPath ?? ""),
-      parameter: key,
-      color: groupsColors[groupName as GroupsColorsKeyType] || "red",
-      icon: icon || ""
-    };
+  const cardsData = Object.entries(parameters)?.map(([ key, value ]) => {
+    return getCardData(value, key as ParametersAliasesKeyType);
   });
   const currentItem = cardsData?.[currentIndex];
-  const {
-    heading,
-    subheading,
-    question,
-    text,
-    icon,
-    parameter,
-    color
-  } = currentItem || {};
+  const { heading, subheading, tip, text, iconName, parameter, cardColor } = currentItem;
+  const firstSentence = getSubString(text);
 
   useEffect(() => {
     const evaluateNextCurrentIndex = (currentIndex: number) => {
@@ -73,12 +47,12 @@ export const Swiper: FC = () => {
   return (
     <SwiperItem
       heading={heading}
-      subheading={subheading}
-      iconName={icon}
-      question={question}
-      text={text}
+      subheading={tip}
+      iconName={iconName}
+      question={subheading}
+      text={firstSentence}
       parameter={parameter}
-      color={color}
+      color={cardColor}
     />
   );
 };
