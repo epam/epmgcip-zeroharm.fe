@@ -68,7 +68,7 @@ export const Form = () => {
         <Input
           id="name"
           placeholder={t("pages.form.name.placeholder")}
-          { ...register("name", {
+          {...register("name", {
             validate: {
               required,
               pattern: value => {
@@ -76,7 +76,7 @@ export const Form = () => {
                   return invalidInputErrorMessage;
               }
             }
-          }) }
+          })}
         />
         <Box h="6" pt="1">
           {
@@ -126,7 +126,7 @@ export const Form = () => {
                   return invalidInputErrorMessage;
               }
             }
-          }) }
+          })}
         />
         <Box h="6" pt="1">
           {
@@ -173,7 +173,7 @@ export const Form = () => {
               message: invalidInputErrorMessage
             },
             required: requiredErrorMessage
-          }) }
+          })}
         />
         <Box h="6" pt="1">
           <FormErrorMessage
