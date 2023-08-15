@@ -29,6 +29,7 @@ export const Form = () => {
     handleSubmit,
     register,
     watch,
+    trigger,
     clearErrors,
     formState: { errors, isSubmitting }
   } = useForm<FormData>({ mode: "onBlur" });
@@ -45,8 +46,8 @@ export const Form = () => {
   };
 
   useEffect(() => {
-    !watchResponse && clearErrors(["name", "email"]);
-  }, [watchResponse, clearErrors]);
+    !watchResponse ? clearErrors(["name", "email"]) : trigger();
+  }, [watchResponse, clearErrors, trigger]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -68,12 +69,12 @@ export const Form = () => {
           id="name"
           placeholder={t("pages.form.name.placeholder")}
           {...register("name", {
-            pattern: {
-              value: /^[A-Za-z А-Яа-я]{2,50}$/,
-              message: invalidInputErrorMessage
-            },
             validate: {
-              required
+              required,
+              pattern: value => {
+                if (value && watchResponse && !/^[A-Za-z А-Яа-я]{2,50}$/.test(value))
+                  return invalidInputErrorMessage;
+              }
             }
           })}
         />
@@ -115,7 +116,15 @@ export const Form = () => {
               message: invalidInputErrorMessage
             },
             validate: {
-              required
+              required,
+              pattern: value => {
+                if (value && watchResponse && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value))
+                  return invalidInputErrorMessage;
+              },
+              length: value => {
+                if (watchResponse && value.length < 7 && value.length > 50)
+                  return invalidInputErrorMessage;
+              }
             }
           })}
         />
