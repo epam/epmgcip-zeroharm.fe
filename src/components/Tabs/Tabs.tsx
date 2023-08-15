@@ -6,27 +6,30 @@ import {
   TabPanel,
   TabPanels
 } from "@chakra-ui/react";
-import { t } from "i18next";
 import Cards from "@UI/Card/Cards";
-import { getTranslationKeys } from "@/helpers";
+import {resolveTranslationPath} from "@/helpers";
 import { useDataStore } from "@/store/useDataStore";
+import { tabsData } from "@/constants";
+
+const hover = {
+  color: "white"
+};
+const selected = {
+  color: "white",
+  borderBottom: "3px solid white"
+};
 
 const Tabs = () => {
   const { parameter, setParameter } = useDataStore();
 
-  const tabKeys = getTranslationKeys("tabs").filter(
-    (tab) => !["uv", "noise_pollution"].includes(tab)
-  );
-  const tabValues = tabKeys.map((tabKey) => t(`tabs.${tabKey}`));
-  const currentTab = parameter || tabKeys[0];
-  const defaultTabIndex = tabKeys.indexOf(currentTab);
-
-  const selected = { color: "white", borderBottom: "3px solid white" };
-  const hover = { color: "white" };
+  const tabs = tabsData.map((tabData: any) => resolveTranslationPath(tabData));
+  const currentTab = parameter || tabs[0].tabId;
+  const currentTabData = tabs.find(({ tabId }) => tabId === currentTab);
+  const defaultTabIndex = tabs.indexOf(currentTabData);
 
   useEffect(() => {
     setParameter(currentTab);
-  }, [currentTab]);
+  }, []);
 
   return (
     <ChakraTabs
@@ -34,9 +37,9 @@ const Tabs = () => {
       variant="unstyled"
     >
       <TabList>
-        { tabValues.map((tab, index) => (
+        { tabs.map(({ tabId, tabName }) => (
           <Tab
-            key={tab}
+            key={tabId}
             p="0"
             borderBottom="2px solid gray"
             color="gray"
@@ -44,20 +47,20 @@ const Tabs = () => {
             textAlign="center"
             _selected={selected}
             _hover={hover}
-            onClick={() => setParameter(tabKeys[index])}
+            onClick={() => setParameter(tabId)}
           >
-            { tab }
+            { tabName }
           </Tab>
         )) }
       </TabList>
 
       <TabPanels>
-        { tabKeys.map((tab: any) => (
+        { tabs.map(({ tabId }) => (
           <TabPanel
-            key={tab}
+            key={tabId}
             p="24px 0 0"
           >
-            <Cards cardsKey={tab} />
+            <Cards cardsKey={tabId} />
           </TabPanel>
         )) }
       </TabPanels>
