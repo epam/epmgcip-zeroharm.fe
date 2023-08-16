@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import { Flex, Box, chakra } from "@chakra-ui/react";
-import CardIcon from "../CardIcon/CardIcon";
+import Icon from "../Icon/Icon";
 
 export type CardType = {
   heading: string;
@@ -82,7 +82,10 @@ export const Card: FC<CardType> = ({
           <CardHeading>{ heading }</CardHeading>
         </CardText>
         <CardIconBox>
-          <CardIcon name={iconName} />
+          <Icon
+            path="forcards"
+            name={iconName}
+          />
         </CardIconBox>
       </CardHeader>
       <CardBody
