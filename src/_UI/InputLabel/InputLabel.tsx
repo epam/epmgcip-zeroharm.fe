@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Box, FormLabel, Flex, Tooltip, Text } from "@chakra-ui/react";
-import { ReactComponent as QuestionMark } from "@/assets/icons/stroke/harm-question.svg";
+import { ReactComponent as Hint } from "@/assets/icons/stroke/harm-hint.svg";
 
 type InputLabelProps = {
   tooltipText: string;
@@ -28,7 +28,7 @@ export const InputLabel: FC<InputLabelProps> = (props) => {
           mr="2"
           opacity=".5"
         >
-          <QuestionMark
+          <Hint
             width="20px"
             height="20px"
           />
