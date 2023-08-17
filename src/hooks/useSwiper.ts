@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const INTERVAL = 3000;
 const INITIAL_CURRENT_INDEX = 0;
 
 export const useSwiper = (elementsCount: number) => {
   const [currentIndex, setCurrentIndex] = useState(INITIAL_CURRENT_INDEX);
+  const intervalIdRef = useRef<ReturnType<typeof setInterval> | undefined>();
 
   useEffect(() => {
     const evaluateNextCurrentIndex = (currentIndex: number) => {
@@ -19,15 +20,13 @@ export const useSwiper = (elementsCount: number) => {
       setCurrentIndex(evaluateNextCurrentIndex);
     };
 
-    let intervalId: ReturnType<typeof setInterval> | undefined;
-
     if (elementsCount) {
-      intervalId = setInterval(updateCurrentIndex, INTERVAL);
+      intervalIdRef.current = setInterval(updateCurrentIndex, INTERVAL);
     }
 
     return () => {
-      if (intervalId) {
-        clearInterval(intervalId);
+      if (intervalIdRef.current) {
+        clearInterval(intervalIdRef.current);
       }
     };
   }, [elementsCount]);
