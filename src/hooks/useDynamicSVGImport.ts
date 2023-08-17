@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, FC, SVGProps } from "react";
 
-export const useDynamicSVGImport = (path: string, name: string) => {
+export const useDynamicSVGImport = (type: string, name: string) => {
   const ImportedIconRef =
     useRef<FC<SVGProps<SVGSVGElement>>>();
   const [SvgIcon, setSvgIcon] = useState<any>(null);
@@ -8,7 +8,7 @@ export const useDynamicSVGImport = (path: string, name: string) => {
   useEffect(() => {
     const importIcon = async (): Promise<void> => {
       try {
-        const icon = await import(`../assets/icons/${path}/${name}.svg`);
+        const icon = await import(`../assets/icons/${type}/${name}.svg`);
         ImportedIconRef.current = icon.ReactComponent;
         setSvgIcon(ImportedIconRef.current);
       } catch (err) {

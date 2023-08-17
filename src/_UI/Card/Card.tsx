@@ -83,7 +83,7 @@ export const Card: FC<CardType> = ({
         </CardText>
         <CardIconBox>
           <Icon
-            path="forcards"
+            type="forcards"
             name={iconName}
           />
         </CardIconBox>

@@ -1,14 +1,14 @@
 import { FC } from "react";
 import { useDynamicSVGImport } from "@/hooks";
 
-export type IconProps = {
-  path: "filled" | "forcards" | "stroke";
+type IconProps = {
+  type: "filled" | "forcards" | "stroke";
   name: string;
   color?: string;
 };
 
-const Icon: FC<IconProps> = ({ path, name, color = "white" }) => {
-  const SvgIcon = useDynamicSVGImport(path, name);
+const Icon: FC<IconProps> = ({ type, name, color = "white" }) => {
+  const SvgIcon = useDynamicSVGImport(type, name);
 
   if (SvgIcon) {
     return <SvgIcon fill={color} />;
