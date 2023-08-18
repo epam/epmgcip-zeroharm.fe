@@ -5,6 +5,7 @@ import { getDate, getParameterGroup } from "@/helpers";
 import { Indicator } from "@UI/Indicator/Indicator";
 import { useDataStore } from "@/store/useDataStore";
 import { ParticlesAliasesKeyType, groupsColors, GroupsColorsKeyType } from "@/constants";
+import { t } from "i18next";
 
 type IndexDateType = {
   children?: ReactNode;
@@ -29,7 +30,7 @@ export const Indicators: FC<IndexDateType> = ({ children }) => {
           fontWeight="700"
           textTransform="uppercase"
         >
-          Indicators
+          { t("indicators") }
         </Text>
         <Box
           color="gray.400"
