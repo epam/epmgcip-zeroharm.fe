@@ -5,7 +5,8 @@
       "get_tips": "Kundalik maslahat oling",
       "protect": "Sog'lig'ingizni atrof-muhit ifloslanishi asoratlaridan himoya qiling",
       "open_map": "Xaritani ochish",
-      "choose_location": "Sizning joylashuvingiz emasmi? Ro'yxatdan o'z joylashuvingizni tanlashingiz mumkin"
+      "choose_location": "Sizning joylashuvingiz emasmi? Ro'yxatdan o'z joylashuvingizni tanlashingiz mumkin",
+      "close": "Yaqin"
     },
     "map": {
       "name": "Xarita",
