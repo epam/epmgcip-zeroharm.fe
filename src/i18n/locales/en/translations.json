@@ -231,11 +231,11 @@
     "pressure": "Air pressure is the force exerted by air, whether compressed or unconfined, on any surface in contact with it."
   },
   "indexes": {
-    "air_quality": "air quality index",
-    "uv": "uv index",
-    "noise_pollution": "noise pollution index",
-    "humidity": "humidity index",
-    "pressure": "air pressure index"
+    "air_quality": "Air Quality Index",
+    "uv": "UV index",
+    "noise_pollution": "Noise Pollution index",
+    "humidity": "Humidity index",
+    "pressure": "Air Pressure index"
   },
   "tips": {
     "air_quality": "Air Quality",
