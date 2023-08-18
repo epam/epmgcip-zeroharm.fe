@@ -238,11 +238,11 @@
     "pressure": "air pressure index"
   },
   "tips": {
-    "air_quality": "air quality tip",
-    "uv": "uv tip",
-    "noise_pollution": "noise pollution tip",
-    "humidity": "humidity tip",
-    "pressure": "air pressure tip"
+    "air_quality": "Air Quality",
+    "uv": "UV-Factor",
+    "noise_pollution": "Noise",
+    "humidity": "Humidity",
+    "pressure": "Air Pressure"
   },
   "detailed_info": "Detailed information"
 }
