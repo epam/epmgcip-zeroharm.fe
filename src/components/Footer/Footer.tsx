@@ -9,37 +9,40 @@ import {
 import { t } from "i18next";
 import Form from "../Form/Form";
 import BaseModal from "@/components/BaseModal/BaseModal";
+import { ReactComponent as StarIcon } from "@/assets/icons/stroke/harm-star.svg";
 
 const Footer: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Flex
-      p="4px"
-      gap="32px"
       w="100%"
       justify="space-between"
+      align="center"
     >
-      <Text fontSize="xs">
-        { t("pages.footer.text") }{ " " }
+      <Text fontSize="sm" lineHeight={"18px"}>
+        { t("pages.footer.text") } <br/>
         <ChakraLink
           href="https://hydromet.uz/"
           isExternal
+          _hover={{ color: "#FFA01C" }}
         >
-          { t("pages.footer.link") }{ " " }
+          { t("pages.footer.link") }
         </ChakraLink>
       </Text>
       <Button
-        size="xs"
+        leftIcon={<StarIcon />}
+        size="sm"
         onClick={onOpen}
+        variant="gradient"
       >
         { t("pages.footer.button") }
       </Button>
       <BaseModal
         isOpen={isOpen}
         onClose={onClose}
-        title={t("pages.form.title")
-      }>
+        title={t("pages.form.title")}
+      >
         <Form />
       </BaseModal>
     </Flex>

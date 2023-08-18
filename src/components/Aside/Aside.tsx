@@ -15,6 +15,8 @@ const Aside = () => {
       p="0 24px 24px"
       direction="column"
       gap="24px"
+      height="calc(100vh - 64px)"
+      overflow="auto"
     >
       <LocationSelect />
       <Tabs />
