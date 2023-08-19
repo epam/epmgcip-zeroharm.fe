@@ -1,8 +1,9 @@
 import { useState, ReactNode, FC } from "react";
 import { Flex, Box, Text, Button, chakra } from "@chakra-ui/react";
 import { Card } from "./Card";
-import { getCardData, getSubString } from "@/helpers";
+import { getCardData, getCutText } from "@/helpers";
 import { useParameterData } from "@/hooks";
+import { LETTERS_LIMIT } from "@/constants";
 import { t } from "i18next";
 import { ReactComponent as RightArrowIcon } from "@/assets/icons/stroke/harm-arrow-right.svg";
 import { ReactComponent as LeftArrowIcon } from "@/assets/icons/stroke/harm-arrow-left.svg";
@@ -68,8 +69,9 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
 
   const card = getCardData(currentParameterValue, cardsKey);
   const { heading, subheading, tip, text, cardColor, iconName } = card;
-  const subText = getSubString(text, 120);
-  const preview = `${subText}${subText.endsWith(".") ? ".." : "..."}`;
+  const isTextBig = text.length > LETTERS_LIMIT ? true : false;
+  const cutText = getCutText(text);
+  const preview = isTextBig ? cutText : text;
   const cardText = isCardOpen ? text : preview;
   const btnText = t(isCardOpen ? "pages.map.cards.buttons.hide" : "pages.map.cards.buttons.see_more");
 
@@ -109,9 +111,11 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
         <Text>
           { cardText }
           { " " }
-          <Button variant="link" onClick={toggleCard}>
-            { btnText }
-          </Button>
+          { isTextBig && (
+            <Button variant="link" onClick={toggleCard}>
+              { btnText }
+            </Button>
+          ) }
         </Text>
       </Card>
       { isNavigation && (

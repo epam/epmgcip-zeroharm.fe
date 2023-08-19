@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { InputGroup, InputLeftElement } from "@chakra-ui/react";
-import { t } from "i18next";
 import { ReactComponent as IconMapPoint } from "@/assets/icons/stroke/harm-local-two.svg";
 import { BaseSelect } from "../BaseSelect/BaseSelect";
-import { getTranslationValues } from "@/helpers";
+import { resolveTranslationPath } from "@/helpers";
+import { locationsData } from "@/constants";
 
 const selectStyleConfig = {
   container: {
@@ -29,11 +29,11 @@ const selectStyleConfig = {
 };
 
 export const LocationSelect: FC = () => {
-  const defaultAddress = t("locations.tash_furkata");
-  const locationValues = getTranslationValues("locations");
-  const locations = locationValues.map((locationValue: string) => ({
-    label: locationValue,
-    value: locationValue
+  const locationOptions = locationsData.map(locationData => resolveTranslationPath(locationData));
+  const defaultAddress = locationOptions.find(({ locationId }) => locationId === "tash_furkata")?.locationName;
+  const locations = locationOptions.map(({ locationName }) => ({
+    label: locationName,
+    value: locationName
   }));
 
   return (

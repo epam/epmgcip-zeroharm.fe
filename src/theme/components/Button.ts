@@ -45,7 +45,8 @@ export const Button = defineStyleConfig({
     link: {
       textDecoration: "underline",
       color: "gray.800",
-      minWidth: "unset"
+      minWidth: "unset",
+      justifyContent: "flex-start"
     }
   },
   defaultProps: {
