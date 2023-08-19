@@ -72,7 +72,7 @@ export const Form = () => {
             validate: {
               required,
               pattern: value => {
-                if (value && watchResponse && !/^[A-Za-z А-Яа-я]{2,50}$/.test(value))
+                if (value && watchResponse && !/^[A-Za-z А-Яа-я-,']{2,50}$/.test(value))
                   return invalidInputErrorMessage;
               }
             }
