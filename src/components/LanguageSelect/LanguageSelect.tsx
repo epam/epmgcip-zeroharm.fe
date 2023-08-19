@@ -2,7 +2,8 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { useDataStore } from "@/store/useDataStore";
 import { BaseSelect } from "../BaseSelect/BaseSelect";
-import { getTranslationKeys } from "@/helpers";
+import { resolveTranslationPath } from "@/helpers";
+import { languagesData } from "@/constants";
 
 const selectStyleConfig = {
   control: {
@@ -12,12 +13,12 @@ const selectStyleConfig = {
 
 const LanguageSelect: FC = () => {
   const { setLanguage } = useDataStore();
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
 
-  const languageKeys = getTranslationKeys("lang");
-  const languages = languageKeys.map((languageKey: string) => ({
-    label: t(`lang.${languageKey}`),
-    value: languageKey
+  const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
+  const languages = languagesOptions.map(({ languageId, languageName }) => ({
+    label: languageName,
+    value: languageId
   }));
 
   const handleChange = (lang: { label: string, value: string }) => {

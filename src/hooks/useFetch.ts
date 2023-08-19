@@ -2,20 +2,21 @@ import { useState, useEffect } from "react";
 
 import { mapParameterData } from "@/helpers";
 
-export const useFetch = (url: string) => {
+export const useFetch = (path: string, onComplete: (data: any) => void) => {
   const [fetchedData, setFetchedData] = useState<any>();
 
   useEffect(() => {
     const controller = new AbortController();
     const { signal } = controller;
 
-    fetch(url, { signal })
+    fetch(`${process.env.REACT_APP_ZERO_HARM_URL}${path}`, { signal })
       .then((res) => res.json())
       .then((data) => {
         const fetched = data[0];
         const mappedData = mapParameterData(fetched);
 
         setFetchedData(mappedData);
+        onComplete(mappedData);
       })
       .catch((err) => {
         if (err.name === "AbortName") {
@@ -26,7 +27,7 @@ export const useFetch = (url: string) => {
     return () => {
       controller.abort();
     };
-  }, [url]);
+  }, [path]);
 
   return fetchedData;
 };

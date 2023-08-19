@@ -4,3 +4,7 @@ export * from "./indexesConfig";
 export * from "./parametersAliases";
 export * from "./particlesAliases";
 export * from "./cardsConfig";
+export * from "./tabsData";
+export * from "./locationsData";
+export * from "./languagesData";
+export * from "./common";

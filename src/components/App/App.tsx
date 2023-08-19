@@ -9,20 +9,18 @@ import "@/i18n/i18n";
 function App() {
   const { language, setParameters, setAirComponents } = useDataStore();
 
-  const data = useFetch(`${process.env.REACT_APP_ZERO_HARM_URL}/v1/pollutions?station_id=1`);
-
-  useEffect(() => {
-    changeLanguage(language).then();
-  }, [language]);
-
-  useEffect(() => {
+  useFetch("/v1/pollutions?station_id=1", (data) => {
     if (data) {
       const { parameters, airComponents } = data;
 
       setParameters(parameters);
       setAirComponents(airComponents);
     }
-  }, [data, setParameters, setAirComponents]);
+  });
+
+  useEffect(() => {
+    changeLanguage(language).then();
+  }, [language]);
 
   return (
     <>
