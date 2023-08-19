@@ -1,12 +1,23 @@
 import { defineStyleConfig } from "@chakra-ui/react";
 
 export const Modal = defineStyleConfig({
+  baseStyle: {
+    header: {
+      width: "initial",
+      position: "initial",
+      zIndex: "initial"
+    },
+    dialog: {
+      bgColor: "gray.900",
+      alignSelf: "center"
+    },
+    body: {
+      bgColor: "gray.900"
+    }
+  },
   variants: {
     default: {
       header: {
-        width: "initial",
-        position: "initial",
-        zIndex: "initial",
         borderTopRadius: "lg",
         paddingX: 5,
         paddingTop: 5,
@@ -16,12 +27,11 @@ export const Modal = defineStyleConfig({
         bgColor: "rgba(37,37,38, 0.9)"
       },
       body: {
-        bgColor: "gray.900",
         paddingBottom: 6
       },
       dialog: {
         position: "relative",
-          _after: {
+        _after: {
           content: "''",
           position: "absolute",
           top: 0,
@@ -34,6 +44,24 @@ export const Modal = defineStyleConfig({
           backgroundImage:
             "linear-gradient(90deg, #339944 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #7D5BA6 100%);"
         }
+      }
+    },
+    colored: {
+      dialog: {
+        borderWidth: 4,
+        padding: 9
+      },
+      header: {
+        display: "flex",
+        padding: 0,
+        paddingBottom: "10px",
+        marginBottom: "10px",
+        gap: 5,
+        position: "relative",
+        zIndex: "initial"
+      },
+      body: {
+        paddingY: 0
       }
     }
   },
