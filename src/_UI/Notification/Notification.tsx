@@ -35,6 +35,7 @@ export const Notification: FC<NotificationTypeProps> = ({
         variant={"colored"}
         isOpen={isOpen}
         onClose={onClose}
+        autoFocus={false}
       >
         <ModalOverlay />
         <ModalContent borderColor={data?.notificationColor}>
