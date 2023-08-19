@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import {
   Text,
   Modal,
@@ -6,27 +6,24 @@ import {
   ModalCloseButton,
   ModalContent,
   ModalHeader,
-  ModalOverlay,
-  useDisclosure
+  ModalOverlay
 } from "@chakra-ui/react";
 import Icon from "../Icon/Icon";
 import { notificationsData } from "@/constants";
 
 type NotificationTypeProps = {
-  type: string;
-  title: string,
-  text: string,
-  isOpen?: boolean;
-  children?: ReactNode;
+  type: "success" | "alert" | "warning"| "hint";
+  isOpen: boolean;
+  onClose: () => void;
 };
 
 export const Notification: FC<NotificationTypeProps> = ({
-  type, title, text
+  type,
+  isOpen,
+  onClose
 }) => {
-  const { onClose } = useDisclosure();
-  const isOpen = true;
 
-  const data = notificationsData.find(item => item.notificationType === type);
+  const data = notificationsData.find((item) => item.notificationType === type);
 
   return (
     <>
@@ -45,7 +42,7 @@ export const Notification: FC<NotificationTypeProps> = ({
               name={`harm-${type}`}
               color={data?.notificationColor}
             />
-            <Text lineHeight={"medium"}>{ title }</Text>
+            <Text lineHeight={"medium"}>{ data?.notificationTitle }</Text>
             <ModalCloseButton
               size="lg"
               fontSize="18px"
@@ -58,7 +55,7 @@ export const Notification: FC<NotificationTypeProps> = ({
             w="89%"
             alignSelf="center"
           >
-            <Text>{ text }</Text>
+            <Text>{ data?.notificationText }</Text>
           </ModalBody>
         </ModalContent>
       </Modal>
