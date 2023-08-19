@@ -33,6 +33,7 @@ export const Notification: FC<NotificationTypeProps> = ({
         isOpen={isOpen}
         onClose={onClose}
         autoFocus={false}
+        isCentered
       >
         <ModalOverlay />
         <ModalContent borderColor={data?.notificationColor}>

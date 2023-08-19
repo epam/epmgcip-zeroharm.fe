@@ -8,8 +8,7 @@ export const Modal = defineStyleConfig({
       zIndex: "initial"
     },
     dialog: {
-      bgColor: "gray.900",
-      alignSelf: "center"
+      bgColor: "gray.900"
     },
     body: {
       bgColor: "gray.900"
