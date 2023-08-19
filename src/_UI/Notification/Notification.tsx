@@ -10,50 +10,23 @@ import {
   useDisclosure
 } from "@chakra-ui/react";
 import Icon from "../Icon/Icon";
-
-type NotificationType = "success" | "alert" | "warning" | "hint";
-type NotificationData = {
-  color: string;
-  title: string;
-  text: string;
-};
-
-type NotificationsData = Record<NotificationType, NotificationData>;
+import { notificationsData } from "@/constants";
 
 type NotificationTypeProps = {
-  type?: NotificationType;
+  type: string;
+  title: string,
+  text: string,
   isOpen?: boolean;
   children?: ReactNode;
 };
 
-const mockData: NotificationsData = {
-  success: {
-    color: "#339944",
-    title: "Success notification text",
-    text: "Success notification big and beautiful description"
-  },
-  alert: {
-    color: "#E6484E",
-    title: "Alert notification text",
-    text: "Alert notification big and beautiful description"
-  },
-  warning: {
-    color: "#FFA01C",
-    title: "Warning notification text",
-    text: "Warning notification big and beautiful description"
-  },
-  hint: {
-    color: "#7D5BA6",
-    title: "Hint notification text",
-    text: "Hint notification big and beautiful description"
-  }
-};
-
 export const Notification: FC<NotificationTypeProps> = ({
-  type = "hint"
+  type, title, text
 }) => {
   const { onClose } = useDisclosure();
   const isOpen = true;
+
+  const data = notificationsData.find(item => item.notificationType === type);
 
   return (
     <>
@@ -64,14 +37,14 @@ export const Notification: FC<NotificationTypeProps> = ({
         onClose={onClose}
       >
         <ModalOverlay />
-        <ModalContent borderColor={mockData[type].color}>
+        <ModalContent borderColor={data?.notificationColor}>
           <ModalHeader>
             <Icon
               type="stroke"
               name={`harm-${type}`}
-              color={mockData[type].color}
+              color={data?.notificationColor}
             />
-            <Text lineHeight={"medium"}>{ mockData[type].title }</Text>
+            <Text lineHeight={"medium"}>{ title }</Text>
             <ModalCloseButton
               size="lg"
               fontSize="18px"
@@ -84,7 +57,7 @@ export const Notification: FC<NotificationTypeProps> = ({
             w="89%"
             alignSelf="center"
           >
-            <Text>{ mockData[type].text }</Text>
+            <Text>{ text }</Text>
           </ModalBody>
         </ModalContent>
       </Modal>
