@@ -38,7 +38,7 @@ i18n
     // you can use the i18n.changeLanguage function to change the language manually: https://www.i18next.com/overview/api#changelanguage
     // if you're using a language detector, do not define the lng option
     // lng: window.navigator.language,
-    lng: languageFromStorage || window.navigator.language,
+    lng: languageFromStorage || window.navigator.language.split("-")[0],
     interpolation: {
       escapeValue: false // react already safes from xss
     }
