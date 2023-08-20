@@ -13,7 +13,7 @@ import {
   Tooltip,
   Divider
 } from "@chakra-ui/react";
-import { ReactComponent as QuestionMark } from "@/assets/icons/stroke/harm-question.svg";
+import { ReactComponent as Hint } from "@/assets/icons/stroke/harm-hint.svg";
 import { InputLabel } from "@/_UI/InputLabel/InputLabel";
 import { t } from "i18next";
 
@@ -200,7 +200,7 @@ export const Form = () => {
               mr="2"
               opacity=".5"
             >
-              <QuestionMark
+              <Hint
                 width="20px"
                 height="20px"
               />

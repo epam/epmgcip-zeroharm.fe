@@ -7,4 +7,5 @@ export * from "./cardsConfig";
 export * from "./tabsData";
 export * from "./locationsData";
 export * from "./languagesData";
+export * from "./notificationData";
 export * from "./common";
