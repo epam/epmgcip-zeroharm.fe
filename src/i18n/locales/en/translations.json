@@ -4,7 +4,7 @@
       "name": "Home",
       "get_tips": "Get daily tips",
       "protect": "Protect your health from the environmental pollution effects",
-      "open_map": "Open a map",
+      "open_map": "Open a Map",
       "choose_location": "Not your location? You may choose yours from the list.",
       "close": "Close"
     },
@@ -231,18 +231,19 @@
     "pressure": "Air pressure is the force exerted by air, whether compressed or unconfined, on any surface in contact with it."
   },
   "indexes": {
-    "air_quality": "air quality index",
-    "uv": "uv index",
-    "noise_pollution": "noise pollution index",
-    "humidity": "humidity index",
-    "pressure": "air pressure index"
+    "air_quality": "Air Quality Index",
+    "uv": "UV index",
+    "noise_pollution": "Noise Pollution index",
+    "humidity": "Humidity index",
+    "pressure": "Air Pressure index"
   },
   "tips": {
-    "air_quality": "air quality tip",
-    "uv": "uv tip",
-    "noise_pollution": "noise pollution tip",
-    "humidity": "humidity tip",
-    "pressure": "air pressure tip"
+    "air_quality": "Air Quality",
+    "uv": "UV-Factor",
+    "noise_pollution": "Noise",
+    "humidity": "Humidity",
+    "pressure": "Air Pressure"
   },
-  "detailed_info": "Detailed information"
+  "indicators": "Other indicators",
+  "detailed_info": "Detailed Information"
 }

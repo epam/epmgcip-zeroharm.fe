@@ -5,7 +5,8 @@
       "get_tips": "Kundalik maslahat oling",
       "protect": "Sog'lig'ingizni atrof-muhit ifloslanishi asoratlaridan himoya qiling",
       "open_map": "Xaritani ochish",
-      "choose_location": "Sizning joylashuvingiz emasmi? Ro'yxatdan o'z joylashuvingizni tanlashingiz mumkin"
+      "choose_location": "Sizning joylashuvingiz emasmi? Ro'yxatdan o'z joylashuvingizni tanlashingiz mumkin",
+      "close": "Yaqin"
     },
     "map": {
       "name": "Xarita",
@@ -211,5 +212,10 @@
     "noise_pollution": "Shovqin bilan ifloslanish ko'rsatgichi",
     "humidity": "Namlik ko'rsatkichi",
     "pressure": "Havo bosimi ko'rsatkichi"
-  }
+  },
+  "tips": {
+    "air_quality": "Havo sifati"
+  },
+  "indicators": "Boshqa parametrlar",
+  "detailed_info": "Batafsil ma'lumot"
 }
