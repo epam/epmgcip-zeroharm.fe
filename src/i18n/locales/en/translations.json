@@ -42,7 +42,7 @@
       "feedback": {
         "label": "My feedback",
         "placeholder": "Write your feedback or suggestion here",
-        "tip": "We are glad to receive feedback from you! Write your feedback or suggestion here, use 6-500 symbols in Latin or Cyrillic alphabet!"
+        "tip": "We are glad to receive feedback from you! Write your feedback or suggestion here, use 6-500 symbols in Latin or Cyrillic alphabet."
       },
       "checkbox": {
         "label": "I want to get a response",
