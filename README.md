@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Prerequisites
 
-NodeJs and npm should be installed on your machine.
+NodeJs and npm installed on your machine.
 
 ### Installation
 
