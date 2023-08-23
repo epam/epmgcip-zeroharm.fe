@@ -18,5 +18,6 @@ export const colors = {
     200: "#C0C4CC",
     100: "#D8DCE5",
     0: "#FFFFFF"
-  }
+  },
+  whiteWithOpacity: { 20: "#FFFFFF33" }
 };
