@@ -18,7 +18,7 @@ const LanguageFlags: Record<string, React.FunctionComponent<React.SVGProps<SVGSV
   uz: UzFlagIcon
 };
 
-const LanguageMenu: FC = () => {
+export const LanguageMenu: FC = () => {
   const { setLanguage } = useDataStore();
 
   const { i18n } = useTranslation();
@@ -136,4 +136,3 @@ const LanguageMenu: FC = () => {
   );
 };
 
-export default LanguageMenu;

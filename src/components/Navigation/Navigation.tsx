@@ -2,9 +2,9 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Flex, Spacer, Box } from "@chakra-ui/react";
-import LanguageMenu from "@/components/LanguageMenu/LanguageMenu";
-import logo from "@/assets/images/logo--new.svg";
+import { LanguageMenu } from "@/components/LanguageMenu/LanguageMenu";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher/ThemeSwitcher";
+import logo from "@/assets/images/logo--new.svg";
 
 const Navigation: FC = () => {
   const { t } = useTranslation();
