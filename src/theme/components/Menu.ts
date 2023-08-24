@@ -2,16 +2,15 @@ import { StyleFunctionProps, defineStyleConfig } from "@chakra-ui/react";
 
 export const Menu = defineStyleConfig({
   variants: {
-    language: (props: StyleFunctionProps) => ({
+    default: (props: StyleFunctionProps) => ({
       button: {
+        h: {
+          base: 14,
+          md: 16
+        },
         color: props.colormode === "dark" ? "white" : "gray.900",
         fontWeight: "bold",
-        bg: "transparent",
-        pl: 4,
-        w: {
-          base: "76px",
-          md: "104px"
-        },
+        bg: props.colorMode === "dark" ? "gray.900" : "white",
         _hover: {
           bg: "transparent",
           color: props.colormode === "dark" ? "gray.100" : "gray.700"
@@ -28,27 +27,10 @@ export const Menu = defineStyleConfig({
         boxShadow: "none",
         p: 0,
         overflow: "hidden",
-        border: {
-          base: "none",
-          md: 2
-        },
+        border: "none",
         bgColor: {
-          base: "transparent",
+          base: props.colorMode === "dark" ? "gray.900" : "white",
           md: props.colorMode === "dark" ? "gray.700" : "white"
-        },
-        minW: {
-          base: "100vw",
-          md: "44",
-          lg: "60"
-        },
-        w: {
-          base: "100vw",
-          md: "44",
-          lg: "60"
-        },
-        borderRadius: {
-          base: 0,
-          md: 8
         }
       },
       item: {
@@ -59,6 +41,9 @@ export const Menu = defineStyleConfig({
         _focus: {
           bgColor: props.colorMode === "dark" ? "gray.600" : "gray.100"
         },
+        _hover: {
+          bgColor: props.colorMode === "dark" ? "gray.600" : "gray.100"
+        },
         _selected: {
           bgColor: props.colorMode === "dark" ? "gray.600" : "gray.100"
         }
@@ -66,6 +51,6 @@ export const Menu = defineStyleConfig({
     })
   },
   defaultProps: {
-    variant: "language"
+    variant: "default"
   }
 });
