@@ -14,6 +14,7 @@ import { Divider } from "./components/Divider";
 import { Modal } from "./components/Modal";
 import { Input } from "./components/Input";
 import { Checkbox } from "./components/Checkbox";
+import { Menu } from "./components/Menu";
 
 const overrides = {
   styles,
@@ -29,7 +30,8 @@ const overrides = {
     Divider,
     Modal,
     Input,
-    Checkbox
+    Checkbox,
+    Menu
   }
 };
 
