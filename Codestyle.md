@@ -1,13 +1,17 @@
 ## JS imports order
 
 ```jsx
-
+// react imports (order within could be any)
 import { useState } from "react";
+// imports from node_modules (order within could be any)
 import { Box } from "@chakra-ui/react";
+// project imports (order within could be any)
 import { ExampleComponent } from "@/components";
+import { ExampleComponent } from "@UI";
 import { exampleConfig } from "@/constants"
 import { useExample } from "@/hooks";
 import { getExample } from "@/helpers";
+// asset imports (order within could be any)
 import { ReactComponent as Icon } from "Assets/Images/Icons/Loadmore.svg";
 
 ```
