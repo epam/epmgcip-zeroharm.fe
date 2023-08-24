@@ -18,10 +18,13 @@ const LanguageFlags: Record<string, React.FunctionComponent<React.SVGProps<SVGSV
   uz: UzFlagIcon
 };
 
+const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
+
 const LanguageMenu: FC = () => {
   const { setLanguage } = useDataStore();
+
   const { i18n } = useTranslation();
-  const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
+
   const CurrentLanguageIcon = LanguageFlags[i18n.language];
 
   return (
