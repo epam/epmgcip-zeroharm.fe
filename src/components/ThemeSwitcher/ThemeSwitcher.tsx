@@ -1,15 +1,14 @@
-import { FormControl, FormLabel, Switch } from "@chakra-ui/react";
 import { FC, useState } from "react";
+import { FormControl, FormLabel, Switch, Icon } from "@chakra-ui/react";
 import { ReactComponent as IconMoon } from "@/assets/icons/stroke/theme-moon.svg";
 import { ReactComponent as IconSun } from "@/assets/icons/stroke/theme-sun.svg";
-import { colors } from "../../theme/foundations/colors";
 
 const hover = {
   cursor: "pointer"
 };
 
-const ThemeSwitcher: FC = () => {
-  const [isDark, toggleColorMode] = useState(true); // const {colorMode, toggleColorMode} = useColorMode();
+export const ThemeSwitcher: FC = () => {
+  const [isDark, toggleColorMode] = useState(true);
 
   return (
     <FormControl
@@ -19,23 +18,29 @@ const ThemeSwitcher: FC = () => {
       alignItems="center"
       justifyContent="space-between"
     >
-      <FormLabel margin={"0px"} _hover={hover}>
-        <IconMoon
+      <FormLabel
+        margin={"0px"}
+        height={"24px"}
+        _hover={hover}>
+        <Icon
+          as={IconMoon}
           width="24px"
           height="24px"
-          stroke={isDark ? colors.gray[0] : colors.whiteWithOpacity[20]}
+          color={isDark ? "white" : "whiteAlpha.400"}
         />
       </FormLabel>
       <Switch size={"lg"} onChange={() => toggleColorMode(!isDark)} />
-      <FormLabel margin={"0px"} _hover={hover}>
-        <IconSun
+      <FormLabel
+        margin={"0px"}
+        height={"24px"}
+        _hover={hover}>
+        <Icon
+          as={IconSun}
           width="24px"
           height="24px"
-          fill={isDark ? colors.whiteWithOpacity[20] : colors.gray[0]}
+          color={isDark ? "whiteAlpha.400" : "white"}
         />
       </FormLabel>
     </FormControl>
   );
 };
-
-export default ThemeSwitcher;

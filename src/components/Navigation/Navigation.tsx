@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Flex, Spacer, Box } from "@chakra-ui/react";
 import logo from "@/assets/images/logo--new.svg";
 import LanguageSelect from "@/components/LanguageSelect/LanguageSelect";
-import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher/ThemeSwitcher";
 
 const Navigation: FC = () => {
   const { t } = useTranslation();
