@@ -12,14 +12,11 @@ export const Menu = defineStyleConfig({
         fontWeight: "bold",
         bg: props.colorMode === "dark" ? "gray.900" : "white",
         _hover: {
-          bg: "transparent",
+          bg: props.colorMode === "dark" ? "gray.900" : "white",
           color: props.colormode === "dark" ? "gray.100" : "gray.700"
         },
         _active: {
-          bg: {
-            base: "gray.900",
-            md: "transparent"
-          },
+          bg: props.colorMode === "dark" ? "gray.900" : "white",
           color: props.colormode === "dark" ? "white" : "gray.600"
         }
       },
