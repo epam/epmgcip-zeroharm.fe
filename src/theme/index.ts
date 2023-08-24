@@ -15,6 +15,7 @@ import { Modal } from "./components/Modal";
 import { Input } from "./components/Input";
 import { Checkbox } from "./components/Checkbox";
 import { Menu } from "./components/Menu";
+import { Switch } from "./components/Switch";
 
 const overrides = {
   styles,
@@ -31,7 +32,8 @@ const overrides = {
     Modal,
     Input,
     Checkbox,
-    Menu
+    Menu,
+    Switch
   }
 };
 

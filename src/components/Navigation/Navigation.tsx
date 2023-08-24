@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Flex, Spacer, Box } from "@chakra-ui/react";
 import LanguageMenu from "@/components/LanguageMenu/LanguageMenu";
 import logo from "@/assets/images/logo--new.svg";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher/ThemeSwitcher";
 
 const Navigation: FC = () => {
   const { t } = useTranslation();
@@ -31,6 +32,7 @@ const Navigation: FC = () => {
           </Link>
         </Box>
         <LanguageMenu />
+        <ThemeSwitcher />
       </Flex>
     </Flex>
   );
