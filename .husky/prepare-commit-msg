@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+TASK_NAME=`git branch | grep '^\*' | cut -b3-`
+MESSAGE=`cat "$1"`
+
+echo "[$TASK_NAME]: $MESSAGE" > "$1"
