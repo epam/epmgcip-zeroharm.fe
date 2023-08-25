@@ -1,12 +1,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/700.css";
-import App from "./components/App/App";
-import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
+import App from "./components/App/App";
+import reportWebVitals from "./reportWebVitals";
 import theme from "./theme";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/700.css";
 
 const root = createRoot(
   document.getElementById("root") as HTMLElement

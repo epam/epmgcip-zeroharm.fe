@@ -1,12 +1,12 @@
 import { FC, ReactNode } from "react";
-import Wrapper from "@UI/Wrapper/Wrapper";
 import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
-import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
+import { t } from "i18next";
+import { Wrapper } from "@UI/Wrapper/Wrapper";
 import { Progress } from "@UI/Progress/Progress";
 import { indexesConfig, groupsColors, ParametersAliasesKeyType } from "@/constants";
 import { getDate, getCardData } from "@/helpers";
 import { useParameterData } from "@/hooks";
-import { t } from "i18next";
+import { ReactComponent as InfoFill } from "@/assets/icons/filled/harm-info-fill.svg";
 
 type IndexDateType = {
   children?: ReactNode;
