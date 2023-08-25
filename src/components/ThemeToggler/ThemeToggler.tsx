@@ -1,19 +1,20 @@
 import { FC, useState } from "react";
-import { Show } from "@chakra-ui/react";
+import { useMediaQuery } from "@chakra-ui/react";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher/ThemeSwitcher";
 import { ThemeButton } from "@/components/ThemeButton/ThemeButton";
 
 export const ThemeToggler: FC = () => {
-    const [isDark, toggleColorMode] = useState(true);
+  const [isDark, toggleColorMode] = useState(true);
+
+  const [isTabletWidth] = useMediaQuery("(max-width: 1023px)");
 
   return (
     <>
-      <Show above="1024px">
-        <ThemeSwitcher isDark={isDark} toggleColorMode={toggleColorMode} />
-      </Show>
-      <Show below="1023px">
+      { isTabletWidth ? (
         <ThemeButton isDark={isDark} toggleColorMode={toggleColorMode} />
-      </Show>
+      ) : (
+        <ThemeSwitcher isDark={isDark} toggleColorMode={toggleColorMode} />
+      ) }
     </>
   );
 };
