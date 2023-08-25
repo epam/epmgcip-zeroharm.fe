@@ -22,7 +22,7 @@ export const LanguageMenu: FC = () => {
 
   const { i18n } = useTranslation();
 
-  const [isMobileWidth] = useMediaQuery("(max-width: 599px)");
+  const [isMobileWidth] = useMediaQuery("(max-width: 767px)");
 
   const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
 
@@ -38,12 +38,12 @@ export const LanguageMenu: FC = () => {
             <MenuButton
               zIndex={2}
               h={{
-                base: isOpen ? 14 : "auto",
-                md: "auto"
+                base: isOpen ? 14 : "initial",
+                md: "initial"
               }}
               pos={{
-                base: isOpen ? "fixed" : "static",
-                md: "static"
+                base: isOpen ? "fixed" : "initial",
+                md: "initial"
               }}
               top={0}
               left={0}
@@ -65,17 +65,16 @@ export const LanguageMenu: FC = () => {
                 {
                   isOpenOnMobile
                     ? <HStack w={14} justify="center">
-                        <LeftArrowIcon width={20} color="initial" />
+                        <LeftArrowIcon width={20} />
                       </HStack>
                     : <CurrentLanguageFlagIcon />
                 }
 
                 <Text
                   display={{
-                    base: isOpen ? "block" : "none",
-                    md: "block"
+                    base: isOpen ? "initial" : "none",
+                    md: "initial"
                   }}
-                  color="initial"
                 >
                   { !isOpenOnMobile && i18n.language }
                 </Text>
@@ -83,8 +82,7 @@ export const LanguageMenu: FC = () => {
                   <Icon
                     as={isOpen ? ArrowUpIcon : ArrowDownIcon}
                     width={4}
-                    color="initial"
-                    display={isOpenOnMobile ? "none" : "block"}
+                    display={isOpenOnMobile ? "none" : "initial"}
                   />
               </HStack>
             </MenuButton>
@@ -95,7 +93,8 @@ export const LanguageMenu: FC = () => {
                 md: 44,
                 lg: 60
               }}
-              paddingTop={isOpenOnMobile ? 14 : 0}
+              pt={isOpenOnMobile ? 14 : 0}
+              pb={0}
               minH={{
                 base: isOpen ? "100vh" : 0,
                 md: 0
@@ -104,9 +103,9 @@ export const LanguageMenu: FC = () => {
                 base: 0,
                 md: 8
               }}
-              position={{
-                base: isOpen ? "relative" : "static",
-                md: "static"
+              pos={{
+                base: isOpen ? "relative" : "initial",
+                md: "initial"
               }}
               top={-16}
               left={0}
@@ -117,7 +116,7 @@ export const LanguageMenu: FC = () => {
                     h={14}
                     zIndex={2}
                     pl={2}
-                    position="fixed"
+                    pos="fixed"
                     top={-16}
                     left={14}
                     align="center"
@@ -133,7 +132,7 @@ export const LanguageMenu: FC = () => {
                   return (
                     <MenuItem
                       key={languageId}
-                      onClick={() => setLanguage(languageId)}
+                      onClick={() => i18n.changeLanguage(languageId).then(() => setLanguage(languageId))}
                       aria-selected={languageId === i18n.language}
                     >
                       <LanguageFlagIcon />
