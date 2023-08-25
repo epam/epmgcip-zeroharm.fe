@@ -8,8 +8,8 @@ import {
   ModalHeader,
   ModalOverlay
 } from "@chakra-ui/react";
-import Icon from "../Icon/Icon";
 import { notificationsData } from "@/constants";
+import Icon from "../Icon/Icon";
 
 type NotificationTypeProps = {
   type: "success" | "alert" | "warning"| "hint";
