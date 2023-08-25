@@ -4,10 +4,6 @@ export const Menu = defineStyleConfig({
   variants: {
     default: (props: StyleFunctionProps) => ({
       button: {
-        h: {
-          base: 14,
-          md: 16
-        },
         color: props.colormode === "dark" ? "white" : "gray.900",
         fontWeight: "bold",
         bg: props.colorMode === "dark" ? "gray.900" : "white",
@@ -22,7 +18,6 @@ export const Menu = defineStyleConfig({
       },
       list: {
         boxShadow: "none",
-        p: 0,
         overflow: "hidden",
         border: "none",
         bgColor: {
