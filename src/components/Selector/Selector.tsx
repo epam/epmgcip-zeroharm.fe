@@ -1,9 +1,9 @@
 import { Button, Flex, Heading, Text, Box } from "@chakra-ui/react";
-import { ReactComponent as IconLocal } from "@/assets/icons/filled/harm-local.svg";
-import { Popup } from "@UI/Popup/Popup";
-import { Link } from "react-router-dom";
-import { LocationSelect } from "@/components/LocationSelect/LocationSelect";
 import { t } from "i18next";
+import { Link } from "react-router-dom";
+import { Popup } from "@UI/Popup/Popup";
+import { LocationSelect } from "@/components/LocationSelect/LocationSelect";
+import { ReactComponent as IconLocal } from "@/assets/icons/filled/harm-local.svg";
 
 const Selector = () => {
   return (
