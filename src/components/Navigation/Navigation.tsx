@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Flex, Spacer, Box } from "@chakra-ui/react";
 import logo from "@/assets/images/logo--new.svg";
 import LanguageSelect from "@/components/LanguageSelect/LanguageSelect";
-import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
+import { ThemeToggler } from "@/components/ThemeToggler/ThemeToggler";
 
 const Navigation: FC = () => {
   const { t } = useTranslation();
@@ -32,7 +32,7 @@ const Navigation: FC = () => {
           </Link>
         </Box>
         <LanguageSelect />
-        <ThemeToggle />
+        <ThemeToggler />
       </Flex>
     </Flex>
   );

@@ -23,8 +23,8 @@ export const ThemeSwitcher: FC<ThemeSwitcherType> = ({ isDark, toggleColorMode }
       justifyContent="space-between"
     >
       <FormLabel
-        margin={"0px"}
-        height={"24px"}
+        margin="0px"
+        height="24px"
         _hover={hover}
       >
         <Icon
@@ -36,8 +36,8 @@ export const ThemeSwitcher: FC<ThemeSwitcherType> = ({ isDark, toggleColorMode }
       </FormLabel>
       <Switch size={"lg"} onChange={() => toggleColorMode(!isDark)} />
       <FormLabel
-        margin={"0px"}
-        height={"24px"}
+        margin="0px"
+        height="24px"
         _hover={hover}
       >
         <Icon
