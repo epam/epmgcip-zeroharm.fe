@@ -1,21 +1,13 @@
 import { FC } from "react";
-import { Menu, MenuButton, MenuList, MenuItem, HStack, Text, Icon, useMediaQuery, Flex } from "@chakra-ui/react";
+import { Menu, MenuButton, MenuList, MenuItem, HStack, Text, Icon as ChakraIcon, useMediaQuery, Flex } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { useDataStore } from "@/store/useDataStore";
+import Icon from "@UI/Icon/Icon";
 import { resolveTranslationPath } from "@/helpers";
 import { languagesData } from "@/constants";
 import { ReactComponent as ArrowDownIcon } from "@/assets/icons/stroke/harm-arrow-down.svg";
 import { ReactComponent as ArrowUpIcon } from "@/assets/icons/stroke/harm-arrow-up.svg";
 import { ReactComponent as LeftArrowIcon } from "@/assets/icons/stroke/harm-arrow-left.svg";
-import { ReactComponent as RuFlagIcon } from "@/assets/icons/flags/harm-lang-flag-russia.svg";
-import { ReactComponent as EnFlagIcon } from "@/assets/icons/flags/harm-lang-flag-united-states.svg";
-import { ReactComponent as UzFlagIcon } from "@/assets/icons/flags/harm-lang-flag-uzbekistan.svg";
-
-const LanguagesFlagIcons: Record<string, React.FunctionComponent<React.SVGProps<SVGSVGElement>>> = {
-  en: EnFlagIcon,
-  ru: RuFlagIcon,
-  uz: UzFlagIcon
-};
 
 export const LanguageMenu: FC = () => {
   const { setLanguage } = useDataStore();
@@ -25,8 +17,6 @@ export const LanguageMenu: FC = () => {
   const [isMobileWidth] = useMediaQuery("(max-width: 767px)");
 
   const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
-
-  const CurrentLanguageFlagIcon = LanguagesFlagIcons[i18n.language];
 
   return (
     <Menu autoSelect={false}>
@@ -67,7 +57,11 @@ export const LanguageMenu: FC = () => {
                     ? <HStack w={14} justify="center">
                         <LeftArrowIcon width={20} />
                       </HStack>
-                    : <CurrentLanguageFlagIcon />
+                    : <Icon
+                        type="flags"
+                        color="none"
+                        name={`harm-lang-flag-${i18n.language}`}
+                      />
                 }
 
                 <Text
@@ -79,7 +73,7 @@ export const LanguageMenu: FC = () => {
                   { !isOpenOnMobile && t("lang.code") }
                 </Text>
 
-                  <Icon
+                  <ChakraIcon
                     as={isOpen ? ArrowUpIcon : ArrowDownIcon}
                     width={4}
                     display={isOpenOnMobile ? "none" : "initial"}
@@ -126,21 +120,21 @@ export const LanguageMenu: FC = () => {
                   </Flex>
               }
               {
-                languagesOptions.map(({ languageId, languageName}) => {
-                  const LanguageFlagIcon = LanguagesFlagIcons[languageId];
+                languagesOptions.map(({ languageId, languageName, languageIconName }) => (
+                  <MenuItem
+                    key={languageId}
+                    onClick={() => i18n.changeLanguage(languageId).then(() => setLanguage(languageId))}
+                    aria-selected={languageId === i18n.language}
+                  >
+                    <Icon
+                      type="flags"
+                      name={languageIconName}
+                      color="none"
+                    />
 
-                  return (
-                    <MenuItem
-                      key={languageId}
-                      onClick={() => i18n.changeLanguage(languageId).then(() => setLanguage(languageId))}
-                      aria-selected={languageId === i18n.language}
-                    >
-                      <LanguageFlagIcon />
-
-                      { languageName }
-                    </MenuItem>
-                  );
-                })
+                    { languageName }
+                  </MenuItem>
+                ))
               }
             </MenuList>
           </>
