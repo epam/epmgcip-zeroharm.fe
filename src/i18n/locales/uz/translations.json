@@ -47,9 +47,12 @@
     }
   },
   "lang": {
-    "ru": "Ru",
-    "en": "En",
-    "uz": "Uz"
+    "code": "O'zb",
+    "list": {
+      "ru": "Rus",
+      "en": "Ingliz",
+      "uz": "O'zbek"
+    }
   },
   "tabs": {
     "air_quality": "Havoning sifati",

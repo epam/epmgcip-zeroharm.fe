@@ -2,19 +2,19 @@ export const languagesData = [
   {
     languageId: "en",
     languageName: {
-      translationPath: "lang.en"
+      translationPath: "lang.list.en"
     }
   },
   {
     languageId: "ru",
     languageName: {
-      translationPath: "lang.ru"
+      translationPath: "lang.list.ru"
     }
   },
   {
     languageId: "uz",
     languageName: {
-      translationPath: "lang.uz"
+      translationPath: "lang.list.uz"
     }
   }
 ];

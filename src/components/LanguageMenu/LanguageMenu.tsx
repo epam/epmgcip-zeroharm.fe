@@ -20,7 +20,7 @@ const LanguagesFlagIcons: Record<string, React.FunctionComponent<React.SVGProps<
 export const LanguageMenu: FC = () => {
   const { setLanguage } = useDataStore();
 
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const [isMobileWidth] = useMediaQuery("(max-width: 767px)");
 
@@ -76,7 +76,7 @@ export const LanguageMenu: FC = () => {
                     md: "initial"
                   }}
                 >
-                  { !isOpenOnMobile && i18n.language }
+                  { !isOpenOnMobile && t("lang.code") }
                 </Text>
 
                   <Icon
