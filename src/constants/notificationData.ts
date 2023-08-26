@@ -1,26 +1,54 @@
-export const notificationsData = [
-  {
-    notificationType: "success",
-    notificationColor: "#339944",
-    notificationTitle: "Success notification text",
-    notificationText: "Success notification big and beautiful description"
+export type NotificationResult = "success" | "alert" | "warning" | "hint";
+type NotificationColor = "#339944" | "#E6484E" | "#FFA01C" | "#7D5BA6";
+
+export type Notification = {
+  notificationId: string;
+  notificationTitle: {
+    translationPath: string;
+  };
+  notificationText: {
+    translationPath: string;
+  };
+}
+
+export type NotificationType = {
+  color: NotificationColor;
+  formNotifications?: Notification[];
+}
+
+type NotificationsData = Record<NotificationResult, NotificationType>;
+
+export const notificationsData: NotificationsData = {
+  success: {
+    color: "#339944",
+    formNotifications: [
+      {
+        notificationId: "form_without_response",
+        notificationTitle: {
+          translationPath: "notifications.form_without_response.title"
+        },
+        notificationText: {
+          translationPath: "notifications.form_without_response.text"
+        }
+      },
+      {
+        notificationId: "form_with_response",
+        notificationTitle: {
+          translationPath: "notifications.form_with_response.title"
+        },
+        notificationText: {
+          translationPath: "notifications.form_with_response.text"
+        }
+      }
+    ]
   },
-  {
-    notificationType: "alert",
-    notificationColor: "#E6484E",
-    notificationTitle: "Alert notification text",
-    notificationText: "Alert notification big and beautiful description"
+  alert: {
+    color: "#E6484E"
   },
-  {
-    notificationType: "warning",
-    notificationColor: "#FFA01C",
-    notificationTitle: "Warning notification text",
-    notificationText: "Warning notification big and beautiful description"
+  warning: {
+    color: "#FFA01C"
   },
-  {
-    notificationType: "hint",
-    notificationColor: "#7D5BA6",
-    notificationTitle: "Hint notification text",
-    notificationText: "Hint notification big and beautiful description"
+  hint: {
+    color: "#7D5BA6"
   }
-];
+};
