@@ -7,18 +7,16 @@ import { resolveTranslationPath } from "@/helpers";
 type NotificationTypeProps = {
   result: NotificationResult;
   type: string;
-  response: boolean;
   isOpen: boolean;
   onClose: () => void;
+  id: string;
 };
 
-export const Notification: FC<NotificationTypeProps> = ({ result, type, isOpen, onClose, response }) => {
+export const Notification: FC<NotificationTypeProps> = ({ result, type, isOpen, onClose, id }) => {
   const data: NotificationType = notificationsData[result as NotificationResult];
   const notificationData = data[type as keyof NotificationType];
   const notificationOptions = (notificationData as NotificationData[]).map((notification) => resolveTranslationPath(notification));
   const notification = notificationOptions.find(({ notificationId }: { notificationId: string }) => {
-    const id = response ? "form_with_response" : "form_without_response";
-
     return notificationId === id;
   });
 

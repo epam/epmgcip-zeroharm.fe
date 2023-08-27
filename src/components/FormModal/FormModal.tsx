@@ -41,7 +41,7 @@ export const FormModal: FC<FormModalProps> = ({ isOpen, onClose, showForm, setSh
           onClose={close}
           result="success"
           type="formNotifications"
-          response={submitedWithResponse}
+          id={submitedWithResponse ? "form_with_response" : "form_without_response"}
         />
       ) }
     </>
