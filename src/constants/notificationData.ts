@@ -1,7 +1,7 @@
 export type NotificationResult = "success" | "alert" | "warning" | "hint";
 type NotificationColor = "#339944" | "#E6484E" | "#FFA01C" | "#7D5BA6";
 
-export type Notification = {
+export type NotificationData = {
   notificationId: string;
   notificationTitle: {
     translationPath: string;
@@ -13,7 +13,7 @@ export type Notification = {
 
 export type NotificationType = {
   color: NotificationColor;
-  formNotifications?: Notification[];
+  formNotifications?: NotificationData[];
 }
 
 type NotificationsData = Record<NotificationResult, NotificationType>;
