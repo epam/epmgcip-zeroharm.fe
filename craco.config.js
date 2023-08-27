@@ -6,6 +6,7 @@ module.exports = {
       "@Assets": path.resolve(__dirname, "src/assets"),
       "@Components": path.resolve(__dirname, "src/components"),
       "@Constants": path.resolve(__dirname, "src/constants"),
+      "@i18n": path.resolve(__dirname, "src/i18n"),
       "@Helpers": path.resolve(__dirname, "src/helpers"),
       "@Hooks": path.resolve(__dirname, "src/hooks"),
       "@UI": path.resolve(__dirname, "src/_UI"),

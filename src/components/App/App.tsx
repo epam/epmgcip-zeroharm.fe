@@ -4,7 +4,7 @@ import { changeLanguage } from "i18next";
 import { Page404, PageHome, PageAbout, PageMap } from "@Pages";
 import { useDataStore } from "@Store/useDataStore";
 import { useFetch } from "@Hooks";
-import "@/i18n/i18n";
+import "@i18n/i18n";
 
 export function App() {
   const { language, setParameters, setAirComponents } = useDataStore();
