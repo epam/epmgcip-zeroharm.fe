@@ -5,7 +5,7 @@ type WrapperType = {
   children: ReactNode;
 };
 
-const Wrapper: FC<WrapperType> = ({ children }) => {
+export const Wrapper: FC<WrapperType> = ({ children }) => {
   return (
     <Flex
       direction="column"
@@ -17,5 +17,3 @@ const Wrapper: FC<WrapperType> = ({ children }) => {
     </Flex>
   );
 };
-
-export default Wrapper;

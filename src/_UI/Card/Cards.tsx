@@ -1,10 +1,10 @@
 import { useState, ReactNode, FC } from "react";
 import { Flex, Box, Text, Button, chakra } from "@chakra-ui/react";
+import { t } from "i18next";
 import { Card } from "./Card";
+import { LETTERS_LIMIT } from "@/constants";
 import { getCardData, getCutText } from "@/helpers";
 import { useParameterData } from "@/hooks";
-import { LETTERS_LIMIT } from "@/constants";
-import { t } from "i18next";
 import { ReactComponent as RightArrowIcon } from "@/assets/icons/stroke/harm-arrow-right.svg";
 import { ReactComponent as LeftArrowIcon } from "@/assets/icons/stroke/harm-arrow-left.svg";
 

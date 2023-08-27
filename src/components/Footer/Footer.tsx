@@ -26,6 +26,7 @@ const Footer: FC = () => {
         >
           { t("pages.footer.link") }
         </ChakraLink>
+        { t("pages.footer.end") }
       </Text>
       <Button
         leftIcon={<StarIcon />}

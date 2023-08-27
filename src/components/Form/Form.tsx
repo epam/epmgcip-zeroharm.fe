@@ -1,9 +1,9 @@
 import { Dispatch, FC, SetStateAction, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Box, FormErrorMessage, FormLabel, FormControl, Input, Button, Textarea, Checkbox, Flex, Tooltip, Divider } from "@chakra-ui/react";
-import { ReactComponent as Hint } from "@/assets/icons/stroke/harm-hint.svg";
-import { InputLabel } from "@/_UI/InputLabel/InputLabel";
 import { t } from "i18next";
+import { InputLabel } from "@/_UI/InputLabel/InputLabel";
+import { ReactComponent as Hint } from "@/assets/icons/stroke/harm-hint.svg";
 
 type FormData = {
   name: string;
@@ -71,7 +71,8 @@ export const Form: FC<FormProps> = ({ submitForm, setShowForm, isSubmitedWithRes
               validate: {
                 required,
                 pattern: (value) => {
-                  if (value && watchResponse && !/^[A-Za-z А-Яа-я-,'.]{2,50}$/.test(value)) return invalidInputErrorMessage;
+                  if (value && watchResponse && !/^[A-Za-z А-Яа-я-,'.]{2,50}$/.test(value))
+                    return invalidInputErrorMessage;
                 }
               }
             })}
@@ -107,10 +108,12 @@ export const Form: FC<FormProps> = ({ submitForm, setShowForm, isSubmitedWithRes
               validate: {
                 required,
                 pattern: (value) => {
-                  if (value && watchResponse && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value)) return invalidInputErrorMessage;
+                  if (value && watchResponse && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value))
+                    return invalidInputErrorMessage;
                 },
                 length: (value) => {
-                  if (watchResponse && value.length < 7 && value.length > 50) return invalidInputErrorMessage;
+                  if (watchResponse && value.length < 7 && value.length > 50)
+                    return invalidInputErrorMessage;
                 }
               }
             })}

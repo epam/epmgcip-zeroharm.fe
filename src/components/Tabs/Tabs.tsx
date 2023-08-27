@@ -19,7 +19,7 @@ const selected = {
   borderBottom: "3px solid white"
 };
 
-const Tabs = () => {
+export const Tabs = () => {
   const { parameter, setParameter } = useDataStore();
 
   const tabs = tabsData.map((tabData: any) => resolveTranslationPath(tabData));
@@ -67,5 +67,3 @@ const Tabs = () => {
     </ChakraTabs>
   );
 };
-
-export default Tabs;
