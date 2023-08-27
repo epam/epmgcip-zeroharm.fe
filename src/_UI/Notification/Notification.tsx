@@ -1,29 +1,29 @@
 import { FC } from "react";
-import {
-  Text,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalHeader,
-  ModalOverlay
-} from "@chakra-ui/react";
+import { Text, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from "@chakra-ui/react";
 import Icon from "../Icon/Icon";
-import { notificationsData } from "@/constants";
+import { NotificationType, notificationsData, NotificationResult, NotificationData } from "@/constants";
+import { resolveTranslationPath } from "@/helpers";
 
 type NotificationTypeProps = {
-  type: "success" | "alert" | "warning"| "hint";
+  result: NotificationResult;
+  type: string;
+  response: boolean;
   isOpen: boolean;
   onClose: () => void;
 };
 
-export const Notification: FC<NotificationTypeProps> = ({
-  type,
-  isOpen,
-  onClose
-}) => {
+export const Notification: FC<NotificationTypeProps> = ({ result, type, isOpen, onClose, response }) => {
+  const data: NotificationType = notificationsData[result as NotificationResult];
+  const notificationData = data[type as keyof NotificationType];
+  const notificationOptions = (notificationData as NotificationData[]).map((notification) => resolveTranslationPath(notification));
+  const notification = notificationOptions.find(({ notificationId }: { notificationId: string }) => {
+    const id = response ? "form_with_response" : "form_without_response";
 
-  const data = notificationsData.find((item) => item.notificationType === type);
+    return notificationId === id;
+  });
+
+  const { color } = data;
+  const { notificationTitle, notificationText } = notification;
 
   return (
     <>
@@ -36,14 +36,14 @@ export const Notification: FC<NotificationTypeProps> = ({
         isCentered
       >
         <ModalOverlay />
-        <ModalContent borderColor={data?.notificationColor}>
+        <ModalContent borderColor={color}>
           <ModalHeader>
             <Icon
               type="stroke"
-              name={`harm-${type}`}
-              color={data?.notificationColor}
+              name={`harm-${result}`}
+              color={color}
             />
-            <Text lineHeight={"medium"}>{ data?.notificationTitle }</Text>
+            <Text lineHeight={"medium"}>{ notificationTitle }</Text>
             <ModalCloseButton
               size="lg"
               fontSize="18px"
@@ -56,7 +56,7 @@ export const Notification: FC<NotificationTypeProps> = ({
             w="89%"
             alignSelf="center"
           >
-            <Text>{ data?.notificationText }</Text>
+            <Text>{ notificationText }</Text>
           </ModalBody>
         </ModalContent>
       </Modal>
