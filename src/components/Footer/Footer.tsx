@@ -1,18 +1,12 @@
-import { FC } from "react";
-import {
-  Flex,
-  Text,
-  Link as ChakraLink,
-  Button,
-  useDisclosure
-} from "@chakra-ui/react";
+import { FC, useState } from "react";
+import { Flex, Text, Link as ChakraLink, Button, useDisclosure } from "@chakra-ui/react";
 import { t } from "i18next";
-import Form from "../Form/Form";
-import BaseModal from "@/components/BaseModal/BaseModal";
 import { ReactComponent as StarIcon } from "@/assets/icons/stroke/harm-star.svg";
+import { FormModal } from "@/components/FormModal/FormModal";
 
 const Footer: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [showForm, setShowForm] = useState<boolean>(true);
 
   return (
     <Flex
@@ -20,8 +14,11 @@ const Footer: FC = () => {
       justify="space-between"
       align="center"
     >
-      <Text fontSize="sm" lineHeight={"18px"}>
-        { t("pages.footer.text") } <br/>
+      <Text
+        fontSize="sm"
+        lineHeight={"18px"}
+      >
+        { t("pages.footer.text") } <br />
         <ChakraLink
           href="https://hydromet.uz/"
           isExternal
@@ -38,13 +35,12 @@ const Footer: FC = () => {
       >
         { t("pages.footer.button") }
       </Button>
-      <BaseModal
+      <FormModal
         isOpen={isOpen}
         onClose={onClose}
-        title={t("pages.form.title")}
-      >
-        <Form />
-      </BaseModal>
+        setShowForm={setShowForm}
+        showForm={showForm}
+      />
     </Flex>
   );
 };
