@@ -3,8 +3,21 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
+      "@Assets/*": ["./src/assets/*"],
       "@Components/*": ["./src/components/*"],
-      "@UI/*": ["./src/_UI/*"]
+      "@Components": ["./src/components"],
+      "@Constants/*": ["./src/constants/*"],
+      "@Constants": ["./src/constants"],
+      "@Helpers/*": ["./src/heplers/*"],
+      "@Helpers": ["./src/helpers"],
+      "@Hooks/*": ["./src/hooks"],
+      "@Hooks": ["./src/hooks"],
+      "@UI/*": ["./src/_UI/*"],
+      "@UI": ["./src/_UI"],
+      "@Pages/*": ["./src/pages"],
+      "@Pages": ["./src/pages"],
+      "@Store/*": ["./src/store/*"],
+      "@Store": ["./src/store"]
     }
   }
 }
