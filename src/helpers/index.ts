@@ -1,5 +1,4 @@
 export * from "./getDate";
-export * from "./getTranslationValues";
 export * from "./getParameterGroup";
 export * from "./getParameterCardConfig";
 export * from "./resolveTranslationPath";
