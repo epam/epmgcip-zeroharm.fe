@@ -16,7 +16,7 @@ export const ThemeButton: FC = () => {
       bg="transparent"
       color="white"
       _hover={{bg: "transparent"}}
-      onClick={() => toggleColorMode()}
+      onClick={toggleColorMode}
     />
   );
 };
