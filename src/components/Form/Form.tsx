@@ -14,8 +14,8 @@ import {
   Divider
 } from "@chakra-ui/react";
 import { t } from "i18next";
-import { InputLabel } from "@/_UI/InputLabel/InputLabel";
-import { ReactComponent as Hint } from "@/assets/icons/stroke/harm-hint.svg";
+import { InputLabel } from "@UI";
+import { ReactComponent as Hint } from "@Assets/icons/stroke/harm-hint.svg";
 
 type FormData = {
   name: string;
@@ -236,5 +236,3 @@ export const Form = () => {
     </form>
   );
 };
-
-export default Form;

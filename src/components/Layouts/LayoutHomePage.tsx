@@ -8,7 +8,7 @@ type LayoutHomePageType = {
   footer: ReactNode;
 };
 
-const LayoutHomePage: FC<LayoutHomePageType> = ({
+export const LayoutHomePage: FC<LayoutHomePageType> = ({
   header,
   aside,
   main,
@@ -52,5 +52,3 @@ const LayoutHomePage: FC<LayoutHomePageType> = ({
     </Flex>
   );
 };
-
-export default LayoutHomePage;

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-
-import { mapParameterData } from "@/helpers";
+import { mapParameterData } from "@Helpers";
 
 export const useFetch = (path: string, onComplete: (data: any) => void) => {
   const [fetchedData, setFetchedData] = useState<any>();

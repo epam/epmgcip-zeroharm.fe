@@ -2,11 +2,11 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Flex, Spacer, Box } from "@chakra-ui/react";
-import logo from "@/assets/images/logo--new.svg";
-import LanguageSelect from "@/components/LanguageSelect/LanguageSelect";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher/ThemeSwitcher";
+import logo from "@Assets/images/logo--new.svg";
+import { LanguageSelect } from "../LanguageSelect/LanguageSelect";
+import { ThemeSwitcher } from "../ThemeSwitcher/ThemeSwitcher";
 
-const Navigation: FC = () => {
+export const Navigation: FC = () => {
   const { t } = useTranslation();
 
   return (
@@ -38,4 +38,3 @@ const Navigation: FC = () => {
   );
 };
 
-export default Navigation;

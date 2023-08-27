@@ -1,8 +1,4 @@
-import LayoutMapPage from "@Components/Layouts/LayoutMapPage";
-import Navigation from "@Components/Navigation/Navigation";
-import Aside from "@Components/Aside/Aside";
-import Footer from "@Components/Footer/Footer";
-import Map from "@Components/Map/Map";
+import { Navigation, LayoutMapPage, Aside, Map, Footer } from "@Components";
 
 const PageMap = () => {
   return (

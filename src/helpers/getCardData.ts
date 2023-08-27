@@ -1,4 +1,4 @@
-import { ParametersAliasesKeyType } from "@/constants";
+import { ParametersAliasesKeyType } from "@Constants";
 import { getParameterGroup } from "./getParameterGroup";
 import { getParameterCardConfig } from "./getParameterCardConfig";
 import { translateCardConfigData } from "./translateCardConfigData";

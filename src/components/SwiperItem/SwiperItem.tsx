@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import { t } from "i18next";
 import { BiRightArrowAlt } from "react-icons/bi";
-import { Card, CardType } from "@UI/Card/Card";
-import { useDataStore } from "@/store/useDataStore";
+import { Card, CardType } from "@UI";
+import { useDataStore } from "@Store/useDataStore";
 
 type SwiperItemDataT = CardType & {
   question: string;

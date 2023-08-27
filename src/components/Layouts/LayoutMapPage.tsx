@@ -19,7 +19,7 @@ const StyledFooter = chakra(Box, {
   }
 });
 
-const LayoutMapPage: FC<LayoutMapPageType> = ({
+export const LayoutMapPage: FC<LayoutMapPageType> = ({
   header,
   aside,
   main,
@@ -58,5 +58,3 @@ const LayoutMapPage: FC<LayoutMapPageType> = ({
     </>
   );
 };
-
-export default LayoutMapPage;

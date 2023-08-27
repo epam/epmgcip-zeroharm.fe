@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { changeLanguage } from "i18next";
-import { Page404, PageHome, PageAbout, PageMap } from "@/pages";
-import { useDataStore } from "@/store/useDataStore";
-import { useFetch } from "@/hooks";
+import { Page404, PageHome, PageAbout, PageMap } from "@Pages";
+import { useDataStore } from "@Store/useDataStore";
+import { useFetch } from "@Hooks";
 import "@/i18n/i18n";
 
-function App() {
+export function App() {
   const { language, setParameters, setAirComponents } = useDataStore();
 
   useFetch("/v1/pollutions?station_id=1", (data) => {
@@ -33,5 +33,3 @@ function App() {
     </>
   );
 }
-
-export default App;

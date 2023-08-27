@@ -1,4 +1,4 @@
-import { useDataStore } from "@/store/useDataStore";
+import { useDataStore } from "@Store/useDataStore";
 
 export const useParameterData = () => {
   const { parameter, parameters } = useDataStore();

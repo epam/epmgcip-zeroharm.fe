@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { useDataStore } from "@/store/useDataStore";
+import { useDataStore } from "@Store/useDataStore";
 import { BaseSelect } from "../BaseSelect/BaseSelect";
-import { resolveTranslationPath } from "@/helpers";
-import { languagesData } from "@/constants";
+import { resolveTranslationPath } from "@Helpers";
+import { languagesData } from "@Constants";
 
 const selectStyleConfig = {
   control: {
@@ -11,7 +11,7 @@ const selectStyleConfig = {
   }
 };
 
-const LanguageSelect: FC = () => {
+export const LanguageSelect: FC = () => {
   const { setLanguage } = useDataStore();
   const { i18n } = useTranslation();
 
@@ -39,5 +39,3 @@ const LanguageSelect: FC = () => {
     </>
   );
 };
-
-export default LanguageSelect;

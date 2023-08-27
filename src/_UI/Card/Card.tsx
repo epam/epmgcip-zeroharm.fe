@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import { Flex, Box, chakra } from "@chakra-ui/react";
-import Icon from "../Icon/Icon";
+import { Icon } from "../Icon/Icon";
 
 export type CardType = {
   heading: string;

@@ -1,8 +1,6 @@
 import { Container, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import LayoutAboutPage from "@Components/Layouts/LayoutAboutPage";
-import Navigation from "@Components/Navigation/Navigation";
-import aboutImage from "@/assets/images/about.jpg";
-import Footer from "@/components/Footer/Footer";
+import { Navigation, LayoutAboutPage, Footer } from "@Components";
+import aboutImage from "@Assets/images/about.jpg";
 
 const PageAbout = () => {
   const About = () => (

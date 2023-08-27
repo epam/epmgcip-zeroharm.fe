@@ -7,7 +7,7 @@ const styles = {
   zIndex: 1
 };
 
-const Map: FC = () => {
+export const Map: FC = () => {
   const coordinates: [number, number] = [41.31286390094148, 69.24438328843463];
 
   return (
@@ -30,5 +30,3 @@ const Map: FC = () => {
     </Flex>
   );
 };
-
-export default Map;

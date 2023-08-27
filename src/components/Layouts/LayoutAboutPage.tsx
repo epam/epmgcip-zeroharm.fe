@@ -7,7 +7,7 @@ type LayoutAboutPageType = {
   footer: ReactNode;
 };
 
-const LayoutAboutPage: FC<LayoutAboutPageType> = ({ header, main, footer }) => {
+export const LayoutAboutPage: FC<LayoutAboutPageType> = ({ header, main, footer }) => {
   return (
     <>
       <Flex direction="column">
@@ -38,5 +38,3 @@ const LayoutAboutPage: FC<LayoutAboutPageType> = ({ header, main, footer }) => {
     </>
   );
 };
-
-export default LayoutAboutPage;

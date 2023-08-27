@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { BaseSelect } from "../BaseSelect/BaseSelect";
-import { resolveTranslationPath } from "@/helpers";
-import { locationsData } from "@/constants";
-import { ReactComponent as IconMapPoint } from "@/assets/icons/stroke/harm-local-two.svg";
+import { resolveTranslationPath } from "@Helpers";
+import { locationsData } from "@Constants";
+import { ReactComponent as IconMapPoint } from "@Assets/icons/stroke/harm-local-two.svg";
 
 const selectStyleConfig = {
   container: {

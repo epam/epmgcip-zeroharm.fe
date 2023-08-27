@@ -1,6 +1,4 @@
-import LayoutHomePage from "@Components/Layouts/LayoutHomePage";
-import Navigation from "@Components/Navigation/Navigation";
-import Footer from "@/components/Footer/Footer";
+import { Navigation, LayoutHomePage, Footer } from "@Components";
 
 const Page404 = () => {
   return (

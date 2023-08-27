@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
-import App from "./components/App/App";
+import { App } from "@Components";
 import reportWebVitals from "./reportWebVitals";
 import theme from "./theme";
 import "@fontsource/inter/400.css";

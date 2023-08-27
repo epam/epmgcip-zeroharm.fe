@@ -1,8 +1,4 @@
-import Navigation from "@Components/Navigation/Navigation";
-import Greetings from "@Components/Greetings/Greetings";
-import LayoutHomePage from "@Components/Layouts/LayoutHomePage";
-import Selector from "@Components/Selector/Selector";
-import Footer from "@/components/Footer/Footer";
+import { Navigation, Greetings, LayoutHomePage, Selector, Footer } from "@Components";
 
 const PageHome = () => {
   return (
