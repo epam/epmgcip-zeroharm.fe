@@ -23,18 +23,26 @@ export const Header: FC = () => {
           />
         </Link>
         <Spacer />
-        <Flex p="4px" gap="32px">
-          <Link to="/">
-            { t("pages.home.name") }
-          </Link>
-          <Link to="/map">
-            { t("pages.map.name") }
-          </Link>
-          <Box flexShrink={0}>
-            <Link to="/about">
-              { t("pages.about.name") }
+        <Flex
+          p="4px"
+          gap="32px"
+        >
+          <Flex
+            as="nav"
+            gap="32px"
+          >
+            <Link to="/">
+              { t("pages.home.name") }
             </Link>
-          </Box>
+            <Link to="/map">
+              { t("pages.map.name") }
+            </Link>
+            <Box flexShrink={0}>
+              <Link to="/about">
+                { t("pages.about.name") }
+              </Link>
+            </Box>
+          </Flex>
           <LanguageMenu />
           <ThemeToggler />
         </Flex>
