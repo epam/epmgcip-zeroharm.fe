@@ -1,8 +1,8 @@
 import { FC, ReactNode } from "react";
 import { t } from "i18next";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { Wrapper } from "@UI/Wrapper/Wrapper";
-import { getDate, getParameterGroup } from "@/helpers";
+import { getParameterGroup } from "@/helpers";
 import { Indicator } from "@UI/Indicator/Indicator";
 import { useDataStore } from "@/store/useDataStore";
 import { ParticlesAliasesKeyType, groupsColors, GroupsColorsKeyType } from "@/constants";
@@ -15,8 +15,6 @@ const hints = ["PM2.5", "PM10", "NO2", "CO", "O3", "SO2"];
 
 export const Indicators: FC<IndexDateType> = ({ children }) => {
   const { airComponents } = useDataStore();
-
-  const currentTimeAndDAte = getDate();
 
   return (
     <Wrapper>
@@ -32,12 +30,6 @@ export const Indicators: FC<IndexDateType> = ({ children }) => {
         >
           { t("indicators") }
         </Text>
-        <Box
-          color="gray.400"
-          fontSize="12px"
-        >
-          { currentTimeAndDAte }
-        </Box>
       </Flex>
       { hints.map(
         (hint) => {
