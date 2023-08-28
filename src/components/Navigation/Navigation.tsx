@@ -2,8 +2,8 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Flex, Spacer, Box } from "@chakra-ui/react";
-import { LanguageMenu } from "@/components/LanguageMenu/LanguageMenu";
-import { ThemeToggler } from "@/components/ThemeToggler/ThemeToggler";
+import { LanguageMenu } from "../LanguageMenu/LanguageMenu";
+import { ThemeToggler } from "../ThemeToggler/ThemeToggler";
 import logo from "@/assets/images/logo--new.svg";
 
 export const Navigation: FC = () => {
