@@ -24,15 +24,13 @@ export const App = () => {
   }, [language]);
 
   return (
-    <>
-      <Routes>
-        <Route element={<MainLayout />}>
-          <Route index element={<Home />} />
-          <Route path="map" element={<MapAndDetails />} />
-          <Route path="about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </>
+    <Routes>
+      <Route element={<MainLayout />}>
+        <Route index element={<Home />} />
+        <Route path="map" element={<MapAndDetails />} />
+        <Route path="about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 };

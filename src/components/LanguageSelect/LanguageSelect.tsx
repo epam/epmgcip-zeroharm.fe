@@ -29,13 +29,11 @@ export const LanguageSelect: FC = () => {
   };
 
   return (
-    <>
-      <BaseSelect
-        defaultValue={i18n.language}
-        options={languages}
-        styles={selectStyleConfig}
-        onChange={handleChange}
-      />
-    </>
+    <BaseSelect
+      defaultValue={i18n.language}
+      options={languages}
+      styles={selectStyleConfig}
+      onChange={handleChange}
+    />
   );
 };
