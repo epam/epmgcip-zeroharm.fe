@@ -20,7 +20,7 @@ export const FooterContent: FC = () => {
       justify="space-between"
       align="center"
     >
-      <Text fontSize="sm" lineHeight={"18px"}>
+      <Text fontSize="sm" lineHeight="18px">
         { t("pages.footer.start") } <br/>
         <ChakraLink
           href="https://hydromet.uz/"

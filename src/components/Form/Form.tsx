@@ -82,7 +82,7 @@ export const Form = () => {
           {
             <FormErrorMessage
               mt="0"
-              fontSize={"sm"}
+              fontSize="sm"
             >
               { errors.name && errors.name.message?.toString() }
             </FormErrorMessage>
@@ -120,7 +120,7 @@ export const Form = () => {
           {
             <FormErrorMessage
               mt="0"
-              fontSize={"sm"}
+              fontSize="sm"
             >
               { errors.email && errors.email.message?.toString() }
             </FormErrorMessage>
@@ -166,7 +166,7 @@ export const Form = () => {
         <Box minH="6" pt="1">
           <FormErrorMessage
             mt="0"
-            fontSize={"sm"}
+            fontSize="sm"
           >
             { errors.feedback && errors.feedback.message?.toString() }
           </FormErrorMessage>
@@ -175,7 +175,7 @@ export const Form = () => {
       <FormControl pb={4}>
         <Flex
           mb={2}
-          align={"center"}
+          align="center"
         >
           <Tooltip
             label={t("pages.form.checkbox.tip")}

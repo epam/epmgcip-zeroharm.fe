@@ -104,7 +104,7 @@ export const Cards: FC<CardsType> = ({ cardsKey }) => {
       >
         <Text
           fontWeight="700"
-          casing={"uppercase"}
+          casing="uppercase"
         >
           { subheading }
         </Text>

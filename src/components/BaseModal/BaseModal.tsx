@@ -33,7 +33,7 @@ export const BaseModal: FC<ModalProps> = ({
         <ModalHeader fontSize="headers.h3">{ title }</ModalHeader>
         <ModalCloseButton
           size="lg"
-          top={"3"}
+          top="3"
           opacity=".5"
         />
         <ModalBody borderBottomRadius="lg">{ children }</ModalBody>

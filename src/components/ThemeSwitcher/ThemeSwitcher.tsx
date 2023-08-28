@@ -35,7 +35,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherType> = ({ isDark, toggleColorMode }
         />
       </FormLabel>
       <Switch
-        size={"lg"}
+        size="lg"
         isChecked={isDark ? false : true}
         onChange={toggleColorMode}
       />
