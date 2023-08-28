@@ -1,4 +1,3 @@
-export * from "./App/App";
 export * from "./Aside/Aside";
 export * from "./BaseModal/BaseModal";
 export * from "./BaseSelect/BaseSelect";
