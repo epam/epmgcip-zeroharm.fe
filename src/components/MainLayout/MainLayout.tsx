@@ -8,8 +8,12 @@ export const MainLayout: FC = () => {
   const { pathname } = useLocation();
 
   const isMapPage = pathname === "/map";
-  const containerStyleWithAside = isMapPage ? "initial" : "77px";
+  const isHomePage = pathname === "/";
   const isRenderFooter = !isMapPage;
+  const containerStyleWithAside = {
+    pb: isMapPage ? "initial" : "77px",
+    h: isHomePage ? "100vh" : "initial"
+  };
 
   return (
     <>
@@ -18,7 +22,7 @@ export const MainLayout: FC = () => {
         as="main"
         w="100%"
         pt="64px"
-        pb={containerStyleWithAside}
+        {...containerStyleWithAside}
       >
         <Outlet />
       </Box>
