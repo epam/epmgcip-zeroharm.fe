@@ -120,21 +120,25 @@ export const LanguageMenu: FC = () => {
                   </Flex>
               }
               {
-                languagesOptions.map(({ languageId, languageName, languageIconName }) => (
-                  <MenuItem
-                    key={languageId}
-                    onClick={() => i18n.changeLanguage(languageId).then(() => setLanguage(languageId))}
-                    aria-selected={languageId === i18n.language}
-                  >
-                    <Icon
-                      type="flags"
-                      name={languageIconName}
-                      color="none"
-                    />
+                languagesOptions.map(({ languageId, languageName, languageIconName }) => {
+                  const handleClick = () => i18n.changeLanguage(languageId).then(() => setLanguage(languageId));
 
-                    { languageName }
-                  </MenuItem>
-                ))
+                  return (
+                    <MenuItem
+                      key={languageId}
+                      onClick={handleClick}
+                      aria-selected={languageId === i18n.language}
+                    >
+                      <Icon
+                        type="flags"
+                        name={languageIconName}
+                        color="none"
+                      />
+
+                      { languageName }
+                    </MenuItem>
+                  );
+                })
               }
             </MenuList>
           </>
