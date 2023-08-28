@@ -37,14 +37,6 @@ export const LanguageMenu: FC = () => {
               }}
               top={0}
               left={0}
-              pl={{
-                base: isOpen ? 0 : 3,
-                md: 3
-              }}
-              w={{
-                base: isOpen ? "56px" : "76px",
-                md: "104px"
-              }}
             >
               <HStack
                 spacing={{
@@ -65,12 +57,9 @@ export const LanguageMenu: FC = () => {
                 }
 
                 <Text
-                  display={{
-                    base: isOpen ? "initial" : "none",
-                    md: "initial"
-                  }}
+                  display={{ base: "none", lg: "initial" }}
                 >
-                  { !isOpenOnMobile && t("lang.code") }
+                  { t("lang.code") }
                 </Text>
 
                   <ChakraIcon
@@ -93,10 +82,7 @@ export const LanguageMenu: FC = () => {
                 base: isOpen ? "100vh" : 0,
                 md: 0
               }}
-              borderRadius={{
-                base: 0,
-                md: 8
-              }}
+              borderRadius={{ base: 0, md: 8 }}
               pos={{
                 base: isOpen ? "relative" : "initial",
                 md: "initial"
