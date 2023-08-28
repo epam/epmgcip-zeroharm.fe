@@ -2,9 +2,9 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Flex, Spacer, Box } from "@chakra-ui/react";
-import logo from "@/assets/images/logo--new.svg";
-import LanguageSelect from "@/components/LanguageSelect/LanguageSelect";
+import { LanguageMenu } from "@/components/LanguageMenu/LanguageMenu";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher/ThemeSwitcher";
+import logo from "@/assets/images/logo--new.svg";
 
 const Navigation: FC = () => {
   const { t } = useTranslation();
@@ -31,7 +31,7 @@ const Navigation: FC = () => {
             { t("pages.about.name") }
           </Link>
         </Box>
-        <LanguageSelect />
+        <LanguageMenu />
         <ThemeSwitcher />
       </Flex>
     </Flex>
