@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useDynamicSVGImport } from "@/hooks";
 
 type IconProps = {
-  type: "filled" | "forcards" | "stroke";
+  type: "filled" | "forcards" | "stroke" | "flags";
   name: string;
   color?: string;
 };

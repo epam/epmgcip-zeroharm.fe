@@ -15,7 +15,7 @@ const LayoutHomePage: FC<LayoutHomePageType> = ({
   footer
 }) => {
   return (
-    <Flex direction="column">
+    <Flex direction="column" h="100vh">
       <Box
         as="header"
         top="0"
@@ -27,8 +27,7 @@ const LayoutHomePage: FC<LayoutHomePageType> = ({
         maxWidth="1280"
         m="auto"
         w="100%"
-        pt="64px"
-      >
+       >
         <Box
           as="aside"
           flex="1"
