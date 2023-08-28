@@ -35,8 +35,8 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
             overflow: "hidden",
             whiteSpace: "pre-wrap",
             display: "-webkit-box",
-            "-webkit-box-orient": "vertical",
-            "-webkit-line-clamp": "7"
+            WebkitBoxOrient: "vertical",
+            WebkitLineClamp: "7"
           }}
         >
           { text }
