@@ -1,9 +1,9 @@
-import { Container, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Container, Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import aboutImage from "@Assets/images/about.jpg";
 
 export const About = () => {
   return (
-    <>
+    <Box as="main">
       <Image
         src={aboutImage}
         alt=""
@@ -72,6 +72,6 @@ export const About = () => {
           </Text>
         </Flex>
       </Container>
-    </>
+    </Box>
   );
 };

@@ -19,7 +19,6 @@ export const MainLayout: FC = () => {
     <>
       <Header />
       <Box
-        as="main"
         w="100%"
         pt="64px"
         {...containerStyleWithAside}

@@ -3,7 +3,10 @@ import { Greetings, Selector } from "@Components";
 
 export const Home = () => {
   return (
-    <Container maxW="1280px">
+    <Container
+      as="main"
+      maxW="1280px"
+    >
       <Flex justifyContent="space-between">
         <Selector />
         <Greetings />
