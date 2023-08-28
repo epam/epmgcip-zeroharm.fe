@@ -1,12 +1,14 @@
 import { FC } from "react";
-import { IconButton, useColorMode } from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/react";
 import { ReactComponent as IconMoon } from "@/assets/icons/stroke/theme-moon.svg";
 import { ReactComponent as IconSun } from "@/assets/icons/stroke/theme-sun.svg";
 
-export const ThemeButton: FC = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
+type ThemeButtonType = {
+  isDark: boolean;
+  toggleColorMode: () => void;
+}
 
-  const isDark = colorMode === "dark";
+export const ThemeButton: FC<ThemeButtonType> = ({ isDark, toggleColorMode }) => {
 
   return (
     <IconButton

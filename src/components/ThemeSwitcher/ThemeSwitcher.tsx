@@ -1,16 +1,18 @@
 import { FC } from "react";
-import { FormControl, FormLabel, Switch, Icon, useColorMode } from "@chakra-ui/react";
+import { FormControl, FormLabel, Switch, Icon } from "@chakra-ui/react";
 import { ReactComponent as IconMoon } from "@/assets/icons/stroke/theme-moon.svg";
 import { ReactComponent as IconSun } from "@/assets/icons/stroke/theme-sun.svg";
+
+type ThemeSwitcherType = {
+  isDark: boolean;
+  toggleColorMode: () => void;
+}
 
 const hover = {
   cursor: "pointer"
 };
 
-export const ThemeSwitcher: FC = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-
-  const isDark = colorMode === "dark";
+export const ThemeSwitcher: FC<ThemeSwitcherType> = ({ isDark, toggleColorMode }) => {
 
   return (
     <FormControl
