@@ -1,5 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 // Foundations
+import { breakpoints } from "./foundations/breakpoints";
 import { config } from "./foundations/themeConfig";
 import { styles } from "./styles";
 import { colors } from "./foundations/colors";
@@ -19,6 +20,7 @@ import { Menu } from "./components/Menu";
 import { Switch } from "./components/Switch";
 
 const overrides = {
+  breakpoints,
   config,
   styles,
   colors,

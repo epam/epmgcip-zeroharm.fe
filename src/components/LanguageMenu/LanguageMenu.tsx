@@ -14,7 +14,7 @@ export const LanguageMenu: FC = () => {
 
   const { i18n, t } = useTranslation();
 
-  const [isMobileWidth] = useMediaQuery("(max-width: 767px)");
+  const [isMobileWidth] = useMediaQuery("(max-width: 599px)");
 
   const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
 
