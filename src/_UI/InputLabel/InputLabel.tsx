@@ -15,7 +15,7 @@ export const InputLabel: FC<InputLabelProps> = (props) => {
   return (
     <Flex
       mb={2}
-      align={"center"}
+      align="center"
     >
       <Tooltip
         label={tooltipText}
