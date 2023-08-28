@@ -1,7 +1,7 @@
-import { ParametersAliasesKeyType } from "@/constants";
+import { ParametersAliasesKeyType } from "@Constants";
 import { getParameterGroup } from "./getParameterGroup";
 import { getParameterCardConfig } from "./getParameterCardConfig";
-import { translateCardConfigData } from "./translateCardConfigData";
+import { resolveTranslationPath } from "./resolveTranslationPath";
 
 export const getCardData = (parameterValue: number, parameterName: ParametersAliasesKeyType) => {
   const groupName = getParameterGroup(parameterValue, parameterName);
@@ -13,7 +13,7 @@ export const getCardData = (parameterValue: number, parameterName: ParametersAli
 
   let cardTranslations;
   if (parameterCardConfig) {
-    cardTranslations = translateCardConfigData(parameterCardConfig);
+    cardTranslations = resolveTranslationPath(parameterCardConfig);
   }
 
   return cardTranslations;

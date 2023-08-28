@@ -1,11 +1,10 @@
 import { FC, ReactNode } from "react";
 import { t } from "i18next";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { Wrapper } from "@UI/Wrapper/Wrapper";
-import { getDate, getParameterGroup } from "@/helpers";
-import { Indicator } from "@UI/Indicator/Indicator";
-import { useDataStore } from "@/store/useDataStore";
-import { ParticlesAliasesKeyType, groupsColors, GroupsColorsKeyType } from "@/constants";
+import { Wrapper, Indicator } from "@UI";
+import { getDate, getParameterGroup } from "@Helpers";
+import { useDataStore } from "@Store/useDataStore";
+import { ParticlesAliasesKeyType, groupsColors, GroupsColorsKeyType } from "@Constants";
 
 type IndexDateType = {
   children?: ReactNode;

@@ -1,4 +1,4 @@
-import { cardsConfig, ParametersAliasesKeyType } from "@/constants";
+import { cardsConfig, ParametersAliasesKeyType } from "@Constants";
 
 export const getParameterCardConfig = (parameterName: string, rangeGroupName: string) => {
   const parameterCardsConfig = cardsConfig[parameterName as ParametersAliasesKeyType];

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useColorMode, useMediaQuery } from "@chakra-ui/react";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher/ThemeSwitcher";
-import { ThemeButton } from "@/components/ThemeButton/ThemeButton";
+import { ThemeSwitcher } from "../ThemeSwitcher/ThemeSwitcher";
+import { ThemeButton } from "../ThemeButton/ThemeButton";
 
 export const ThemeToggler: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();

@@ -8,8 +8,8 @@ import {
   ModalHeader,
   ModalOverlay
 } from "@chakra-ui/react";
-import { notificationsData } from "@/constants";
-import Icon from "../Icon/Icon";
+import { notificationsData } from "@Constants";
+import { Icon } from "../Icon/Icon";
 
 type NotificationTypeProps = {
   type: "success" | "alert" | "warning"| "hint";
@@ -29,7 +29,7 @@ export const Notification: FC<NotificationTypeProps> = ({
     <>
       <Modal
         size="md"
-        variant={"colored"}
+        variant="colored"
         isOpen={isOpen}
         onClose={onClose}
         autoFocus={false}
@@ -43,7 +43,7 @@ export const Notification: FC<NotificationTypeProps> = ({
               name={`harm-${type}`}
               color={data?.notificationColor}
             />
-            <Text lineHeight={"medium"}>{ data?.notificationTitle }</Text>
+            <Text lineHeight="medium">{ data?.notificationTitle }</Text>
             <ModalCloseButton
               size="lg"
               fontSize="18px"

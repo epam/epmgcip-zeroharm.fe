@@ -1,18 +1,16 @@
-import Navigation from "@Components/Navigation/Navigation";
-import Greetings from "@Components/Greetings/Greetings";
-import LayoutHomePage from "@Components/Layouts/LayoutHomePage";
-import Selector from "@Components/Selector/Selector";
-import Footer from "@/components/Footer/Footer";
+import { Container, Flex } from "@chakra-ui/react";
+import { Greetings, Selector } from "@Components";
 
-const PageHome = () => {
+export const Home = () => {
   return (
-    <LayoutHomePage
-      header={<Navigation />}
-      aside={<Selector />}
-      main={<Greetings />}
-      footer={<Footer />}
-    />
+    <Container
+      as="main"
+      maxW="1280px"
+    >
+      <Flex justifyContent="space-between">
+        <Selector />
+        <Greetings />
+     </Flex>
+    </Container>
   );
 };
-
-export default PageHome;

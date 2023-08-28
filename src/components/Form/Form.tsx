@@ -14,8 +14,8 @@ import {
   Divider
 } from "@chakra-ui/react";
 import { t } from "i18next";
-import { InputLabel } from "@/_UI/InputLabel/InputLabel";
-import { ReactComponent as Hint } from "@/assets/icons/stroke/harm-hint.svg";
+import { InputLabel } from "@UI";
+import { ReactComponent as Hint } from "@Assets/icons/stroke/harm-hint.svg";
 
 type FormData = {
   name: string;
@@ -82,7 +82,7 @@ export const Form = () => {
           {
             <FormErrorMessage
               mt="0"
-              fontSize={"sm"}
+              fontSize="sm"
             >
               { errors.name && errors.name.message?.toString() }
             </FormErrorMessage>
@@ -103,18 +103,6 @@ export const Form = () => {
           id="email"
           placeholder={t("pages.form.email.placeholder")}
           {...register("email", {
-            minLength: {
-              value: 7,
-              message: invalidInputErrorMessage
-            },
-            maxLength: {
-              value: 50,
-              message: invalidInputErrorMessage
-            },
-            pattern: {
-              value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
-              message: invalidInputErrorMessage
-            },
             validate: {
               required,
               pattern: value => {
@@ -132,7 +120,7 @@ export const Form = () => {
           {
             <FormErrorMessage
               mt="0"
-              fontSize={"sm"}
+              fontSize="sm"
             >
               { errors.email && errors.email.message?.toString() }
             </FormErrorMessage>
@@ -178,7 +166,7 @@ export const Form = () => {
         <Box minH="6" pt="1">
           <FormErrorMessage
             mt="0"
-            fontSize={"sm"}
+            fontSize="sm"
           >
             { errors.feedback && errors.feedback.message?.toString() }
           </FormErrorMessage>
@@ -187,7 +175,7 @@ export const Form = () => {
       <FormControl pb={4}>
         <Flex
           mb={2}
-          align={"center"}
+          align="center"
         >
           <Tooltip
             label={t("pages.form.checkbox.tip")}
@@ -236,5 +224,3 @@ export const Form = () => {
     </form>
   );
 };
-
-export default Form;

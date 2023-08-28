@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useDynamicSVGImport } from "@/hooks";
+import { useDynamicSVGImport } from "@Hooks";
 
 type IconProps = {
   type: "filled" | "forcards" | "stroke" | "flags";
@@ -7,7 +7,7 @@ type IconProps = {
   color?: string;
 };
 
-const Icon: FC<IconProps> = ({ type, name, color = "white" }) => {
+export const Icon: FC<IconProps> = ({ type, name, color = "white" }) => {
   const SvgIcon = useDynamicSVGImport(type, name);
 
   if (SvgIcon) {
@@ -16,5 +16,3 @@ const Icon: FC<IconProps> = ({ type, name, color = "white" }) => {
 
   return null;
 };
-
-export default Icon;

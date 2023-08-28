@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { FormControl, FormLabel, Switch, Icon } from "@chakra-ui/react";
-import { ReactComponent as IconMoon } from "@/assets/icons/stroke/theme-moon.svg";
-import { ReactComponent as IconSun } from "@/assets/icons/stroke/theme-sun.svg";
+import { ReactComponent as IconMoon } from "@Assets/icons/stroke/theme-moon.svg";
+import { ReactComponent as IconSun } from "@Assets/icons/stroke/theme-sun.svg";
 
 type ThemeSwitcherType = {
   isDark: boolean;
@@ -35,7 +35,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherType> = ({ isDark, toggleColorMode }
         />
       </FormLabel>
       <Switch
-        size={"lg"}
+        size="lg"
         isChecked={isDark ? false : true}
         onChange={toggleColorMode}
       />

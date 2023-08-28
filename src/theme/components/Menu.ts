@@ -4,7 +4,6 @@ export const Menu = defineStyleConfig({
   variants: {
     default: ({ colorMode }: StyleFunctionProps) => {
       const isDark = colorMode === "dark";
-
       const color = isDark ? "white" : "gray.900";
       const itemBg = {
         bg: isDark ? "gray.600" : "gray.100"

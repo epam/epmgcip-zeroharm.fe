@@ -1,13 +1,13 @@
 import { FC } from "react";
 import { Menu, MenuButton, MenuList, MenuItem, HStack, Text, Icon as ChakraIcon, useMediaQuery, Flex } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import { useDataStore } from "@/store/useDataStore";
-import Icon from "@UI/Icon/Icon";
-import { resolveTranslationPath } from "@/helpers";
-import { languagesData } from "@/constants";
-import { ReactComponent as ArrowDownIcon } from "@/assets/icons/stroke/harm-arrow-down.svg";
-import { ReactComponent as ArrowUpIcon } from "@/assets/icons/stroke/harm-arrow-up.svg";
-import { ReactComponent as LeftArrowIcon } from "@/assets/icons/stroke/harm-arrow-left.svg";
+import { useDataStore } from "@Store/useDataStore";
+import { Icon } from "@UI";
+import { resolveTranslationPath } from "@Helpers";
+import { languagesData } from "@Constants";
+import { ReactComponent as ArrowDownIcon } from "@Assets/icons/stroke/harm-arrow-down.svg";
+import { ReactComponent as ArrowUpIcon } from "@Assets/icons/stroke/harm-arrow-up.svg";
+import { ReactComponent as LeftArrowIcon } from "@Assets/icons/stroke/harm-arrow-left.svg";
 
 export const LanguageMenu: FC = () => {
   const { setLanguage } = useDataStore();
