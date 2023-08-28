@@ -8,9 +8,6 @@ export * from "./Greetings/Greetings";
 export * from "./IndexDate/IndexDate";
 export * from "./Indicators/Indicators";
 export * from "./LanguageSelect/LanguageSelect";
-export * from "./Layouts/LayoutAboutPage";
-export * from "./Layouts/LayoutHomePage";
-export * from "./Layouts/LayoutMapPage";
 export * from "./LocationSelect/LocationSelect";
 export * from "./Map/Map";
 export * from "./Navigation/Navigation";
@@ -20,3 +17,6 @@ export * from "./SwiperItem/SwiperItem";
 export * from "./Tabs/Tabs";
 export * from "./ThemeSwitcher/ThemeSwitcher";
 export * from "./Footer/Footer";
+export * from "./Footer/FooterCard";
+export * from "./MainLayout/MainLayout";
+

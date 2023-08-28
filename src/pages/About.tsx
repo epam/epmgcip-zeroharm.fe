@@ -1,9 +1,8 @@
 import { Container, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import { Navigation, LayoutAboutPage, Footer } from "@Components";
 import aboutImage from "@Assets/images/about.jpg";
 
-const PageAbout = () => {
-  const About = () => (
+export const About = () => {
+  return (
     <>
       <Image
         src={aboutImage}
@@ -75,14 +74,4 @@ const PageAbout = () => {
       </Container>
     </>
   );
-
-  return (
-    <LayoutAboutPage
-      header={<Navigation />}
-      main={<About />}
-      footer={<Footer />}
-    />
-  );
 };
-
-export default PageAbout;

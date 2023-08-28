@@ -1,14 +1,10 @@
-import { Navigation, LayoutHomePage, Footer } from "@Components";
+import { Container } from "@chakra-ui/react";
 
-const Page404 = () => {
+export const NotFound = () => {
   return (
-    <LayoutHomePage
-      header={<Navigation />}
-      aside={<h1>404</h1>}
-      main={<h2>page not found</h2>}
-      footer={<Footer />}
-    />
+    <Container>
+      <h1>404</h1>
+      <h2>page not found</h2>
+    </Container>
   );
 };
-
-export default Page404;

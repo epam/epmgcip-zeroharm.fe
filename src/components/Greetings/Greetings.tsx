@@ -5,7 +5,7 @@ import { ReactComponent as Circles } from "@Assets/images/circles.svg";
 export const Greetings = () => {
   return (
     <Flex
-      p="120px 80px 0 80px"
+      p="120px 0 0 80px"
       direction="column"
       gap="32px"
       alignItems="flex-end"

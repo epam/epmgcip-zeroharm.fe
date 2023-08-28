@@ -8,7 +8,7 @@ import { ReactComponent as IconLocal } from "@Assets/icons/filled/harm-local.svg
 export const Selector = () => {
   return (
     <Flex
-      p="70px 0 0 80px"
+      pt="70px"
       direction="column"
       gap="16px"
       maxWidth="540px"
