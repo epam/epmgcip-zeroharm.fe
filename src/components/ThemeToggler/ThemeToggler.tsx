@@ -10,13 +10,13 @@ export const ThemeToggler: FC = () => {
 
   const [isTabletWidth] = useMediaQuery("(max-width: 1023px)");
 
-  return (
-    <>
-      { isTabletWidth ? (
-        <ThemeButton isDark={isDark} toggleColorMode={toggleColorMode} />
-      ) : (
-        <ThemeSwitcher isDark={isDark} toggleColorMode={toggleColorMode} />
-      ) }
-    </>
-  );
+  const components = {
+    themeButton: ThemeButton,
+    themeSwitcher: ThemeSwitcher
+  };
+
+  const togglerType = isTabletWidth ? "themeButton" : "themeSwitcher";
+  const Toggler = components[togglerType];
+
+  return <Toggler isDark={isDark} toggleColorMode={toggleColorMode} />;
 };
