@@ -9,7 +9,7 @@ export * from "./Indicators/Indicators";
 export * from "./LanguageSelect/LanguageSelect";
 export * from "./LocationSelect/LocationSelect";
 export * from "./Map/Map";
-export * from "./Navigation/Navigation";
+export * from "./Header/Header";
 export * from "./Selector/Selector";
 export * from "./Swiper/Swiper";
 export * from "./SwiperItem/SwiperItem";

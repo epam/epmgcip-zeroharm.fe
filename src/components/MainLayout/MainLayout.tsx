@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
-import { Navigation } from "../Navigation/Navigation";
+import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
 
 export const MainLayout: FC = () => {
@@ -17,7 +17,7 @@ export const MainLayout: FC = () => {
 
   return (
     <>
-      <Navigation />
+      <Header />
       <Box
         as="main"
         w="100%"

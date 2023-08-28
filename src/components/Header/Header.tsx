@@ -6,7 +6,7 @@ import { LanguageMenu } from "../LanguageMenu/LanguageMenu";
 import { ThemeToggler } from "../ThemeToggler/ThemeToggler";
 import logo from "@Assets/images/logo--new.svg";
 
-export const Navigation: FC = () => {
+export const Header: FC = () => {
   const { t } = useTranslation();
 
   return (
