@@ -38,8 +38,8 @@ export const LanguageMenu: FC = () => {
               top={0}
               left={0}
               pl={{
-                base: isOpen ? 0 : 4,
-                md: 4
+                base: isOpen ? 0 : 3,
+                md: 3
               }}
               w={{
                 base: isOpen ? "56px" : "76px",
