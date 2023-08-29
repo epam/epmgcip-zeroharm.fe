@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { SwiperItem } from "../SwiperItem";
-import { useParameterData, useSwiper } from "@/hooks";
-import { ParametersAliasesKeyType } from "@/constants";
-import { getCardData } from "@/helpers";
+import { SwiperItem } from "../SwiperItem/SwiperItem";
+import { useParameterData, useSwiper } from "@Hooks";
+import { ParametersAliasesKeyType } from "@Constants";
+import { getCardData } from "@Helpers";
 
 export const Swiper: FC = () => {
   const { parameters } = useParameterData();

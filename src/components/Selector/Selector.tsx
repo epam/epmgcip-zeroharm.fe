@@ -1,11 +1,11 @@
 import { Button, Flex, Heading, Text, Box } from "@chakra-ui/react";
 import { t } from "i18next";
 import { Link } from "react-router-dom";
-import { Popup } from "@UI/Popup/Popup";
-import { LocationSelect } from "@/components/LocationSelect/LocationSelect";
-import { ReactComponent as IconLocal } from "@/assets/icons/filled/harm-local.svg";
+import { Popup } from "@UI";
+import { LocationSelect } from "../LocationSelect/LocationSelect";
+import { ReactComponent as IconLocal } from "@Assets/icons/filled/harm-local.svg";
 
-const Selector = () => {
+export const Selector = () => {
   return (
     <Flex
       p="70px 0 0 80px"
@@ -45,5 +45,3 @@ const Selector = () => {
     </Flex>
   );
 };
-
-export default Selector;

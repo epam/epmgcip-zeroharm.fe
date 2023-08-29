@@ -1,53 +1,16 @@
 import { FC } from "react";
-import {
-  Flex,
-  Text,
-  Link as ChakraLink,
-  Button,
-  useDisclosure
-} from "@chakra-ui/react";
-import { t } from "i18next";
-import Form from "../Form/Form";
-import BaseModal from "@/components/BaseModal/BaseModal";
-import { ReactComponent as StarIcon } from "@/assets/icons/stroke/harm-star.svg";
+import { Box, Divider } from "@chakra-ui/react";
+import { FooterContent } from "./FooterContent";
 
-const Footer: FC = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
+export const Footer: FC = () => {
   return (
-    <Flex
-      w="100%"
-      justify="space-between"
-      align="center"
+    <Box
+      as="footer"
+      bottom="0"
+      pos="fixed"
     >
-      <Text fontSize="sm" lineHeight={"18px"}>
-        { t("pages.footer.start") } <br/>
-        <ChakraLink
-          href="https://hydromet.uz/"
-          isExternal
-          _hover={{ color: "#FFA01C" }}
-        >
-          { t("pages.footer.link") }
-        </ChakraLink>
-        { t("pages.footer.end") }
-      </Text>
-      <Button
-        leftIcon={<StarIcon />}
-        size="sm"
-        onClick={onOpen}
-        variant="gradient"
-      >
-        { t("pages.footer.button") }
-      </Button>
-      <BaseModal
-        isOpen={isOpen}
-        onClose={onClose}
-        title={t("pages.form.title")}
-      >
-        <Form />
-      </BaseModal>
-    </Flex>
+      <Divider variant="positioned" />
+      <FooterContent />
+    </Box>
   );
 };
-
-export default Footer;

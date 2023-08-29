@@ -1,4 +1,4 @@
-import { LETTERS_LIMIT } from "@/constants";
+import { LETTERS_LIMIT } from "@Constants";
 import { getSubString } from "./getSubString";
 
 export const getCutText = (text: string) => {

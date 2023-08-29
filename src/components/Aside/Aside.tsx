@@ -1,11 +1,11 @@
 import { Flex } from "@chakra-ui/react";
-import { Tabs } from "@Components/Tabs/Tabs";
-import { IndexDate } from "@Components/IndexDate/IndexDate";
-import { Indicators } from "@Components/Indicators/Indicators";
-import { LocationSelect } from "@/components/LocationSelect/LocationSelect";
-import { useParameterData } from "@/hooks";
+import { Tabs } from "../Tabs/Tabs";
+import { IndexDate } from "../IndexDate/IndexDate";
+import { Indicators } from "../Indicators/Indicators";
+import { LocationSelect } from "../LocationSelect/LocationSelect";
+import { useParameterData } from "@Hooks";
 
-const Aside = () => {
+export const Aside = () => {
   const { parameter } = useParameterData();
 
   const isAirQualityParameter = parameter === "air_quality";
@@ -27,5 +27,3 @@ const Aside = () => {
     </Flex>
   );
 };
-
-export default Aside;

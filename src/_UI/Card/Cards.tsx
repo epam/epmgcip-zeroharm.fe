@@ -2,11 +2,11 @@ import { useState, ReactNode, FC } from "react";
 import { Flex, Box, Text, Button, chakra } from "@chakra-ui/react";
 import { t } from "i18next";
 import { Card } from "./Card";
-import { LETTERS_LIMIT } from "@/constants";
-import { getCardData, getCutText } from "@/helpers";
-import { useParameterData } from "@/hooks";
-import { ReactComponent as RightArrowIcon } from "@/assets/icons/stroke/harm-arrow-right.svg";
-import { ReactComponent as LeftArrowIcon } from "@/assets/icons/stroke/harm-arrow-left.svg";
+import { LETTERS_LIMIT } from "@Constants";
+import { getCardData, getCutText } from "@Helpers";
+import { useParameterData } from "@Hooks";
+import { ReactComponent as RightArrowIcon } from "@Assets/icons/stroke/harm-arrow-right.svg";
+import { ReactComponent as LeftArrowIcon } from "@Assets/icons/stroke/harm-arrow-left.svg";
 
 type CardsType = {
   cardsKey?: any;
@@ -62,7 +62,7 @@ const CardNavigationBox: FC<{ children?: ReactNode; jc?: string }> = ({
   );
 };
 
-const Cards: FC<CardsType> = ({ cardsKey }) => {
+export const Cards: FC<CardsType> = ({ cardsKey }) => {
   const [cardIndex, setCardIndex] = useState(0);
   const [isCardOpen, setIsCardOpen] = useState(false);
   const { currentParameterValue } = useParameterData();
@@ -104,7 +104,7 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
       >
         <Text
           fontWeight="700"
-          casing={"uppercase"}
+          casing="uppercase"
         >
           { subheading }
         </Text>
@@ -135,5 +135,3 @@ const Cards: FC<CardsType> = ({ cardsKey }) => {
     </Box>
   );
 };
-
-export default Cards;

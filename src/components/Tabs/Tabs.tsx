@@ -6,10 +6,10 @@ import {
   TabPanel,
   TabPanels
 } from "@chakra-ui/react";
-import Cards from "@UI/Card/Cards";
-import {resolveTranslationPath} from "@/helpers";
-import { useDataStore } from "@/store/useDataStore";
-import { tabsData } from "@/constants";
+import { Cards } from "@UI";
+import {resolveTranslationPath} from "@Helpers";
+import { useDataStore } from "@Store/useDataStore";
+import { tabsData } from "@Constants";
 
 const hover = {
   color: "white"
