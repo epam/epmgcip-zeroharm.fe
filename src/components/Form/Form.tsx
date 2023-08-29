@@ -70,7 +70,7 @@ export const Form: FC<FormProps> = ({ submitForm, setShowForm, isSubmitedWithRes
             validate: {
               required,
               pattern: (value) => {
-                if (value && watchResponse && !/^[A-Za-z А-Яа-я-,'.]{2,50}$/.test(value)) 
+                if (value && watchResponse && !/^[A-Za-z А-Яа-я-,'.]{2,50}$/.test(value))
                   return invalidInputErrorMessage;
               }
             }

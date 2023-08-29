@@ -1,6 +1,5 @@
 import { FC, SetStateAction, useState, Dispatch } from "react";
-import BaseModal from "@/components/BaseModal/BaseModal";
-import Form from "@/components/Form/Form";
+import { BaseModal, Form } from "@Components";
 import { Notification } from "@/_UI/Notification/Notification";
 import { t } from "i18next";
 
