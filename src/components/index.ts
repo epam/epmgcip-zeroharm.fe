@@ -16,6 +16,5 @@ export * from "./SwiperItem/SwiperItem";
 export * from "./Tabs/Tabs";
 export * from "./ThemeSwitcher/ThemeSwitcher";
 export * from "./Footer/Footer";
-export * from "./Footer/FooterCard";
 export * from "./MainLayout/MainLayout";
 

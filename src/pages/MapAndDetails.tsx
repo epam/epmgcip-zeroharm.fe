@@ -1,7 +1,10 @@
-import { Flex, Box } from "@chakra-ui/react";
-import { Aside, Map, FooterCard } from "@Components";
+import { Flex, Box, useMediaQuery } from "@chakra-ui/react";
+import { Aside, Map, Footer } from "@Components";
+import { maxWidthTablet } from "@Theme/foundations/breakpoints";
 
 export const MapAndDetails = () => {
+  const [isLessThanDesktop] = useMediaQuery(`(max-width: ${maxWidthTablet})`);
+
   return (
     <Flex>
       <Box
@@ -20,7 +23,12 @@ export const MapAndDetails = () => {
           sx={{"--footer-margin": "16px"}}
         >
           <Map />
-          <FooterCard />
+          { !isLessThanDesktop && (
+            <Footer
+              asCard
+              hideDivider
+            />
+          ) }
         </Box>
       </Box>
     </Flex>

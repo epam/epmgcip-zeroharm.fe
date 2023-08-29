@@ -11,13 +11,22 @@ export const styles = {
       color: "white"
     },
     "header, footer": {
-      height: "64px",
       w: "100%",
       p: "16px 24px",
       zIndex: "sticky"
     },
+    header: {
+      height: "64px"
+    },
     footer: {
-      height: "76px"
+      height: {
+        base: "auto",
+        md: "76px"
+      },
+      p: {
+        base: "16px",
+        md: "16px"
+      }
     },
     a: {
       color: "white"
