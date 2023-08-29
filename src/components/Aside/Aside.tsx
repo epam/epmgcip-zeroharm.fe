@@ -36,7 +36,6 @@ export const Aside = () => {
             borderRadius: "50px"
           },
           "&::-webkit-scrollbar-thumb": {
-            height: "5px",
             borderRadius: "50px",
             bg: "white"
           }
