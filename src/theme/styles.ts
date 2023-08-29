@@ -19,10 +19,6 @@ export const styles = {
       height: "64px"
     },
     footer: {
-      height: {
-        base: "auto",
-        md: "76px"
-      },
       p: {
         base: "16px",
         md: "16px"
