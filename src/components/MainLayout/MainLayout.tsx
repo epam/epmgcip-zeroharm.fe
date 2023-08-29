@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Box, useMediaQuery } from "@chakra-ui/react";
-import { maxWidthTablet } from "@/theme/foundations/breakpoints";
+import { Footer } from "@UI";
+import { maxWidthTablet } from "@Theme/foundations/breakpoints";
 import { Header } from "../Header/Header";
-import { Footer } from "../Footer/Footer";
 
 export const MainLayout: FC = () => {
   const { pathname } = useLocation();

@@ -1,5 +1,6 @@
 import { Flex, Box, useMediaQuery } from "@chakra-ui/react";
-import { Aside, Map, Footer } from "@Components";
+import { Aside, Map } from "@Components";
+import { Footer } from "@UI";
 import { maxWidthTablet } from "@Theme/foundations/breakpoints";
 
 export const MapAndDetails = () => {

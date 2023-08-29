@@ -3,7 +3,7 @@ import { Flex, Box, Divider, Text, Link as ChakraLink, useMediaQuery } from "@ch
 import { useLocation } from "react-router-dom";
 import { t } from "i18next";
 import { maxWidthMobile } from "@Theme/foundations/breakpoints";
-import { FeedbackButton } from "../FeedbackButton/FeedbackButton";
+import { FeedbackButton } from "@Components";
 
 type FooterProps = {
   asCard?: boolean,

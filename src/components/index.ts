@@ -1,7 +1,6 @@
 export * from "./Aside/Aside";
 export * from "./BaseModal/BaseModal";
 export * from "./BaseSelect/BaseSelect";
-export * from "./Footer/Footer";
 export * from "./Form/Form";
 export * from "./Greetings/Greetings";
 export * from "./IndexDate/IndexDate";
@@ -15,6 +14,5 @@ export * from "./Swiper/Swiper";
 export * from "./SwiperItem/SwiperItem";
 export * from "./Tabs/Tabs";
 export * from "./ThemeSwitcher/ThemeSwitcher";
-export * from "./Footer/Footer";
 export * from "./MainLayout/MainLayout";
-
+export * from "./FeedbackButton/FeedbackButton";
