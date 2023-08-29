@@ -12,16 +12,19 @@ export const styles = {
     },
     "header, footer": {
       w: "100%",
-      p: "16px 24px",
       zIndex: "sticky"
     },
-    header: {
-      height: "64px"
+    "header": {
+      height: "64px",
+      p: "16px 24px"
     },
     footer: {
+      height: "76px",
+      display: "flex",
+      alignItems: "center",
       p: {
-        base: "16px",
-        md: "16px"
+        base: "16px 16px",
+        lg: "16px 24px"
       }
     },
     a: {

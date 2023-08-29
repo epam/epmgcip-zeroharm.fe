@@ -11,7 +11,7 @@ type FooterProps = {
 }
 
 export const Footer: FC<FooterProps> = ({ asCard, hideDivider, isFixed }) => {
-  const [isMobile] = useMediaQuery(`(max-width: ${maxWidthMobile})`);
+  const [isBiggerThanMobile] = useMediaQuery(`(min-width: ${maxWidthMobile})`);
 
   const footerContainerPosStyle = isFixed ? "fixed" : "relative";
 
@@ -57,8 +57,10 @@ export const Footer: FC<FooterProps> = ({ asCard, hideDivider, isFixed }) => {
           </ChakraLink>
           { t("pages.footer.end") }
         </Text>
-        { !isMobile && (
-          <FeedbackButton />
+        { isBiggerThanMobile && (
+          <Box pl="50px">
+            <FeedbackButton />
+          </Box>
         ) }
       </Flex>
     </Box>

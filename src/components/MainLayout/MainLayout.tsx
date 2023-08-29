@@ -7,11 +7,11 @@ import { Header } from "../Header/Header";
 
 export const MainLayout: FC = () => {
   const { pathname } = useLocation();
-  const [isLessThanDesktop] = useMediaQuery(`(max-width: ${maxWidthTablet})`);
+  const [isDesktop] = useMediaQuery(`(min-width: ${maxWidthTablet})`);
 
   const isMapPage = pathname === "/map";
   const isHomePage = pathname === "/";
-  const shouldRenderFooter = !isMapPage || (isMapPage && isLessThanDesktop);
+  const shouldRenderFooter = !isMapPage || (isMapPage && !isDesktop);
   const isFooterFixed = !isMapPage;
   const containerStyleWithAside = {
     pb: isMapPage ? "initial" : "77px",

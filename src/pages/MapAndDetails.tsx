@@ -4,7 +4,7 @@ import { Footer } from "@UI";
 import { maxWidthTablet } from "@Theme/foundations/breakpoints";
 
 export const MapAndDetails = () => {
-  const [isLessThanDesktop] = useMediaQuery(`(max-width: ${maxWidthTablet})`);
+  const [isDesktop] = useMediaQuery(`(min-width: ${maxWidthTablet})`);
 
   return (
     <Flex>
@@ -24,7 +24,7 @@ export const MapAndDetails = () => {
           sx={{"--footer-margin": "16px"}}
         >
           <Map />
-          { !isLessThanDesktop && (
+          { isDesktop && (
             <Footer
               asCard
               hideDivider
