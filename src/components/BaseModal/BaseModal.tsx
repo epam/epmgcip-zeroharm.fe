@@ -15,7 +15,7 @@ type ModalProps = {
   children: ReactNode;
 };
 
-const BaseModal: FC<ModalProps> = ({
+export const BaseModal: FC<ModalProps> = ({
   isOpen,
   onClose,
   title,
@@ -33,7 +33,7 @@ const BaseModal: FC<ModalProps> = ({
         <ModalHeader fontSize="headers.h3">{ title }</ModalHeader>
         <ModalCloseButton
           size="lg"
-          top={"3"}
+          top="3"
           opacity=".5"
         />
         <ModalBody borderBottomRadius="lg">{ children }</ModalBody>
@@ -41,5 +41,3 @@ const BaseModal: FC<ModalProps> = ({
     </Modal>
   );
 };
-
-export default BaseModal;

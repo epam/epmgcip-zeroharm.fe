@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import { Flex, Box, chakra } from "@chakra-ui/react";
-import Icon from "../Icon/Icon";
+import { Icon } from "../Icon/Icon";
 
 export type CardType = {
   heading: string;
@@ -17,8 +17,7 @@ const CardHeader = chakra(Flex, {
     borderRadius: "8px 8px 0 0",
     padding: "24px",
     position: "relative",
-    minHeight: "150px",
-    height: "100%"
+    minHeight: "150px"
   }
 });
 const CardBody = chakra(Flex, {

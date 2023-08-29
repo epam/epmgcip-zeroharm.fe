@@ -1,5 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 // Foundations
+import { config } from "./foundations/themeConfig";
 import { styles } from "./styles";
 import { colors } from "./foundations/colors";
 import { fonts } from "./foundations/fonts";
@@ -14,9 +15,11 @@ import { Divider } from "./components/Divider";
 import { Modal } from "./components/Modal";
 import { Input } from "./components/Input";
 import { Checkbox } from "./components/Checkbox";
+import { Menu } from "./components/Menu";
 import { Switch } from "./components/Switch";
 
 const overrides = {
+  config,
   styles,
   colors,
   fonts,
@@ -31,6 +34,7 @@ const overrides = {
     Modal,
     Input,
     Checkbox,
+    Menu,
     Switch
   }
 };

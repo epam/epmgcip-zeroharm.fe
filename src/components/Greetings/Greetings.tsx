@@ -1,8 +1,8 @@
 import { Box, Flex } from "@chakra-ui/react";
-import { Swiper } from "../Swiper";
-import { ReactComponent as Circles } from "@/assets/images/circles.svg";
+import { Swiper } from "../Swiper/Swiper";
+import { ReactComponent as Circles } from "@Assets/images/circles.svg";
 
-const Greetings = () => {
+export const Greetings = () => {
   return (
     <Flex
       p="120px 80px 0 80px"
@@ -23,5 +23,3 @@ const Greetings = () => {
     </Flex>
   );
 };
-
-export default Greetings;

@@ -53,9 +53,12 @@
     }
   },
   "lang": {
-    "en": "En",
-    "ru": "Ru",
-    "uz": "Uz"
+    "code": "En",
+    "list": {
+      "en": "English",
+      "ru": "Russian",
+      "uz": "Uzbek"
+    }
   },
   "tabs": {
     "air_quality": "Air quality",

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Box, FormLabel, Flex, Tooltip, Text } from "@chakra-ui/react";
-import { ReactComponent as Hint } from "@/assets/icons/stroke/harm-hint.svg";
+import { ReactComponent as Hint } from "@Assets/icons/stroke/harm-hint.svg";
 
 type InputLabelProps = {
   tooltipText: string;
@@ -15,7 +15,7 @@ export const InputLabel: FC<InputLabelProps> = (props) => {
   return (
     <Flex
       mb={2}
-      align={"center"}
+      align="center"
     >
       <Tooltip
         label={tooltipText}

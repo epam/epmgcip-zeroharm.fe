@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Text, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from "@chakra-ui/react";
-import Icon from "../Icon/Icon";
+import { Icon } from "../Icon/Icon";
 import { NotificationType, notificationsData, NotificationResult, NotificationData } from "@/constants";
 import { resolveTranslationPath } from "@/helpers";
 
@@ -27,7 +27,7 @@ export const Notification: FC<NotificationTypeProps> = ({ result, type, isOpen, 
     <>
       <Modal
         size="md"
-        variant={"colored"}
+        variant="colored"
         isOpen={isOpen}
         onClose={onClose}
         autoFocus={false}

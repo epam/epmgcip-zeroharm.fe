@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import { t } from "i18next";
 import { BiRightArrowAlt } from "react-icons/bi";
-import { Card, CardType } from "@UI/Card/Card";
-import { useDataStore } from "@/store/useDataStore";
+import { Card, CardType } from "@UI";
+import { useDataStore } from "@Store/useDataStore";
 
 type SwiperItemDataT = CardType & {
   question: string;
@@ -35,8 +35,8 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
             overflow: "hidden",
             whiteSpace: "pre-wrap",
             display: "-webkit-box",
-            "-webkit-box-orient": "vertical",
-            "-webkit-line-clamp": "7"
+            WebkitBoxOrient: "vertical",
+            WebkitLineClamp: "7"
           }}
         >
           { text }
