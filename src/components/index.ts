@@ -18,4 +18,5 @@ export * from "./ThemeSwitcher/ThemeSwitcher";
 export * from "./Footer/Footer";
 export * from "./Footer/FooterCard";
 export * from "./MainLayout/MainLayout";
+export * from "./Buttons/HamburgerButton/HamburgerButton";
 

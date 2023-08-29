@@ -5,21 +5,25 @@ import { useDataStore } from "@Store/useDataStore";
 import { Icon } from "@UI";
 import { resolveTranslationPath } from "@Helpers";
 import { languagesData } from "@Constants";
+import { BackwardButton } from "../Buttons/BackwardButton/BackwardButton";
 import { ReactComponent as ArrowDownIcon } from "@Assets/icons/stroke/harm-arrow-down.svg";
 import { ReactComponent as ArrowUpIcon } from "@Assets/icons/stroke/harm-arrow-up.svg";
-import { ReactComponent as LeftArrowIcon } from "@Assets/icons/stroke/harm-arrow-left.svg";
 
 export const LanguageMenu: FC = () => {
   const { setLanguage } = useDataStore();
 
   const { i18n, t } = useTranslation();
 
-  const [isMobileWidth] = useMediaQuery("(max-width: 599px)");
+  const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
+  const isMobileWidth = !isLargerThan600;
 
   const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
 
   return (
-    <Menu autoSelect={false}>
+    <Menu
+      autoSelect={false}
+      closeOnBlur={!isMobileWidth}
+    >
       { ({ isOpen }) => {
         const isOpenOnMobile = isOpen && isMobileWidth;
 
@@ -27,28 +31,15 @@ export const LanguageMenu: FC = () => {
           <>
             <MenuButton
               zIndex={2}
-              h={{
-                base: isOpen ? 14 : "initial",
-                md: "initial"
-              }}
-              pos={{
-                base: isOpen ? "fixed" : "initial",
-                md: "initial"
-              }}
-              top={0}
-              left={0}
+              h={isOpenOnMobile ? "56px" : "initial"}
+              pos={isOpenOnMobile ? "fixed" : "initial"}
+              top="0"
+              left="0"
             >
-              <HStack
-                spacing={{
-                  base: isOpenOnMobile ? 0 : 1.5,
-                  md: 2
-                }}
-              >
+              <HStack spacing={isOpenOnMobile ? "0" : "8px"}>
                 {
                   isOpenOnMobile
-                    ? <HStack w={14} justify="center">
-                        <LeftArrowIcon width={20} />
-                      </HStack>
+                    ? <BackwardButton />
                     : <Icon
                         type="flags"
                         color="none"
@@ -70,41 +61,39 @@ export const LanguageMenu: FC = () => {
               </HStack>
             </MenuButton>
 
+            {
+              isOpenOnMobile &&
+                <Flex
+                  w="calc(100vw - 56px)"
+                  h="56px"
+                  zIndex="2"
+                  className="bg-colored"
+                  color="initial"
+                  pl="8px"
+                  pos="fixed"
+                  top="0"
+                  left="56px"
+                  align="center"
+                  fontWeight="bold"
+                >
+                  Language
+                </Flex>
+            }
+
             <MenuList
               minW={{
                 base: "100vw",
-                md: 44,
-                lg: 60
+                md: "176px",
+                lg: "240px"
               }}
-              pt={isOpenOnMobile ? 14 : 0}
-              pb={0}
-              minH={{
-                base: isOpen ? "100vh" : 0,
-                md: 0
-              }}
-              borderRadius={{ base: 0, md: 8 }}
-              pos={{
-                base: isOpen ? "relative" : "initial",
-                md: "initial"
-              }}
-              top={-16}
-              left={0}
+              py="0"
+              mt={{ md: "12px" }}
+              minH={isOpenOnMobile ? "calc(100vh - 56px)" : "0"}
+              borderRadius={{ base: "0", md: "8px" }}
+              pos={isOpenOnMobile ? "relative" : "initial"}
+              top="-8px"
+              left="0"
             >
-              { isOpenOnMobile &&
-                  <Flex
-                    w="calc(100vw - 56px)"
-                    h={14}
-                    zIndex={2}
-                    pl={2}
-                    pos="fixed"
-                    top={-16}
-                    left={14}
-                    align="center"
-                    fontWeight="bold"
-                  >
-                    Language
-                  </Flex>
-              }
               {
                 languagesOptions.map(({ languageId, languageName, languageIconName }) => {
                   const handleClick = () => i18n.changeLanguage(languageId).then(() => setLanguage(languageId));
@@ -133,4 +122,3 @@ export const LanguageMenu: FC = () => {
     </Menu>
   );
 };
-

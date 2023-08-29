@@ -1,58 +1,46 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { Flex, Spacer, Box, HStack } from "@chakra-ui/react";
+import { Flex, Box, HStack, useMediaQuery, useDisclosure, Spacer } from "@chakra-ui/react";
 import { LanguageMenu } from "../LanguageMenu/LanguageMenu";
 import { ThemeToggler } from "../ThemeToggler/ThemeToggler";
-import logo from "@Assets/images/logo--new.svg";
+import { HamburgerButton } from "../Buttons/HamburgerButton/HamburgerButton";
+import { Logo } from "../Logo/Logo";
+import { Navbar } from "../Navigation/Navbar/Navbar";
+import { MobileNavbar } from "../Navigation/MobileNavbar/MobileNavbar";
 
 export const Header: FC = () => {
-  const { t } = useTranslation();
+  const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
+  const isMobileWidth = !isLargerThan600;
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Box
       as="header"
       pos="fixed"
-      h={{
-        base: "56px",
-        md: "64px"
-      }}
+      h={{ base: "56px", md: "64px" }}
     >
-      <Flex h="full" align="center">
-        <Link to="/">
-          <img
-            src={logo}
-            alt="logo"
-            width={135}
-          />
-        </Link>
+      <Flex
+        h="full"
+        align="center"
+      >
+        <Logo />
 
         <Spacer />
 
         <HStack
-          gap={{ base: "28px", lg: "32px" }}
+          gap={{ base: "36px", md: "28px", lg: "32px" }}
         >
-          <HStack
-            as="nav"
-            gap={{ base: "28px", lg: "32px" }}
-            fontWeight="bold"
-          >
-            <Link to="/">
-              { t("pages.home.name") }
-            </Link>
-
-            <Link to="/map">
-              { t("pages.map.name") }
-            </Link>
-
-            <Link to="/about">
-              { t("pages.about.name") }
-            </Link>
-          </HStack>
+          {
+            !isMobileWidth
+              ? <Navbar />
+              : <MobileNavbar {...{ isOpen, onClose, onOpen }}/>
+          }
 
           <LanguageMenu />
 
           <ThemeToggler />
+
+          <HamburgerButton isOpen={isOpen} onClick={onOpen} />
         </HStack>
       </Flex>
     </Box>

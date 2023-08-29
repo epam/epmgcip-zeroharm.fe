@@ -1,5 +1,7 @@
+import { StyleFunctionProps } from "@chakra-ui/react";
+
 export const styles = {
-  global: {
+  global: (props: StyleFunctionProps) => ({
     "#root": {
       display: "flex",
       flexDirection: "column",
@@ -25,6 +27,9 @@ export const styles = {
     ".leaflet-container": {
       width: "100%",
       height: "100vh"
+    },
+    ".bg-colored": {
+      bg: props.colorMode === "dark" ? "gray.900" : "white"
     }
-  }
+  })
 };

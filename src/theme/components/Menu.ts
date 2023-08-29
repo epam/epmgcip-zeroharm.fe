@@ -33,8 +33,8 @@ export const Menu = defineStyleConfig({
           }
         },
         item: {
-          h: 12,
-          gap: 3,
+          h: "48px",
+          gap: "12px",
           bg: "transparent",
           color,
           _focus: itemBg,
