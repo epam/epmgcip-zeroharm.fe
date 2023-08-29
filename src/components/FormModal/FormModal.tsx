@@ -1,7 +1,7 @@
 import { FC, SetStateAction, useState, Dispatch } from "react";
-import { BaseModal, Form } from "@Components";
-import { Notification } from "@/_UI/Notification/Notification";
 import { t } from "i18next";
+import { BaseModal, Form } from "@Components";
+import { Notification } from "@UI";
 
 type FormModalProps = {
   isOpen: boolean;
@@ -12,7 +12,7 @@ type FormModalProps = {
 
 export const FormModal: FC<FormModalProps> = ({ isOpen, onClose, showForm, setShowForm }) => {
   const [formSubmitted, isFormSubmitted] = useState(false);
-  const [submitedWithResponse, isSubmitedWithResponse] = useState(false);
+  const [isSubmittedWithResponse, setIsSubmittedWithResponse] = useState(false);
 
   const close = () => {
     onClose();
@@ -31,7 +31,7 @@ export const FormModal: FC<FormModalProps> = ({ isOpen, onClose, showForm, setSh
           <Form
             submitForm={isFormSubmitted}
             setShowForm={setShowForm}
-            isSubmitedWithResponse={isSubmitedWithResponse}
+            setIsSubmittedWithResponse={setIsSubmittedWithResponse}
           />
         </BaseModal>
       ) : (
@@ -40,7 +40,7 @@ export const FormModal: FC<FormModalProps> = ({ isOpen, onClose, showForm, setSh
           onClose={close}
           result="success"
           type="formNotifications"
-          id={submitedWithResponse ? "form_with_response" : "form_without_response"}
+          id={isSubmittedWithResponse ? "form_with_response" : "form_without_response"}
         />
       ) }
     </>

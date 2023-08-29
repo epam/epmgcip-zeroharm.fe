@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Text, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from "@chakra-ui/react";
-import { Icon } from "../Icon/Icon";
-import { NotificationType, notificationsData, NotificationResult, NotificationData } from "@/constants";
-import { resolveTranslationPath } from "@/helpers";
+import { Icon } from "@UI";
+import { NotificationType, notificationsData, NotificationResult, NotificationData } from "@Constants";
+import { resolveTranslationPath } from "@Helpers";
 
 type NotificationTypeProps = {
   result: NotificationResult;

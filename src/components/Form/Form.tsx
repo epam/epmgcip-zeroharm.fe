@@ -15,10 +15,10 @@ type FormData = {
 type FormProps = {
   submitForm: Dispatch<SetStateAction<boolean>>;
   setShowForm: Dispatch<SetStateAction<boolean>>;
-  isSubmitedWithResponse: Dispatch<SetStateAction<boolean>>;
+  setIsSubmittedWithResponse: Dispatch<SetStateAction<boolean>>;
 };
 
-export const Form: FC<FormProps> = ({ submitForm, setShowForm, isSubmitedWithResponse }) => {
+export const Form: FC<FormProps> = ({ submitForm, setShowForm, setIsSubmittedWithResponse }) => {
   const {
     handleSubmit,
     register,
@@ -34,7 +34,7 @@ export const Form: FC<FormProps> = ({ submitForm, setShowForm, isSubmitedWithRes
   const onSubmit: SubmitHandler<FormData> = (values: FormData) => {
     submitForm(true);
     setShowForm(false);
-    watchResponse ? isSubmitedWithResponse(true) : isSubmitedWithResponse(false);
+    watchResponse ? setIsSubmittedWithResponse(true) : setIsSubmittedWithResponse(false);
   };
 
   const watchResponse = watch("response", false);

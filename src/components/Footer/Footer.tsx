@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Box, Divider } from "@chakra-ui/react";
-import { FooterContent } from "./FooterContent";
+import { FooterContent } from "@Components";
 
 export const Footer: FC = () => {
   return (
