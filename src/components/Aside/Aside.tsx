@@ -24,6 +24,8 @@ export const Aside = () => {
         gap="24px"
         overflowY="auto"
         sx={{
+          scrollbarWidth: "thin",
+          scrollbarColor: "white #48494D",
           "&::-webkit-scrollbar": {
             w: "4px",
             bg: "gray.700",
