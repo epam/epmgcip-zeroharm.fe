@@ -1,20 +1,19 @@
 import { FC } from "react";
 import { Flex, Box, Divider, Text, Link as ChakraLink, useMediaQuery } from "@chakra-ui/react";
-import { useLocation } from "react-router-dom";
 import { t } from "i18next";
 import { maxWidthMobile } from "@Theme/foundations/breakpoints";
 import { FeedbackButton } from "@Components";
 
 type FooterProps = {
   asCard?: boolean,
-  hideDivider?: boolean
+  hideDivider?: boolean,
+  isFixed?: boolean
 }
 
-export const Footer: FC<FooterProps> = ({ asCard, hideDivider }) => {
+export const Footer: FC<FooterProps> = ({ asCard, hideDivider, isFixed }) => {
   const [isMobile] = useMediaQuery(`(max-width: ${maxWidthMobile})`);
-  const { pathname } = useLocation();
-  const isMapPage = pathname === "/map";
-  const footerContainerPosStyle = isMapPage ? "relative" : "fixed";
+
+  const footerContainerPosStyle = isFixed ? "fixed" : "relative";
 
   return (
     <Box

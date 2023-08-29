@@ -12,6 +12,7 @@ export const MainLayout: FC = () => {
   const isMapPage = pathname === "/map";
   const isHomePage = pathname === "/";
   const shouldRenderFooter = !isMapPage || (isMapPage && isLessThanDesktop);
+  const isFooterFixed = !isMapPage;
   const containerStyleWithAside = {
     pb: isMapPage ? "initial" : "77px",
     h: isHomePage ? "100vh" : "initial"
@@ -28,7 +29,7 @@ export const MainLayout: FC = () => {
         <Outlet />
       </Box>
       { shouldRenderFooter && (
-        <Footer />
+        <Footer isFixed={isFooterFixed} />
       ) }
     </>
   );
