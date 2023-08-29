@@ -16,14 +16,30 @@ export const Aside = () => {
       direction="column"
       gap="24px"
       height="calc(100vh - 64px)"
-      overflow="auto"
     >
       <LocationSelect />
-      <Tabs />
-      <IndexDate />
-      { isAirQualityParameter && (
-        <Indicators />
-      ) }
+      <Flex
+        direction="column"
+        pr="11px"
+        gap="24px"
+        overflowY="auto"
+        sx={{
+          "&::-webkit-scrollbar": {
+            w: "4px",
+            bg: "gray.700",
+            borderRadius: "50px"
+          },
+          "&::-webkit-scrollbar-thumb": {
+            height: "5px",
+            borderRadius: "50px",
+            bg: "white"
+          }
+        }}
+      >
+        <Tabs />
+        <IndexDate />
+        { isAirQualityParameter && <Indicators /> }
+      </Flex>
     </Flex>
   );
 };
