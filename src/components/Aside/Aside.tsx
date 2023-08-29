@@ -3,11 +3,14 @@ import { Tabs } from "../Tabs/Tabs";
 import { IndexDate } from "../IndexDate/IndexDate";
 import { Indicators } from "../Indicators/Indicators";
 import { LocationSelect } from "../LocationSelect/LocationSelect";
+import { Cards } from "@UI";
 import { useParameterData } from "@Hooks";
+import { tabsData } from "@Constants";
 
 export const Aside = () => {
   const { parameter } = useParameterData();
 
+  const currentTab = parameter || tabsData[0].tabId;
   const isAirQualityParameter = parameter === "air_quality";
 
   return (
@@ -18,6 +21,7 @@ export const Aside = () => {
       height="calc(100vh - 64px)"
     >
       <LocationSelect />
+      <Tabs />
       <Flex
         direction="column"
         pr="11px"
@@ -38,7 +42,7 @@ export const Aside = () => {
           }
         }}
       >
-        <Tabs />
+        <Cards cardsKey={currentTab} />
         <IndexDate />
         { isAirQualityParameter && <Indicators /> }
       </Flex>

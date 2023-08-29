@@ -6,7 +6,6 @@ import {
   TabPanel,
   TabPanels
 } from "@chakra-ui/react";
-import { Cards } from "@UI";
 import {resolveTranslationPath} from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
 import { tabsData } from "@Constants";
@@ -58,9 +57,8 @@ export const Tabs = () => {
         { tabs.map(({ tabId }) => (
           <TabPanel
             key={tabId}
-            p="24px 0 0"
+            p="0"
           >
-            <Cards cardsKey={tabId} />
           </TabPanel>
         )) }
       </TabPanels>
