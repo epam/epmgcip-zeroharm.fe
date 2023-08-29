@@ -36,6 +36,8 @@ export const Footer: FC<FooterProps> = ({ asCard, hideDivider, isFixed }) => {
       ) }
       <Flex
         w="100%"
+        maxW="1408px"
+        m="auto"
         align="center"
         justify={"space-between"}
       >
