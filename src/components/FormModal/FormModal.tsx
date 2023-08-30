@@ -1,4 +1,4 @@
-import { FC, SetStateAction, useState, Dispatch } from "react";
+import { FC, useState } from "react";
 import { t } from "i18next";
 import { BaseModal, Form } from "@Components";
 import { Notification } from "@UI";
@@ -6,35 +6,32 @@ import { Notification } from "@UI";
 type FormModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  showForm: boolean;
-  setShowForm: Dispatch<SetStateAction<boolean>>;
 };
 
-export const FormModal: FC<FormModalProps> = ({ isOpen, onClose, showForm, setShowForm }) => {
-  const [formSubmitted, isFormSubmitted] = useState(false);
+export const FormModal: FC<FormModalProps> = ({ isOpen, onClose }) => {
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [isSubmittedWithResponse, setIsSubmittedWithResponse] = useState(false);
 
   const close = () => {
     onClose();
-    setShowForm(true);
-    isFormSubmitted(false);
+    setIsFormSubmitted(false);
   };
 
   return (
     <>
-      { !formSubmitted && showForm ? (
+      { !isFormSubmitted && (
         <BaseModal
           isOpen={isOpen}
           onClose={onClose}
           title={t("pages.form.title")}
         >
           <Form
-            submitForm={isFormSubmitted}
-            setShowForm={setShowForm}
+            submitForm={setIsFormSubmitted}
             setIsSubmittedWithResponse={setIsSubmittedWithResponse}
           />
         </BaseModal>
-      ) : (
+      ) }
+      { isFormSubmitted && (
         <Notification
           isOpen={isOpen}
           onClose={close}
