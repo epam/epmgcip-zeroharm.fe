@@ -1,8 +1,5 @@
 import { Flex } from "@chakra-ui/react";
-import { Tabs } from "../Tabs/Tabs";
-import { IndexDate } from "../IndexDate/IndexDate";
-import { Indicators } from "../Indicators/Indicators";
-import { LocationSelect } from "../LocationSelect/LocationSelect";
+import { Tabs, IndexDate, Indicators, LocationSelect } from "@Components";
 import { Cards } from "@UI";
 import { useParameterData } from "@Hooks";
 import { tabsData } from "@Constants";
