@@ -15,13 +15,11 @@ type NotificationTypeProps = {
 export const Notification: FC<NotificationTypeProps> = ({ result, type, isOpen, onClose, id }) => {
   const data: NotificationType = notificationsData[result as NotificationResult];
   const notificationData = data[type as keyof NotificationType];
-  const notificationOptions = (notificationData as NotificationData[]).map((notification) => resolveTranslationPath(notification));
-  const notification = notificationOptions.find(({ notificationId }: { notificationId: string }) => {
-    return notificationId === id;
-  });
+  const notification = (notificationData as NotificationData[]).find(({ notificationId }) => notificationId === id);
+  const notificationOptions = resolveTranslationPath(notification);
 
   const { color } = data;
-  const { notificationTitle, notificationText } = notification;
+  const { notificationTitle, notificationText } = notificationOptions;
 
   return (
     <>
