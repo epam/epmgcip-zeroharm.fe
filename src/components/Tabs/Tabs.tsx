@@ -58,8 +58,7 @@ export const Tabs = () => {
           <TabPanel
             key={tabId}
             p="0"
-          >
-          </TabPanel>
+          />
         )) }
       </TabPanels>
     </ChakraTabs>
