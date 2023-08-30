@@ -19,6 +19,7 @@ export const Aside = () => {
       direction="column"
       gap="24px"
       height="calc(100vh - 64px)"
+      overflow="hidden"
     >
       <LocationSelect />
       <Tabs />
