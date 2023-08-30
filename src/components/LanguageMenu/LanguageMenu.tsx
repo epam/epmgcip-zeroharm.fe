@@ -5,7 +5,7 @@ import { useDataStore } from "@Store/useDataStore";
 import { Icon } from "@UI";
 import { resolveTranslationPath } from "@Helpers";
 import { languagesData } from "@Constants";
-import { BackwardButton } from "../Buttons/BackwardButton/BackwardButton";
+import { BackwardButton } from "../BackwardButton/BackwardButton";
 import { ReactComponent as ArrowDownIcon } from "@Assets/icons/stroke/harm-arrow-down.svg";
 import { ReactComponent as ArrowUpIcon } from "@Assets/icons/stroke/harm-arrow-up.svg";
 
@@ -39,7 +39,7 @@ export const LanguageMenu: FC = () => {
               <HStack spacing={isOpenOnMobile ? "0" : "8px"}>
                 {
                   isOpenOnMobile
-                    ? <BackwardButton />
+                    ? <BackwardButton as="div" />
                     : <Icon
                         type="flags"
                         color="none"

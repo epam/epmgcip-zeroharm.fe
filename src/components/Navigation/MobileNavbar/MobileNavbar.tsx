@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { Drawer, DrawerBody, DrawerContent, DrawerFooter, DrawerHeader, Flex, Spacer } from "@chakra-ui/react";
+import { Drawer, DrawerBody, DrawerContent, DrawerFooter, DrawerHeader, Flex, IconButton, Spacer } from "@chakra-ui/react";
 import { Logo } from "../../Logo/Logo";
-import { HamburgerButton } from "../../Buttons/HamburgerButton/HamburgerButton";
 import { Navbar } from "../Navbar/Navbar";
+import { ReactComponent as CloseIcon } from "@Assets/icons/stroke/harm-close.svg";
 
 type MobileNavbarProps = {
   isOpen: boolean;
@@ -32,7 +32,12 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ isOpen, onOpen, onClose })
 
             <Spacer />
 
-            <HamburgerButton isOpen={isOpen} onClick={onClose} />
+          <IconButton
+            variant="iconButton"
+            aria-label="hamburger close button"
+            icon={<CloseIcon />}
+            onClick={onClose}
+          />
           </Flex>
         </DrawerHeader>
 

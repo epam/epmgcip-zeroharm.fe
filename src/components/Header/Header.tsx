@@ -1,11 +1,11 @@
 import { FC } from "react";
-import { Flex, Box, HStack, useMediaQuery, useDisclosure, Spacer } from "@chakra-ui/react";
+import { Flex, Box, HStack, useMediaQuery, useDisclosure, Spacer, IconButton } from "@chakra-ui/react";
 import { LanguageMenu } from "../LanguageMenu/LanguageMenu";
 import { ThemeToggler } from "../ThemeToggler/ThemeToggler";
-import { HamburgerButton } from "../Buttons/HamburgerButton/HamburgerButton";
 import { Logo } from "../Logo/Logo";
 import { Navbar } from "../Navigation/Navbar/Navbar";
 import { MobileNavbar } from "../Navigation/MobileNavbar/MobileNavbar";
+import { ReactComponent as HamburgerIcon } from "@Assets/icons/stroke/harm-hamburger-button.svg";
 
 export const Header: FC = () => {
   const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
@@ -27,9 +27,7 @@ export const Header: FC = () => {
 
         <Spacer />
 
-        <HStack
-          gap={{ base: "36px", md: "28px", lg: "32px" }}
-        >
+        <HStack gap={{ base: "36px", md: "28px", lg: "32px" }}>
           {
             !isMobileWidth
               ? <Navbar />
@@ -40,7 +38,13 @@ export const Header: FC = () => {
 
           <ThemeToggler />
 
-          <HamburgerButton isOpen={isOpen} onClick={onOpen} />
+          <IconButton
+            variant="iconButton"
+            aria-label="hamburger button"
+            icon={<HamburgerIcon />}
+            display={{ md: "none" }}
+            onClick={onOpen}
+          />
         </HStack>
       </Flex>
     </Box>
