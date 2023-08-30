@@ -6,11 +6,10 @@ import { ReactComponent as CloseIcon } from "@Assets/icons/stroke/harm-close.svg
 
 type MobileNavbarProps = {
   isOpen: boolean;
-  onOpen: () => void;
   onClose: () => void;
 }
 
-export const MobileNavbar: FC<MobileNavbarProps> = ({ isOpen, onOpen, onClose }) => {
+export const MobileNavbar: FC<MobileNavbarProps> = ({ isOpen, onClose }) => {
   return (
     <Drawer
       placement="top"
@@ -42,7 +41,7 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ isOpen, onOpen, onClose })
         </DrawerHeader>
 
         <DrawerBody pt="20px">
-          <Navbar />
+          <Navbar onClick={onClose} />
         </DrawerBody>
 
         <DrawerFooter>

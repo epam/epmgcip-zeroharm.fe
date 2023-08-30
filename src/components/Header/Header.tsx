@@ -31,7 +31,7 @@ export const Header: FC = () => {
           {
             !isMobileWidth
               ? <Navbar />
-              : <MobileNavbar {...{ isOpen, onClose, onOpen }}/>
+              : <MobileNavbar {...{ isOpen, onClose }}/>
           }
 
           <LanguageMenu />
