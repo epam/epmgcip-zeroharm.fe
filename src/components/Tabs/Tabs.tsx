@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Tabs as ChakraTabs,
   Tab,
@@ -22,12 +22,29 @@ const selected = {
 
 export const Tabs = () => {
   const { parameter, setParameter } = useDataStore();
+  const [ isScrollVisible, setIsScrollVisible ] = useState(false);
+  const tabPanelsRef = useRef(null);
+  const tabPanelsNode = tabPanelsRef.current;
 
   const isAirQualityParameter = parameter === "air_quality";
   const tabs = tabsData.map((tabData: any) => resolveTranslationPath(tabData));
   const currentTab = parameter || tabs[0].tabId;
   const currentTabData = tabs.find(({ tabId }) => tabId === currentTab);
   const defaultTabIndex = tabs.indexOf(currentTabData);
+
+  const changeScrollState = (element: HTMLElement | null) => {
+    if (element) {
+      const scrollHeight = (element as HTMLElement).scrollHeight;
+      const offsetHeight = (element as HTMLElement).offsetHeight;
+      setIsScrollVisible(scrollHeight !== offsetHeight);
+    }
+  };
+
+  const resizePanelObserver = new ResizeObserver(() => {
+    changeScrollState(tabPanelsNode);
+  });
+
+  tabPanelsNode && resizePanelObserver.observe(tabPanelsNode);
 
   useEffect(() => {
     setParameter(currentTab);
@@ -39,7 +56,7 @@ export const Tabs = () => {
       variant="unstyled"
       overflowY="hidden"
     >
-      <TabList pb="24px">
+      <TabList pb="24px" pr="4px">
         { tabs.map(({ tabId, tabName }) => (
           <Tab
             key={tabId}
@@ -58,6 +75,7 @@ export const Tabs = () => {
       </TabList>
 
       <TabPanels
+        ref={tabPanelsRef}
         height="100%"
         overflowY="auto"
         sx={{
@@ -80,7 +98,9 @@ export const Tabs = () => {
             display="flex"
             flexDirection="column"
             gap="24px"
-            p="0 11px 55px 0"
+            p="0"
+            pb="51px"
+            pr={isScrollVisible ? "11px" : "4px"}
           >
             <Cards cardsKey={tabId} />
             <IndexDate />
