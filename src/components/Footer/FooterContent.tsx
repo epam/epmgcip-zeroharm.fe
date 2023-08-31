@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Flex, Text, Link as ChakraLink, Button, useDisclosure } from "@chakra-ui/react";
 import { t } from "i18next";
-import { FormModal } from "@Components";
+import { FormModal } from "../FormModal/FormModal";
 import { ReactComponent as StarIcon } from "@Assets/icons/stroke/harm-star.svg";
 
 export const FooterContent: FC = () => {
