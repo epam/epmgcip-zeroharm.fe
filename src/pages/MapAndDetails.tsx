@@ -1,13 +1,17 @@
-import { Flex, Box, useMediaQuery } from "@chakra-ui/react";
-import { Aside, Map } from "@Components";
-import { Footer } from "@UI";
-import { maxWidthTablet } from "@Theme/foundations/breakpoints";
+import { Flex, Box } from "@chakra-ui/react";
+import { Aside, Map, Footer } from "@Components";
+import { useDetectWidth } from "@Hooks";
 
 export const MapAndDetails = () => {
-  const [isDesktop] = useMediaQuery(`(min-width: ${maxWidthTablet})`);
+  const { isLargerThan1024 } = useDetectWidth();
 
   return (
-    <Flex>
+    <Flex
+      height={{
+        md: "calc(100vh - var(--headerHeight) - var(--footerHeight))",
+        lg: "calc(100vh - var(--headerHeight))"
+      }}
+    >
       <Box
         as="aside"
         flex="1 0 440px"
@@ -16,19 +20,20 @@ export const MapAndDetails = () => {
       </Box>
       <Box
         as="main"
+        height="100%"
         flex="1 0 calc(100% - 440px)"
       >
         <Box
           pos="relative"
           mx="auto"
-          sx={{"--footer-margin": "16px"}}
+          height={{
+            md: "calc(100vh - var(--headerHeight) - var(--footerHeight))",
+            lg: "calc(100vh - var(--headerHeight))"
+          }}
         >
           <Map />
-          { isDesktop && (
-            <Footer
-              asCard
-              hideDivider
-            />
+          { isLargerThan1024 && (
+            <Footer variant="card" />
           ) }
         </Box>
       </Box>

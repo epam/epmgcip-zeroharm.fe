@@ -4,7 +4,11 @@ export const styles = {
       display: "flex",
       flexDirection: "column",
       height: "100%",
-      minHeight: "100vh"
+      minHeight: "100vh",
+
+      "--headerHeight": "64px",
+      "--footerHeight": "76px",
+      "--footerMargin": "16px"
     },
     "html, body, header, footer": {
       backgroundColor: "gray.900",
@@ -19,9 +23,7 @@ export const styles = {
       p: "16px 24px"
     },
     footer: {
-      height: "76px",
-      display: "flex",
-      alignItems: "center",
+      minHeight: "var(--footerHeight)",
       p: {
         base: "16px 16px",
         lg: "16px 24px"

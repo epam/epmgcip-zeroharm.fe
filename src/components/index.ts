@@ -16,3 +16,5 @@ export * from "./Tabs/Tabs";
 export * from "./ThemeSwitcher/ThemeSwitcher";
 export * from "./MainLayout/MainLayout";
 export * from "./FeedbackButton/FeedbackButton";
+export * from "./Footer/Footer";
+export * from "./Footer/FooterContent";

@@ -2,7 +2,7 @@ import { FC } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 const styles = {
-  height: "calc(100vh - 64px)",
+  height: "100%",
   zIndex: 1
 };
 

@@ -7,4 +7,3 @@ export * from "./Notification/Notification";
 export * from "./Popup/Popup";
 export * from "./Progress/Progress";
 export * from "./Wrapper/Wrapper";
-export * from "./Footer/Footer";

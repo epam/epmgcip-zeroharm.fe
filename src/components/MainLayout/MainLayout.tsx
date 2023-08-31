@@ -1,36 +1,33 @@
 import { FC } from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import { Box, useMediaQuery } from "@chakra-ui/react";
-import { Footer } from "@UI";
-import { maxWidthTablet } from "@Theme/foundations/breakpoints";
+import { Outlet } from "react-router-dom";
+import { Flex, Box } from "@chakra-ui/react";
+import { useDetectWidth, useDetectPage } from "@Hooks";
+import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 
 export const MainLayout: FC = () => {
-  const { pathname } = useLocation();
-  const [isDesktop] = useMediaQuery(`(min-width: ${maxWidthTablet})`);
+  const { isMapPage, isAboutPage } = useDetectPage();
+  const { isLargerThan1024, isLargerThan600 } = useDetectWidth();
 
-  const isMapPage = pathname === "/map";
-  const isHomePage = pathname === "/";
-  const shouldRenderFooter = !isMapPage || (isMapPage && !isDesktop);
-  const isFooterFixed = !isMapPage;
-  const containerStyleWithAside = {
-    pb: isMapPage ? "initial" : "77px",
-    h: isHomePage ? "100vh" : "initial"
-  };
+  const shouldRenderFooter = !isMapPage || (isMapPage && !isLargerThan1024);
+  const footerVariantAboutPage = isLargerThan600 ? "fixed" : "static";
+  const footerVariant = isAboutPage ? footerVariantAboutPage : "static";
 
   return (
-    <>
+    <Flex
+      direction="column"
+      height="100vh"
+    >
       <Header />
       <Box
         w="100%"
         pt="64px"
-        {...containerStyleWithAside}
       >
         <Outlet />
       </Box>
       { shouldRenderFooter && (
-        <Footer isFixed={isFooterFixed} />
+        <Footer variant={footerVariant} />
       ) }
-    </>
+    </Flex>
   );
 };
