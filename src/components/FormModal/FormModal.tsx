@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { t } from "i18next";
-import { BaseModal, Form } from "@Components";
+import { BaseModal } from "../BaseModal/BaseModal";
+import { Form } from "../Form/Form";
 import { Notification } from "@UI";
 
 type FormModalProps = {
