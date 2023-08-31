@@ -93,6 +93,9 @@ export const LanguageMenu: FC = () => {
               pos={isOpenOnMobile ? "relative" : "initial"}
               top="-8px"
               left="0"
+              sx={{
+                transformOrigin: "top !important"
+              }}
             >
               {
                 languagesOptions.map(({ languageId, languageName, languageIconName }) => {
