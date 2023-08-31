@@ -22,11 +22,12 @@ const selected = {
 
 export const Tabs = () => {
   const { parameter, setParameter } = useDataStore();
+
   const [ isScrollVisible, setIsScrollVisible ] = useState(false);
+
   const tabPanelsRef = useRef(null);
   const tabPanelsNode = tabPanelsRef.current;
 
-  const isAirQualityParameter = parameter === "air_quality";
   const tabs = tabsData.map((tabData: any) => resolveTranslationPath(tabData));
   const currentTab = parameter || tabs[0].tabId;
   const currentTabData = tabs.find(({ tabId }) => tabId === currentTab);
@@ -55,6 +56,8 @@ export const Tabs = () => {
       defaultIndex={defaultTabIndex}
       variant="unstyled"
       overflowY="hidden"
+      display="flex"
+      flexDirection="column"
     >
       <TabList pb="24px" pr="4px">
         { tabs.map(({ tabId, tabName }) => (
@@ -76,8 +79,9 @@ export const Tabs = () => {
 
       <TabPanels
         ref={tabPanelsRef}
-        height="100%"
+        flex="1"
         overflowY="auto"
+        pb="9px"
         sx={{
           scrollbarWidth: "thin",
           scrollbarColor: "white #48494D",
@@ -99,12 +103,11 @@ export const Tabs = () => {
             flexDirection="column"
             gap="24px"
             p="0"
-            pb="51px"
             pr={isScrollVisible ? "20px" : "4px"}
           >
             <Cards cardsKey={tabId} />
             <IndexDate />
-            { isAirQualityParameter && <Indicators /> }
+            { tabId === "air_quality" && <Indicators /> }
           </TabPanel>
         )) }
       </TabPanels>
