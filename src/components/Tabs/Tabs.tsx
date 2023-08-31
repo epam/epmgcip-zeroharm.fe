@@ -100,7 +100,7 @@ export const Tabs = () => {
             gap="24px"
             p="0"
             pb="51px"
-            pr={isScrollVisible ? "11px" : "4px"}
+            pr={isScrollVisible ? "20px" : "4px"}
           >
             <Cards cardsKey={tabId} />
             <IndexDate />
