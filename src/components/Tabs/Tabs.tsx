@@ -60,7 +60,7 @@ export const Tabs = () => {
       display="flex"
       flexDirection="column"
     >
-      <TabList pb="24px" pr="4px">
+      <TabList pb="24px">
         { tabs.map(({ tabId, tabName }) => (
           <Tab
             key={tabId}
