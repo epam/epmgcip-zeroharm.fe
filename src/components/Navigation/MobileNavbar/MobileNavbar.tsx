@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { Drawer, DrawerBody, DrawerContent, DrawerFooter, DrawerHeader, Flex, IconButton, Spacer } from "@chakra-ui/react";
-import { Logo } from "../../Logo/Logo";
-import { Navbar } from "../Navbar/Navbar";
+import { Logo, Navbar } from "@Components";
 import { ReactComponent as CloseIcon } from "@Assets/icons/stroke/harm-close.svg";
 
 type MobileNavbarProps = {

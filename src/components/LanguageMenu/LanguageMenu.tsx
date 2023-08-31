@@ -5,7 +5,7 @@ import { useDataStore } from "@Store/useDataStore";
 import { Icon } from "@UI";
 import { resolveTranslationPath } from "@Helpers";
 import { languagesData } from "@Constants";
-import { BackwardButton } from "../BackwardButton/BackwardButton";
+import { BackwardButton } from "@Components";
 import { ReactComponent as ArrowDownIcon } from "@Assets/icons/stroke/harm-arrow-down.svg";
 import { ReactComponent as ArrowUpIcon } from "@Assets/icons/stroke/harm-arrow-up.svg";
 

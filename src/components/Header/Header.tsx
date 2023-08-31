@@ -1,10 +1,6 @@
 import { FC } from "react";
 import { Flex, Box, HStack, useMediaQuery, useDisclosure, Spacer, IconButton } from "@chakra-ui/react";
-import { LanguageMenu } from "../LanguageMenu/LanguageMenu";
-import { ThemeToggler } from "../ThemeToggler/ThemeToggler";
-import { Logo } from "../Logo/Logo";
-import { Navbar } from "../Navigation/Navbar/Navbar";
-import { MobileNavbar } from "../Navigation/MobileNavbar/MobileNavbar";
+import { LanguageMenu, ThemeToggler, Logo, Navbar, MobileNavbar } from "@Components";
 import { ReactComponent as HamburgerIcon } from "@Assets/icons/stroke/harm-hamburger-button.svg";
 
 export const Header: FC = () => {
