@@ -1,5 +1,6 @@
 import { Flex } from "@chakra-ui/react";
-import { Tabs, LocationSelect } from "@Components";
+import { Tabs } from "../Tabs/Tabs";
+import { LocationSelect } from "../LocationSelect/LocationSelect";
 
 export const Aside = () => {
 

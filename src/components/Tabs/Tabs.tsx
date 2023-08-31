@@ -10,7 +10,8 @@ import { resolveTranslationPath } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
 import { tabsData } from "@Constants";
 import { Cards } from "@UI";
-import { IndexDate, Indicators } from "@Components";
+import { IndexDate } from "../IndexDate/IndexDate";
+import { Indicators } from "../Indicators/Indicators";
 
 const hover = {
   color: "white"
