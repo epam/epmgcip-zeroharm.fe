@@ -20,6 +20,7 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ isOpen, onClose }) => {
       <DrawerContent
         bg="gray.900"
         boxShadow="none"
+        zIndex="1300"
       >
         <DrawerHeader py="0">
           <Flex
