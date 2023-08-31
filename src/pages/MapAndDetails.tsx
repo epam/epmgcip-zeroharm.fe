@@ -2,16 +2,16 @@ import { Flex, Box } from "@chakra-ui/react";
 import { Aside, Map, Footer } from "@Components";
 import { useDetectWidth } from "@Hooks";
 
+const containerHeight = {
+  md: "calc(100vh - var(--headerHeight) - var(--footerHeight))",
+  lg: "calc(100vh - var(--headerHeight))"
+};
+
 export const MapAndDetails = () => {
   const { isLargerThan1024 } = useDetectWidth();
 
   return (
-    <Flex
-      height={{
-        md: "calc(100vh - var(--headerHeight) - var(--footerHeight))",
-        lg: "calc(100vh - var(--headerHeight))"
-      }}
-    >
+    <Flex height={containerHeight}>
       <Box
         as="aside"
         flex="1 0 440px"
@@ -26,10 +26,7 @@ export const MapAndDetails = () => {
         <Box
           pos="relative"
           mx="auto"
-          height={{
-            md: "calc(100vh - var(--headerHeight) - var(--footerHeight))",
-            lg: "calc(100vh - var(--headerHeight))"
-          }}
+          height={containerHeight}
         >
           <Map />
           { isLargerThan1024 && (
