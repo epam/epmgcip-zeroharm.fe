@@ -19,6 +19,9 @@ export const Header: FC = () => {
       <Flex
         h="full"
         align="center"
+        maxW="1440px"
+        mx="auto"
+        px="24px"
       >
         <Logo />
 
