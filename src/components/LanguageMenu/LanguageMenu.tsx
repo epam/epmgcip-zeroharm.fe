@@ -73,7 +73,7 @@ export const LanguageMenu: FC = () => {
             h="56px"
             zIndex="2"
             className="bg-colored"
-            color="initial"
+            color="inherit"
             pl="8px"
             pos="fixed"
             top="0"
