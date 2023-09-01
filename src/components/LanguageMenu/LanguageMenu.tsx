@@ -27,6 +27,7 @@ export const LanguageMenu: FC = () => {
 
   return (
     <Menu
+      strategy="fixed"
       autoSelect={false}
       closeOnBlur={!isMobileWidth}
       isOpen={isOpen}
@@ -92,14 +93,12 @@ export const LanguageMenu: FC = () => {
         }}
         py="0"
         mt={{ md: "12px" }}
-        minH={isOpenOnMobile ? "calc(100vh - 56px)" : "0"}
+        minH={isOpenOnMobile ? "calc(100vh - 56px)" : "initial"}
         borderRadius={{ base: "0", md: "8px" }}
-        pos={isOpenOnMobile ? "relative" : "initial"}
-        top="-8px"
-        left="0"
-        sx={{
-          transformOrigin: "top !important"
+        rootProps={{
+          sx: isOpenOnMobile ? { transform: "translate3d(0, 56px, 0) !important" } : {}
         }}
+        sx={isOpenOnMobile ? { transformOrigin: "top !important" } : {}}
       >
         {
           languagesOptions.map(({ languageId, languageName, languageIconName }) => {
