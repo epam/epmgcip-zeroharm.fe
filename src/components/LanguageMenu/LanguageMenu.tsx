@@ -96,9 +96,16 @@ export const LanguageMenu: FC = () => {
         minH={isOpenOnMobile ? "calc(100vh - 56px)" : "initial"}
         borderRadius={{ base: "0", md: "8px" }}
         rootProps={{
-          sx: isOpenOnMobile ? { transform: "translate3d(0, 56px, 0) !important" } : {}
+          sx: isOpenOnMobile ? {
+            transform: "translate3d(0, 56px, 0) !important"
+          } : {}
         }}
-        sx={isOpenOnMobile ? { transformOrigin: "top !important" } : {}}
+        sx={
+          isOpenOnMobile ? {
+            transformOrigin: "top !important",
+            transform: "scale(1) translateZ(100vw) !important"
+          } : {}
+        }
       >
         {
           languagesOptions.map(({ languageId, languageName, languageIconName }) => {
