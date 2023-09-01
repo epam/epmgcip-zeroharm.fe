@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Flex, Box, HStack, useMediaQuery, useDisclosure, Spacer, IconButton } from "@chakra-ui/react";
 import { LanguageMenu, ThemeToggler, Logo, Navbar, MobileNavbar } from "@Components";
 import { ReactComponent as HamburgerIcon } from "@Assets/icons/stroke/harm-hamburger-button.svg";
@@ -8,6 +8,12 @@ export const Header: FC = () => {
   const isMobileWidth = !isLargerThan600;
 
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  useEffect(() => {
+    if (!isMobileWidth && isOpen) {
+      onClose();
+    }
+  }, [isMobileWidth]);
 
   return (
     <Box
@@ -29,9 +35,9 @@ export const Header: FC = () => {
 
         <HStack gap={{ base: "36px", md: "28px", lg: "32px" }}>
           {
-            !isMobileWidth
-              ? <Navbar />
-              : <MobileNavbar {...{ isOpen, onClose }}/>
+            isMobileWidth
+              ? <MobileNavbar {...{ isOpen, onClose }}/>
+              : <Navbar />
           }
 
           <LanguageMenu />

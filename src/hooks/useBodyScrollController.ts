@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const useBodyScrollController = (isBlockScrolling: boolean, isUnblockScrolling: boolean) => {
+export const useBodyScrollController = (isLockScrollCase: boolean, isUnlockScrollCase: boolean) => {
   const body = document.querySelector("body");
 
   const blockBodyFromScrolling = () => {
@@ -12,14 +12,14 @@ export const useBodyScrollController = (isBlockScrolling: boolean, isUnblockScro
   };
 
   useEffect(() => {
-    if (isBlockScrolling) {
+    if (isLockScrollCase) {
       blockBodyFromScrolling();
     }
-  }, [isBlockScrolling]);
+  }, [isLockScrollCase]);
 
   useEffect(() => {
-    if (isUnblockScrolling) {
+    if (isUnlockScrollCase) {
       unblockBodyFromScrolling();
     }
-  }, [isUnblockScrolling]);
+  }, [isUnlockScrollCase]);
 };
