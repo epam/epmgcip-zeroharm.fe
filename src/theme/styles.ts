@@ -23,9 +23,12 @@ export const styles = {
       p: "16px 24px"
     },
     footer: {
-      minHeight: "var(--footerHeight)",
+      minHeight: {
+        base: "none",
+        md: "76px"
+      },
       p: {
-        base: "16px 16px",
+        base: "16px",
         lg: "16px 24px"
       }
     },

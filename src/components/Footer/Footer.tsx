@@ -58,14 +58,21 @@ export const Footer: FC<FooterProps> = ({ variant = "static" }) => {
       ) }
       <Flex
         w="100%"
+        h="100%"
         m="auto"
         align="center"
         justify="space-between"
-        maxWidth={isVariantCard ? "none" : "1408px"}
+        maxWidth={isVariantCard ? "none" : "1440px"}
       >
         <FooterContent />
         { isLargerThan600 && (
-          <Box pl="50px">
+          <Box
+            pl={{
+              base: "initial",
+              md: "50px",
+              lg: "16px"
+            }}
+          >
             <FeedbackButton />
           </Box>
         ) }

@@ -6,12 +6,16 @@ export const FooterContent = () => {
     <Text
       fontSize="sm"
       lineHeight="18px"
+      maxWidth={{
+        base: "none",
+        md: "567px"
+      }}
       textAlign={{
         base: "center",
         md: "initial"
       }}
     >
-      { t("pages.footer.start") } <br/>
+      { t("pages.footer.start") }
       <ChakraLink
         href="https://hydromet.uz/"
         isExternal
