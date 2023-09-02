@@ -1,18 +1,21 @@
 export const routesData = [
   {
-    routeId: "/",
+    routeId: "home",
+    routePath: "/",
     routeName: {
       translationPath: "pages.home.name"
     }
   },
   {
-    routeId: "/map",
+    routeId: "map",
+    routePath: "/map",
     routeName: {
       translationPath: "pages.map.name"
     }
   },
   {
-    routeId: "/about",
+    routeId: "about",
+    routePath: "/about",
     routeName: {
       translationPath: "pages.about.name"
     }

@@ -20,10 +20,10 @@ export const Navbar: FC<NavbarProps> = ({ onClick }) => {
       fontWeight="bold"
     >
       {
-        routes.map(({ routeId, routeName }) => (
+        routes.map(({ routeId, routePath, routeName }) => (
           <Link
             key={routeId}
-            to={routeId}
+            to={routePath}
             onClick={onClick}
           >
             { routeName }
