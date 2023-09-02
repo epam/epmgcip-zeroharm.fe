@@ -1,15 +1,15 @@
 import { FC } from "react";
 import { Menu, MenuButton, MenuList, MenuItem, HStack, Text, Icon as ChakraIcon, useMediaQuery, Flex, useDisclosure } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
+import { HTMLMotionProps } from "framer-motion";
 import { useDataStore } from "@Store/useDataStore";
 import { Icon } from "@UI";
-import { useBodyScrollController } from "@Hooks";
+import { useScreenScrollController } from "@Hooks";
 import { resolveTranslationPath } from "@Helpers";
 import { languagesData } from "@Constants";
 import { BackwardButton } from "@Components";
 import { ReactComponent as ArrowDownIcon } from "@Assets/icons/stroke/harm-arrow-down.svg";
 import { ReactComponent as ArrowUpIcon } from "@Assets/icons/stroke/harm-arrow-up.svg";
-import { HTMLMotionProps } from "framer-motion";
 
 export const LanguageMenu: FC = () => {
   const { setLanguage } = useDataStore();
@@ -22,7 +22,7 @@ export const LanguageMenu: FC = () => {
   const isMobileWidth = !isLargerThan600;
   const isOpenOnMobile = isOpen && isMobileWidth;
 
-  useBodyScrollController(isOpenOnMobile, (!isMobileWidth && isOpen) || !isOpen);
+  useScreenScrollController(isOpenOnMobile, !isOpenOnMobile);
 
   const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
 

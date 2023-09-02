@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const useBodyScrollController = (isLockScrollCase: boolean, isUnlockScrollCase: boolean) => {
+export const useScreenScrollController = (isLockScrollCase: boolean, isUnlockScrollCase: boolean) => {
   const body = document.querySelector("body");
 
   const blockBodyFromScrolling = () => {
