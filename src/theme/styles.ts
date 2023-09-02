@@ -24,7 +24,7 @@ export const styles = {
     },
     footer: {
       minHeight: {
-        base: "none",
+        base: "initial",
         md: "76px"
       },
       p: {
