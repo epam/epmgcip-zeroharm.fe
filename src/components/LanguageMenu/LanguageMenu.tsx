@@ -9,6 +9,7 @@ import { languagesData } from "@Constants";
 import { BackwardButton } from "@Components";
 import { ReactComponent as ArrowDownIcon } from "@Assets/icons/stroke/harm-arrow-down.svg";
 import { ReactComponent as ArrowUpIcon } from "@Assets/icons/stroke/harm-arrow-up.svg";
+import { HTMLMotionProps } from "framer-motion";
 
 export const LanguageMenu: FC = () => {
   const { setLanguage } = useDataStore();
@@ -24,6 +25,42 @@ export const LanguageMenu: FC = () => {
   useBodyScrollController(isOpenOnMobile, (!isMobileWidth && isOpen) || !isOpen);
 
   const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
+
+  const menuListMotionProps = isMobileWidth ? {
+    initial: {
+      scaleZ: 1,
+      scaleX: 1
+    },
+    animate: isOpen ? {
+      scaleY: 1,
+      opacity: 1,
+      visibility: "visible",
+      transition: {
+        opacity: {
+          delay: 0.1,
+          duration: 0.2
+        },
+        scaleY: {
+          duration: 0.3
+        }
+      }
+    } : {
+      scaleY: 0,
+      opacity: 0,
+      transition: {
+        scaleY: {
+          duration: 0.3
+        },
+        opacity: {
+          delay: 0.1,
+          duration: 0.2
+        }
+      },
+      transitionEnd: {
+        visibility: "hidden"
+      }
+    }
+  } as HTMLMotionProps<"div"> : undefined;
 
   return (
     <Menu
@@ -96,16 +133,11 @@ export const LanguageMenu: FC = () => {
         minH={isOpenOnMobile ? "calc(100vh - 56px)" : "initial"}
         borderRadius={{ base: "0", md: "8px" }}
         rootProps={{
-          sx: isOpenOnMobile ? {
-            transform: "translate3d(0, 56px, 0) !important"
-          } : {}
+          sx: isOpenOnMobile ? { transform: "translate3d(0, 56px, 0) !important" } : undefined
         }}
-        sx={
-          isOpenOnMobile ? {
-            transformOrigin: "top !important",
-            transform: "scale(1) translateZ(100vw) !important"
-          } : {}
+        sx={isOpenOnMobile ? { transformOrigin: "top !important" } : undefined
         }
+        motionProps={menuListMotionProps}
       >
         {
           languagesOptions.map(({ languageId, languageName, languageIconName }) => {
