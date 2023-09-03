@@ -3,7 +3,7 @@ import { Button, useDisclosure } from "@chakra-ui/react";
 import { t } from "i18next";
 import { BaseModal } from "../BaseModal/BaseModal";
 import { Form } from "../Form/Form";
-import { ReactComponent as StarIcon } from "@Assets/icons/stroke/harm-star.svg";
+import { ReactComponent as ThumbIcon } from "@Assets/icons/stroke/harm-thumb.svg";
 
 export const FeedbackButton: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -11,7 +11,7 @@ export const FeedbackButton: FC = () => {
   return (
     <>
       <Button
-        leftIcon={<StarIcon />}
+        leftIcon={<ThumbIcon />}
         size="sm"
         onClick={onOpen}
         variant="gradient"
