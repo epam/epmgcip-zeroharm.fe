@@ -29,7 +29,7 @@ export const Tabs = () => {
   const tabPanelsRef = useRef(null);
   const tabPanelsNode = tabPanelsRef.current;
 
-  const tabs = tabsData.map((tabData: any) => resolveTranslationPath(tabData));
+  const tabs = tabsData.map((tabData) => resolveTranslationPath(tabData));
   const currentTab = parameter || tabs[0].tabId;
   const currentTabData = tabs.find(({ tabId }) => tabId === currentTab);
   const defaultTabIndex = tabs.indexOf(currentTabData);
