@@ -34,19 +34,21 @@ export const Tabs = () => {
   const currentTabData = tabs.find(({ tabId }) => tabId === currentTab);
   const defaultTabIndex = tabs.indexOf(currentTabData);
 
-  const changeScrollState = (element: HTMLElement | null) => {
-    if (element) {
-      const scrollHeight = (element as HTMLElement).scrollHeight;
-      const offsetHeight = (element as HTMLElement).offsetHeight;
+  useEffect(() => {
+    if (!tabPanelsNode) return;
+
+    const resizePanelObserver = new ResizeObserver(() => {
+      const { scrollHeight, offsetHeight } = tabPanelsNode;
+
       setIsScrollVisible(scrollHeight !== offsetHeight);
-    }
-  };
+    });
 
-  const resizePanelObserver = new ResizeObserver(() => {
-    changeScrollState(tabPanelsNode);
-  });
+    resizePanelObserver.observe(tabPanelsNode);
 
-  tabPanelsNode && resizePanelObserver.observe(tabPanelsNode);
+    return () => {
+      resizePanelObserver.disconnect();
+    };
+  }, [tabPanelsNode]);
 
   useEffect(() => {
     setParameter(currentTab);
