@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Menu, MenuButton, MenuList, MenuItem, HStack, Text, Icon as ChakraIcon, useMediaQuery, Flex, useDisclosure } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import { HTMLMotionProps } from "framer-motion";
+import { Variants } from "framer-motion";
 import { useDataStore } from "@Store/useDataStore";
 import { Icon } from "@UI";
 import { useScreenScrollController } from "@Hooks";
@@ -10,6 +10,39 @@ import { languagesData } from "@Constants";
 import { BackwardButton } from "@Components";
 import { ReactComponent as ArrowDownIcon } from "@Assets/icons/stroke/harm-arrow-down.svg";
 import { ReactComponent as ArrowUpIcon } from "@Assets/icons/stroke/harm-arrow-up.svg";
+
+const motionVariants: Variants = {
+  enter: {
+    scaleY: 1,
+    opacity: 1,
+    visibility: "visible",
+    transition: {
+      opacity: {
+        delay: 0.1,
+        duration: 0.2
+      },
+      scaleY: {
+        duration: 0.3
+      }
+    }
+  },
+  exit: {
+    scaleY: 0,
+    opacity: 0,
+    transition: {
+      scaleY: {
+        duration: 0.3
+      },
+      opacity: {
+        delay: 0.1,
+        duration: 0.2
+      }
+    },
+    transitionEnd: {
+      visibility: "hidden"
+    }
+  }
+};
 
 export const LanguageMenu: FC = () => {
   const { setLanguage } = useDataStore();
@@ -25,42 +58,6 @@ export const LanguageMenu: FC = () => {
   useScreenScrollController(isOpenOnMobile, !isOpenOnMobile);
 
   const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
-
-  const menuListMotionProps = isMobileWidth ? {
-    initial: {
-      scaleZ: 1,
-      scaleX: 1
-    },
-    animate: isOpen ? {
-      scaleY: 1,
-      opacity: 1,
-      visibility: "visible",
-      transition: {
-        opacity: {
-          delay: 0.1,
-          duration: 0.2
-        },
-        scaleY: {
-          duration: 0.3
-        }
-      }
-    } : {
-      scaleY: 0,
-      opacity: 0,
-      transition: {
-        scaleY: {
-          duration: 0.3
-        },
-        opacity: {
-          delay: 0.1,
-          duration: 0.2
-        }
-      },
-      transitionEnd: {
-        visibility: "hidden"
-      }
-    }
-  } as HTMLMotionProps<"div"> : undefined;
 
   return (
     <Menu
@@ -135,9 +132,19 @@ export const LanguageMenu: FC = () => {
         rootProps={{
           sx: isOpenOnMobile ? { transform: "translate3d(0, 56px, 0) !important" } : undefined
         }}
-        sx={isOpenOnMobile ? { transformOrigin: "top !important" } : undefined
+        sx={isOpenOnMobile ? { transformOrigin: "top !important" } : undefined}
+        motionProps={
+          isMobileWidth
+            ? {
+              initial: {
+                scaleZ: 1,
+                scaleX: 1
+              },
+              variants: motionVariants,
+              animate: isOpen ? "enter" : "exit"
+            }
+            : undefined
         }
-        motionProps={menuListMotionProps}
       >
         {
           languagesOptions.map(({ languageId, languageName, languageIconName }) => {
