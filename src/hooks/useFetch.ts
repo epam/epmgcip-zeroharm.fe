@@ -8,7 +8,7 @@ export const useFetch = (path: string, onComplete: (data: any) => void) => {
     const controller = new AbortController();
     const { signal } = controller;
 
-    fetch(`${process.env.REACT_APP_ZERO_HARM_URL}${path}`, { signal, mode: "no-cors" })
+    fetch(`${process.env.REACT_APP_ZERO_HARM_URL}${path}`, { signal })
       .then((res) => res.json())
       .then((data) => {
         const fetched = data[0];
