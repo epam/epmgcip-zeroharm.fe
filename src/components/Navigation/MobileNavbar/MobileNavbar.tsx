@@ -11,17 +11,14 @@ type MobileNavbarProps = {
 export const MobileNavbar: FC<MobileNavbarProps> = ({ isOpen, onClose }) => {
   return (
     <Drawer
+      variant="drawer"
       placement="top"
       size="full"
       autoFocus={false}
       onClose={onClose}
       isOpen={isOpen}
     >
-      <DrawerContent
-        bg="gray.900"
-        boxShadow="none"
-        zIndex="1300"
-      >
+      <DrawerContent>
         <DrawerHeader py="0">
           <Flex
             h="56px"

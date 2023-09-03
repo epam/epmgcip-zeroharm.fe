@@ -37,7 +37,8 @@ const overrides = {
     Input,
     Checkbox,
     Menu,
-    Switch
+    Switch,
+    Drawer: Modal
   }
 };
 
