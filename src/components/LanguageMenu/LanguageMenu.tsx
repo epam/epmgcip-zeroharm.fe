@@ -132,7 +132,6 @@ export const LanguageMenu: FC = () => {
         rootProps={{
           sx: isOpenOnMobile ? { transform: "translate3d(0, 56px, 0) !important" } : undefined
         }}
-        sx={isOpenOnMobile ? { transformOrigin: "top !important" } : undefined}
         motionProps={
           isMobileWidth
             ? {
