@@ -39,7 +39,7 @@ export const Notification: FC<NotificationTypeProps> = ({ result, type, isOpen, 
               name={`harm-${result}`}
               color={color}
             />
-            <Text lineHeight={"medium"}>{ notificationTitle }</Text>
+            <Text lineHeight="medium">{ notificationTitle }</Text>
             <ModalCloseButton
               size="lg"
               fontSize="18px"
