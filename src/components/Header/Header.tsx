@@ -19,7 +19,7 @@ export const Header: FC = () => {
     <Box
       as="header"
       pos="fixed"
-      zIndex="1200"
+      zIndex="sticky"
       h={{ base: "56px", md: "64px" }}
     >
       <Flex

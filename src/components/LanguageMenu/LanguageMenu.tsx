@@ -69,7 +69,7 @@ export const LanguageMenu: FC = () => {
       onClose={onClose}
     >
       <MenuButton
-        zIndex={2}
+        zIndex="1"
         h={isOpenOnMobile ? "56px" : "initial"}
         pos={isOpenOnMobile ? "fixed" : "initial"}
         top="0"
@@ -105,7 +105,7 @@ export const LanguageMenu: FC = () => {
           <Flex
             w="calc(100vw - 56px)"
             h="56px"
-            zIndex="2"
+            zIndex="1"
             className="bg-colored"
             color="inherit"
             pl="8px"
