@@ -41,15 +41,15 @@ const CardSubHeading = chakra(Box, {
     opacity: "0.6",
     textTransform: "uppercase",
     fontWeight: "700",
-    fontSize: "14px"
+    fontSize: "small",
+    lineHeight: "small"
   }
 });
 const CardHeading = chakra(Box, {
   baseStyle: {
-    textTransform: "uppercase",
     fontWeight: "700",
-    fontSize: "28px",
-    lineHeight: "36px"
+    fontSize: "headers.h3",
+    lineHeight: "headers.h3"
   }
 });
 
