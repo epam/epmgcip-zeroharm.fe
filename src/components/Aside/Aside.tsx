@@ -9,7 +9,7 @@ export const Aside = () => {
       p="0 20px 15px 24px"
       direction="column"
       gap="24px"
-      height="calc(100vh - 64px)"
+      height="100%"
     >
       <LocationSelect />
       <Tabs />

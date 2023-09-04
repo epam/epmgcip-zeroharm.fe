@@ -1,33 +1,33 @@
 import { FC } from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import { Box } from "@chakra-ui/react";
-import { Header } from "../Header/Header";
+import { Outlet } from "react-router-dom";
+import { Flex, Box } from "@chakra-ui/react";
+import { useDetectWidth, useDetectPage } from "@Hooks";
 import { Footer } from "../Footer/Footer";
+import { Header } from "../Header/Header";
 
 export const MainLayout: FC = () => {
-  const { pathname } = useLocation();
+  const { isMapPage, isAboutPage } = useDetectPage();
+  const { isLargerThan1024, isLargerThan600 } = useDetectWidth();
 
-  const isMapPage = pathname === "/map";
-  const isHomePage = pathname === "/";
-  const isRenderFooter = !isMapPage;
-  const containerStyleWithAside = {
-    pb: isMapPage ? "initial" : "77px",
-    h: isHomePage ? "100vh" : "initial"
-  };
+  const shouldRenderFooter = !isMapPage || (isMapPage && !isLargerThan1024);
+  const footerVariantAboutPage = isLargerThan600 ? "fixed" : "static";
+  const footerVariant = isAboutPage ? footerVariantAboutPage : "static";
 
   return (
-    <>
+    <Flex
+      direction="column"
+      height="100vh"
+    >
       <Header />
       <Box
         w="100%"
         pt="64px"
-        {...containerStyleWithAside}
       >
         <Outlet />
       </Box>
-      { isRenderFooter && (
-        <Footer />
+      { shouldRenderFooter && (
+        <Footer variant={footerVariant} />
       ) }
-    </>
+    </Flex>
   );
 };

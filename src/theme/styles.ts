@@ -6,7 +6,11 @@ export const styles = {
       display: "flex",
       flexDirection: "column",
       height: "100%",
-      minHeight: "100vh"
+      minHeight: "100vh",
+
+      "--headerHeight": "64px",
+      "--footerHeight": "76px",
+      "--footerMargin": "16px"
     },
     "html, body, header, footer": {
       backgroundColor: "gray.900",
@@ -16,10 +20,10 @@ export const styles = {
       w: "100%"
     },
     footer: {
-      zIndex: "sticky",
-      px: "24px",
-      py: "16px",
-      height: "76px"
+      minHeight: {
+        base: "initial",
+        md: "76px"
+      }
     },
     a: {
       color: "white"

@@ -1,4 +1,7 @@
+export const minTabletWidth = "600px";
+export const minDesktopWidth = "1024px";
+
 export const breakpoints = {
-  md: "600px",
-  lg: "1024px"
+  md: minTabletWidth,
+  lg: minDesktopWidth
 };

@@ -18,7 +18,9 @@
       "@Pages/*": ["./src/pages"],
       "@Pages": ["./src/pages"],
       "@Store/*": ["./src/store/*"],
-      "@Store": ["./src/store"]
+      "@Store": ["./src/store"],
+      "@Theme/*": ["./src/theme/*"],
+      "@Theme": ["./src/theme"]
     }
   }
 }
