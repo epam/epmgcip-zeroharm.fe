@@ -1,5 +1,6 @@
 export * from "./Aside/Aside";
 export * from "./BaseModal/BaseModal";
+export * from "./FormModal/FormModal";
 export * from "./BaseSelect/BaseSelect";
 export * from "./Form/Form";
 export * from "./Greetings/Greetings";

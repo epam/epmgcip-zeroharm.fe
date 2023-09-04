@@ -1,8 +1,7 @@
 import { FC } from "react";
 import { Button, useDisclosure } from "@chakra-ui/react";
 import { t } from "i18next";
-import { BaseModal } from "../BaseModal/BaseModal";
-import { Form } from "../Form/Form";
+import { FormModal } from "../FormModal/FormModal";
 import { ReactComponent as ThumbIcon } from "@Assets/icons/stroke/harm-thumb.svg";
 
 export const FeedbackButton: FC = () => {
@@ -18,13 +17,10 @@ export const FeedbackButton: FC = () => {
       >
         { t("pages.footer.button") }
       </Button>
-      <BaseModal
+      <FormModal
         isOpen={isOpen}
         onClose={onClose}
-        title={t("pages.form.title")}
-      >
-        <Form />
-      </BaseModal>
+      />
     </>
   );
 };
