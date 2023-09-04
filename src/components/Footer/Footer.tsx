@@ -6,7 +6,6 @@ import { FooterContent } from "./FooterContent";
 
 const FooterStatic = chakra(Box, {
   baseStyle: {
-    position: "relative",
     marginTop: "auto"
   }
 });
@@ -24,8 +23,8 @@ const FooterAsCard = chakra(Box, {
     position: "absolute",
     bottom: 0,
     left: 0,
-    borderRadius: 8,
     zIndex: "sticky",
+    borderRadius: 8,
     margin: "var(--footerMargin)",
     width: `calc(100% - ${"var(--footerMargin)"} - ${"var(--footerMargin)"})`
   }
@@ -54,11 +53,14 @@ export const Footer: FC<FooterProps> = ({ variant = "static" }) => {
       bg="gray.900"
     >
       { showDivider && (
-        <Divider variant="positioned" />
+        <Divider />
       ) }
       <Flex
-        w="100%"
         h="100%"
+        p={{
+          base: "16px",
+          lg: "16px 24px"
+        }}
         m="auto"
         align="center"
         justify="space-between"

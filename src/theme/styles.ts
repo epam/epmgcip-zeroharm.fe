@@ -14,11 +14,8 @@ export const styles = {
       backgroundColor: "gray.900",
       color: "white"
     },
-    "header, footer": {
-      w: "100%",
-      zIndex: "sticky"
-    },
     "header": {
+      w: "100%",
       height: "64px",
       p: "16px 24px"
     },
@@ -26,10 +23,6 @@ export const styles = {
       minHeight: {
         base: "initial",
         md: "76px"
-      },
-      p: {
-        base: "16px",
-        lg: "16px 24px"
       }
     },
     a: {
