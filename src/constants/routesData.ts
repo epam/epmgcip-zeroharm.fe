@@ -1,21 +1,24 @@
+export const routes = {
+  main: "/",
+  map: "/map",
+  about: "/about"
+};
+
 export const routesData = [
   {
-    routeId: "home",
-    routePath: "/",
+    routePath: routes.main,
     routeName: {
       translationPath: "pages.home.name"
     }
   },
   {
-    routeId: "map",
-    routePath: "/map",
+    routePath: routes.map,
     routeName: {
       translationPath: "pages.map.name"
     }
   },
   {
-    routeId: "about",
-    routePath: "/about",
+    routePath: routes.about,
     routeName: {
       translationPath: "pages.about.name"
     }
