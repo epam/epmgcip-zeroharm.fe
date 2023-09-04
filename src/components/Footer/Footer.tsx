@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Flex, Box, Divider, chakra } from "@chakra-ui/react";
-import { FeedbackButton } from "@Components";
+import { FeedbackButton } from "../FeedbackButton/FeedbackButton";
 import { useDetectWidth } from "@Hooks";
 import { FooterContent } from "./FooterContent";
 
@@ -13,7 +13,7 @@ const FooterStatic = chakra(Box, {
 const FooterFixed = chakra(Box, {
   baseStyle: {
     position: "fixed",
-    width: "100vw",
+    width: "100%",
     bottom: "0"
   }
 });
@@ -23,7 +23,7 @@ const FooterAsCard = chakra(Box, {
     position: "absolute",
     bottom: 0,
     left: 0,
-    zIndex: "sticky",
+    zIndex: 1,
     borderRadius: 8,
     margin: "var(--footerMargin)",
     width: `calc(100% - ${"var(--footerMargin)"} - ${"var(--footerMargin)"})`
