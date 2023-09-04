@@ -36,7 +36,7 @@ const FooterTypes = {
 };
 
 type FooterProps = {
-  variant : keyof typeof FooterTypes,
+  variant?: keyof typeof FooterTypes,
 };
 
 export const Footer: FC<FooterProps> = ({ variant = "static" }) => {
