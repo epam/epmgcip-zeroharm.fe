@@ -15,6 +15,7 @@ export const styles = {
       color: "white"
     },
     "header": {
+      zIndex: "sticky",
       w: "100%",
       height: "64px",
       p: "16px 24px"
