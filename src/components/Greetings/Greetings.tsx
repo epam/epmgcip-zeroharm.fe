@@ -5,17 +5,19 @@ import { ReactComponent as Circles } from "@Assets/images/circles.svg";
 export const Greetings = () => {
   return (
     <Flex
-      p="120px 80px 0 80px"
+      pt="155px"
       direction="column"
       gap="32px"
       alignItems="flex-end"
       position="relative"
+      flex="1"
+      maxW="500px"
     >
       <Box
         zIndex="1"
         position="absolute"
-        top="-25px"
-        right="125px"
+        top="68px"
+        left="0px"
       >
         <Circles />
       </Box>

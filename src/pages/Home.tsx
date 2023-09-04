@@ -5,7 +5,8 @@ export const Home = () => {
   return (
     <Container
       as="main"
-      maxW="1280px"
+      maxW="1176px"
+      p="0px 28px"
     >
       <Flex justifyContent="space-between">
         <Selector />
