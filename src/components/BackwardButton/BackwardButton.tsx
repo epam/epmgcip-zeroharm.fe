@@ -12,8 +12,8 @@ export const BackwardButton: FC<BackwardButtonProps> = ({ as }) => {
   return (
     <Flex
       as={as}
-      w="56px"
-      h="56px"
+      w="var(--headerMobileHeight)"
+      h="var(--headerMobileHeight)"
       align="center"
       justify="center"
       bg={bg}

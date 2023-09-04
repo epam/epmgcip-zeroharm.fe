@@ -70,7 +70,6 @@ export const LanguageMenu: FC = () => {
     >
       <MenuButton
         zIndex="1"
-        h={isOpenOnMobile ? "56px" : "initial"}
         pos={isOpenOnMobile ? "fixed" : "initial"}
         top="0"
         left="0"
@@ -103,15 +102,15 @@ export const LanguageMenu: FC = () => {
       {
         isOpenOnMobile &&
           <Flex
-            w="calc(100vw - 56px)"
-            h="56px"
+            w="calc(100vw - var(--headerMobileHeight))"
+            h="var(--headerMobileHeight)"
             zIndex="1"
             className="bg-colored"
             color="inherit"
             pl="8px"
             pos="fixed"
             top="0"
-            left="56px"
+            left="var(--headerMobileHeight)"
             align="center"
             fontWeight="bold"
           >
@@ -127,10 +126,10 @@ export const LanguageMenu: FC = () => {
         }}
         py="0"
         mt={{ md: "12px" }}
-        minH={isOpenOnMobile ? "calc(100vh - 56px)" : "initial"}
+        minH={isOpenOnMobile ? "calc(100vh - var(--headerMobileHeight))" : "initial"}
         borderRadius={{ base: "0", md: "8px" }}
         rootProps={{
-          sx: isOpenOnMobile ? { transform: "translate3d(0, 56px, 0) !important" } : undefined
+          sx: isOpenOnMobile ? { transform: "translate3d(0, var(--headerMobileHeight), 0) !important" } : undefined
         }}
         motionProps={
           isMobileWidth
