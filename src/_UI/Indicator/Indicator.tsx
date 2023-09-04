@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
 import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
 import { t } from "i18next";
-import { Progress } from "@UI";
+import { Progress } from "../Progress/Progress";
 import { ReactComponent as InfoFill } from "@Assets/icons/filled/harm-info-fill.svg";
 
 type IndexDateType = {

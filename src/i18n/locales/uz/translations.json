@@ -225,5 +225,19 @@
     "air_quality": "Havo sifati"
   },
   "indicators": "Boshqa parametrlar",
-  "detailed_info": "Batafsil ma'lumot"
+  "detailed_info": "Batafsil ma'lumot",
+  "notifications": {
+    "form_without_response": {
+      "title": "Rahmat!",
+      "text": "Sizning fikr-mulohazalaringiz xizmatni yaxshilashga yordam beradi!"
+    },
+    "form_with_response": {
+      "title": "Rahmat!",
+      "text": "Biz sizning elektron pochtangizga albatta javob beramiz."
+    },
+    "unavailable_data": {
+      "title": "Kechirasiz, maʼlumotlar mavjud emas",
+      "text": "Sahifaga keyinroq kirishga harakat qiling."
+    }
+  }
 }

@@ -1,5 +1,6 @@
 export * from "./Aside/Aside";
 export * from "./BaseModal/BaseModal";
+export * from "./FormModal/FormModal";
 export * from "./BaseSelect/BaseSelect";
 export * from "./Footer/Footer";
 export * from "./Form/Form";
@@ -19,6 +20,7 @@ export * from "./ThemeSwitcher/ThemeSwitcher";
 export * from "./ThemeToggler/ThemeToggler";
 export * from "./Footer/Footer";
 export * from "./Footer/FooterCard";
+export * from "./Footer/FooterContent";
 export * from "./MainLayout/MainLayout";
 export * from "./Logo/Logo";
 export * from "./Navigation/Navbar/Navbar";
