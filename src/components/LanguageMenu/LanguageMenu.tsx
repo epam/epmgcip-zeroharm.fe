@@ -1,10 +1,10 @@
 import { FC } from "react";
-import { Menu, MenuButton, MenuList, MenuItem, HStack, Text, Icon as ChakraIcon, useMediaQuery, Flex, useDisclosure } from "@chakra-ui/react";
+import { Menu, MenuButton, MenuList, MenuItem, HStack, Text, Icon as ChakraIcon, Flex, useDisclosure } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { Variants } from "framer-motion";
 import { useDataStore } from "@Store/useDataStore";
 import { Icon } from "@UI";
-import { useScreenScrollController } from "@Hooks";
+import { useDetectWidth, useScreenScrollController } from "@Hooks";
 import { resolveTranslationPath } from "@Helpers";
 import { languagesData } from "@Constants";
 import { BackwardButton } from "@Components";
@@ -51,7 +51,7 @@ export const LanguageMenu: FC = () => {
 
   const { i18n, t } = useTranslation();
 
-  const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
+  const { isLargerThan600 } = useDetectWidth();
   const isMobileWidth = !isLargerThan600;
   const isOpenOnMobile = isOpen && isMobileWidth;
 

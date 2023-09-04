@@ -1,10 +1,11 @@
 import { FC, useEffect } from "react";
-import { Flex, Box, HStack, useMediaQuery, useDisclosure, Spacer, IconButton } from "@chakra-ui/react";
+import { Flex, Box, HStack, useDisclosure, Spacer, IconButton } from "@chakra-ui/react";
 import { LanguageMenu, ThemeToggler, Logo, Navbar, MobileNavbar } from "@Components";
+import { useDetectWidth } from "@Hooks";
 import { ReactComponent as HamburgerIcon } from "@Assets/icons/stroke/harm-hamburger-button.svg";
 
 export const Header: FC = () => {
-  const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
+  const { isLargerThan600 } = useDetectWidth();
   const isMobileWidth = !isLargerThan600;
 
   const { isOpen, onOpen, onClose } = useDisclosure();
