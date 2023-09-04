@@ -10,8 +10,9 @@ module.exports = {
       "@Helpers": path.resolve(__dirname, "src/helpers"),
       "@Hooks": path.resolve(__dirname, "src/hooks"),
       "@UI": path.resolve(__dirname, "src/_UI"),
+      "@Pages": path.resolve(__dirname, "src/pages"),
       "@Store": path.resolve(__dirname, "src/store"),
-      "@Pages": path.resolve(__dirname, "src/pages")
+      "@Theme": path.resolve(__dirname, "src/theme")
     },
     configure: webpackConfig => {
       webpackConfig.module.rules[1].oneOf[2] = {

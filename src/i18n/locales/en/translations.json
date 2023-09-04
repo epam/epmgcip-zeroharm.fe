@@ -249,5 +249,19 @@
     "pressure": "Air Pressure"
   },
   "indicators": "Other indicators",
-  "detailed_info": "Detailed Information"
+  "detailed_info": "Detailed Information",
+  "notifications": {
+    "form_without_response": {
+      "title": "Thank you!",
+      "text": "Your feedbacks help to make the service better!"
+    },
+    "form_with_response": {
+      "title": "Thank you!",
+      "text": "We will definitely send a response to the specified e-mail."
+    },
+    "unavailable_data": {
+      "title": "Sorry, data is not available",
+      "text": "Try to visit the page later."
+    }
+  }
 }

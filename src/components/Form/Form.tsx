@@ -1,18 +1,6 @@
-import { useEffect } from "react";
+import { Dispatch, FC, SetStateAction, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import {
-  Box,
-  FormErrorMessage,
-  FormLabel,
-  FormControl,
-  Input,
-  Button,
-  Textarea,
-  Checkbox,
-  Flex,
-  Tooltip,
-  Divider
-} from "@chakra-ui/react";
+import { Box, FormErrorMessage, FormLabel, FormControl, Input, Button, Textarea, Checkbox, Flex, Tooltip, Divider } from "@chakra-ui/react";
 import { t } from "i18next";
 import { InputLabel } from "@UI";
 import { ReactComponent as Hint } from "@Assets/icons/stroke/harm-hint.svg";
@@ -24,7 +12,12 @@ type FormData = {
   response: boolean;
 };
 
-export const Form = () => {
+type FormProps = {
+  submitForm: Dispatch<SetStateAction<boolean>>;
+  setIsSubmittedWithResponse: Dispatch<SetStateAction<boolean>>;
+};
+
+export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) => {
   const {
     handleSubmit,
     register,
@@ -37,7 +30,10 @@ export const Form = () => {
   const requiredErrorMessage = t("pages.form.required_notification");
   const invalidInputErrorMessage = t("pages.form.incorrectly_notification");
 
-  const onSubmit: SubmitHandler<FormData> = (values: FormData) => {};
+  const onSubmit: SubmitHandler<FormData> = (values: FormData) => {
+    submitForm(true);
+    setIsSubmittedWithResponse(watchResponse);
+  };
 
   const watchResponse = watch("response", false);
 
@@ -71,7 +67,7 @@ export const Form = () => {
           {...register("name", {
             validate: {
               required,
-              pattern: value => {
+              pattern: (value) => {
                 if (value && watchResponse && !/^[A-Za-z А-Яа-я-,'.]{2,50}$/.test(value))
                   return invalidInputErrorMessage;
               }
