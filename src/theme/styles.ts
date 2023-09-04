@@ -7,9 +7,9 @@ export const styles = {
       flexDirection: "column",
       height: "100%",
       minHeight: "100vh",
-
       "--headerHeight": "64px",
-      "--footerHeight": "76px",
+      "--headerMobileHeight": "56px",
+      "--footerHeight": "77px",
       "--footerMargin": "16px"
     },
     "html, body, header, footer": {
@@ -18,12 +18,6 @@ export const styles = {
     },
     "header, footer": {
       w: "100%"
-    },
-    footer: {
-      minHeight: {
-        base: "initial",
-        md: "76px"
-      }
     },
     a: {
       color: "white"
