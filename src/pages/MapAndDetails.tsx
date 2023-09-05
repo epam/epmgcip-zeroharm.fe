@@ -4,7 +4,7 @@ import { Aside, Map, Footer } from "@Components";
 import { useDetectWidth } from "@Hooks";
 
 const containerHeight = {
-  base: "calc(100vh - 56px - var(--footerHeight))",
+  base: "auto",
   md: "calc(100vh - var(--headerHeight) - var(--footerHeight))",
   lg: "calc(100vh - var(--headerHeight))"
 };
@@ -18,12 +18,27 @@ export const MapAndDetails: FC = () => {
       maxW="1440px"
       mx="auto"
       flex="1"
+      direction={{
+        base: "column",
+        md: "row"
+      }}
+      align={{
+        base: "center",
+        md: "initial"
+      }}
     >
       <Aside />
 
       <Box
         as="main"
-        height="100%"
+        height={{
+          base: "400px",
+          md: "100%"
+        }}
+        w={{
+          base: "100%",
+          md: "auto"
+        }}
         flex="1"
         pos="relative"
       >

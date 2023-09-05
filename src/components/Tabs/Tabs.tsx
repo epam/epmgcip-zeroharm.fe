@@ -64,8 +64,12 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
       overflowY="hidden"
       display="flex"
       flexDirection="column"
+      gap={{
+        base: "16px",
+        lg: "24px"
+      }}
     >
-      <TabList pb="24px">
+      <TabList>
         { tabs.map(({ tabId, tabName }) => (
           <Tab
             key={tabId}
@@ -107,7 +111,7 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
             key={tabId}
             display="flex"
             flexDirection="column"
-            gap="24px"
+            gap="16px"
             p="0"
             pr={isScrollVisible ? "20px" : "4px"}
           >

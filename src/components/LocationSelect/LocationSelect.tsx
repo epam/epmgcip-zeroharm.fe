@@ -38,7 +38,6 @@ export const LocationSelect: FC = () => {
 
   return (
     <InputGroup
-      mt="8px"
       zIndex="1"
       pr="4px"
     >
