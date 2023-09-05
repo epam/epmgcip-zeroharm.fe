@@ -72,25 +72,25 @@ export const Card: FC<CardType> = ({
     <>
       <CardHeader
         bg={`${color}.500`}
-        minHeight={{base: "120px", md: "150px"}}
-        padding={{base: "16px", md: "24px"}}
+        minHeight={{ base: "120px", md: "150px" }}
+        padding={{ base: "16px", md: "24px" }}
       >
         <CardText>
           <CardSubHeading
-            fontSize={{base: "tiny", md: "small"}}
-            lineHeight={{base: "tiny", md: "small"}}
+            fontSize={{ base: "tiny", md: "small" }}
+            lineHeight={{ base: "tiny", md: "small" }}
           >
             { subheading }
           </CardSubHeading>
           <CardHeading
-            fontSize={{base: "22px", md: "headers.h3"}}
-            lineHeight={{base: "headers.h4", md: "headers.h3"}}
+            fontSize={{ base: "22px", md: "headers.h3" }}
+            lineHeight={{ base: "headers.h4", md: "headers.h3" }}
           >
             { heading }
           </CardHeading>
         </CardText>
         <CardIconBox
-          w={{base: "96px", md: "122px"}}
+          w={{ base: "96px", md: "122px" }}
         >
           <Icon
             type="forcards"
@@ -101,7 +101,7 @@ export const Card: FC<CardType> = ({
       <CardBody
         bg={`${color}.50`}
         h={height}
-        padding={{base: "16px", md: "24px"}}
+        padding={{ base: "16px", md: "24px" }}
       >
         { children }
       </CardBody>

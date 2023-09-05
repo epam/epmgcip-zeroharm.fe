@@ -8,13 +8,13 @@ export const Greetings = () => {
 
   return (
     <Flex
-      pt={{base: "0px", lg: "155px"}}
+      pt={{ base: "0px", lg: "155px" }}
       direction="column"
       gap="32px"
       alignItems="flex-end"
       position="relative"
       flex="1"
-      maxW={{base: "100%", lg: "500px"}}
+      maxW={{ base: "100%", lg: "500px" }}
     >
       <Box
         zIndex="1"

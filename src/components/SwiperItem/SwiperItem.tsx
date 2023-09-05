@@ -21,7 +21,7 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
   return (
     <Box
       zIndex="10"
-      maxWidth={{base: "100%", lg: "400"}}
+      maxWidth={{ base: "100%", lg: "400" }}
     >
       <Card
         heading={heading}
@@ -32,14 +32,14 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
         <Text
           fontWeight="700"
           textTransform="uppercase"
-          fontSize={{base: "tiny", md: "small"}}
-          lineHeight={{base: "tiny", md: "small"}}
+          fontSize={{ base: "tiny", md: "small" }}
+          lineHeight={{ base: "tiny", md: "small" }}
         >
           { question }
         </Text>
         <Text
-          fontSize={{base: "small", md: "medium"}}
-          lineHeight={{base: "small", md: "medium"}}
+          fontSize={{ base: "small", md: "medium" }}
+          lineHeight={{ base: "small", md: "medium" }}
           sx={{
             overflow: "hidden",
             whiteSpace: "pre-wrap",
@@ -62,8 +62,8 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
           >
             <Text
               fontWeight="700"
-              fontSize={{base: "small"}}
-              lineHeight={{base: "small"}}
+              fontSize={{ base: "small" }}
+              lineHeight={{ base: "small" }}
             >
               { t("detailed_info") }
             </Text>

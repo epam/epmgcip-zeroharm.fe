@@ -9,16 +9,16 @@ export const Home = () => {
       p="0px 28px"
     >
       <Flex
-        maxW={{base: "343px", md: "472px", lg: "100%"}}
-        flexDirection={{base: "column", lg: "row"}}
+        maxW={{ base: "343px", md: "472px", lg: "100%" }}
+        flexDirection={{ base: "column", lg: "row" }}
         justifyContent="space-between"
-        alignItems={{base: "center", lg: "flex-start"}}
-        gap={{base: "24px", lg: "0px"}}
+        alignItems={{ base: "center", lg: "flex-start" }}
+        gap={{ base: "24px", lg: "0px" }}
         margin="0px auto"
       >
         <Selector />
         <Greetings />
-     </Flex>
+      </Flex>
     </Container>
   );
 };
