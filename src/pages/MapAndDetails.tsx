@@ -1,38 +1,35 @@
+import { FC } from "react";
 import { Flex, Box } from "@chakra-ui/react";
 import { Aside, Map, Footer } from "@Components";
 import { useDetectWidth } from "@Hooks";
 
 const containerHeight = {
+  base: "calc(100vh - 56px - var(--footerHeight))",
   md: "calc(100vh - var(--headerHeight) - var(--footerHeight))",
   lg: "calc(100vh - var(--headerHeight))"
 };
 
-export const MapAndDetails = () => {
+export const MapAndDetails: FC = () => {
   const { isLargerThan1024 } = useDetectWidth();
 
   return (
-    <Flex height={containerHeight}>
-      <Box
-        as="aside"
-        flex="1 0 440px"
-      >
-        <Aside />
-      </Box>
+    <Flex
+      height={containerHeight}
+      maxW="1440px"
+      mx="auto"
+      flex="1"
+    >
+      <Aside />
+
       <Box
         as="main"
         height="100%"
-        flex="1 0 calc(100% - 440px)"
+        flex="1"
+        pos="relative"
       >
-        <Box
-          pos="relative"
-          mx="auto"
-          height={containerHeight}
-        >
-          <Map />
-          { isLargerThan1024 && (
-            <Footer variant="card" />
-          ) }
-        </Box>
+        <Map />
+
+        { isLargerThan1024 && <Footer variant="card" /> }
       </Box>
     </Flex>
   );

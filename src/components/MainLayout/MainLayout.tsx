@@ -21,7 +21,7 @@ export const MainLayout: FC = () => {
       <Header />
       <Box
         w="100%"
-        pt="64px"
+        pt={{ base: "56px", md: "64px" }}
       >
         <Outlet />
       </Box>

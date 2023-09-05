@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef } from "react";
 import {
   Tabs as ChakraTabs,
   Tab,
@@ -21,10 +21,13 @@ const selected = {
   borderBottom: "3px solid white"
 };
 
-export const Tabs = () => {
-  const { parameter, setParameter } = useDataStore();
+type TabsProps = {
+  isScrollVisible: boolean;
+  setIsScrollVisible: (isScrollVisible: boolean) => void;
+}
 
-  const [ isScrollVisible, setIsScrollVisible ] = useState(false);
+export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => {
+  const { parameter, setParameter } = useDataStore();
 
   const tabPanelsRef = useRef(null);
   const tabPanelsNode = tabPanelsRef.current;
