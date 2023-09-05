@@ -31,7 +31,7 @@ export const Header: FC = () => {
         align="center"
         maxW="1440px"
         mx="auto"
-        px="24px"
+        px={{ base: "16px", lg: "24px" }}
       >
         <Logo />
 
