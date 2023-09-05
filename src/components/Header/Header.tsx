@@ -29,7 +29,7 @@ export const Header: FC = () => {
       <Flex
         h="full"
         align="center"
-        maxW="1440px"
+        maxW="var(--maxContentWidth)"
         mx="auto"
         px={{ base: "16px", lg: "24px" }}
       >

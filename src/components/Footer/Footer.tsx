@@ -67,7 +67,7 @@ export const Footer: FC<FooterProps> = ({ variant = "static" }) => {
         m="auto"
         align="center"
         justify="space-between"
-        maxWidth={isVariantCard ? "none" : "1440px"}
+        maxWidth={isVariantCard ? "none" : "var(--maxContentWidth)"}
       >
         <FooterContent />
 

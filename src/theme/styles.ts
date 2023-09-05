@@ -6,7 +6,8 @@ export const styles = {
       "--headerHeight": "64px",
       "--headerMobileHeight": "56px",
       "--footerHeight": "77px",
-      "--footerMargin": "16px"
+      "--footerMargin": "16px",
+      "--maxContentWidth": "1440px"
     },
     "#root": {
       display: "flex",
