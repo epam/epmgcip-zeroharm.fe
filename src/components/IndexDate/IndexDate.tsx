@@ -3,8 +3,9 @@ import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
 import { t } from "i18next";
 import { Wrapper, Progress } from "@UI";
 import { indexesConfig, groupsColors, ParametersAliasesKeyType } from "@Constants";
-import { getDate, getCardData } from "@Helpers";
+import { getCardData } from "@Helpers";
 import { useParameterData } from "@Hooks";
+import {useDataStore} from "@Store/useDataStore";
 import { ReactComponent as InfoFill } from "@Assets/icons/filled/harm-info-fill.svg";
 
 type IndexDateType = {
@@ -13,8 +14,8 @@ type IndexDateType = {
 
 export const IndexDate: FC<IndexDateType> = ({ children }) => {
   const { parameter, currentParameterValue } = useParameterData();
+  const { fetchingDate } = useDataStore();
 
-  const currentTimeAndDAte = getDate();
   const { heading } = getCardData(currentParameterValue, parameter as ParametersAliasesKeyType) ?? "";
   const indexGroups = indexesConfig[parameter as ParametersAliasesKeyType];
   const absoluteMin = indexGroups?.[0]?.range?.min;
@@ -44,7 +45,7 @@ export const IndexDate: FC<IndexDateType> = ({ children }) => {
             />
           </Tooltip>
         </Flex>
-        <Box color="gray.400">{ currentTimeAndDAte }</Box>
+        <Box color="gray.400">{ fetchingDate }</Box>
       </Flex>
       <Flex
         justifyContent="space-between"
