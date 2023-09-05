@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import { t } from "i18next";
-import { BiRightArrowAlt } from "react-icons/bi";
+import { ReactComponent as RightArrow } from "@Assets/icons/stroke/harm-arrow-right.svg";
 import { Card, CardType } from "@UI";
 import { useDataStore } from "@Store/useDataStore";
 
@@ -29,8 +29,17 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
         iconName={iconName}
         color={color}
       >
-        <Text fontWeight="700">{ question }</Text>
         <Text
+          fontWeight="700"
+          textTransform="uppercase"
+          fontSize={{base: "tiny", md: "small"}}
+          lineHeight={{base: "tiny", md: "small"}}
+        >
+          { question }
+        </Text>
+        <Text
+          fontSize={{base: "small", md: "medium"}}
+          lineHeight={{base: "small", md: "medium"}}
           sx={{
             overflow: "hidden",
             whiteSpace: "pre-wrap",
@@ -49,12 +58,19 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
             alignItems="center"
             justifyContent="flex-end"
             color="gray.950"
+            gap="8px"
           >
-            <Text fontWeight="700">{ t("detailed_info") }</Text>
+            <Text
+              fontWeight="700"
+              fontSize={{base: "small"}}
+              lineHeight={{base: "small"}}
+            >
+              { t("detailed_info") }
+            </Text>
             <Icon
-              width="40px"
-              height="30px"
-              as={BiRightArrowAlt}
+              width="20px"
+              height="20px"
+              as={RightArrow}
             />
           </Flex>
         </Link>
