@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Menu, MenuButton, MenuList, MenuItem, HStack, Text, Icon as ChakraIcon, Flex, useDisclosure } from "@chakra-ui/react";
+import { Menu, MenuButton, MenuList, MenuItem, HStack, Text, Icon as ChakraIcon, Flex, useDisclosure, Center } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { Variants } from "framer-motion";
 import { useDataStore } from "@Store/useDataStore";
@@ -7,7 +7,7 @@ import { Icon } from "@UI";
 import { useDetectWidth, useScreenScrollController } from "@Hooks";
 import { resolveTranslationPath } from "@Helpers";
 import { languagesData } from "@Constants";
-import { BackwardButton } from "@Components";
+import { ReactComponent as LeftArrowIcon } from "@Assets/icons/stroke/harm-arrow-left.svg";
 import { ReactComponent as ArrowDownIcon } from "@Assets/icons/stroke/harm-arrow-down.svg";
 import { ReactComponent as ArrowUpIcon } from "@Assets/icons/stroke/harm-arrow-up.svg";
 
@@ -77,7 +77,12 @@ export const LanguageMenu: FC = () => {
         <HStack spacing={isOpenOnMobile ? "0" : "8px"}>
           {
             isOpenOnMobile
-              ? <BackwardButton as="div" />
+              ? <Center
+                  h="var(--headerMobileHeight)"
+                  w="var(--headerMobileHeight)"
+                >
+                  <LeftArrowIcon width="20px" />
+                </Center>
               : <Icon
                   type="flags"
                   color="none"
@@ -91,11 +96,11 @@ export const LanguageMenu: FC = () => {
             { t("lang.code") }
           </Text>
 
-            <ChakraIcon
-              as={isOpen ? ArrowUpIcon : ArrowDownIcon}
-              width={4}
-              display={isOpenOnMobile ? "none" : "initial"}
-            />
+          <ChakraIcon
+            as={isOpen ? ArrowUpIcon : ArrowDownIcon}
+            width={4}
+            display={isOpenOnMobile ? "none" : "initial"}
+          />
         </HStack>
       </MenuButton>
 

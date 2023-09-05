@@ -23,7 +23,6 @@ export * from "./MainLayout/MainLayout";
 export * from "./Logo/Logo";
 export * from "./Navigation/Navbar/Navbar";
 export * from "./Navigation/MobileNavbar/MobileNavbar";
-export * from "./BackwardButton/BackwardButton";
 export * from "./MainLayout/MainLayout";
 export * from "./FeedbackButton/FeedbackButton";
 export * from "./Footer/Footer";
