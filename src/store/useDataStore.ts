@@ -28,7 +28,7 @@ interface IDataStore {
   setParameter: (parameter: string) => void;
   setParameters: (parameters: ParametersType) => void;
   setAirComponents: (airComponents: AirComponentsType) => void;
-  setFetchingDate:(date: string) => void;
+  setFetchingDate: (date: string) => void;
 }
 
 const parametersInitial = {
