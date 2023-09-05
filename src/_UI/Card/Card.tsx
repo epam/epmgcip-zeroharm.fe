@@ -15,9 +15,7 @@ const CardHeader = chakra(Flex, {
   baseStyle: {
     flexDirection: "column",
     borderRadius: "8px 8px 0 0",
-    padding: "24px",
-    position: "relative",
-    minHeight: "150px"
+    position: "relative"
   }
 });
 const CardBody = chakra(Flex, {
@@ -25,7 +23,6 @@ const CardBody = chakra(Flex, {
     flexDirection: "column",
     gap: "16px",
     borderRadius: "0 0 8px 8px",
-    padding: "24px",
     color: "black"
   }
 });
@@ -40,9 +37,7 @@ const CardSubHeading = chakra(Box, {
   baseStyle: {
     opacity: "0.6",
     textTransform: "uppercase",
-    fontWeight: "700",
-    fontSize: "small",
-    lineHeight: "small"
+    fontWeight: "700"
   }
 });
 const CardHeading = chakra(Box, {
@@ -61,7 +56,7 @@ const CardIconBox = chakra("div", {
     right: "18px",
     top: "50%",
     transform: "translate(0, -50%)",
-    svg: { width: "124px", height: "100%" }
+    svg: { maxW: "124px", w: "100%", height: "100%" }
   }
 });
 
@@ -75,12 +70,28 @@ export const Card: FC<CardType> = ({
 }) => {
   return (
     <>
-      <CardHeader bg={`${color}.500`}>
+      <CardHeader
+        bg={`${color}.500`}
+        minHeight={{base: "120px", md: "150px"}}
+        padding={{base: "16px", md: "24px"}}
+      >
         <CardText>
-          <CardSubHeading>{ subheading }</CardSubHeading>
-          <CardHeading>{ heading }</CardHeading>
+          <CardSubHeading
+            fontSize={{base: "tiny", md: "small"}}
+            lineHeight={{base: "tiny", md: "small"}}
+          >
+            { subheading }
+          </CardSubHeading>
+          <CardHeading
+            fontSize={{base: "22px", md: "headers.h3"}}
+            lineHeight={{base: "headers.h4", md: "headers.h3"}}
+          >
+            { heading }
+          </CardHeading>
         </CardText>
-        <CardIconBox>
+        <CardIconBox
+          w={{base: "96px", md: "122px"}}
+        >
           <Icon
             type="forcards"
             name={iconName}
@@ -90,6 +101,7 @@ export const Card: FC<CardType> = ({
       <CardBody
         bg={`${color}.50`}
         h={height}
+        padding={{base: "16px", md: "24px"}}
       >
         { children }
       </CardBody>

@@ -9,7 +9,7 @@ export const Home = () => {
       p="0px 28px"
     >
       <Flex
-        maxW={{base: "472px", lg: "100%"}}
+        maxW={{base: "343px", md: "472px", lg: "100%"}}
         flexDirection={{base: "column", lg: "row"}}
         justifyContent="space-between"
         alignItems={{base: "center", lg: "flex-start"}}
