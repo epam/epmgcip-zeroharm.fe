@@ -1,7 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react";
 import { Swiper } from "../Swiper/Swiper";
-import { ReactComponent as Circles } from "@Assets/images/circles.svg";
 import { useDetectWidth } from "@Hooks";
+import { ReactComponent as Circles } from "@Assets/images/circles.svg";
 
 export const Greetings = () => {
   const { isLargerThan1024 } = useDetectWidth();

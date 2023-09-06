@@ -3,9 +3,9 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import { t } from "i18next";
-import { ReactComponent as RightArrow } from "@Assets/icons/stroke/harm-arrow-right.svg";
-import { Card, CardType } from "@UI";
 import { useDataStore } from "@Store/useDataStore";
+import { Card, CardType } from "@UI";
+import { ReactComponent as RightArrow } from "@Assets/icons/stroke/harm-arrow-right.svg";
 
 type SwiperItemDataT = CardType & {
   question: string;
