@@ -55,21 +55,16 @@ export const Footer: FC<FooterProps> = ({ variant = "static" }) => {
       flexDirection="column"
     >
       { showDivider && <Divider /> }
-
       <Flex
         flex="1"
         w="100%"
-        px={{
-          base: "16px",
-          lg: "24px"
-        }}
-        m="auto"
+        px={{ base: "16px", lg: "24px" }}
         align="center"
+        alignSelf="center"
         justify="space-between"
         maxWidth={isVariantCard ? "none" : "var(--maxContentWidth)"}
       >
         <FooterContent />
-
         { isLargerThan600 && (
           <Box
             pl={{

@@ -34,20 +34,18 @@ export const Header: FC = () => {
         px={{ base: "16px", lg: "24px" }}
       >
         <Logo />
-
         <Spacer />
-
         <HStack gap={{ base: "36px", md: "28px", lg: "32px" }}>
           {
             isMobileWidth
-              ? <MobileNavbar {...{ isOpen, onClose }}/>
+              ? <MobileNavbar
+                  isOpen={isOpen}
+                  onClose={onClose}
+                />
               : <Navbar />
           }
-
           <LanguageMenu />
-
           <ThemeToggler />
-
           <IconButton
             variant="iconButton"
             aria-label="hamburger button"

@@ -31,7 +31,6 @@ export const MainLayout: FC = () => {
           <Footer variant={footerVariant} />
         ) }
       </Flex>
-
       <FormModal />
     </>
   );

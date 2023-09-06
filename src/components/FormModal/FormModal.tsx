@@ -12,12 +12,6 @@ export const FormModal: FC = () => {
   const { isFormModalActive, toggleIsFormModalActive } = useDataStore();
   const { isOpen, onClose, onOpen } = useDisclosure();
 
-  useEffect(() => {
-    if (isFormModalActive) {
-      onOpen();
-    }
-  }, [isFormModalActive]);
-
   const closeHandler = () => {
     onClose();
     toggleIsFormModalActive();
@@ -27,6 +21,12 @@ export const FormModal: FC = () => {
     closeHandler();
     setIsFormSubmitted(false);
   };
+
+  useEffect(() => {
+    if (isFormModalActive) {
+      onOpen();
+    }
+  }, [isFormModalActive]);
 
   return (
     <>

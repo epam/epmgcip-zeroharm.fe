@@ -89,13 +89,11 @@ export const LanguageMenu: FC = () => {
                   name={`harm-lang-flag-${i18n.language}`}
                 />
           }
-
           <Text
             display={{ base: "none", lg: "initial" }}
           >
             { t("lang.code") }
           </Text>
-
           <ChakraIcon
             as={isOpen ? ArrowUpIcon : ArrowDownIcon}
             width={4}
@@ -103,7 +101,6 @@ export const LanguageMenu: FC = () => {
           />
         </HStack>
       </MenuButton>
-
       {
         isOpenOnMobile &&
           <Flex
@@ -122,7 +119,6 @@ export const LanguageMenu: FC = () => {
             Language
           </Flex>
       }
-
       <MenuList
         minW={{
           base: "100vw",

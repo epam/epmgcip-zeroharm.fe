@@ -26,22 +26,18 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ isOpen, onClose }) => {
             align="center"
           >
             <Logo />
-
             <Spacer />
-
-          <IconButton
-            variant="iconButton"
-            aria-label="hamburger close button"
-            icon={<CloseIcon />}
-            onClick={onClose}
-          />
+            <IconButton
+              variant="iconButton"
+              aria-label="hamburger close button"
+              icon={<CloseIcon />}
+              onClick={onClose}
+            />
           </Flex>
         </DrawerHeader>
-
         <DrawerBody pt="20px">
           <Navbar onClick={onClose} />
         </DrawerBody>
-
         <DrawerFooter
           p="0"
           display="flex"
@@ -49,7 +45,6 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ isOpen, onClose }) => {
           gap="32px"
         >
           <FeedbackButton onClick={onClose} />
-
           <Footer />
         </DrawerFooter>
       </DrawerContent>
