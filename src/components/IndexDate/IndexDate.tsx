@@ -1,12 +1,12 @@
 import { FC, ReactNode } from "react";
-import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { t } from "i18next";
 import { Wrapper, Progress } from "@UI";
 import { indexesConfig, groupsColors, ParametersAliasesKeyType } from "@Constants";
 import { getCardData } from "@Helpers";
 import { useParameterData } from "@Hooks";
 import {useDataStore} from "@Store/useDataStore";
-import { ReactComponent as InfoFill } from "@Assets/icons/filled/harm-info-fill.svg";
+import { TextWithTooltip } from "../TextWithTooltip/TextWithTooltip";
 
 type IndexDateType = {
   children?: ReactNode;
@@ -27,24 +27,11 @@ export const IndexDate: FC<IndexDateType> = ({ children }) => {
         justifyContent="space-between"
         fontSize="12px"
       >
-        <Flex gap="10px">
-          <Text textTransform="uppercase">
-            { t(`indexes.${parameter}`) }
-          </Text>
-          <Tooltip
-            sx={{ borderRadius: "8px", padding: "1rem" }}
-            hasArrow
-            bg="gray.700"
-            label={t(`hints.${parameter}`)}
-            placement="right-start"
-          >
-            <InfoFill
-              width="16px"
-              height="16px"
-              opacity=".5"
-            />
-          </Tooltip>
-        </Flex>
+        <TextWithTooltip
+          label={t(`hints.${parameter}`)}
+          text={t(`indexes.${parameter}`)}
+          fontSize="12px"
+        />
         <Box color="gray.400">{ fetchingDate }</Box>
       </Flex>
       <Flex

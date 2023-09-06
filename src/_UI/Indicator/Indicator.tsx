@@ -1,8 +1,8 @@
 import { FC, ReactNode } from "react";
-import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { t } from "i18next";
+import { TextWithTooltip } from "@Components";
 import { Progress } from "../Progress/Progress";
-import { ReactComponent as InfoFill } from "@Assets/icons/filled/harm-info-fill.svg";
 
 type IndexDateType = {
   title: string;
@@ -17,36 +17,26 @@ export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
 
   return (
     <Flex
-      justifyContent="space-between"
       fontSize="12px"
+      justifyContent="space-between"
       alignItems="center"
       pb="8px"
-      gap="24px"
+      position="relative"
     >
-      <Tooltip
+      <TextWithTooltip
+        fontSize="16px"
         label={label}
-        hasArrow
-        placement="right-start"
-        variant="default"
+        text={title}
+      />
+      <Box
+        pos="absolute"
+        left="96px"
+        w={{
+          base: "119px",
+          md: "103px",
+          lg: "168px"
+        }}
       >
-        <Flex
-          gap="10px"
-          maxWidth="80px"
-          fontSize="16px"
-        >
-          <Text>{ title }</Text>
-          <Box
-            w="24"
-            opacity=".5"
-          >
-            <InfoFill
-              width="16px"
-              height="16px"
-            />
-          </Box>
-        </Flex>
-      </Tooltip>
-      <Box flex="1">
         <Progress
           colorScheme={color}
           value={size}
@@ -62,9 +52,11 @@ export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
           fontWeight="700"
           fontSize="16px"
         >
-          { String(size) }
+          { size }
         </Text>
-        <Text color="gray.400">µg/m³</Text>
+        <Text pos="relative"
+        top="4px"
+        color="gray.400">µg/m³</Text>
       </Flex>
     </Flex>
   );
