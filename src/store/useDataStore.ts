@@ -19,14 +19,18 @@ type AirComponentsType = {
 interface IDataStore {
   location: string;
   language: string;
+  isFormModalActive: boolean;
   parameter: string;
   parameters: ParametersType,
-  airComponents: AirComponentsType
+  fetchingDate: string;
+  airComponents: AirComponentsType;
   setLocation: (location: string) => void;
   setLanguage: (language: string) => void;
+  toggleIsFormModalActive: () => void;
   setParameter: (parameter: string) => void;
-  setParameters: (parameters: ParametersType) => void
-  setAirComponents: (airComponents: AirComponentsType) => void
+  setParameters: (parameters: ParametersType) => void;
+  setAirComponents: (airComponents: AirComponentsType) => void;
+  setFetchingDate: (date: string) => void;
 }
 
 const parametersInitial = {
@@ -49,14 +53,18 @@ export const useDataStore = create<IDataStore>()(
     (set) => ({
       location: "",
       language: "",
+      isFormModalActive: false,
       parameter: "",
       parameters: parametersInitial,
+      fetchingDate: "",
       airComponents: airComponentsInitial,
       setLocation: (location: string) => set({ location }),
       setLanguage: (language: string) => set({ language }),
+      toggleIsFormModalActive: () => set((state) => ({ isFormModalActive: !state.isFormModalActive })),
       setParameter: (parameter: string) => set({ parameter }),
       setParameters: (parameters: ParametersType) => set({ parameters }),
-      setAirComponents: (airComponents: AirComponentsType) => set({ airComponents })
+      setAirComponents: (airComponents: AirComponentsType) => set({ airComponents }),
+      setFetchingDate: (fetchingDate: string) => set({ fetchingDate })
     }),
     {
       name: "language",

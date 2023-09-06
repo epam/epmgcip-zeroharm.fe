@@ -1,26 +1,29 @@
 import { FC } from "react";
-import { Button, useDisclosure } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import { t } from "i18next";
-import { FormModal } from "../FormModal/FormModal";
+import { useDataStore } from "@Store/useDataStore";
 import { ReactComponent as ThumbIcon } from "@Assets/icons/stroke/harm-thumb.svg";
 
-export const FeedbackButton: FC = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+type FeedbackButtonProps = {
+  onClick?: () => void;
+}
+
+export const FeedbackButton: FC<FeedbackButtonProps> = ({ onClick }) => {
+  const { toggleIsFormModalActive } = useDataStore();
+
+  const clickHandler = () => {
+    onClick && onClick();
+    toggleIsFormModalActive();
+  };
 
   return (
-    <>
-      <Button
-        leftIcon={<ThumbIcon />}
-        size="sm"
-        onClick={onOpen}
-        variant="gradient"
-      >
-        { t("pages.footer.button") }
-      </Button>
-      <FormModal
-        isOpen={isOpen}
-        onClose={onClose}
-      />
-    </>
+    <Button
+      leftIcon={<ThumbIcon />}
+      size="sm"
+      onClick={clickHandler}
+      variant="gradient"
+    >
+      { t("pages.footer.button") }
+    </Button>
   );
 };
