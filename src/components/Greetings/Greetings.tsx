@@ -8,7 +8,6 @@ export const Greetings = () => {
 
   return (
     <Flex
-      pt={{ base: "0px", lg: "155px" }}
       direction="column"
       gap="32px"
       alignItems="flex-end"
@@ -19,7 +18,6 @@ export const Greetings = () => {
       <Box
         zIndex="1"
         position="absolute"
-        top="68px"
         left="0px"
       >
         { isLargerThan1024 && <Circles /> }

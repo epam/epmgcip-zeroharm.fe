@@ -20,6 +20,7 @@ export const MainLayout: FC = () => {
     >
       <Header />
       <Box
+        h="100%"
         w="100%"
         pt="64px"
       >

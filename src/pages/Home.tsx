@@ -7,6 +7,9 @@ export const Home = () => {
       as="main"
       maxW="1176px"
       p="0px 28px"
+      h="100%"
+      display="flex"
+      alignItems="center"
     >
       <Flex
         maxW={{ base: "343px", md: "472px", lg: "100%" }}
@@ -14,7 +17,8 @@ export const Home = () => {
         justifyContent="space-between"
         alignItems={{ base: "center", lg: "flex-start" }}
         gap={{ base: "24px", lg: "0px" }}
-        margin="0px auto"
+        margin="10px auto"
+        flex="1"
       >
         <Selector />
         <Greetings />

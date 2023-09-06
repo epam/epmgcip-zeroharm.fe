@@ -11,7 +11,7 @@ export const Selector = () => {
 
   return (
     <Flex
-      pt={{ base: "8px", md: "118px", lg: "123px" }}
+      pt={{ base: "0px", lg: "55px" }}
       direction="column"
       gap={{ base: "8px", lg: "16px" }}
       maxWidth={{ base: "100%", lg: "540px" }}

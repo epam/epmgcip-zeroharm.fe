@@ -22,6 +22,7 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
     <Box
       zIndex="10"
       maxWidth={{ base: "100%", lg: "400" }}
+      pt={{base: "0px", lg: "87px"}}
     >
       <Card
         heading={heading}
