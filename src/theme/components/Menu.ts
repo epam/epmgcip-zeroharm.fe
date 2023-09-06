@@ -27,14 +27,19 @@ export const Menu = defineStyleConfig({
           boxShadow: "none",
           overflow: "hidden",
           border: "none",
+          overflowX: "hidden",
+          overflowY: "auto",
+          maxH: {
+            md: "300px"
+          },
           bg: {
             base: baseBg,
             md: isDark ? "gray.700" : "white"
           }
         },
         item: {
-          h: 12,
-          gap: 3,
+          h: "48px",
+          gap: "12px",
           bg: "transparent",
           color,
           _focus: itemBg,

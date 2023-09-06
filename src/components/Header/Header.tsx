@@ -1,51 +1,59 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { Flex, Spacer, Box } from "@chakra-ui/react";
-import { LanguageMenu } from "../LanguageMenu/LanguageMenu";
-import { ThemeToggler } from "../ThemeToggler/ThemeToggler";
-import logo from "@Assets/images/logo--new.svg";
+import { FC, useEffect } from "react";
+import { Flex, Box, HStack, useDisclosure, Spacer, IconButton } from "@chakra-ui/react";
+import { LanguageMenu, ThemeToggler, Logo, Navbar, MobileNavbar } from "@Components";
+import { useDetectWidth } from "@Hooks";
+import { ReactComponent as HamburgerIcon } from "@Assets/icons/stroke/harm-hamburger-button.svg";
 
 export const Header: FC = () => {
-  const { t } = useTranslation();
+  const { isLargerThan600 } = useDetectWidth();
+  const isMobileWidth = !isLargerThan600;
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  useEffect(() => {
+    if (!isMobileWidth && isOpen) {
+      onClose();
+    }
+  }, [isMobileWidth]);
 
   return (
     <Box
       as="header"
       pos="fixed"
+      zIndex="sticky"
+      h={{
+        base: "var(--headerMobileHeight)",
+        md: "var(--headerHeight)"
+      }}
     >
-      <Flex>
-        <Link to="/">
-          <img
-            src={logo}
-            alt="logo"
-            width={135}
-          />
-        </Link>
+      <Flex
+        h="full"
+        align="center"
+        maxW="var(--maxContentWidth)"
+        mx="auto"
+        px={{ base: "16px", lg: "24px" }}
+      >
+        <Logo />
         <Spacer />
-        <Flex
-          p="4px"
-          gap="32px"
-        >
-          <Flex
-            as="nav"
-            gap="32px"
-          >
-            <Link to="/">
-              { t("pages.home.name") }
-            </Link>
-            <Link to="/map">
-              { t("pages.map.name") }
-            </Link>
-            <Box flexShrink={0}>
-              <Link to="/about">
-                { t("pages.about.name") }
-              </Link>
-            </Box>
-          </Flex>
+        <HStack gap={{ base: "36px", md: "28px", lg: "32px" }}>
+          {
+            isMobileWidth
+              ? <MobileNavbar
+                  isOpen={isOpen}
+                  onClose={onClose}
+                />
+              : <Navbar />
+          }
           <LanguageMenu />
           <ThemeToggler />
-        </Flex>
+          <IconButton
+            variant="iconButton"
+            aria-label="hamburger button"
+            icon={<HamburgerIcon />}
+            display={{ md: "none" }}
+            onClick={onOpen}
+          />
+        </HStack>
       </Flex>
     </Box>
   );

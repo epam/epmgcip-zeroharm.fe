@@ -13,7 +13,6 @@ const FooterStatic = chakra(Box, {
 const FooterFixed = chakra(Box, {
   baseStyle: {
     position: "fixed",
-    width: "100%",
     bottom: "0"
   }
 });
@@ -37,7 +36,7 @@ const FooterTypes = {
 };
 
 type FooterProps = {
-  variant : keyof typeof FooterTypes,
+  variant?: keyof typeof FooterTypes,
 };
 
 export const Footer: FC<FooterProps> = ({ variant = "static" }) => {
@@ -51,20 +50,19 @@ export const Footer: FC<FooterProps> = ({ variant = "static" }) => {
     <FooterContainer
       as="footer"
       bg="gray.900"
+      minH="var(--footerHeight)"
+      display="flex"
+      flexDirection="column"
     >
-      { showDivider && (
-        <Divider />
-      ) }
+      { showDivider && <Divider /> }
       <Flex
-        h="100%"
-        p={{
-          base: "16px",
-          lg: "16px 24px"
-        }}
-        m="auto"
+        flex="1"
+        w="100%"
+        px={{ base: "16px", lg: "24px" }}
         align="center"
+        alignSelf="center"
         justify="space-between"
-        maxWidth={isVariantCard ? "none" : "1440px"}
+        maxWidth={isVariantCard ? "none" : "var(--maxContentWidth)"}
       >
         <FooterContent />
         { isLargerThan600 && (
