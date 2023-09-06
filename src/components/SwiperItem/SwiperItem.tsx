@@ -28,6 +28,7 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
         subheading={subheading}
         iconName={iconName}
         color={color}
+        height={"278px"}
       >
         <Text fontWeight="700">{ question }</Text>
         <Text
@@ -44,6 +45,7 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
         <Link
           to="/map"
           onClick={() => setParameter(parameter)}
+          style={{marginTop: "auto"}}
         >
           <Flex
             alignItems="center"
