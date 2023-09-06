@@ -4,16 +4,17 @@ import { changeLanguage } from "i18next";
 import { Home, MapAndDetails, About, NotFound } from "@Pages";
 import { useDataStore } from "@Store/useDataStore";
 import { useFetch } from "@Hooks";
+import { getDate } from "@Helpers";
 import { MainLayout } from "@Components";
 import "@i18n/i18n";
 
 export const App = () => {
-  const { language, setParameters, setAirComponents } = useDataStore();
+  const { language, setParameters, setAirComponents, setFetchingDate } = useDataStore();
 
   useFetch("/v1/pollutions?station_id=1", (data) => {
     if (data) {
       const { parameters, airComponents } = data;
-
+      setFetchingDate(getDate());
       setParameters(parameters);
       setAirComponents(airComponents);
     }

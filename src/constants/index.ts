@@ -9,3 +9,4 @@ export * from "./locationsData";
 export * from "./languagesData";
 export * from "./notificationData";
 export * from "./common";
+export * from "./routesData";
