@@ -1,4 +1,4 @@
-import { defineStyleConfig } from "@chakra-ui/react";
+import { StyleFunctionProps, defineStyleConfig } from "@chakra-ui/react";
 
 const buttonDefaultStyles = {
   bg: "white",
@@ -47,7 +47,14 @@ export const Button = defineStyleConfig({
       color: "gray.800",
       minWidth: "unset",
       justifyContent: "flex-start"
-    }
+    },
+    iconButton: ({colorMode}: StyleFunctionProps) => ({
+      minW: "none",
+      minH: "none",
+      bg: "transparent",
+      _hover: { bg: "transparent" },
+      color: colorMode === "dark" ? "white" : "gray.900"
+    })
   },
   defaultProps: {
     variant: "default"

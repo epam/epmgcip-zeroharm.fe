@@ -1,17 +1,17 @@
 import { t } from "i18next";
 
-export const resolveTranslationPath = (cardData: any) => {
-  return Object.keys(cardData)?.reduce((translatingCardData, key) => {
+export const resolveTranslationPath = (data: any) => {
+  return Object.keys(data)?.reduce((dataObj, key) => {
 
-    let value = cardData?.[key as KeyType];
+    let value = data?.[key as KeyType];
 
     if (typeof value === "object" && "translationPath" in value) {
       value = t(value?.translationPath);
     }
 
     return {
-      ...translatingCardData,
+      ...dataObj,
       [key]: value
     };
-  }, Object.assign({}, cardData));
+  }, Object.assign({}, data));
 };

@@ -1,30 +1,26 @@
+import { StyleFunctionProps } from "@chakra-ui/react";
+
 export const styles = {
-  global: {
+  global: (props: StyleFunctionProps) => ({
+    html: {
+      "--headerHeight": "64px",
+      "--headerMobileHeight": "56px",
+      "--footerHeight": "77px",
+      "--footerMargin": "16px",
+      "--maxContentWidth": "1440px"
+    },
     "#root": {
       display: "flex",
       flexDirection: "column",
       height: "100%",
-      minHeight: "100vh",
-
-      "--headerHeight": "64px",
-      "--footerHeight": "76px",
-      "--footerMargin": "16px"
+      minHeight: "100vh"
     },
     "html, body, header, footer": {
       backgroundColor: "gray.900",
       color: "white"
     },
-    "header": {
-      zIndex: "sticky",
-      w: "100%",
-      height: "64px",
-      p: "16px 24px"
-    },
-    footer: {
-      minHeight: {
-        base: "initial",
-        md: "76px"
-      }
+    "header, footer": {
+      w: "100%"
     },
     a: {
       color: "white"
@@ -32,6 +28,9 @@ export const styles = {
     ".leaflet-container": {
       width: "100%",
       height: "100vh"
+    },
+    ".bg-colored": {
+      bg: props.colorMode === "dark" ? "gray.900" : "white"
     }
-  }
+  })
 };
