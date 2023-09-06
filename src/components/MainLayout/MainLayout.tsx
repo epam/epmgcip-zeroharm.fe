@@ -24,7 +24,7 @@ export const MainLayout: FC = () => {
         <Box
           h="100%"
           w="100%"
-          pt="64px"
+          pt={{ base: "var(--headerMobileHeight)", md: "var(--headerHeight)" }}
         >
           <Outlet />
         </Box>

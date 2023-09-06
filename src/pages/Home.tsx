@@ -6,7 +6,7 @@ export const Home = () => {
     <Container
       as="main"
       maxW="1176px"
-      p="0px 28px"
+      p={{ base: "8px 16px", md: "24px 28px" }}
       h="100%"
       display="flex"
       alignItems="center"
@@ -17,7 +17,7 @@ export const Home = () => {
         justifyContent="space-between"
         alignItems={{ base: "center", lg: "flex-start" }}
         gap={{ base: "24px", lg: "0px" }}
-        margin="10px auto"
+        margin="0px auto"
         flex="1"
       >
         <Selector />

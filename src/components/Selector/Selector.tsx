@@ -7,7 +7,9 @@ import { ReactComponent as IconLocal } from "@Assets/icons/filled/harm-local.svg
 import { useDetectWidth } from "@Hooks";
 
 export const Selector = () => {
-  const { isLargerThan600 } = useDetectWidth();
+  const { isLargerThan600, isLargerThan1024 } = useDetectWidth();
+
+  const linkWidth = isLargerThan1024 ? "auto" : "100%";
 
   return (
     <Flex
@@ -29,7 +31,7 @@ export const Selector = () => {
       <Heading
         as="h1"
         fontSize={{ base: "headers.h5", md: "headers.h3", lg: "headers.h1" }}
-        lineHeight={{ base: "headers.h5", md: "headers.h3", lg: "headers.h1" }}
+        lineHeight={{ base: "26px", md: "headers.h3", lg: "headers.h1" }}
         textAlign={{ base: "center", lg: "start" }}
         maxW={{ base: "100%", lg: "520px" }}
       >
@@ -37,7 +39,7 @@ export const Selector = () => {
       </Heading>
       <LocationSelect />
       <Flex width="100%" mt={{ base: "8px", lg: "16px" }}>
-        <Link to="/map" style={{ width: "100%" }}>
+        <Link to="/map" style={{ width: `${linkWidth}` }}>
           <Button
             leftIcon={
               isLargerThan600 ? (
