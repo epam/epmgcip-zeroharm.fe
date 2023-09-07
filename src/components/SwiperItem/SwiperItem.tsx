@@ -31,17 +31,7 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
         height="278px"
       >
         <Text fontWeight="700">{ question }</Text>
-        <Text
-          sx={{
-            overflow: "hidden",
-            whiteSpace: "pre-wrap",
-            display: "-webkit-box",
-            WebkitBoxOrient: "vertical",
-            WebkitLineClamp: "7"
-          }}
-        >
-          { text }
-        </Text>
+        <Text>{ text }</Text>
         <Link
           to="/map"
           onClick={() => setParameter(parameter)}
