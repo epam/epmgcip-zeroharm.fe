@@ -28,7 +28,7 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
         subheading={subheading}
         iconName={iconName}
         color={color}
-        height={"278px"}
+        height="278px"
       >
         <Text fontWeight="700">{ question }</Text>
         <Text
