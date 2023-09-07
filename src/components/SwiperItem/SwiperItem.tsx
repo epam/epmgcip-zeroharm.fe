@@ -29,6 +29,7 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
         subheading={subheading}
         iconName={iconName}
         color={color}
+        height="278px"
       >
         <Text
           fontWeight="700"
@@ -41,19 +42,13 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
         <Text
           fontSize={{ base: "small", md: "medium" }}
           lineHeight={{ base: "small", md: "medium" }}
-          sx={{
-            overflow: "hidden",
-            whiteSpace: "pre-wrap",
-            display: "-webkit-box",
-            WebkitBoxOrient: "vertical",
-            WebkitLineClamp: "7"
-          }}
         >
           { text }
         </Text>
         <Link
           to="/map"
           onClick={() => setParameter(parameter)}
+          style={{marginTop: "auto"}}
         >
           <Flex
             alignItems="center"
