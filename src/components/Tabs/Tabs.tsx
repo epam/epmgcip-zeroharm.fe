@@ -12,6 +12,7 @@ import { tabsData } from "@Constants";
 import { Cards } from "@UI";
 import { IndexDate } from "../IndexDate/IndexDate";
 import { Indicators } from "../Indicators/Indicators";
+import { useDetectWidth } from "@Hooks";
 
 const hover = {
   color: "white"
@@ -28,6 +29,10 @@ type TabsProps = {
 
 export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => {
   const { parameter, setParameter } = useDataStore();
+
+  const { isLargerThan1024 } = useDetectWidth();
+
+  const scrollbarPadding = isLargerThan1024 ? "20px" : "12px";
 
   const tabPanelsRef = useRef(null);
   const tabPanelsNode = tabPanelsRef.current;
@@ -73,7 +78,7 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
         { tabs.map(({ tabId, tabName }) => (
           <Tab
             key={tabId}
-            p="0"
+            py="8px"
             borderBottom="2px solid gray"
             color="gray"
             flex="1"
@@ -91,7 +96,7 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
         ref={tabPanelsRef}
         flex="1"
         overflowY="auto"
-        pb="9px"
+        pb={{ base: "0px", lg: "9px" }}
         sx={{
           scrollbarWidth: "thin",
           scrollbarColor: "white #48494D",
@@ -113,7 +118,7 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
             flexDirection="column"
             gap="16px"
             p="0"
-            pr={isScrollVisible ? "20px" : "4px"}
+            pr={isScrollVisible ? scrollbarPadding : "4px"}
           >
             <Cards cardsKey={tabId} />
             <IndexDate />

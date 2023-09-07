@@ -6,15 +6,17 @@ type TextWithTooltipProps = {
   label: string | number;
   text: string | number;
   fontSize: number | string;
+  iconSize: string | number;
 }
 
-export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, fontSize }) => {
+export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, fontSize, iconSize }) => {
 
   return (
     <Tooltip
       label={label}
       hasArrow
       placement="right-start"
+      shouldWrapChildren
     >
       <Flex
         fontSize={fontSize}
@@ -25,12 +27,12 @@ export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, fontSiz
           { text }
         </Text>
         <Center
-          w="12px"
+          w={iconSize}
           opacity=".5"
         >
           <InfoFill
-            width="12px"
-            height="12px"
+            width={iconSize}
+            height={iconSize}
           />
         </Center>
       </Flex>

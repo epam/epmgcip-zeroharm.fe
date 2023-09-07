@@ -18,7 +18,7 @@ export const Indicators: FC<IndexDateType> = ({ children }) => {
   return (
     <Wrapper>
         <Text
-          fontSize="12px"
+          fontSize="tiny"
           fontWeight="700"
           textTransform="uppercase"
           pb={4}

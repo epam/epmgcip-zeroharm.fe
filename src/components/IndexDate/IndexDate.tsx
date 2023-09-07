@@ -23,21 +23,24 @@ export const IndexDate: FC<IndexDateType> = ({ children }) => {
 
   return (
     <Wrapper>
-      <Flex
-        justifyContent="space-between"
-        fontSize="12px"
-      >
+      <Flex justifyContent="space-between">
         <TextWithTooltip
           label={t(`hints.${parameter}`)}
           text={t(`indexes.${parameter}`)}
-          fontSize="12px"
+          fontSize="tiny"
+          iconSize="16px"
         />
-        <Box color="gray.400">{ fetchingDate }</Box>
+        <Box
+          color="gray.400"
+          fontSize="tiny"
+        >
+          { fetchingDate }
+        </Box>
       </Flex>
       <Flex
         justifyContent="space-between"
         gap="10px"
-        p="14px 0 10px"
+        p="16px 0 8px"
         fontSize="16px"
         fontWeight="700"
       >

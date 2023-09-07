@@ -17,7 +17,7 @@ export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
 
   return (
     <Flex
-      fontSize="12px"
+      fontSize="tiny"
       justifyContent="space-between"
       alignItems="center"
       pb="8px"
@@ -27,6 +27,7 @@ export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
         fontSize="16px"
         label={label}
         text={title}
+        iconSize="12px"
       />
       <Box
         pos="absolute"
@@ -54,9 +55,13 @@ export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
         >
           { size }
         </Text>
-        <Text pos="relative"
-        top="4px"
-        color="gray.400">µg/m³</Text>
+        <Text
+          pos="relative"
+          top="4px"
+          color="gray.400"
+        >
+          µg/m³
+        </Text>
       </Flex>
     </Flex>
   );

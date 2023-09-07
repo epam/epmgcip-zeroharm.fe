@@ -22,11 +22,11 @@ export const Aside: FC = () => {
       }}
       p={{
         base: "8px 16px 16px",
-        md: "16px",
+        md: "16px 12px 16px 16px",
         lg: "16px 20px 16px 24px"
       }}
       direction="column"
-      gap="24px"
+      gap="16px"
     >
       <LocationSelect />
 
