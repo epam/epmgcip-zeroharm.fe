@@ -70,8 +70,7 @@ export const Cards: FC<CardsType> = ({ cardsKey }) => {
   const card = getCardData(currentParameterValue, cardsKey);
   const { heading, subheading, tip, text, cardColor, iconName } = card;
   const { isTextCut, cutText } = getCutText(text, LETTERS_LIMIT);
-  const preview = cutText;
-  const cardText = isCardOpen ? text : preview;
+  const cardText = isCardOpen ? text : cutText;
   const btnText = t(isCardOpen ? "pages.map.cards.buttons.hide" : "pages.map.cards.buttons.see_more");
 
   const cards = [card];
