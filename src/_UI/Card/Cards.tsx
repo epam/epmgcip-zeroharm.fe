@@ -14,7 +14,7 @@ type CardsType = {
 
 const CardStep = chakra(Box, {
   baseStyle: {
-    fontSize: "12px",
+    fontSize: "tiny",
     lineHeight: "16px",
     position: "absolute",
     top: "24px",

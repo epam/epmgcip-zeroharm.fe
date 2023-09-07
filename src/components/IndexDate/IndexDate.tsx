@@ -41,7 +41,7 @@ export const IndexDate: FC<IndexDateType> = ({ children }) => {
         justifyContent="space-between"
         gap="10px"
         p="16px 0 8px"
-        fontSize="16px"
+        fontSize="medium"
         fontWeight="700"
       >
         <Text>{ heading }</Text>
