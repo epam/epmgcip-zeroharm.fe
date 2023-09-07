@@ -16,9 +16,7 @@ export const Swiper: FC = () => {
   const currentItem = cardsData?.[currentIndex];
   const { heading, subheading, tip, text, iconName, parameter, cardColor } = currentItem;
 
-  const isTextBig = text.length > LETTERS_LIMIT_SWIPER;
-  const cutText = getCutText(text, LETTERS_LIMIT_SWIPER);
-  const cardText = isTextBig ? cutText : text;
+  const { cutText: cardText } = getCutText(text, LETTERS_LIMIT_SWIPER);
 
   return (
     <SwiperItem
