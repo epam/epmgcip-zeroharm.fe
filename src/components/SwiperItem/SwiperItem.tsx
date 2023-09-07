@@ -21,8 +21,8 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
 
   const { heading, subheading, question, iconName, text, parameter, color } = props;
 
-  const cardHeightSmall = isLargerThan600 ? "238px" : "208px";
-  const cardHeight = isLargerThan1024 ? "262px" : `${cardHeightSmall}`;
+  const cardHeightSmall = isLargerThan600 ? "262px" : "244px";
+  const cardHeight = isLargerThan1024 ? "310px" : `${cardHeightSmall}`;
 
   return (
     <Box
