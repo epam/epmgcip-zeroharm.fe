@@ -22,7 +22,6 @@ export const MainLayout: FC = () => {
       >
         <Header />
         <Box
-          h="100%"
           w="100%"
           pt={{ base: "var(--headerMobileHeight)", md: "var(--headerHeight)" }}
         >

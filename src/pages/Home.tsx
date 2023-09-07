@@ -7,7 +7,10 @@ export const Home = () => {
       as="main"
       maxW="1176px"
       p={{ base: "8px 16px", md: "24px 28px" }}
-      h="100%"
+      minH={{
+        base: "calc(100vh - var(--headerMobileHeight) - var(--footerHeight))",
+        md: "calc(100vh - var(--headerHeight) - var(--footerHeight))"
+      }}
       display="flex"
       alignItems="center"
     >
