@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { SwiperItem } from "../SwiperItem/SwiperItem";
 import { useParameterData, useSwiper } from "@Hooks";
-import { ParametersAliasesKeyType } from "@Constants";
-import { getCardData } from "@Helpers";
+import { LETTERS_LIMIT_SWIPER, ParametersAliasesKeyType } from "@Constants";
+import { getCardData, getCutText } from "@Helpers";
 
 export const Swiper: FC = () => {
   const { parameters } = useParameterData();
@@ -16,13 +16,15 @@ export const Swiper: FC = () => {
   const currentItem = cardsData?.[currentIndex];
   const { heading, subheading, tip, text, iconName, parameter, cardColor } = currentItem;
 
+  const { cutText: cardText } = getCutText(text, LETTERS_LIMIT_SWIPER);
+
   return (
     <SwiperItem
       heading={heading}
       subheading={tip}
       iconName={iconName}
       question={subheading}
-      text={text}
+      text={cardText}
       parameter={parameter}
       color={cardColor}
     />
