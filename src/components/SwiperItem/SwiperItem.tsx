@@ -5,6 +5,7 @@ import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import { t } from "i18next";
 import { useDataStore } from "@Store/useDataStore";
 import { Card, CardType } from "@UI";
+import { useDetectWidth } from "@Hooks";
 import { ReactComponent as RightArrow } from "@Assets/icons/stroke/harm-arrow-right.svg";
 
 type SwiperItemDataT = CardType & {
@@ -16,7 +17,12 @@ type SwiperItemDataT = CardType & {
 export const SwiperItem: FC<SwiperItemDataT> = (props) => {
   const { setParameter } = useDataStore();
 
+  const { isLargerThan600, isLargerThan1024 } = useDetectWidth();
+
   const { heading, subheading, question, iconName, text, parameter, color } = props;
+
+  const cardHeightSmall = isLargerThan600 ? "238px" : "208px";
+  const cardHeight = isLargerThan1024 ? "262px" : `${cardHeightSmall}`;
 
   return (
     <Box
@@ -29,7 +35,7 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
         subheading={subheading}
         iconName={iconName}
         color={color}
-        height="278px"
+        height={cardHeight}
       >
         <Text
           fontWeight="700"
