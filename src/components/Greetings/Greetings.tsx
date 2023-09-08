@@ -8,9 +8,7 @@ export const Greetings = () => {
 
   return (
     <Flex
-      direction="column"
-      gap="32px"
-      alignItems="flex-end"
+      justifyContent="end"
       position="relative"
       flex="1"
       maxW={{ base: "100%", lg: "500px" }}
