@@ -56,7 +56,11 @@ const CardIconBox = chakra("div", {
     right: "18px",
     top: "50%",
     transform: "translate(0, -50%)",
-    svg: { maxW: "124px", w: "100%", height: "100%" }
+    svg: {
+      maxW: "124px",
+      w: "100%",
+      height: "100%"
+    }
   }
 });
 
