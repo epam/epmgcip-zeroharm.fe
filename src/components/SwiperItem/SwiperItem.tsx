@@ -2,12 +2,12 @@
 import { FC, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import { t } from "i18next";
 import { useDataStore } from "@Store/useDataStore";
 import { Card, CardType } from "@UI";
 import { useDetectWidth } from "@Hooks";
 import { ReactComponent as RightArrow } from "@Assets/icons/stroke/harm-arrow-right.svg";
-import { useTranslation } from "react-i18next";
 
 type SwiperItemDataT = CardType & {
   question: string;
