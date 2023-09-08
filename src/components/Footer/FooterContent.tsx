@@ -19,7 +19,8 @@ export const FooterContent = () => {
       <ChakraLink
         href="https://hydromet.uz/"
         isExternal
-        _hover={{ color: "#FFA01C" }}
+        color={{ base: "yellow.500", lg: "white" }}
+        _hover={{ color: "yellow.500" }}
       >
         { t("pages.footer.link") }
       </ChakraLink>
