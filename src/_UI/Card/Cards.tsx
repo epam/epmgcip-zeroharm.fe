@@ -103,16 +103,23 @@ export const Cards: FC<CardsType> = ({ cardsKey }) => {
         <Text
           fontWeight="700"
           casing="uppercase"
+          fontSize={{ base: "tiny", lg: "small" }}
+          lineHeight={{ base: "tiny", lg: "small" }}
         >
           { subheading }
         </Text>
-        <Text>
+        <Text
+          fontSize={{ base: "small", lg: "medium" }}
+          lineHeight={{ base: "small", lg: "medium" }}
+        >
           { cardText }
-          { " " }
           { isTextCut && (
-            <Button variant="link" onClick={toggleCard}>
-              { btnText }
-            </Button>
+            <>
+              { " " }
+              <Button variant="link" onClick={toggleCard}>
+                { btnText }
+              </Button>
+            </>
           ) }
         </Text>
       </Card>
