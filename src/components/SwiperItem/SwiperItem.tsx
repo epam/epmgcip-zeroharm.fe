@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import { t } from "i18next";
@@ -7,6 +7,7 @@ import { useDataStore } from "@Store/useDataStore";
 import { Card, CardType } from "@UI";
 import { useDetectWidth } from "@Hooks";
 import { ReactComponent as RightArrow } from "@Assets/icons/stroke/harm-arrow-right.svg";
+import { useTranslation } from "react-i18next";
 
 type SwiperItemDataT = CardType & {
   question: string;
@@ -17,12 +18,23 @@ type SwiperItemDataT = CardType & {
 export const SwiperItem: FC<SwiperItemDataT> = (props) => {
   const { setParameter } = useDataStore();
 
+  const { i18n } = useTranslation();
+
+  const [cardHeight, setCardHeight] = useState<string>();
+
   const { isLargerThan600, isLargerThan1024 } = useDetectWidth();
 
   const { heading, subheading, question, iconName, text, parameter, color } = props;
 
-  const cardHeightSmall = isLargerThan600 ? "262px" : "244px";
-  const cardHeight = isLargerThan1024 ? "310px" : `${cardHeightSmall}`;
+  useEffect(() => {
+    if (i18n.language === "ru") {
+      const cardHeightSmall = isLargerThan600 ? "262px" : "244px";
+      setCardHeight(isLargerThan1024 ? "310px" : `${cardHeightSmall}`);
+    } else {
+      const cardHeightSmall = isLargerThan600 ? "238px" : "208px";
+      setCardHeight(isLargerThan1024 ? "262px" : `${cardHeightSmall}`);
+    }
+  }, [i18n.language, cardHeight, isLargerThan600, isLargerThan1024]);
 
   return (
     <Box
