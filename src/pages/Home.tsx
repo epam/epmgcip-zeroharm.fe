@@ -8,7 +8,7 @@ export const Home = () => {
       maxW="1176px"
       p={{ base: "8px 16px", md: "24px 28px" }}
       minH={{
-        base: "calc(100vh - var(--headerMobileHeight) - var(--footerHeight))",
+        base: "calc(100vh - var(--headerMobileHeight) - var(--footerMobileMaxHeight))",
         md: "calc(100vh - var(--headerHeight) - var(--footerHeight))"
       }}
       display="flex"
