@@ -37,10 +37,7 @@ export const LocationSelect: FC = () => {
   }));
 
   return (
-    <InputGroup
-      zIndex="1"
-      pr="4px"
-    >
+    <InputGroup zIndex="1">
       <InputLeftElement
         color="gray.400"
         zIndex="3"
