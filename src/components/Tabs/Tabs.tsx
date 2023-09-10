@@ -180,16 +180,15 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
   const [bgColor, setBgColor] = useState("transparent");
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
   const tabPanelsRef = useRef(null);
-  // const { isFirefox } = useBrowserDetector();
   const { isLargerThan1024 } = useDetectWidth();
+  const { isFirefox } = useBrowserDetector();
 
   const onScrollStop = () => {
     setBgColor("transparent");
   };
 
   const onScroll = () => {
-    setBgColor("red");
-    // setBgColor("#48494D");
+    setBgColor("#48494D");
   };
 
   const handleScroll = () => {
@@ -229,6 +228,7 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
       w="100%"
       h="100%"
       overflow="hidden"
+      pos="relative"
     >
       <Box
         ref={tabPanelsRef}
@@ -249,6 +249,18 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
             lg: "white transparent"
           },
           ...webkitBrowserScrollbarStyles
+        }}
+        _after={{
+          lg: {
+            content: isFirefox && isScrollVisible ? "''" : undefined,
+            pos: "absolute",
+            w: "6px",
+            bgColor: "rgba(255, 255, 255, .2)",
+            h: "calc(100% - 2px)",
+            borderRadius: "10px",
+            right: "2px",
+            top: "1px"
+          }
         }}
       >
         <Box
