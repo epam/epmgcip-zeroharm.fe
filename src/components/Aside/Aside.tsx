@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
 import { Tabs } from "../Tabs/Tabs";
 import { LocationSelect } from "../LocationSelect/LocationSelect";
 
@@ -9,47 +9,45 @@ export const Aside: FC = () => {
   const offset = isScrollVisible ? "20px" : "0px";
 
   return (
-    <Flex
+    <VStack
       as="aside"
       height={{
         base: "auto",
         md: "100%"
       }}
-      w={{
-        base: "375px",
+      maxW={{
+        base: "599px",
         md: "359px",
         lg: `calc(440px + ${offset})`
       }}
-      p={{
-        base: "8px 16px 16px",
-        md: "16px 0 16px 16px",
-        lg: "16px 0 16px 24px"
-      }}
-      direction="column"
-      gap="16px"
+      w="100%"
     >
       <Box
-        display={{ base: "block", md: "none" }}
         bgColor="gray.900"
-        h="110px"
-        w="100vw"
-        pos="fixed"
+        w="100%"
+        pos={{
+          base: "fixed",
+          md: "initial"
+        }}
         zIndex="1099"
-        transform="translate(0, -8px)"
-      />
-      <Box
-        mr={{ md: "16px", lg: "20px" }}
-        pos={{ base: "fixed", md: "initial" }}
-        w={{ base: "343px", md: "initial" }}
-        zIndex={{ base: "1099", md: "initial" }}
       >
-        <LocationSelect />
+        <Box
+          m={{
+            base: "8px auto 16px",
+            md: "16px",
+            lg: "16px 20px 16px 24px"
+          }}
+          h="44px"
+          w={{ base: "343px", md: "initial" }}
+        >
+          <LocationSelect />
+        </Box>
       </Box>
       <Tabs
         isScrollVisible={isScrollVisible}
         setIsScrollVisible={setIsScrollVisible}
       />
-    </Flex>
+    </VStack>
   );
 };
 

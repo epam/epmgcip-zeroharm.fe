@@ -16,6 +16,7 @@ export const MapAndDetails: FC = () => {
     <Flex
       height={containerHeight}
       maxW="var(--maxContentWidth)"
+      minH="400px"
       mx="auto"
       flex="1"
       direction={{

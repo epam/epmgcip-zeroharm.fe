@@ -56,48 +56,91 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
       defaultIndex={defaultTabIndex}
       variant="unstyled"
       overflowY="hidden"
-      display="flex"
       flex="1"
-      gap={{
-        base: "16px",
-        lg: "24px"
-      }}
+      display="flex"
       flexDirection="column"
-      pt={{
-        base: "118px", md: "0"
-      }}
+      w="100%"
     >
-      <TabList
-        mr={{ md: "16px", lg: "20px" }}
-        pos={{ base: "fixed", md: "initial" }}
-        w={{ base: "343px", md: "initial" }}
-        zIndex={{ base: "1099", md: "initial" }}
+      <Box
+        w="100%"
         bgColor="gray.900"
-        transform={{ base: "translate(0, -58px)", md: "initial" }}
+        pos={{
+          base: "fixed",
+          md: "initial"
+        }}
+        zIndex="1098"
       >
-        { tabs.map(({ tabId, tabName }) => (
-          <Tab
-            key={tabId}
-            py="8px"
-            borderBottom="2px solid gray"
-            color="gray"
-            flex="1"
-            textAlign="center"
-            _selected={selected}
-            _hover={hover}
-            onClick={() => setParameter(tabId)}
-          >
-            { tabName }
-          </Tab>
-        )) }
-      </TabList>
+        <Box
+          m={{
+            base: "0 auto 16px",
+            md: "0 16px 16px",
+            lg: "0 20px 16px 24px"
+          }}
+          w={{ base: "343px", md: "initial" }}
+          mt={{
+            base: "68px",
+            md: "0px"
+          }}
+        >
+          <TabList>
+            { tabs.map(({ tabId, tabName }) => (
+              <Tab
+                key={tabId}
+                borderBottom="2px solid gray"
+                color="gray"
+                flex="1"
+                textAlign="center"
+                lineHeight={{
+                  base: "13px",
+                  lg: "small"
+                }}
+                fontSize={{
+                  base: "small",
+                  lg: "medium"
+                }}
+                h={{
+                  base: "34px",
+                  lg: "40px"
+                }}
+                _selected={selected}
+                _hover={hover}
+                onClick={() => setParameter(tabId)}
+              >
+                { tabName }
+              </Tab>
+            )) }
+          </TabList>
+        </Box>
+      </Box>
 
-      <CustomScrollbarWrapper
-        isScrollVisible={isScrollVisible}
-        setIsScrollVisible={setIsScrollVisible}
+      <Box
+        w="100%"
+        flex="1"
+        overflow="hidden"
       >
-        <Content />
-      </CustomScrollbarWrapper>
+        <Box
+          m={{
+            base: "0 auto 0",
+            md: "0 0 0 16px",
+            lg: "0 0 0 24px"
+          }}
+          w={{ base: "343px", md: "initial" }}
+          h="100%"
+          mt={{
+            base: "118px",
+            md: "0px"
+          }}
+          pb="16px"
+          overflow="hidden"
+        >
+          <CustomScrollbarWrapper
+            isScrollVisible={isScrollVisible}
+            setIsScrollVisible={setIsScrollVisible}
+          >
+            <Content />
+          </CustomScrollbarWrapper>
+        </Box>
+      </Box>
     </ChakraTabs>
   );
 };
@@ -112,21 +155,16 @@ const DEBOUNCE_TIME = 700;
 
 export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ children, isScrollVisible, setIsScrollVisible }) => {
   const [bgColor, setBgColor] = useState("transparent");
-  const [isScrolling, setIsScrolling] = useState(false);
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
   const tabPanelsRef = useRef(null);
-  const tabPanelsNode = tabPanelsRef.current;
   const { isFirefox } = useBrowserDetector();
-  const { isTouchScreen } = useDeviceDetector();
 
   const onScrollStop = () => {
-    setIsScrolling(false);
     setBgColor("transparent");
   };
 
   const onScroll = () => {
-    setIsScrolling(true);
-    setBgColor("gray.700");
+    setBgColor("#48494D");
   };
 
   const handleScroll = () => {
@@ -141,6 +179,7 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
   };
 
   useEffect(() => {
+    const tabPanelsNode = tabPanelsRef.current;
     if (!tabPanelsNode) return;
 
     const resizePanelObserver = new ResizeObserver(() => {
@@ -154,26 +193,26 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
     return () => {
       resizePanelObserver.disconnect();
     };
-  }, [tabPanelsNode]);
+  }, [tabPanelsRef]);
 
   return (
     <Box
-      pos="relative"
-      flex="1"
+      className="custom-scrollbar"
       w="100%"
+      h="100%"
       overflow="hidden"
       pr={{
-        md: isScrollVisible ? isFirefox ? isTouchScreen ? "5px" : "2px" : "6px" : "16px",
+        md: isScrollVisible ? isFirefox ? "3px" : "6px" : "16px",
         lg: "20px"
       }}
+      transition="all .4s"
     >
       <Box
         ref={tabPanelsRef}
         onScroll={handleScroll}
         h="100%"
-        w="100%"
-        boxSizing="border-box"
         overflowY="auto"
+        overflowX="hidden"
         bgImage="linear-gradient(gray.900, gray.900)"
         bgColor={{
           md: bgColor,
@@ -183,7 +222,7 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
         sx={{
           scrollbarWidth: "thin",
           scrollbarColor: {
-            md: `${isScrolling ? "#48494D" : "transparent"} transparent`,
+            md: `${bgColor} transparent`,
             lg: "white transparent"
           },
           "::-webkit-scrollbar": {
@@ -194,7 +233,7 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
             borderRadius: "4px",
             transition: "background-color .5s ease"
           },
-            "::-webkit-scrollbar-track": {
+          "::-webkit-scrollbar-track": {
             bgColor: {
               md: "transparent",
               lg: "gray.700"
@@ -207,29 +246,14 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
             h: 0
           }
         }}
-        _after={{
-          md: {},
-          lg: {
-            content: isFirefox && isScrollVisible ? "''" : undefined,
-            pos: "absolute",
-            right: isTouchScreen ? "21px" : "22px",
-            top: "0",
-            w: isTouchScreen ? "4px" : "9px",
-            h: "100%",
-            borderRadius: "10px",
-            bgImage: "linear-gradient(rgba(255,255,255, 0.1), rgba(255,255,255, 0.1))"
-          }
-        }}
       >
         <Box
-          w={{
-            md: "327px",
-            lg: "auto"
-          }}
           pr={{
-            md: "0px",
+            md: isScrollVisible ? isFirefox ? "3px" : "6px" : "0px",
             lg: isScrollVisible ? "20px" : "0px"
           }}
+          overflow="hidden"
+          p="0"
         >
           { children }
         </Box>
