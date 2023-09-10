@@ -4,6 +4,7 @@ import { resolveTranslationPath } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
 import { tabsData } from "@Constants";
 import { Cards } from "@UI";
+import { useDetectWidth } from "@Hooks";
 import { IndexDate } from "../IndexDate/IndexDate";
 import { Indicators } from "../Indicators/Indicators";
 import * as Bowser from "bowser";
@@ -23,6 +24,7 @@ type TabsProps = {
 
 export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => {
   const { parameter, setParameter } = useDataStore();
+  const { isFirefox } = useBrowserDetector();
 
   const tabs = tabsData.map((tabData) => resolveTranslationPath(tabData));
   const currentTab = parameter || tabs[0].tabId;
@@ -121,8 +123,8 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
         <Box
           m={{
             base: "0 auto 0",
-            md: "0 0 0 16px",
-            lg: "0 0 0 24px"
+            md: `0 ${isFirefox ? "3px" : "6px"} 0 16px`,
+            lg: "0 20px 0 24px"
           }}
           w={{ base: "343px", md: "initial" }}
           h="100%"
@@ -153,21 +155,46 @@ type CustomScrollbarWrapperProps = {
 
 const DEBOUNCE_TIME = 700;
 
+const webkitBrowserScrollbarStyles = {
+  "::-webkit-scrollbar": {
+    w: "4px"
+  },
+  "::-webkit-scrollbar-thumb": {
+    bgColor: "inherit",
+    borderRadius: "4px",
+    transition: "background-color .5s ease"
+  },
+  "::-webkit-scrollbar-track": {
+    bgColor: {
+      md: "transparent",
+      lg: "gray.700"
+    },
+    borderRadius: "4px"
+  },
+  "::-webkit-scrollbar-button": {
+    display: "none"
+  }
+};
+
 export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ children, isScrollVisible, setIsScrollVisible }) => {
   const [bgColor, setBgColor] = useState("transparent");
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
   const tabPanelsRef = useRef(null);
-  const { isFirefox } = useBrowserDetector();
+  // const { isFirefox } = useBrowserDetector();
+  const { isLargerThan1024 } = useDetectWidth();
 
   const onScrollStop = () => {
     setBgColor("transparent");
   };
 
   const onScroll = () => {
-    setBgColor("#48494D");
+    setBgColor("red");
+    // setBgColor("#48494D");
   };
 
   const handleScroll = () => {
+    if (isLargerThan1024) return;
+
     clearTimeout(scrollTimeout as NodeJS.Timeout);
 
     onScroll();
@@ -180,6 +207,7 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
 
   useEffect(() => {
     const tabPanelsNode = tabPanelsRef.current;
+
     if (!tabPanelsNode) return;
 
     const resizePanelObserver = new ResizeObserver(() => {
@@ -201,11 +229,6 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
       w="100%"
       h="100%"
       overflow="hidden"
-      pr={{
-        md: isScrollVisible ? isFirefox ? "3px" : "6px" : "16px",
-        lg: "20px"
-      }}
-      transition="all .4s"
     >
       <Box
         ref={tabPanelsRef}
@@ -225,35 +248,14 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
             md: `${bgColor} transparent`,
             lg: "white transparent"
           },
-          "::-webkit-scrollbar": {
-            w: "4px"
-          },
-          "::-webkit-scrollbar-thumb": {
-            bgColor: "inherit",
-            borderRadius: "4px",
-            transition: "background-color .5s ease"
-          },
-          "::-webkit-scrollbar-track": {
-            bgColor: {
-              md: "transparent",
-              lg: "gray.700"
-            },
-            borderRadius: "4px"
-          },
-          "::-webkit-scrollbar-button": {
-            display: "none",
-            w: 0,
-            h: 0
-          }
+          ...webkitBrowserScrollbarStyles
         }}
       >
         <Box
-          pr={{
-            md: isScrollVisible ? isFirefox ? "3px" : "6px" : "0px",
-            lg: isScrollVisible ? "20px" : "0px"
+          maxW={{
+            md: "327px",
+            lg: isScrollVisible ? "392px" : "396px"
           }}
-          overflow="hidden"
-          p="0"
         >
           { children }
         </Box>
