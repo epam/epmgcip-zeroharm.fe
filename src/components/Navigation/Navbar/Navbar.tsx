@@ -23,19 +23,19 @@ export const Navbar: FC<NavbarProps> = ({ onClick }) => {
       fontWeight="bold"
     >
       {
-      routes.map(({ routePath, routeName }) => (
-        <Link
-          key={routePath}
-          to={routePath}
-          onClick={onClick}
-          style={
-            routeName === currentPageName
-              ? { color: "#FFA01C" }
-              : { color: "white" }
-          }
-        >
-          { routeName }
-        </Link>
+        routes.map(({ routePath, routeName }) => (
+          <Link
+            key={routePath}
+            to={routePath}
+            onClick={onClick}
+            style={
+              routeName === currentPageName
+                ? { color: "#FFA01C" }
+                : { color: "white" }
+            }
+          >
+            { routeName }
+          </Link>
         ))
       }
     </Flex>
