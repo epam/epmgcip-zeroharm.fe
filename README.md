@@ -44,7 +44,7 @@ NO#-{description} for naming your branch.
 ```
 git checkout main
 git pull origin main
-git branch -b FE-{number} or NO#-{description}
+git checkout -b FE-{number} or NO#-{description}
 git commit -m "describe you changes"
 git push origin FE-{number} or NO#-{description}
 ```
