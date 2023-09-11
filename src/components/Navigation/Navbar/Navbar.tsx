@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 import { Flex } from "@chakra-ui/react";
 import { routesData } from "@Constants";
 import { resolveTranslationPath } from "@Helpers";
+import { useDetectPageName } from "@Hooks";
 
 type NavbarProps = {
   onClick?: () => void;
-}
+};
 
 export const Navbar: FC<NavbarProps> = ({ onClick }) => {
   const routes = routesData.map((routeData) => resolveTranslationPath(routeData));
+
+  const currentPageName = useDetectPageName();
 
   return (
     <Flex
@@ -20,14 +23,19 @@ export const Navbar: FC<NavbarProps> = ({ onClick }) => {
       fontWeight="bold"
     >
       {
-        routes.map(({ routePath, routeName }) => (
-          <Link
-            key={routePath}
-            to={routePath}
-            onClick={onClick}
-          >
-            { routeName }
-          </Link>
+      routes.map(({ routePath, routeName }) => (
+        <Link
+          key={routePath}
+          to={routePath}
+          onClick={onClick}
+          style={
+            routeName === currentPageName
+              ? { color: "#FFA01C" }
+              : { color: "white" }
+          }
+        >
+          { routeName }
+        </Link>
         ))
       }
     </Flex>
