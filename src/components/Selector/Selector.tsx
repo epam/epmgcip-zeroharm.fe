@@ -50,7 +50,7 @@ export const Selector = () => {
                 <IconLocal width="20px" height="20px" />
               )
             }
-            width={{ base: "100%", lg: "auto" }}
+            width="inherit"
             height="auto"
             p={{ base: "12px 24px", md: "16px 24px" }}
             fontSize={{ base: "small", md: "medium" }}
