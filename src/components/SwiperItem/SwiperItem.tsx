@@ -16,11 +16,11 @@ type SwiperItemDataT = CardType & {
 };
 
 export const SwiperItem: FC<SwiperItemDataT> = (props) => {
+  const [cardHeight, setCardHeight] = useState<string>();
+
   const { setParameter } = useDataStore();
 
   const { i18n } = useTranslation();
-
-  const [cardHeight, setCardHeight] = useState<string>();
 
   const { isLargerThan600, isLargerThan1024 } = useDetectWidth();
 
