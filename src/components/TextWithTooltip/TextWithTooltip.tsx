@@ -16,13 +16,14 @@ export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, fontSiz
 
   return (
     <Tooltip
-      maxW={{ base: "343px", md: "600px"}}
-      overflow="hidden"
-      h="128px"
+      closeOnScroll
       label={label}
       hasArrow
+      bg="gray.700"
       placement={placement}
       shouldWrapChildren
+      maxH={{ base: "auto", md: "150px" }}
+      maxW={{ base: "343px", md: "600px" }}
     >
       <Flex
         fontSize={fontSize}

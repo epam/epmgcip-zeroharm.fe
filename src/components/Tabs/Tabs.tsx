@@ -98,7 +98,7 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
         w="100%"
         bgColor="gray.900"
         pos={{ base: "fixed", md: "initial" }}
-        zIndex="1098"
+        zIndex={{ base: "1098", md: "initial" }}
       >
         <Box
           m={{

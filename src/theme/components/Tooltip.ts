@@ -15,9 +15,8 @@ export const Tooltip = defineStyleConfig({
   },
   variants: {
     default: {
-      background: "gray.700",
-      color: "white",
-      [$arrowBg.variable]: $bg.reference
+      bg: "gray.700",
+      color: "white"
     },
     light: {
       background: "white",
@@ -31,9 +30,9 @@ export const Tooltip = defineStyleConfig({
       lineHeight: "18px",
       fontSize: "small",
       [$arrowBg.variable]: $bg.reference
-    },
-    defaultProps: {
-      variant: "default"
     }
+  },
+  defaultProps: {
+    variant: "default"
   }
 });
