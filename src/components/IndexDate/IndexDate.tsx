@@ -27,14 +27,8 @@ export const IndexDate: FC<IndexDateType> = ({ children }) => {
         <TextWithTooltip
           label={t(`hints.${parameter}`)}
           text={t(`indexes.${parameter}`)}
-          fontSize={{
-            base: "tiny",
-            lg: "small"
-          }}
-          lineHeight={{
-            base: "tiny",
-            lg: "small"
-          }}
+          fontSize={{ base: "tiny", lg: "small" }}
+          lineHeight={{ base: "tiny", lg: "small" }}
           iconSize="16px"
         />
         <Box
@@ -55,14 +49,8 @@ export const IndexDate: FC<IndexDateType> = ({ children }) => {
           fontWeight="700"
         >
           <Text
-            fontSize={{
-              base: "small",
-              lg: "medium"
-            }}
-            lineHeight={{
-              base: "small",
-              lg: "medium"
-            }}
+            fontSize={{ base: "small", lg: "medium" }}
+            lineHeight={{ base: "small", lg: "medium" }}
           >
             { heading }
           </Text>

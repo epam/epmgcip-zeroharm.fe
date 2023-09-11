@@ -22,11 +22,8 @@ export const Aside: FC = () => {
       <Box
         bgColor="gray.900"
         w="100%"
-        pos={{
-          base: "fixed",
-          md: "initial"
-        }}
-        zIndex="1099"
+        pos={{ base: "fixed", md: "initial" }}
+        zIndex={{ base: "1099", md: "initial" }}
       >
         <Box
           m={{
@@ -35,10 +32,7 @@ export const Aside: FC = () => {
             lg: "16px 20px 16px 24px"
           }}
           h="44px"
-          w={{
-            base: "343px",
-            md: "initial"
-          }}
+          w={{ base: "343px", md: "initial" }}
         >
           <LocationSelect />
         </Box>

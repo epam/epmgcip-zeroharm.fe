@@ -32,11 +32,7 @@ export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
       <Box
         pos="absolute"
         left="96px"
-        w={{
-          base: "119px",
-          md: "103px",
-          lg: "168px"
-        }}
+        w={{ base: "119px", md: "103px", lg: "168px" }}
       >
         <Progress
           colorScheme={color}

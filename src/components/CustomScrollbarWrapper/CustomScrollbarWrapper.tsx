@@ -30,15 +30,17 @@ const webkitBrowserScrollbarStyles = {
 
 export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ children, isScrollVisible, setIsScrollVisible }) => {
   const tabPanelsRef = useRef(null);
-  // const { isFirefox } = detectBrowser();
   const { isLargerThan1024 } = useDetectWidth();
   const isTouchScreen = useTouchScreen();
+
+  // const { isFirefox } = detectBrowser();
   const isMobileTouchDevice = isTouchScreen && !isLargerThan1024;
-  const tabPanelsNode = tabPanelsRef.current;
 
   const scrollbarStyles = isMobileTouchDevice ? {} : webkitBrowserScrollbarStyles;
 
   useEffect(() => {
+    const tabPanelsNode = tabPanelsRef.current;
+
     if (!tabPanelsNode) return;
 
     const resizePanelObserver = new ResizeObserver(() => {
@@ -52,7 +54,7 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
     return () => {
       resizePanelObserver.disconnect();
     };
-  }, [tabPanelsNode]);
+  }, []);
 
   return (
     <Box
@@ -61,10 +63,7 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
       h="100%"
       overflow="hidden"
       // pos="relative"
-      mx={{
-        base: "auto",
-        md: "initial"
-      }}
+      mx={{ base: "auto", md: "initial" }}
     >
       <Box
         ref={tabPanelsRef}

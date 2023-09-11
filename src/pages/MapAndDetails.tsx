@@ -19,14 +19,8 @@ export const MapAndDetails: FC = () => {
       minH="400px"
       mx="auto"
       flex="1"
-      direction={{
-        base: "column",
-        md: "row"
-      }}
-      align={{
-        base: "center",
-        md: "initial"
-      }}
+      direction={{ base: "column", md: "row" }}
+      align={{ base: "center", md: "initial" }}
     >
       <Aside />
 
@@ -34,14 +28,8 @@ export const MapAndDetails: FC = () => {
         isLargerThan600 &&
           <Box
             as="main"
-            height={{
-              base: "400px",
-              md: "100%"
-            }}
-            w={{
-              base: "100%",
-              md: "auto"
-            }}
+            height={{ base: "400px", md: "100%" }}
+            w={{ base: "100%", md: "auto" }}
             flex="1"
             pos="relative"
           >

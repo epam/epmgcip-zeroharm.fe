@@ -18,14 +18,8 @@ export const Indicators: FC<IndexDateType> = ({ children }) => {
   return (
     <IndicatorWrapper>
       <Text
-        fontSize={{
-          base: "tiny",
-          lg: "small"
-        }}
-        lineHeight={{
-          base: "tiny",
-          lg: "small"
-        }}
+        fontSize={{ base: "tiny", lg: "small" }}
+        lineHeight={{ base: "tiny", lg: "small" }}
         fontWeight="700"
         textTransform="uppercase"
       >
@@ -33,10 +27,7 @@ export const Indicators: FC<IndexDateType> = ({ children }) => {
       </Text>
       <Flex
         direction="column"
-        gap={{
-          base: "4px",
-          lg: "8px"
-        }}
+        gap={{ base: "4px", lg: "8px" }}
       >
         {
           hints.map((hint) => {

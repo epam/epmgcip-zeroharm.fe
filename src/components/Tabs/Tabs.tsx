@@ -25,9 +25,9 @@ type TabsProps = {
 export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => {
   const { parameter, setParameter } = useDataStore();
   const { isLargerThan600 } = useDetectWidth();
-  const { isFirefox } = detectBrowser();
   const isTouchScreen = useTouchScreen();
 
+  const { isFirefox } = detectBrowser();
   const isMobileWidth = !isLargerThan600;
 
   const tabs = tabsData.map((tabData) => resolveTranslationPath(tabData));
@@ -42,10 +42,7 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
   const Content = () => (
     <Box
       h="auto"
-      display={{
-        base: "flex",
-        md: "initial"
-      }}
+      display={{ base: "flex", md: "initial" }}
       flexDirection="column"
     >
       <TabPanels
@@ -54,10 +51,7 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
           md: "327px",
           lg: isScrollVisible ? "392px" : "396px"
         }}
-        mx={{
-          base: "auto",
-          md: "initial"
-        }}
+        mx={{ base: "auto", md: "initial" }}
       >
         { tabs.map(({ tabId }) => (
           <TabPanel
@@ -103,10 +97,7 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
       <Box
         w="100%"
         bgColor="gray.900"
-        pos={{
-          base: "fixed",
-          md: "initial"
-        }}
+        pos={{ base: "fixed", md: "initial" }}
         zIndex="1098"
       >
         <Box
@@ -115,19 +106,11 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
             md: "0 16px 16px",
             lg: "0 20px 16px 24px"
           }}
-          mt={{
-            base: "68px",
-            md: "0px"
-          }}
+          mt={{ base: "68px", md: "0px" }}
         >
           <TabList
-            w={{
-              base: "343px",
-              md: "initial"
-            }}
-            mx={{
-              base: "auto"
-            }}
+            w={{ base: "343px", md: "initial" }}
+            mx="auto"
           >
             { tabs.map(({ tabId, tabName }) => (
               <Tab
@@ -136,18 +119,9 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
                 color="gray"
                 flex="1"
                 textAlign="center"
-                lineHeight={{
-                  base: "13px",
-                  lg: "small"
-                }}
-                fontSize={{
-                  base: "small",
-                  lg: "medium"
-                }}
-                h={{
-                  base: "34px",
-                  lg: "40px"
-                }}
+                lineHeight={{ base: "13px", lg: "small" }}
+                fontSize={{ base: "small", lg: "medium" }}
+                h={{ base: "34px", lg: "40px" }}
                 _selected={selected}
                 _hover={hover}
                 onClick={() => setParameter(tabId)}
@@ -171,14 +145,8 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
             md: `0 ${!isTouchScreen ? isFirefox ? "3px" : "6px" : "0px"} 0 16px`,
             lg: "0 20px 0 24px"
           }}
-          pt={{
-            base: "118px",
-            md: "0px"
-          }}
-          pb={{
-            base: "0px",
-            md: "16px"
-          }}
+          pt={{ base: "118px", md: "0px" }}
+          pb={{ base: "0px", md: "16px" }}
           overflow="hidden"
         >
           <CustomScrollbarWrapper

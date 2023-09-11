@@ -1,13 +1,11 @@
 import { FC } from "react";
-import { Center, Flex, Tooltip, Text, ResponsiveValue } from "@chakra-ui/react";
+import { Center, Flex, Tooltip, Text, FlexProps } from "@chakra-ui/react";
 import { useDetectWidth } from "@Hooks";
 import { ReactComponent as InfoFill } from "@Assets/icons/filled/harm-info-fill.svg";
 
-type TextWithTooltipProps = {
+interface TextWithTooltipProps extends FlexProps {
   label: string | number;
   text: string | number;
-  fontSize: ResponsiveValue<"sm" | "md" | "lg" | number | (string & {})>
-  lineHeight: ResponsiveValue<"sm" | "md" | "lg" | number | (string & {})>
   iconSize: string | number;
 }
 
@@ -19,7 +17,8 @@ export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, fontSiz
   return (
     <Tooltip
       maxW={{ base: "343px", md: "600px"}}
-      // h="128px"
+      overflow="hidden"
+      h="128px"
       label={label}
       hasArrow
       placement={placement}
