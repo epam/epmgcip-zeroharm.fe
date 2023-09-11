@@ -20,11 +20,11 @@ export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
       fontSize="tiny"
       justifyContent="space-between"
       alignItems="center"
-      pb="8px"
       position="relative"
     >
       <TextWithTooltip
         fontSize="medium"
+        lineHeight="medium"
         label={label}
         text={title}
         iconSize="12px"
@@ -59,6 +59,7 @@ export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
           pos="relative"
           top="4px"
           color="gray.400"
+          fontSize="tiny"
         >
           µg/m³
         </Text>
