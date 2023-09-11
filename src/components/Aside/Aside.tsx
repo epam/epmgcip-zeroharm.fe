@@ -11,10 +11,7 @@ export const Aside: FC = () => {
   return (
     <VStack
       as="aside"
-      height={{
-        base: "auto",
-        md: "100%"
-      }}
+      height="100%"
       maxW={{
         base: "599px",
         md: "359px",
@@ -38,7 +35,10 @@ export const Aside: FC = () => {
             lg: "16px 20px 16px 24px"
           }}
           h="44px"
-          w={{ base: "343px", md: "initial" }}
+          w={{
+            base: "343px",
+            md: "initial"
+          }}
         >
           <LocationSelect />
         </Box>

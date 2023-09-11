@@ -28,3 +28,4 @@ export * from "./FeedbackButton/FeedbackButton";
 export * from "./Footer/Footer";
 export * from "./Footer/FooterContent";
 export * from "./TextWithTooltip/TextWithTooltip";
+export * from "./CustomScrollbarWrapper/CustomScrollbarWrapper";

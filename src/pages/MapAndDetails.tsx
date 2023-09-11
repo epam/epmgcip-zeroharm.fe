@@ -4,13 +4,13 @@ import { Aside, Map, Footer } from "@Components";
 import { useDetectWidth } from "@Hooks";
 
 const containerHeight = {
-  base: "auto",
+  base: "calc(100vh - var(--headerMobileHeight))",
   md: "calc(100vh - var(--headerHeight) - var(--footerHeight))",
   lg: "calc(100vh - var(--headerHeight))"
 };
 
 export const MapAndDetails: FC = () => {
-  const { isLargerThan1024 } = useDetectWidth();
+  const { isLargerThan600, isLargerThan1024 } = useDetectWidth();
 
   return (
     <Flex
@@ -30,23 +30,26 @@ export const MapAndDetails: FC = () => {
     >
       <Aside />
 
-      <Box
-        as="main"
-        height={{
-          base: "400px",
-          md: "100%"
-        }}
-        w={{
-          base: "100%",
-          md: "auto"
-        }}
-        flex="1"
-        pos="relative"
-      >
-        <Map />
+      {
+        isLargerThan600 &&
+          <Box
+            as="main"
+            height={{
+              base: "400px",
+              md: "100%"
+            }}
+            w={{
+              base: "100%",
+              md: "auto"
+            }}
+            flex="1"
+            pos="relative"
+          >
+            <Map />
 
-        { isLargerThan1024 && <Footer variant="card" /> }
-      </Box>
+            { isLargerThan1024 && <Footer variant="card" /> }
+          </Box>
+      }
     </Flex>
   );
 };
