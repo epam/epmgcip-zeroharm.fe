@@ -48,6 +48,7 @@ git branch -b FE-{number} or NO#-{description}
 git commit -m "describe you changes"
 git push origin FE-{number} or NO#-{description}
 ```
+
 4. Open Merge Request to main branch
 5. Merge Request should be named as FE-{number}: {description}
 6. In MR Provide following details:
