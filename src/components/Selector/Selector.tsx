@@ -3,8 +3,8 @@ import { t } from "i18next";
 import { Link } from "react-router-dom";
 import { Popup } from "@UI";
 import { LocationSelect } from "../LocationSelect/LocationSelect";
-import { ReactComponent as IconLocal } from "@Assets/icons/filled/harm-local.svg";
 import { useDetectWidth } from "@Hooks";
+import { ReactComponent as IconLocal } from "@Assets/icons/filled/harm-local.svg";
 
 export const Selector = () => {
   const { isLargerThan600, isLargerThan1024 } = useDetectWidth();
