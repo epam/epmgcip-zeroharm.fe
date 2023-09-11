@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { FC, useEffect, useState } from "react";
+import { FC, useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
@@ -26,7 +26,7 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
 
   const { heading, subheading, question, iconName, text, parameter, color } = props;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (i18n.language === "ru") {
       const cardHeightSmall = isLargerThan600 ? "262px" : "244px";
       setCardHeight(isLargerThan1024 ? "310px" : `${cardHeightSmall}`);
