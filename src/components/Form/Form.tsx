@@ -9,8 +9,8 @@ import { ReactComponent as Hint } from "@Assets/icons/stroke/harm-hint.svg";
 type FormData = {
   name: string;
   email: string;
-  message: string;
-  checkbox: boolean;
+  feedback: string;
+  isResponseRequired: boolean;
 };
 
 type FormProps = {
@@ -31,13 +31,13 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
   const requiredErrorMessage = t("pages.form.required_notification");
   const invalidInputErrorMessage = t("pages.form.incorrectly_notification");
 
-  const onSubmit: SubmitHandler<FormData> = async (values: FormData) => {
-    await postData(values, "/v1/feedback");
+  const onSubmit: SubmitHandler<FormData> = ({ name, email, feedback, isResponseRequired }) => {
+    postData({ name, email, message: feedback, checkbox: isResponseRequired }, "/v1/feedback");
     submitForm(true);
     setIsSubmittedWithResponse(watchResponse);
   };
 
-  const watchResponse = watch("checkbox", false);
+  const watchResponse = watch("isResponseRequired", false);
 
   const required = (value?: string) => {
     return !value && watchResponse ? requiredErrorMessage : true;
@@ -70,8 +70,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             validate: {
               required,
               pattern: (value) => {
-                if (value && watchResponse && !/^[A-Za-z А-Яа-я-,'.]{2,50}$/.test(value))
-                  return invalidInputErrorMessage;
+                if (value && watchResponse && !/^[A-Za-z А-Яа-я-,'.]{2,50}$/.test(value)) return invalidInputErrorMessage;
               }
             }
           })}
@@ -107,12 +106,10 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             validate: {
               required,
               pattern: (value) => {
-                if (value && watchResponse && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value))
-                  return invalidInputErrorMessage;
+                if (value && watchResponse && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value)) return invalidInputErrorMessage;
               },
               length: (value) => {
-                if (watchResponse && value.length < 7 && value.length > 50)
-                  return invalidInputErrorMessage;
+                if (watchResponse && value.length < 7 && value.length > 50) return invalidInputErrorMessage;
               }
             }
           })}
@@ -132,13 +129,13 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
         </Box>
       </FormControl>
       <FormControl
-        isInvalid={Boolean(errors.message)}
+        isInvalid={Boolean(errors.feedback)}
         mb={2}
       >
         <InputLabel
           tooltipText={t("pages.form.feedback.tip")}
           label={t("pages.form.feedback.label")}
-          htmlFor="message"
+          htmlFor="feedback"
           required
         />
         <Textarea
@@ -146,10 +143,10 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           bgColor="gray.700"
           border={0}
           focusBorderColor="white"
-          id="message"
+          id="feedback"
           placeholder={t("pages.form.feedback.placeholder")}
           _placeholder={{ color: "gray.300", fontSize: "16px" }}
-          {...register("message", {
+          {...register("feedback", {
             minLength: {
               value: 6,
               message: invalidInputErrorMessage
@@ -175,7 +172,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             mt="0"
             fontSize="sm"
           >
-            { errors.message && errors.message.message?.toString() }
+            { errors.feedback && errors.feedback.message?.toString() }
           </FormErrorMessage>
         </Box>
       </FormControl>
@@ -205,13 +202,13 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             size="lg"
             spacing="20px"
             mr="2"
-            id="checkbox"
-            {...register("checkbox")}
+            id="isResponseRequired"
+            {...register("isResponseRequired")}
           />
           <FormLabel
             mr={0}
             mb={0}
-            htmlFor="checkbox"
+            htmlFor="isResponseRequired"
           >
             { t("pages.form.checkbox.label") }
           </FormLabel>
