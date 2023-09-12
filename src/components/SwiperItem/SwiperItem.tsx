@@ -27,7 +27,7 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
     <Box
       zIndex="10"
       maxWidth={{ base: "100%", lg: "400" }}
-      pt={{base: "0px", lg: "87px"}}
+      pt={{ base: "0px", lg: "87px" }}
     >
       <Card
         heading={heading}
@@ -70,8 +70,8 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
           >
             <Text
               fontWeight="700"
-              fontSize={{ base: "small" }}
-              lineHeight={{ base: "small" }}
+              fontSize="small"
+              lineHeight="small"
             >
               { t("detailed_info") }
             </Text>

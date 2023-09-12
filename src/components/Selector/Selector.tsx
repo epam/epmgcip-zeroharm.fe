@@ -37,7 +37,10 @@ export const Selector = () => {
       <Box mt="8px" w="100%">
         <LocationSelect />
       </Box>
-      <Flex width="100%" mt={{ base: "8px", lg: "16px" }}>
+      <Flex
+        width="100%"
+        mt={{ base: "8px", lg: "16px" }}
+      >
         <ChakraLink
           as={ReactRouterLink}
           to="/map"
