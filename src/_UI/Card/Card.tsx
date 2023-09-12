@@ -104,7 +104,7 @@ export const Card: FC<CardType> = ({
       </CardHeader>
       <CardBody
         bg={`${color}.50`}
-        h={height}
+        height={height}
         padding={{ base: "16px", md: "24px" }}
       >
         { children }

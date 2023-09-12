@@ -1,12 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { FC, useLayoutEffect, useState } from "react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
-import { useTranslation } from "react-i18next";
 import { t } from "i18next";
 import { useDataStore } from "@Store/useDataStore";
 import { Card, CardType } from "@UI";
-import { useDetectWidth } from "@Hooks";
 import { ReactComponent as RightArrow } from "@Assets/icons/stroke/harm-arrow-right.svg";
 
 type SwiperItemDataT = CardType & {
@@ -16,25 +14,9 @@ type SwiperItemDataT = CardType & {
 };
 
 export const SwiperItem: FC<SwiperItemDataT> = (props) => {
-  const [cardHeight, setCardHeight] = useState<string>();
-
   const { setParameter } = useDataStore();
 
-  const { i18n } = useTranslation();
-
-  const { isLargerThan600, isLargerThan1024 } = useDetectWidth();
-
   const { heading, subheading, question, iconName, text, parameter, color } = props;
-
-  useLayoutEffect(() => {
-    if (i18n.language === "ru") {
-      const cardHeightSmall = isLargerThan600 ? "262px" : "244px";
-      setCardHeight(isLargerThan1024 ? "310px" : `${cardHeightSmall}`);
-    } else {
-      const cardHeightSmall = isLargerThan600 ? "238px" : "208px";
-      setCardHeight(isLargerThan1024 ? "262px" : `${cardHeightSmall}`);
-    }
-  }, [i18n.language, cardHeight, isLargerThan600, isLargerThan1024]);
 
   return (
     <Box
@@ -47,7 +29,7 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
         subheading={subheading}
         iconName={iconName}
         color={color}
-        height={cardHeight}
+        height="280px"
       >
         <Text
           fontWeight="700"
@@ -60,6 +42,13 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
         <Text
           fontSize={{ base: "small", md: "medium" }}
           lineHeight={{ base: "small", md: "medium" }}
+          sx={{
+            display: "-webkit-box",
+            WebkitBoxOrient: "vertical",
+            WebkitLineClamp: "7",
+            overflow: "hidden",
+            textOverflow: "ellipsis"
+          }}
         >
           { text }
         </Text>
