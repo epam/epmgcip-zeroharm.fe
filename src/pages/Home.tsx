@@ -11,7 +11,7 @@ export const Home = () => {
         md: "calc(100vh - var(--headerHeight) - var(--footerHeight))"
       }}
       display="flex"
-      justifyContent="space-between"
+      justifyContent={{ base: "center", lg: "space-between" }}
       flexDirection={{ base: "column", lg: "row" }}
       maxW={{ base: "343px", md: "472px", lg: "1176px" }}
       alignItems="center"
