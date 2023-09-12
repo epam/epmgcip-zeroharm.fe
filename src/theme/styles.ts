@@ -29,6 +29,24 @@ export const styles = {
     },
     ".bg-colored": {
       bg: props.colorMode === "dark" ? "gray.900" : "white"
+    },
+    ".leaflet-custom-tooltip": {
+      w: { base: "218px", lg: "292px" },
+      h: "auto",
+      bg: "gray.800",
+      border: "none",
+      color: "white",
+      p: "16px",
+      borderRadius: "8px",
+      fontSize: "small",
+      lineHeight: "small",
+      whiteSpace: "normal"
+    },
+    ".leaflet-tooltip-left.leaflet-custom-tooltip::before": {
+      borderLeftColor: "gray.800"
+    },
+    ".leaflet-tooltip-right.leaflet-custom-tooltip::before": {
+      borderRightColor: "gray.800"
     }
   })
 };
