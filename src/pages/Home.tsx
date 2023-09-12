@@ -5,7 +5,6 @@ export const Home = () => {
   return (
     <Container
       as="main"
-      // maxW="1176px"
       p={{ base: "8px 16px", md: "24px 28px" }}
       minH={{
         base: "calc(100vh - var(--headerMobileHeight) - var(--footerMobileMaxHeight))",
