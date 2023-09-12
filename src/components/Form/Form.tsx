@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { Box, FormErrorMessage, FormLabel, FormControl, Input, Button, Textarea, Checkbox, Flex, Tooltip, Divider } from "@chakra-ui/react";
 import { t } from "i18next";
 import { InputLabel } from "@UI";
-import { postData } from "@Helpers";
+import { postData } from "@Services";
 import { ReactComponent as Hint } from "@Assets/icons/stroke/harm-hint.svg";
 
 type FormData = {
