@@ -1,6 +1,6 @@
-import { Button, Flex, Heading, Text, Box } from "@chakra-ui/react";
+import { Link as ReactRouterLink } from "react-router-dom";
+import { Button, Flex, Heading, Text, Box, Link as ChakraLink } from "@chakra-ui/react";
 import { t } from "i18next";
-import { Link } from "react-router-dom";
 import { Popup } from "@UI";
 import { LocationSelect } from "../LocationSelect/LocationSelect";
 import { useDetectWidth } from "@Hooks";
@@ -8,8 +8,6 @@ import { ReactComponent as IconLocal } from "@Assets/icons/filled/harm-local.svg
 
 export const Selector = () => {
   const { isLargerThan600, isLargerThan1024 } = useDetectWidth();
-
-  const linkWidth = isLargerThan1024 ? "auto" : "100%";
 
   return (
     <Flex
@@ -41,7 +39,11 @@ export const Selector = () => {
         <LocationSelect />
       </Box>
       <Flex width="100%" mt={{ base: "8px", lg: "16px" }}>
-        <Link to="/map" style={{ width: `${linkWidth}` }}>
+        <ChakraLink
+          as={ReactRouterLink}
+          to="/map"
+          w={isLargerThan1024 ? "auto" : "100%"}
+        >
           <Button
             leftIcon={
               isLargerThan600 ? (
@@ -58,7 +60,7 @@ export const Selector = () => {
           >
             { t("pages.home.open_map") }
           </Button>
-        </Link>
+        </ChakraLink>
         <Box>
           <Popup isOpen={false}>
             <Text>{ t("pages.home.choose_location") }</Text>
