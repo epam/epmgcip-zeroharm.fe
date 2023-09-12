@@ -1,7 +1,9 @@
-import { Text, Link as ChakraLink } from "@chakra-ui/react";
+import { Text, Link as ChakraLink, useMediaQuery } from "@chakra-ui/react";
 import { t } from "i18next";
 
 export const FooterContent = () => {
+  const shouldIncludeHover = useMediaQuery("(hover: hover) and (pointer: fine)", { ssr: false });
+
   return (
     <Text
       fontSize="sm"
@@ -19,8 +21,11 @@ export const FooterContent = () => {
       <ChakraLink
         href="https://hydromet.uz/"
         isExternal
-        color={{ base: "yellow.500", lg: "white" }}
-        _hover={{ color: "yellow.500" }}
+        sx={
+          shouldIncludeHover[0] ?
+          { _hover: { color: "yellow.500" } } :
+          { color: "yellow.500" }
+        }
       >
         { t("pages.footer.link") }
       </ChakraLink>
