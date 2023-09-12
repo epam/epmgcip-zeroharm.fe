@@ -1,77 +1,220 @@
-import { Container, Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import aboutImage from "@Assets/images/about.jpg";
+import { FC, ReactNode } from "react";
+import { Box, Flex, Image, Text, Divider, VStack, Link } from "@chakra-ui/react";
+import aboutImage from "@Assets/images/about-full.jpeg";
+import { Trans, useTranslation } from "react-i18next";
 
-export const About = () => {
+const linkStyleProps = {
+  isExternal: true,
+  borderBottom: "1px solid",
+  ":hover": {
+    textDecoration: "none",
+    color: { base: "none", lg: "yellow.500" }
+  }
+};
+
+const listTextItemStyleProps = {
+  display: "list-item",
+  ml: "23px"
+};
+
+type TextSectionProps = {
+  heading: ReactNode;
+  children: ReactNode;
+}
+
+const TextSection: FC<TextSectionProps> = ({ heading, children }) => {
+
   return (
-    <Box as="main">
+    <VStack
+      as="section"
+      align="flex-start"
+      gap={{ base: "16px", lg: "24px" }}
+    >
+      { heading }
+      <VStack
+        align="flex-start"
+        gap="24px"
+      >
+        { children }
+      </VStack>
+    </VStack>
+  );
+};
+
+export const About: FC = () => {
+  const { t } = useTranslation();
+  const translationRootPath = "pages.about";
+
+  const Heading = ({ translationPath }: { translationPath: string }) => (
+    <Text
+      as="h2"
+      fontSize={{ base: "headers.h5", lg: "headers.h5" }}
+      lineHeight={{ base: "26px", lg: "headers.h4" }}
+      fontWeight="bold"
+    >
+      { getTranslation(translationPath) }
+    </Text>
+  );
+
+  const SimpleParagraph = ({ translationPath, subPath }: { translationPath: string, subPath: string }) => (
+    <Text>
+      { getTranslation(translationPath, subPath) }
+    </Text>
+  );
+
+  const buildPath = (translationPath: string, subPath: string) =>
+    `${translationRootPath}.${translationPath}.${subPath === "title" ? subPath : "paragraphs." + subPath}`;
+
+  const getTranslation = (translationPath: string, subPath = "title") =>
+    t(buildPath(translationPath, subPath));
+
+  return (
+    <Box
+      as="main"
+      pb={{ base: "0px", md: "var(--footerHeight)" }}
+    >
       <Image
+        h={{ base: "169px", md: "116px", lg: "236px" }}
         src={aboutImage}
-        alt=""
         width="100%"
+        objectFit="cover"
+        alt="polluted_air"
+        filter="saturate(0)"
       />
-      <Container mt="12px">
+      <Divider variant="gradient" />
+      <VStack
+        my={{ base: "16px", md: "24px", lg: "40px" }}
+        mx="auto"
+        px="16px"
+      >
         <Flex
+          as="article"
+          maxW={{ base: "343px", md: "604px" }}
           direction="column"
-          gap="24px"
+          gap={{ base: "24px", lg: "40px" }}
         >
-          <Heading
-            as="h1"
-            p="12px 0"
+          <TextSection
+            heading={
+              <Text
+                as="h2"
+                fontSize={{ base: "headers.h5", lg: "headers.h1" }}
+                lineHeight={{ base: "26px", lg: "headers.h1" }}
+                fontWeight="bold"
+              >
+                { getTranslation("intro") }
+              </Text>
+            }
           >
-            About the Project
-          </Heading>
-          <Text>
-            <b>ZeroHarm</b> — is a service that allows you to monitor the level
-            of air pollution and percentage of humidity, ultraviolet radiation
-            index, noise level, as well as atmospheric pressure in your city.
-            Timely monitoring of these indicators will allow you to avoid
-            negative health effects and prepare for weather or anthropogenic
-            phenomena that most affect the human body, and vice versa - if the
-            indicators are normal, we will tell you how to spend time outdoors
-            with health benefits.
-          </Text>
-          <Heading
-            as="h2"
-            fontSize="24px"
+            <Text>
+              <Trans
+                i18nKey={buildPath("intro", "one")}
+                components={{ 1: <strong /> }}
+              />
+            </Text>
+          </TextSection>
+
+          <TextSection
+            heading={<Heading translationPath="air_quality"/>}
           >
-            Why it's important to monitor the quality of the air we breathe
-          </Heading>
-          <Text>
-            According to the UN Economic Commission for Europe's Web site, air
-            pollution is now considered the greatest threat to health from the
-            environment, causing 7 million deaths worldwide each year. Air
-            pollution causes and exacerbates a number of diseases, from asthma
-            to cancer, lung disease and heart disease. The International Agency
-            for Research on Cancer classifies outdoor air pollution and
-            particulate matter as carcinogenic to humans.
-          </Text>
-          <Text>
-            Thus, according to recent estimates by the World Health
-            Organization, exposure to polluted air is a more important risk
-            factor for major non-communicable diseases than previously thought.
-            Air pollution is the largest source of disease burden from the
-            environment.
-          </Text>
-          <Text>
-            Every major city contains hundreds of air pollutants that we
-            breathe. However, many of us do not have access to timely
-            information about air quality, and air pollution often goes
-            unnoticed.
-          </Text>
-          <Text>
-            In order to detect air pollution and warn you in time, you only need
-            to identify one marker pollutant found in almost all urban emissions
-            - PM2.5 (Fine Particulate Matter).
-          </Text>
-          <Text>
-            <b>PM2.5</b> — is microscopic particles of soot, mineral salts,
-            rubber, sand and asphalt, heavy metal compounds, and chemical
-            emissions, ranging in size from 0.001 to 2.5 micrometers (µm), tens
-            of times thinner than a human hair (its thickness is 40-120 µm),
-            smaller than a blood red blood cell (its diameter is 7 µm).
-          </Text>
+            <Text>
+              <Trans
+                i18nKey={buildPath("air_quality", "one")}
+                components={{
+                  1: <Link
+                        href="https://unece.org/ru/air-pollution-and-health"
+                        isExternal
+                        sx={linkStyleProps}
+                      />
+                }}
+              />
+            </Text>
+            <Text>
+              { <Trans
+                i18nKey={buildPath("air_quality", "two")}
+                components={{
+                  1: <Link
+                        href="https://www.who.int/health-topics/air-pollution#tab=tab_1"
+                        isExternal
+                        sx={linkStyleProps}
+                      />
+                }}
+              /> }
+            </Text>
+            <SimpleParagraph translationPath="air_quality" subPath="three" />
+            <SimpleParagraph translationPath="air_quality" subPath="four" />
+            <Text>
+              <Trans
+                i18nKey={buildPath("air_quality", "five")}
+                components={{ 1: <strong /> }}
+              />
+            </Text>
+            <SimpleParagraph translationPath="air_quality" subPath="six" />
+          </TextSection>
+
+          <TextSection
+            heading={<Heading translationPath="ultraviolet_radiation" />}
+          >
+            <Text>
+              <Trans
+                i18nKey={buildPath("ultraviolet_radiation", "one")}
+                components={{ 1: <strong /> }}
+              />
+            </Text>
+            <Text>
+              <Trans
+                i18nKey={buildPath("ultraviolet_radiation", "two")}
+                components={{ 1: <strong /> }}
+              />
+            </Text>
+          </TextSection>
+
+          <TextSection
+            heading={<Heading translationPath="atmospheric_pressure" />}
+          >
+            {
+              ["one", "two"].map((subPath) => (
+                <SimpleParagraph
+                  key={"atmospheric_pressure" + subPath}
+                  translationPath="atmospheric_pressure"
+                  subPath={subPath}
+                />
+              ))
+            }
+          </TextSection>
+
+          <TextSection
+            heading={<Heading translationPath="ambient_noise" />}
+          >
+            {
+              ["one", "two", "three", "four", "five", "six"].map((subPath) => (
+                <SimpleParagraph
+                  key={"ambient_noise_" + subPath}
+                  translationPath="ambient_noise"
+                  subPath={subPath}
+                />
+              ))
+            }
+          </TextSection>
+
+          <TextSection
+            heading={<Heading translationPath="air_humidity" />}
+          >
+            <SimpleParagraph translationPath="air_humidity" subPath="one" />
+            <Box as="div">
+              <Trans
+                i18nKey={buildPath("air_humidity", "two")}
+                components={{
+                  1: <Text sx={listTextItemStyleProps} />,
+                  2: <Text sx={listTextItemStyleProps} />,
+                  3: <Text sx={listTextItemStyleProps} />,
+                  4: <Text sx={listTextItemStyleProps} />
+                }}
+              />
+            </Box>
+            <SimpleParagraph translationPath="air_humidity" subPath="three" />
+          </TextSection>
         </Flex>
-      </Container>
+      </VStack>
     </Box>
   );
 };
