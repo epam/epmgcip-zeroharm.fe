@@ -5,4 +5,3 @@ export * from "./useSwiper";
 export * from "./useDetectWidth";
 export * from "./useDetectPage";
 export * from "./useScreenScrollController";
-export * from "./useTouchScreen";

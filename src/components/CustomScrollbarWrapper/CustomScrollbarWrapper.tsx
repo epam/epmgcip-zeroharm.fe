@@ -1,6 +1,6 @@
 import { FC, ReactNode, useEffect, useRef } from "react";
-import { Box } from "@chakra-ui/react";
-import { useDetectWidth, useTouchScreen } from "@Hooks";
+import { Box, useMediaQuery } from "@chakra-ui/react";
+import { useDetectWidth } from "@Hooks";
 
 type CustomScrollbarWrapperProps = {
   children: ReactNode;
@@ -31,7 +31,7 @@ const webkitBrowserScrollbarStyles = {
 export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ children, isScrollVisible, setIsScrollVisible }) => {
   const tabPanelsRef = useRef(null);
   const { isLargerThan1024 } = useDetectWidth();
-  const isTouchScreen = useTouchScreen();
+  const [isTouchScreen] = useMediaQuery("(pointer: coarse)", { ssr: false });
 
   // const { isFirefox } = detectBrowser();
   const isMobileTouchDevice = isTouchScreen && !isLargerThan1024;

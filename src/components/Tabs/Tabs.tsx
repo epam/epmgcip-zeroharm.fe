@@ -1,11 +1,11 @@
 import { FC, useEffect } from "react";
-import { Box, Tabs as ChakraTabs, Tab, TabList, TabPanel, TabPanels } from "@chakra-ui/react";
+import { Box, Tabs as ChakraTabs, Tab, TabList, TabPanel, TabPanels, useMediaQuery } from "@chakra-ui/react";
 import { resolveTranslationPath, detectBrowser } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
 import { tabsData } from "@Constants";
 import { Cards } from "@UI";
 import { Map, Footer, CustomScrollbarWrapper } from "@Components";
-import { useDetectWidth, useTouchScreen } from "@Hooks";
+import { useDetectWidth } from "@Hooks";
 import { IndexDate } from "../IndexDate/IndexDate";
 import { Indicators } from "../Indicators/Indicators";
 
@@ -25,7 +25,7 @@ type TabsProps = {
 export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => {
   const { parameter, setParameter } = useDataStore();
   const { isLargerThan600 } = useDetectWidth();
-  const isTouchScreen = useTouchScreen();
+  const [isTouchScreen] = useMediaQuery("(pointer: coarse)", { ssr: false });
 
   const { isFirefox } = detectBrowser();
   const isMobileWidth = !isLargerThan600;
