@@ -1,5 +1,5 @@
-export const postData = async <T>(values: T, path: string) => {
-  await fetch(`${process.env.REACT_APP_ZERO_HARM_URL}${path}`, {
+export const postData = <T>(values: T, path: string) => {
+  fetch(`${process.env.REACT_APP_ZERO_HARM_URL}${path}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
