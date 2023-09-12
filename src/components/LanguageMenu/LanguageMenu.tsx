@@ -129,6 +129,7 @@ export const LanguageMenu: FC = () => {
         mt={{ md: "12px" }}
         minH={isOpenOnMobile ? "calc(100vh - var(--headerMobileHeight))" : "initial"}
         borderRadius={{ base: "0", md: "8px" }}
+        transform="none"
         rootProps={{
           sx: isOpenOnMobile ? { transform: "translate3d(0, var(--headerMobileHeight), 0) !important" } : undefined
         }}
