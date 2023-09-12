@@ -137,6 +137,8 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
         w="100%"
         flex="1"
         overflow="hidden"
+        pt={{ base: "118px", md: "0px" }}
+        pb={{ base: "0px", md: "16px" }}
       >
         <Box
           h="100%"
@@ -145,8 +147,6 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
             md: `0 ${!isTouchScreen ? isFirefox ? "3px" : "6px" : "0px"} 0 16px`,
             lg: "0 20px 0 24px"
           }}
-          pt={{ base: "118px", md: "0px" }}
-          pb={{ base: "0px", md: "16px" }}
           overflow="hidden"
         >
           <CustomScrollbarWrapper
