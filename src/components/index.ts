@@ -27,3 +27,7 @@ export * from "./MainLayout/MainLayout";
 export * from "./FeedbackButton/FeedbackButton";
 export * from "./Footer/Footer";
 export * from "./Footer/FooterContent";
+export * from "./AboutContent/CustomParagraph";
+export * from "./AboutContent/TextSectionHeading";
+export * from "./AboutContent/TextSection";
+export * from "./AboutContent/AboutPageTextSections";
