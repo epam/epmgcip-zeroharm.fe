@@ -1,13 +1,10 @@
-import { FC, useEffect } from "react";
-import { Box, Tabs as ChakraTabs, Tab, TabList, TabPanel, TabPanels } from "@chakra-ui/react";
-import { resolveTranslationPath, detectBrowser } from "@Helpers";
+import { Dispatch, FC, SetStateAction, useEffect } from "react";
+import { Box, Tabs as ChakraTabs, Tab, TabList } from "@chakra-ui/react";
+import { resolveTranslationPath } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
 import { tabsData } from "@Constants";
-import { Cards } from "@UI";
-import { Map, Footer, CustomScrollbarWrapper } from "@Components";
-import { useDetectWidth } from "@Hooks";
-import { IndexDate } from "../IndexDate/IndexDate";
-import { Indicators } from "../Indicators/Indicators";
+import { CustomScrollbarWrapper } from "@Components";
+import { TabPanelsContent } from "./TabpanelsContent";
 
 const hover = {
   color: "white"
@@ -19,15 +16,11 @@ const selected = {
 
 type TabsProps = {
   isScrollVisible: boolean;
-  setIsScrollVisible: (isScrollVisible: boolean) => void
+  setIsScrollVisible: Dispatch<SetStateAction<boolean>>
 }
 
 export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => {
   const { parameter, setParameter } = useDataStore();
-  const { isLargerThan600 } = useDetectWidth();
-
-  const { isFirefox } = detectBrowser();
-  const isMobileWidth = !isLargerThan600;
 
   const tabs = tabsData.map((tabData) => resolveTranslationPath(tabData));
   const currentTab = parameter || tabs[0].tabId;
@@ -37,47 +30,6 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
   useEffect(() => {
     setParameter(currentTab);
   }, []);
-
-  const Content = () => (
-    <Box>
-      <TabPanels
-        maxW={{
-          base: "343px",
-          md: "327px",
-          lg: isScrollVisible ? isFirefox ? "387px" : "392px" : "396px"
-        }}
-        mx={{ base: "auto", md: "0px" }}
-      >
-        { tabs.map(({ tabId }) => (
-          <TabPanel
-            key={tabId}
-            display="flex"
-            flexDirection="column"
-            gap="16px"
-            p="0"
-          >
-            <Cards cardsKey={tabId} />
-            <IndexDate />
-            { tabId === "air_quality" && <Indicators /> }
-          </TabPanel>
-        )) }
-      </TabPanels>
-      {
-        isMobileWidth &&
-          <>
-            <Box
-              as="main"
-              height="400px"
-              w="100vw"
-              mt="16px"
-            >
-              <Map />
-            </Box>
-            <Footer />
-          </>
-      }
-    </Box>
-  );
 
   return (
     <ChakraTabs
@@ -138,10 +90,9 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
           isScrollVisible={isScrollVisible}
           setIsScrollVisible={setIsScrollVisible}
         >
-          <Content />
+          <TabPanelsContent {...{ isScrollVisible, setIsScrollVisible, tabs }} />
         </CustomScrollbarWrapper>
       </Box>
     </ChakraTabs>
   );
 };
-
