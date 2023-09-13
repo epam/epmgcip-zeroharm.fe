@@ -1,6 +1,7 @@
 import { FC, ReactNode, useEffect, useRef } from "react";
 import { Box, useMediaQuery } from "@chakra-ui/react";
 import { useDetectWidth } from "@Hooks";
+import { detectBrowser } from "@Helpers";
 
 type CustomScrollbarWrapperProps = {
   children: ReactNode;
@@ -33,7 +34,7 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
   const { isLargerThan1024 } = useDetectWidth();
   const [isTouchScreen] = useMediaQuery("(pointer: coarse)", { ssr: false });
 
-  // const { isFirefox } = detectBrowser();
+  const { isFirefox } = detectBrowser();
   const isMobileTouchDevice = isTouchScreen && !isLargerThan1024;
 
   const scrollbarStyles = isMobileTouchDevice ? {} : webkitBrowserScrollbarStyles;
@@ -62,32 +63,23 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
       w="100%"
       h="100%"
       overflow="hidden"
-      // pos="relative"
       mx={{ base: "auto", md: "initial" }}
     >
       <Box
         ref={tabPanelsRef}
+        w="auto"
         h="100%"
         overflowY="auto"
         overflowX="hidden"
+        mr={{ base: "0", md: isTouchScreen || isFirefox ? "3px" : "6px", lg: "20px" }}
+        display="flex"
+        alignItems="flex-start"
+        flexDirection="column"
         sx={{
           scrollbarWidth: "thin",
           scrollbarColor: "#48494D transparent",
           ...scrollbarStyles
         }}
-        // NEEDS APPROVAL
-        // _after={{
-        //   lg: {
-        //     content: isFirefox && isScrollVisible && !isTouchScreen ? "''" : undefined,
-        //     pos: "absolute",
-        //     w: "6px",
-        //     bgColor: "rgba(255, 255, 255, .05)",
-        //     h: "calc(100% - 2px)",
-        //     borderRadius: "10px",
-        //     right: "2px",
-        //     top: "1px"
-        //   }
-        // }}
       >
         { children }
       </Box>

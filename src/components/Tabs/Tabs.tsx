@@ -1,5 +1,5 @@
 import { FC, useEffect } from "react";
-import { Box, Tabs as ChakraTabs, Tab, TabList, TabPanel, TabPanels, useMediaQuery } from "@chakra-ui/react";
+import { Box, Tabs as ChakraTabs, Tab, TabList, TabPanel, TabPanels } from "@chakra-ui/react";
 import { resolveTranslationPath, detectBrowser } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
 import { tabsData } from "@Constants";
@@ -25,7 +25,6 @@ type TabsProps = {
 export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => {
   const { parameter, setParameter } = useDataStore();
   const { isLargerThan600 } = useDetectWidth();
-  const [isTouchScreen] = useMediaQuery("(pointer: coarse)", { ssr: false });
 
   const { isFirefox } = detectBrowser();
   const isMobileWidth = !isLargerThan600;
@@ -40,18 +39,14 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
   }, []);
 
   const Content = () => (
-    <Box
-      h="auto"
-      display={{ base: "flex", md: "initial" }}
-      flexDirection="column"
-    >
+    <Box>
       <TabPanels
         maxW={{
           base: "343px",
           md: "327px",
-          lg: isScrollVisible ? "392px" : "396px"
+          lg: isScrollVisible ? isFirefox ? "387px" : "392px" : "396px"
         }}
-        mx={{ base: "auto", md: "initial" }}
+        mx={{ base: "auto", md: "0px" }}
       >
         { tabs.map(({ tabId }) => (
           <TabPanel
@@ -88,74 +83,63 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
     <ChakraTabs
       defaultIndex={defaultTabIndex}
       variant="unstyled"
-      overflowY="hidden"
+      w="100%"
       flex="1"
       display="flex"
       flexDirection="column"
-      w="100%"
+      overflowY="hidden"
     >
       <Box
         w="100%"
         bgColor="gray.900"
         pos={{ base: "fixed", md: "initial" }}
         zIndex={{ base: "1098", md: "initial" }}
+        p={{
+          base: "68px 0 16px",
+          md: "0 16px 16px",
+          lg: "0 20px 16px 24px"
+        }}
       >
-        <Box
-          m={{
-            base: "0 0 16px",
-            md: "0 16px 16px",
-            lg: "0 20px 16px 24px"
-          }}
-          mt={{ base: "68px", md: "0px" }}
+        <TabList
+          w={{ base: "343px", md: "initial" }}
+          mx="auto"
         >
-          <TabList
-            w={{ base: "343px", md: "initial" }}
-            mx="auto"
-          >
-            { tabs.map(({ tabId, tabName }) => (
-              <Tab
-                key={tabId}
-                borderBottom="2px solid gray"
-                color="gray"
-                flex="1"
-                textAlign="center"
-                lineHeight={{ base: "13px", lg: "small" }}
-                fontSize={{ base: "small", lg: "medium" }}
-                h={{ base: "34px", lg: "40px" }}
-                _selected={selected}
-                _hover={hover}
-                onClick={() => setParameter(tabId)}
-              >
-                { tabName }
-              </Tab>
-            )) }
-          </TabList>
-        </Box>
+          { tabs.map(({ tabId, tabName }) => (
+            <Tab
+              key={tabId}
+              h={{ base: "34px", lg: "40px" }}
+              flex="1"
+              borderBottom="2px solid gray"
+              color="gray"
+              textAlign="center"
+              fontSize={{ base: "small", lg: "medium" }}
+              lineHeight={{ base: "13px", lg: "small" }}
+              _selected={selected}
+              _hover={hover}
+              onClick={() => setParameter(tabId)}
+            >
+              { tabName }
+            </Tab>
+          )) }
+        </TabList>
       </Box>
 
       <Box
         w="100%"
         flex="1"
+        p={{
+          base: "118px 0 0 0",
+          md: "0 0 16px 16px",
+          lg: "0 0 16px 24px"
+        }}
         overflow="hidden"
-        pt={{ base: "118px", md: "0px" }}
-        pb={{ base: "0px", md: "16px" }}
       >
-        <Box
-          h="100%"
-          m={{
-            base: "0",
-            md: `0 ${!isTouchScreen ? isFirefox ? "3px" : "6px" : "0px"} 0 16px`,
-            lg: "0 20px 0 24px"
-          }}
-          overflow="hidden"
+        <CustomScrollbarWrapper
+          isScrollVisible={isScrollVisible}
+          setIsScrollVisible={setIsScrollVisible}
         >
-          <CustomScrollbarWrapper
-            isScrollVisible={isScrollVisible}
-            setIsScrollVisible={setIsScrollVisible}
-          >
-            <Content />
-          </CustomScrollbarWrapper>
-        </Box>
+          <Content />
+        </CustomScrollbarWrapper>
       </Box>
     </ChakraTabs>
   );
