@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Popup } from "@UI";
 import { LocationSelect } from "../LocationSelect/LocationSelect";
 import { ReactComponent as IconLocal } from "@Assets/icons/filled/harm-local.svg";
+import { LocationMenu } from "../LocationMenu/LocationMenu";
 
 export const Selector = () => {
   return (
@@ -22,6 +23,7 @@ export const Selector = () => {
         { t("pages.home.protect") }
       </Heading>
       <LocationSelect />
+      <LocationMenu/>
       <Flex
         direction="row"
         position="relative"
