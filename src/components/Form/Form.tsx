@@ -32,7 +32,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
   const invalidInputErrorMessage = t("pages.form.incorrectly_notification");
 
   const onSubmit: SubmitHandler<FormData> = ({ name, email, feedback, isResponseRequired }) => {
-    postData({ name, email, message: feedback, checkbox: isResponseRequired }, "/v1/feedback");
+    postData("/v1/feedback", { name, email, message: feedback, checkbox: isResponseRequired });
     submitForm(true);
     setIsSubmittedWithResponse(watchResponse);
   };

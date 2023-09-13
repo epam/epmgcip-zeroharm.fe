@@ -1,4 +1,4 @@
-export const postData = <T>(values: T, path: string) => {
+export const postData = <T>(path: string, values: T) => {
   fetch(`${process.env.REACT_APP_ZERO_HARM_URL}${path}`, {
     method: "POST",
     headers: {
