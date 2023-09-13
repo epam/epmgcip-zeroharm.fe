@@ -5,6 +5,8 @@ import { useIncludeHover } from "@Hooks";
 export const FooterContent = () => {
   const shouldIncludeHover = useIncludeHover();
 
+  const textEnding = t("pages.footer.end");
+
   return (
     <Text
       fontSize="sm"
@@ -18,7 +20,7 @@ export const FooterContent = () => {
         md: "initial"
       }}
     >
-      { t("pages.footer.start") }
+      { t("pages.footer.start") }{ " " }
       <ChakraLink
         href="https://hydromet.uz/"
         isExternal
@@ -30,7 +32,11 @@ export const FooterContent = () => {
       >
         { t("pages.footer.link") }
       </ChakraLink>
-      { t("pages.footer.end") }
+      { textEnding && (
+        <>
+          { " " }{ textEnding }
+        </>
+      ) }
     </Text>
   );
 };
