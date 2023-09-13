@@ -10,9 +10,8 @@ export const Greetings = () => {
     <Flex
       justifyContent="end"
       position="relative"
-      flex="1"
+      flex={{ base: "0", lg: "1" }}
       maxW={{ base: "100%", lg: "500px" }}
-      maxH={{ base: "345px", md: "435px", lg: "initial" }}
     >
       <Box
         zIndex="1"
