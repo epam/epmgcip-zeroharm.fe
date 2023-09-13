@@ -1,13 +1,12 @@
-import { Link as ReactRouterLink } from "react-router-dom";
-import { Button, Flex, Heading, Text, Box, Link as ChakraLink } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+import { Button, Flex, Heading, Text, Box, Icon } from "@chakra-ui/react";
 import { t } from "i18next";
 import { Popup } from "@UI";
 import { LocationSelect } from "../LocationSelect/LocationSelect";
-import { useDetectWidth } from "@Hooks";
 import { ReactComponent as IconLocal } from "@Assets/icons/filled/harm-local.svg";
 
 export const Selector = () => {
-  const { isLargerThan600, isLargerThan1024 } = useDetectWidth();
+  const navigate = useNavigate();
 
   return (
     <Flex
@@ -41,28 +40,23 @@ export const Selector = () => {
         width="100%"
         mt={{ base: "8px", lg: "16px" }}
       >
-        <ChakraLink
-          as={ReactRouterLink}
-          to="/map"
-          w={isLargerThan1024 ? "auto" : "100%"}
+        <Button
+          leftIcon={
+            <Icon
+              as={IconLocal}
+              width={{ base: "20px", md: "24px" }}
+              height={{ base: "20px", md: "24px" }}
+            />
+          }
+          width={{ base: "100%", lg: "auto" }}
+          height="auto"
+          p={{ base: "12px 24px", md: "16px 24px" }}
+          fontSize={{ base: "small", md: "medium" }}
+          lineHeight={{ base: "small", md: "medium" }}
+          onClick={() => navigate("/map")}
         >
-          <Button
-            leftIcon={
-              isLargerThan600 ? (
-                <IconLocal width="24px" height="24px" />
-              ) : (
-                <IconLocal width="20px" height="20px" />
-              )
-            }
-            width="inherit"
-            height="auto"
-            p={{ base: "12px 24px", md: "16px 24px" }}
-            fontSize={{ base: "small", md: "medium" }}
-            lineHeight={{ base: "small", md: "medium" }}
-          >
-            { t("pages.home.open_map") }
-          </Button>
-        </ChakraLink>
+          { t("pages.home.open_map") }
+        </Button>
         <Box>
           <Popup isOpen={false}>
             <Text>{ t("pages.home.choose_location") }</Text>
