@@ -76,7 +76,7 @@ export const Card: FC<CardType> = ({
     <>
       <CardHeader
         bg={`${color}.500`}
-        minHeight={{ base: "120px", md: "150px" }}
+        height={{ base: "120px", md: "150px" }}
         padding={{ base: "16px", md: "24px" }}
       >
         <CardText>
