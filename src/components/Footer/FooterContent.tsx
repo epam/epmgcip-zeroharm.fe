@@ -1,8 +1,9 @@
-import { Text, Link as ChakraLink, useMediaQuery } from "@chakra-ui/react";
+import { Text, Link as ChakraLink } from "@chakra-ui/react";
 import { t } from "i18next";
+import { useIncludeHover } from "@Hooks";
 
 export const FooterContent = () => {
-  const shouldIncludeHover = useMediaQuery("(hover: hover) and (pointer: fine)", { ssr: false });
+  const shouldIncludeHover = useIncludeHover();
 
   return (
     <Text
@@ -22,7 +23,7 @@ export const FooterContent = () => {
         href="https://hydromet.uz/"
         isExternal
         sx={
-          shouldIncludeHover[0] ?
+          shouldIncludeHover ?
           { _hover: { color: "yellow.500" } } :
           { color: "yellow.500" }
         }
