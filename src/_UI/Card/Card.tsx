@@ -42,9 +42,7 @@ const CardSubHeading = chakra(Box, {
 });
 const CardHeading = chakra(Box, {
   baseStyle: {
-    fontWeight: "700",
-    fontSize: "headers.h3",
-    lineHeight: "headers.h3"
+    fontWeight: "700"
   }
 });
 
