@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-import { resolveTranslationPath } from "@Helpers";
 
 const rootTranslationPath = "pages.about";
 const UN_ECONOMIC_COMMISSION_LINK = "https://unece.org/ru/air-pollution-and-health";

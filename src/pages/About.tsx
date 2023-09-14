@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Flex, Image, Divider, VStack } from "@chakra-ui/react";
+import { AboutPageTextSections } from "@Components";
 import aboutImage from "@Assets/images/about-full.jpeg";
-import { AboutPageTextSections } from "../components/AboutContent/AboutPageTextSections";
 
 export const About: FC = () => {
 
@@ -11,7 +11,7 @@ export const About: FC = () => {
       pb={{ base: "0px", md: "var(--footerHeight)" }}
     >
       <Image
-        h={{ base: "169px", md: "116px", lg: "236px" }}
+        h={{ base: "165px", md: "116px", lg: "236px" }}
         src={aboutImage}
         width="100%"
         objectFit="cover"
