@@ -13,7 +13,7 @@ import { ReactComponent as ArrowUpIcon } from "@Assets/icons/stroke/harm-arrow-u
 
 const motionVariants: Variants = {
   enter: {
-    scaleY: 1,
+    transform: "scale(1, 1)",
     opacity: 1,
     visibility: "visible",
     transition: {
@@ -21,16 +21,16 @@ const motionVariants: Variants = {
         delay: 0.1,
         duration: 0.2
       },
-      scaleY: {
+      transform: {
         duration: 0.3
       }
     }
   },
   exit: {
-    scaleY: 0,
+    transform: "scale(1, 0)",
     opacity: 0,
     transition: {
-      scaleY: {
+      transform: {
         duration: 0.3
       },
       opacity: {
