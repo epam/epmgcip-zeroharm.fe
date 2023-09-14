@@ -70,7 +70,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             validate: {
               required,
               pattern: (value) => {
-                if (value && watchResponse && !/^[A-Za-z А-Яа-я-,'.]{2,50}$/.test(value)) 
+                if (value && watchResponse && !/^[A-Za-z А-Яа-я-,'.]{2,50}$/.test(value))
                   return invalidInputErrorMessage;
               }
             }
@@ -108,11 +108,11 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             validate: {
               required,
               pattern: (value) => {
-                if (value && watchResponse && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value)) 
+                if (value && watchResponse && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value))
                   return invalidInputErrorMessage;
               },
               length: (value) => {
-                if (watchResponse && value.length < 7 && value.length > 50) 
+                if (watchResponse && value.length < 7 && value.length > 50)
                   return invalidInputErrorMessage;
               }
             }
