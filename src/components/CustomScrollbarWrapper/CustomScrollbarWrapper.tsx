@@ -1,13 +1,15 @@
 import { Dispatch, FC, ReactNode, SetStateAction, useEffect, useRef } from "react";
 import { Box } from "@chakra-ui/react";
 import { useDetectWidth, useIncludeHover } from "@Hooks";
-import { isFirefox } from "@Helpers";
+import { browserInfo } from "@Helpers";
 
 type CustomScrollbarWrapperProps = {
   children: ReactNode;
   isScrollVisible: boolean;
   setIsScrollVisible: Dispatch<SetStateAction<boolean>>
 }
+
+const { isFirefox } = browserInfo;
 
 const webkitBrowserScrollbarStyles = {
   "::-webkit-scrollbar": {

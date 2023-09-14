@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { TabPanel, TabPanels } from "@chakra-ui/react";
-import { isFirefox } from "@Helpers";
+import { browserInfo } from "@Helpers";
 import { Cards} from "@UI";
 import { IndexDate } from "../IndexDate/IndexDate";
 import { Indicators } from "../Indicators/Indicators";
@@ -9,6 +9,8 @@ type TabPanelsContentProps = {
   isScrollVisible: boolean;
   tabs: any[]
 }
+
+const { isFirefox } = browserInfo;
 
 export const TabPanelsContent: FC<TabPanelsContentProps> = ({ isScrollVisible, tabs }) => {
 

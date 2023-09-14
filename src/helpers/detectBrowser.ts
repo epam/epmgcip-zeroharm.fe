@@ -16,4 +16,4 @@ export const detectBrowser = () => {
   };
 };
 
-export const isFirefox = detectBrowser().isFirefox;
+export const browserInfo = detectBrowser();
