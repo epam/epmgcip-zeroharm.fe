@@ -1,12 +1,12 @@
 import { FC } from "react";
-import { Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { type AboutPageData, aboutPageRawData } from "@Constants";
 import { resolveTranslationPath } from "@Helpers";
 import { TextSection } from "./TextSection";
 import { TextSectionHeading } from "./TextSectionHeading";
 import { CustomParagraph } from "./CustomParagraph";
 
-export const AboutPageTextSections: FC = () => {
+export const AboutPageArticle: FC = () => {
   const aboutPageData = aboutPageRawData.map(({ sectionId, sectionHeading, sectionParagraphs }) => {
     return {
       sectionId,
@@ -16,7 +16,12 @@ export const AboutPageTextSections: FC = () => {
   });
 
   return (
-    <>
+    <Flex
+      as="article"
+      maxW={{ base: "343px", md: "604px" }}
+      direction="column"
+      gap={{ base: "24px", lg: "40px" }}
+    >
       {
         aboutPageData.map(({ sectionId, sectionHeading, sectionParagraphs }) => (
           <TextSection
@@ -39,6 +44,6 @@ export const AboutPageTextSections: FC = () => {
           </TextSection>
         ))
       }
-    </>
+    </Flex>
   );
 };

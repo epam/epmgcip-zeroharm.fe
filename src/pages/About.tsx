@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { Box, Flex, Image, Divider, VStack } from "@chakra-ui/react";
-import { AboutPageTextSections } from "@Components";
+import { Box, Flex, Image, Divider } from "@chakra-ui/react";
+import { AboutPageArticle } from "@Components";
 import aboutImage from "@Assets/images/about-full.jpeg";
 
 export const About: FC = () => {
@@ -21,20 +21,13 @@ export const About: FC = () => {
 
       <Divider variant="gradient" />
 
-      <VStack
-        my={{ base: "16px", md: "24px", lg: "40px" }}
-        mx="auto"
+      <Flex
+        justify="center"
+        py={{ base: "16px", md: "24px", lg: "40px" }}
         px="16px"
       >
-        <Flex
-          as="article"
-          maxW={{ base: "343px", md: "604px" }}
-          direction="column"
-          gap={{ base: "24px", lg: "40px" }}
-        >
-          <AboutPageTextSections />
-        </Flex>
-      </VStack>
+        <AboutPageArticle />
+      </Flex>
     </Box>
   );
 };
