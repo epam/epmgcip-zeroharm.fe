@@ -8,7 +8,7 @@ import { ParticlesAliasesKeyType, groupsColors, GroupsColorsKeyType } from "@Con
 
 const hints = ["PM2.5", "PM10", "NO2", "CO", "O3", "SO2"];
 
-export const Indicators: FC= () => {
+export const Indicators: FC = () => {
   const { airComponents } = useDataStore();
 
   return (
