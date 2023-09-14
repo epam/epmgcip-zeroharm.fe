@@ -58,11 +58,9 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
 
   return (
     <Box
-      className="custom-scrollbar"
       w="100%"
       h="100%"
       overflow="hidden"
-      mx={{ base: "auto", md: "initial" }}
     >
       <Box
         ref={tabPanelsRef}

@@ -29,25 +29,19 @@ export const Aside: FC = () => {
         md: "359px",
         lg: `calc(440px + ${offset})`
       }}
+      overflow="hidden"
+      pt={{ base: "8px", md: "16px" }}
+      gap="16px"
     >
       <Box
-        w="100%"
-        pos={{ base: "fixed", md: "initial" }}
-        zIndex={{ base: "1099", md: "initial" }}
-        bgColor="gray.900"
+        w={{ base: "343px", md: "100%" }}
+        h="44px"
+        px={{ base: "0", md: "16px", lg: "24px" }}
+        pr={{ lg: "20px" }}
       >
-        <Box
-          w={{ base: "343px", md: "initial" }}
-          h="44px"
-          m={{
-            base: "8px auto 16px",
-            md: "16px",
-            lg: "16px 20px 16px 24px"
-          }}
-        >
-          <LocationSelect />
-        </Box>
+        <LocationSelect />
       </Box>
+
       <Tabs
         tabs={tabs}
       >
