@@ -21,9 +21,7 @@
       "name": "About"
     },
     "footer": {
-      "start": "All data is provided in collaboration with",
-      "link": "the Center of Hydrometeorological Service of the Republic of Uzbekistan (Uzhydromet)",
-      "end": "",
+      "sourceInfoText": "All data is provided in collaboration with <1>the Center of Hydrometeorological Service of the Republic of Uzbekistan (Uzhydromet)</1>",
       "button": "Leave feedback"
     },
     "form": {
