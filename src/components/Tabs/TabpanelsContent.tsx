@@ -1,6 +1,6 @@
 import { Dispatch, FC, SetStateAction } from "react";
-import { useDetectWidth } from "../../hooks";
-import { detectBrowser } from "../../helpers";
+import { useDetectWidth } from "@Hooks";
+import { detectBrowser } from "@Helpers";
 import { Box, TabPanel, TabPanels } from "@chakra-ui/react";
 import { Cards } from "@UI";
 import { Map, Footer } from "@Components";
