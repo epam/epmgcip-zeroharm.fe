@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { t } from "i18next";
 import { IndicatorWrapper, Progress } from "@UI";
@@ -8,11 +8,7 @@ import { useParameterData } from "@Hooks";
 import {useDataStore} from "@Store/useDataStore";
 import { TextWithTooltip } from "../TextWithTooltip/TextWithTooltip";
 
-type IndexDateType = {
-  children?: ReactNode;
-};
-
-export const IndexDate: FC<IndexDateType> = ({ children }) => {
+export const IndexDate: FC = () => {
   const { parameter, currentParameterValue } = useParameterData();
   const { fetchingDate } = useDataStore();
 
@@ -103,7 +99,6 @@ export const IndexDate: FC<IndexDateType> = ({ children }) => {
           }
         </Flex>
       </Flex>
-      { children }
     </IndicatorWrapper>
   );
 };
