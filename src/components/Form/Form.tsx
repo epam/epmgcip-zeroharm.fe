@@ -48,12 +48,12 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Divider
-        mb={4}
+        mb="4"
         borderColor="gray.700"
       />
       <FormControl
         isInvalid={Boolean(errors.name)}
-        mb={2}
+        mb="2"
       >
         <InputLabel
           tooltipText={t("pages.form.name.tip")}
@@ -68,17 +68,20 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             validate: {
               required,
               pattern: (value) => {
-                if (value && watchResponse && !/^[A-Za-z А-Яа-я-,'.]{2,50}$/.test(value))
-                  return invalidInputErrorMessage;
+                if (value && watchResponse && !/^[A-Za-z А-Яа-я-,'.]{2,50}$/.test(value)) return invalidInputErrorMessage;
               }
             }
           })}
         />
-        <Box minH="6" pt="1">
+        <Box
+          minH={{ base: 7, lg: 8 }}
+          pt="1"
+        >
           {
             <FormErrorMessage
               mt="0"
-              fontSize="sm"
+              fontSize={{ base: "small", lg: "medium" }}
+              lineHeight={{ base: "small", lg: "medium" }}
             >
               { errors.name && errors.name.message?.toString() }
             </FormErrorMessage>
@@ -101,22 +104,24 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           {...register("email", {
             validate: {
               required,
-              pattern: value => {
-                if (value && watchResponse && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value))
-                  return invalidInputErrorMessage;
+              pattern: (value) => {
+                if (value && watchResponse && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value)) return invalidInputErrorMessage;
               },
-              length: value => {
-                if (watchResponse && value.length < 7 && value.length > 50)
-                  return invalidInputErrorMessage;
+              length: (value) => {
+                if (watchResponse && value.length < 7 && value.length > 50) return invalidInputErrorMessage;
               }
             }
           })}
         />
-        <Box minH="6" pt="1">
+        <Box
+          minH={{ base: 7, lg: 8 }}
+          pt="1"
+        >
           {
             <FormErrorMessage
               mt="0"
-              fontSize="sm"
+              fontSize={{ base: "small", lg: "medium" }}
+              lineHeight={{ base: "small", lg: "medium" }}
             >
               { errors.email && errors.email.message?.toString() }
             </FormErrorMessage>
@@ -125,7 +130,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
       </FormControl>
       <FormControl
         isInvalid={Boolean(errors.feedback)}
-        mb={2}
+        mb="2"
       >
         <InputLabel
           tooltipText={t("pages.form.feedback.tip")}
@@ -134,9 +139,9 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           required
         />
         <Textarea
-          h={100}
+          h="100"
           bgColor="gray.700"
-          border={0}
+          border="0"
           focusBorderColor="white"
           id="feedback"
           placeholder={t("pages.form.feedback.placeholder")}
@@ -159,18 +164,22 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             required: requiredErrorMessage
           })}
         />
-        <Box minH="6" pt="1">
+        <Box
+          minH={{ base: 7, lg: 8 }}
+          pt="1"
+        >
           <FormErrorMessage
             mt="0"
-            fontSize="sm"
+            fontSize={{ base: "small", lg: "medium" }}
+            lineHeight={{ base: "small", lg: "medium" }}
           >
             { errors.feedback && errors.feedback.message?.toString() }
           </FormErrorMessage>
         </Box>
       </FormControl>
-      <FormControl pb={4}>
+      <FormControl pb="4">
         <Flex
-          mb={2}
+          mb="2"
           align="center"
         >
           <Tooltip
@@ -178,6 +187,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             hasArrow
             placement="right-start"
             variant="light"
+            lineHeight="small"
           >
             <Box
               w="6"
@@ -198,22 +208,24 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             {...register("response")}
           />
           <FormLabel
-            mr={0}
-            mb={0}
+            mr="0"
+            mb="0"
             htmlFor="response"
+            fontSize={{ base: "small", lg: "medium" }}
+            lineHeight={{ base: "small", lg: "medium" }}
           >
             { t("pages.form.checkbox.label") }
           </FormLabel>
         </Flex>
       </FormControl>
       <Divider
-        mb={4}
+        mb="4"
         borderColor="gray.700"
       />
       <Button
         isLoading={isSubmitting}
         type="submit"
-        padding="16px 24px"
+        w={{base: "100%", md: "initial"}}
       >
         { t("pages.form.button") }
       </Button>

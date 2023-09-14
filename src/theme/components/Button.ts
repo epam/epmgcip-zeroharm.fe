@@ -2,7 +2,7 @@ import { StyleFunctionProps, defineStyleConfig } from "@chakra-ui/react";
 
 const buttonDefaultStyles = {
   bg: "white",
-  p: "16px",
+  p: { base: "13px 24px", lg: "16px 24px"},
   color: "gray.950",
   borderRadius: "8px"
 };

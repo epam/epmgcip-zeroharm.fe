@@ -22,6 +22,7 @@ export const InputLabel: FC<InputLabelProps> = (props) => {
         hasArrow
         placement="right-start"
         variant="light"
+        lineHeight="small"
       >
         <Box
           w="6"
@@ -38,6 +39,8 @@ export const InputLabel: FC<InputLabelProps> = (props) => {
         mr={0}
         mb={0}
         htmlFor={htmlFor}
+        fontSize={{base: "small", lg: "medium"}}
+        lineHeight={{base: "small", lg: "medium"}}
       >
         { label }
       </FormLabel>

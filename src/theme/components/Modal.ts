@@ -16,12 +16,6 @@ export const Modal = defineStyleConfig({
   },
   variants: {
     default: {
-      header: {
-        borderTopRadius: "lg",
-        paddingX: 5,
-        paddingTop: 5,
-        paddingBottom: 4
-      },
       overlay: {
         bgColor: "rgba(37,37,38, 0.9)"
       },
@@ -29,6 +23,11 @@ export const Modal = defineStyleConfig({
         paddingBottom: 6
       },
       dialog: {
+        maxW: {
+          base: "367px",
+          md: "440px",
+          lg: "512px"
+        },
         position: "relative",
         _after: {
           content: "''",
@@ -39,9 +38,8 @@ export const Modal = defineStyleConfig({
           left: 0,
           zIndex: "hide",
           margin: "-4px",
-          borderRadius: "inherit",
-          backgroundImage:
-            "linear-gradient(90deg, #339944 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #7D5BA6 100%);"
+          borderRadius: { base: 0, md: "inherit" },
+          backgroundImage: "linear-gradient(90deg, #339944 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #7D5BA6 100%);"
         }
       }
     },
