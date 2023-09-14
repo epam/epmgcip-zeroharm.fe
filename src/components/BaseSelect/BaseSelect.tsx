@@ -32,7 +32,8 @@ const getSelectComponentStyleConfig =
 const BaseSelectStyleConfig = {
   container: {
     bg: "gray.700",
-    zIndex: "2"
+    zIndex: "2",
+    borderRadius: "8px"
   },
   menuList: {
     bg: "gray.700"
