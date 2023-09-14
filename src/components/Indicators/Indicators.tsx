@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { t } from "i18next";
 import { Flex, Text } from "@chakra-ui/react";
 import { IndicatorWrapper, Indicator } from "@UI";
@@ -6,13 +6,9 @@ import { getParameterGroup } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
 import { ParticlesAliasesKeyType, groupsColors, GroupsColorsKeyType } from "@Constants";
 
-type IndexDateType = {
-  children?: ReactNode;
-};
-
 const hints = ["PM2.5", "PM10", "NO2", "CO", "O3", "SO2"];
 
-export const Indicators: FC<IndexDateType> = ({ children }) => {
+export const Indicators: FC= () => {
   const { airComponents } = useDataStore();
 
   return (
