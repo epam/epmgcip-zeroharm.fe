@@ -3,7 +3,7 @@ import { Box, Tabs as ChakraTabs, Tab, TabList } from "@chakra-ui/react";
 import { resolveTranslationPath } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
 import { tabsData } from "@Constants";
-import { CustomScrollbarWrapper } from "@Components";
+import { CustomScrollbarWrapper } from "../CustomScrollbarWrapper/CustomScrollbarWrapper";
 import { TabPanelsContent } from "./TabpanelsContent";
 
 const hover = {
@@ -68,6 +68,7 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
               lineHeight={{ base: "13px", lg: "small" }}
               _selected={selected}
               _hover={hover}
+
               onClick={() => setParameter(tabId)}
             >
               { tabName }

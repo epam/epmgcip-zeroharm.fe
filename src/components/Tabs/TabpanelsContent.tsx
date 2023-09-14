@@ -1,22 +1,21 @@
-import { Dispatch, FC, SetStateAction } from "react";
+import { FC } from "react";
 import { useDetectWidth } from "@Hooks";
-import { detectBrowser } from "@Helpers";
+import { isFirefox } from "@Helpers";
 import { Box, TabPanel, TabPanels } from "@chakra-ui/react";
-import { Cards } from "@UI";
-import { Map, Footer } from "@Components";
-import { Indicators } from "../Indicators/Indicators";
+import { Cards} from "@UI";
+import { Map } from "../Map/Map";
+import { Footer } from "../Footer/Footer";
 import { IndexDate } from "../IndexDate/IndexDate";
+import { Indicators } from "../Indicators/Indicators";
 
 type TabPanelsContentProps = {
   isScrollVisible: boolean;
-  setIsScrollVisible: Dispatch<SetStateAction<boolean>>
   tabs: any[]
 }
 
 export const TabPanelsContent: FC<TabPanelsContentProps> = ({ isScrollVisible, tabs }) => {
   const { isLargerThan600 } = useDetectWidth();
 
-  const { isFirefox } = detectBrowser();
   const isMobileWidth = !isLargerThan600;
 
   return (

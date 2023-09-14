@@ -1,7 +1,7 @@
 import { Dispatch, FC, ReactNode, SetStateAction, useEffect, useRef } from "react";
 import { Box } from "@chakra-ui/react";
 import { useDetectWidth, useIncludeHover } from "@Hooks";
-import { detectBrowser } from "@Helpers";
+import { isFirefox } from "@Helpers";
 
 type CustomScrollbarWrapperProps = {
   children: ReactNode;
@@ -34,7 +34,6 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
   const { isLargerThan1024 } = useDetectWidth();
   const shouldIncludeHover = useIncludeHover();
 
-  const { isFirefox } = detectBrowser();
   const isMobileTouchDevice = !shouldIncludeHover && !isLargerThan1024;
   const scrollbarWebkitStyles = isMobileTouchDevice ? {} : webkitBrowserScrollbarStyles;
 
