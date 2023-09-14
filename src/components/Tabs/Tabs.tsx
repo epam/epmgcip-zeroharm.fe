@@ -1,10 +1,6 @@
-import { Dispatch, FC, SetStateAction, useEffect } from "react";
+import { FC, ReactNode, useEffect } from "react";
 import { Box, Tabs as ChakraTabs, Tab, TabList } from "@chakra-ui/react";
-import { resolveTranslationPath } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
-import { tabsData } from "@Constants";
-import { CustomScrollbarWrapper } from "../CustomScrollbarWrapper/CustomScrollbarWrapper";
-import { TabPanelsContent } from "./TabpanelsContent";
 
 const hover = {
   color: "white"
@@ -15,14 +11,13 @@ const selected = {
 };
 
 type TabsProps = {
-  isScrollVisible: boolean;
-  setIsScrollVisible: Dispatch<SetStateAction<boolean>>
+  children: ReactNode;
+  tabs: any[];
 }
 
-export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => {
+export const Tabs: FC<TabsProps> = ({ children, tabs }) => {
   const { parameter, setParameter } = useDataStore();
 
-  const tabs = tabsData.map((tabData) => resolveTranslationPath(tabData));
   const currentTab = parameter || tabs[0].tabId;
   const currentTabData = tabs.find(({ tabId }) => tabId === currentTab);
   const defaultTabIndex = tabs.indexOf(currentTabData);
@@ -87,12 +82,7 @@ export const Tabs: FC<TabsProps> = ({ isScrollVisible, setIsScrollVisible }) => 
         }}
         overflow="hidden"
       >
-        <CustomScrollbarWrapper
-          isScrollVisible={isScrollVisible}
-          setIsScrollVisible={setIsScrollVisible}
-        >
-          <TabPanelsContent {...{ isScrollVisible, setIsScrollVisible, tabs }} />
-        </CustomScrollbarWrapper>
+        { children }
       </Box>
     </ChakraTabs>
   );
