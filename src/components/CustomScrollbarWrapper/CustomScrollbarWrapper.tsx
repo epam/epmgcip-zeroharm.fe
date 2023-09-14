@@ -1,6 +1,6 @@
 import { Dispatch, FC, ReactNode, SetStateAction, useEffect, useRef } from "react";
-import { Box, useMediaQuery } from "@chakra-ui/react";
-import { useDetectWidth } from "@Hooks";
+import { Box } from "@chakra-ui/react";
+import { useDetectWidth, useIncludeHover } from "@Hooks";
 import { detectBrowser } from "@Helpers";
 
 type CustomScrollbarWrapperProps = {
@@ -32,10 +32,10 @@ const webkitBrowserScrollbarStyles = {
 export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ children, isScrollVisible, setIsScrollVisible }) => {
   const tabPanelsRef = useRef(null);
   const { isLargerThan1024 } = useDetectWidth();
-  const [isTouchScreen] = useMediaQuery("(pointer: coarse)", { ssr: false });
+  const shouldIncludeHover = useIncludeHover();
 
   const { isFirefox } = detectBrowser();
-  const isMobileTouchDevice = isTouchScreen && !isLargerThan1024;
+  const isMobileTouchDevice = !shouldIncludeHover && !isLargerThan1024;
   const scrollbarWebkitStyles = isMobileTouchDevice ? {} : webkitBrowserScrollbarStyles;
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
         h="100%"
         overflowY="auto"
         overflowX="hidden"
-        mr={{ base: "0", md: isTouchScreen || isFirefox ? "3px" : "6px", lg: "20px" }}
+        mr={{ base: "0", md: !shouldIncludeHover || isFirefox ? "3px" : "6px", lg: "20px" }}
         sx={{
           scrollbarWidth: "thin",
           scrollbarColor: "#48494D transparent",
