@@ -10,9 +10,9 @@ interface TextWithTooltipProps extends FlexProps {
 }
 
 export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, fontSize, lineHeight, iconSize }) => {
-  const { isLargerThan600 } = useDetectWidth();
+  const { isLargerThan1024 } = useDetectWidth();
 
-  const placement = isLargerThan600 ? "right-start" : "bottom-end";
+  const placement = isLargerThan1024 ? "right-start" : "bottom-end";
 
   return (
     <Tooltip
@@ -22,7 +22,7 @@ export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, fontSiz
       bg="gray.700"
       placement={placement}
       shouldWrapChildren
-      maxH={{ base: "auto", md: "150px" }}
+      maxH="auto"
       maxW={{ base: "343px", md: "600px" }}
     >
       <Flex
