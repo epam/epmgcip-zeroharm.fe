@@ -8,6 +8,7 @@ module.exports = {
       "@Constants": path.resolve(__dirname, "src/constants"),
       "@i18n": path.resolve(__dirname, "src/i18n"),
       "@Helpers": path.resolve(__dirname, "src/helpers"),
+      "@Services": path.resolve(__dirname, "src/services"),
       "@Hooks": path.resolve(__dirname, "src/hooks"),
       "@UI": path.resolve(__dirname, "src/_UI"),
       "@Pages": path.resolve(__dirname, "src/pages"),
