@@ -1,5 +1,4 @@
 import { FC, useState } from "react";
-import { VStack } from "@chakra-ui/react";
 import { useDetectWidth } from "@Hooks";
 import { resolveTranslationPath } from "@Helpers";
 import { tabsData } from "@Constants";
@@ -8,6 +7,7 @@ import { TabPanelsContent } from "../Tabs/TabpanelsContent";
 import { CustomScrollbarWrapper } from "../CustomScrollbarWrapper/CustomScrollbarWrapper";
 import { MobileMapAndFooter } from "../MapAndFooter/MobileMapAndFooter";
 import { AsideLocationMenu } from "./AsideLocationMenu";
+import { AsideWrapper } from "./AsideWrapper";
 
 export const Aside: FC = () => {
   const [ isScrollVisible, setIsScrollVisible ] = useState(false);
@@ -16,21 +16,11 @@ export const Aside: FC = () => {
   const tabs = tabsData.map((tabData) => resolveTranslationPath(tabData));
 
   const isMobileWidth = !isLargerThan600;
-  const offset = isScrollVisible ? "20px" : "0px";
 
   return (
-    <VStack
-      as={isMobileWidth ? "main" : "aside"}
-      height="100%"
-      w="100%"
-      maxW={{
-        base: "599px",
-        md: "359px",
-        lg: `calc(440px + ${offset})`
-      }}
-      overflow="hidden"
-      pt={{ base: "8px", md: "16px" }}
-      gap="16px"
+    <AsideWrapper
+      isMobileWidth={isMobileWidth}
+      isScrollVisible={isScrollVisible}
     >
       <AsideLocationMenu />
       <Tabs tabs={tabs}>
@@ -39,7 +29,7 @@ export const Aside: FC = () => {
           { isMobileWidth && <MobileMapAndFooter /> }
         </CustomScrollbarWrapper>
       </Tabs>
-    </VStack>
+    </AsideWrapper>
   );
 };
 

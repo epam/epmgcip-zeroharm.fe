@@ -28,7 +28,7 @@ export const Indicators: FC = () => {
         {
           hints.map((hint) => {
             const particleValue = Number(airComponents[hint as ParticlesAliasesKeyType]);
-            const groupName = getParameterGroup(particleValue, "air_quality") || {};
+            const groupName = getParameterGroup(particleValue, "air_quality") ?? {};
             const color = groupsColors?.[groupName as GroupsColorsKeyType];
             const particleValueStr = String(particleValue);
             const roundedParticleValue = parseFloat(particleValueStr.slice(0, particleValueStr.indexOf(".") + 3));

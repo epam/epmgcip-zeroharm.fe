@@ -3,7 +3,7 @@ import { Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { getCutText } from "@Helpers";
 import { LETTERS_LIMIT } from "@Constants";
-import { CardResizerButton } from "./CardExpanderButton";
+import { CardResizerButton } from "./CardResizerButton";
 
 type CardTextContentProps = {
   subheading: string;
