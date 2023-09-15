@@ -1,5 +1,5 @@
-import { useState, ReactNode, FC } from "react";
-import { Flex, Box, Text, Button, chakra } from "@chakra-ui/react";
+import { useState, FC } from "react";
+import { Box, Text, Button } from "@chakra-ui/react";
 import { t } from "i18next";
 import { Card } from "./Card";
 import { LETTERS_LIMIT } from "@Constants";
@@ -7,59 +7,12 @@ import { getCardData, getCutText } from "@Helpers";
 import { useParameterData } from "@Hooks";
 import { ReactComponent as RightArrowIcon } from "@Assets/icons/stroke/harm-arrow-right.svg";
 import { ReactComponent as LeftArrowIcon } from "@Assets/icons/stroke/harm-arrow-left.svg";
+import { CardStep } from "./CardStep";
+import { CardNavigation } from "./CardNavigation";
+import { CardNavigationBox } from "./CardNavigationBox";
 
 type CardsType = {
   cardsKey?: any;
-};
-
-const CardStep = chakra(Box, {
-  baseStyle: {
-    fontSize: "tiny",
-    lineHeight: "16px",
-    position: "absolute",
-    top: "24px",
-    right: "24px",
-    zIndex: "100"
-  }
-});
-
-const CardNavigation: FC<{ children?: ReactNode }> = ({ children }) => {
-  return (
-    <chakra.div
-      sx={{
-        marginTop: "auto",
-        display: "flex",
-        justifyContent: "space-between",
-        position: "absolute",
-        width: "100%",
-        p: "0 28px",
-        bottom: "14px",
-        zIndex: "100",
-        color: "gray.800",
-        svg: {
-          cursor: "pointer"
-        }
-      }}
-    >
-      { children }
-    </chakra.div>
-  );
-};
-
-const CardNavigationBox: FC<{ children?: ReactNode; jc?: string }> = ({
-  children,
-  jc
-}) => {
-  return (
-    <Flex
-      alignItems="center"
-      justifyContent={jc}
-      boxSize="56px"
-      position="relative"
-    >
-      { children }
-    </Flex>
-  );
 };
 
 export const Cards: FC<CardsType> = ({ cardsKey }) => {
@@ -125,12 +78,12 @@ export const Cards: FC<CardsType> = ({ cardsKey }) => {
       </Card>
       { isNavigation && (
         <CardNavigation>
-          <CardNavigationBox jc="flex-start">
+          <CardNavigationBox justifyContent="flex-start">
             { isLeftActive && (
               <LeftArrowIcon onClick={() => handleClick(-1)} />
             ) }
           </CardNavigationBox>
-          <CardNavigationBox jc="flex-end">
+          <CardNavigationBox justifyContent="flex-end">
             { isRightActive && (
               <RightArrowIcon onClick={() => handleClick(+1)} />
             ) }

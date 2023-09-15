@@ -9,7 +9,7 @@ type TextWithTooltipProps = FlexProps & {
   iconSize: string | number;
 }
 
-export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, fontSize, lineHeight, iconSize }) => {
+export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, iconSize, ...props }) => {
   const { isLargerThan1024 } = useDetectWidth();
 
   const placement = isLargerThan1024 ? "right-start" : "bottom-end";
@@ -26,10 +26,9 @@ export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, fontSiz
       maxW={{ base: "343px", md: "600px" }}
     >
       <Flex
-        fontSize={fontSize}
-        lineHeight={lineHeight}
         fontWeight="bold"
         gap="4px"
+        {...props}
       >
         <Text textTransform="uppercase">
           { text }
