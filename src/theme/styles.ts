@@ -1,14 +1,15 @@
 import { StyleFunctionProps } from "@chakra-ui/react";
 
 export const styles = {
-  global: (props: StyleFunctionProps) => ({
+  global: ({ colorMode }: StyleFunctionProps) => ({
     html: {
       "--headerHeight": "64px",
       "--headerMobileHeight": "56px",
       "--footerHeight": "77px",
       "--footerMobileMaxHeight": "87px",
       "--footerMargin": "16px",
-      "--maxContentWidth": "1440px"
+      "--maxContentWidth": "1440px",
+      "--linkHoverAndActiveColor": colorMode === "dark" ? "#FFA01C" : "#3060E5"
     },
     "#root": {
       display: "flex",
@@ -23,15 +24,12 @@ export const styles = {
     "header, footer": {
       w: "100%"
     },
-    a: {
-      color: "white"
-    },
     ".leaflet-container": {
       width: "100%",
       height: "100vh"
     },
     ".bg-colored": {
-      bg: props.colorMode === "dark" ? "gray.900" : "white"
+      bg: colorMode === "dark" ? "gray.900" : "white"
     }
   })
 };
