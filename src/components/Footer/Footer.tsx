@@ -1,8 +1,10 @@
 import { FC } from "react";
 import { Flex, Box, Divider, chakra } from "@chakra-ui/react";
+import { useDataStore } from "@Store/useDataStore";
 import { FeedbackButton } from "../FeedbackButton/FeedbackButton";
 import { useDetectWidth } from "@Hooks";
 import { FooterContent } from "./FooterContent";
+import { FeedbackButtonMobile } from "../FeedbackButton/FeedbackButtonMobile";
 
 const FooterStatic = chakra(Box, {
   baseStyle: {
@@ -40,11 +42,14 @@ type FooterProps = {
 };
 
 export const Footer: FC<FooterProps> = ({ variant = "static" }) => {
+  const { isLanguageMenuOpen, isNavMenuOpen } = useDataStore();
+
   const { isLargerThan600 } = useDetectWidth();
 
   const FooterContainer = FooterTypes[variant];
   const isVariantCard = variant === "card";
   const showDivider = !isVariantCard;
+  const isMenuOpen = isLanguageMenuOpen || isNavMenuOpen;
 
   return (
     <FooterContainer
@@ -65,7 +70,7 @@ export const Footer: FC<FooterProps> = ({ variant = "static" }) => {
         maxWidth={isVariantCard ? "none" : "var(--maxContentWidth)"}
       >
         <FooterContent />
-        { isLargerThan600 && (
+        { isLargerThan600 ? (
           <Box
             pl={{
               base: "initial",
@@ -75,7 +80,7 @@ export const Footer: FC<FooterProps> = ({ variant = "static" }) => {
           >
             <FeedbackButton />
           </Box>
-        ) }
+        ) : (!isMenuOpen && <FeedbackButtonMobile />) }
       </Flex>
     </FooterContainer>
   );

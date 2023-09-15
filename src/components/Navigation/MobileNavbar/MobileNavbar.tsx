@@ -1,5 +1,6 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Drawer, DrawerBody, DrawerContent, DrawerFooter, DrawerHeader, Flex, IconButton, Spacer } from "@chakra-ui/react";
+import { useDataStore } from "@Store/useDataStore";
 import { FeedbackButton, Footer, Logo, Navbar } from "@Components";
 import { ReactComponent as CloseIcon } from "@Assets/icons/stroke/harm-close.svg";
 
@@ -9,6 +10,11 @@ type MobileNavbarProps = {
 }
 
 export const MobileNavbar: FC<MobileNavbarProps> = ({ isOpen, onClose }) => {
+  const { setIsNavMenuOpen } = useDataStore();
+
+  useEffect(() => {
+    setIsNavMenuOpen(isOpen);
+  }, [isOpen]);
 
   return (
     <Drawer

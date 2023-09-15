@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Menu, MenuButton, MenuList, MenuItem, HStack, Text, Icon as ChakraIcon, Flex, useDisclosure, Center } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { Variants } from "framer-motion";
@@ -45,7 +45,7 @@ const motionVariants: Variants = {
 };
 
 export const LanguageMenu: FC = () => {
-  const { setLanguage } = useDataStore();
+  const { setLanguage, setIsLanguageMenuOpen } = useDataStore();
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -58,6 +58,10 @@ export const LanguageMenu: FC = () => {
   useScreenScrollController(isOpenOnMobile, !isOpenOnMobile);
 
   const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
+
+  useEffect(() => {
+    setIsLanguageMenuOpen(isOpenOnMobile);
+  }, [isOpenOnMobile]);
 
   return (
     <Menu
