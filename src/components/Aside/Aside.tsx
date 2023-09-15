@@ -46,7 +46,6 @@ export const Aside: FC = () => {
         tabs={tabs}
       >
         <CustomScrollbarWrapper
-          isScrollVisible={isScrollVisible}
           setIsScrollVisible={setIsScrollVisible}
         >
           <TabPanelsContent isScrollVisible={isScrollVisible} tabs={tabs} />
