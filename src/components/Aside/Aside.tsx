@@ -7,8 +7,7 @@ import { Tabs } from "../Tabs/Tabs";
 import { TabPanelsContent } from "../Tabs/TabpanelsContent";
 import { LocationSelect } from "../LocationSelect/LocationSelect";
 import { CustomScrollbarWrapper } from "../CustomScrollbarWrapper/CustomScrollbarWrapper";
-import { Map } from "../Map/Map";
-import { Footer } from "../Footer/Footer";
+import { MobileMapAndFooter } from "../MapAndFooter/MobileMapAndFooter";
 
 export const Aside: FC = () => {
   const [ isScrollVisible, setIsScrollVisible ] = useState(false);
@@ -49,20 +48,7 @@ export const Aside: FC = () => {
           setIsScrollVisible={setIsScrollVisible}
         >
           <TabPanelsContent isScrollVisible={isScrollVisible} tabs={tabs} />
-          {
-            isMobileWidth &&
-              <>
-                <Box
-                  as={isMobileWidth ? undefined : "main"}
-                  height="400px"
-                  w="100vw"
-                  mt="16px"
-                >
-                  <Map />
-                </Box>
-                <Footer />
-              </>
-          }
+          { isMobileWidth && <MobileMapAndFooter /> }
         </CustomScrollbarWrapper>
       </Tabs>
     </VStack>
