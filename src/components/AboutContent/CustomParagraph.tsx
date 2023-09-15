@@ -11,9 +11,15 @@ type CustomParagraphProps = {
 const linkStyleProps = {
   isExternal: true,
   borderBottom: "1px solid",
+  color: "none",
+  textDecoration: "none",
   ":hover": {
-    textDecoration: "none",
-    color: { base: "none", lg: "yellow.500" }
+    textDecoration: "none"
+  },
+  "@media (hover: hover)": {
+    ":hover": {
+      color: "yellow.500"
+    }
   }
 };
 
