@@ -1,13 +1,13 @@
 import { FC, useState } from "react";
-import { Box, VStack } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
 import { useDetectWidth } from "@Hooks";
 import { resolveTranslationPath } from "@Helpers";
 import { tabsData } from "@Constants";
 import { Tabs } from "../Tabs/Tabs";
 import { TabPanelsContent } from "../Tabs/TabpanelsContent";
-import { LocationSelect } from "../LocationSelect/LocationSelect";
 import { CustomScrollbarWrapper } from "../CustomScrollbarWrapper/CustomScrollbarWrapper";
 import { MobileMapAndFooter } from "../MapAndFooter/MobileMapAndFooter";
+import { AsideLocationMenu } from "./AsideLocationMenu";
 
 export const Aside: FC = () => {
   const [ isScrollVisible, setIsScrollVisible ] = useState(false);
@@ -32,21 +32,9 @@ export const Aside: FC = () => {
       pt={{ base: "8px", md: "16px" }}
       gap="16px"
     >
-      <Box
-        w={{ base: "343px", md: "100%" }}
-        h="44px"
-        px={{ base: "0", md: "16px", lg: "24px" }}
-        pr={{ lg: "20px" }}
-      >
-        <LocationSelect />
-      </Box>
-
-      <Tabs
-        tabs={tabs}
-      >
-        <CustomScrollbarWrapper
-          setIsScrollVisible={setIsScrollVisible}
-        >
+      <AsideLocationMenu />
+      <Tabs tabs={tabs}>
+        <CustomScrollbarWrapper setIsScrollVisible={setIsScrollVisible}>
           <TabPanelsContent isScrollVisible={isScrollVisible} tabs={tabs} />
           { isMobileWidth && <MobileMapAndFooter /> }
         </CustomScrollbarWrapper>

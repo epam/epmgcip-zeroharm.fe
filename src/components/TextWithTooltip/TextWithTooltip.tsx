@@ -3,7 +3,7 @@ import { Center, Flex, Tooltip, Text, FlexProps } from "@chakra-ui/react";
 import { useDetectWidth } from "@Hooks";
 import { ReactComponent as InfoFill } from "@Assets/icons/filled/harm-info-fill.svg";
 
-interface TextWithTooltipProps extends FlexProps {
+type TextWithTooltipProps = FlexProps & {
   label: string | number;
   text: string | number;
   iconSize: string | number;
