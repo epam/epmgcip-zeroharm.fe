@@ -4,13 +4,15 @@ import { useDetectWidth } from "@Hooks";
 import { ReactComponent as InfoFill } from "@Assets/icons/filled/harm-info-fill.svg";
 
 type TextWithTooltipProps = FlexProps & {
-  label: string | number;
+  label: string;
   text: string | number;
   iconSize: string | number;
 }
 
 export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, iconSize, ...props }) => {
   const { isLargerThan1024 } = useDetectWidth();
+
+  const preferredNumberOfCharactersPerLine = label.length / 6;
 
   const placement = isLargerThan1024 ? "right-start" : "bottom-end";
 
@@ -23,7 +25,10 @@ export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, iconSiz
       placement={placement}
       shouldWrapChildren
       maxH="auto"
-      maxW={{ base: "343px", md: "600px" }}
+      sx={{
+        maxW: { base: "343px", md: "600px" },
+        w: `${preferredNumberOfCharactersPerLine}ch`
+      }}
     >
       <Flex
         fontWeight="bold"
