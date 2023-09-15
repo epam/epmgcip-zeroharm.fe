@@ -34,8 +34,9 @@ export const Selector = () => {
       >
         { t("pages.home.protect") }
       </Heading>
-      <LocationSelect />
-      <LocationMenu/>
+      <Box mt="8px" w="100%">
+        <LocationMenu/>
+      </Box>
       <Box mt="8px" w="100%">
         <LocationSelect />
       </Box>
