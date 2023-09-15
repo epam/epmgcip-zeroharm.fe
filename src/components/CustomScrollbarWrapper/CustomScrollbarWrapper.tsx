@@ -1,10 +1,9 @@
-import { Dispatch, FC, ReactNode, SetStateAction, useEffect, useRef } from "react";
+import { ReactNode, forwardRef } from "react";
 import { Box } from "@chakra-ui/react";
 import { browserInfo } from "@Helpers";
 
 type CustomScrollbarWrapperProps = {
   children: ReactNode;
-  setIsScrollVisible: Dispatch<SetStateAction<boolean>>
 }
 
 const { isFirefox } = browserInfo;
@@ -39,25 +38,7 @@ const styles = {
   }
 };
 
-export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ children, setIsScrollVisible }) => {
-  const tabPanelsRef = useRef(null);
-
-  useEffect(() => {
-    const tabPanelsNode = tabPanelsRef.current;
-    if (!tabPanelsNode) return;
-
-    const resizePanelObserver = new ResizeObserver(() => {
-      const { scrollHeight, offsetHeight } = tabPanelsNode;
-
-      setIsScrollVisible(scrollHeight !== offsetHeight);
-    });
-
-    resizePanelObserver.observe(tabPanelsNode);
-
-    return () => {
-      resizePanelObserver.disconnect();
-    };
-  }, []);
+export const CustomScrollbarWrapper = forwardRef<HTMLDivElement, CustomScrollbarWrapperProps>(({ children }, ref) => {
 
   return (
     <Box
@@ -66,7 +47,7 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
       overflow="hidden"
     >
       <Box
-        ref={tabPanelsRef}
+        ref={ref}
         h="100%"
         overflowY="auto"
         overflowX="hidden"
@@ -80,4 +61,4 @@ export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ childr
       </Box>
     </Box>
   );
-};
+});

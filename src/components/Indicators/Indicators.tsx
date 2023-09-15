@@ -11,6 +11,24 @@ const hints = ["PM2.5", "PM10", "NO2", "CO", "O3", "SO2"];
 export const Indicators: FC = () => {
   const { airComponents } = useDataStore();
 
+  const indicatorHintsToRender = hints.map((hint) => {
+    const particleValue = Number(airComponents[hint as ParticlesAliasesKeyType]);
+    const groupName = getParameterGroup(particleValue, "air_quality") || {};
+    const color = groupsColors?.[groupName as GroupsColorsKeyType];
+    const particleValueStr = String(particleValue);
+    const roundedParticleValue = parseFloat(particleValueStr.slice(0, particleValueStr.indexOf(".") + 3));
+    const size = isNaN(roundedParticleValue) ? 0 : roundedParticleValue;
+
+    return (
+      <Indicator
+        size={size}
+        title={hint}
+        key={hint}
+        color={color}
+      />
+    );
+  });
+
   return (
     <IndicatorWrapper>
       <Text
@@ -25,25 +43,7 @@ export const Indicators: FC = () => {
         direction="column"
         gap={{ base: "4px", lg: "8px" }}
       >
-        {
-          hints.map((hint) => {
-            const particleValue = Number(airComponents[hint as ParticlesAliasesKeyType]);
-            const groupName = getParameterGroup(particleValue, "air_quality") ?? {};
-            const color = groupsColors?.[groupName as GroupsColorsKeyType];
-            const particleValueStr = String(particleValue);
-            const roundedParticleValue = parseFloat(particleValueStr.slice(0, particleValueStr.indexOf(".") + 3));
-            const size = isNaN(roundedParticleValue) ? 0 : roundedParticleValue;
-
-            return (
-              <Indicator
-                size={size}
-                title={hint}
-                key={hint}
-                color={color}
-              />
-            );
-          })
-        }
+        { indicatorHintsToRender }
       </Flex>
     </IndicatorWrapper>
   );
