@@ -13,7 +13,7 @@ export const Home = () => {
       display="flex"
       justifyContent={{ base: "center", lg: "space-between" }}
       flexDirection={{ base: "column", lg: "row" }}
-      maxW={{ base: "343px", md: "472px", lg: "1176px" }}
+      maxW={{ base: "375px", md: "528px", lg: "1176px" }}
       alignItems="center"
       gap={{ base: "24px", lg: "0" }}
     >
