@@ -9,7 +9,6 @@ type CustomParagraphProps = {
 }
 
 const linkStyleProps = {
-  isExternal: true,
   borderBottom: "1px solid",
   color: "none",
   textDecoration: "none",
@@ -30,14 +29,15 @@ const listTextItemStyleProps = {
 
 export const CustomParagraph: FC<CustomParagraphProps> = ({ content, components }) => {
   const componentsObj = components.reduce((componentsObj, { id, type, link }) => {
-    let componentJsx = null;
+    let jsxComponent = null;
+
     switch (type) {
       case "strong": {
-        componentJsx = <strong />;
+        jsxComponent = <strong />;
         break;
       }
       case "link": {
-        componentJsx =
+        jsxComponent =
           <Link
             href={link}
             isExternal
@@ -46,11 +46,11 @@ export const CustomParagraph: FC<CustomParagraphProps> = ({ content, components 
         break;
       }
       case "listItem": {
-        componentJsx = <Text as="span" sx={listTextItemStyleProps} />;
+        jsxComponent = <Text as="span" sx={listTextItemStyleProps} />;
       }
     }
 
-    return {...componentsObj, ...{ [id]: componentJsx }};
+    return {...componentsObj, ...{ [id]: jsxComponent }};
   }, {});
 
   return (

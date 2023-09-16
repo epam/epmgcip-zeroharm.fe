@@ -7,13 +7,11 @@ import { TextSectionHeading } from "./TextSectionHeading";
 import { CustomParagraph } from "./CustomParagraph";
 
 export const AboutPageArticle: FC = () => {
-  const aboutPageData = aboutPageRawData.map(({ sectionId, sectionHeading, sectionParagraphs }) => {
-    return {
-      sectionId,
-      sectionHeading: resolveTranslationPath(sectionHeading),
-      sectionParagraphs: sectionParagraphs.map((paragraph) => resolveTranslationPath(paragraph))
-    } as AboutPageData;
-  });
+  const aboutPageData: AboutPageData[] = aboutPageRawData.map(({ sectionId, sectionHeading, sectionParagraphs }) => ({
+    sectionId,
+    sectionHeading: resolveTranslationPath(sectionHeading),
+    sectionParagraphs: sectionParagraphs.map((paragraph) => resolveTranslationPath(paragraph))
+  }));
 
   return (
     <Flex
