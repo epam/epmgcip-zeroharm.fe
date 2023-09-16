@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { TabPanel, TabPanels } from "@chakra-ui/react";
 import { browserInfo } from "@Helpers";
-import { Cards} from "@UI";
+import { GroupingCard} from "@UI";
 import { IndexDate } from "../IndexDate/IndexDate";
 import { Indicators } from "../Indicators/Indicators";
 
@@ -21,7 +21,7 @@ export const TabPanelsContent: FC<TabPanelsContentProps> = ({ isScrollVisible, t
       gap="16px"
       p="0"
     >
-      <Cards cardsKey={tabId} />
+      <GroupingCard cardsKey={tabId} />
       <IndexDate />
       { tabId === "air_quality" && <Indicators /> }
     </TabPanel>

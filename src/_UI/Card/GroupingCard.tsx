@@ -10,11 +10,11 @@ import { CardTextContent } from "./CardTextContent";
 import { ReactComponent as RightArrowIcon } from "@Assets/icons/stroke/harm-arrow-right.svg";
 import { ReactComponent as LeftArrowIcon } from "@Assets/icons/stroke/harm-arrow-left.svg";
 
-type CardsType = {
+type GroupingCardProps = {
   cardsKey?: any;
 };
 
-export const Cards: FC<CardsType> = ({ cardsKey }) => {
+export const GroupingCard: FC<GroupingCardProps> = ({ cardsKey }) => {
   const [cardIndex, setCardIndex] = useState(0);
   const { currentParameterValue } = useParameterData();
 
@@ -22,7 +22,7 @@ export const Cards: FC<CardsType> = ({ cardsKey }) => {
   const { heading, subheading, tip, text, cardColor, iconName } = card;
 
   const cards = [card];
-  const isNavigation = cards.length > 1;
+  const isCardsGroup = cards.length > 1;
   const isLeftActive = cardIndex > 0;
   const isRightActive = cardIndex < cards.length - 1;
   const cardStep = `${cardIndex + 1} / ${cards.length}`;
@@ -34,7 +34,7 @@ export const Cards: FC<CardsType> = ({ cardsKey }) => {
   return (
     <Box position="relative">
       {
-        isNavigation && (
+        isCardsGroup && (
           <CardStep>
             { cardStep }
           </CardStep>
@@ -45,12 +45,12 @@ export const Cards: FC<CardsType> = ({ cardsKey }) => {
         subheading={tip}
         color={cardColor}
         iconName={iconName}
-        height={isNavigation ? "290px" : "auto"}
+        minH={isCardsGroup ? "290px" : "none"}
       >
         <CardTextContent subheading={subheading} text={text} />
       </Card>
       {
-        isNavigation && (
+        isCardsGroup && (
           <CardNavigation>
             <CardNavigationBox justifyContent="flex-start">
               { isLeftActive && (

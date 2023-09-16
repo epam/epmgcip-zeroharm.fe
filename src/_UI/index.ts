@@ -1,5 +1,5 @@
 export * from "./Card/Card";
-export * from "./Card/Cards";
+export * from "./Card/GroupingCard";
 export * from "./Icon/Icon";
 export * from "./Indicator/Indicator";
 export * from "./InputLabel/InputLabel";
