@@ -1,16 +1,9 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import logo from "@Assets/images/logo-new.svg";
+import { ReactComponent as LogoIcon } from "@Assets/images/logo.svg";
 
-export const Logo: FC = () => {
-
-  return (
-    <Link to="/">
-      <img
-        src={logo}
-        alt="logo"
-        width="135px"
-      />
-    </Link>
-  );
-};
+export const Logo: FC = () => (
+  <Link to="/">
+    <LogoIcon width="135px" fill="var(--primaryColor)" />
+  </Link>
+);
