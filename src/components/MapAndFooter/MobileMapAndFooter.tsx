@@ -7,6 +7,7 @@ export const MobileMapAndFooter: FC = () => {
   return (
     <>
       <Box
+        as="main"
         height="400px"
         w="100vw"
         mt="16px"

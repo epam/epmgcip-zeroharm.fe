@@ -3,16 +3,15 @@ import { VStack } from "@chakra-ui/react";
 
 type AsideWrapperProps = {
   children: ReactNode;
-  isMobileWidth: boolean;
   isScrollVisible: boolean;
 }
 
-export const AsideWrapper: FC<AsideWrapperProps> = ({ children, isMobileWidth, isScrollVisible }) => {
+export const AsideWrapper: FC<AsideWrapperProps> = ({ children, isScrollVisible }) => {
   const offset = isScrollVisible ? "20px" : "0px";
 
   return (
     <VStack
-      as={isMobileWidth ? "main" : "aside"}
+      as="aside"
       height="100%"
       w="100%"
       maxW={{

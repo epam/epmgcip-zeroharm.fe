@@ -18,10 +18,7 @@ export const Aside: FC = () => {
   const isMobileWidth = !isLargerThan600;
 
   return (
-    <AsideWrapper
-      isMobileWidth={isMobileWidth}
-      isScrollVisible={isScrollVisible}
-    >
+    <AsideWrapper isScrollVisible={isScrollVisible}>
       <AsideLocationMenu />
       <Tabs tabs={tabs}>
         <CustomScrollbarWrapper ref={ref}>

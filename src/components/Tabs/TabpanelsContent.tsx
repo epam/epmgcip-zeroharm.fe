@@ -13,6 +13,19 @@ type TabPanelsContentProps = {
 const { isFirefox } = browserInfo;
 
 export const TabPanelsContent: FC<TabPanelsContentProps> = ({ isScrollVisible, tabs }) => {
+  const tabPanelsToRender = tabs.map(({ tabId }) => (
+    <TabPanel
+      key={tabId}
+      display="flex"
+      flexDirection="column"
+      gap="16px"
+      p="0"
+    >
+      <Cards cardsKey={tabId} />
+      <IndexDate />
+      { tabId === "air_quality" && <Indicators /> }
+    </TabPanel>
+  ));
 
   return (
     <TabPanels
@@ -23,21 +36,7 @@ export const TabPanelsContent: FC<TabPanelsContentProps> = ({ isScrollVisible, t
       }}
       mx={{ base: "auto", md: "0px" }}
     >
-      {
-        tabs.map(({ tabId }) => (
-          <TabPanel
-            key={tabId}
-            display="flex"
-            flexDirection="column"
-            gap="16px"
-            p="0"
-          >
-            <Cards cardsKey={tabId} />
-            <IndexDate />
-            { tabId === "air_quality" && <Indicators /> }
-          </TabPanel>
-        ))
-      }
+      { tabPanelsToRender }
     </TabPanels>
   );
 };
