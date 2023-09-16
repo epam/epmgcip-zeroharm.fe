@@ -19,12 +19,29 @@ export const Tabs: FC<TabsProps> = ({ children, tabs }) => {
   const { parameter, setParameter } = useDataStore();
 
   const currentTab = parameter || tabs[0].tabId;
-  const currentTabData = tabs.find(({ tabId }) => tabId === currentTab);
-  const defaultTabIndex = tabs.indexOf(currentTabData);
+  const defaultTabIndex = tabs.findIndex(({ tabId }) => tabId === currentTab);
 
   useEffect(() => {
     setParameter(currentTab);
   }, []);
+
+  const tabListToRender = tabs.map(({ tabId, tabName }) => (
+    <Tab
+      key={tabId}
+      h={{ base: "34px", lg: "40px" }}
+      flex="1"
+      borderBottom="2px solid gray"
+      color="gray"
+      textAlign="center"
+      fontSize={{ base: "small", lg: "medium" }}
+      lineHeight={{ base: "13px", lg: "small" }}
+      _selected={selected}
+      _hover={hover}
+      onClick={() => setParameter(tabId)}
+    >
+      { tabName }
+    </Tab>
+  ));
 
   return (
     <ChakraTabs
@@ -43,25 +60,7 @@ export const Tabs: FC<TabsProps> = ({ children, tabs }) => {
         px={{ base: "auto", md: "16px", lg: "24px" }}
         pr={{ lg: "20px" }}
       >
-        {
-          tabs.map(({ tabId, tabName }) => (
-            <Tab
-              key={tabId}
-              h={{ base: "34px", lg: "40px" }}
-              flex="1"
-              borderBottom="2px solid gray"
-              color="gray"
-              textAlign="center"
-              fontSize={{ base: "small", lg: "medium" }}
-              lineHeight={{ base: "13px", lg: "small" }}
-              _selected={selected}
-              _hover={hover}
-              onClick={() => setParameter(tabId)}
-            >
-              { tabName }
-            </Tab>
-          ))
-        }
+        { tabListToRender }
       </TabList>
 
       <Box

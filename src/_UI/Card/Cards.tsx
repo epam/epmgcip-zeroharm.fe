@@ -33,11 +33,13 @@ export const Cards: FC<CardsType> = ({ cardsKey }) => {
 
   return (
     <Box position="relative">
-      { isNavigation && (
-        <CardStep>
-          { cardStep }
-        </CardStep>
-      ) }
+      {
+        isNavigation && (
+          <CardStep>
+            { cardStep }
+          </CardStep>
+        )
+      }
       <Card
         heading={heading}
         subheading={tip}

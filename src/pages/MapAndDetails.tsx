@@ -23,7 +23,6 @@ export const MapAndDetails: FC = () => {
       align={{ base: "center", md: "initial" }}
     >
       <Aside />
-
       { isLargerThan600 && <MainMapAndFooter /> }
     </Flex>
   );

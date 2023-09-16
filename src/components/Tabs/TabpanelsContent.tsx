@@ -19,7 +19,7 @@ export const TabPanelsContent: FC<TabPanelsContentProps> = ({ isScrollVisible, t
       maxW={{
         base: "343px",
         md: "327px",
-        lg: isScrollVisible ? isFirefox ? "387px" : "392px" : "396px"
+        lg: isScrollVisible ? (isFirefox ? "387px" : "392px") : "396px"
       }}
       mx={{ base: "auto", md: "0px" }}
     >

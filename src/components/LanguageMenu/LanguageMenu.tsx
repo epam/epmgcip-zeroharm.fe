@@ -59,6 +59,24 @@ export const LanguageMenu: FC = () => {
 
   const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
 
+  const mobileTitle = isOpenOnMobile && (
+    <Flex
+      w="calc(100vw - var(--headerMobileHeight))"
+      h="var(--headerMobileHeight)"
+      zIndex="1"
+      className="bg-colored"
+      color="inherit"
+      pl="8px"
+      pos="fixed"
+      top="0"
+      left="var(--headerMobileHeight)"
+      align="center"
+      fontWeight="bold"
+    >
+      Language
+    </Flex>
+  );
+
   return (
     <Menu
       strategy="fixed"
@@ -101,24 +119,7 @@ export const LanguageMenu: FC = () => {
           />
         </HStack>
       </MenuButton>
-      {
-        isOpenOnMobile &&
-          <Flex
-            w="calc(100vw - var(--headerMobileHeight))"
-            h="var(--headerMobileHeight)"
-            zIndex="1"
-            className="bg-colored"
-            color="inherit"
-            pl="8px"
-            pos="fixed"
-            top="0"
-            left="var(--headerMobileHeight)"
-            align="center"
-            fontWeight="bold"
-          >
-            Language
-          </Flex>
-      }
+      { mobileTitle }
       <MenuList
         minW={{
           base: "100vw",
