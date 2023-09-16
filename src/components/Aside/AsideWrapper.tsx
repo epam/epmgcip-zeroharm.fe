@@ -23,6 +23,7 @@ export const AsideWrapper: FC<AsideWrapperProps> = ({ children, isMobileWidth, i
       overflow="hidden"
       pt={{ base: "8px", md: "16px" }}
       gap="16px"
+      transition="max-width .5s ease"
     >
       { children }
     </VStack>
