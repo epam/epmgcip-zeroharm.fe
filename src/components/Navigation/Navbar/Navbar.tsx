@@ -27,7 +27,7 @@ export const Navbar: FC<NavbarProps> = ({ onClick }) => {
             to={routePath}
             onClick={onClick}
             _hover={{ textDecoration: "none" }}
-            _activeLink={{ color: "var(--linkHoverAndActiveColor)" }}
+            _activeLink={{ color: "linkHoverAndActiveColor" }}
           >
             { routeName }
           </ChakraLink>

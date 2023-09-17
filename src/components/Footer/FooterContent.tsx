@@ -10,8 +10,8 @@ export const FooterContent = () => {
     isExternal
     sx={
       shouldIncludeHover
-        ? { _hover: { color: "var(--linkHoverAndActiveColor)" } }
-        : { color: "var(--linkHoverAndActiveColor)" }
+        ? { _hover: { color: "linkHoverAndActiveColor" } }
+        : { color: "linkHoverAndActiveColor" }
     }
   />;
 

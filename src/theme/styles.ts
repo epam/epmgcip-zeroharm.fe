@@ -9,8 +9,7 @@ export const styles = {
       "--footerMobileMinHeight": "69px",
       "--footerMobileMaxHeight": "87px",
       "--footerMargin": "16px",
-      "--maxContentWidth": "1440px",
-      "--linkHoverAndActiveColor": colorMode === "dark" ? "#FFA01C" : "#3060E5"
+      "--maxContentWidth": "1440px"
     },
     "#root": {
       display: "flex",

@@ -17,7 +17,7 @@ const linkStyleProps = {
   },
   "@media (hover: hover)": {
     ":hover": {
-      color: "yellow.500"
+      color: "linkHoverAndActiveColor"
     }
   }
 };
