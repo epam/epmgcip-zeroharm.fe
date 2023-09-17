@@ -1,9 +1,14 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
+import { Icon, Link } from "@chakra-ui/react";
 import { ReactComponent as LogoIcon } from "@Assets/images/logo.svg";
 
 export const Logo: FC = () => (
-  <Link to="/">
-    <LogoIcon width="135px" fill="var(--primaryColor)" />
+  <Link href="/" fontSize="0">
+    <Icon
+      as={LogoIcon}
+      fill="primary"
+      w="135px"
+      h="32px"
+    />
   </Link>
 );
