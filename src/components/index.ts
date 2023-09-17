@@ -27,3 +27,5 @@ export * from "./MainLayout/MainLayout";
 export * from "./FeedbackButton/FeedbackButton";
 export * from "./Footer/Footer";
 export * from "./Footer/FooterContent";
+export * from "./AboutContent/AboutPageArticle";
+export * from "./AboutContent/AboutImage";
