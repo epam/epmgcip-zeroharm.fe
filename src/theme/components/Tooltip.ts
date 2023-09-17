@@ -11,13 +11,12 @@ export const Tooltip = defineStyleConfig({
     borderWidth: "1px",
     borderStyle: "solid",
     borderColor: "gray.600",
-    fontSize: "14px"
+    fontSize: "small"
   },
   variants: {
     default: {
-      background: "gray.700",
-      color: "white",
-      [$arrowBg.variable]: $bg.reference
+      bg: "gray.700",
+      color: "white"
     },
     light: {
       background: "white",
@@ -29,11 +28,11 @@ export const Tooltip = defineStyleConfig({
       background: "gray.700",
       color: "white",
       lineHeight: "18px",
-      fontSize: "14px",
+      fontSize: "small",
       [$arrowBg.variable]: $bg.reference
-    },
-    defaultProps: {
-      variant: "default"
     }
+  },
+  defaultProps: {
+    variant: "default"
   }
 });

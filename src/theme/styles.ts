@@ -6,6 +6,7 @@ export const styles = {
       "--headerHeight": "64px",
       "--headerMobileHeight": "56px",
       "--footerHeight": "77px",
+      "--footerMobileMinHeight": "69px",
       "--footerMobileMaxHeight": "87px",
       "--footerMargin": "16px",
       "--maxContentWidth": "1440px",
@@ -23,10 +24,6 @@ export const styles = {
     },
     "header, footer": {
       w: "100%"
-    },
-    ".leaflet-container": {
-      width: "100%",
-      height: "100vh"
     },
     ".bg-colored": {
       bg: colorMode === "dark" ? "gray.900" : "white"

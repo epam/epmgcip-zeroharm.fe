@@ -1,47 +1,50 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { t } from "i18next";
-import { Text } from "@chakra-ui/react";
-import { Wrapper, Indicator } from "@UI";
+import { Flex, Text } from "@chakra-ui/react";
+import { IndicatorWrapper, Indicator } from "@UI";
 import { getParameterGroup } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
 import { ParticlesAliasesKeyType, groupsColors, GroupsColorsKeyType } from "@Constants";
 
-type IndexDateType = {
-  children?: ReactNode;
-};
-
 const hints = ["PM2.5", "PM10", "NO2", "CO", "O3", "SO2"];
 
-export const Indicators: FC<IndexDateType> = ({ children }) => {
+export const Indicators: FC = () => {
   const { airComponents } = useDataStore();
 
-  return (
-    <Wrapper>
-         <Text
-          fontSize="12px"
-          fontWeight="700"
-          textTransform="uppercase"
-          pb={4}
-        >
-          { t("indicators") }
-        </Text>
-      { hints.map((hint) => {
-        const particleValue = Number(airComponents[hint as ParticlesAliasesKeyType]);
-        const groupName = getParameterGroup(particleValue, "air_quality") || {};
-        const color = groupsColors?.[groupName as GroupsColorsKeyType];
-        const particleValueStr = String(particleValue);
-        const roundedParticleValue = parseFloat(particleValueStr.slice(0, particleValueStr.indexOf(".") + 3));
-        const size = isNaN(roundedParticleValue) ? 0 : roundedParticleValue;
+  const indicatorHintsToRender = hints.map((hint) => {
+    const particleValue = Number(airComponents[hint as ParticlesAliasesKeyType]);
+    const groupName = getParameterGroup(particleValue, "air_quality") || {};
+    const color = groupsColors?.[groupName as GroupsColorsKeyType];
+    const particleValueStr = String(particleValue);
+    const roundedParticleValue = parseFloat(particleValueStr.slice(0, particleValueStr.indexOf(".") + 3));
+    const value = isNaN(roundedParticleValue) ? 0 : roundedParticleValue;
 
-        return (
-          <Indicator
-            size={size}
-            title={hint}
-            key={hint}
-            color={color}
-          />
-        );
-      }) }
-    </Wrapper>
+    return (
+      <Indicator
+        value={value}
+        title={hint}
+        key={hint}
+        color={color}
+      />
+    );
+  });
+
+  return (
+    <IndicatorWrapper>
+      <Text
+        fontSize={{ base: "tiny", lg: "small" }}
+        lineHeight={{ base: "tiny", lg: "small" }}
+        fontWeight="700"
+        textTransform="uppercase"
+      >
+        { t("indicators") }
+      </Text>
+      <Flex
+        direction="column"
+        gap={{ base: "4px", lg: "8px" }}
+      >
+        { indicatorHintsToRender }
+      </Flex>
+    </IndicatorWrapper>
   );
 };

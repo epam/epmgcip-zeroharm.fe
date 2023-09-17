@@ -18,7 +18,57 @@
       }
     },
     "about": {
-      "name": "About"
+      "name": "About",
+      "intro": {
+        "title": "About the Project",
+        "paragraphs": {
+          "one": "<1>ZeroHarm</1> — is a service that allows you to monitor the level of air pollution and percentage of humidity, ultraviolet radiation index, noise level, as well as atmospheric pressure in your city. Timely monitoring of these indicators will allow you to avoid negative health effects and prepare for weather or anthropogenic phenomena that most affect the human body, and vice versa - if the indicators are normal, we will tell you how to spend time outdoors with health benefits."
+        }
+      },
+      "air_quality": {
+        "title": "Why it's important to monitor the quality of the air we breathe",
+        "paragraphs": {
+          "one": "According to <1>the UN Economic Commission for Europe's Web site</1>, air pollution is now considered the greatest threat to health from the environment, causing 7 million deaths worldwide each year. Air pollution causes and exacerbates a number of diseases, from asthma to cancer, lung disease and heart disease. The International Agency for Research on Cancer classifies outdoor air pollution and particulate matter as carcinogenic to humans.",
+          "two": "Thus, according to recent estimates by the <1>World Health Organization</1>, exposure to polluted air is a more important risk factor for major non-communicable diseases than previously thought. Air pollution is the largest source of disease burden from the environment.",
+          "three": "Every major city contains hundreds of air pollutants that we breathe. However, many of us do not have access to timely information about air quality, and air pollution often goes unnoticed.",
+          "four": "In order to detect air pollution and warn you in time, you only need to identify one marker pollutant found in almost all urban emissions - PM2.5 (Fine Particulate Matter).",
+          "five": "<1>PM2.5</1> — is microscopic particles of soot, mineral salts, rubber, sand and asphalt, heavy metal compounds, and chemical emissions, ranging in size from 0.001 to 2.5 micrometers (µm), tens of times thinner than a human hair (its thickness is 40-120 µm), smaller than a blood red blood cell (its diameter is 7 µm).",
+          "six": "Through a joint effort between EPAM Systems and public health organizations, ZeroHarm obtains air quality data and raises awareness of the concentrations of harmful substances in the air we breathe and makes recommendations for action."
+        }
+      },
+      "ultraviolet_radiation": {
+        "title": "Why it is important to monitor ultraviolet radiation levels",
+        "paragraphs": {
+          "one": "The <1>UV index</1> is an important means of alerting the public to the need to use sunscreen. The marked increase in the incidence of skin cancer among people with fair skin all over the world is largely attributed to excessive exposure to UV radiation from the sun and, quite possibly, to exposure to artificial sources of radiation, such as tanning equipment. Current levels of incidence suggest that individual sun exposure habits are the most serious personal risk factor for adverse effects from UV radiation.",
+          "two": "The <1>UV index</1> is an indicator of the level of ultraviolet radiation, taking values from zero and above. The higher the UV index value, the greater the potential danger to human skin and eyes, and the shorter the time it takes to cause harm to health. The UV index is an important means of raising public awareness of the risk of excessive exposure to ultraviolet radiation and warning about the need to use sunscreens."
+        }
+      },
+      "atmospheric_pressure": {
+        "title": "Why it is important to monitor atmospheric pressure",
+        "paragraphs": {
+          "one": "The main manifestations of the negative effects of decreasing atmospheric pressure on the human body are: difficulty breathing, shortness of breath, shortness of breath and general weakness. This is caused by the lack of oxygen in the ambient air. Often during the cyclone a person's intracranial pressure increases, resulting in a severe migraine. In addition, the stomach and intestines may malfunction, which is associated with intense gassing.",
+          "two": "A decrease in atmospheric pressure is usually accompanied by increased air temperature, cloudiness, humidity and precipitation. People with low blood pressure, respiratory problems, and cardiovascular problems are the most susceptible to the effects of the cyclone."
+        }
+      },
+      "ambient_noise": {
+        "title": "Why it is important to monitor ambient noise",
+        "paragraphs": {
+          "one": "At present, the harmful effects of noise are well studied. Scientists have proved that loud sound is a general biological irritant, which has a negative impact not only on the hearing organs, but also on the whole organism. According to objective estimates, the impact of noise is as follows.",
+          "two": "A prolonged sound load of 65-90 dB has an irritating effect on the nervous system, causing anxiety, irritation, and neurosis.",
+          "three": "Under conditions of the increased noise background, fatigue, concentration and mental performance increase by 15-25%.",
+          "four": "The most common effect of industrial noise on the human body is the constriction of capillary vessels that penetrate the skin and mucous membranes, which impairs peripheral blood circulation.",
+          "five": "Noise over 85 dB leads to an increase in blood pressure.",
+          "six": "Constant human exposure to noise and vibration leads to disruption of the bioelectrical activity of the brain, slower reactions, and deterioration of EEG readings. At the same time, biochemical tests show a sharp increase in the levels of cortisone, adrenaline, and norepinephrine, substances called \"stress hormones\". Elevated levels of these hormones persist even during nighttime sleep. Prolonged exposure to stress can lead to deterioration in physiological parameters and even to the development of chronic diseases of the heart, blood vessels, nervous system, and other organs and systems. Noise causes tangible damage to human health."
+        }
+      },
+      "air_humidity": {
+        "title": "Why it is important to monitor the air humidity level",
+        "paragraphs": {
+          "one": "Insufficient air humidity is quite bad for the human body. The evaporation of moisture leads to the fact that the mucosa dries out, and this becomes the main cause of its cracking and further leads to contamination by all kinds of pathogens. Therefore, people who are in such a room are more likely to catch colds.",
+          "two": "The dangers of dry air are as follows: <1>A feeling of dryness in the area of the nasopharynx, and nosebleeds often occur.</1> <2>There is a \"tear\" in the eyes, which leads to the appearance of \"dry eye\" syndrome.</2> <3>For people suffering from bronchial asthma, the presence of dry air masses is considered particularly dangerous: their attacks become more frequent.</3> <4>Low humidity levels have a negative impact on the skin - itching, flaking and cracking of the skin occur.</4>",
+          "three": "It is especially important to maintain an optimal microclimate in the home where young children live. Otherwise, babies often get coughs and irritation of the nasal mucosa and lungs."
+        }
+      }
     },
     "footer": {
       "sourceInfoText": "All data is provided in collaboration with <1>the Center of Hydrometeorological Service of the Republic of Uzbekistan (Uzhydromet)</1>",
