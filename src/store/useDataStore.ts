@@ -20,8 +20,6 @@ interface IDataStore {
   location: string;
   language: string;
   isFormModalActive: boolean;
-  isLanguageMenuOpen: boolean,
-  isNavMenuOpen: boolean,
   parameter: string;
   parameters: ParametersType,
   fetchingDate: string;
@@ -29,8 +27,6 @@ interface IDataStore {
   setLocation: (location: string) => void;
   setLanguage: (language: string) => void;
   toggleIsFormModalActive: () => void;
-  setIsLanguageMenuOpen: (isLanguageMenuOpen: boolean) => void;
-  setIsNavMenuOpen: (isNavMenuOpen: boolean) => void;
   setParameter: (parameter: string) => void;
   setParameters: (parameters: ParametersType) => void;
   setAirComponents: (airComponents: AirComponentsType) => void;
@@ -58,8 +54,6 @@ export const useDataStore = create<IDataStore>()(
       location: "",
       language: "",
       isFormModalActive: false,
-      isLanguageMenuOpen: false,
-      isNavMenuOpen: false,
       parameter: "",
       parameters: parametersInitial,
       fetchingDate: "",
@@ -67,8 +61,6 @@ export const useDataStore = create<IDataStore>()(
       setLocation: (location: string) => set({ location }),
       setLanguage: (language: string) => set({ language }),
       toggleIsFormModalActive: () => set((state) => ({ isFormModalActive: !state.isFormModalActive })),
-      setIsLanguageMenuOpen: (isLanguageMenuOpen: boolean) => set({ isLanguageMenuOpen }),
-      setIsNavMenuOpen: (isNavMenuOpen: boolean) => set({ isNavMenuOpen }),
       setParameter: (parameter: string) => set({ parameter }),
       setParameters: (parameters: ParametersType) => set({ parameters }),
       setAirComponents: (airComponents: AirComponentsType) => set({ airComponents }),
