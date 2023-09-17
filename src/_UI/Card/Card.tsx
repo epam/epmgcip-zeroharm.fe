@@ -1,13 +1,12 @@
 import { FC, ReactNode } from "react";
-import { Flex, Box, chakra } from "@chakra-ui/react";
+import { Flex, Box, chakra, FlexProps } from "@chakra-ui/react";
 import { Icon } from "../Icon/Icon";
 
-export type CardType = {
+export type CardType = FlexProps & {
   heading: string;
   subheading: string;
   iconName: string;
   color?: string;
-  height?: string;
   children?: ReactNode;
 };
 
@@ -99,8 +98,8 @@ export const Card: FC<CardType> = ({
   subheading,
   iconName,
   color,
-  height,
-  children
+  children,
+  ...props
 }) => {
   return (
     <>
@@ -118,7 +117,7 @@ export const Card: FC<CardType> = ({
       </CardHeader>
       <CardBody
         bg={`${color}.50`}
-        height={height}
+        {...props}
       >
         { children }
       </CardBody>

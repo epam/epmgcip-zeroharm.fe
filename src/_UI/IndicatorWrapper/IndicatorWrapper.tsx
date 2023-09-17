@@ -5,13 +5,14 @@ type WrapperType = {
   children: ReactNode;
 };
 
-export const Wrapper: FC<WrapperType> = ({ children }) => {
+export const IndicatorWrapper: FC<WrapperType> = ({ children }) => {
   return (
     <Flex
       direction="column"
       bg="gray.800"
       p="16px"
       borderRadius="8px"
+      gap="16px"
     >
       { children }
     </Flex>
