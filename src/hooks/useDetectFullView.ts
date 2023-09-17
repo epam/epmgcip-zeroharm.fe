@@ -11,7 +11,7 @@ export const useDetectFullView = () => {
       ([entry]) => {
         setInFullView(entry.isIntersecting);
       },
-      { threshold: 1 }
+      { threshold: 0.99 }
     );
 
     observer.observe(ref.current);
