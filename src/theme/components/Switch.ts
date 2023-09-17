@@ -4,15 +4,15 @@ export const Switch = defineStyleConfig({
   variants: {
     default: {
       track: {
-        bg: "whiteAlpha.400",
+        bg: "themeTogglerColor",
         h: "20px",
         w: "42px",
         _checked: {
-          bg: "whiteAlpha.400"
+          bg: "themeTogglerColor"
         }
       },
       thumb: {
-        bg: "white",
+        bg: "primary",
         w: "20px",
         h: "20px"
       }
