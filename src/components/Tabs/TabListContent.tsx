@@ -7,20 +7,11 @@ type TabListContentProps = {
   tabs: any[];
 }
 
-const hover = {
-  color: "white"
-};
-
-const selected = {
-  color: "white",
-  borderBottom: "2px solid white"
-};
-
 export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
-  const { ref, isContentOverflowing } = useDetectContentOverflow("horizontal");
+  const { ref: tabContainerRef, isContentOverflowing } = useDetectContentOverflow("horizontal");
   const { setParameter } = useDataStore();
-  const { ref: firstTabRef, inFullView: firstTabInFullView } = useDetectFullView();
-  const { ref: lastTabRef, inFullView: lastTabInFullView } = useDetectFullView();
+  const { ref: firstTabRef, isInFullView: isFirstTabInFullView } = useDetectFullView();
+  const { ref: lastTabRef, isInFullView: isLastTabInFullView } = useDetectFullView();
 
   const tabListToRender = tabs.map(({ tabId, tabName }, index) => {
     const isLastTab = tabs.length - 1 === index;
@@ -41,8 +32,13 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
           fontSize={{ base: "small", lg: "medium" }}
           lineHeight={{ base: "small", lg: "medium" }}
           whiteSpace="nowrap"
-          _selected={selected}
-          _hover={hover}
+          _selected={{
+            color: "white",
+            borderBottom: "2px solid white"
+          }}
+          _hover={{
+            color: "white"
+          }}
           onClick={() => setParameter(tabId)}
         >
           { tabName }
@@ -62,7 +58,7 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
       overflow="hidden"
       position="relative"
       _before={{
-        content: isContentOverflowing && !firstTabInFullView ? "''" : undefined,
+        content: isContentOverflowing && !isFirstTabInFullView ? "''" : undefined,
         position: "absolute",
         width: { base: "34px", lg: "40px" },
         aspectRatio: "1 / 1",
@@ -71,7 +67,7 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
         bgImage: "linear-gradient(90deg, gray.900, transparent)"
       }}
       _after={{
-        content: isContentOverflowing && !lastTabInFullView ? "''" : undefined,
+        content: isContentOverflowing && !isLastTabInFullView ? "''" : undefined,
         position: "absolute",
         width: { base: "34px", lg: "40px" },
         aspectRatio: "1 / 1",
@@ -81,7 +77,7 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
       }}
     >
       <TabList
-        ref={ref}
+        ref={tabContainerRef}
         overflowY="hidden"
         overflowX="auto"
         sx={{
