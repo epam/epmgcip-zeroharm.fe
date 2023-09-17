@@ -5,8 +5,6 @@ export const styles = {
     html: {
       "--headerHeight": "64px",
       "--headerMobileHeight": "56px",
-      "--footerHeight": "77px",
-      "--footerMobileMinHeight": "69px",
       "--footerMaxHeight": "87px",
       "--footerMargin": "16px",
       "--maxContentWidth": "1440px"

@@ -51,8 +51,6 @@ export const Footer: FC<FooterProps> = ({ variant = "static" }) => {
     <FooterContainer
       as="footer"
       bg="gray.900"
-      maxH="var(--footerMaxHeight)"
-      minH={{ base: "var(--footerMobileMinHeight)", md: "var(--footerHeight)" }}
       display="flex"
       flexDirection="column"
     >

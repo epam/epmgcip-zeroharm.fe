@@ -7,7 +7,7 @@ export const About: FC = () => {
   return (
     <Box
       as="main"
-      pb={{ base: "0px", md: "var(--footerHeight)" }}
+      pb={{ base: "0px", md: "var(--footerMaxHeight)" }}
     >
       <AboutImage />
       <Divider variant="gradient" />
