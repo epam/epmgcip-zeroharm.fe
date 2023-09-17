@@ -27,5 +27,8 @@ export * from "./MainLayout/MainLayout";
 export * from "./FeedbackButton/FeedbackButton";
 export * from "./Footer/Footer";
 export * from "./Footer/FooterContent";
+export * from "./TextWithTooltip/TextWithTooltip";
+export * from "./CustomScrollbarWrapper/CustomScrollbarWrapper";
+export * from "./MapAndFooter/MainMapAndFooter";
 export * from "./AboutContent/AboutPageArticle";
 export * from "./AboutContent/AboutImage";

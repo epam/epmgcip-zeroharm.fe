@@ -3,6 +3,7 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 const styles = {
   height: "100%",
+  minHeight: "400px",
   zIndex: 1
 };
 
