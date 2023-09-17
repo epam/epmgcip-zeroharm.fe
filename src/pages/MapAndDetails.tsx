@@ -5,8 +5,7 @@ import { useDetectWidth } from "@Hooks";
 
 const containerHeight = {
   base: "calc(100vh - var(--headerMobileHeight))",
-  md: "calc(100vh - var(--headerHeight) - var(--footerHeight))",
-  lg: "calc(100vh - var(--headerHeight))"
+  md: "100%"
 };
 
 export const MapAndDetails: FC = () => {

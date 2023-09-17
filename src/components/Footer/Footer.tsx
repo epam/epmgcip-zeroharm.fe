@@ -24,7 +24,7 @@ const FooterAsCard = chakra(Box, {
     bottom: 0,
     left: 0,
     zIndex: 1,
-    borderRadius: 8,
+    borderRadius: "8px",
     margin: "var(--footerMargin)",
     width: `calc(100% - ${"var(--footerMargin)"} - ${"var(--footerMargin)"})`
   }
@@ -51,7 +51,7 @@ export const Footer: FC<FooterProps> = ({ variant = "static" }) => {
     <FooterContainer
       as="footer"
       bg="gray.900"
-      maxH={{ base: "var(--footerMobileMaxHeight)", md: "var(--footerHeight)" }}
+      maxH="var(--footerMaxHeight)"
       minH={{ base: "var(--footerMobileMinHeight)", md: "var(--footerHeight)" }}
       display="flex"
       flexDirection="column"

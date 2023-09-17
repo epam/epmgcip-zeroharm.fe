@@ -7,8 +7,8 @@ export const Home = () => {
       as="main"
       p={{ base: "8px 16px", md: "24px 28px" }}
       minH={{
-        base: "calc(100vh - var(--headerMobileHeight) - var(--footerMobileMaxHeight))",
-        md: "calc(100vh - var(--headerHeight) - var(--footerHeight))"
+        base: "calc(100vh - var(--headerMobileHeight) - var(--footerMaxHeight))",
+        md: "calc(100vh - var(--headerHeight) - var(--footerMaxHeight))"
       }}
       display="flex"
       justifyContent={{ base: "center", lg: "space-between" }}

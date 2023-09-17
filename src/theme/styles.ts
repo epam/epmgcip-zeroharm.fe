@@ -7,7 +7,7 @@ export const styles = {
       "--headerMobileHeight": "56px",
       "--footerHeight": "77px",
       "--footerMobileMinHeight": "69px",
-      "--footerMobileMaxHeight": "87px",
+      "--footerMaxHeight": "87px",
       "--footerMargin": "16px",
       "--maxContentWidth": "1440px"
     },

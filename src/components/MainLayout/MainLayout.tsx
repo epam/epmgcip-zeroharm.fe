@@ -22,8 +22,10 @@ export const MainLayout: FC = () => {
       >
         <Header />
         <Box
+          flex="1"
           w="100%"
           pt={{ base: "var(--headerMobileHeight)", md: "var(--headerHeight)" }}
+          overflow={isMapPage ? "hidden" : "auto"}
         >
           <Outlet />
         </Box>
