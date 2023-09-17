@@ -8,10 +8,10 @@ type IndexDateType = {
   title: string;
   children?: ReactNode;
   color?: string;
-  size?: number;
+  value?: number;
 };
 
-export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
+export const Indicator: FC<IndexDateType> = ({ title, color, value }) => {
   const hint = title.toLowerCase();
   const label = t(`hints.${hint}`);
 
@@ -36,7 +36,7 @@ export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
       >
         <Progress
           colorScheme={color}
-          value={size}
+          value={value}
         />
       </Box>
       <Text
@@ -46,7 +46,7 @@ export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
         display="inline-block"
         verticalAlign="bottom"
       >
-        { size }
+        { value }
         <Text
           as="span"
           fontWeight="initial"

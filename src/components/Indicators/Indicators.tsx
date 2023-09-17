@@ -17,11 +17,11 @@ export const Indicators: FC = () => {
     const color = groupsColors?.[groupName as GroupsColorsKeyType];
     const particleValueStr = String(particleValue);
     const roundedParticleValue = parseFloat(particleValueStr.slice(0, particleValueStr.indexOf(".") + 3));
-    const size = isNaN(roundedParticleValue) ? 0 : roundedParticleValue;
+    const value = isNaN(roundedParticleValue) ? 0 : roundedParticleValue;
 
     return (
       <Indicator
-        size={size}
+        value={value}
         title={hint}
         key={hint}
         color={color}
