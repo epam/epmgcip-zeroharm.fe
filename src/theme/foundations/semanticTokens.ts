@@ -1,12 +1,12 @@
 export const semanticTokens = {
   colors: {
-    themeTogglerColor: {
-      default: "#C4CDDC",
-      _dark: "whiteAlpha.400"
-    },
     primary: {
-      default: "#0F1832",
-      _dark: "white"
+      default: "white",
+      _light: "#0F1832"
+    },
+    themeTogglerColor: {
+      default: "whiteAlpha.400",
+      _light: "#C4CDDC"
     }
   }
 };

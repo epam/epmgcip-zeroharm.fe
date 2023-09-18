@@ -16,7 +16,7 @@ export const ThemeButton: FC<ThemeButtonType> = ({ isDark, toggleColorMode }) =>
       icon={isDark ? <IconSun /> : <IconMoon />}
       size="xs"
       bg="transparent"
-      color="white"
+      color="primary"
       _hover={{bg: "transparent"}}
       onClick={toggleColorMode}
     />
