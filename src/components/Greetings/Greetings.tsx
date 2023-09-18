@@ -12,6 +12,7 @@ export const Greetings = () => {
       position="relative"
       flex={{ base: "0", lg: "1" }}
       maxW={{ base: "100%", lg: "500px" }}
+      isolation="isolate"
     >
       <Box
         zIndex="1"
