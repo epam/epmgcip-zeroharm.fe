@@ -1,17 +1,6 @@
-import { useEffect, useRef, useState } from "react";
-import {
-  Tabs as ChakraTabs,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels
-} from "@chakra-ui/react";
-import { resolveTranslationPath } from "@Helpers";
+import { FC, ReactNode, useEffect } from "react";
+import { Box, Tabs as ChakraTabs, Tab, TabList } from "@chakra-ui/react";
 import { useDataStore } from "@Store/useDataStore";
-import { tabsData } from "@Constants";
-import { Cards } from "@UI";
-import { IndexDate } from "../IndexDate/IndexDate";
-import { Indicators } from "../Indicators/Indicators";
 
 const hover = {
   color: "white"
@@ -21,99 +10,69 @@ const selected = {
   borderBottom: "3px solid white"
 };
 
-export const Tabs = () => {
+type TabsProps = {
+  children: ReactNode;
+  tabs: any[];
+}
+
+export const Tabs: FC<TabsProps> = ({ children, tabs }) => {
   const { parameter, setParameter } = useDataStore();
 
-  const [ isScrollVisible, setIsScrollVisible ] = useState(false);
-
-  const tabPanelsRef = useRef(null);
-  const tabPanelsNode = tabPanelsRef.current;
-
-  const tabs = tabsData.map((tabData) => resolveTranslationPath(tabData));
   const currentTab = parameter || tabs[0].tabId;
-  const currentTabData = tabs.find(({ tabId }) => tabId === currentTab);
-  const defaultTabIndex = tabs.indexOf(currentTabData);
-
-  useEffect(() => {
-    if (!tabPanelsNode) return;
-
-    const resizePanelObserver = new ResizeObserver(() => {
-      const { scrollHeight, offsetHeight } = tabPanelsNode;
-
-      setIsScrollVisible(scrollHeight !== offsetHeight);
-    });
-
-    resizePanelObserver.observe(tabPanelsNode);
-
-    return () => {
-      resizePanelObserver.disconnect();
-    };
-  }, [tabPanelsNode]);
+  const defaultTabIndex = tabs.findIndex(({ tabId }) => tabId === currentTab);
 
   useEffect(() => {
     setParameter(currentTab);
   }, []);
 
+  const tabListToRender = tabs.map(({ tabId, tabName }) => (
+    <Tab
+      key={tabId}
+      h={{ base: "34px", lg: "40px" }}
+      flex="1"
+      borderBottom="2px solid gray"
+      color="gray"
+      textAlign="center"
+      fontSize={{ base: "small", lg: "medium" }}
+      lineHeight={{ base: "13px", lg: "small" }}
+      _selected={selected}
+      _hover={hover}
+      onClick={() => setParameter(tabId)}
+    >
+      { tabName }
+    </Tab>
+  ));
+
   return (
     <ChakraTabs
       defaultIndex={defaultTabIndex}
       variant="unstyled"
-      overflowY="hidden"
+      w="100%"
+      flex="1"
       display="flex"
       flexDirection="column"
+      alignItems="center"
+      gap={{ base: "16px", lg: "24px" }}
+      overflowY="hidden"
     >
-      <TabList pb="24px">
-        { tabs.map(({ tabId, tabName }) => (
-          <Tab
-            key={tabId}
-            p="0"
-            borderBottom="2px solid gray"
-            color="gray"
-            flex="1"
-            textAlign="center"
-            _selected={selected}
-            _hover={hover}
-            onClick={() => setParameter(tabId)}
-          >
-            { tabName }
-          </Tab>
-        )) }
+      <TabList
+        w={{ base: "343px", md: "100%" }}
+        px={{ base: "auto", md: "16px", lg: "24px" }}
+        pr={{ lg: "20px" }}
+      >
+        { tabListToRender }
       </TabList>
 
-      <TabPanels
-        ref={tabPanelsRef}
+      <Box
+        w="100%"
         flex="1"
-        overflowY="auto"
-        pb="9px"
-        sx={{
-          scrollbarWidth: "thin",
-          scrollbarColor: "white #48494D",
-          "&::-webkit-scrollbar": {
-            w: "4px",
-            bg: "gray.700",
-            borderRadius: "50px"
-          },
-          "&::-webkit-scrollbar-thumb": {
-            borderRadius: "50px",
-            bg: "white"
-          }
-        }}
+        p="0"
+        pb={{ md: "16px" }}
+        pl={{ md: "16px", lg: "24px"}}
+        overflow="hidden"
       >
-        { tabs.map(({ tabId }) => (
-          <TabPanel
-            key={tabId}
-            display="flex"
-            flexDirection="column"
-            gap="24px"
-            p="0"
-            pr={isScrollVisible ? "20px" : "4px"}
-          >
-            <Cards cardsKey={tabId} />
-            <IndexDate />
-            { tabId === "air_quality" && <Indicators /> }
-          </TabPanel>
-        )) }
-      </TabPanels>
+        { children }
+      </Box>
     </ChakraTabs>
   );
 };

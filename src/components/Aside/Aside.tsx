@@ -1,18 +1,32 @@
-import { Flex } from "@chakra-ui/react";
+import { FC } from "react";
+import { useDetectScrollVisibility, useDetectWidth } from "@Hooks";
+import { resolveTranslationPath } from "@Helpers";
+import { tabsData } from "@Constants";
 import { Tabs } from "../Tabs/Tabs";
-import { LocationSelect } from "../LocationSelect/LocationSelect";
+import { TabPanelsContent } from "../Tabs/TabpanelsContent";
+import { CustomScrollbarWrapper } from "../CustomScrollbarWrapper/CustomScrollbarWrapper";
+import { MobileMapAndFooter } from "../MapAndFooter/MobileMapAndFooter";
+import { AsideLocationMenu } from "./AsideLocationMenu";
+import { AsideWrapper } from "./AsideWrapper";
 
-export const Aside = () => {
+export const Aside: FC = () => {
+  const { ref, isScrollVisible } = useDetectScrollVisibility();
+  const { isLargerThan600 } = useDetectWidth();
+
+  const tabs = tabsData.map((tabData) => resolveTranslationPath(tabData));
+
+  const isMobileWidth = !isLargerThan600;
 
   return (
-    <Flex
-      p="0 20px 15px 24px"
-      direction="column"
-      gap="24px"
-      height="100%"
-    >
-      <LocationSelect />
-      <Tabs />
-    </Flex>
+    <AsideWrapper isScrollVisible={isScrollVisible}>
+      <AsideLocationMenu />
+      <Tabs tabs={tabs}>
+        <CustomScrollbarWrapper ref={ref}>
+          <TabPanelsContent isScrollVisible={isScrollVisible} tabs={tabs} />
+          { isMobileWidth && <MobileMapAndFooter /> }
+        </CustomScrollbarWrapper>
+      </Tabs>
+    </AsideWrapper>
   );
 };
+

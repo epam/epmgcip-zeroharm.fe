@@ -1,18 +1,15 @@
-import { FC, ReactNode } from "react";
-import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
+import { FC } from "react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { t } from "i18next";
-import { Wrapper, Progress } from "@UI";
-import { indexesConfig, groupsColors, ParametersAliasesKeyType } from "@Constants";
+import { IndicatorWrapper } from "@UI";
+import { indexesConfig, ParametersAliasesKeyType } from "@Constants";
 import { getCardData } from "@Helpers";
 import { useParameterData } from "@Hooks";
-import {useDataStore} from "@Store/useDataStore";
-import { ReactComponent as InfoFill } from "@Assets/icons/filled/harm-info-fill.svg";
+import { useDataStore } from "@Store/useDataStore";
+import { TextWithTooltip } from "../TextWithTooltip/TextWithTooltip";
+import { ProgressRange } from "./ProgressRange";
 
-type IndexDateType = {
-  children?: ReactNode;
-};
-
-export const IndexDate: FC<IndexDateType> = ({ children }) => {
+export const IndexDate: FC = () => {
   const { parameter, currentParameterValue } = useParameterData();
   const { fetchingDate } = useDataStore();
 
@@ -22,82 +19,66 @@ export const IndexDate: FC<IndexDateType> = ({ children }) => {
   const absoluteMax = indexGroups?.[indexGroups.length - 1]?.range?.max;
 
   return (
-    <Wrapper>
+    <IndicatorWrapper>
+      <Flex justifyContent="space-between">
+        <TextWithTooltip
+          label={t(`hints.${parameter}`)}
+          text={t(`indexes.${parameter}`)}
+          fontSize={{ base: "tiny", lg: "small" }}
+          lineHeight={{ base: "tiny", lg: "small" }}
+          iconSize="16px"
+        />
+        <Box
+          color="gray.400"
+          fontSize="tiny"
+        >
+          { fetchingDate }
+        </Box>
+      </Flex>
       <Flex
-        justifyContent="space-between"
-        fontSize="12px"
+        direction="column"
+        gap="8px"
       >
-        <Flex gap="10px">
-          <Text textTransform="uppercase">
-            { t(`indexes.${parameter}`) }
-          </Text>
-          <Tooltip
-            sx={{ borderRadius: "8px", padding: "1rem" }}
-            hasArrow
-            bg="gray.700"
-            label={t(`hints.${parameter}`)}
-            placement="right-start"
+        <Flex
+          justifyContent="space-between"
+          gap="10px"
+          fontSize="medium"
+          fontWeight="700"
+        >
+          <Text
+            fontSize={{ base: "small", lg: "medium" }}
+            lineHeight={{ base: "small", lg: "medium" }}
           >
-            <InfoFill
-              width="16px"
-              height="16px"
-              opacity=".5"
-            />
-          </Tooltip>
+            { heading }
+          </Text>
+          <Text
+            fontSize="medium"
+            lineHeight="medium"
+          >
+            { currentParameterValue }
+          </Text>
         </Flex>
-        <Box color="gray.400">{ fetchingDate }</Box>
-      </Flex>
-      <Flex
-        justifyContent="space-between"
-        gap="10px"
-        p="14px 0 10px"
-        fontSize="16px"
-        fontWeight="700"
-      >
-        <Text>{ heading }</Text>
-        <Text>{ currentParameterValue }</Text>
-      </Flex>
-      <Flex
-        justifyContent="space-between"
-        gap="5px"
-      >
-        {
-          indexGroups?.map(({ groupName, range }, idx) => {
-            const color = groupsColors[groupName];
-            const { min, max } = range;
-            const isFirstRange = idx === 0;
-            const isLastRange = idx === indexGroups.length - 1;
-            const withinRange = (min <= currentParameterValue) && (currentParameterValue <= max);
-            const isAbsoluteMin = (0 <= currentParameterValue) && (currentParameterValue < absoluteMin) && isFirstRange;
-            const isAbsoluteMax = (currentParameterValue > absoluteMax) && isLastRange;
-            const withPointer = isAbsoluteMin || isAbsoluteMax || withinRange;
 
-            if (withPointer) {
-              const divider = isAbsoluteMax ? currentParameterValue : max;
-              const pointerPosition = Math.round(currentParameterValue / divider * 100);
-
-              return (
-                <Progress
-                  key={groupName}
-                  colorScheme={color}
-                  value={100}
-                  withPointer
-                  pointerPosition={pointerPosition}
-                />
-              );
-            }
-
-            return (
-              <Progress
+        <Flex
+          justifyContent="space-between"
+          gap="5px"
+        >
+          {
+            indexGroups?.map(({ groupName, range }, index) => (
+              <ProgressRange
+                index={index}
+                indexGroupsLength={indexGroups.length}
                 key={groupName}
-                colorScheme={color}
-                value={100}
+                groupName={groupName}
+                range={range}
+                currentParameterValue={currentParameterValue}
+                absoluteMin={absoluteMin}
+                absoluteMax={absoluteMax}
               />
-            );
-          })
-        }
+            ))
+          }
+        </Flex>
       </Flex>
-      { children }
-    </Wrapper>
+    </IndicatorWrapper>
   );
 };
