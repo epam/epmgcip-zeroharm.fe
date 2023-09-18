@@ -1,5 +1,5 @@
 export const semanticTokens = {
- colors: {
+  colors: {
     linkHoverAndActiveColor: {
       default: "yellow.500",
       _light: "blue.500"
