@@ -147,6 +147,8 @@ export const LanguageMenu: FC = () => {
                 key={languageId}
                 onClick={handleClick}
                 aria-selected={languageId === i18n.language}
+                h="48px"
+                gap="12px"
               >
                 <Icon
                   type="flags"

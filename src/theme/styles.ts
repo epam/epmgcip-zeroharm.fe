@@ -18,8 +18,8 @@ export const styles = {
       minHeight: "100vh"
     },
     "html, body, header, footer": {
-      backgroundColor: "gray.900",
-      color: "white"
+      backgroundColor: props.colorMode === "dark" ? "gray.900" : "blue.50",
+      color: props.colorMode === "dark" ? "white" : "black"
     },
     "header, footer": {
       w: "100%"
