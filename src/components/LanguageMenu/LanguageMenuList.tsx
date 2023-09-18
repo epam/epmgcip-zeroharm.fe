@@ -1,11 +1,11 @@
 import { FC } from "react";
-import { MenuItem, MenuList } from "@chakra-ui/react";
+import { MenuList } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { Variants } from "framer-motion";
-import { Icon } from "@UI";
 import { languagesData } from "@Constants";
 import { resolveTranslationPath } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
+import { LanguageMenuItem } from "./LanguageMenuItem";
 
 type LanguageMenuListProps = {
   isOpenOnMobile: boolean;
@@ -51,27 +51,19 @@ export const LanguageMenuList: FC<LanguageMenuListProps> = ({ isOpenOnMobile, is
 
   const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
 
-  const menuItemsToRender = languagesOptions.map(({ languageId, languageName, languageIconName }) => {
-    const handleClick = () => i18n.changeLanguage(languageId).then(() => setLanguage(languageId));
+  const handleClick = async (languageId: any) => {
+    await i18n.changeLanguage(languageId);
+    setLanguage(languageId);
+  };
 
-    return (
-      <MenuItem
-        key={languageId}
-        onClick={handleClick}
-        aria-selected={languageId === i18n.language}
-        h="48px"
-        gap="12px"
-      >
-        <Icon
-          type="flags"
-          name={languageIconName}
-          color="none"
-        />
-
-        { languageName }
-      </MenuItem>
-    );
-  });
+  const menuItemsToRender = languagesOptions.map((languageOption) => (
+    <LanguageMenuItem
+      key={languageOption.languageId}
+      languageOption={languageOption}
+      currentLanguage={i18n.language}
+      onClick={handleClick}
+    />
+  ));
 
   return (
     <MenuList
