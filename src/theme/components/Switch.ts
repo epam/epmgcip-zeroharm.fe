@@ -6,10 +6,7 @@ export const Switch = defineStyleConfig({
       track: {
         bg: "themeTogglerColor",
         h: "20px",
-        w: "42px",
-        _checked: {
-          bg: "themeTogglerColor"
-        }
+        w: "42px"
       },
       thumb: {
         bg: "primaryColor",
