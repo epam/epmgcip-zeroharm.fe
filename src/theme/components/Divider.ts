@@ -9,7 +9,7 @@ export const Divider = defineStyleConfig({
   },
   variants: {
     default: {
-      background: "gray.700"
+      background: "dividerColor"
     },
     white: {
       background: "white",
