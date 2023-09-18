@@ -1,7 +1,7 @@
 import { StyleFunctionProps } from "@chakra-ui/react";
 
 export const styles = {
-  global: ({ colorMode }: StyleFunctionProps) => ({
+  global: (props: StyleFunctionProps) => ({
     html: {
       "--headerHeight": "64px",
       "--headerMobileHeight": "56px",
@@ -25,7 +25,7 @@ export const styles = {
       w: "100%"
     },
     ".bg-colored": {
-      bg: colorMode === "dark" ? "gray.900" : "white"
+      bg: props.colorMode === "dark" ? "gray.900" : "white"
     }
   })
 };
