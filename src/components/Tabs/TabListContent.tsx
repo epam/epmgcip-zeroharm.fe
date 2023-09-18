@@ -8,10 +8,10 @@ type TabListContentProps = {
 }
 
 export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
-  const { ref: tabContainerRef, isContentOverflowing } = useDetectContentOverflow("horizontal");
   const { setParameter } = useDataStore();
-  const { ref: firstTabRef, isInFullView: isFirstTabInFullView } = useDetectFullView();
-  const { ref: lastTabRef, isInFullView: isLastTabInFullView } = useDetectFullView();
+  const { ref: tabContainerRef, isContentOverflowing } = useDetectContentOverflow("horizontal");
+  const { ref: firstTabRef, isInFullView: isFirstTabInFullView } = useDetectFullView(isContentOverflowing);
+  const { ref: lastTabRef, isInFullView: isLastTabInFullView } = useDetectFullView(isContentOverflowing);
 
   const tabListToRender = tabs.map(({ tabId, tabName }, index) => {
     const isLastTab = tabs.length - 1 === index;
@@ -26,18 +26,22 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
         <Tab
           ref={tabRef}
           h={{ base: "34px", lg: "40px" }}
-          borderBottom="1px solid gray"
+          borderColor="tabBorderColor"
+          borderStyle="solid"
+          borderBottomWidth="1px"
           p="0"
-          color="gray"
+          color="secondaryColor"
           fontSize={{ base: "small", lg: "medium" }}
           lineHeight={{ base: "small", lg: "medium" }}
           whiteSpace="nowrap"
           _selected={{
-            color: "white",
-            borderBottom: "2px solid white"
+            color: "primaryColor",
+            fontWeight: "700",
+            borderColor: "primaryColor",
+            borderBottomWidth: "2px"
           }}
           _hover={{
-            color: "white"
+            color: "primaryColor"
           }}
           onClick={() => setParameter(tabId)}
         >
@@ -46,7 +50,9 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
         <Spacer
           minW={spacerWidth}
           maxW={spacerWidth}
-          borderBottom="1px solid gray"
+          borderColor="tabBorderColor"
+          borderStyle="solid"
+          borderBottomWidth="1px"
         />
       </Fragment>
     );
@@ -58,22 +64,22 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
       overflow="hidden"
       position="relative"
       _before={{
-        content: isContentOverflowing && !isFirstTabInFullView ? "''" : undefined,
+        content: !isFirstTabInFullView ? "''" : undefined,
         position: "absolute",
         width: { base: "34px", lg: "40px" },
         aspectRatio: "1 / 1",
         left: "0",
         top: "0",
-        bgImage: "linear-gradient(90deg, gray.900, transparent)"
+        bgImage: "linear-gradient(90deg, primaryBgColor, transparent)"
       }}
       _after={{
-        content: isContentOverflowing && !isLastTabInFullView ? "''" : undefined,
+        content: !isLastTabInFullView ? "''" : undefined,
         position: "absolute",
         width: { base: "34px", lg: "40px" },
         aspectRatio: "1 / 1",
         right: "0",
         top: "0",
-        bgImage: "linear-gradient(90deg, transparent, gray.900)"
+        bgImage: "linear-gradient(90deg, transparent, primaryBgColor)"
       }}
     >
       <TabList

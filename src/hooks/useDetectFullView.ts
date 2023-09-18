@@ -1,23 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 
-export const useDetectFullView = () => {
-  const [isInFullView, setIsInFullView] = useState(false);
+export const useDetectFullView = (shouldObserve: boolean) => {
+  const [isInFullView, setIsInFullView] = useState(!shouldObserve);
   const ref = useRef(null);
 
   useEffect(() => {
-    if (!ref.current) return;
+    if (!ref.current || !shouldObserve) return;
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInFullView(entry.isIntersecting);
-      },
+      ([entry]) => setIsInFullView(entry.isIntersecting),
       { threshold: 0.99 }
     );
 
     observer.observe(ref.current);
 
     return () => observer.disconnect();
-  }, []);
+  }, [shouldObserve]);
 
   return { ref, isInFullView };
 };

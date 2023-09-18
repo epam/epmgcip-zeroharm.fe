@@ -11,6 +11,18 @@ export const semanticTokens = {
     primaryColor: {
       default: "white",
       _light: "navyBlue.900"
+    },
+    primaryBgColor: {
+      default: "gray.900",
+      _light: "navyBlue.100"
+    },
+    tabBorderColor: {
+      default: "gray.700",
+      _light: "navyBlue.200"
+    },
+    secondaryColor: {
+      default: "gray.200",
+      _light: "navyBlue.600"
     }
   }
 };
