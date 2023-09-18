@@ -4,7 +4,7 @@ export const semanticTokens = {
       default: "yellow.500",
       _light: "blue.500"
     },
-    primaryTextColor: {
+    primaryColor: {
       default: "white",
       _light: "navyBlue.900"
     }
