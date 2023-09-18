@@ -14,7 +14,7 @@ export const semanticTokens = {
     },
     themeTogglerColor: {
       default: "whiteAlpha.400",
-      _light: "#C4CDDC"
+      _light: "navyBlue.200"
     }
   }
 };

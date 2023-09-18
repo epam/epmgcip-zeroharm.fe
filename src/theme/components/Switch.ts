@@ -12,7 +12,7 @@ export const Switch = defineStyleConfig({
         }
       },
       thumb: {
-        bg: "primary",
+        bg: "primaryColor",
         w: "20px",
         h: "20px"
       }
