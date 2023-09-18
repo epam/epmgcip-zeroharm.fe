@@ -6,7 +6,7 @@ export const Logo: FC = () => (
   <Link href="/" fontSize="0">
     <Icon
       as={LogoIcon}
-      fill="primary"
+      fill="primaryTextColor"
       w="135px"
       h="32px"
     />
