@@ -7,6 +7,19 @@ type TabListContentProps = {
   tabs: any[];
 }
 
+const borderStyles = {
+  borderColor: "tabBorderColor",
+  borderStyle: "solid",
+  borderBottomWidth: "1px"
+};
+
+const tabListShadowsGeneralStyles = {
+  position: "absolute",
+  width: { base: "34px", lg: "40px" },
+  aspectRatio: "1 / 1",
+  top: "0"
+};
+
 export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
   const { setParameter } = useDataStore();
   const { ref: tabContainerRef, isContentOverflowing } = useDetectContentOverflow("horizontal");
@@ -26,9 +39,7 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
         <Tab
           ref={tabRef}
           h={{ base: "34px", lg: "40px" }}
-          borderColor="tabBorderColor"
-          borderStyle="solid"
-          borderBottomWidth="1px"
+          {...borderStyles}
           p="0"
           color="secondaryColor"
           fontSize={{ base: "small", lg: "medium" }}
@@ -50,9 +61,7 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
         <Spacer
           minW={spacerWidth}
           maxW={spacerWidth}
-          borderColor="tabBorderColor"
-          borderStyle="solid"
-          borderBottomWidth="1px"
+          {...borderStyles}
         />
       </Fragment>
     );
@@ -65,20 +74,14 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
       position="relative"
       _before={{
         content: !isFirstTabInFullView ? "''" : undefined,
-        position: "absolute",
-        width: { base: "34px", lg: "40px" },
-        aspectRatio: "1 / 1",
+        ...tabListShadowsGeneralStyles,
         left: "0",
-        top: "0",
         bgImage: "linear-gradient(90deg, primaryBgColor, transparent)"
       }}
       _after={{
         content: !isLastTabInFullView ? "''" : undefined,
-        position: "absolute",
-        width: { base: "34px", lg: "40px" },
-        aspectRatio: "1 / 1",
+        ...tabListShadowsGeneralStyles,
         right: "0",
-        top: "0",
         bgImage: "linear-gradient(90deg, transparent, primaryBgColor)"
       }}
     >
