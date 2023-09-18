@@ -1,71 +1,62 @@
 import { FC, ReactNode } from "react";
-import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { t } from "i18next";
+import { TextWithTooltip } from "@Components";
 import { Progress } from "../Progress/Progress";
-import { ReactComponent as InfoFill } from "@Assets/icons/filled/harm-info-fill.svg";
 
 type IndexDateType = {
   title: string;
   children?: ReactNode;
   color?: string;
-  size?: number;
+  value?: number;
 };
 
-export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
+export const Indicator: FC<IndexDateType> = ({ title, color, value }) => {
   const hint = title.toLowerCase();
   const label = t(`hints.${hint}`);
 
   return (
     <Flex
+      fontSize="tiny"
       justifyContent="space-between"
-      fontSize="12px"
       alignItems="center"
-      pb="8px"
-      gap="24px"
+      position="relative"
     >
-      <Tooltip
+      <TextWithTooltip
+        fontSize="medium"
+        lineHeight="medium"
         label={label}
-        hasArrow
-        placement="right-start"
-        variant="default"
+        text={title}
+        iconSize="12px"
+      />
+      <Box
+        pos="absolute"
+        left="96px"
+        w={{ base: "119px", md: "103px", lg: "168px" }}
       >
-        <Flex
-          gap="10px"
-          maxWidth="80px"
-          fontSize="16px"
-        >
-          <Text>{ title }</Text>
-          <Box
-            w="24"
-            opacity=".5"
-          >
-            <InfoFill
-              width="16px"
-              height="16px"
-            />
-          </Box>
-        </Flex>
-      </Tooltip>
-      <Box flex="1">
         <Progress
           colorScheme={color}
-          value={size}
+          value={value}
         />
       </Box>
-      <Flex
-        gap="6px"
-        flex="0 0 80px"
-        justifyContent="flex-end"
+      <Text
+        color="white"
+        fontWeight="700"
+        fontSize="medium"
+        display="inline-block"
+        verticalAlign="bottom"
       >
+        { value }
         <Text
-          color="white"
-          fontWeight="700"
-          fontSize="16px"
+          as="span"
+          fontWeight="initial"
+          color="gray.400"
+          fontSize="tiny"
+          ml="4px"
         >
-          { String(size) }
+          µg/m³
         </Text>
-        <Text color="gray.400">µg/m³</Text>
-      </Flex>
+      </Text>
     </Flex>
   );
 };
