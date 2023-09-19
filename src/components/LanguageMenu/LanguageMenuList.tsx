@@ -1,10 +1,8 @@
 import { FC } from "react";
 import { MenuList } from "@chakra-ui/react";
-import { useTranslation } from "react-i18next";
 import { Variants } from "framer-motion";
 import { languagesData } from "@Constants";
 import { resolveTranslationPath } from "@Helpers";
-import { useDataStore } from "@Store/useDataStore";
 import { LanguageMenuItem } from "./LanguageMenuItem";
 
 type LanguageMenuListProps = {
@@ -46,22 +44,12 @@ const motionVariants: Variants = {
 };
 
 export const LanguageMenuList: FC<LanguageMenuListProps> = ({ isOpenOnMobile, isOpen }) => {
-  const { setLanguage } = useDataStore();
-  const { i18n } = useTranslation();
-
   const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
-
-  const handleClick = async (languageId: any) => {
-    await i18n.changeLanguage(languageId);
-    setLanguage(languageId);
-  };
 
   const menuItemsToRender = languagesOptions.map((languageOption) => (
     <LanguageMenuItem
       key={languageOption.languageId}
       languageOption={languageOption}
-      currentLanguage={i18n.language}
-      onClick={handleClick}
     />
   ));
 
