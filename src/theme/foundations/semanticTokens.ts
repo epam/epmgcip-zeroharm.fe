@@ -17,7 +17,7 @@ export const semanticTokens = {
       _light: "linear-gradient(314deg, #3060E5 20.59%, #7CD0FF 115.69%)"
     },
     footerColor: {
-      default: "gray.900",
+      default: "inherit",
       _light: "white"
     },
     dividerColor: {
