@@ -25,7 +25,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherType> = ({ isDark, toggleColorMode }
       <FormLabel
         margin="0px"
         height="24px"
-        sx={hover}
+        _hover={hover}
       >
         <Icon
           as={IconMoon}
@@ -42,7 +42,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherType> = ({ isDark, toggleColorMode }
       <FormLabel
         margin="0px"
         height="24px"
-        sx={hover}
+        _hover={hover}
       >
         <Icon
           as={IconSun}
