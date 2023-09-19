@@ -18,7 +18,7 @@ export const LanguageMenu: FC = () => {
       w="calc(100vw - var(--headerMobileHeight))"
       h="var(--headerMobileHeight)"
       zIndex="1"
-      bgColor="bgColorMenuActiveMobile"
+      bgColor="secondaryBgColor"
       color="inherit"
       pl="8px"
       pos="fixed"

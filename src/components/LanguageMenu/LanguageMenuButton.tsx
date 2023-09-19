@@ -25,7 +25,7 @@ export const LanguageMenuButton: FC<LanguageMenuButtonProps> = ({ isOpenOnMobile
         {
           isOpenOnMobile && (
             <Center
-              bgColor="bgColorMenuActiveMobile"
+              bgColor="secondaryBgColor"
               h="var(--headerMobileHeight)"
               w="var(--headerMobileHeight)"
             >

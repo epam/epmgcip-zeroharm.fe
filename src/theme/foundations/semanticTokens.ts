@@ -12,7 +12,7 @@ export const semanticTokens = {
       default: "white",
       _light: "navyBlue.900"
     },
-    bgColorMenuActiveMobile: {
+    secondaryBgColor: {
       default: "gray.900",
       _light: "white"
     }
