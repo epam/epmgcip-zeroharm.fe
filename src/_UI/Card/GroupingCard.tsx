@@ -14,11 +14,14 @@ type GroupingCardProps = {
   cardsKey?: any;
 };
 
-export const GroupingCard: FC<GroupingCardProps> = ({ cardsKey }) => {
+export const GroupingCard: FC<GroupingCardProps> = () => {
   const [cardIndex, setCardIndex] = useState(0);
-  const { currentParameterValue } = useParameterData();
+  const { parameter, currentParameterValue } = useParameterData();
 
-  const card = getCardData(currentParameterValue, cardsKey);
+  if (!parameter) return null;
+
+  const card = getCardData(currentParameterValue, parameter);
+
   const { heading, subheading, tip, text, cardColor, iconName } = card;
 
   const cards = [card];

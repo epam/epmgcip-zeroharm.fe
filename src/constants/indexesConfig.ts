@@ -1,6 +1,15 @@
 import { indexesGroupsNames } from "./indexesGroupNames";
+import { ParametersAliasesKey } from "./parametersAliases";
 
 const { GREEN, YELLOW, ORANGE, LIGHT_RED, RED, PURPLE, BLUE } = indexesGroupsNames;
+
+type IndexGroupRange = {
+  groupName: string,
+  range: {
+    min: number;
+    max: number;
+  }
+}
 
 export const airQualityIndexConfig = [
   {
@@ -95,7 +104,7 @@ export const humidityIndexConfig = [
   }
 ];
 
-export const indexesConfig = {
+export const indexesConfig: Record<ParametersAliasesKey, IndexGroupRange[]> = {
   air_quality: airQualityIndexConfig,
   pressure: airPressureIndexConfig,
   humidity: humidityIndexConfig

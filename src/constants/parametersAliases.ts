@@ -1,13 +1,13 @@
-type ParametersAliasesType = {
+type ParametersAliases = {
   air_quality: "aqi",
   humidity: "humidity",
   pressure: "air_pressure"
 };
 
-export const parametersAliases: ParametersAliasesType = {
+export const parametersAliases: ParametersAliases = {
   air_quality: "aqi",
   humidity: "humidity",
   pressure: "air_pressure"
 };
 
-export type ParametersAliasesKeyType = keyof typeof parametersAliases;
+export type ParametersAliasesKey = keyof ParametersAliases;

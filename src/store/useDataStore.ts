@@ -1,11 +1,8 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { ParametersAliasesKey } from "../constants";
 
-type ParametersType = {
-  "air_quality": number,
-  "humidity": number,
-  "pressure": number
-};
+type ParametersType = Record<ParametersAliasesKey, number>
 
 type AirComponentsType = {
   "PM2.5": number,
@@ -20,14 +17,14 @@ interface IDataStore {
   location: string;
   language: string;
   isFormModalActive: boolean;
-  parameter: string;
+  parameter: ParametersAliasesKey | null;
   parameters: ParametersType,
   fetchingDate: string;
   airComponents: AirComponentsType;
   setLocation: (location: string) => void;
   setLanguage: (language: string) => void;
   toggleIsFormModalActive: () => void;
-  setParameter: (parameter: string) => void;
+  setParameter: (parameter: ParametersAliasesKey) => void;
   setParameters: (parameters: ParametersType) => void;
   setAirComponents: (airComponents: AirComponentsType) => void;
   setFetchingDate: (date: string) => void;
@@ -54,14 +51,14 @@ export const useDataStore = create<IDataStore>()(
       location: "",
       language: "",
       isFormModalActive: false,
-      parameter: "",
+      parameter: null,
       parameters: parametersInitial,
       fetchingDate: "",
       airComponents: airComponentsInitial,
       setLocation: (location: string) => set({ location }),
       setLanguage: (language: string) => set({ language }),
       toggleIsFormModalActive: () => set((state) => ({ isFormModalActive: !state.isFormModalActive })),
-      setParameter: (parameter: string) => set({ parameter }),
+      setParameter: (parameter: ParametersAliasesKey) => set({ parameter }),
       setParameters: (parameters: ParametersType) => set({ parameters }),
       setAirComponents: (airComponents: AirComponentsType) => set({ airComponents }),
       setFetchingDate: (fetchingDate: string) => set({ fetchingDate })

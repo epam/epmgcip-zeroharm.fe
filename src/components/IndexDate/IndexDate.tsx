@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { t } from "i18next";
 import { IndicatorWrapper } from "@UI";
-import { indexesConfig, ParametersAliasesKeyType } from "@Constants";
+import { indexesConfig, ParametersAliasesKey } from "@Constants";
 import { getCardData } from "@Helpers";
 import { useParameterData } from "@Hooks";
 import { useDataStore } from "@Store/useDataStore";
@@ -13,8 +13,10 @@ export const IndexDate: FC = () => {
   const { parameter, currentParameterValue } = useParameterData();
   const { fetchingDate } = useDataStore();
 
-  const { heading } = getCardData(currentParameterValue, parameter as ParametersAliasesKeyType) ?? "";
-  const indexGroups = indexesConfig[parameter as ParametersAliasesKeyType];
+  if (!parameter) return null;
+
+  const { heading } = getCardData(currentParameterValue, parameter) ?? "";
+  const indexGroups = indexesConfig[parameter as ParametersAliasesKey];
   const absoluteMin = indexGroups?.[0]?.range?.min;
   const absoluteMax = indexGroups?.[indexGroups.length - 1]?.range?.max;
 
@@ -35,6 +37,7 @@ export const IndexDate: FC = () => {
           { fetchingDate }
         </Box>
       </Flex>
+
       <Flex
         direction="column"
         gap="8px"

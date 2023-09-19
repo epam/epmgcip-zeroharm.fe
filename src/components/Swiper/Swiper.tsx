@@ -1,14 +1,14 @@
 import { FC } from "react";
 import { SwiperItem } from "../SwiperItem/SwiperItem";
 import { useParameterData, useSwiper } from "@Hooks";
-import { ParametersAliasesKeyType } from "@Constants";
+import { ParametersAliasesKey } from "@Constants";
 import { getCardData } from "@Helpers";
 
 export const Swiper: FC = () => {
   const { parameters } = useParameterData();
 
   const cardsData = Object.entries(parameters)?.map(([ key, value ]) => {
-    return getCardData(value, key as ParametersAliasesKeyType);
+    return getCardData(value, key as ParametersAliasesKey);
   });
 
   const currentIndex = useSwiper(cardsData?.length);

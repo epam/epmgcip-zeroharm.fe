@@ -1,6 +1,6 @@
-import { indexesConfig, ParametersAliasesKeyType } from "@Constants";
+import { indexesConfig, ParametersAliasesKey } from "@Constants";
 
-export const getParameterGroup = (parameterValue: any, parameterName: ParametersAliasesKeyType) => {
+export const getParameterGroup = (parameterValue: number, parameterName: ParametersAliasesKey) => {
   const parameterGroupsConfigs = indexesConfig[parameterName];
 
   const firstGroup = parameterGroupsConfigs?.[0];
