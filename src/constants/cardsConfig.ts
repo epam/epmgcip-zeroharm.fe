@@ -1,16 +1,15 @@
-import { indexesGroupsNames } from "./indexesGroupNames";
-import { groupsColors, GroupsColorsKeyType } from "./groupColors";
-
-const { GREEN, YELLOW, ORANGE, LIGHT_RED, RED, PURPLE, BLUE } = indexesGroupsNames;
+import { groupsColors } from "./groupColors";
+import { IndexesGroupsNames } from "./indexesGroupNames";
+import { ParametersMap } from "./parametersData";
 
 type TranslationKeyType = {
   translationPath: string
 };
 
 export type CardDataType = {
-  groupName: string,
+  groupName: IndexesGroupsNames,
   iconName: string,
-  cardColor: GroupsColorsKeyType
+  cardColor: string
   heading: TranslationKeyType,
   subheading: TranslationKeyType,
   tip: TranslationKeyType,
@@ -19,9 +18,9 @@ export type CardDataType = {
 
 export const cardsConfigForAirQuality: CardDataType[] = [
   {
-    groupName: GREEN,
+    groupName: IndexesGroupsNames.GREEN,
     iconName: "harm-slightly-smiling-face",
-    cardColor: groupsColors[GREEN],
+    cardColor: groupsColors[IndexesGroupsNames.GREEN],
     tip: {
       translationPath: "tips.air_quality"
     },
@@ -36,8 +35,8 @@ export const cardsConfigForAirQuality: CardDataType[] = [
     }
   },
   {
-    groupName: YELLOW,
-    cardColor: groupsColors[YELLOW],
+    groupName: IndexesGroupsNames.YELLOW,
+    cardColor: groupsColors[IndexesGroupsNames.YELLOW],
     iconName: "harm-neutral-face",
     tip: {
       translationPath: "tips.air_quality"
@@ -53,8 +52,8 @@ export const cardsConfigForAirQuality: CardDataType[] = [
     }
   },
   {
-    groupName: ORANGE,
-    cardColor: groupsColors[ORANGE],
+    groupName: IndexesGroupsNames.ORANGE,
+    cardColor: groupsColors[IndexesGroupsNames.ORANGE],
     iconName: "harm-worried-face",
     tip: {
       translationPath: "tips.air_quality"
@@ -70,8 +69,8 @@ export const cardsConfigForAirQuality: CardDataType[] = [
     }
   },
   {
-    groupName: LIGHT_RED,
-    cardColor: groupsColors[LIGHT_RED],
+    groupName: IndexesGroupsNames.LIGHT_RED,
+    cardColor: groupsColors[IndexesGroupsNames.LIGHT_RED],
     iconName: "harm-more-worried-face",
     tip: {
       translationPath: "tips.air_quality"
@@ -87,8 +86,8 @@ export const cardsConfigForAirQuality: CardDataType[] = [
     }
   },
   {
-    groupName: RED,
-    cardColor: groupsColors[RED],
+    groupName: IndexesGroupsNames.RED,
+    cardColor: groupsColors[IndexesGroupsNames.RED],
     iconName: "harm-disappointed-face",
     tip: {
       translationPath: "tips.air_quality"
@@ -104,8 +103,8 @@ export const cardsConfigForAirQuality: CardDataType[] = [
     }
   },
   {
-    groupName: PURPLE,
-    cardColor: groupsColors[PURPLE],
+    groupName: IndexesGroupsNames.PURPLE,
+    cardColor: groupsColors[IndexesGroupsNames.PURPLE],
     iconName: "harm-loudly-crying-face",
     tip: {
       translationPath: "tips.air_quality"
@@ -124,8 +123,8 @@ export const cardsConfigForAirQuality: CardDataType[] = [
 
 export const cardsConfigForAirPressure: CardDataType[] = [
   {
-    groupName: BLUE,
-    cardColor: groupsColors[BLUE],
+    groupName: IndexesGroupsNames.BLUE,
+    cardColor: groupsColors[IndexesGroupsNames.BLUE],
     iconName: "harm-disappointed-face",
     tip: {
       translationPath: "tips.pressure"
@@ -141,8 +140,8 @@ export const cardsConfigForAirPressure: CardDataType[] = [
     }
   },
   {
-    groupName: GREEN,
-    cardColor: groupsColors[GREEN],
+    groupName: IndexesGroupsNames.GREEN,
+    cardColor: groupsColors[IndexesGroupsNames.GREEN],
     iconName: "harm-slightly-smiling-face",
     tip: {
       translationPath: "tips.pressure"
@@ -158,8 +157,8 @@ export const cardsConfigForAirPressure: CardDataType[] = [
     }
   },
   {
-    groupName: RED,
-    cardColor: groupsColors[RED],
+    groupName: IndexesGroupsNames.RED,
+    cardColor: groupsColors[IndexesGroupsNames.RED],
     iconName: "harm-worried-face",
     tip: {
       translationPath: "tips.pressure"
@@ -178,8 +177,8 @@ export const cardsConfigForAirPressure: CardDataType[] = [
 
 export const cardsConfigForHumidity: CardDataType[] = [
   {
-    groupName: RED,
-    cardColor: groupsColors[RED],
+    groupName: IndexesGroupsNames.RED,
+    cardColor: groupsColors[IndexesGroupsNames.RED],
     iconName: "harm-disappointed-face",
     tip: {
       translationPath: "tips.humidity"
@@ -195,8 +194,8 @@ export const cardsConfigForHumidity: CardDataType[] = [
     }
   },
   {
-    groupName: GREEN,
-    cardColor: groupsColors[GREEN],
+    groupName: IndexesGroupsNames.GREEN,
+    cardColor: groupsColors[IndexesGroupsNames.GREEN],
     iconName: "harm-slightly-smiling-face",
     tip: {
       translationPath: "tips.humidity"
@@ -212,8 +211,8 @@ export const cardsConfigForHumidity: CardDataType[] = [
     }
   },
   {
-    groupName: BLUE,
-    cardColor: groupsColors[BLUE],
+    groupName: IndexesGroupsNames.BLUE,
+    cardColor: groupsColors[IndexesGroupsNames.BLUE],
     iconName: "harm-neutral-face",
     tip: {
       translationPath: "tips.humidity"
@@ -230,8 +229,8 @@ export const cardsConfigForHumidity: CardDataType[] = [
   }
 ];
 
-export const cardsConfig = {
-  air_quality: cardsConfigForAirQuality.map(config => ({ ...config, parameter: "air_quality" })),
-  pressure: cardsConfigForAirPressure.map(config => ({ ...config, parameter: "pressure" })),
-  humidity: cardsConfigForHumidity.map(config => ({ ...config, parameter: "humidity"}))
+export const cardsConfig: Record<ParametersMap, CardDataType[]> = {
+  [ParametersMap.AIR_QUALITY]: cardsConfigForAirQuality.map(config => ({ ...config, parameter: ParametersMap.AIR_QUALITY })),
+  [ParametersMap.PRESSURE]: cardsConfigForAirPressure.map(config => ({ ...config, parameter: ParametersMap.PRESSURE })),
+  [ParametersMap.HUMIDITY]: cardsConfigForHumidity.map(config => ({ ...config, parameter: ParametersMap.HUMIDITY }))
 };

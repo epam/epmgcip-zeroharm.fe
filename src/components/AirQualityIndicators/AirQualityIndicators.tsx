@@ -1,20 +1,19 @@
 import { FC } from "react";
 import { t } from "i18next";
 import { Flex, Text } from "@chakra-ui/react";
-import { IndicatorWrapper, Indicator } from "@UI";
+import { IndicatorWrapper } from "@UI";
 import { getParameterGroup } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
-import { ParticlesAliasesKeyType, groupsColors, GroupsColorsKeyType } from "@Constants";
-
-const hints = ["PM2.5", "PM10", "NO2", "CO", "O3", "SO2"];
+import { airComponentsList, groupsColors, IndexesGroupsNames, ParametersMap } from "@Constants";
+import { Indicator } from "./Indicator";
 
 export const AirQualityIndicators: FC = () => {
   const { airComponents } = useDataStore();
 
-  const indicatorHintsToRender = hints.map((hint) => {
-    const particleValue = Number(airComponents[hint as ParticlesAliasesKeyType]);
-    const groupName = getParameterGroup(particleValue, "air_quality") || {};
-    const color = groupsColors?.[groupName as GroupsColorsKeyType];
+  const indicatorHintsToRender = airComponentsList.map((hint) => {
+    const particleValue = Number(airComponents[hint]);
+    const groupName = getParameterGroup(particleValue, ParametersMap.AIR_QUALITY);
+    const color = groupsColors?.[groupName as IndexesGroupsNames];
     const particleValueStr = String(particleValue);
     const roundedParticleValue = parseFloat(particleValueStr.slice(0, particleValueStr.indexOf(".") + 3));
     const value = isNaN(roundedParticleValue) ? 0 : roundedParticleValue;

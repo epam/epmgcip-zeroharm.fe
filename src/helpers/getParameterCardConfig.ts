@@ -1,9 +1,9 @@
-import { cardsConfig, ParametersAliasesKey } from "@Constants";
+import { cardsConfig, IndexesGroupsNames, type Parameter } from "@Constants";
 
-export const getParameterCardConfig = (parameterName: string, rangeGroupName: string) => {
-  const parameterCardsConfig = cardsConfig[parameterName as ParametersAliasesKey];
+export const getParameterCardConfig = (parameterName: Parameter, rangeGroupName: IndexesGroupsNames) => {
+  const parameterCardsConfig = cardsConfig[parameterName];
 
-  const cardConfig = parameterCardsConfig?.find(({ groupName }) => groupName === rangeGroupName);
+  const cardConfig = parameterCardsConfig.find(({ groupName }) => groupName === rangeGroupName);
 
   return cardConfig;
 };

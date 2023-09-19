@@ -4,6 +4,7 @@ import { browserInfo } from "@Helpers";
 import { GroupingCard} from "@UI";
 import { IndexDate } from "../IndexDate/IndexDate";
 import { AirQualityIndicators } from "../AirQualityIndicators/AirQualityIndicators";
+import { ParametersMap } from "@Constants";
 
 type TabPanelsContentProps = {
   isScrollVisible: boolean;
@@ -21,9 +22,9 @@ export const TabPanelsContent: FC<TabPanelsContentProps> = ({ isScrollVisible, t
       gap="16px"
       p="0"
     >
-      <GroupingCard cardsKey={tabId} />
+      <GroupingCard />
       <IndexDate />
-      { tabId === "air_quality" && <AirQualityIndicators /> }
+      { tabId === ParametersMap.AIR_QUALITY && <AirQualityIndicators /> }
     </TabPanel>
   ));
 

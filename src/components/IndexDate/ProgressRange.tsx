@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Progress } from "@UI";
-import { groupsColors } from "@Constants";
+import { IndexesGroupsNames, groupsColors } from "@Constants";
 
 type ProgressRangeProps = {
-  groupName: string;
+  groupName: IndexesGroupsNames;
   range: {
     min: number;
     max: number;

@@ -1,29 +1,22 @@
-import { indexesConfig, ParametersAliasesKey } from "@Constants";
+import { indexesConfig, type Parameter } from "@Constants";
 
-export const getParameterGroup = (parameterValue: number, parameterName: ParametersAliasesKey) => {
+export const getParameterGroup = (parameterValue: number, parameterName: Parameter) => {
   const parameterGroupsConfigs = indexesConfig[parameterName];
 
-  const firstGroup = parameterGroupsConfigs?.[0];
-  const firstGroupMinValue = firstGroup?.range?.min;
-  const isParameterValueLessThanMinVal = parameterValue <= Number(firstGroupMinValue) && Number(firstGroupMinValue) >= 0;
-  const firstGroupName = firstGroup?.groupName;
+  const { range: { min: firstGroupMinValue }, groupName: firstGroupName } = parameterGroupsConfigs?.[0];
+  const isParameterValueLessThanMinVal = parameterValue <= firstGroupMinValue && firstGroupMinValue >= 0;
 
-  const groupWithinRangeValue = parameterGroupsConfigs?.find(config => {
-    const { range } = config;
-    const { min, max } = range;
+  const groupWithinRangeValue = parameterGroupsConfigs?.find(({ range: { min, max } }) => min <= parameterValue && parameterValue <= max)?.groupName;
 
-    return min <= parameterValue && parameterValue <= max;
-  })?.groupName;
-
-  const lastGroup = parameterGroupsConfigs?.[parameterGroupsConfigs?.length - 1];
-  const lastGroupMaxValue = lastGroup?.range?.max;
-  const isParameterValueBiggerThanMaxVal = parameterValue > Number(lastGroupMaxValue);
-  const lastGroupName = lastGroup?.groupName;
+  const { range: { max: lastGroupMaxValue }, groupName: lastGroupName } = parameterGroupsConfigs?.[parameterGroupsConfigs?.length - 1];
+  const isParameterValueBiggerThanMaxVal = parameterValue > lastGroupMaxValue;
 
   const rangeGroupName =
-    isParameterValueLessThanMinVal ? firstGroupName :
-    isParameterValueBiggerThanMaxVal ? lastGroupName :
-    groupWithinRangeValue;
+    isParameterValueLessThanMinVal
+      ? firstGroupName
+      : isParameterValueBiggerThanMaxVal
+        ? lastGroupName
+        : groupWithinRangeValue;
 
   return rangeGroupName;
 };

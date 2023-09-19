@@ -1,3 +1,5 @@
+import { AirComponentsMap, ParametersMap } from "@Constants";
+
 export const mapParameterData = (data: any) => {
   const {
     aqi,
@@ -14,18 +16,18 @@ export const mapParameterData = (data: any) => {
 
   return {
     parameters: {
-      "air_quality": aqi ?? 0,
-      "humidity": humidity ?? 0,
-      "pressure": air_pressure ?? 0
+      [ParametersMap.AIR_QUALITY]: aqi ?? 0,
+      [ParametersMap.HUMIDITY]: humidity ?? 0,
+      [ParametersMap.PRESSURE]: air_pressure ?? 0
     },
     airComponents: {
-      "PM2.5": pm2_5 ?? 0,
-      "PM10": pm10 ?? 0,
-      "NO2": nitrogen_dioxide ?? 0,
-      "CO": carbon_monoxide ?? 0,
-      "O3": ozone ?? 0,
-      "SO2": sulfur_dioxide ?? 0
+      [AirComponentsMap.PARTICULATE_MATTER_2_5]: pm2_5 ?? 0,
+      [AirComponentsMap.PARTICULATE_MATTER_10]: pm10 ?? 0,
+      [AirComponentsMap.NITROGEN_DIOXIDE]: nitrogen_dioxide ?? 0,
+      [AirComponentsMap.CARBON_MONOXIDE]: carbon_monoxide ?? 0,
+      [AirComponentsMap.OZONE]: ozone ?? 0,
+      [AirComponentsMap.SULFUR_DIOXIDE]: sulfur_dioxide ?? 0
     },
-    "stationId": station_id
+    stationId: station_id
   };
 };

@@ -6,7 +6,7 @@ import { useDataStore } from "@Store/useDataStore";
 import { Card, CardType } from "@UI";
 import { useDetectWidth } from "@Hooks";
 import { ReactComponent as RightArrow } from "@Assets/icons/stroke/harm-arrow-right.svg";
-import { ParametersAliasesKey } from "@Constants";
+import { type Parameter } from "@Constants";
 
 type SwiperItemDataT = CardType & {
   question: string;
@@ -59,7 +59,7 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
         </Text>
         <Link
           to="/map"
-          onClick={() => setParameter(parameter as ParametersAliasesKey)}
+          onClick={() => setParameter(parameter as Parameter)}
           style={{marginTop: "auto"}}
         >
           <Flex

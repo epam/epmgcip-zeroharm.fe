@@ -1,8 +1,6 @@
 export * from "./groupColors";
 export * from "./indexesGroupNames";
 export * from "./indexesConfig";
-export * from "./parametersAliases";
-export * from "./particlesAliases";
 export * from "./cardsConfig";
 export * from "./tabsData";
 export * from "./locationsData";
@@ -11,3 +9,5 @@ export * from "./notificationData";
 export * from "./common";
 export * from "./routesData";
 export * from "./aboutPageData";
+export * from "./airComponentsData";
+export * from "./parametersData";

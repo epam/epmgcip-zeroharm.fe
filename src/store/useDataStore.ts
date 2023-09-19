@@ -1,48 +1,37 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { ParametersAliasesKey } from "../constants";
-
-type ParametersType = Record<ParametersAliasesKey, number>
-
-type AirComponentsType = {
-  "PM2.5": number,
-  "PM10": number,
-  "NO2": number,
-  "CO": number,
-  "O3": number,
-  "SO2": number
-};
+import { type Parameter, type Parameters, type AirComponents, ParametersMap, AirComponentsMap} from "@Constants";
 
 interface IDataStore {
   location: string;
   language: string;
   isFormModalActive: boolean;
-  parameter: ParametersAliasesKey | null;
-  parameters: ParametersType,
+  parameter: Parameter | null;
+  parameters: Parameters,
   fetchingDate: string;
-  airComponents: AirComponentsType;
+  airComponents: AirComponents;
   setLocation: (location: string) => void;
   setLanguage: (language: string) => void;
   toggleIsFormModalActive: () => void;
-  setParameter: (parameter: ParametersAliasesKey) => void;
-  setParameters: (parameters: ParametersType) => void;
-  setAirComponents: (airComponents: AirComponentsType) => void;
+  setParameter: (parameter: Parameter) => void;
+  setParameters: (parameters: Parameters) => void;
+  setAirComponents: (airComponents: AirComponents) => void;
   setFetchingDate: (date: string) => void;
 }
 
 const parametersInitial = {
-  "air_quality": 0,
-  "humidity": 0,
-  "pressure": 0
+  [ParametersMap.AIR_QUALITY]: 0,
+  [ParametersMap.HUMIDITY]: 0,
+  [ParametersMap.PRESSURE]: 0
 };
 
 const airComponentsInitial = {
-  "PM2.5": 0,
-  "PM10": 0,
-  "NO2": 0,
-  "CO": 0,
-  "O3": 0,
-  "SO2": 0
+  [AirComponentsMap.PARTICULATE_MATTER_2_5]: 0,
+  [AirComponentsMap.PARTICULATE_MATTER_10]: 0,
+  [AirComponentsMap.NITROGEN_DIOXIDE]: 0,
+  [AirComponentsMap.CARBON_MONOXIDE]: 0,
+  [AirComponentsMap.OZONE]: 0,
+  [AirComponentsMap.SULFUR_DIOXIDE]: 0
 };
 
 export const useDataStore = create<IDataStore>()(
@@ -53,15 +42,15 @@ export const useDataStore = create<IDataStore>()(
       isFormModalActive: false,
       parameter: null,
       parameters: parametersInitial,
-      fetchingDate: "",
       airComponents: airComponentsInitial,
-      setLocation: (location: string) => set({ location }),
-      setLanguage: (language: string) => set({ language }),
+      fetchingDate: "",
+      setLocation: (location) => set({ location }),
+      setLanguage: (language) => set({ language }),
       toggleIsFormModalActive: () => set((state) => ({ isFormModalActive: !state.isFormModalActive })),
-      setParameter: (parameter: ParametersAliasesKey) => set({ parameter }),
-      setParameters: (parameters: ParametersType) => set({ parameters }),
-      setAirComponents: (airComponents: AirComponentsType) => set({ airComponents }),
-      setFetchingDate: (fetchingDate: string) => set({ fetchingDate })
+      setParameter: (parameter) => set({ parameter }),
+      setParameters: (parameters) => set({ parameters }),
+      setAirComponents: (airComponents) => set({ airComponents }),
+      setFetchingDate: (fetchingDate) => set({ fetchingDate })
     }),
     {
       name: "language",

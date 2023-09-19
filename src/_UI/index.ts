@@ -1,7 +1,6 @@
 export * from "./Card/Card";
 export * from "./Card/GroupingCard";
 export * from "./Icon/Icon";
-export * from "../components/AirQualityIndicators/Indicator";
 export * from "./InputLabel/InputLabel";
 export * from "./Notification/Notification";
 export * from "./Popup/Popup";

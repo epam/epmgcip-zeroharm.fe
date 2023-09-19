@@ -10,11 +10,7 @@ import { CardTextContent } from "./CardTextContent";
 import { ReactComponent as RightArrowIcon } from "@Assets/icons/stroke/harm-arrow-right.svg";
 import { ReactComponent as LeftArrowIcon } from "@Assets/icons/stroke/harm-arrow-left.svg";
 
-type GroupingCardProps = {
-  cardsKey?: any;
-};
-
-export const GroupingCard: FC<GroupingCardProps> = () => {
+export const GroupingCard: FC = () => {
   const [cardIndex, setCardIndex] = useState(0);
   const { parameter, currentParameterValue } = useParameterData();
 

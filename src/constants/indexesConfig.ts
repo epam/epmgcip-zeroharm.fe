@@ -1,10 +1,8 @@
-import { indexesGroupsNames } from "./indexesGroupNames";
-import { ParametersAliasesKey } from "./parametersAliases";
-
-const { GREEN, YELLOW, ORANGE, LIGHT_RED, RED, PURPLE, BLUE } = indexesGroupsNames;
+/* eslint-disable no-unused-vars */
+import { IndexesGroupsNames, type Parameter } from "@Constants";
 
 type IndexGroupRange = {
-  groupName: string,
+  groupName: IndexesGroupsNames,
   range: {
     min: number;
     max: number;
@@ -13,42 +11,42 @@ type IndexGroupRange = {
 
 export const airQualityIndexConfig = [
   {
-    groupName: GREEN,
+    groupName: IndexesGroupsNames.GREEN,
     range: {
       min: 0,
       max: 50
     }
   },
   {
-    groupName: YELLOW,
+    groupName: IndexesGroupsNames.YELLOW,
     range: {
       min: 51,
       max: 100
     }
   },
   {
-    groupName: ORANGE,
+    groupName: IndexesGroupsNames.ORANGE,
     range: {
       min: 101,
       max: 150
     }
   },
   {
-    groupName: LIGHT_RED,
+    groupName: IndexesGroupsNames.LIGHT_RED,
     range: {
       min: 151,
       max: 300
     }
   },
   {
-    groupName: RED,
+    groupName: IndexesGroupsNames.RED,
     range: {
       min: 301,
       max: 400
     }
   },
   {
-    groupName: PURPLE,
+    groupName: IndexesGroupsNames.PURPLE,
     range: {
       min: 401,
       max: 500
@@ -58,21 +56,21 @@ export const airQualityIndexConfig = [
 
 export const airPressureIndexConfig = [
   {
-    groupName: BLUE,
+    groupName: IndexesGroupsNames.BLUE,
     range: {
       min: 669,
       max: 754
     }
   },
   {
-    groupName: GREEN,
+    groupName: IndexesGroupsNames.GREEN,
     range: {
       min: 755,
       max: 765
     }
   },
   {
-    groupName: RED,
+    groupName: IndexesGroupsNames.RED,
     range: {
       min: 766,
       max: 812
@@ -82,21 +80,21 @@ export const airPressureIndexConfig = [
 
 export const humidityIndexConfig = [
   {
-    groupName: RED,
+    groupName: IndexesGroupsNames.RED,
     range: {
       min: 0,
       max: 39
     }
   },
   {
-    groupName: GREEN,
+    groupName: IndexesGroupsNames.GREEN,
     range: {
       min: 40,
       max: 70
     }
   },
   {
-    groupName: BLUE,
+    groupName: IndexesGroupsNames.BLUE,
     range: {
       min: 71,
       max: 100
@@ -104,7 +102,7 @@ export const humidityIndexConfig = [
   }
 ];
 
-export const indexesConfig: Record<ParametersAliasesKey, IndexGroupRange[]> = {
+export const indexesConfig: Record<Parameter, IndexGroupRange[]> = {
   air_quality: airQualityIndexConfig,
   pressure: airPressureIndexConfig,
   humidity: humidityIndexConfig
