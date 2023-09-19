@@ -20,8 +20,6 @@ export const Menu = defineStyleConfig({
           boxShadow: "none",
           overflow: "hidden",
           border: "none",
-          overflowX: "hidden",
-          overflowY: "auto",
           bg: isDark
             ? { base: "gray.900", md: "gray.700" }
             : "white"
