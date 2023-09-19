@@ -8,7 +8,7 @@ type TabListContentProps = {
 }
 
 const borderStyles = {
-  borderColor: "tabBorderColor",
+  borderColor: "borderColor",
   borderStyle: "solid",
   borderBottomWidth: "1px"
 };

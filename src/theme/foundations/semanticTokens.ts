@@ -16,7 +16,7 @@ export const semanticTokens = {
       default: "gray.900",
       _light: "navyBlue.100"
     },
-    tabBorderColor: {
+    borderColor: {
       default: "gray.700",
       _light: "navyBlue.200"
     },
