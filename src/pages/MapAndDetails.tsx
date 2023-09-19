@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { Flex, Box } from "@chakra-ui/react";
-import { Aside, Map, Footer } from "@Components";
+import { Flex } from "@chakra-ui/react";
+import { Aside, MainMapAndFooter } from "@Components";
 import { useDetectWidth } from "@Hooks";
 
 const containerHeight = {
@@ -10,7 +10,7 @@ const containerHeight = {
 };
 
 export const MapAndDetails: FC = () => {
-  const { isLargerThan600, isLargerThan1024 } = useDetectWidth();
+  const { isLargerThan600 } = useDetectWidth();
 
   return (
     <Flex
@@ -23,21 +23,7 @@ export const MapAndDetails: FC = () => {
       align={{ base: "center", md: "initial" }}
     >
       <Aside />
-
-      {
-        isLargerThan600 &&
-          <Box
-            as="main"
-            height={{ base: "400px", md: "100%" }}
-            w={{ base: "100%", md: "auto" }}
-            flex="1"
-            pos="relative"
-          >
-            <Map />
-
-            { isLargerThan1024 && <Footer variant="card" /> }
-          </Box>
-      }
+      { isLargerThan600 && <MainMapAndFooter /> }
     </Flex>
   );
 };

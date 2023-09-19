@@ -21,9 +21,7 @@
       "name": "Biz haqimizda"
     },
     "footer": {
-      "start": "Barcha ma'lumotlar ",
-      "link": "O'zbekiston Respublikasi Gidrometeorologiya xizmati markazi ",
-      "end": "tomonidan taqdim etilgan.",
+      "sourceInfoText": "Barcha ma'lumotlar <1>O'zbekiston Respublikasi Gidrometeorologiya xizmati markazi</1> tomonidan taqdim etilgan.",
       "button": "Fikr qoldiring"
     },
     "form": {

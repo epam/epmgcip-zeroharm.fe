@@ -8,10 +8,10 @@ type IndexDateType = {
   title: string;
   children?: ReactNode;
   color?: string;
-  size?: number;
+  value?: number;
 };
 
-export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
+export const Indicator: FC<IndexDateType> = ({ title, color, value }) => {
   const hint = title.toLowerCase();
   const label = t(`hints.${hint}`);
 
@@ -36,30 +36,27 @@ export const Indicator: FC<IndexDateType> = ({ title, color, size }) => {
       >
         <Progress
           colorScheme={color}
-          value={size}
+          value={value}
         />
       </Box>
-      <Flex
-        gap="6px"
-        flex="0 0 80px"
-        justifyContent="flex-end"
+      <Text
+        color="white"
+        fontWeight="700"
+        fontSize="medium"
+        display="inline-block"
+        verticalAlign="bottom"
       >
+        { value }
         <Text
-          color="white"
-          fontWeight="700"
-          fontSize="medium"
-        >
-          { size }
-        </Text>
-        <Text
-          pos="relative"
-          top="4px"
+          as="span"
+          fontWeight="initial"
           color="gray.400"
           fontSize="tiny"
+          ml="4px"
         >
           µg/m³
         </Text>
-      </Flex>
+      </Text>
     </Flex>
   );
 };

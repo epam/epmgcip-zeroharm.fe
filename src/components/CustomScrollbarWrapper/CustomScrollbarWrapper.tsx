@@ -1,12 +1,12 @@
-import { FC, ReactNode, useEffect, useRef } from "react";
+import { ReactNode, forwardRef } from "react";
 import { Box } from "@chakra-ui/react";
-import { useDetectWidth, useTouchScreen } from "@Hooks";
+import { browserInfo } from "@Helpers";
 
 type CustomScrollbarWrapperProps = {
   children: ReactNode;
-  isScrollVisible: boolean;
-  setIsScrollVisible: (isScrollVisible: boolean) => void;
 }
+
+const { isFirefox } = browserInfo;
 
 const webkitBrowserScrollbarStyles = {
   "::-webkit-scrollbar": {
@@ -28,69 +28,37 @@ const webkitBrowserScrollbarStyles = {
   }
 };
 
-export const CustomScrollbarWrapper: FC<CustomScrollbarWrapperProps> = ({ children, isScrollVisible, setIsScrollVisible }) => {
-  const tabPanelsRef = useRef(null);
-  const { isLargerThan1024 } = useDetectWidth();
-  const isTouchScreen = useTouchScreen();
+const styles = {
+  "@media (hover: hover), (hover: none) and (min-width: 1024px)": {
+    mr: { base: "0", md: isFirefox ? "3px" : "6px", lg: "20px" },
+    ...webkitBrowserScrollbarStyles
+  },
+  "@media (hover: none)": {
+    mr: { base: "0", md: "3px", lg: "20px" }
+  }
+};
 
-  // const { isFirefox } = detectBrowser();
-  const isMobileTouchDevice = isTouchScreen && !isLargerThan1024;
-
-  const scrollbarStyles = isMobileTouchDevice ? {} : webkitBrowserScrollbarStyles;
-
-  useEffect(() => {
-    const tabPanelsNode = tabPanelsRef.current;
-
-    if (!tabPanelsNode) return;
-
-    const resizePanelObserver = new ResizeObserver(() => {
-      const { scrollHeight, offsetHeight } = tabPanelsNode;
-
-      setIsScrollVisible(scrollHeight !== offsetHeight);
-    });
-
-    resizePanelObserver.observe(tabPanelsNode);
-
-    return () => {
-      resizePanelObserver.disconnect();
-    };
-  }, []);
+export const CustomScrollbarWrapper = forwardRef<HTMLDivElement, CustomScrollbarWrapperProps>(({ children }, ref) => {
 
   return (
     <Box
-      className="custom-scrollbar"
       w="100%"
       h="100%"
       overflow="hidden"
-      // pos="relative"
-      mx={{ base: "auto", md: "initial" }}
     >
       <Box
-        ref={tabPanelsRef}
+        ref={ref}
         h="100%"
         overflowY="auto"
         overflowX="hidden"
         sx={{
           scrollbarWidth: "thin",
           scrollbarColor: "#48494D transparent",
-          ...scrollbarStyles
+          ...styles
         }}
-        // NEEDS APPROVAL
-        // _after={{
-        //   lg: {
-        //     content: isFirefox && isScrollVisible && !isTouchScreen ? "''" : undefined,
-        //     pos: "absolute",
-        //     w: "6px",
-        //     bgColor: "rgba(255, 255, 255, .05)",
-        //     h: "calc(100% - 2px)",
-        //     borderRadius: "10px",
-        //     right: "2px",
-        //     top: "1px"
-        //   }
-        // }}
       >
         { children }
       </Box>
     </Box>
   );
-};
+});

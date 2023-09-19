@@ -1,23 +1,25 @@
 import { Box, Flex } from "@chakra-ui/react";
 import { Swiper } from "../Swiper/Swiper";
+import { useDetectWidth } from "@Hooks";
 import { ReactComponent as Circles } from "@Assets/images/circles.svg";
 
 export const Greetings = () => {
+  const { isLargerThan1024 } = useDetectWidth();
+
   return (
     <Flex
-      p="120px 80px 0 80px"
-      direction="column"
-      gap="32px"
-      alignItems="flex-end"
+      justifyContent="end"
       position="relative"
+      flex={{ base: "0", lg: "1" }}
+      maxW={{ base: "100%", lg: "500px" }}
+      isolation="isolate"
     >
       <Box
         zIndex="1"
         position="absolute"
-        top="-25px"
-        right="125px"
+        left="0px"
       >
-        <Circles />
+        { isLargerThan1024 && <Circles /> }
       </Box>
       <Swiper />
     </Flex>

@@ -1,7 +1,20 @@
 import { Text, Link as ChakraLink } from "@chakra-ui/react";
-import { t } from "i18next";
+import { Trans } from "react-i18next";
+import { useIncludeHover } from "@Hooks";
 
 export const FooterContent = () => {
+  const shouldIncludeHover = useIncludeHover();
+
+  const Link = <ChakraLink
+    href="https://hydromet.uz/"
+    isExternal
+    sx={
+      shouldIncludeHover
+        ? { _hover: { color: "linkHoverAndActiveColor" } }
+        : { color: "linkHoverAndActiveColor" }
+    }
+  />;
+
   return (
     <Text
       fontSize="sm"
@@ -15,15 +28,10 @@ export const FooterContent = () => {
         md: "initial"
       }}
     >
-      { t("pages.footer.start") }
-      <ChakraLink
-        href="https://hydromet.uz/"
-        isExternal
-        _hover={{ color: "#FFA01C" }}
-      >
-        { t("pages.footer.link") }
-      </ChakraLink>
-      { t("pages.footer.end") }
+      <Trans
+        i18nKey="pages.footer.sourceInfoText"
+        components={{ 1: Link }}
+      />
     </Text>
   );
 };

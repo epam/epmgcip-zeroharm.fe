@@ -15,3 +15,5 @@ export const detectBrowser = () => {
     isWebkitBrowser
   };
 };
+
+export const browserInfo = detectBrowser();

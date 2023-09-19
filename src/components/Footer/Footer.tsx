@@ -1,8 +1,9 @@
 import { FC } from "react";
-import { Flex, Box, Divider, chakra } from "@chakra-ui/react";
+import { Box, Divider, chakra } from "@chakra-ui/react";
 import { FeedbackButton } from "../FeedbackButton/FeedbackButton";
 import { useDetectWidth } from "@Hooks";
 import { FooterContent } from "./FooterContent";
+import { FooterWrapper } from "./FooterWrapper";
 
 const FooterStatic = chakra(Box, {
   baseStyle: {
@@ -43,8 +44,8 @@ export const Footer: FC<FooterProps> = ({ variant = "static" }) => {
   const { isLargerThan600 } = useDetectWidth();
 
   const FooterContainer = FooterTypes[variant];
-  const isVariantCard = variant === "card";
-  const showDivider = !isVariantCard;
+  const isCardVariant = variant === "card";
+  const showDivider = !isCardVariant;
 
   return (
     <FooterContainer
@@ -56,29 +57,22 @@ export const Footer: FC<FooterProps> = ({ variant = "static" }) => {
       flexDirection="column"
     >
       { showDivider && <Divider /> }
-      <Flex
-        flex="1"
-        w="100%"
-        px={{ base: "16px", lg: "24px" }}
-        py={{ base: "16px", md: "0px" }}
-        align="center"
-        alignSelf="center"
-        justify="space-between"
-        maxWidth={isVariantCard ? "none" : "var(--maxContentWidth)"}
-      >
+      <FooterWrapper isCardVariant={isCardVariant}>
         <FooterContent />
-        { isLargerThan600 && (
-          <Box
-            pl={{
-              base: "initial",
-              md: "50px",
-              lg: "16px"
-            }}
-          >
-            <FeedbackButton />
-          </Box>
-        ) }
-      </Flex>
+        {
+          isLargerThan600 && (
+            <Box
+              pl={{
+                base: "initial",
+                md: "50px",
+                lg: "16px"
+              }}
+            >
+              <FeedbackButton />
+            </Box>
+          )
+        }
+      </FooterWrapper>
     </FooterContainer>
   );
 };

@@ -1,12 +1,12 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
-import { Flex } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
+import { Flex, Link as ChakraLink } from "@chakra-ui/react";
 import { routesData } from "@Constants";
 import { resolveTranslationPath } from "@Helpers";
 
 type NavbarProps = {
   onClick?: () => void;
-}
+};
 
 export const Navbar: FC<NavbarProps> = ({ onClick }) => {
   const routes = routesData.map((routeData) => resolveTranslationPath(routeData));
@@ -21,13 +21,16 @@ export const Navbar: FC<NavbarProps> = ({ onClick }) => {
     >
       {
         routes.map(({ routePath, routeName }) => (
-          <Link
+          <ChakraLink
+            as={NavLink}
             key={routePath}
             to={routePath}
             onClick={onClick}
+            _hover={{ textDecoration: "none" }}
+            _activeLink={{ color: "linkHoverAndActiveColor" }}
           >
             { routeName }
-          </Link>
+          </ChakraLink>
         ))
       }
     </Flex>

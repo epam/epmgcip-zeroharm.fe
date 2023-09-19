@@ -1,13 +1,12 @@
 import { FC, ReactNode } from "react";
-import { Flex, Box, chakra } from "@chakra-ui/react";
+import { Flex, Box, chakra, FlexProps } from "@chakra-ui/react";
 import { Icon } from "../Icon/Icon";
 
-export type CardType = {
+export type CardType = FlexProps & {
   heading: string;
   subheading: string;
   iconName: string;
   color?: string;
-  height?: string;
   children?: ReactNode;
 };
 
@@ -15,9 +14,15 @@ const CardHeader = chakra(Flex, {
   baseStyle: {
     flexDirection: "column",
     borderRadius: "8px 8px 0 0",
-    padding: "24px",
     position: "relative",
-    minHeight: "150px"
+    height: {
+      base: "120px",
+      md: "150px"
+    },
+    padding: {
+      base: "16px",
+      md: "24px"
+    }
   }
 });
 const CardBody = chakra(Flex, {
@@ -25,8 +30,11 @@ const CardBody = chakra(Flex, {
     flexDirection: "column",
     gap: "16px",
     borderRadius: "0 0 8px 8px",
-    padding: "24px",
-    color: "black"
+    color: "black",
+    padding: {
+      base: "16px",
+      md: "24px"
+    }
   }
 });
 const CardText = chakra(Flex, {
@@ -41,15 +49,27 @@ const CardSubHeading = chakra(Box, {
     opacity: "0.6",
     textTransform: "uppercase",
     fontWeight: "700",
-    fontSize: "14px"
+    fontSize: {
+      base: "tiny",
+      md: "small"
+    },
+    lineHeight: {
+      base: "tiny",
+      md: "small"
+    }
   }
 });
 const CardHeading = chakra(Box, {
   baseStyle: {
-    textTransform: "uppercase",
     fontWeight: "700",
-    fontSize: "28px",
-    lineHeight: "36px"
+    fontSize: {
+      base: "22px",
+      md: "headers.h3"
+    },
+    lineHeight: {
+      base: "headers.h4",
+      md: "headers.h3"
+    }
   }
 });
 
@@ -61,7 +81,15 @@ const CardIconBox = chakra("div", {
     right: "18px",
     top: "50%",
     transform: "translate(0, -50%)",
-    svg: { width: "124px", height: "100%" }
+    width: {
+      base: "96px",
+      md: "122px"
+    },
+    svg: {
+      maxW: "124px",
+      w: "100%",
+      height: "100%"
+    }
   }
 });
 
@@ -70,8 +98,8 @@ export const Card: FC<CardType> = ({
   subheading,
   iconName,
   color,
-  height,
-  children
+  children,
+  ...props
 }) => {
   return (
     <>
@@ -89,7 +117,7 @@ export const Card: FC<CardType> = ({
       </CardHeader>
       <CardBody
         bg={`${color}.50`}
-        h={height}
+        {...props}
       >
         { children }
       </CardBody>

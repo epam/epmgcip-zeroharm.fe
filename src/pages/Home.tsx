@@ -1,16 +1,24 @@
-import { Container, Flex } from "@chakra-ui/react";
-import { Greetings, Selector } from "@Components";
+import { Container } from "@chakra-ui/react";
+import { Selector, Greetings } from "@Components";
 
 export const Home = () => {
   return (
     <Container
       as="main"
-      maxW="1280px"
+      p={{ base: "8px 16px", md: "24px 28px" }}
+      minH={{
+        base: "calc(100vh - var(--headerMobileHeight) - var(--footerMobileMaxHeight))",
+        md: "calc(100vh - var(--headerHeight) - var(--footerHeight))"
+      }}
+      display="flex"
+      justifyContent={{ base: "center", lg: "space-between" }}
+      flexDirection={{ base: "column", lg: "row" }}
+      maxW={{ base: "375px", md: "528px", lg: "1176px" }}
+      alignItems="center"
+      gap={{ base: "24px", lg: "0" }}
     >
-      <Flex justifyContent="space-between">
         <Selector />
         <Greetings />
-     </Flex>
     </Container>
   );
 };

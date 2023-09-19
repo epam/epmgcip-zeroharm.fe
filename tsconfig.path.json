@@ -11,6 +11,8 @@
       "@i18n/*": ["./src/i18n/*"],
       "@Helpers/*": ["./src/heplers/*"],
       "@Helpers": ["./src/helpers"],
+      "@Services/*": ["./src/services/*"],
+      "@Services": ["./src/services"],
       "@Hooks/*": ["./src/hooks"],
       "@Hooks": ["./src/hooks"],
       "@UI/*": ["./src/_UI/*"],

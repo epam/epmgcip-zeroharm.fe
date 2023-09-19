@@ -3,16 +3,18 @@ import { Center, Flex, Tooltip, Text, FlexProps } from "@chakra-ui/react";
 import { useDetectWidth } from "@Hooks";
 import { ReactComponent as InfoFill } from "@Assets/icons/filled/harm-info-fill.svg";
 
-interface TextWithTooltipProps extends FlexProps {
-  label: string | number;
+type TextWithTooltipProps = FlexProps & {
+  label: string;
   text: string | number;
   iconSize: string | number;
 }
 
-export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, fontSize, lineHeight, iconSize }) => {
-  const { isLargerThan600 } = useDetectWidth();
+export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, iconSize, ...props }) => {
+  const { isLargerThan1024 } = useDetectWidth();
 
-  const placement = isLargerThan600 ? "right-start" : "bottom-end";
+  const preferredNumberOfCharactersPerLine = label.length / 6;
+
+  const placement = isLargerThan1024 ? "right-start" : "bottom-end";
 
   return (
     <Tooltip
@@ -22,14 +24,16 @@ export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, fontSiz
       bg="gray.700"
       placement={placement}
       shouldWrapChildren
-      maxH={{ base: "auto", md: "150px" }}
-      maxW={{ base: "343px", md: "600px" }}
+      maxH="auto"
+      sx={{
+        maxW: { base: "343px", md: "600px" },
+        w: `${preferredNumberOfCharactersPerLine}ch`
+      }}
     >
       <Flex
-        fontSize={fontSize}
-        lineHeight={lineHeight}
         fontWeight="bold"
         gap="4px"
+        {...props}
       >
         <Text textTransform="uppercase">
           { text }

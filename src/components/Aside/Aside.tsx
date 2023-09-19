@@ -1,47 +1,32 @@
-import { FC, useState } from "react";
-import { Box, VStack } from "@chakra-ui/react";
+import { FC } from "react";
+import { useDetectScrollVisibility, useDetectWidth } from "@Hooks";
+import { resolveTranslationPath } from "@Helpers";
+import { tabsData } from "@Constants";
 import { Tabs } from "../Tabs/Tabs";
-import { LocationSelect } from "../LocationSelect/LocationSelect";
+import { TabPanelsContent } from "../Tabs/TabpanelsContent";
+import { CustomScrollbarWrapper } from "../CustomScrollbarWrapper/CustomScrollbarWrapper";
+import { MobileMapAndFooter } from "../MapAndFooter/MobileMapAndFooter";
+import { AsideLocationMenu } from "./AsideLocationMenu";
+import { AsideWrapper } from "./AsideWrapper";
 
 export const Aside: FC = () => {
-  const [ isScrollVisible, setIsScrollVisible ] = useState(false);
+  const { ref, isScrollVisible } = useDetectScrollVisibility();
+  const { isLargerThan600 } = useDetectWidth();
 
-  const offset = isScrollVisible ? "20px" : "0px";
+  const tabs = tabsData.map((tabData) => resolveTranslationPath(tabData));
+
+  const isMobileWidth = !isLargerThan600;
 
   return (
-    <VStack
-      as="aside"
-      height="100%"
-      maxW={{
-        base: "599px",
-        md: "359px",
-        lg: `calc(440px + ${offset})`
-      }}
-      w="100%"
-    >
-      <Box
-        bgColor="gray.900"
-        w="100%"
-        pos={{ base: "fixed", md: "initial" }}
-        zIndex={{ base: "1099", md: "initial" }}
-      >
-        <Box
-          m={{
-            base: "8px auto 16px",
-            md: "16px",
-            lg: "16px 20px 16px 24px"
-          }}
-          h="44px"
-          w={{ base: "343px", md: "initial" }}
-        >
-          <LocationSelect />
-        </Box>
-      </Box>
-      <Tabs
-        isScrollVisible={isScrollVisible}
-        setIsScrollVisible={setIsScrollVisible}
-      />
-    </VStack>
+    <AsideWrapper isScrollVisible={isScrollVisible}>
+      <AsideLocationMenu />
+      <Tabs tabs={tabs}>
+        <CustomScrollbarWrapper ref={ref}>
+          <TabPanelsContent isScrollVisible={isScrollVisible} tabs={tabs} />
+          { isMobileWidth && <MobileMapAndFooter /> }
+        </CustomScrollbarWrapper>
+      </Tabs>
+    </AsideWrapper>
   );
 };
 

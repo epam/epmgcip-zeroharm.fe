@@ -1,18 +1,15 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { t } from "i18next";
-import { IndicatorWrapper, Progress } from "@UI";
-import { indexesConfig, groupsColors, ParametersAliasesKeyType } from "@Constants";
+import { IndicatorWrapper } from "@UI";
+import { indexesConfig, ParametersAliasesKeyType } from "@Constants";
 import { getCardData } from "@Helpers";
 import { useParameterData } from "@Hooks";
-import {useDataStore} from "@Store/useDataStore";
+import { useDataStore } from "@Store/useDataStore";
 import { TextWithTooltip } from "../TextWithTooltip/TextWithTooltip";
+import { ProgressRange } from "./ProgressRange";
 
-type IndexDateType = {
-  children?: ReactNode;
-};
-
-export const IndexDate: FC<IndexDateType> = ({ children }) => {
+export const IndexDate: FC = () => {
   const { parameter, currentParameterValue } = useParameterData();
   const { fetchingDate } = useDataStore();
 
@@ -67,43 +64,21 @@ export const IndexDate: FC<IndexDateType> = ({ children }) => {
           gap="5px"
         >
           {
-            indexGroups?.map(({ groupName, range }, idx) => {
-              const color = groupsColors[groupName];
-              const { min, max } = range;
-              const isFirstRange = idx === 0;
-              const isLastRange = idx === indexGroups.length - 1;
-              const withinRange = (min <= currentParameterValue) && (currentParameterValue <= max);
-              const isAbsoluteMin = (0 <= currentParameterValue) && (currentParameterValue < absoluteMin) && isFirstRange;
-              const isAbsoluteMax = (currentParameterValue > absoluteMax) && isLastRange;
-              const withPointer = isAbsoluteMin || isAbsoluteMax || withinRange;
-
-              if (withPointer) {
-                const divider = isAbsoluteMax ? currentParameterValue : max;
-                const pointerPosition = Math.round(currentParameterValue / divider * 100);
-
-                return (
-                  <Progress
-                    key={groupName}
-                    colorScheme={color}
-                    value={100}
-                    withPointer
-                    pointerPosition={pointerPosition}
-                  />
-                );
-              }
-
-              return (
-                <Progress
-                  key={groupName}
-                  colorScheme={color}
-                  value={100}
-                />
-              );
-            })
+            indexGroups?.map(({ groupName, range }, index) => (
+              <ProgressRange
+                index={index}
+                indexGroupsLength={indexGroups.length}
+                key={groupName}
+                groupName={groupName}
+                range={range}
+                currentParameterValue={currentParameterValue}
+                absoluteMin={absoluteMin}
+                absoluteMax={absoluteMax}
+              />
+            ))
           }
         </Flex>
       </Flex>
-      { children }
     </IndicatorWrapper>
   );
 };

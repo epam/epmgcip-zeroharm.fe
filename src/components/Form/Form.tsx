@@ -3,13 +3,14 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { Box, FormErrorMessage, FormLabel, FormControl, Input, Button, Textarea, Checkbox, Flex, Tooltip, Divider } from "@chakra-ui/react";
 import { t } from "i18next";
 import { InputLabel } from "@UI";
+import { postData } from "@Services";
 import { ReactComponent as Hint } from "@Assets/icons/stroke/harm-hint.svg";
 
 type FormData = {
   name: string;
   email: string;
   feedback: string;
-  response: boolean;
+  isResponseRequired: boolean;
 };
 
 type FormProps = {
@@ -30,12 +31,13 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
   const requiredErrorMessage = t("pages.form.required_notification");
   const invalidInputErrorMessage = t("pages.form.incorrectly_notification");
 
-  const onSubmit: SubmitHandler<FormData> = (values: FormData) => {
+  const onSubmit: SubmitHandler<FormData> = ({ name, email, feedback, isResponseRequired }) => {
+    postData("/v1/feedback", { name, email, message: feedback, checkbox: isResponseRequired });
     submitForm(true);
     setIsSubmittedWithResponse(watchResponse);
   };
 
-  const watchResponse = watch("response", false);
+  const watchResponse = watch("isResponseRequired", false);
 
   const required = (value?: string) => {
     return !value && watchResponse ? requiredErrorMessage : true;
@@ -68,13 +70,15 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             validate: {
               required,
               pattern: (value) => {
-                if (value && watchResponse && !/^[A-Za-z А-Яа-я-,'.]{2,50}$/.test(value))
-                  return invalidInputErrorMessage;
+                if (value && watchResponse && !/^[A-Za-z А-Яа-я-,'.]{2,50}$/.test(value)) return invalidInputErrorMessage;
               }
             }
           })}
         />
-        <Box minH="6" pt="1">
+        <Box
+          minH="6"
+          pt="1"
+        >
           {
             <FormErrorMessage
               mt="0"
@@ -101,18 +105,19 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           {...register("email", {
             validate: {
               required,
-              pattern: value => {
-                if (value && watchResponse && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value))
-                  return invalidInputErrorMessage;
+              pattern: (value) => {
+                if (value && watchResponse && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value)) return invalidInputErrorMessage;
               },
-              length: value => {
-                if (watchResponse && value.length < 7 && value.length > 50)
-                  return invalidInputErrorMessage;
+              length: (value) => {
+                if (watchResponse && value.length < 7 && value.length > 50) return invalidInputErrorMessage;
               }
             }
           })}
         />
-        <Box minH="6" pt="1">
+        <Box
+          minH="6"
+          pt="1"
+        >
           {
             <FormErrorMessage
               mt="0"
@@ -159,7 +164,10 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             required: requiredErrorMessage
           })}
         />
-        <Box minH="6" pt="1">
+        <Box
+          minH="6"
+          pt="1"
+        >
           <FormErrorMessage
             mt="0"
             fontSize="sm"
@@ -194,13 +202,13 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             size="lg"
             spacing="20px"
             mr="2"
-            id="response"
-            {...register("response")}
+            id="isResponseRequired"
+            {...register("isResponseRequired")}
           />
           <FormLabel
             mr={0}
             mb={0}
-            htmlFor="response"
+            htmlFor="isResponseRequired"
           >
             { t("pages.form.checkbox.label") }
           </FormLabel>
