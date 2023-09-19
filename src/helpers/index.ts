@@ -7,4 +7,4 @@ export * from "./mapParameterData";
 export * from "./getSubString";
 export * from "./getCutText";
 export * from "./detectBrowser";
-
+export * from "./getRequiredLocationOptionsByIds";

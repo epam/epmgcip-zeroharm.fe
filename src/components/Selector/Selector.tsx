@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { Button, Flex, Heading, Text, Box, Icon } from "@chakra-ui/react";
 import { t } from "i18next";
 import { Popup } from "@UI";
-import { LocationSelect } from "../LocationSelect/LocationSelect";
 import { ReactComponent as IconLocal } from "@Assets/icons/filled/harm-local.svg";
 import { LocationMenu } from "../LocationMenu/LocationMenu";
 
@@ -36,9 +35,6 @@ export const Selector = () => {
       </Heading>
       <Box mt="8px" w="100%">
         <LocationMenu/>
-      </Box>
-      <Box mt="8px" w="100%">
-        <LocationSelect />
       </Box>
       <Flex
         width="100%"

@@ -13,7 +13,8 @@ module.exports = {
       "@UI": path.resolve(__dirname, "src/_UI"),
       "@Pages": path.resolve(__dirname, "src/pages"),
       "@Store": path.resolve(__dirname, "src/store"),
-      "@Theme": path.resolve(__dirname, "src/theme")
+      "@Theme": path.resolve(__dirname, "src/theme"),
+      "@Types": path.resolve(__dirname, "src/types")
     },
     configure: webpackConfig => {
       webpackConfig.module.rules[1].oneOf[2] = {

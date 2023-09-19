@@ -1,4 +1,6 @@
-export const locationsData = [
+import { LocationRawData } from "@/types";
+
+export const locationsData: LocationRawData[] = [
   {
     locationId: "tash_furkata",
     locationName: {
@@ -24,7 +26,7 @@ export const locationsData = [
     }
   },
   {
-    localtionId: "tash_szajnochy",
+    locationId: "tash_szajnochy",
     locationName: {
       translationPath: "locations.tash_szajnochy"
     }
