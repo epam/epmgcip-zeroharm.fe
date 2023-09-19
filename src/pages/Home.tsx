@@ -5,20 +5,17 @@ export const Home = () => {
   return (
     <Container
       as="main"
-      p={{ base: "8px 16px", md: "24px 28px" }}
-      minH={{
-        base: "calc(100vh - var(--headerMobileHeight) - var(--footerMobileMaxHeight))",
-        md: "calc(100vh - var(--headerHeight) - var(--footerHeight))"
-      }}
-      display="flex"
-      justifyContent={{ base: "center", lg: "space-between" }}
-      flexDirection={{ base: "column", lg: "row" }}
+      h="100%"
       maxW={{ base: "375px", md: "528px", lg: "1176px" }}
+      p={{ base: "8px 16px", md: "24px 28px" }}
+      display="flex"
+      flexDirection={{ base: "column", lg: "row" }}
+      justifyContent={{ base: "center", lg: "space-between" }}
       alignItems="center"
       gap={{ base: "24px", lg: "0" }}
     >
-        <Selector />
-        <Greetings />
+      <Selector />
+      <Greetings />
     </Container>
   );
 };
