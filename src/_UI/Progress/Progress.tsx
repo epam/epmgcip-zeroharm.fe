@@ -20,7 +20,7 @@ export const Progress: FC<ProgressType> = ({
       left: `calc(${0.88 * pointerPosition}% - 4px)`,
       boxSize: "8px",
       zIndex: "10",
-      bg: "primaryColor",
+      bgColor: "primaryColor",
       borderWidth: "2px",
       borderStyle: "solid",
       borderColor: "indicator.bg",

@@ -4,7 +4,7 @@ export const Progress = defineStyleConfig({
   variants: {
     default: {
       track: {
-        bg: "gray.700",
+        bgColor: "indicator.progress-bg",
         h: "4px",
         borderRadius: "2px"
       }

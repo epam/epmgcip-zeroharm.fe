@@ -40,7 +40,7 @@ export const Indicator: FC<IndexDateType> = ({ title, color, value }) => {
         />
       </Box>
       <Text
-        color="white"
+        color="primaryColor"
         fontWeight="700"
         fontSize="medium"
         display="inline-block"
