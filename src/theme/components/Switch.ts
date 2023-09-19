@@ -6,7 +6,13 @@ export const Switch = defineStyleConfig({
       track: {
         bg: "themeTogglerColor",
         h: "20px",
-        w: "42px"
+        w: "42px",
+        cursor: "initial",
+        "@media (hover: hover)": {
+          ":hover": {
+            cursor: "pointer"
+          }
+        }
       },
       thumb: {
         bg: "primaryColor",

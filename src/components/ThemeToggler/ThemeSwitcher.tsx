@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { FormControl, FormLabel, Switch, Icon } from "@chakra-ui/react";
+import { useIncludeHover } from "@Hooks";
 import { ReactComponent as IconMoon } from "@Assets/icons/stroke/theme-moon.svg";
 import { ReactComponent as IconSun } from "@Assets/icons/stroke/theme-sun.svg";
 
@@ -8,11 +9,10 @@ type ThemeSwitcherType = {
   toggleColorMode: () => void;
 }
 
-const hover = {
-  cursor: "pointer"
-};
-
 export const ThemeSwitcher: FC<ThemeSwitcherType> = ({ isDark, toggleColorMode }) => {
+  const shouldIncludeHover = useIncludeHover();
+
+  const hover = shouldIncludeHover ? {cursor: "pointer"} : {cursor: "initial"};
 
   return (
     <FormControl
@@ -25,7 +25,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherType> = ({ isDark, toggleColorMode }
       <FormLabel
         margin="0px"
         height="24px"
-        _hover={hover}
+        sx={hover}
       >
         <Icon
           as={IconMoon}
@@ -42,7 +42,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherType> = ({ isDark, toggleColorMode }
       <FormLabel
         margin="0px"
         height="24px"
-        _hover={hover}
+        sx={hover}
       >
         <Icon
           as={IconSun}
