@@ -21,11 +21,11 @@ export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, iconSiz
       closeOnScroll
       label={label}
       hasArrow
-      bg="gray.700"
       placement={placement}
       shouldWrapChildren
-      maxH="auto"
+      bgColor="tooltip.bg"
       sx={{
+        maxH: "auto",
         maxW: { base: "343px", md: "600px" },
         w: `${preferredNumberOfCharactersPerLine}ch`
       }}

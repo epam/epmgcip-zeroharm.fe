@@ -11,6 +11,46 @@ export const semanticTokens = {
     primaryColor: {
       default: "white",
       _light: "navyBlue.900"
+    },
+    primaryBgColor: {
+      default: "gray.900",
+      _light: "navyBlue.100"
+    },
+    borderColor: {
+      default: "gray.700",
+      _light: "navyBlue.200"
+    },
+    secondaryColor: {
+      default: "gray.200",
+      _light: "navyBlue.600"
+    },
+    indicator: {
+      bg: {
+        default: "gray.800",
+        _light: "white"
+      },
+      secondary: {
+        default: "gray.400",
+        _light: "navyBlue.400"
+      },
+      icon: {
+        default: "gray.400",
+        _light: "navyBlue.200"
+      },
+      "progress-bg": {
+        default: "gray.700",
+        _light: "navyBlue.150"
+      }
+    },
+    tooltip: {
+      bg: {
+        default: "gray.700",
+        _light: "navyBlue.600"
+      },
+      border: {
+        default: "gray.600",
+        _light: "navyBlue.400"
+      }
     }
   }
 };
