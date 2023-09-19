@@ -29,7 +29,7 @@ export const IndexDate: FC = () => {
           iconSize="16px"
         />
         <Box
-          color="gray.400"
+          color="indicator.secondary"
           fontSize="tiny"
         >
           { fetchingDate }

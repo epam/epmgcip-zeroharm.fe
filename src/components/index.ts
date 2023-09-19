@@ -5,7 +5,7 @@ export * from "./BaseSelect/BaseSelect";
 export * from "./Form/Form";
 export * from "./Greetings/Greetings";
 export * from "./IndexDate/IndexDate";
-export * from "./Indicators/Indicators";
+export * from "./AirQualityIndicators/AirQualityIndicators";
 export * from "./LanguageSelect/LanguageSelect";
 export * from "./LanguageMenu/LanguageMenu";
 export * from "./LocationSelect/LocationSelect";

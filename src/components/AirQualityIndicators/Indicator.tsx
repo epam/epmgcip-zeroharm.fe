@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { t } from "i18next";
 import { TextWithTooltip } from "@Components";
-import { Progress } from "../Progress/Progress";
+import { Progress } from "../../_UI/Progress/Progress";
 
 type IndexDateType = {
   title: string;
@@ -50,7 +50,7 @@ export const Indicator: FC<IndexDateType> = ({ title, color, value }) => {
         <Text
           as="span"
           fontWeight="initial"
-          color="gray.400"
+          color="indicator.secondary"
           fontSize="tiny"
           ml="4px"
         >
