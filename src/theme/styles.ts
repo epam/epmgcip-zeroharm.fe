@@ -24,9 +24,6 @@ export const styles = {
     "header, footer": {
       w: "100%"
     },
-    a: {
-      color: "white"
-    },
     ".bg-colored": {
       bg: props.colorMode === "dark" ? "gray.900" : "white"
     }

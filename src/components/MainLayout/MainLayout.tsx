@@ -5,6 +5,7 @@ import { useDetectWidth, useDetectPage } from "@Hooks";
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 import { FormModal } from "../FormModal/FormModal";
+import { FeedbackButtonMobile } from "../FeedbackButton/FeedbackButtonMobile";
 
 export const MainLayout: FC = () => {
   const { isMapPage, isAboutPage } = useDetectPage();
@@ -32,6 +33,7 @@ export const MainLayout: FC = () => {
         ) }
       </Flex>
       <FormModal />
+      { !isLargerThan600 && <FeedbackButtonMobile /> }
     </>
   );
 };
