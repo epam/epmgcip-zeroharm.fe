@@ -31,7 +31,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherType> = ({ isDark, toggleColorMode }
           as={IconMoon}
           width="24px"
           height="24px"
-          color={isDark ? "white" : "themeTogglerColor"}
+          color={isDark ? "white" : "navyBlue.200"}
         />
       </FormLabel>
       <Switch
@@ -48,7 +48,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherType> = ({ isDark, toggleColorMode }
           as={IconSun}
           width="24px"
           height="24px"
-          color={isDark ? "themeTogglerColor" : "navyBlue.900"}
+          color={isDark ? "whiteAlpha.400" : "navyBlue.900"}
         />
       </FormLabel>
     </FormControl>
