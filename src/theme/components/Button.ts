@@ -1,15 +1,5 @@
 import { StyleFunctionProps, defineStyleConfig } from "@chakra-ui/react";
 
-const gradientColorDark = `
-linear-gradient(90deg, #339944 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #7D5BA6 100%),
-linear-gradient(90deg, #339944 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #7D5BA6 100%)
-`;
-
-const gradientColorLight = `
-linear-gradient(90deg, #61C554 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #9768CF 100%),
-linear-gradient(90deg, #61C554 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #9768CF 100%)
-`;
-
 const gradientPseudoStyles = {
   content: "''",
   display: "block",
@@ -53,12 +43,12 @@ export const Button = defineStyleConfig({
         }
       }
     },
-    gradient: ({ colorMode }: StyleFunctionProps) => ({
+    gradient: {
       paddingX: "24px",
       paddingY: "12px",
       height: "initial",
       position: "relative",
-      background: colorMode === "dark" ? gradientColorDark : gradientColorLight,
+      background: "feedbackButtonColor.gradient",
       backgroundPosition: "8px 0, 8px 100%",
       backgroundRepeat: "no-repeat",
       backgroundSize: "calc(100% - 8px - 8px) 2px",
@@ -67,7 +57,7 @@ export const Button = defineStyleConfig({
       _before: {
         ...gradientPseudoStyles,
         left: "0",
-        borderColor: colorMode === "dark" ? "green.500" : "green.500-light",
+        borderColor: "feedbackButtonColor.pseudoBefore",
         borderTopLeftRadius: "8px",
         borderBottomLeftRadius: "8px",
         borderRightColor: "transparent"
@@ -75,12 +65,12 @@ export const Button = defineStyleConfig({
       _after: {
         ...gradientPseudoStyles,
         right: "0",
-        borderColor: colorMode === "dark" ? "violet.500" : "violet.500-light",
+        borderColor: "feedbackButtonColor.pseudoAfter",
         borderTopRightRadius: "8px",
         borderBottomRightRadius: "8px",
         borderLeftColor: "transparent"
       }
-    }),
+    },
     link: {
       textDecoration: "underline",
       color: "gray.800",
