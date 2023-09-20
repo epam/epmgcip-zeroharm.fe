@@ -15,7 +15,7 @@ export const Tooltip = defineStyleConfig({
       fontSize: "tiny",
       lineHeight: "tiny",
       color: "white",
-      borderColor: "tooltip.border"
+      borderColor: "parameter.tooltipBorder"
     },
     light: {
       fontSize: "small",

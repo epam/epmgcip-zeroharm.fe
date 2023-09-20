@@ -23,7 +23,7 @@ export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, iconSiz
       hasArrow
       placement={placement}
       shouldWrapChildren
-      bgColor="tooltip.bg"
+      bgColor="parameter.tooltipBg"
       sx={{
         maxH: "auto",
         maxW: { base: "343px", md: "600px" },
@@ -46,7 +46,7 @@ export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, iconSiz
             as={InfoICon}
             width={iconSize}
             height={iconSize}
-            fill="indicator.icon"
+            fill="parameter.icon"
           />
         </Center>
       </Flex>

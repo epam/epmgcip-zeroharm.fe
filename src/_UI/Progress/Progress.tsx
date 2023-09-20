@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Progress as ChakraProgress, ProgressProps } from "@chakra-ui/react";
+import { Progress as ChakraProgress, ProgressProps, chakra } from "@chakra-ui/react";
 
 type ProgressType = ProgressProps & {
   withPointer?: boolean;
@@ -7,7 +7,7 @@ type ProgressType = ProgressProps & {
 };
 
 export const Progress: FC<ProgressType> = ({
-  colorScheme,
+  color,
   value,
   withPointer,
   pointerPosition
@@ -23,7 +23,7 @@ export const Progress: FC<ProgressType> = ({
       bgColor: "primaryColor",
       borderWidth: "2px",
       borderStyle: "solid",
-      borderColor: "indicator.bg",
+      borderColor: "parameter.primary",
       borderRadius: "100%"
     }
   };
@@ -33,7 +33,7 @@ export const Progress: FC<ProgressType> = ({
       w="100%"
       overflow="initial"
       value={value}
-      colorScheme={colorScheme}
+      variant={color}
       {...withPointerStyles}
     />
   );

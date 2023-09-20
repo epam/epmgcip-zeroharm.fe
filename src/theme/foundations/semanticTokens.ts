@@ -30,80 +30,31 @@ export const semanticTokens = {
       default: "gray.200",
       _light: "navyBlue.600"
     },
-    indicator: {
-      bg: {
-        default: "gray.800",
-        _light: "white"
-      },
-      secondary: {
-        default: "gray.400",
-        _light: "navyBlue.400"
-      },
-      icon: {
-        default: "gray.400",
-        _light: "navyBlue.200"
-      },
-      "progress-bg": {
-        default: "gray.700",
-        _light: "navyBlue.150"
-      }
-    },
-    tooltip: {
-      bg: {
-        default: "gray.700",
-        _light: "navyBlue.600"
-      },
-      border: {
-        default: "gray.600",
-        _light: "navyBlue.400"
-      }
-    },
-    card: {
-      headerBg: {
-        green: {
-          default: "green.500",
-          _light: "green.500-light"
-        },
+    parameter: {
+      primary: { default: "gray.800", _light: "white" },
+      secondary: { default: "gray.400", _light: "navyBlue.400" },
+      icon: { default: "gray.400", _light: "navyBlue.200" },
+      progressBg: { default: "gray.700", _light: "navyBlue.150" },
+      groupColor: {
+        green: { default: "green.500", _light: "green.500-light" },
         yellow: "yellow.500",
         orange: "orange.500",
         red: "red.500",
         ruby: "ruby.500",
-        violet: {
-          default: "violet.500",
-          _light: "violet.500-light"
-        },
+        violet: { default: "violet.500", _light: "violet.500-light" },
         blue: "blue.500"
       },
-      bodyBg: {
-        green: {
-          default: "green.50",
-          _light: "white"
-        },
-        yellow: {
-          default: "yellow.50",
-          _light: "white"
-        },
-        orange: {
-          default: "orange.50",
-          _light: "white"
-        },
-        red: {
-          default: "red.50",
-          _light: "white"
-        },
-        ruby: {
-          default: "ruby.50",
-          _light: "white"
-        },
-        violet: {
-          default: "violet.50",
-          _light: "white"
-        },
-        blue: {
-          default: "blue.50",
-          _light: "white"
-        }
-      }
+      groupColorAdditional: {
+        green: { default: "green.50", _light: "white" },
+        yellow: { default: "yellow.50", _light: "white" },
+        orange: { default: "orange.50", _light: "white" },
+        red: { default: "red.50", _light: "white" },
+        ruby: { default: "ruby.50", _light: "white" },
+        violet: { default: "violet.50", _light: "white" },
+        blue: { default: "blue.50", _light: "white" }
+      },
+      tooltipBg: { default: "gray.700", _light: "navyBlue.600" },
+      tooltipBorder: { default: "gray.600", _light: "navyBlue.400" }
     }
   }
 };

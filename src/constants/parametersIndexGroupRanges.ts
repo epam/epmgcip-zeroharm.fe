@@ -1,6 +1,6 @@
 import { IndexesGroupsNames, type Parameter } from "@Constants";
 
-type IndexGroupRange = {
+export type IndexGroupRange = {
   groupName: IndexesGroupsNames,
   range: {
     min: number;

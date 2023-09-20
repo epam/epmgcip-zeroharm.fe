@@ -1,28 +1,23 @@
 import { FC } from "react";
 import { Progress } from "@UI";
-import { IndexesGroupsNames, indexGroupColorsMap } from "@Constants";
+import { IndexGroupRange, indexGroupColorsMap } from "@Constants";
 
 type ProgressRangeProps = {
-  groupName: IndexesGroupsNames;
-  range: {
-    min: number;
-    max: number;
-  };
+  indexGroup: IndexGroupRange;
   currentParameterValue: number;
-  absoluteMin: number;
-  absoluteMax: number;
-  indexGroupsLength: number;
-  index: number;
+  isFirstRange: boolean;
+  isLastRange: boolean;
 }
 
-export const ProgressRange: FC<ProgressRangeProps> = ({ groupName, range, currentParameterValue, absoluteMin, absoluteMax, index, indexGroupsLength }) => {
+export const ProgressRange: FC<ProgressRangeProps> = ({ indexGroup, currentParameterValue, isFirstRange, isLastRange }) => {
+  const { groupName, range } = indexGroup;
   const color = indexGroupColorsMap[groupName];
   const { min, max } = range;
-  const isFirstRange = index === 0;
-  const isLastRange = index === indexGroupsLength - 1;
+  const absoluteMin = isFirstRange && min;
+  const absoluteMax = isLastRange && max;
   const withinRange = (min <= currentParameterValue) && (currentParameterValue <= max);
-  const isAbsoluteMin = (0 <= currentParameterValue) && (currentParameterValue < absoluteMin) && isFirstRange;
-  const isAbsoluteMax = (currentParameterValue > absoluteMax) && isLastRange;
+  const isAbsoluteMin = absoluteMin && (0 <= currentParameterValue) && (currentParameterValue < absoluteMin) && isFirstRange;
+  const isAbsoluteMax = absoluteMax && (currentParameterValue > absoluteMax) && isLastRange;
   const withPointer = isAbsoluteMin || isAbsoluteMax || withinRange;
 
   if (withPointer) {
@@ -32,7 +27,7 @@ export const ProgressRange: FC<ProgressRangeProps> = ({ groupName, range, curren
     return (
       <Progress
         key={groupName}
-        colorScheme={color}
+        color={color}
         value={100}
         withPointer
         pointerPosition={pointerPosition}
@@ -43,7 +38,7 @@ export const ProgressRange: FC<ProgressRangeProps> = ({ groupName, range, curren
   return (
     <Progress
       key={groupName}
-      colorScheme={color}
+      color={color}
       value={100}
     />
   );

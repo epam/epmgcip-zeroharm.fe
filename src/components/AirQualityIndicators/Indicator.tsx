@@ -36,7 +36,7 @@ export const Indicator: FC<IndexDateType> = ({ title, color, value }) => {
         w={{ base: "119px", md: "103px", lg: "168px" }}
       >
         <Progress
-          colorScheme={color}
+          color={color}
           value={value}
         />
       </Box>
@@ -51,7 +51,7 @@ export const Indicator: FC<IndexDateType> = ({ title, color, value }) => {
         <Text
           as="span"
           fontWeight="initial"
-          color="indicator.secondary"
+          color="parameter.secondary"
           fontSize="tiny"
           ml="4px"
         >

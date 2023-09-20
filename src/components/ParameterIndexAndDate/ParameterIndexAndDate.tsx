@@ -19,8 +19,6 @@ export const ParameterIndexAndDate: FC<ParameterIndexAndDateProps> = ({ cardData
 
   const { heading } = cardData;
   const indexGroups = parametersIndexGroupRanges[currentParameter];
-  const absoluteMin = indexGroups?.[0]?.range?.min;
-  const absoluteMax = indexGroups?.[indexGroups.length - 1]?.range?.max;
 
   return (
     <IndicatorWrapper>
@@ -33,7 +31,7 @@ export const ParameterIndexAndDate: FC<ParameterIndexAndDateProps> = ({ cardData
           iconSize="16px"
         />
         <Box
-          color="indicator.secondary"
+          color="parameter.secondary"
           fontSize="tiny"
         >
           { fetchingDate }
@@ -69,16 +67,13 @@ export const ParameterIndexAndDate: FC<ParameterIndexAndDateProps> = ({ cardData
           gap="5px"
         >
           {
-            indexGroups?.map(({ groupName, range }, index) => (
+            indexGroups?.map((indexGroup, index) => (
               <ProgressRange
-                index={index}
-                indexGroupsLength={indexGroups.length}
-                key={groupName}
-                groupName={groupName}
-                range={range}
+                key={indexGroup.groupName}
+                isFirstRange={index === 0}
+                isLastRange={index === indexGroups.length - 1}
+                indexGroup={indexGroup}
                 currentParameterValue={currentParameterValue}
-                absoluteMin={absoluteMin}
-                absoluteMax={absoluteMax}
               />
             ))
           }

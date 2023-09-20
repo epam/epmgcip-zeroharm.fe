@@ -9,7 +9,7 @@ export const IndicatorWrapper: FC<WrapperType> = ({ children }) => {
   return (
     <Flex
       direction="column"
-      bg="indicator.bg"
+      bg="parameter.primary"
       p="16px"
       borderRadius="8px"
       gap="16px"
