@@ -26,7 +26,7 @@ export const BaseModal: FC<ModalProps> = ({ isOpen, onClose, title, children }) 
           { title }
         </ModalHeader>
         <ModalCloseButton
-          fontSize="18px"
+          fontSize="large"
           top={{ base: "5", md: "4" }}
           opacity=".5"
         />

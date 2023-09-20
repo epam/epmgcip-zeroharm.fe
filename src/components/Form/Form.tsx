@@ -50,7 +50,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Divider
-        mb="4"
+        mb="16px"
         borderColor="gray.700"
       />
       <FormControl
