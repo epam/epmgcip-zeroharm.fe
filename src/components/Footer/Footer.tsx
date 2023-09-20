@@ -50,7 +50,7 @@ export const Footer: FC<FooterProps> = ({ variant = "static" }) => {
   return (
     <FooterContainer
       as="footer"
-      bg="gray.900"
+      bg="secondaryBgColor"
       display="flex"
       flexDirection="column"
     >
