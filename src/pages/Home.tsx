@@ -6,10 +6,7 @@ export const Home = () => {
     <Container
       as="main"
       p={{ base: "8px 16px", md: "24px 28px" }}
-      minH={{
-        base: "calc(100vh - var(--headerMobileHeight) - var(--footerMaxHeight))",
-        md: "calc(100vh - var(--headerHeight) - var(--footerMaxHeight))"
-      }}
+      h="100%"
       display="flex"
       justifyContent={{ base: "center", lg: "space-between" }}
       flexDirection={{ base: "column", lg: "row" }}
@@ -17,8 +14,8 @@ export const Home = () => {
       alignItems="center"
       gap={{ base: "24px", lg: "0" }}
     >
-        <Selector />
-        <Greetings />
+      <Selector />
+      <Greetings />
     </Container>
   );
 };
