@@ -46,7 +46,9 @@ export const Button = defineStyleConfig({
       textDecoration: "underline",
       color: "gray.800",
       minWidth: "unset",
-      justifyContent: "flex-start"
+      justifyContent: "flex-start",
+      fontSize: "inherit",
+      lineHeight: "inherit"
     },
     iconButton: ({colorMode}: StyleFunctionProps) => ({
       minW: "none",

@@ -13,7 +13,7 @@ import { ReactComponent as ArrowUpIcon } from "@Assets/icons/stroke/harm-arrow-u
 
 const motionVariants: Variants = {
   enter: {
-    scaleY: 1,
+    transform: "scale(1, 1)",
     opacity: 1,
     visibility: "visible",
     transition: {
@@ -21,16 +21,16 @@ const motionVariants: Variants = {
         delay: 0.1,
         duration: 0.2
       },
-      scaleY: {
+      transform: {
         duration: 0.3
       }
     }
   },
   exit: {
-    scaleY: 0,
+    transform: "scale(1, 0)",
     opacity: 0,
     transition: {
-      scaleY: {
+      transform: {
         duration: 0.3
       },
       opacity: {
@@ -58,6 +58,24 @@ export const LanguageMenu: FC = () => {
   useScreenScrollController(isOpenOnMobile, !isOpenOnMobile);
 
   const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
+
+  const mobileTitle = isOpenOnMobile && (
+    <Flex
+      w="calc(100vw - var(--headerMobileHeight))"
+      h="var(--headerMobileHeight)"
+      zIndex="1"
+      className="bg-colored"
+      color="inherit"
+      pl="8px"
+      pos="fixed"
+      top="0"
+      left="var(--headerMobileHeight)"
+      align="center"
+      fontWeight="bold"
+    >
+      Language
+    </Flex>
+  );
 
   return (
     <Menu
@@ -101,24 +119,7 @@ export const LanguageMenu: FC = () => {
           />
         </HStack>
       </MenuButton>
-      {
-        isOpenOnMobile &&
-          <Flex
-            w="calc(100vw - var(--headerMobileHeight))"
-            h="var(--headerMobileHeight)"
-            zIndex="1"
-            className="bg-colored"
-            color="inherit"
-            pl="8px"
-            pos="fixed"
-            top="0"
-            left="var(--headerMobileHeight)"
-            align="center"
-            fontWeight="bold"
-          >
-            Language
-          </Flex>
-      }
+      { mobileTitle }
       <MenuList
         minW={{
           base: "100vw",
@@ -132,18 +133,10 @@ export const LanguageMenu: FC = () => {
         rootProps={{
           sx: isOpenOnMobile ? { transform: "translate3d(0, var(--headerMobileHeight), 0) !important" } : undefined
         }}
-        motionProps={
-          isMobileWidth
-            ? {
-              initial: {
-                scaleZ: 1,
-                scaleX: 1
-              },
-              variants: motionVariants,
-              animate: isOpen ? "enter" : "exit"
-            }
-            : undefined
-        }
+        motionProps={{
+          variants: motionVariants,
+          animate: isOpen ? "enter" : "exit"
+        }}
       >
         {
           languagesOptions.map(({ languageId, languageName, languageIconName }) => {

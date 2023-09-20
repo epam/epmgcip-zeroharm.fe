@@ -12,18 +12,18 @@ export const Progress: FC<ProgressType> = ({
   withPointer,
   pointerPosition
 }) => {
-  const withPointerStyles = withPointer && {
+  const withPointerStyles = withPointer && pointerPosition !== undefined && {
     _before: {
       content: "''",
       position: "absolute",
-      top: "-3px",
-      left: `calc(${pointerPosition}% - 8px)`,
+      top: "-4px",
+      left: `calc(${0.88 * pointerPosition}% - 4px)`,
       boxSize: "8px",
       zIndex: "10",
       bg: "white",
       borderWidth: "2px",
       borderStyle: "solid",
-      borderColor: "gray.700",
+      borderColor: "gray.800",
       borderRadius: "100%"
     }
   };
