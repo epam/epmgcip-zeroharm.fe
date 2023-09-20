@@ -25,8 +25,18 @@ export const semanticTokens = {
       _light: "navyBlue.200"
     },
     themeTogglerColor: {
-      default: "whiteAlpha.400",
-      _light: "navyBlue.200"
+      body: {
+        default: "whiteAlpha.400",
+        _light: "navyBlue.200"
+      },
+      moonIcon: {
+        default: "white",
+        _light: "navyBlue.200"
+      },
+      sunIcon: {
+        default: "whiteAlpha.400",
+        _light: "navyBlue.900"
+      }
     }
   }
 };

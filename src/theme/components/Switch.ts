@@ -4,7 +4,7 @@ export const Switch = defineStyleConfig({
   variants: {
     default: {
       track: {
-        bg: "themeTogglerColor",
+        bg: "themeTogglerColor.body",
         h: "20px",
         w: "42px",
         cursor: "initial",
