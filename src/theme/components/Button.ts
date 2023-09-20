@@ -16,7 +16,8 @@ const gradientPseudoStyles = {
   position: "absolute",
   width: "8px",
   top: "0",
-  bottom: "0"
+  bottom: "0",
+  border: "2px solid"
 };
 
 const buttonDefaultStyles = {
@@ -66,7 +67,7 @@ export const Button = defineStyleConfig({
       _before: {
         ...gradientPseudoStyles,
         left: "0",
-        border: colorMode === "dark" ? "2px solid #339944" : "2px solid #61C554",
+        borderColor: colorMode === "dark" ? "green.500" : "green.500-light",
         borderTopLeftRadius: "8px",
         borderBottomLeftRadius: "8px",
         borderRightColor: "transparent"
@@ -74,7 +75,7 @@ export const Button = defineStyleConfig({
       _after: {
         ...gradientPseudoStyles,
         right: "0",
-        border: colorMode === "dark" ? "2px solid #7D5BA6" : "2px solid #9768CF",
+        borderColor: colorMode === "dark" ? "violet.500" : "violet.500-light",
         borderTopRightRadius: "8px",
         borderBottomRightRadius: "8px",
         borderLeftColor: "transparent"
