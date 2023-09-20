@@ -10,6 +10,15 @@ linear-gradient(90deg, #61C554 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C5344
 linear-gradient(90deg, #61C554 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #9768CF 100%)
 `;
 
+const gradientPseudoStyles = {
+  content: "''",
+  display: "block",
+  position: "absolute",
+  width: "8px",
+  top: "0",
+  bottom: "0"
+};
+
 const buttonDefaultStyles = {
   bg: "white",
   p: "16px",
@@ -55,12 +64,7 @@ export const Button = defineStyleConfig({
       border: "none",
       borderRadius: "8px",
       _before: {
-        content: "''",
-        display: "block",
-        position: "absolute",
-        width: "8px",
-        top: "0",
-        bottom: "0",
+        ...gradientPseudoStyles,
         left: "0",
         border: colorMode === "dark" ? "2px solid #339944" : "2px solid #61C554",
         borderTopLeftRadius: "8px",
@@ -68,12 +72,7 @@ export const Button = defineStyleConfig({
         borderRightColor: "transparent"
       },
       _after: {
-        content: "''",
-        display: "block",
-        position: "absolute",
-        width: "8px",
-        top: "0",
-        bottom: "0",
+        ...gradientPseudoStyles,
         right: "0",
         border: colorMode === "dark" ? "2px solid #7D5BA6" : "2px solid #9768CF",
         borderTopRightRadius: "8px",
