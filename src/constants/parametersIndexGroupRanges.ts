@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { IndexesGroupsNames, type Parameter } from "@Constants";
 
 type IndexGroupRange = {
@@ -102,7 +101,7 @@ export const humidityIndexConfig = [
   }
 ];
 
-export const indexesConfig: Record<Parameter, IndexGroupRange[]> = {
+export const parametersIndexGroupRanges: Record<Parameter, IndexGroupRange[]> = {
   air_quality: airQualityIndexConfig,
   pressure: airPressureIndexConfig,
   humidity: humidityIndexConfig

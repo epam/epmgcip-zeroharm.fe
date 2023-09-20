@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { type Parameter, type Parameters, type AirComponents, ParametersMap, AirComponentsMap} from "@Constants";
+import type { Parameter, Parameters, AirComponents } from "@Constants";
 
 interface IDataStore {
   location: string;
@@ -8,8 +8,8 @@ interface IDataStore {
   isFormModalActive: boolean;
   parameter: Parameter | null;
   parameters: Parameters,
-  fetchingDate: string;
   airComponents: AirComponents;
+  fetchingDate: string;
   setLocation: (location: string) => void;
   setLanguage: (language: string) => void;
   toggleIsFormModalActive: () => void;
@@ -19,19 +19,19 @@ interface IDataStore {
   setFetchingDate: (date: string) => void;
 }
 
-const parametersInitial = {
-  [ParametersMap.AIR_QUALITY]: 0,
-  [ParametersMap.HUMIDITY]: 0,
-  [ParametersMap.PRESSURE]: 0
+const parametersInitial: Parameters = {
+  air_quality: 0,
+  humidity: 0,
+  pressure: 0
 };
 
-const airComponentsInitial = {
-  [AirComponentsMap.PARTICULATE_MATTER_2_5]: 0,
-  [AirComponentsMap.PARTICULATE_MATTER_10]: 0,
-  [AirComponentsMap.NITROGEN_DIOXIDE]: 0,
-  [AirComponentsMap.CARBON_MONOXIDE]: 0,
-  [AirComponentsMap.OZONE]: 0,
-  [AirComponentsMap.SULFUR_DIOXIDE]: 0
+const airComponentsInitial: AirComponents = {
+  "PM2.5": 0,
+  PM10: 0,
+  NO2: 0,
+  CO: 0,
+  O3: 0,
+  SO2: 0
 };
 
 export const useDataStore = create<IDataStore>()(

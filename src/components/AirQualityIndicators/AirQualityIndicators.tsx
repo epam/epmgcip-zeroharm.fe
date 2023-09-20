@@ -2,7 +2,7 @@ import { FC } from "react";
 import { t } from "i18next";
 import { Flex, Text } from "@chakra-ui/react";
 import { IndicatorWrapper } from "@UI";
-import { getParameterGroup } from "@Helpers";
+import { getParameterIndexGroupName } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
 import { airComponentsList, groupsColors, IndexesGroupsNames, ParametersMap } from "@Constants";
 import { Indicator } from "./Indicator";
@@ -12,7 +12,7 @@ export const AirQualityIndicators: FC = () => {
 
   const indicatorHintsToRender = airComponentsList.map((hint) => {
     const particleValue = Number(airComponents[hint]);
-    const groupName = getParameterGroup(particleValue, ParametersMap.AIR_QUALITY);
+    const groupName = getParameterIndexGroupName(particleValue, ParametersMap.AIR_QUALITY);
     const color = groupsColors?.[groupName as IndexesGroupsNames];
     const particleValueStr = String(particleValue);
     const roundedParticleValue = parseFloat(particleValueStr.slice(0, particleValueStr.indexOf(".") + 3));

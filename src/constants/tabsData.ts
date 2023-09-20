@@ -1,6 +1,18 @@
-import { ParametersMap } from "./parametersData";
+import { Parameter, ParametersMap } from "./parametersData";
 
-export const tabsData = [
+type TabsRawData = {
+  tabId: Parameter;
+  tabName: {
+    translationPath: string;
+  }
+}
+
+export type TabsData = {
+  tabId: Parameter;
+  tabName: string;
+}
+
+export const tabsData: TabsRawData[] = [
   {
     tabId: ParametersMap.AIR_QUALITY,
     tabName: {

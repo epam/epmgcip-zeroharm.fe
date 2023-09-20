@@ -1,26 +1,24 @@
 import { useState, FC } from "react";
 import { Box } from "@chakra-ui/react";
 import { Card } from "./Card";
-import { getCardData } from "@Helpers";
-import { useParameterData } from "@Hooks";
 import { CardStep } from "./CardStep";
 import { CardNavigation } from "./CardNavigation";
 import { CardNavigationBox } from "./CardNavigationBox";
 import { CardTextContent } from "./CardTextContent";
 import { ReactComponent as RightArrowIcon } from "@Assets/icons/stroke/harm-arrow-right.svg";
 import { ReactComponent as LeftArrowIcon } from "@Assets/icons/stroke/harm-arrow-left.svg";
+import { CardData } from "@Constants";
 
-export const GroupingCard: FC = () => {
+type GroupingCardProps = {
+  cardData: CardData
+}
+
+export const GroupingCard: FC<GroupingCardProps> = ({ cardData }) => {
   const [cardIndex, setCardIndex] = useState(0);
-  const { parameter, currentParameterValue } = useParameterData();
 
-  if (!parameter) return null;
+  const { heading, subheading, tip, text, cardColor, iconName } = cardData;
 
-  const card = getCardData(currentParameterValue, parameter);
-
-  const { heading, subheading, tip, text, cardColor, iconName } = card;
-
-  const cards = [card];
+  const cards = [cardData];
   const isCardsGroup = cards.length > 1;
   const isLeftActive = cardIndex > 0;
   const isRightActive = cardIndex < cards.length - 1;

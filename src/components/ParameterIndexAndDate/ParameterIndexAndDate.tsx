@@ -2,21 +2,22 @@ import { FC } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { t } from "i18next";
 import { IndicatorWrapper } from "@UI";
-import { indexesConfig } from "@Constants";
-import { getCardData } from "@Helpers";
-import { useParameterData } from "@Hooks";
+import { CardData, Parameter, parametersIndexGroupRanges } from "@Constants";
 import { useDataStore } from "@Store/useDataStore";
 import { TextWithTooltip } from "../TextWithTooltip/TextWithTooltip";
 import { ProgressRange } from "./ProgressRange";
 
-export const IndexDate: FC = () => {
-  const { parameter, currentParameterValue } = useParameterData();
+type ParameterIndexAndDateProps = {
+  cardData: CardData;
+  currentParameter: Parameter;
+  currentParameterValue: number;
+}
+
+export const ParameterIndexAndDate: FC<ParameterIndexAndDateProps> = ({ cardData, currentParameter, currentParameterValue }) => {
   const { fetchingDate } = useDataStore();
 
-  if (!parameter) return null;
-
-  const { heading } = getCardData(currentParameterValue, parameter) ?? "";
-  const indexGroups = indexesConfig[parameter];
+  const { heading } = cardData;
+  const indexGroups = parametersIndexGroupRanges[currentParameter];
   const absoluteMin = indexGroups?.[0]?.range?.min;
   const absoluteMax = indexGroups?.[indexGroups.length - 1]?.range?.max;
 
@@ -24,8 +25,8 @@ export const IndexDate: FC = () => {
     <IndicatorWrapper>
       <Flex justifyContent="space-between">
         <TextWithTooltip
-          label={t(`hints.${parameter}`)}
-          text={t(`indexes.${parameter}`)}
+          label={t(`hints.${currentParameter}`)}
+          text={t(`indexes.${currentParameter}`)}
           fontSize={{ base: "tiny", lg: "small" }}
           lineHeight={{ base: "tiny", lg: "small" }}
           iconSize="16px"

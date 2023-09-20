@@ -11,7 +11,7 @@ import { type Parameter } from "@Constants";
 type SwiperItemDataT = CardType & {
   question: string;
   text: string;
-  parameter: string;
+  parameter: Parameter;
 };
 
 export const SwiperItem: FC<SwiperItemDataT> = (props) => {

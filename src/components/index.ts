@@ -4,7 +4,7 @@ export * from "./FormModal/FormModal";
 export * from "./BaseSelect/BaseSelect";
 export * from "./Form/Form";
 export * from "./Greetings/Greetings";
-export * from "./IndexDate/IndexDate";
+export * from "./ParameterIndexAndDate/ParameterIndexAndDate";
 export * from "./AirQualityIndicators/AirQualityIndicators";
 export * from "./LanguageSelect/LanguageSelect";
 export * from "./LanguageMenu/LanguageMenu";

@@ -1,22 +1,34 @@
-import { groupsColors } from "./groupColors";
-import { IndexesGroupsNames } from "./indexesGroupNames";
-import { ParametersMap } from "./parametersData";
+import { IndexesGroupsNames, groupsColors } from "./parameterIndexGroupData";
+import { type Parameter, ParametersMap } from "./parametersData";
 
 type TranslationKeyType = {
   translationPath: string
 };
 
-export type CardDataType = {
-  groupName: IndexesGroupsNames,
-  iconName: string,
-  cardColor: string
-  heading: TranslationKeyType,
-  subheading: TranslationKeyType,
-  tip: TranslationKeyType,
-  text: TranslationKeyType,
+export type CardRawData = {
+  groupName: IndexesGroupsNames;
+  iconName: string;
+  cardColor: string;
+  heading: TranslationKeyType;
+  subheading: TranslationKeyType;
+  tip: TranslationKeyType;
+  text: TranslationKeyType;
 };
 
-export const cardsConfigForAirQuality: CardDataType[] = [
+export type ParameterCardRawData = CardRawData & { parameter: Parameter }
+
+export type CardData = {
+  groupName: IndexesGroupsNames;
+  iconName: string;
+  cardColor: string;
+  heading: string;
+  subheading: string;
+  tip: string;
+  text: string;
+  parameter: Parameter;
+};
+
+export const cardsRawDataForAirQuality: CardRawData[] = [
   {
     groupName: IndexesGroupsNames.GREEN,
     iconName: "harm-slightly-smiling-face",
@@ -121,7 +133,7 @@ export const cardsConfigForAirQuality: CardDataType[] = [
   }
 ];
 
-export const cardsConfigForAirPressure: CardDataType[] = [
+export const cardsRawDataForAirPressure: CardRawData[] = [
   {
     groupName: IndexesGroupsNames.BLUE,
     cardColor: groupsColors[IndexesGroupsNames.BLUE],
@@ -175,7 +187,7 @@ export const cardsConfigForAirPressure: CardDataType[] = [
   }
 ];
 
-export const cardsConfigForHumidity: CardDataType[] = [
+export const cardsRawDataForHumidity: CardRawData[] = [
   {
     groupName: IndexesGroupsNames.RED,
     cardColor: groupsColors[IndexesGroupsNames.RED],
@@ -229,8 +241,8 @@ export const cardsConfigForHumidity: CardDataType[] = [
   }
 ];
 
-export const cardsConfig: Record<ParametersMap, CardDataType[]> = {
-  [ParametersMap.AIR_QUALITY]: cardsConfigForAirQuality.map(config => ({ ...config, parameter: ParametersMap.AIR_QUALITY })),
-  [ParametersMap.PRESSURE]: cardsConfigForAirPressure.map(config => ({ ...config, parameter: ParametersMap.PRESSURE })),
-  [ParametersMap.HUMIDITY]: cardsConfigForHumidity.map(config => ({ ...config, parameter: ParametersMap.HUMIDITY }))
+export const parametersCardsRawData: Record<Parameter, ParameterCardRawData[]> = {
+  air_quality: cardsRawDataForAirQuality.map(rawData => ({ ...rawData, parameter: ParametersMap.AIR_QUALITY })),
+  pressure: cardsRawDataForAirPressure.map(rawData => ({ ...rawData, parameter: ParametersMap.PRESSURE })),
+  humidity: cardsRawDataForHumidity.map(rawData => ({ ...rawData, parameter: ParametersMap.HUMIDITY }))
 };

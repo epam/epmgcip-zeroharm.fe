@@ -1,4 +1,12 @@
-import { IndexesGroupsNames } from "./indexesGroupNames";
+export enum IndexesGroupsNames {
+  GREEN = "green",
+  YELLOW = "yellow",
+  ORANGE = "orange",
+  LIGHT_RED = "light_red",
+  RED = "red",
+  PURPLE = "purple",
+  BLUE = "blue"
+};
 
 export const groupsColors = {
   [IndexesGroupsNames.GREEN]: "green",
@@ -9,3 +17,4 @@ export const groupsColors = {
   [IndexesGroupsNames.PURPLE]: "violet",
   [IndexesGroupsNames.BLUE]: "blue"
 };
+

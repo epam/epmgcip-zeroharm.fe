@@ -1,18 +1,16 @@
-import { type Parameter } from "@Constants";
-import { getParameterGroup } from "./getParameterGroup";
-import { getParameterCardConfig } from "./getParameterCardConfig";
+import { CardData, type Parameter } from "@Constants";
+import { getParameterIndexGroupName } from "./getParameterIndexGroupName";
+import { getParameterCardRawData } from "./getParameterCardData";
 import { resolveTranslationPath } from "./resolveTranslationPath";
 
-export const getCardData = (parameterValue: number, parameterName: Parameter | null) => {
-  if (!parameterName) return;
-
-  const groupName = getParameterGroup(parameterValue, parameterName);
+export const getCardData = (parameterValue: number, parameterName: Parameter): CardData | undefined => {
+  const groupName = getParameterIndexGroupName(parameterValue, parameterName);
 
   if (!groupName) return;
 
-  const parameterCardConfig = getParameterCardConfig(parameterName, groupName);
+  const parameterCardRawData = getParameterCardRawData(parameterName, groupName);
 
-  if (!parameterCardConfig) return;
+  if (!parameterCardRawData) return;
 
-  return resolveTranslationPath(parameterCardConfig);
+  return resolveTranslationPath(parameterCardRawData);
 };
