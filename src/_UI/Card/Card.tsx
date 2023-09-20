@@ -39,6 +39,7 @@ const CardBody = chakra(Flex, {
 });
 const CardText = chakra(Flex, {
   baseStyle: {
+    color: "light",
     flexDirection: "column",
     justifyContent: "space-between",
     flex: "1"
@@ -103,7 +104,7 @@ export const Card: FC<CardType> = ({
 }) => {
   return (
     <>
-      <CardHeader bg={`${color}.500`}>
+      <CardHeader bg={`card.headerBg.${color}`}>
         <CardText>
           <CardSubHeading>{ subheading }</CardSubHeading>
           <CardHeading>{ heading }</CardHeading>
@@ -116,7 +117,7 @@ export const Card: FC<CardType> = ({
         </CardIconBox>
       </CardHeader>
       <CardBody
-        bg={`${color}.50`}
+        bg={`card.bodyBg.${color}`}
         {...props}
       >
         { children }

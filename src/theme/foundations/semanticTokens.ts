@@ -1,5 +1,7 @@
 export const semanticTokens = {
   colors: {
+    light: "white",
+    dark: "navyBlue.900",
     primaryColor: {
       default: "white",
       _light: "navyBlue.900"
@@ -54,6 +56,53 @@ export const semanticTokens = {
       border: {
         default: "gray.600",
         _light: "navyBlue.400"
+      }
+    },
+    card: {
+      headerBg: {
+        green: {
+          default: "green.500",
+          _light: "green.500-light"
+        },
+        yellow: "yellow.500",
+        orange: "orange.500",
+        red: "red.500",
+        ruby: "ruby.500",
+        violet: {
+          default: "violet.500",
+          _light: "violet.500-light"
+        },
+        blue: "blue.500"
+      },
+      bodyBg: {
+        green: {
+          default: "green.50",
+          _light: "white"
+        },
+        yellow: {
+          default: "yellow.50",
+          _light: "white"
+        },
+        orange: {
+          default: "orange.50",
+          _light: "white"
+        },
+        red: {
+          default: "red.50",
+          _light: "white"
+        },
+        ruby: {
+          default: "ruby.50",
+          _light: "white"
+        },
+        violet: {
+          default: "violet.50",
+          _light: "white"
+        },
+        blue: {
+          default: "blue.50",
+          _light: "white"
+        }
       }
     }
   }

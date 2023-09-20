@@ -4,30 +4,12 @@ import { useTranslation } from "react-i18next";
 import { IndicatorWrapper } from "@UI";
 import { getParameterIndexGroupName } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
-import { airComponentsList, indexGroupColorsMap, IndexesGroupsNames, ParametersMap } from "@Constants";
+import { airComponentsNamesList, indexGroupColorsMap, IndexesGroupsNames, ParametersMap } from "@Constants";
 import { Indicator } from "./Indicator";
 
 export const AirQualityIndicators: FC = () => {
   const { t } = useTranslation();
   const { airComponents } = useDataStore();
-
-  const indicatorHintsToRender = airComponentsList.map((hint) => {
-    const particleValue = Number(airComponents[hint]);
-    const groupName = getParameterIndexGroupName(particleValue, ParametersMap.AIR_QUALITY);
-    const color = indexGroupColorsMap?.[groupName as IndexesGroupsNames];
-    const particleValueStr = String(particleValue);
-    const roundedParticleValue = parseFloat(particleValueStr.slice(0, particleValueStr.indexOf(".") + 3));
-    const value = isNaN(roundedParticleValue) ? 0 : roundedParticleValue;
-
-    return (
-      <Indicator
-        value={value}
-        title={hint}
-        key={hint}
-        color={color}
-      />
-    );
-  });
 
   return (
     <IndicatorWrapper>
@@ -43,7 +25,25 @@ export const AirQualityIndicators: FC = () => {
         direction="column"
         gap={{ base: "4px", lg: "8px" }}
       >
-        { indicatorHintsToRender }
+        {
+          airComponentsNamesList.map((airComponent) => {
+            const particleValue = +airComponents[airComponent];
+            const groupName = getParameterIndexGroupName(particleValue, ParametersMap.AIR_QUALITY);
+            const color = indexGroupColorsMap?.[groupName as IndexesGroupsNames];
+            const particleValueStr = String(particleValue);
+            const roundedParticleValue = parseFloat(particleValueStr.slice(0, particleValueStr.indexOf(".") + 3));
+            const value = isNaN(roundedParticleValue) ? 0 : roundedParticleValue;
+
+            return (
+              <Indicator
+                value={value}
+                title={airComponent}
+                key={airComponent}
+                color={color}
+              />
+            );
+          })
+        }
       </Flex>
     </IndicatorWrapper>
   );
