@@ -1,36 +1,30 @@
-import { StyleFunctionProps, defineStyleConfig } from "@chakra-ui/react";
+import { defineStyleConfig } from "@chakra-ui/react";
+
+const menuItemBg = {
+  bg: "languageMenu.itemBg"
+};
 
 export const Menu = defineStyleConfig({
   variants: {
-    default: ({ colorMode }: StyleFunctionProps) => {
-      const isDark = colorMode === "dark";
-
-      const itemPseudoClassStyles = {
-        bg: isDark ? "gray.600" : "navyBlue.100"
-      };
-
-      return {
-        button: {
-          fontWeight: "bold",
-          _hover: {
-            color: isDark ? "gray.100" : "navyBlue.600"
-          }
-        },
-        list: {
-          boxShadow: "none",
-          overflow: "hidden",
-          border: "none",
-          bg: isDark
-            ? { base: "gray.900", md: "gray.700" }
-            : "white"
-        },
-        item: {
-          bg: "transparent",
-          _focus: itemPseudoClassStyles,
-          _hover: itemPseudoClassStyles,
-          _selected: itemPseudoClassStyles
+    default: {
+      button: {
+        fontWeight: "bold",
+        _hover: {
+          color: "languageMenu.button"
         }
-      };
+      },
+      list: {
+        boxShadow: "none",
+        overflow: "hidden",
+        border: "none",
+        bg: { base: "languageMenu.listBgBase", md: "languageMenu.listBgMd" }
+      },
+      item: {
+        bg: "transparent",
+        _focus: menuItemBg,
+        _hover: menuItemBg,
+        _selected: menuItemBg
+      }
     }
   },
   defaultProps: {
