@@ -29,11 +29,11 @@ export const semanticTokens = {
         default: "whiteAlpha.400",
         _light: "navyBlue.200"
       },
-      moonIcon: {
+      iconMoon: {
         default: "white",
         _light: "navyBlue.200"
       },
-      sunIcon: {
+      iconSun: {
         default: "whiteAlpha.400",
         _light: "navyBlue.900"
       }
