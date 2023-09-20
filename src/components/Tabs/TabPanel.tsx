@@ -2,10 +2,10 @@ import { FC } from "react";
 import { TabPanel as ChakraTabPanel } from "@chakra-ui/react";
 import { CardData, Parameter, ParametersMap } from "@Constants";
 import { GroupingCard} from "@UI";
+import { getCardData } from "@Helpers";
+import { useParameterData } from "@Hooks";
 import { ParameterIndexAndDate } from "../ParameterIndexAndDate/ParameterIndexAndDate";
 import { AirQualityIndicators } from "../AirQualityIndicators/AirQualityIndicators";
-import { useParameterData } from "../../hooks";
-import { getCardData } from "../../helpers";
 
 type TabPanelProps = {
   currentParameter: Parameter;

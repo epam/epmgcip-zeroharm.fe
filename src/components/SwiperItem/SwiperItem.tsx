@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { useDataStore } from "@Store/useDataStore";
 import { Card, CardType } from "@UI";
 import { useDetectWidth } from "@Hooks";
@@ -15,6 +15,7 @@ type SwiperItemDataT = CardType & {
 };
 
 export const SwiperItem: FC<SwiperItemDataT> = (props) => {
+  const { t } = useTranslation();
   const { setParameter } = useDataStore();
 
   const { isLargerThan600 } = useDetectWidth();
@@ -59,7 +60,7 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
         </Text>
         <Link
           to="/map"
-          onClick={() => setParameter(parameter as Parameter)}
+          onClick={() => setParameter(parameter)}
           style={{marginTop: "auto"}}
         >
           <Flex

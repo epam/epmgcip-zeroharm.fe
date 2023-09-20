@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 export type Parameter = "air_quality" | "humidity" | "pressure";
-// export type ParameterAlias = "aqi" | "humidity" | "air_pressure";
 export type Parameters = Record<Parameter, number>;
 
 export enum ParametersMap {

@@ -1,5 +1,6 @@
 import { useState, FC } from "react";
 import { Box } from "@chakra-ui/react";
+import { CardData } from "@Constants";
 import { Card } from "./Card";
 import { CardStep } from "./CardStep";
 import { CardNavigation } from "./CardNavigation";
@@ -7,7 +8,6 @@ import { CardNavigationBox } from "./CardNavigationBox";
 import { CardTextContent } from "./CardTextContent";
 import { ReactComponent as RightArrowIcon } from "@Assets/icons/stroke/harm-arrow-right.svg";
 import { ReactComponent as LeftArrowIcon } from "@Assets/icons/stroke/harm-arrow-left.svg";
-import { CardData } from "@Constants";
 
 type GroupingCardProps = {
   cardData: CardData

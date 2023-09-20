@@ -22,18 +22,19 @@ export const mapParameterData = (data: any): ParametersAndAirComponents => {
 
   return {
     parameters: {
-      air_quality: aqi ?? 0,
-      humidity: humidity ?? 0,
-      pressure: air_pressure ?? 0
+      "air_quality": aqi ?? 0,
+      "humidity": humidity ?? 0,
+      "pressure": air_pressure ?? 0
+
     },
     airComponents: {
       "PM2.5": pm2_5 ?? 0,
-      PM10: pm10 ?? 0,
-      NO2: nitrogen_dioxide ?? 0,
-      CO: carbon_monoxide ?? 0,
-      O3: ozone ?? 0,
-      SO2: sulfur_dioxide ?? 0
+      "PM10": pm10 ?? 0,
+      "NO2": nitrogen_dioxide ?? 0,
+      "CO": carbon_monoxide ?? 0,
+      "O3": ozone ?? 0,
+      "SO2": sulfur_dioxide ?? 0
     },
-    stationId: station_id
+    "stationId": station_id
   };
 };

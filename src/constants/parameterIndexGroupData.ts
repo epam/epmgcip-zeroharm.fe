@@ -8,7 +8,7 @@ export enum IndexesGroupsNames {
   BLUE = "blue"
 };
 
-export const groupsColors = {
+export const indexGroupColorsMap = {
   [IndexesGroupsNames.GREEN]: "green",
   [IndexesGroupsNames.YELLOW]: "yellow",
   [IndexesGroupsNames.ORANGE]: "orange",

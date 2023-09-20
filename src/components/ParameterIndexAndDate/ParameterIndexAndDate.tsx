@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { IndicatorWrapper } from "@UI";
 import { CardData, Parameter, parametersIndexGroupRanges } from "@Constants";
 import { useDataStore } from "@Store/useDataStore";
@@ -14,6 +14,7 @@ type ParameterIndexAndDateProps = {
 }
 
 export const ParameterIndexAndDate: FC<ParameterIndexAndDateProps> = ({ cardData, currentParameter, currentParameterValue }) => {
+  const { t } = useTranslation();
   const { fetchingDate } = useDataStore();
 
   const { heading } = cardData;

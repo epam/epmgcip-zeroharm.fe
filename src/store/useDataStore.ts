@@ -20,18 +20,19 @@ interface IDataStore {
 }
 
 const parametersInitial: Parameters = {
-  air_quality: 0,
-  humidity: 0,
-  pressure: 0
+  "air_quality": 0,
+  "humidity": 0,
+  "pressure": 0
+
 };
 
 const airComponentsInitial: AirComponents = {
   "PM2.5": 0,
-  PM10: 0,
-  NO2: 0,
-  CO: 0,
-  O3: 0,
-  SO2: 0
+  "PM10": 0,
+  "NO2": 0,
+  "CO": 0,
+  "O3": 0,
+  "SO2": 0
 };
 
 export const useDataStore = create<IDataStore>()(
@@ -44,13 +45,13 @@ export const useDataStore = create<IDataStore>()(
       parameters: parametersInitial,
       airComponents: airComponentsInitial,
       fetchingDate: "",
-      setLocation: (location) => set({ location }),
-      setLanguage: (language) => set({ language }),
+      setLocation: (location: string) => set({ location }),
+      setLanguage: (language: string) => set({ language }),
       toggleIsFormModalActive: () => set((state) => ({ isFormModalActive: !state.isFormModalActive })),
       setParameter: (parameter) => set({ parameter }),
       setParameters: (parameters) => set({ parameters }),
       setAirComponents: (airComponents) => set({ airComponents }),
-      setFetchingDate: (fetchingDate) => set({ fetchingDate })
+      setFetchingDate: (fetchingDate: string) => set({ fetchingDate })
     }),
     {
       name: "language",

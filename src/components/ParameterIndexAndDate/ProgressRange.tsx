@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Progress } from "@UI";
-import { IndexesGroupsNames, groupsColors } from "@Constants";
+import { IndexesGroupsNames, indexGroupColorsMap } from "@Constants";
 
 type ProgressRangeProps = {
   groupName: IndexesGroupsNames;
@@ -16,7 +16,7 @@ type ProgressRangeProps = {
 }
 
 export const ProgressRange: FC<ProgressRangeProps> = ({ groupName, range, currentParameterValue, absoluteMin, absoluteMax, index, indexGroupsLength }) => {
-  const color = groupsColors[groupName];
+  const color = indexGroupColorsMap[groupName];
   const { min, max } = range;
   const isFirstRange = index === 0;
   const isLastRange = index === indexGroupsLength - 1;

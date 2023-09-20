@@ -1,8 +1,8 @@
 import { FC, ReactNode } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { TextWithTooltip } from "@Components";
-import { Progress } from "../../_UI/Progress/Progress";
+import { Progress } from "@UI";
 
 type IndexDateType = {
   title: string;
@@ -12,6 +12,7 @@ type IndexDateType = {
 };
 
 export const Indicator: FC<IndexDateType> = ({ title, color, value }) => {
+  const { t } = useTranslation();
   const hint = title.toLowerCase();
   const label = t(`hints.${hint}`);
 
