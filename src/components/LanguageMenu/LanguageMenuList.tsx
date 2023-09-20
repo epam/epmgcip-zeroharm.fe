@@ -46,13 +46,6 @@ const motionVariants: Variants = {
 export const LanguageMenuList: FC<LanguageMenuListProps> = ({ isOpenOnMobile, isOpen }) => {
   const languagesOptions = languagesData.map((languageData) => resolveTranslationPath(languageData));
 
-  const menuItemsToRender = languagesOptions.map((languageOption) => (
-    <LanguageMenuItem
-      key={languageOption.languageId}
-      languageOption={languageOption}
-    />
-  ));
-
   return (
     <MenuList
       minW={{
@@ -72,7 +65,14 @@ export const LanguageMenuList: FC<LanguageMenuListProps> = ({ isOpenOnMobile, is
         animate: isOpen ? "enter" : "exit"
       }}
     >
-      { menuItemsToRender }
+      {
+        languagesOptions.map((languageOption) => (
+          <LanguageMenuItem
+            key={languageOption.languageId}
+            languageOption={languageOption}
+          />
+        ))
+      }
     </MenuList>
   );
 };

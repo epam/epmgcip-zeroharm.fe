@@ -31,12 +31,6 @@ export const LanguageMenu: FC = () => {
 
   useScreenScrollController(isOpenOnMobile, !isOpenOnMobile);
 
-  const mobileTitle = isOpenOnMobile && (
-    <MobileHeadingTip>
-      { t("lang.subject_name") }
-    </MobileHeadingTip>
-  );
-
   return (
     <Menu
       strategy="fixed"
@@ -47,7 +41,13 @@ export const LanguageMenu: FC = () => {
       onClose={onClose}
     >
       <LanguageMenuButton isOpenOnMobile={isOpenOnMobile} isOpen={isOpen} />
-      { mobileTitle }
+      {
+        isOpenOnMobile && (
+          <MobileHeadingTip>
+            { t("lang.subject_name") }
+          </MobileHeadingTip>
+        )
+      }
       <LanguageMenuList isOpenOnMobile={isOpenOnMobile} isOpen={isOpen} />
     </Menu>
   );
