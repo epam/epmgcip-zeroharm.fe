@@ -17,7 +17,7 @@ export const styles = {
     },
     "html, body, header, footer": {
       backgroundColor: "gray.900",
-      color: "white"
+      color: "primaryColor"
     },
     "header, footer": {
       w: "100%"
