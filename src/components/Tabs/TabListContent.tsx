@@ -1,4 +1,4 @@
-import { FC, Fragment } from "react";
+import { FC, Fragment, WheelEventHandler, useState } from "react";
 import { Box, Spacer, Tab, TabList } from "@chakra-ui/react";
 import { useDetectContentOverflow, useDetectFullView } from "@Hooks";
 import { useDataStore } from "@Store/useDataStore";
@@ -21,10 +21,39 @@ const tabListShadowsGeneralStyles = {
 };
 
 export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
+  const [deltaYHistory, setDeltaYHistory] = useState<number[]>([]);
+  const [timer, setTimer] = useState<NodeJS.Timeout>();
+
   const { setParameter } = useDataStore();
   const { ref: tabContainerRef, isContentOverflowing } = useDetectContentOverflow("horizontal");
   const { ref: firstTabRef, isInFullView: isFirstTabInFullView } = useDetectFullView(isContentOverflowing);
   const { ref: lastTabRef, isInFullView: isLastTabInFullView } = useDetectFullView(isContentOverflowing);
+
+  const onWheel: WheelEventHandler<HTMLDivElement> = (e) => {
+    const node = e.currentTarget;
+    const { deltaX, deltaY } = e;
+
+    const absoluteDeltaX = Math.abs(deltaX);
+    const absoluteDeltaY = Math.abs(deltaY);
+
+    if (absoluteDeltaX > 0 && absoluteDeltaY <= 0) {
+      node.scrollLeft += deltaX;
+
+      return;
+    }
+
+    clearTimeout(timer);
+
+    const intDeltaY = Math.floor(absoluteDeltaY);
+
+    if (deltaYHistory.length > 5 && deltaYHistory.every((delta) => delta === intDeltaY)) {
+      node.scrollLeft += deltaY;
+    }
+
+    setDeltaYHistory((prev) => [...prev, intDeltaY].slice(-20));
+
+    setTimer(() => setTimeout(() => setDeltaYHistory(() => []), 500));
+  };
 
   const tabListToRender = tabs.map(({ tabId, tabName }, index) => {
     const isLastTab = tabs.length - 1 === index;
@@ -35,7 +64,7 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
     const tabRef = isFirstTab ? firstTabRef : (isLastTab ? lastTabRef : undefined);
 
     return (
-      <Fragment key={tabId}>
+      <Fragment key={tabId + index}>
         <Tab
           ref={tabRef}
           h={{ base: "34px", lg: "40px" }}
@@ -86,6 +115,7 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
       }}
     >
       <TabList
+        onWheel={onWheel}
         ref={tabContainerRef}
         overflowY="hidden"
         overflowX="auto"
