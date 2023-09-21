@@ -10,6 +10,7 @@ export const Home = () => {
         base: "calc(100vh - var(--headerMobileHeight) - var(--footerMobileMaxHeight))",
         md: "calc(100vh - var(--headerHeight) - var(--footerHeight))"
       }}
+      display="flex"
       justifyContent={{ base: "center", lg: "space-between" }}
       flexDirection={{ base: "column", lg: "row" }}
       maxW={{ base: "375px", md: "528px", lg: "1176px" }}
