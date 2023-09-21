@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { chakra, Menu, Flex, useDisclosure } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import { useDetectWidth, useScreenScrollController } from "@Hooks";
 import { LanguageMenuList } from "./LanguageMenuList";
 import { LanguageMenuButton } from "./LanguageMenuButton";
-import { useTranslation } from "react-i18next";
 
 const MobileHeadingTip = chakra(Flex, {
   baseStyle: {
