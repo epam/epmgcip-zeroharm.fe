@@ -1,5 +1,15 @@
 import { StyleFunctionProps, defineStyleConfig } from "@chakra-ui/react";
 
+const gradientPseudoStyles = {
+  content: "''",
+  display: "block",
+  position: "absolute",
+  width: "8px",
+  top: "0",
+  bottom: "0",
+  border: "2px solid"
+};
+
 const buttonDefaultStyles = {
   bg: "white",
   p: "16px",
@@ -34,13 +44,32 @@ export const Button = defineStyleConfig({
       }
     },
     gradient: {
-      paddingX: 6,
-      paddingY: 5,
-      border: "2px solid transparent",
+      paddingX: "24px",
+      paddingY: "12px",
+      height: "initial",
+      position: "relative",
+      background: "feedbackButtonColor.gradient",
+      backgroundPosition: "8px 0, 8px 100%",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "calc(100% - 8px - 8px) 2px",
+      border: "none",
       borderRadius: "8px",
-      backgroundImage: "linear-gradient(#252526, #252526), linear-gradient(90deg, #339944 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #7D5BA6 100%)",
-      backgroundOrigin: "border-box",
-      backgroundClip: "padding-box, border-box"
+      _before: {
+        ...gradientPseudoStyles,
+        left: "0",
+        borderColor: "feedbackButtonColor.pseudoBefore",
+        borderTopLeftRadius: "8px",
+        borderBottomLeftRadius: "8px",
+        borderRightColor: "transparent"
+      },
+      _after: {
+        ...gradientPseudoStyles,
+        right: "0",
+        borderColor: "feedbackButtonColor.pseudoAfter",
+        borderTopRightRadius: "8px",
+        borderBottomRightRadius: "8px",
+        borderLeftColor: "transparent"
+      }
     },
     link: {
       textDecoration: "underline",

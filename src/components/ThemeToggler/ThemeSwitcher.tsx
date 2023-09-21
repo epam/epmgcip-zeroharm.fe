@@ -8,8 +8,12 @@ type ThemeSwitcherType = {
   toggleColorMode: () => void;
 }
 
-const hover = {
-  cursor: "pointer"
+const hoverStyle = {
+  "@media (hover: hover)": {
+    ":hover": {
+      cursor: "pointer"
+    }
+  }
 };
 
 export const ThemeSwitcher: FC<ThemeSwitcherType> = ({ isDark, toggleColorMode }) => {
@@ -25,13 +29,13 @@ export const ThemeSwitcher: FC<ThemeSwitcherType> = ({ isDark, toggleColorMode }
       <FormLabel
         margin="0px"
         height="24px"
-        _hover={hover}
+        sx={hoverStyle}
       >
         <Icon
           as={IconMoon}
           width="24px"
           height="24px"
-          color={isDark ? "white" : "whiteAlpha.400"}
+          color="themeTogglerColor.iconMoon"
         />
       </FormLabel>
       <Switch
@@ -42,13 +46,13 @@ export const ThemeSwitcher: FC<ThemeSwitcherType> = ({ isDark, toggleColorMode }
       <FormLabel
         margin="0px"
         height="24px"
-        _hover={hover}
+        sx={hoverStyle}
       >
         <Icon
           as={IconSun}
           width="24px"
           height="24px"
-          color={isDark ? "whiteAlpha.400" : "white"}
+          color="themeTogglerColor.iconSun"
         />
       </FormLabel>
     </FormControl>
