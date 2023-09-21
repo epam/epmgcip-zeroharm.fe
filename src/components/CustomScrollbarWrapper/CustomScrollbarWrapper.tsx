@@ -1,5 +1,5 @@
 import { ReactNode, forwardRef } from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, useColorMode } from "@chakra-ui/react";
 import { browserInfo } from "@Helpers";
 
 type CustomScrollbarWrapperProps = {
@@ -13,13 +13,13 @@ const webkitBrowserScrollbarStyles = {
     w: "4px"
   },
   "::-webkit-scrollbar-thumb": {
-    bgColor: "gray.700",
+    bgColor: "scrollBar.thumb",
     borderRadius: "4px"
   },
   "::-webkit-scrollbar-track": {
     bgColor: {
       md: "transparent",
-      lg: "gray.800"
+      lg: "scrollBar.trackLg"
     },
     borderRadius: "4px"
   },
@@ -39,6 +39,8 @@ const styles = {
 };
 
 export const CustomScrollbarWrapper = forwardRef<HTMLDivElement, CustomScrollbarWrapperProps>(({ children }, ref) => {
+  const { colorMode } = useColorMode();
+  const isDark = colorMode === "dark";
 
   return (
     <Box
@@ -53,7 +55,7 @@ export const CustomScrollbarWrapper = forwardRef<HTMLDivElement, CustomScrollbar
         overflowX="hidden"
         sx={{
           scrollbarWidth: "thin",
-          scrollbarColor: "#48494D transparent",
+          scrollbarColor: isDark ? "#48494D transparent" : "white transparent",
           ...styles
         }}
       >
