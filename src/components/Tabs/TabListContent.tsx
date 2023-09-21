@@ -102,13 +102,13 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
       overflow="hidden"
       position="relative"
       _before={{
-        content: !isFirstTabInFullView ? "''" : undefined,
+        content: isFirstTabInFullView ? "none" : "''",
         ...tabListShadowsGeneralStyles,
         left: "0",
         bgImage: "linear-gradient(90deg, primaryBgColor, transparent)"
       }}
       _after={{
-        content: !isLastTabInFullView ? "''" : undefined,
+        content: isLastTabInFullView ? "none" : "''",
         ...tabListShadowsGeneralStyles,
         right: "0",
         bgImage: "linear-gradient(90deg, transparent, primaryBgColor)"
