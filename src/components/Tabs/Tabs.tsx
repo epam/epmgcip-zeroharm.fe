@@ -21,7 +21,6 @@ export const Tabs: FC<TabsProps> = ({ children, tabs }) => {
   return (
     <ChakraTabs
       defaultIndex={defaultTabIndex}
-      variant="unstyled"
       w="100%"
       flex="1"
       display="flex"

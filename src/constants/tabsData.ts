@@ -17,4 +17,40 @@ export const tabsData = [
       translationPath: "tabs.pressure"
     }
   }
+  // {
+  //   tabId: "air_quality",
+  //   tabName: {
+  //     translationPath: "tabs.air_quality"
+  //   }
+  // },
+  // {
+  //   tabId: "humidity",
+  //   tabName: {
+  //     translationPath: "tabs.humidity"
+  //   }
+  // },
+  // {
+  //   tabId: "pressure",
+  //   tabName: {
+  //     translationPath: "tabs.pressure"
+  //   }
+  // },
+  // {
+  //   tabId: "air_quality",
+  //   tabName: {
+  //     translationPath: "tabs.air_quality"
+  //   }
+  // },
+  // {
+  //   tabId: "humidity",
+  //   tabName: {
+  //     translationPath: "tabs.humidity"
+  //   }
+  // },
+  // {
+  //   tabId: "pressure",
+  //   tabName: {
+  //     translationPath: "tabs.pressure"
+  //   }
+  // }
 ];

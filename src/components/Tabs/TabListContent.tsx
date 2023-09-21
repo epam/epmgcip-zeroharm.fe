@@ -1,17 +1,11 @@
-import { FC, Fragment, WheelEventHandler, useState } from "react";
-import { Box, Spacer, Tab, TabList } from "@chakra-ui/react";
+import { FC, WheelEventHandler, useState } from "react";
+import { Box, Flex, Tab, TabList } from "@chakra-ui/react";
 import { useDetectContentOverflow, useDetectFullView } from "@Hooks";
 import { useDataStore } from "@Store/useDataStore";
 
 type TabListContentProps = {
   tabs: any[];
 }
-
-const borderStyles = {
-  borderColor: "borderColor",
-  borderStyle: "solid",
-  borderBottomWidth: "1px"
-};
 
 const tabListShadowsGeneralStyles = {
   position: "absolute",
@@ -32,7 +26,6 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
   const onWheel: WheelEventHandler<HTMLDivElement> = (e) => {
     const node = e.currentTarget;
     const { deltaX, deltaY } = e;
-
     const absoluteDeltaX = Math.abs(deltaX);
     const absoluteDeltaY = Math.abs(deltaY);
 
@@ -45,60 +38,18 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
     clearTimeout(timer);
 
     const intDeltaY = Math.floor(absoluteDeltaY);
-
     if (deltaYHistory.length > 5 && deltaYHistory.every((delta) => delta === intDeltaY)) {
       node.scrollLeft += deltaY;
     }
 
     setDeltaYHistory((prev) => [...prev, intDeltaY].slice(-20));
-
     setTimer(() => setTimeout(() => setDeltaYHistory(() => []), 500));
   };
-
-  const tabListToRender = tabs.map(({ tabId, tabName }, index) => {
-    const isLastTab = tabs.length - 1 === index;
-    const isFirstTab = index === 0;
-
-    const spacerWidth = isLastTab ? "none" : "16px";
-
-    const tabRef = isFirstTab ? firstTabRef : (isLastTab ? lastTabRef : undefined);
-
-    return (
-      <Fragment key={tabId + index}>
-        <Tab
-          ref={tabRef}
-          h={{ base: "34px", lg: "40px" }}
-          {...borderStyles}
-          p="0"
-          color="secondaryColor"
-          fontSize={{ base: "small", lg: "medium" }}
-          lineHeight={{ base: "small", lg: "medium" }}
-          whiteSpace="nowrap"
-          _selected={{
-            color: "primaryColor",
-            fontWeight: "700",
-            borderColor: "primaryColor",
-            borderBottomWidth: "2px"
-          }}
-          _hover={{
-            color: "primaryColor"
-          }}
-          onClick={() => setParameter(tabId)}
-        >
-          { tabName }
-        </Tab>
-        <Spacer
-          minW={spacerWidth}
-          maxW={spacerWidth}
-          {...borderStyles}
-        />
-      </Fragment>
-    );
-  });
 
   return (
     <Box
       w={{ base: "343px", md: "100%" }}
+      h={{ base: "34px", lg: "40px" }}
       overflow="hidden"
       position="relative"
       _before={{
@@ -115,10 +66,13 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
       }}
     >
       <TabList
+        h="100%"
+        w="100%"
         onWheel={onWheel}
         ref={tabContainerRef}
-        overflowY="hidden"
         overflowX="auto"
+        overflowY="hidden"
+        border="none"
         sx={{
           "::-webkit-scrollbar": {
             display: "none"
@@ -126,7 +80,40 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
           scrollbarWidth: "none"
         }}
       >
-        { tabListToRender }
+        <Flex
+          w={isContentOverflowing ? "auto" : "100%"}
+          gap="16px"
+          borderBottomWidth="1px"
+          borderColor="borderColor"
+        >
+          {
+            tabs.map(({ tabId, tabName }, index) => {
+              const isLastTab = tabs.length - 1 === index;
+              const isFirstTab = index === 0;
+
+              const tabRef = isFirstTab ? firstTabRef : (isLastTab ? lastTabRef : undefined);
+
+              return (
+                <Tab
+                  key={tabId + index}
+                  ref={tabRef}
+                  p="0"
+                  whiteSpace="nowrap"
+                  color="secondaryColor"
+                  fontSize={{ base: "small", lg: "medium" }}
+                  lineHeight={{ base: "small", lg: "medium" }}
+                  mb="-1px"
+                  _hover={{
+                    color: "primaryColor"
+                  }}
+                  onClick={() => setParameter(tabId)}
+                >
+                  { tabName }
+                </Tab>
+              );
+            })
+          }
+        </Flex>
       </TabList>
     </Box>
   );
