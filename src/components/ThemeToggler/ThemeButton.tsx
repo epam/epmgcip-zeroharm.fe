@@ -8,6 +8,21 @@ type ThemeButtonType = {
   toggleColorMode: () => void;
 }
 
+const styles = {
+  "@media (hover: hover)": {
+    ":hover": {
+      bg: "transparent",
+      cursor: "pointer"
+    }
+  },
+  "@media (hover: none)": {
+    ":hover, :active, :focus": {
+      cursor: "initial",
+      bg: "transparent"
+    }
+  }
+};
+
 export const ThemeButton: FC<ThemeButtonType> = ({ isDark, toggleColorMode }) => {
 
   return (
@@ -16,8 +31,8 @@ export const ThemeButton: FC<ThemeButtonType> = ({ isDark, toggleColorMode }) =>
       icon={isDark ? <IconSun /> : <IconMoon />}
       size="xs"
       bg="transparent"
-      color="white"
-      _hover={{bg: "transparent"}}
+      color="primaryColor"
+      sx={styles}
       onClick={toggleColorMode}
     />
   );
