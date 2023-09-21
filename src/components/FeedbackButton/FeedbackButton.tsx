@@ -19,7 +19,8 @@ export const FeedbackButton: FC<FeedbackButtonProps> = ({ onClick }) => {
   return (
     <Button
       leftIcon={<ThumbIcon />}
-      size="sm"
+      fontSize="small"
+      lineHeight="small"
       onClick={clickHandler}
       variant="gradient"
     >
