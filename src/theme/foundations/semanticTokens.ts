@@ -59,22 +59,10 @@ export const semanticTokens = {
       }
     },
     languageMenu: {
-      button: {
-        default: "gray.100",
-        _light: "navyBlue.600"
-      },
-      listBgBase: {
-        default: "gray.900",
-        _light: "white"
-      },
-      listBgMd: {
-        default: "gray.700",
-        _light: "white"
-      },
-      itemBg: {
-        default: "gray.600",
-        _light: "navyBlue.100"
-      }
+      button: { default: "gray.100", _light: "navyBlue.600" },
+      listBgBase: { default: "gray.900", _light: "white" },
+      listBgMd: { default: "gray.700", _light: "white" },
+      itemBg: { default: "gray.600", _light: "navyBlue.100" }
     }
   }
 };
