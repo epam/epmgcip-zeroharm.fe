@@ -7,17 +7,15 @@ type TabListContentProps = {
   tabs: any[];
 }
 
-const tabListShadowsGeneralStyles = {
+const tabListShadowsCommonStyles = {
   position: "absolute",
-  width: { base: "34px", lg: "40px" },
-  aspectRatio: "1 / 1",
+  boxSize: { base: "34px", lg: "40px" },
   top: "0"
 };
 
 export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
   const [deltaYHistory, setDeltaYHistory] = useState<number[]>([]);
   const [timer, setTimer] = useState<NodeJS.Timeout>();
-
   const { setParameter } = useDataStore();
   const { ref: tabContainerRef, isContentOverflowing } = useDetectContentOverflow("horizontal");
   const { ref: firstTabRef, isInFullView: isFirstTabInFullView } = useDetectFullView(isContentOverflowing);
@@ -50,29 +48,26 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
     <Box
       w={{ base: "343px", md: "100%" }}
       h={{ base: "34px", lg: "40px" }}
-      overflow="hidden"
-      position="relative"
+      pos="relative"
       _before={{
         content: isFirstTabInFullView ? "none" : "''",
-        ...tabListShadowsGeneralStyles,
+        ...tabListShadowsCommonStyles,
         left: "0",
         bgImage: "linear-gradient(90deg, primaryBgColor, transparent)"
       }}
       _after={{
         content: isLastTabInFullView ? "none" : "''",
-        ...tabListShadowsGeneralStyles,
+        ...tabListShadowsCommonStyles,
         right: "0",
         bgImage: "linear-gradient(90deg, transparent, primaryBgColor)"
       }}
     >
       <TabList
+        ref={tabContainerRef}
+        onWheel={onWheel}
         h="100%"
         w="100%"
-        onWheel={onWheel}
-        ref={tabContainerRef}
         overflowX="auto"
-        overflowY="hidden"
-        border="none"
         sx={{
           "::-webkit-scrollbar": {
             display: "none"
@@ -81,7 +76,7 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
         }}
       >
         <Flex
-          w={isContentOverflowing ? "auto" : "100%"}
+          flex="1"
           gap="16px"
           borderBottomWidth="1px"
           borderColor="borderColor"
@@ -105,6 +100,11 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
                   mb="-1px"
                   _hover={{
                     color: "primaryColor"
+                  }}
+                  _selected={{
+                    color: "primaryColor",
+                    borderBottomWidth: "2px",
+                    borderColor: "primaryColor"
                   }}
                   onClick={() => setParameter(tabId)}
                 >
