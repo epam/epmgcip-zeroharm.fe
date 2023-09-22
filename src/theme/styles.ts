@@ -1,16 +1,14 @@
 import { StyleFunctionProps } from "@chakra-ui/react";
 
 export const styles = {
-  global: (props: StyleFunctionProps) => ({
+  global: ({ colorMode }: StyleFunctionProps) => ({
     html: {
       "--headerHeight": "64px",
       "--headerMobileHeight": "56px",
-      "--footerHeight": "77px",
-      "--footerMobileMinHeight": "69px",
-      "--footerMobileMaxHeight": "87px",
+      "--footerMaxHeight": "87px",
       "--footerMargin": "16px",
       "--maxContentWidth": "1440px",
-      "--firefoxScrollbarColor": props.colorMode === "dark" ? "#48494D transparent" : "white transparent"
+      "--firefoxScrollbarColor": colorMode === "dark" ? "#48494D transparent" : "white transparent"
     },
     "#root": {
       display: "flex",
@@ -24,9 +22,6 @@ export const styles = {
     },
     "header, footer": {
       w: "100%"
-    },
-    ".bg-colored": {
-      bg: props.colorMode === "dark" ? "gray.900" : "white"
     }
   })
 };
