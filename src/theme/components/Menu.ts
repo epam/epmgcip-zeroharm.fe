@@ -16,7 +16,10 @@ export const Menu = defineStyleConfig({
       list: {
         boxShadow: "none",
         overflow: "hidden",
-        border: "none",
+        borderWidth: { base: "none", md: "1px" },
+        borderStyle: "solid",
+        borderColor: "languageMenu.listBorder",
+        borderRadius: { base: "0", md: "8px" },
         bg: { base: "languageMenu.listBgBase", md: "languageMenu.listBgMd" }
       },
       item: {
