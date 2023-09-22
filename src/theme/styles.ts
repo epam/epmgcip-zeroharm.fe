@@ -9,7 +9,8 @@ export const styles = {
       "--footerMobileMinHeight": "69px",
       "--footerMobileMaxHeight": "87px",
       "--footerMargin": "16px",
-      "--maxContentWidth": "1440px"
+      "--maxContentWidth": "1440px",
+      "--firefoxScrollbarColor": props.colorMode === "dark" ? "#48494D transparent" : "white transparent"
     },
     "#root": {
       display: "flex",

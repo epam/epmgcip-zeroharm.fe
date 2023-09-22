@@ -5,8 +5,8 @@ import { useTranslation } from "react-i18next";
 import { useDataStore } from "@Store/useDataStore";
 import { Card, CardType } from "@UI";
 import { useDetectWidth } from "@Hooks";
-import { ReactComponent as RightArrow } from "@Assets/icons/stroke/harm-arrow-right.svg";
 import { type Parameter } from "@Constants";
+import { ReactComponent as RightArrow } from "@Assets/icons/stroke/harm-arrow-right.svg";
 
 type SwiperItemDataT = CardType & {
   question: string;

@@ -1,5 +1,5 @@
 import { ReactNode, forwardRef } from "react";
-import { Box, useColorMode } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { browserInfo } from "@Helpers";
 
 type CustomScrollbarWrapperProps = {
@@ -39,9 +39,6 @@ const styles = {
 };
 
 export const CustomScrollbarWrapper = forwardRef<HTMLDivElement, CustomScrollbarWrapperProps>(({ children }, ref) => {
-  const { colorMode } = useColorMode();
-  const isDark = colorMode === "dark";
-
   return (
     <Box
       w="100%"
@@ -55,7 +52,7 @@ export const CustomScrollbarWrapper = forwardRef<HTMLDivElement, CustomScrollbar
         overflowX="hidden"
         sx={{
           scrollbarWidth: "thin",
-          scrollbarColor: isDark ? "#48494D transparent" : "white transparent",
+          scrollbarColor: "var(--firefoxScrollbarColor)",
           ...styles
         }}
       >

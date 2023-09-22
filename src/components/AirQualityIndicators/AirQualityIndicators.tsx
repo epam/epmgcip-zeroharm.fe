@@ -29,17 +29,17 @@ export const AirQualityIndicators: FC = () => {
           airComponentsNamesList.map((airComponent) => {
             const particleValue = +airComponents[airComponent];
             const groupName = getParameterIndexGroupName(particleValue, ParametersMap.AIR_QUALITY);
-            const color = indexGroupColorsMap?.[groupName as IndexesGroupsNames];
+            const color = indexGroupColorsMap[groupName as IndexesGroupsNames];
             const particleValueStr = String(particleValue);
             const roundedParticleValue = parseFloat(particleValueStr.slice(0, particleValueStr.indexOf(".") + 3));
             const value = isNaN(roundedParticleValue) ? 0 : roundedParticleValue;
 
             return (
               <Indicator
-                value={value}
-                title={airComponent}
                 key={airComponent}
+                title={airComponent}
                 color={color}
+                value={value}
               />
             );
           })
