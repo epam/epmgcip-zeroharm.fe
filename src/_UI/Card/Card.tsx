@@ -64,11 +64,11 @@ const CardHeading = chakra(Box, {
     fontWeight: "700",
     fontSize: {
       base: "22px",
-      md: "headers.h3"
+      lg: "headers.h3"
     },
     lineHeight: {
       base: "headers.h4",
-      md: "headers.h3"
+      lg: "headers.h3"
     }
   }
 });

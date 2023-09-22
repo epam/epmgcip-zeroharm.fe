@@ -3,11 +3,11 @@ import { VStack } from "@chakra-ui/react";
 
 type AsideWrapperProps = {
   children: ReactNode;
-  isScrollVisible: boolean;
+  isContentOverflowing: boolean;
 }
 
-export const AsideWrapper: FC<AsideWrapperProps> = ({ children, isScrollVisible }) => {
-  const offset = isScrollVisible ? "20px" : "0px";
+export const AsideWrapper: FC<AsideWrapperProps> = ({ children, isContentOverflowing }) => {
+  const offset = isContentOverflowing ? "20px" : "0px";
 
   return (
     <VStack
@@ -22,7 +22,7 @@ export const AsideWrapper: FC<AsideWrapperProps> = ({ children, isScrollVisible 
       overflow="hidden"
       pt={{ base: "8px", md: "16px" }}
       gap="16px"
-      transition="max-width .3s ease"
+      transition={{ base: "none", lg: "max-width .3s ease"}}
     >
       { children }
     </VStack>

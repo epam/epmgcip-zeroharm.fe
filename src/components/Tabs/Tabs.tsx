@@ -1,14 +1,7 @@
 import { FC, ReactNode, useEffect } from "react";
-import { Box, Tabs as ChakraTabs, Tab, TabList } from "@chakra-ui/react";
+import { Box, Tabs as ChakraTabs, Flex } from "@chakra-ui/react";
 import { useDataStore } from "@Store/useDataStore";
-
-const hover = {
-  color: "white"
-};
-const selected = {
-  color: "white",
-  borderBottom: "3px solid white"
-};
+import { TabListContent } from "./TabListContent";
 
 type TabsProps = {
   children: ReactNode;
@@ -25,24 +18,6 @@ export const Tabs: FC<TabsProps> = ({ children, tabs }) => {
     setParameter(currentTab);
   }, []);
 
-  const tabListToRender = tabs.map(({ tabId, tabName }) => (
-    <Tab
-      key={tabId}
-      h={{ base: "34px", lg: "40px" }}
-      flex="1"
-      borderBottom="2px solid gray"
-      color="gray"
-      textAlign="center"
-      fontSize={{ base: "small", lg: "medium" }}
-      lineHeight={{ base: "13px", lg: "small" }}
-      _selected={selected}
-      _hover={hover}
-      onClick={() => setParameter(tabId)}
-    >
-      { tabName }
-    </Tab>
-  ));
-
   return (
     <ChakraTabs
       defaultIndex={defaultTabIndex}
@@ -55,13 +30,14 @@ export const Tabs: FC<TabsProps> = ({ children, tabs }) => {
       gap={{ base: "16px", lg: "24px" }}
       overflowY="hidden"
     >
-      <TabList
-        w={{ base: "343px", md: "100%" }}
-        px={{ base: "auto", md: "16px", lg: "24px" }}
+      <Flex
+        w="100%"
+        px={{ md: "16px", lg: "24px" }}
         pr={{ lg: "20px" }}
+        justify={{ base: "center", md: "initial" }}
       >
-        { tabListToRender }
-      </TabList>
+        <TabListContent tabs={tabs} />
+      </Flex>
 
       <Box
         w="100%"

@@ -1,13 +1,9 @@
-import { StyleFunctionProps } from "@chakra-ui/react";
-
 export const styles = {
-  global: (props: StyleFunctionProps) => ({
+  global: {
     html: {
       "--headerHeight": "64px",
       "--headerMobileHeight": "56px",
-      "--footerHeight": "77px",
-      "--footerMobileMinHeight": "69px",
-      "--footerMobileMaxHeight": "87px",
+      "--footerMaxHeight": "87px",
       "--footerMargin": "16px",
       "--maxContentWidth": "1440px"
     },
@@ -18,14 +14,11 @@ export const styles = {
       minHeight: "100vh"
     },
     "html, body, header, footer": {
-      backgroundColor: "gray.900",
+      backgroundColor: "primaryBgColor",
       color: "primaryColor"
     },
     "header, footer": {
       w: "100%"
-    },
-    ".bg-colored": {
-      bg: props.colorMode === "dark" ? "gray.900" : "white"
     }
-  })
+  }
 };
