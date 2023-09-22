@@ -1,4 +1,4 @@
-import { FC, WheelEventHandler, useState } from "react";
+import { FC, WheelEventHandler } from "react";
 import { Box, Flex, Tab, TabList } from "@chakra-ui/react";
 import { useDetectContentOverflow, useDetectFullView } from "@Hooks";
 import { useDataStore } from "@Store/useDataStore";
@@ -14,8 +14,6 @@ const tabListShadowsCommonStyles = {
 };
 
 export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
-  const [deltaYHistory, setDeltaYHistory] = useState<number[]>([]);
-  const [timer, setTimer] = useState<NodeJS.Timeout>();
   const { setParameter } = useDataStore();
   const { ref: tabContainerRef, isContentOverflowing } = useDetectContentOverflow("horizontal");
   const { ref: firstTabRef, isInFullView: isFirstTabInFullView } = useDetectFullView(isContentOverflowing);
@@ -24,24 +22,9 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
   const onWheel: WheelEventHandler<HTMLDivElement> = (e) => {
     const node = e.currentTarget;
     const { deltaX, deltaY } = e;
-    const absoluteDeltaX = Math.abs(deltaX);
-    const absoluteDeltaY = Math.abs(deltaY);
 
-    if (absoluteDeltaX > 0 && absoluteDeltaY <= 0) {
-      node.scrollLeft += deltaX;
-
-      return;
-    }
-
-    clearTimeout(timer);
-
-    const intDeltaY = Math.floor(absoluteDeltaY);
-    if (deltaYHistory.length > 5 && deltaYHistory.every((delta) => delta === intDeltaY)) {
-      node.scrollLeft += deltaY;
-    }
-
-    setDeltaYHistory((prev) => [...prev, intDeltaY].slice(-20));
-    setTimer(() => setTimeout(() => setDeltaYHistory(() => []), 500));
+    node.scrollLeft += deltaX;
+    node.scrollLeft += deltaY;
   };
 
   return (
