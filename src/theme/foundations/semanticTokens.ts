@@ -33,7 +33,8 @@ export const semanticTokens = {
       button: { default: "gray.100", _light: "navyBlue.600" },
       listBgBase: { default: "gray.900", _light: "white" },
       listBgMd: { default: "gray.700", _light: "white" },
-      itemBg: { default: "gray.600", _light: "navyBlue.100" }
+      itemBg: { default: "gray.600", _light: "navyBlue.100" },
+      listBorder: { default: "gray.600", _light: "navyBlue.200" }
     }
   }
 };

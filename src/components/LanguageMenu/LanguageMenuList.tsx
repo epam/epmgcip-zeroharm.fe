@@ -48,15 +48,10 @@ export const LanguageMenuList: FC<LanguageMenuListProps> = ({ isOpenOnMobile, is
 
   return (
     <MenuList
-      minW={{
-        base: "100vw",
-        md: "176px",
-        lg: "240px"
-      }}
+      minW={{ base: "100vw", md: "176px", lg: "240px" }}
       py="0"
       mt={{ md: "12px" }}
       minH={isOpenOnMobile ? "calc(100vh - var(--headerMobileHeight))" : "initial"}
-      borderRadius={{ base: "0", md: "8px" }}
       rootProps={{
         sx: isOpenOnMobile ? { transform: "translate3d(0, var(--headerMobileHeight), 0) !important" } : undefined
       }}
