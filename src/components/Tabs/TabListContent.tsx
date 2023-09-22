@@ -24,7 +24,7 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
     const { deltaX, deltaY } = e;
 
     node.scrollLeft += deltaX;
-    node.scrollLeft += deltaY;
+    node.scrollLeft += deltaY / 2;
   };
 
   return (
