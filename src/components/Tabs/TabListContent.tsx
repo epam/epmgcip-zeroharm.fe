@@ -9,6 +9,7 @@ type TabListContentProps = {
 
 const tabListShadowsCommonStyles = {
   position: "absolute",
+  pointerEvents: "none",
   boxSize: { base: "34px", lg: "40px" },
   top: "0"
 };
@@ -73,7 +74,7 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
 
               return (
                 <Tab
-                  key={tabId + index}
+                  key={`${tabId}-${index}`}
                   ref={tabRef}
                   p="0"
                   whiteSpace="nowrap"
