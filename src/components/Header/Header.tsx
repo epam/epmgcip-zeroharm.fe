@@ -21,10 +21,7 @@ export const Header: FC = () => {
       as="header"
       pos="fixed"
       zIndex="sticky"
-      h={{
-        base: "var(--headerMobileHeight)",
-        md: "var(--headerHeight)"
-      }}
+      h={{ base: "var(--headerMobileHeight)", md: "var(--headerHeight)" }}
     >
       <Flex
         h="full"
@@ -38,10 +35,7 @@ export const Header: FC = () => {
         <HStack gap={{ base: "36px", md: "28px", lg: "32px" }}>
           {
             isMobileWidth
-              ? <MobileNavbar
-                  isOpen={isOpen}
-                  onClose={onClose}
-                />
+              ? <MobileNavbar isOpen={isOpen} onClose={onClose}/>
               : <Navbar />
           }
           <LanguageMenu />
