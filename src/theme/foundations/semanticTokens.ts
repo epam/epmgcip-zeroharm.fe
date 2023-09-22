@@ -28,6 +28,12 @@ export const semanticTokens = {
       body: { default: "whiteAlpha.400", _light: "navyBlue.200" },
       iconMoon: { default: "white", _light: "navyBlue.200" },
       iconSun: { default: "whiteAlpha.400", _light: "navyBlue.900" }
+    },
+    languageMenu: {
+      button: { default: "gray.100", _light: "navyBlue.600" },
+      listBgBase: { default: "gray.900", _light: "white" },
+      listBgMd: { default: "gray.700", _light: "white" },
+      itemBg: { default: "gray.600", _light: "navyBlue.100" }
     }
   }
 };
