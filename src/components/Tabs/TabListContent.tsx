@@ -20,6 +20,11 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
   const { ref: firstTabRef, isInFullView: isFirstTabInFullView } = useDetectFullView(isContentOverflowing);
   const { ref: lastTabRef, isInFullView: isLastTabInFullView } = useDetectFullView(isContentOverflowing);
 
+  const tabRefs = {
+    0: firstTabRef,
+    [tabs.length - 1]: lastTabRef
+  };
+
   const onWheel: WheelEventHandler<HTMLDivElement> = (e) => {
     const node = e.currentTarget;
     const { deltaX, deltaY } = e;
@@ -67,15 +72,11 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
         >
           {
             tabs.map(({ tabId, tabName }, index) => {
-              const isLastTab = tabs.length - 1 === index;
-              const isFirstTab = index === 0;
-
-              const tabRef = isFirstTab ? firstTabRef : (isLastTab ? lastTabRef : undefined);
 
               return (
                 <Tab
                   key={`${tabId}-${index}`}
-                  ref={tabRef}
+                  ref={tabRefs[index]}
                   p="0"
                   whiteSpace="nowrap"
                   color="secondaryColor"
