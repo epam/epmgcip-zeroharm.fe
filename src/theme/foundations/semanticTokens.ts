@@ -2,6 +2,7 @@ export const semanticTokens = {
   colors: {
     primaryColor: { default: "white", _light: "navyBlue.900" },
     primaryBgColor: { default: "gray.900", _light: "navyBlue.100" },
+    secondaryColor: { default: "gray.200", _light: "navyBlue.600" },
     secondaryBgColor: { default: "gray.900", _light: "white" },
     linkHoverAndActiveColor: { default: "yellow.500", _light: "blue.500" },
     feedbackButtonColor: {
