@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Progress as ChakraProgress, ProgressProps, chakra } from "@chakra-ui/react";
+import { Progress as ChakraProgress, ProgressProps } from "@chakra-ui/react";
 
 type ProgressType = ProgressProps & {
   withPointer?: boolean;
