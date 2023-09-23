@@ -4,7 +4,7 @@ import { Select } from "chakra-react-select";
 const getSelectComponentStyleConfig =
   (styles: any) => (provided: any, state: any) => {
     const stylesWithState = Object.entries(styles).filter(
-      ([_, value]) => typeof value === "function"
+      ([, value]) => typeof value === "function"
     );
 
     if (stylesWithState?.length) {
