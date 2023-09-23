@@ -2,10 +2,10 @@ import { FC } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { IndicatorWrapper } from "@UI";
-import { CardData, Parameter, parametersIndexGroupRanges } from "@Constants";
+import { CardData, Parameter, indexGroupColorsMap, parametersIndexGroupRanges } from "@Constants";
 import { useDataStore } from "@Store/useDataStore";
 import { TextWithTooltip } from "../TextWithTooltip/TextWithTooltip";
-import { ProgressRange } from "./ProgressRange";
+import { ParameterProgress } from "./ParameterProgress";
 
 type ParameterIndexAndDateProps = {
   cardData: CardData;
@@ -17,7 +17,7 @@ export const ParameterIndexAndDate: FC<ParameterIndexAndDateProps> = ({ cardData
   const { t } = useTranslation();
   const { fetchingDate } = useDataStore();
 
-  const { heading } = cardData;
+  const { heading, cardColor } = cardData;
   const indexGroups = parametersIndexGroupRanges[currentParameter];
 
   return (
@@ -67,15 +67,19 @@ export const ParameterIndexAndDate: FC<ParameterIndexAndDateProps> = ({ cardData
           gap="5px"
         >
           {
-            indexGroups?.map((indexGroup, index) => (
-              <ProgressRange
-                key={indexGroup.groupName}
-                isFirstRange={index === 0}
-                isLastRange={index === indexGroups.length - 1}
-                indexGroup={indexGroup}
-                currentParameterValue={currentParameterValue}
-              />
-            ))
+            indexGroups?.map(({ groupName, range: { max } }) => {
+              const color = indexGroupColorsMap[groupName];
+
+              return (
+                <ParameterProgress
+                  key={groupName}
+                  withPointer={cardColor === color}
+                  value={currentParameterValue}
+                  max={currentParameterValue > max ? currentParameterValue : max}
+                  color={color}
+                />
+              );
+          })
           }
         </Flex>
       </Flex>
