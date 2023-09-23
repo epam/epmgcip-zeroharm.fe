@@ -26,6 +26,7 @@ export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, iconSiz
       bgColor="parameter.tooltipBg"
       sx={{
         maxH: "auto",
+        minW: { base: "343px", md: "300px" },
         maxW: { base: "343px", md: "600px" },
         w: `${preferredNumberOfCharactersPerLine}ch`
       }}
