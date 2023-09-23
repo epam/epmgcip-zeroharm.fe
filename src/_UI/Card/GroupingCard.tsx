@@ -44,20 +44,19 @@ export const GroupingCard: FC<GroupingCardProps> = ({ cardData }) => {
         iconName={iconName}
         minH={isCardsGroup ? "290px" : "none"}
       >
-        <CardTextContent subheading={subheading} text={text} />
+        <CardTextContent
+          subheading={subheading}
+          text={text}
+        />
       </Card>
       {
         isCardsGroup && (
           <CardNavigation>
             <CardNavigationBox justifyContent="flex-start">
-              { isLeftActive && (
-                <LeftArrowIcon onClick={() => handleClick(-1)} />
-              ) }
+              { isLeftActive && <LeftArrowIcon onClick={() => handleClick(-1)} /> }
             </CardNavigationBox>
             <CardNavigationBox justifyContent="flex-end">
-              { isRightActive && (
-                <RightArrowIcon onClick={() => handleClick(+1)} />
-              ) }
+              { isRightActive && <RightArrowIcon onClick={() => handleClick(+1)} /> }
             </CardNavigationBox>
           </CardNavigation>
         )
