@@ -25,6 +25,7 @@
       "button": "Fikr qoldiring"
     },
     "form": {
+      "title": "Help us be better",
       "required_notification": "Taklif yuborish uchun barcha kerakli maydonlarni to'ldiring!",
       "incorrectly_notification": "Maydonni to'g'ri to'ldiring.",
       "name": {
@@ -41,7 +42,8 @@
       },
       "checkbox": {
         "label": "Men javob olmoqchiman"
-      }
+      },
+      "button": "Send feedback"
     }
   },
   "lang": {
@@ -230,7 +232,11 @@
     "pressure": "Havo bosimi ko'rsatkichi"
   },
   "tips": {
-    "air_quality": "Havo sifati"
+    "air_quality": "Havo sifati",
+    "uv": "UV-Factor",
+    "noise_pollution": "Noise",
+    "humidity": "Humidity",
+    "pressure": "Air Pressure"
   },
   "indicators": "Boshqa parametrlar",
   "detailed_info": "Batafsil ma'lumot",
