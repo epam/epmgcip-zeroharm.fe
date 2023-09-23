@@ -35,7 +35,10 @@ export const Header: FC = () => {
         <HStack gap={{ base: "36px", md: "28px", lg: "32px" }}>
           {
             isMobileWidth
-              ? <MobileNavbar isOpen={isOpen} onClose={onClose}/>
+              ? <MobileNavbar
+                  isOpen={isOpen}
+                  onClose={onClose}
+                />
               : <Navbar />
           }
           <LanguageMenu />
