@@ -12,6 +12,7 @@ export const IndicatorWrapper: FC<WrapperType> = ({ children }) => {
       bg="parameter.primary"
       p="16px"
       borderRadius="8px"
+      boxShadow="primary"
       gap="16px"
     >
       { children }

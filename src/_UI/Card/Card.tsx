@@ -31,6 +31,7 @@ const CardBody = chakra(Flex, {
     gap: "16px",
     borderRadius: "0 0 8px 8px",
     color: "dark",
+    boxShadow: "primary",
     padding: {
       base: "16px",
       md: "24px"

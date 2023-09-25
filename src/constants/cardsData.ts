@@ -5,7 +5,7 @@ type TranslationKeyType = {
   translationPath: string
 };
 
-export type CardRawData = {
+type CardRawData = {
   groupName: IndexesGroupsNames;
   iconName: string;
   cardColor: string;
