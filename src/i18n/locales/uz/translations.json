@@ -231,10 +231,10 @@
   },
   "tips": {
     "air_quality": "Havo sifati",
-    "uv": "UV-Factor",
-    "noise_pollution": "Noise",
-    "humidity": "Humidity",
-    "pressure": "Air Pressure"
+    "uv": "UB faktori",
+    "noise_pollution": "Shovqin",
+    "humidity": "Namlik",
+    "pressure": "Bosim"
   },
   "indicators": "Boshqa parametrlar",
   "detailed_info": "Batafsil ma'lumot",
