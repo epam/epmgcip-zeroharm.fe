@@ -25,7 +25,6 @@
       "button": "Fikr qoldiring"
     },
     "form": {
-      "title": "Bizga yaxshiroq bo'lishga yordam bering",
       "required_notification": "Taklif yuborish uchun barcha kerakli maydonlarni to'ldiring!",
       "incorrectly_notification": "Maydonni to'g'ri to'ldiring.",
       "name": {
@@ -42,8 +41,7 @@
       },
       "checkbox": {
         "label": "Men javob olmoqchiman"
-      },
-      "button": "Ffikr-mulohaza yuborish"
+      }
     }
   },
   "lang": {
