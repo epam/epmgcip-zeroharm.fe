@@ -36,7 +36,10 @@ export const semanticTokens = {
       inputBg: { default: "gray.700", _light: "white" },
       text: { default: "white", _light: "navyBlue.300" },
       placeholder: { default: "gray.300", _light: "navyBlue.300" },
-      hintIcon: { default: "gray.400", _light: "navyBlue.300" }
+      hintIcon: { default: "gray.400", _light: "navyBlue.300" },
+      tooltipBg: { default: "white", _light: "navyBlue.600" },
+      tooltipText: { default: "gray.900", _light: "white" },
+      tooltipBorder: { default: "gray.100", _light: "navyBlue.400" }
     },
     borderColor: { default: "gray.700", _light: "navyBlue.200" },
     themeTogglerColor: {
