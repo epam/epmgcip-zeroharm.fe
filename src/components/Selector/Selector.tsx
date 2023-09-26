@@ -44,8 +44,7 @@ export const Selector = () => {
           leftIcon={
             <Icon
               as={IconLocal}
-              width={{ base: "20px", md: "24px" }}
-              height={{ base: "20px", md: "24px" }}
+              boxSize={{ base: "20px", md: "24px" }}
             />
           }
           width={{ base: "100%", lg: "auto" }}

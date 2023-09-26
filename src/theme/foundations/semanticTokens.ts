@@ -5,6 +5,13 @@ export const semanticTokens = {
     secondaryColor: { default: "gray.200", _light: "navyBlue.600" },
     secondaryBgColor: { default: "gray.900", _light: "white" },
     linkHoverAndActiveColor: { default: "yellow.500", _light: "blue.500" },
+    primaryButton: {
+      text: { default: "gray.950", _light: "white" },
+      hoverBg: { default: "gray.100", _light: "navyBlue.700" },
+      activeBg: { default: "gray.200", _light: "navyBlue.600" },
+      disabledBg: { default: "gray.700", _light: "navyBlue.200" },
+      disabledText: { default: "gray.500", _light: "white" }
+    },
     feedbackButtonColor: {
       gradient: {
         default: `
