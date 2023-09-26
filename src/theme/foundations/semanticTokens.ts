@@ -1,7 +1,5 @@
 export const semanticTokens = {
   colors: {
-    light: "white",
-    dark: "navyBlue.900",
     primaryColor: { default: "white", _light: "navyBlue.900" },
     primaryBgColor: { default: "gray.900", _light: "navyBlue.100" },
     secondaryColor: { default: "gray.200", _light: "navyBlue.600" },

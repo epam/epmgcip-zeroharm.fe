@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 import { useState, FC, ReactNode } from "react";
 import { Box, Flex } from "@chakra-ui/react";
 import { t } from "i18next";
@@ -24,7 +23,7 @@ export const Popup: FC<PopupType> = ({ isOpen = false, children }) => {
       position="relative"
       top="-10px"
       _before={{
-        content: '""',
+        content: "''",
         boxSize: "12px",
         left: "calc(50%-6px)",
         top: "-6px",

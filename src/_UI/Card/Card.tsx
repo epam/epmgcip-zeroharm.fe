@@ -30,7 +30,7 @@ const CardBody = chakra(Flex, {
     flexDirection: "column",
     gap: "16px",
     borderRadius: "0 0 8px 8px",
-    color: "dark",
+    color: "navyBlue.900",
     boxShadow: "primary",
     padding: {
       base: "16px",
@@ -40,7 +40,7 @@ const CardBody = chakra(Flex, {
 });
 const CardText = chakra(Flex, {
   baseStyle: {
-    color: "light",
+    color: "white",
     flexDirection: "column",
     justifyContent: "space-between",
     flex: "1"
