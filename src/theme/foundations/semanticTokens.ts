@@ -29,14 +29,14 @@ export const semanticTokens = {
       divider: { default: "gray.700", _light: "navyBlue.500" },
       border: { default: "gray.700", _light: "navyBlue.300" },
       borderFocus: { default: "white", _light: "navyBlue.300" },
+      borderGradient: {
+        default: "linear-gradient(90deg, #339944 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #7D5BA6 100%)",
+        _light: "blue.500"
+      },
       inputBg: { default: "gray.700", _light: "white" },
       placeholder: { default: "gray.300", _light: "navyBlue.300" }
     },
     borderColor: { default: "gray.700", _light: "navyBlue.200" },
-    borderGradientColor: {
-      default: "linear-gradient(90deg, #339944 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #7D5BA6 100%)",
-      _light: "linear-gradient(90deg, #61C554 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #9768CF 100%)"
-    },
     themeTogglerColor: {
       body: { default: "whiteAlpha.400", _light: "navyBlue.200" },
       iconMoon: { default: "white", _light: "navyBlue.200" },

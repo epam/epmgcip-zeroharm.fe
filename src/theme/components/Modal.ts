@@ -22,6 +22,7 @@ export const Modal = defineStyleConfig({
       },
       dialog: {
         position: "relative",
+        borderRadius: "8px",
         _after: {
           content: "''",
           position: "absolute",
@@ -32,7 +33,7 @@ export const Modal = defineStyleConfig({
           zIndex: "hide",
           margin: "-4px",
           borderRadius: "inherit",
-          background: "borderGradientColor"
+          background: "feedbackFormColor.borderGradient"
         }
       }
     },
