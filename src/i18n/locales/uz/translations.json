@@ -238,13 +238,22 @@
     ],
     "pressure": [
       {
-        "icon": "harm-disappointed-face"
+        "icon": "harm-disappointed-face",
+        "title": "Atmosfera bosimi past",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Yurak-qon tomir tizimi, nafas olish yo'llari, tayanch-harakat tizimi, qandli diabet kasalliklari bilan og'riganlar, kasallik yoki jarrohlik amaliyotidan keyin tiklanish davridagi odamlar, ob-havo o'zgarishiga ta'sirchan va qon bosimi past bo'lgan odamlar bezovta bo'lishlari mumkin. Bunga qarshi tibbiy ko’rsatmalar mavjud bo’lmasa, yengil jismoniy mashqlar bajarish, bir oz piyoda sayr qilish, kontrastli dush qabul qilish tavsiya etiladi. Faol jismoniy mashg’ulotlar bilan  vaqtinchalik shug’ullanmang, kam uglevodli taomlarni qabul qilishga harakat qiling."
       },
       {
-        "icon": "harm-slightly-smiling-face"
+        "icon": "harm-slightly-smiling-face",
+        "title": "Normal atmosfera bosimi",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Ajoyib salomatlik holati – bundan bahramand bo’ling!"
       },
       {
-        "icon": "harm-worried-face"
+        "icon": "harm-worried-face",
+        "title": "Atmosfera bosimi yuqori",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Allergiya, yurak-qon tomir kasalliklari, astma bilan og'rigan va qon bosimi baland bo’lgan odamlar, ayniqsa quruq, shamolsiz ob-havo sharoitlarida bezovta bo'lishlari mumkin. Kuchli jismoniy mashg’ulotlar bilan vaqtinchalik shug’ullanmang, ko'proq suv iching, iste’molingizga  tarkibida kaliy (K) va magniy (Mg) b’olgan mahsulot va vitaminlarni qo'shing."
       }
     ]
   },
@@ -271,7 +280,11 @@
     "pressure": "Havo bosimi ko'rsatkichi"
   },
   "tips": {
-    "air_quality": "Havo sifati"
+    "air_quality": "Havo sifati",
+    "uv": "UB faktori",
+    "noise_pollution": "Shovqin",
+    "humidity": "Namlik",
+    "pressure": "Bosim"
   },
   "indicators": "Boshqa parametrlar",
   "detailed_info": "Batafsil ma'lumot",
