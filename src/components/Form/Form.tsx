@@ -1,6 +1,6 @@
 import { Dispatch, FC, SetStateAction, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Box, FormErrorMessage, FormLabel, FormControl, Input, Button, Textarea, Checkbox, Flex, Tooltip, Divider } from "@chakra-ui/react";
+import { Box, FormErrorMessage, FormLabel, FormControl, Input, Icon, Button, Textarea, Checkbox, Flex, Tooltip, Divider } from "@chakra-ui/react";
 import { t } from "i18next";
 import { InputLabel } from "@UI";
 import { postData } from "@Services";
@@ -187,16 +187,13 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             placement="right-start"
             variant="light"
           >
-            <Box
-              w="6"
-              mr="2"
-              opacity=".5"
-            >
-              <Hint
-                width="20px"
-                height="20px"
-              />
-            </Box>
+          <Icon
+            as={Hint}
+            mr="10px"
+            width="20px"
+            height="20px"
+            color="feedbackFormColor.hintIcon"
+          />
           </Tooltip>
           <Checkbox
             size="lg"
