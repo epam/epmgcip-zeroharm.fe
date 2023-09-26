@@ -35,7 +35,7 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject",
-    "lint": "npx eslint src -c ./.eslintrc.json --ext .ts,.tsx",
+    "lint": "npx eslint src/**/*.ts{,x}",
     "prepare": "husky install"
   },
   "browserslist": {
@@ -57,13 +57,7 @@
     "@types/node": "^16.18.3",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
-    "@typescript-eslint/eslint-plugin": "^6.7.2",
-    "@typescript-eslint/parser": "^6.7.2",
     "eslint": "^8.26.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.3",
-    "prettier": "^2.7.1"
+    "husky": "^8.0.3"
   }
 }
