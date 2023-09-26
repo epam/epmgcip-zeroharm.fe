@@ -141,6 +141,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
         <Textarea
           h={100}
           bgColor="feedbackFormColor.inputBg"
+          color="feedbackFormColor.text"
           border={0}
           focusBorderColor="feedbackFormColor.borderFocus"
           id="feedback"

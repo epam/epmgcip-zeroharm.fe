@@ -14,6 +14,7 @@ export const Input = defineMultiStyleConfig({
           fontSize: "16px"
         },
         backgroundColor: "feedbackFormColor.inputBg",
+        color: "feedbackFormColor.text",
         _focus: {
           border: "1px",
           borderColor: "feedbackFormColor.borderFocus"
