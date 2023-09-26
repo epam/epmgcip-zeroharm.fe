@@ -51,7 +51,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
     <form onSubmit={handleSubmit(onSubmit)}>
       <Divider
         mb={4}
-        borderColor="gray.700"
+        background="feedbackFormColor.divider"
       />
       <FormControl
         isInvalid={Boolean(errors.name)}
@@ -140,12 +140,12 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
         />
         <Textarea
           h={100}
-          bgColor="gray.700"
+          bgColor="feedbackFormColor.inputBg"
           border={0}
-          focusBorderColor="white"
+          focusBorderColor="feedbackFormColor.borderFocus"
           id="feedback"
           placeholder={t("pages.form.feedback.placeholder")}
-          _placeholder={{ color: "gray.300", fontSize: "16px" }}
+          _placeholder={{ color: "feedbackFormColor.placeholder", fontSize: "16px" }}
           {...register("feedback", {
             minLength: {
               value: 6,
@@ -216,7 +216,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
       </FormControl>
       <Divider
         mb={4}
-        borderColor="gray.700"
+        background="feedbackFormColor.divider"
       />
       <Button
         isLoading={isSubmitting}

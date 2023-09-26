@@ -7,21 +7,22 @@ const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
 
 export const Input = defineMultiStyleConfig({
   variants: {
-    gray: {
+    default: {
       field: {
         _placeholder: {
-          color: "gray.300",
+          color: "feedbackFormColor.placeholder",
           fontSize: "16px"
         },
-        backgroundColor: "gray.700",
+        backgroundColor: "feedbackFormColor.inputBg",
         _focus: {
-          border: "1px"
+          border: "1px",
+          borderColor: "feedbackFormColor.borderFocus"
         }
       }
     }
   },
   defaultProps: {
     size: "lg",
-    variant: "gray"
+    variant: "default"
   }
 });
