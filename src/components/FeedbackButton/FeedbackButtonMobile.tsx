@@ -19,6 +19,7 @@ export const FeedbackButtonMobile: FC = () => {
       height="56px"
       bg="feedbackButtonMobileColor"
       _hover={{ bg: "feedbackButtonMobileColor" }}
+      zIndex="1"
       onClick={toggleIsFormModalActive}
     />
   );

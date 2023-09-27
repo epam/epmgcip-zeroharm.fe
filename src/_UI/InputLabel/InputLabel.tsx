@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Box, FormLabel, Flex, Tooltip, Text } from "@chakra-ui/react";
+import { FormLabel, Flex, Tooltip, Text, Icon } from "@chakra-ui/react";
 import { ReactComponent as Hint } from "@Assets/icons/stroke/harm-hint.svg";
 
 type InputLabelProps = {
@@ -24,16 +24,13 @@ export const InputLabel: FC<InputLabelProps> = (props) => {
         variant="light"
         lineHeight="small"
       >
-        <Box
-          w="6"
-          mr="2"
-          opacity=".5"
-        >
-          <Hint
-            width="20px"
-            height="20px"
-          />
-        </Box>
+        <Icon
+          as={Hint}
+          mr="10px"
+          width="20px"
+          height="20px"
+          color="feedbackFormColor.hintIcon"
+        />
       </Tooltip>
       <FormLabel
         mr={0}

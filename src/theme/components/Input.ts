@@ -5,22 +5,24 @@ const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(inputAnatomy.ke
 
 export const Input = defineMultiStyleConfig({
   variants: {
-    gray: {
+    default: {
       field: {
         height: { base: "44px", lg: "48px" },
         _placeholder: {
-          color: "gray.300",
+          color: "feedbackFormColor.placeholder",
           fontSize: { base: "small", lg: "medium" }
         },
-        backgroundColor: "gray.700",
+        backgroundColor: "feedbackFormColor.inputBg",
+        color: "feedbackFormColor.text",
         _focus: {
-          border: "1px"
+          border: "1px",
+          borderColor: "feedbackFormColor.borderFocus"
         }
       }
     }
   },
   defaultProps: {
     size: "lg",
-    variant: "gray"
+    variant: "default"
   }
 });

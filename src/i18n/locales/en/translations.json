@@ -75,7 +75,7 @@
       "button": "Leave feedback"
     },
     "form": {
-      "title": "Help us be better",
+      "title": "Help us become better",
       "required_notification": "Fill in all the required fields to submit your feedback!",
       "incorrectly_notification": "Fill in the field correctly",
       "name": {
@@ -102,6 +102,7 @@
   },
   "lang": {
     "code": "En",
+    "subject_name": "Language",
     "list": {
       "en": "English",
       "ru": "Russian",

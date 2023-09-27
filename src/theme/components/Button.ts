@@ -1,46 +1,61 @@
-import { StyleFunctionProps, defineStyleConfig } from "@chakra-ui/react";
+import { defineStyleConfig } from "@chakra-ui/react";
 
-const buttonDefaultStyles = {
-  bg: "white",
-  p: { base: "13px 24px", lg: "16px 24px"},
-  color: "gray.950",
-  borderRadius: "8px"
-};
-
-const buttonDefaultStyles__hover = {
-  bg: "gray.200"
-};
-
-const buttonDefaultStyles__active = {
-  bg: "gray.200"
-};
-
-const buttonDefaultStyles__disabled = {
-  bg: "gray.700",
-  color: "gray.500"
+const gradientPseudoStyles = {
+  content: "''",
+  display: "block",
+  position: "absolute",
+  width: "8px",
+  top: "0",
+  bottom: "0",
+  border: "2px solid"
 };
 
 export const Button = defineStyleConfig({
   variants: {
     default: {
-      ...buttonDefaultStyles,
-      _hover: { ...buttonDefaultStyles__hover },
-      _active: { ...buttonDefaultStyles__active },
+      bg: "primaryColor",
+      p: "16px",
+      color: "primaryButton.text",
+      borderRadius: "8px",
+      _hover: {
+        bg: "primaryButton.hoverBg"
+      },
+      _active: {
+        bg: "primaryButton.activeBg"
+      },
       _disabled: {
-        ...buttonDefaultStyles__disabled,
-        _hover: {
-          ...buttonDefaultStyles__disabled
-        }
+        bg: "primaryButton.disabledBg",
+        color: "primaryButton.disabledText",
+        pointerEvents: "none"
       }
     },
     gradient: {
-      paddingX: 6,
-      paddingY: 5,
-      border: "2px solid transparent",
+      paddingX: "24px",
+      paddingY: "12px",
+      height: "initial",
+      position: "relative",
+      background: "feedbackButtonColor.gradient",
+      backgroundPosition: "8px 0, 8px 100%",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "calc(100% - 8px - 8px) 2px",
+      border: "none",
       borderRadius: "8px",
-      backgroundImage: "linear-gradient(#252526, #252526), linear-gradient(90deg, #339944 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #7D5BA6 100%)",
-      backgroundOrigin: "border-box",
-      backgroundClip: "padding-box, border-box"
+      _before: {
+        ...gradientPseudoStyles,
+        left: "0",
+        borderColor: "feedbackButtonColor.pseudoBefore",
+        borderTopLeftRadius: "8px",
+        borderBottomLeftRadius: "8px",
+        borderRightColor: "transparent"
+      },
+      _after: {
+        ...gradientPseudoStyles,
+        right: "0",
+        borderColor: "feedbackButtonColor.pseudoAfter",
+        borderTopRightRadius: "8px",
+        borderBottomRightRadius: "8px",
+        borderLeftColor: "transparent"
+      }
     },
     link: {
       textDecoration: "underline",
@@ -50,13 +65,13 @@ export const Button = defineStyleConfig({
       fontSize: "inherit",
       lineHeight: "inherit"
     },
-    iconButton: ({colorMode}: StyleFunctionProps) => ({
+    iconButton: {
       minW: "none",
       minH: "none",
       bg: "transparent",
       _hover: { bg: "transparent" },
-      color: colorMode === "dark" ? "white" : "gray.900"
-    })
+      color: "primaryColor"
+    }
   },
   defaultProps: {
     variant: "default"

@@ -1,6 +1,6 @@
 import { Dispatch, FC, SetStateAction, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Box, FormErrorMessage, FormLabel, FormControl, Input, Button, Textarea, Checkbox, Flex, Tooltip, Divider } from "@chakra-ui/react";
+import { Box, FormErrorMessage, FormLabel, FormControl, Input, Icon, Button, Textarea, Checkbox, Flex, Tooltip, Divider } from "@chakra-ui/react";
 import { t } from "i18next";
 import { InputLabel } from "@UI";
 import { postData } from "@Services";
@@ -51,7 +51,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
     <form onSubmit={handleSubmit(onSubmit)}>
       <Divider
         mb="16px"
-        borderColor="gray.700"
+        background="feedbackFormColor.divider"
       />
       <FormControl
         isInvalid={Boolean(errors.name)}
@@ -145,12 +145,13 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
         />
         <Textarea
           h="100"
-          bgColor="gray.700"
+          bgColor="feedbackFormColor.inputBg"
+          color="feedbackFormColor.text"
           border="0"
-          focusBorderColor="white"
+          focusBorderColor="feedbackFormColor.borderFocus"
           id="feedback"
           placeholder={t("pages.form.feedback.placeholder")}
-          _placeholder={{ color: "gray.300", fontSize: "16px" }}
+          _placeholder={{ color: "feedbackFormColor.placeholder", fontSize: "16px" }}
           {...register("feedback", {
             minLength: {
               value: 6,
@@ -194,16 +195,13 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             variant="light"
             lineHeight="small"
           >
-            <Box
-              w="6"
-              mr="2"
-              opacity=".5"
-            >
-              <Hint
-                width="20px"
-                height="20px"
-              />
-            </Box>
+          <Icon
+            as={Hint}
+            mr="10px"
+            width="20px"
+            height="20px"
+            color="feedbackFormColor.hintIcon"
+          />
           </Tooltip>
           <Checkbox
             size="lg"
@@ -225,12 +223,15 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
       </FormControl>
       <Divider
         mb="4"
-        borderColor="gray.700"
+        background="feedbackFormColor.divider"
       />
       <Button
         isLoading={isSubmitting}
         type="submit"
         w={{base: "100%", md: "initial"}}
+        color="secondaryBgColor"
+        background="primaryColor"
+        _hover={{ background: "primaryColor" }}
       >
         { t("pages.form.button") }
       </Button>
