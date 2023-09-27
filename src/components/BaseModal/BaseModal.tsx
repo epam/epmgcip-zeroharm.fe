@@ -25,9 +25,9 @@ export const BaseModal: FC<ModalProps> = ({ isOpen, onClose, title, children }) 
           { title }
         </ModalHeader>
         <ModalCloseButton
-          fontSize="large"
-          top={{ base: "5", md: "4" }}
-          opacity=".5"
+          fontSize="20px"
+          top={{ base: "28px", md: "20px" }}
+          color="gray.500"
         />
         <ModalBody
           padding={{ base: "0px 12px 28px", md: "0px 20px 20px" }}
