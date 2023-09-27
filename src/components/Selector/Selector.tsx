@@ -2,8 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { Button, Flex, Heading, Text, Box, Icon } from "@chakra-ui/react";
 import { t } from "i18next";
 import { Popup } from "@UI";
-import { ReactComponent as IconLocal } from "@Assets/icons/filled/harm-local.svg";
 import { LocationMenu } from "../LocationMenu/LocationMenu";
+import { ReactComponent as IconLocal } from "@Assets/icons/filled/harm-local.svg";
 
 export const Selector = () => {
   const navigate = useNavigate();
