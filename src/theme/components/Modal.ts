@@ -18,7 +18,6 @@ export const Modal = defineStyleConfig({
         }
       },
       body: {
-        paddingBottom: 6,
         borderBottomRadius: {
           base: "0px",
           md: "4px"
@@ -35,12 +34,12 @@ export const Modal = defineStyleConfig({
         _after: {
           content: "''",
           position: "absolute",
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0,
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0",
           zIndex: "hide",
-          borderRadius: { base: 0, md: "8px" },
+          borderRadius: { base: "0px", md: "8px" },
           background: "feedbackFormColor.borderGradient"
         }
       }
@@ -48,23 +47,27 @@ export const Modal = defineStyleConfig({
     colored: {
       dialog: {
         bgColor: "feedbackFormColor.dialog",
-        borderWidth: 4,
+        borderWidth: "4px",
         borderRadius: "8px",
-        padding: 9
+        padding: {
+          base: "24px",
+          md: "36px"
+        },
+        margin: "0px 16px"
       },
       header: {
         bgColor: "inherit",
         display: "flex",
-        padding: 0,
+        padding: "0px",
         paddingBottom: "10px",
         marginBottom: "10px",
-        gap: 5,
+        gap: "20px",
         position: "relative",
         zIndex: "initial"
       },
       body: {
         bgColor: "inherit",
-        paddingY: 0
+        paddingY: "0px"
       }
     }
   },
