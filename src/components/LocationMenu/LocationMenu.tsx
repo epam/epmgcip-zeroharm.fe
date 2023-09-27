@@ -1,61 +1,73 @@
-import { FC, useState, useEffect } from "react";
-import { Menu, MenuList, MenuItem, useDisclosure } from "@chakra-ui/react";
+import { FC } from "react";
+import { chakra, Menu, useDisclosure, Flex, Text } from "@chakra-ui/react";
 import { useDetectWidth } from "@Hooks";
-import { getRequiredLocationOptionsByIds } from "@Helpers";
 import { locationsData, Location } from "@Constants";
-import { LocationMenuButtonContent } from "./LocationMenuButtonContent";
+import { LocationMenuButton } from "./LocationMenuButton";
+import { LocationMenuList } from "./LocationMenuList";
+import { useDataStore } from "@Store/useDataStore";
+import { resolveTranslationPath } from "@Helpers";
+import { useTranslation } from "react-i18next";
 
-const DEFAULT_LOCATIONID = "tash_furkata";
+const DEFAULT_LOCATION_ID = "tash_furkata";
+
+const MobileHeadingTip = chakra(Flex, {
+  baseStyle: {
+    w: "calc(100vw - var(--headerMobileHeight))",
+    h: "var(--headerMobileHeight)",
+    zIndex: "1300",
+    bgColor: "secondaryBgColor",
+    color: "menu.locationTip",
+    pl: "8px",
+    pos: "fixed",
+    top: "0",
+    left: "var(--headerMobileHeight)",
+    alignItems: "center"
+  }
+});
 
 export const LocationMenu: FC = () => {
-    const requiredLocationOptions = getRequiredLocationOptionsByIds(locationsData, [DEFAULT_LOCATIONID]);
-    const defaultAddress = requiredLocationOptions.find(({ locationId }) => locationId === DEFAULT_LOCATIONID) as Location;
+  const { t } = useTranslation();
+  const { locationId, availableLocationIds } = useDataStore();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isLargerThan600 } = useDetectWidth();
 
-    const [selectedLocation, setSelectedLocation] = useState<Location>(defaultAddress);
-    const [shouldShowAdditionalMenuContent, setShouldShowAdditionalMenuContent] = useState<boolean>(false);
+  const isMobileWidth = !isLargerThan600;
+  const isOpenOnMobile = isOpen && isMobileWidth;
+  const hasLocationOptions = availableLocationIds.length > 1;
 
-    const handleLocationChange = (location: Location) => {
-        setSelectedLocation(location);
-    };
+  const locationsOptions: Location[] = locationsData.map((locationData) => resolveTranslationPath(locationData));
+  const currentLocationName = locationsOptions.find(
+    (locationData) => locationData.locationId === locationId
+  )?.locationName ?? t(DEFAULT_LOCATION_ID);
 
-    useEffect(() => {
-        if(requiredLocationOptions.length > 1) setShouldShowAdditionalMenuContent(true);
-    }, []);
-
-    useEffect(() => {
-        if(defaultAddress) setSelectedLocation(defaultAddress);
-    }, [JSON.stringify(defaultAddress)]);
-
-    const { isOpen, onOpen, onClose } = useDisclosure();
-
-    const { isLargerThan600 } = useDetectWidth();
-    const isMobileWidth = !isLargerThan600;
-
-    return (
-        <Menu
-            autoSelect={false}
-            closeOnBlur={!isMobileWidth}
-            isOpen={isOpen}
-            onOpen={onOpen}
-            onClose={onClose}
-        >
-            <LocationMenuButtonContent
-                locationAddress={selectedLocation.locationName}
-                shouldShowArrowIcons={shouldShowAdditionalMenuContent}
-                isMenuListOpen={isOpen}
-                isMobileWidth={isMobileWidth}
-            />
-            { /* TODO: style MenuList and its items properly when more locations and mockups will be ready */ }
-            { shouldShowAdditionalMenuContent && <MenuList>
-                { requiredLocationOptions.map((location) => (
-                    <MenuItem
-                        key={location?.locationId}
-                        onClick={() => handleLocationChange(location)}
-                    >
-                        { location?.locationName }
-                    </MenuItem>
-                )) }
-            </MenuList> }
-        </Menu>
-    );
+  return (
+    <Menu
+      variant="location"
+      autoSelect={false}
+      closeOnBlur={!isMobileWidth}
+      isOpen={isOpen}
+      onOpen={hasLocationOptions ? onOpen : undefined}
+      onClose={onClose}
+    >
+      <LocationMenuButton
+        locationName={currentLocationName}
+        isOpenOnMobile={isOpenOnMobile}
+        isOpen={isOpen}
+      />
+      {
+        isOpenOnMobile && (
+          <MobileHeadingTip>
+            <Text noOfLines={1}>
+              { currentLocationName }
+            </Text>
+          </MobileHeadingTip>
+        )
+      }
+      <LocationMenuList
+        locationsOptions={locationsOptions}
+        isOpenOnMobile={isOpenOnMobile}
+        isOpen={isOpen}
+      />
+    </Menu>
+  );
 };

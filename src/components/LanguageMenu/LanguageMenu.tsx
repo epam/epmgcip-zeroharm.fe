@@ -33,6 +33,7 @@ export const LanguageMenu: FC = () => {
 
   return (
     <Menu
+      variant="language"
       strategy="fixed"
       autoSelect={false}
       closeOnBlur={!isMobileWidth}

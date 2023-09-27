@@ -17,14 +17,16 @@ type AirComponentsType = {
 };
 
 interface IDataStore {
-  location: string;
+  locationId: string;
+  availableLocationIds: string[];
   language: string;
   isFormModalActive: boolean;
   parameter: string;
   parameters: ParametersType,
   fetchingDate: string;
   airComponents: AirComponentsType;
-  setLocation: (location: string) => void;
+  setLocationId: (locationId: string) => void;
+  setAvailableLocationIds: (availableLocationIds: string[]) => void;
   setLanguage: (language: string) => void;
   toggleIsFormModalActive: () => void;
   setParameter: (parameter: string) => void;
@@ -51,14 +53,16 @@ const airComponentsInitial = {
 export const useDataStore = create<IDataStore>()(
   persist(
     (set) => ({
-      location: "",
+      locationId: "tash_furkata",
+      availableLocationIds: ["tash_furkata"],
       language: "",
       isFormModalActive: false,
       parameter: "",
       parameters: parametersInitial,
       fetchingDate: "",
       airComponents: airComponentsInitial,
-      setLocation: (location: string) => set({ location }),
+      setLocationId: (locationId) => set({ locationId }),
+      setAvailableLocationIds: (availableLocationIds) => set({ availableLocationIds }),
       setLanguage: (language: string) => set({ language }),
       toggleIsFormModalActive: () => set((state) => ({ isFormModalActive: !state.isFormModalActive })),
       setParameter: (parameter: string) => set({ parameter }),

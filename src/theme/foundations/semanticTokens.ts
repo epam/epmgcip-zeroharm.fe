@@ -55,11 +55,20 @@ export const semanticTokens = {
       iconSun: { default: "whiteAlpha.400", _light: "navyBlue.900" }
     },
     languageMenu: {
-      button: { default: "gray.100", _light: "navyBlue.600" },
+      button: { default: "gray.100", _light: "navyBlue.600" }
+      // listBgBase: { default: "gray.900", _light: "white" },
+      // listBgMd: { default: "gray.700", _light: "white" },
+      // listBorder: { default: "gray.600", _light: "navyBlue.200" }
+    },
+    menu: {
+      listBorder: { default: "gray.600", _light: "navyBlue.200" },
       listBgBase: { default: "gray.900", _light: "white" },
       listBgMd: { default: "gray.700", _light: "white" },
       itemBg: { default: "gray.600", _light: "navyBlue.100" },
-      listBorder: { default: "gray.600", _light: "navyBlue.200" }
+      languageButtonActive: { default: "gray.100", _light: "navyBlue.600" },
+      locationButtonBg: { default: "gray.700", _light: "white" },
+      locationButtonIcon: { default: "gray.400", _light: "navyBlue.200" },
+      locationTip: { default: "gray.600", _light: "navyBlue.500" }
     }
   }
 };
