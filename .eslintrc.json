@@ -4,6 +4,7 @@
     "react-app/jest"
   ],
   "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
     "quotes": 2,
     "no-trailing-spaces": 2,
     "no-console": 1,
@@ -15,7 +16,6 @@
     "eol-last": 2,
     "semi": 2,
     "semi-spacing": 2,
-    "no-unused-vars": "off",
     "comma-dangle": 2,
     "comma-spacing": 2,
     "key-spacing": 2,
