@@ -21,10 +21,7 @@ export const Header: FC = () => {
       as="header"
       pos="fixed"
       zIndex="sticky"
-      h={{
-        base: "var(--headerMobileHeight)",
-        md: "var(--headerHeight)"
-      }}
+      h={{ base: "var(--headerMobileHeight)", md: "var(--headerHeight)" }}
     >
       <Flex
         h="full"

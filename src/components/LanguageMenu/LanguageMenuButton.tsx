@@ -47,7 +47,6 @@ export const LanguageMenuButton: FC<LanguageMenuButtonProps> = ({ isOpenOnMobile
               <ChakraIcon
                 as={isOpen ? ArrowUpIcon : ArrowDownIcon}
                 width="16px"
-                display={isOpenOnMobile ? "none" : "initial"}
               />
             </>
           )

@@ -20,10 +20,10 @@ export const Tooltip = defineStyleConfig({
     light: {
       fontSize: "small",
       lineHeight: "small",
-      background: "white",
-      color: "gray.950",
-      borderColor: "gray.100",
-      [$arrowBg.variable]: "white"
+      background: "feedbackFormColor.tooltipBg",
+      color: "feedbackFormColor.tooltipText",
+      borderColor: "feedbackFormColor.tooltipBorder",
+      [$arrowBg.variable]: "colors.feedbackFormColor.tooltipBg"
     },
     big: {
       fontSize: "small",
