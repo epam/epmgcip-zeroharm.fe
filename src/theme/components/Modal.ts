@@ -62,25 +62,6 @@ export const Modal = defineStyleConfig({
       body: {
         paddingY: 0
       }
-    },
-    drawer: ({ colorMode }) => {
-      const isDark = colorMode === "dark";
-
-      return {
-        dialog: {
-          bgColor: isDark ? "gray.900" : "blue.50",
-          boxShadow: "none"
-        },
-        header: {
-          bgColor: "transparent"
-        },
-        body: {
-          bgColor: "transparent"
-        },
-        footer: {
-          bgColor: "transparent"
-        }
-      };
     }
   },
   defaultProps: {
