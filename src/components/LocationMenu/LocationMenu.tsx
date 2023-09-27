@@ -1,29 +1,15 @@
 import { FC } from "react";
-import { chakra, Menu, useDisclosure, Flex, Text } from "@chakra-ui/react";
+import { Menu, useDisclosure, Text } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import { useDetectWidth } from "@Hooks";
 import { locationsData, Location } from "@Constants";
-import { LocationMenuButton } from "./LocationMenuButton";
-import { LocationMenuList } from "./LocationMenuList";
 import { useDataStore } from "@Store/useDataStore";
 import { resolveTranslationPath } from "@Helpers";
-import { useTranslation } from "react-i18next";
+import { LocationMenuButton } from "./LocationMenuButton";
+import { LocationMenuList } from "./LocationMenuList";
+import { MobileMenuHeadingTip } from "../MenuCommonComponents/MobileMenuHeadingTip";
 
 const DEFAULT_LOCATION_ID = "tash_furkata";
-
-const MobileHeadingTip = chakra(Flex, {
-  baseStyle: {
-    w: "calc(100vw - var(--headerMobileHeight))",
-    h: "var(--headerMobileHeight)",
-    zIndex: "1300",
-    bgColor: "secondaryBgColor",
-    color: "menu.locationTip",
-    pl: "8px",
-    pos: "fixed",
-    top: "0",
-    left: "var(--headerMobileHeight)",
-    alignItems: "center"
-  }
-});
 
 export const LocationMenu: FC = () => {
   const { t } = useTranslation();
@@ -56,11 +42,14 @@ export const LocationMenu: FC = () => {
       />
       {
         isOpenOnMobile && (
-          <MobileHeadingTip>
-            <Text noOfLines={1}>
+          <MobileMenuHeadingTip>
+            <Text
+              noOfLines={1}
+              color="menu.locationTip"
+            >
               { currentLocationName }
             </Text>
-          </MobileHeadingTip>
+          </MobileMenuHeadingTip>
         )
       }
       <LocationMenuList

@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { MenuButton, Icon, HStack, Text, Center } from "@chakra-ui/react";
+import { MenuButton, Icon, HStack, Text } from "@chakra-ui/react";
 import { useDetectPage } from "@Hooks";
-import { ReactComponent as LeftArrowIcon } from "@Assets/icons/stroke/harm-arrow-left.svg";
+import { BackwardSign } from "../MenuCommonComponents/BackwardSign";
 import { ReactComponent as ArrowDownIcon } from "@Assets/icons/stroke/harm-arrow-down.svg";
 import { ReactComponent as ArrowUpIcon } from "@Assets/icons/stroke/harm-arrow-up.svg";
 import { ReactComponent as MapPointIcon } from "@Assets/icons/stroke/harm-local-two.svg";
@@ -23,21 +23,7 @@ export const LocationMenuButton: FC<LocationMenuButtonProps> = ({ locationName, 
         p={{ base: "10px 12px", md: isMainPage ? "16px" : "10px 12px", lg: "16px" }}
         boxShadow="primary"
       >
-        {
-          isOpenOnMobile && (
-            <Center
-              zIndex="1300"
-              pos="fixed"
-              top="0"
-              left="0"
-              bgColor="secondaryBgColor"
-              h="var(--headerMobileHeight)"
-              w="var(--headerMobileHeight)"
-            >
-              <LeftArrowIcon width="20px" />
-            </Center>
-          )
-        }
+        { isOpenOnMobile && <BackwardSign /> }
         <Icon
           as={MapPointIcon}
           boxSize={{ base: "16px", md: isMainPage ? "20px" : "16px", lg: "20px" }}

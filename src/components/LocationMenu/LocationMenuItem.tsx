@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { MenuItem, Text } from "@chakra-ui/react";
 import { Location } from "@Constants";
-import { useDataStore } from "../../store/useDataStore";
+import { useDataStore } from "@Store/useDataStore";
 
 type LocationMenuItemProps = {
   locationOption: Location;
