@@ -62,21 +62,6 @@ export const Modal = defineStyleConfig({
       body: {
         paddingY: 0
       }
-    },
-    drawer: {
-      dialog: {
-        bgColor: "primaryBgColor",
-        boxShadow: "none"
-      },
-      header: {
-        bgColor: "transparent"
-      },
-      body: {
-        bgColor: "transparent"
-      },
-      footer: {
-        bgColor: "transparent"
-      }
     }
   },
   defaultProps: {
