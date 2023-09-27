@@ -2,16 +2,11 @@ import { defineStyleConfig } from "@chakra-ui/react";
 
 export const Modal = defineStyleConfig({
   baseStyle: {
-    header: {
-      width: "initial",
-      position: "initial",
-      zIndex: "initial"
-    },
-    dialog: {
-      bgColor: "gray.900"
-    },
     body: {
-      bgColor: "gray.900"
+      bgColor: "primaryBgColor"
+    },
+    overlay: {
+      bgColor: "feedbackFormColor.overlay"
     }
   },
   variants: {
@@ -22,14 +17,12 @@ export const Modal = defineStyleConfig({
         paddingTop: 5,
         paddingBottom: 4
       },
-      overlay: {
-        bgColor: "rgba(37,37,38, 0.9)"
-      },
       body: {
         paddingBottom: 6
       },
       dialog: {
         position: "relative",
+        borderRadius: "8px",
         _after: {
           content: "''",
           position: "absolute",
@@ -40,17 +33,19 @@ export const Modal = defineStyleConfig({
           zIndex: "hide",
           margin: "-4px",
           borderRadius: "inherit",
-          backgroundImage:
-            "linear-gradient(90deg, #339944 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #7D5BA6 100%);"
+          background: "feedbackFormColor.borderGradient"
         }
       }
     },
     colored: {
       dialog: {
+        bgColor: "feedbackFormColor.dialog",
         borderWidth: 4,
+        borderRadius: "8px",
         padding: 9
       },
       header: {
+        bgColor: "inherit",
         display: "flex",
         padding: 0,
         paddingBottom: "10px",
@@ -60,6 +55,7 @@ export const Modal = defineStyleConfig({
         zIndex: "initial"
       },
       body: {
+        bgColor: "inherit",
         paddingY: 0
       }
     }
