@@ -36,8 +36,8 @@ export const InputLabel: FC<InputLabelProps> = (props) => {
         mr="2px"
         mb="0px"
         htmlFor={htmlFor}
-        fontSize={{base: "small", lg: "medium"}}
-        lineHeight={{base: "small", lg: "medium"}}
+        fontSize={{ base: "small", lg: "medium" }}
+        lineHeight={{ base: "small", lg: "medium" }}
       >
         { label }
       </FormLabel>

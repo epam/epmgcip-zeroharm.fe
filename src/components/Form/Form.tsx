@@ -226,8 +226,8 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
         w={{ base: "100%", md: "initial" }}
         h="initial"
         p={{ base: "13px 24px", lg: "16px 24px" }}
-        fontSize={{ base: "small", lg: "medium"}}
-        lineHeight={{ base: "small", lg: "medium"}}
+        fontSize={{ base: "small", lg: "medium" }}
+        lineHeight={{ base: "small", lg: "medium" }}
       >
         { t("pages.form.button") }
       </Button>
