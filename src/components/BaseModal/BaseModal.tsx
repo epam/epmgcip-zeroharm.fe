@@ -20,13 +20,16 @@ export const BaseModal: FC<ModalProps> = ({ isOpen, onClose, title, children }) 
         <ModalHeader
           fontSize={{ base: "22px", lg: "headers.h3" }}
           lineHeight={{ base: "headers.h4", lg: "headers.h3" }}
-          p={{ base: "28px 12px 16px", lg: "20px 20px 16px" }}
+          p={{ base: "28px 12px 16px", md: "20px 20px 16px" }}
         >
           { title }
         </ModalHeader>
         <ModalCloseButton
-          fontSize="20px"
-          top={{ base: "28px", md: "20px" }}
+          fontSize="large"
+          width="24px"
+          height="24px"
+          top={{ base: "36px", md: "24px" }}
+          right={{ base: "16px", md: "24px"}}
           color="gray.500"
         />
         <ModalBody
