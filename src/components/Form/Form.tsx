@@ -229,9 +229,6 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
         isLoading={isSubmitting}
         type="submit"
         w={{base: "100%", md: "initial"}}
-        color="secondaryBgColor"
-        background="primaryColor"
-        _hover={{ background: "primaryColor" }}
       >
         { t("pages.form.button") }
       </Button>
