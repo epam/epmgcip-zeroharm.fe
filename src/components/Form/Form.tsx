@@ -53,9 +53,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
         mb="16px"
         background="feedbackFormColor.divider"
       />
-      <FormControl
-        isInvalid={Boolean(errors.name)}
-      >
+      <FormControl isInvalid={Boolean(errors.name)}>
         <InputLabel
           tooltipText={t("pages.form.name.tip")}
           label={t("pages.form.name.label")}
@@ -91,9 +89,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           }
         </Box>
       </FormControl>
-      <FormControl
-        isInvalid={Boolean(errors.email)}
-      >
+      <FormControl isInvalid={Boolean(errors.email)}>
         <InputLabel
           tooltipText={t("pages.form.email.tip")}
           label={t("pages.form.email.label")}
@@ -133,9 +129,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           }
         </Box>
       </FormControl>
-      <FormControl
-        isInvalid={Boolean(errors.feedback)}
-      >
+      <FormControl isInvalid={Boolean(errors.feedback)}>
         <InputLabel
           tooltipText={t("pages.form.feedback.tip")}
           label={t("pages.form.feedback.label")}
@@ -143,7 +137,8 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           required
         />
         <Textarea
-          h="100"
+          h="100px"
+          p="12px"
           bgColor="feedbackFormColor.inputBg"
           color="feedbackFormColor.text"
           border="0"
@@ -183,9 +178,9 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           </FormErrorMessage>
         </Box>
       </FormControl>
-      <FormControl pb="4">
+      <FormControl>
         <Flex
-          mb="2"
+          mb="16px"
           align="center"
         >
           <Tooltip
@@ -197,7 +192,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           >
           <Icon
             as={Hint}
-            mr="10px"
+            mr="15px"
             width="20px"
             height="20px"
             color="feedbackFormColor.hintIcon"
@@ -206,7 +201,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           <Checkbox
             size="lg"
             spacing="20px"
-            mr="2"
+            mr="10px"
             id="isResponseRequired"
             {...register("isResponseRequired")}
           />
@@ -222,13 +217,13 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
         </Flex>
       </FormControl>
       <Divider
-        mb="4"
+        mb="16px"
         background="feedbackFormColor.divider"
       />
       <Button
         isLoading={isSubmitting}
         type="submit"
-        w={{base: "100%", md: "initial"}}
+        w={{ base: "100%", md: "initial" }}
       >
         { t("pages.form.button") }
       </Button>
