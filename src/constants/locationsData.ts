@@ -1,14 +1,14 @@
 export type Location = {
-    locationId: string;
-    locationName: string;
+  locationId: string;
+  locationName: string;
 }
 
 export type LocationRawData = {
-    locationId: string;
-    locationName: {
-      translationPath: string;
-    };
+  locationId: string;
+  locationName: {
+    translationPath: string;
   };
+};
 
 export const locationsData: LocationRawData[] = [
   {

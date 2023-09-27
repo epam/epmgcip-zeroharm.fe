@@ -54,12 +54,6 @@ export const semanticTokens = {
       iconMoon: { default: "white", _light: "navyBlue.200" },
       iconSun: { default: "whiteAlpha.400", _light: "navyBlue.900" }
     },
-    languageMenu: {
-      button: { default: "gray.100", _light: "navyBlue.600" }
-      // listBgBase: { default: "gray.900", _light: "white" },
-      // listBgMd: { default: "gray.700", _light: "white" },
-      // listBorder: { default: "gray.600", _light: "navyBlue.200" }
-    },
     menu: {
       listBorder: { default: "gray.600", _light: "navyBlue.200" },
       listBgBase: { default: "gray.900", _light: "white" },
@@ -70,5 +64,8 @@ export const semanticTokens = {
       locationButtonIcon: { default: "gray.400", _light: "navyBlue.200" },
       locationTip: { default: "gray.600", _light: "navyBlue.500" }
     }
+  },
+  shadows: {
+    primary: { _light: "0px 0px 15px 0px rgba(80, 116, 153, 0.25)" }
   }
 };

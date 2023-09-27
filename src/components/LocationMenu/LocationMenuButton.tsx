@@ -21,6 +21,7 @@ export const LocationMenuButton: FC<LocationMenuButtonProps> = ({ locationName, 
         spacing="12px"
         h={{ base: "44px", md: isMainPage ? "56px" : "44px", lg: "56px" }}
         p={{ base: "10px 12px", md: isMainPage ? "16px" : "10px 12px", lg: "16px" }}
+        boxShadow="primary"
       >
         {
           isOpenOnMobile && (
