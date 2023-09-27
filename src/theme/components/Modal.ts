@@ -12,13 +12,17 @@ export const Modal = defineStyleConfig({
   variants: {
     default: {
       header: {
-        borderTopRadius: "lg",
-        paddingX: 5,
-        paddingTop: 5,
-        paddingBottom: 4
+        borderTopRadius: {
+          base: "0px",
+          md: "4px"
+        }
       },
       body: {
-        paddingBottom: 6
+        paddingBottom: 6,
+        borderBottomRadius: {
+          base: "0px",
+          md: "4px"
+        }
       },
       dialog: {
         maxW: {
@@ -27,7 +31,6 @@ export const Modal = defineStyleConfig({
           lg: "512px"
         },
         position: "relative",
-        borderRadius: "8px",
         _after: {
           content: "''",
           position: "absolute",
@@ -37,7 +40,7 @@ export const Modal = defineStyleConfig({
           left: 0,
           zIndex: "hide",
           margin: "-4px",
-          borderRadius: { base: 0, md: "inherit" },
+          borderRadius: { base: 0, md: "8px" },
           background: "feedbackFormColor.borderGradient"
         }
       }

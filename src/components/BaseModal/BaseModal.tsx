@@ -21,7 +21,6 @@ export const BaseModal: FC<ModalProps> = ({ isOpen, onClose, title, children }) 
           fontSize={{ base: "22px", lg: "headers.h3" }}
           lineHeight={{ base: "headers.h4", lg: "headers.h3" }}
           p={{ base: "28px 12px 16px", lg: "20px 20px 16px" }}
-          borderTopRadius={{ base: 0, md: "lg" }}
         >
           { title }
         </ModalHeader>
@@ -32,7 +31,6 @@ export const BaseModal: FC<ModalProps> = ({ isOpen, onClose, title, children }) 
         />
         <ModalBody
           padding={{ base: "0px 12px 28px", md: "0px 20px 20px" }}
-          borderBottomRadius={{ base: 0, md: "lg" }}
         >
           { children }
         </ModalBody>
