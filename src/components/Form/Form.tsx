@@ -55,7 +55,6 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
       />
       <FormControl
         isInvalid={Boolean(errors.name)}
-        mb="2"
       >
         <InputLabel
           tooltipText={t("pages.form.name.tip")}
@@ -77,12 +76,13 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           })}
         />
         <Box
-          minH={{ base: 7, lg: 8 }}
-          pt="1"
+          minH={{ base: "18px", lg: "24px" }}
+          mt="2px"
+          mb="8px"
         >
           {
             <FormErrorMessage
-              mt="0"
+              mt="0px"
               fontSize={{ base: "small", lg: "medium" }}
               lineHeight={{ base: "small", lg: "medium" }}
             >
@@ -93,7 +93,6 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
       </FormControl>
       <FormControl
         isInvalid={Boolean(errors.email)}
-        mb={2}
       >
         <InputLabel
           tooltipText={t("pages.form.email.tip")}
@@ -119,8 +118,9 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           })}
         />
         <Box
-          minH={{ base: 7, lg: 8 }}
-          pt="1"
+          minH={{ base: "18px", lg: "24px" }}
+          mt="2px"
+          mb="8px"
         >
           {
             <FormErrorMessage
@@ -135,7 +135,6 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
       </FormControl>
       <FormControl
         isInvalid={Boolean(errors.feedback)}
-        mb="2"
       >
         <InputLabel
           tooltipText={t("pages.form.feedback.tip")}
@@ -171,8 +170,9 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           })}
         />
         <Box
-          minH={{ base: 7, lg: 8 }}
-          pt="1"
+          minH={{ base: "18px", lg: "24px" }}
+          mt="2px"
+          mb="8px"
         >
           <FormErrorMessage
             mt="0"
