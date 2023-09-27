@@ -2,14 +2,12 @@ import { FC } from "react";
 import { Menu, useDisclosure, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { useDetectWidth } from "@Hooks";
-import { locationsData, Location } from "@Constants";
+import { locationsData, type Location, DEFAULT_LOCATION_ID } from "@Constants";
 import { useDataStore } from "@Store/useDataStore";
 import { resolveTranslationPath } from "@Helpers";
 import { LocationMenuButton } from "./LocationMenuButton";
 import { LocationMenuList } from "./LocationMenuList";
 import { MobileMenuHeadingTip } from "../MenuCommonComponents/MobileMenuHeadingTip";
-
-const DEFAULT_LOCATION_ID = "tash_furkata";
 
 export const LocationMenu: FC = () => {
   const { t } = useTranslation();

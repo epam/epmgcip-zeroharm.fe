@@ -4,7 +4,8 @@ import { ReactComponent as LeftArrowIcon } from "@Assets/icons/stroke/harm-arrow
 
 export const BackwardSign: FC = () => (
   <Center
-    zIndex="1300"
+    pointerEvents="all"
+    zIndex="13000"
     pos="fixed"
     top="0"
     left="0"

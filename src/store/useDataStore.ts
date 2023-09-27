@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { DEFAULT_LOCATION_ID } from "@Constants";
 
 type ParametersType = {
   "air_quality": number,
@@ -53,8 +54,8 @@ const airComponentsInitial = {
 export const useDataStore = create<IDataStore>()(
   persist(
     (set) => ({
-      locationId: "tash_furkata",
-      availableLocationIds: ["tash_furkata"],
+      locationId: DEFAULT_LOCATION_ID,
+      availableLocationIds: [DEFAULT_LOCATION_ID],
       language: "",
       isFormModalActive: false,
       parameter: "",

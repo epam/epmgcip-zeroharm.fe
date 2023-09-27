@@ -10,6 +10,8 @@ export type LocationRawData = {
   };
 };
 
+export const DEFAULT_LOCATION_ID = "tash_furkata";
+
 export const locationsData: LocationRawData[] = [
   {
     locationId: "tash_furkata",

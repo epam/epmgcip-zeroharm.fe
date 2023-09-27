@@ -10,6 +10,7 @@ type LocationMenuListProps = {
 }
 
 export const LocationMenuList: FC<LocationMenuListProps> = ({ locationsOptions, isOpenOnMobile, isOpen }) => {
+
   return (
     <MenuList
       w={{ base: "100vw", md: "472px", lg: "613px" }}
