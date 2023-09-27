@@ -1,4 +1,14 @@
-import { LocationRawData } from "@/types";
+export type Location = {
+    locationId: string;
+    locationName: string;
+}
+
+export type LocationRawData = {
+    locationId: string;
+    locationName: {
+      translationPath: string;
+    };
+  };
 
 export const locationsData: LocationRawData[] = [
   {

@@ -1,4 +1,4 @@
-import { Location, LocationRawData } from "@/types";
+import { Location, LocationRawData } from "@Constants";
 import { resolveTranslationPath } from "@Helpers";
 
 export const getRequiredLocationOptionsByIds = (locationRawData: LocationRawData[], requiredLocationIds: string[]): Location[] => {

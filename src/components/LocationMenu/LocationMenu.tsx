@@ -2,8 +2,7 @@ import { FC, useState, useEffect } from "react";
 import { Menu, MenuList, MenuItem, useDisclosure } from "@chakra-ui/react";
 import { useDetectWidth } from "@Hooks";
 import { getRequiredLocationOptionsByIds } from "@Helpers";
-import { Location } from "@Types";
-import { locationsData } from "@Constants";
+import { locationsData, Location } from "@Constants";
 import { LocationMenuButtonContent } from "./LocationMenuButtonContent";
 
 const DEFAULT_LOCATIONID = "tash_furkata";

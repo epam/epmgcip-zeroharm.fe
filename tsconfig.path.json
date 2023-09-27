@@ -22,8 +22,7 @@
       "@Store/*": ["./src/store/*"],
       "@Store": ["./src/store"],
       "@Theme/*": ["./src/theme/*"],
-      "@Theme": ["./src/theme"],
-      "@Types": ["./src/types"]
+      "@Theme": ["./src/theme"]
     }
   }
 }
