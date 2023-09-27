@@ -1,12 +1,5 @@
 import { FC, ReactNode } from "react";
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody
-} from "@chakra-ui/react";
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody } from "@chakra-ui/react";
 
 type ModalProps = {
   isOpen: boolean;
@@ -15,28 +8,35 @@ type ModalProps = {
   children: ReactNode;
 };
 
-export const BaseModal: FC<ModalProps> = ({
-  isOpen,
-  onClose,
-  title,
-  children
-}) => {
+export const BaseModal: FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      size="lg"
       isCentered
     >
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader fontSize="headers.h3">{ title }</ModalHeader>
+        <ModalHeader
+          fontSize={{ base: "22px", lg: "headers.h3" }}
+          lineHeight={{ base: "headers.h4", lg: "headers.h3" }}
+          p={{ base: "28px 12px 16px", md: "20px 20px 16px" }}
+        >
+          { title }
+        </ModalHeader>
         <ModalCloseButton
-          size="lg"
-          top="3"
-          opacity=".5"
+          fontSize="large"
+          width="24px"
+          height="24px"
+          top={{ base: "36px", md: "24px" }}
+          right={{ base: "16px", md: "24px"}}
+          color="gray.500"
         />
-        <ModalBody borderBottomRadius="lg">{ children }</ModalBody>
+        <ModalBody
+          padding={{ base: "0px 12px 28px", md: "0px 20px 20px" }}
+        >
+          { children }
+        </ModalBody>
       </ModalContent>
     </Modal>
   );
