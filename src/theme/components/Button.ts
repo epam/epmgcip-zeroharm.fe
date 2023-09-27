@@ -1,4 +1,4 @@
-import { StyleFunctionProps, defineStyleConfig } from "@chakra-ui/react";
+import { defineStyleConfig } from "@chakra-ui/react";
 
 const gradientPseudoStyles = {
   content: "''",
@@ -10,37 +10,23 @@ const gradientPseudoStyles = {
   border: "2px solid"
 };
 
-const buttonDefaultStyles = {
-  bg: "white",
-  p: "16px",
-  color: "gray.950",
-  borderRadius: "8px"
-};
-
-const buttonDefaultStyles__hover = {
-  bg: "gray.200"
-};
-
-const buttonDefaultStyles__active = {
-  bg: "gray.200"
-};
-
-const buttonDefaultStyles__disabled = {
-  bg: "gray.700",
-  color: "gray.500"
-};
-
 export const Button = defineStyleConfig({
   variants: {
     default: {
-      ...buttonDefaultStyles,
-      _hover: { ...buttonDefaultStyles__hover },
-      _active: { ...buttonDefaultStyles__active },
+      bg: "primaryColor",
+      p: "16px",
+      color: "primaryButton.text",
+      borderRadius: "8px",
+      _hover: {
+        bg: "primaryButton.hoverBg"
+      },
+      _active: {
+        bg: "primaryButton.activeBg"
+      },
       _disabled: {
-        ...buttonDefaultStyles__disabled,
-        _hover: {
-          ...buttonDefaultStyles__disabled
-        }
+        bg: "primaryButton.disabledBg",
+        color: "primaryButton.disabledText",
+        pointerEvents: "none"
       }
     },
     gradient: {
@@ -79,13 +65,13 @@ export const Button = defineStyleConfig({
       fontSize: "inherit",
       lineHeight: "inherit"
     },
-    iconButton: ({colorMode}: StyleFunctionProps) => ({
+    iconButton: {
       minW: "none",
       minH: "none",
       bg: "transparent",
       _hover: { bg: "transparent" },
-      color: colorMode === "dark" ? "white" : "gray.900"
-    })
+      color: "primaryColor"
+    }
   },
   defaultProps: {
     variant: "default"
