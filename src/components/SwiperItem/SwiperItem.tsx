@@ -46,13 +46,7 @@ export const SwiperItem: FC<SwiperItemDataT> = (props) => {
         <Text
           fontSize={{ base: "small", md: "medium" }}
           lineHeight={{ base: "small", md: "medium" }}
-          sx={{
-            display: "-webkit-box",
-            WebkitBoxOrient: "vertical",
-            WebkitLineClamp: "7",
-            overflow: "hidden",
-            textOverflow: "ellipsis"
-          }}
+          noOfLines={7}
         >
           { text }
         </Text>
