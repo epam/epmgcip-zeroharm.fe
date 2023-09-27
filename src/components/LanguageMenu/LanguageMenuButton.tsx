@@ -15,16 +15,15 @@ export const LanguageMenuButton: FC<LanguageMenuButtonProps> = ({ isOpenOnMobile
   const { i18n, t } = useTranslation();
 
   return (
-    <MenuButton
-      zIndex="1"
-      pos={isOpenOnMobile ? "fixed" : "initial"}
-      top="0"
-      left="0"
-    >
+    <MenuButton>
       <HStack spacing={isOpenOnMobile ? "0" : "8px"}>
         {
           isOpenOnMobile && (
             <Center
+              zIndex="1"
+              pos="fixed"
+              top="0"
+              left="0"
               bgColor="secondaryBgColor"
               h="var(--headerMobileHeight)"
               w="var(--headerMobileHeight)"
@@ -33,24 +32,18 @@ export const LanguageMenuButton: FC<LanguageMenuButtonProps> = ({ isOpenOnMobile
             </Center>
           )
         }
-        {
-          !isOpenOnMobile && (
-            <>
-              <Icon
-                type="flags"
-                color="none"
-                name={`harm-lang-flag-${i18n.language}`}
-              />
-              <Text display={{ base: "none", lg: "initial" }}>
-                { t("lang.code") }
-              </Text>
-              <ChakraIcon
-                as={isOpen ? ArrowUpIcon : ArrowDownIcon}
-                width="16px"
-              />
-            </>
-          )
-        }
+        <Icon
+          type="flags"
+          color="none"
+          name={`harm-lang-flag-${i18n.language}`}
+        />
+        <Text display={{ base: "none", lg: "initial" }}>
+          { t("lang.code") }
+        </Text>
+        <ChakraIcon
+          as={isOpen ? ArrowUpIcon : ArrowDownIcon}
+          width="16px"
+        />
       </HStack>
     </MenuButton>
   );
