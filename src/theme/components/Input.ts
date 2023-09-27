@@ -8,6 +8,8 @@ export const Input = defineMultiStyleConfig({
     default: {
       field: {
         height: { base: "44px", lg: "48px" },
+        padding: "12px",
+        borderRadius: "8px",
         _placeholder: {
           color: "feedbackFormColor.placeholder",
           fontSize: { base: "small", lg: "medium" }
@@ -22,7 +24,6 @@ export const Input = defineMultiStyleConfig({
     }
   },
   defaultProps: {
-    size: "lg",
     variant: "default"
   }
 });
