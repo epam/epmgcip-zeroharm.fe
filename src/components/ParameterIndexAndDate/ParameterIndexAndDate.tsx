@@ -69,13 +69,14 @@ export const ParameterIndexAndDate: FC<ParameterIndexAndDateProps> = ({ cardData
           {
             indexGroups?.map(({ groupName, range: { max } }) => {
               const color = indexGroupColorsMap[groupName];
+              const isBiggerThanMax = currentParameterValue > max;
 
               return (
                 <ParameterProgress
                   key={groupName}
                   withPointer={cardColor === color}
                   value={currentParameterValue}
-                  max={currentParameterValue > max ? currentParameterValue : max}
+                  max={isBiggerThanMax ? currentParameterValue : max}
                   color={color}
                 />
               );

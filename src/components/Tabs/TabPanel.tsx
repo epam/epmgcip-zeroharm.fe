@@ -14,6 +14,7 @@ type TabPanelProps = {
 export const TabPanel: FC<TabPanelProps> = ({ currentParameter }) => {
   const { currentParameterValue } = useParameterData(currentParameter);
   const card = getCardData(currentParameterValue, currentParameter) as CardData;
+  const shouldDisplayAirQualityIndicators = currentParameter === ParametersMap.AIR_QUALITY;
 
   return (
     <ChakraTabPanel
@@ -29,7 +30,7 @@ export const TabPanel: FC<TabPanelProps> = ({ currentParameter }) => {
         currentParameter={currentParameter}
         currentParameterValue={currentParameterValue}
       />
-      { currentParameter === ParametersMap.AIR_QUALITY && <AirQualityIndicators /> }
+      { shouldDisplayAirQualityIndicators && <AirQualityIndicators /> }
     </ChakraTabPanel>
   );
 };
