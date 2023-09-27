@@ -26,11 +26,12 @@ export const Modal = defineStyleConfig({
       },
       dialog: {
         maxW: {
-          base: "367px",
+          base: "375px",
           md: "440px",
           lg: "512px"
         },
         position: "relative",
+        padding: "4px",
         _after: {
           content: "''",
           position: "absolute",
@@ -39,7 +40,6 @@ export const Modal = defineStyleConfig({
           bottom: 0,
           left: 0,
           zIndex: "hide",
-          margin: "-4px",
           borderRadius: { base: 0, md: "8px" },
           background: "feedbackFormColor.borderGradient"
         }
