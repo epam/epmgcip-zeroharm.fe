@@ -23,7 +23,6 @@ export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, iconSiz
       hasArrow
       placement={placement}
       shouldWrapChildren
-      bgColor="parameter.tooltipBg"
       sx={{
         maxH: "auto",
         minW: { base: "343px", md: "300px" },
