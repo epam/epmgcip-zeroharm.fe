@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Menu, useDisclosure, Text } from "@chakra-ui/react";
+import { Menu, useDisclosure } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { useDetectWidth } from "@Hooks";
 import { locationsData, type Location, DEFAULT_LOCATION_ID } from "@Constants";
@@ -41,13 +41,8 @@ export const LocationMenu: FC = () => {
       />
       {
         isOpenOnMobile && (
-          <MobileMenuHeadingTip>
-            <Text
-              noOfLines={1}
-              color="menu.locationTip"
-            >
-              { currentLocationName }
-            </Text>
+          <MobileMenuHeadingTip color="menu.locationTip">
+            { currentLocationName }
           </MobileMenuHeadingTip>
         )
       }

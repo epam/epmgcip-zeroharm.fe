@@ -27,7 +27,6 @@ interface IDataStore {
   fetchingDate: string;
   airComponents: AirComponentsType;
   setLocationId: (locationId: string) => void;
-  setAvailableLocationIds: (availableLocationIds: string[]) => void;
   setLanguage: (language: string) => void;
   toggleIsFormModalActive: () => void;
   setParameter: (parameter: string) => void;
@@ -63,7 +62,6 @@ export const useDataStore = create<IDataStore>()(
       fetchingDate: "",
       airComponents: airComponentsInitial,
       setLocationId: (locationId) => set({ locationId }),
-      setAvailableLocationIds: (availableLocationIds) => set({ availableLocationIds }),
       setLanguage: (language: string) => set({ language }),
       toggleIsFormModalActive: () => set((state) => ({ isFormModalActive: !state.isFormModalActive })),
       setParameter: (parameter: string) => set({ parameter }),

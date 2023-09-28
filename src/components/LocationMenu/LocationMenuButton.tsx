@@ -30,7 +30,11 @@ export const LocationMenuButton: FC<LocationMenuButtonProps> = ({ hasLocationOpt
           boxSize={{ base: "16px", md: isMainPage ? "20px" : "16px", lg: "20px" }}
           color="menu.locationButtonIcon"
         />
-        <Text noOfLines={1}>
+        <Text
+          noOfLines={1}
+          textAlign="left"
+          wordBreak="break-all"
+        >
           { locationName }
         </Text>
         {
