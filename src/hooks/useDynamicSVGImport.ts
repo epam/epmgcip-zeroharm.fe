@@ -17,7 +17,7 @@ export const useDynamicSVGImport = (type: string, name: string) => {
       }
     };
     importIcon();
-  }, [name, type]);
+  }, [name]);
 
   return SvgIcon;
 };
