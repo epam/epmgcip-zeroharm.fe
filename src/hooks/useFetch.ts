@@ -26,7 +26,7 @@ export const useFetch = (path: string, onComplete: (data: any) => void) => {
     return () => {
       controller.abort();
     };
-  }, [path]);
+  }, [onComplete, path]);
 
   return fetchedData;
 };

@@ -22,7 +22,7 @@ export const useDetectContentOverflow = (direction: "vertical" | "horizontal") =
     return () => {
       resizeObserver.disconnect();
     };
-  }, []);
+  }, [direction]);
 
   return { ref, isContentOverflowing };
 };
