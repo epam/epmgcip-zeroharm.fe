@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { IndicatorWrapper } from "@UI";
 import { getParameterGroupName } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
-import { airComponentsNamesList, parametersGroupColorsMap, type ParameterGroupName, ParametersMap } from "@Constants";
+import { airComponentsList, parametersGroupColorsMap, type ParameterGroupName, ParametersMap } from "@Constants";
 import { Indicator } from "./Indicator";
 
 export const AirQualityIndicators: FC = () => {
@@ -26,7 +26,7 @@ export const AirQualityIndicators: FC = () => {
         gap={{ base: "4px", lg: "8px" }}
       >
         {
-          airComponentsNamesList.map((airComponent) => {
+          airComponentsList.map((airComponent) => {
             const airComponentValue = airComponents[airComponent];
             const groupName = getParameterGroupName(airComponentValue, ParametersMap.AIR_QUALITY);
             const color = parametersGroupColorsMap[groupName as ParameterGroupName];
