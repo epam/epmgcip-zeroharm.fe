@@ -34,6 +34,7 @@ export const LocationMenu: FC = () => {
       onClose={onClose}
     >
       <LocationMenuButton
+        hasLocationOptions={hasLocationOptions}
         locationName={currentLocationName}
         isOpenOnMobile={isOpenOnMobile}
         isOpen={isOpen}

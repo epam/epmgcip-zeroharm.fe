@@ -1,7 +1,8 @@
 import { FC } from "react";
 import { MenuList } from "@chakra-ui/react";
-import { languagesData, menuListMotionVariants, menuListMotionVariantOptions } from "@Constants";
+import { languagesData } from "@Constants";
 import { resolveTranslationPath } from "@Helpers";
+import { menuListMotionVariants, menuListMotionVariantOptions } from "@Theme/transitions/menuListMotionVariants";
 import { LanguageMenuItem } from "./LanguageMenuItem";
 
 type LanguageMenuListProps = {

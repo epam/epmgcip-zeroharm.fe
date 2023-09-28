@@ -7,12 +7,13 @@ import { ReactComponent as ArrowUpIcon } from "@Assets/icons/stroke/harm-arrow-u
 import { ReactComponent as MapPointIcon } from "@Assets/icons/stroke/harm-local-two.svg";
 
 type LocationMenuButtonProps = {
+  hasLocationOptions: boolean;
   locationName: string;
   isOpenOnMobile: boolean;
   isOpen: boolean;
 };
 
-export const LocationMenuButton: FC<LocationMenuButtonProps> = ({ locationName, isOpenOnMobile, isOpen }) => {
+export const LocationMenuButton: FC<LocationMenuButtonProps> = ({ hasLocationOptions, locationName, isOpenOnMobile, isOpen }) => {
   const { isMainPage } = useDetectPage();
 
   return (
@@ -32,12 +33,16 @@ export const LocationMenuButton: FC<LocationMenuButtonProps> = ({ locationName, 
         <Text noOfLines={1}>
           { locationName }
         </Text>
-        <Icon
-          as={isOpen ? ArrowUpIcon : ArrowDownIcon}
-          width={{ base: "16px", md: isMainPage ? "24px" : "16px", lg: "24px" }}
-          color="menu.locationButtonIcon"
-          ml="auto"
-        />
+        {
+          hasLocationOptions && (
+            <Icon
+              as={isOpen ? ArrowUpIcon : ArrowDownIcon}
+              width={{ base: "16px", md: isMainPage ? "24px" : "16px", lg: "24px" }}
+              color="menu.locationButtonIcon"
+              ml="auto"
+            />
+          )
+        }
       </HStack>
     </MenuButton>
   );

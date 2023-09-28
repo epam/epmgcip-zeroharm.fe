@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { MenuList } from "@chakra-ui/react";
-import { Location, menuListMotionVariants, menuListMotionVariantOptions } from "@Constants";
+import { Location } from "@Constants";
+import { menuListMotionVariants, menuListMotionVariantOptions } from "@Theme/transitions/menuListMotionVariants";
 import { LocationMenuItem } from "./LocationMenuItem";
 
 type LocationMenuListProps = {

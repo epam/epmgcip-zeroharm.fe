@@ -11,4 +11,3 @@ export * from "./notificationData";
 export * from "./common";
 export * from "./routesData";
 export * from "./aboutPageData";
-export * from "./menuListMotionVariants";
