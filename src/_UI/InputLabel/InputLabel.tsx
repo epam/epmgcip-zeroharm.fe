@@ -14,7 +14,7 @@ export const InputLabel: FC<InputLabelProps> = (props) => {
 
   return (
     <Flex
-      mb={2}
+      mb="8px"
       align="center"
     >
       <Tooltip
@@ -22,6 +22,7 @@ export const InputLabel: FC<InputLabelProps> = (props) => {
         hasArrow
         placement="right-start"
         variant="light"
+        lineHeight="small"
       >
         <Icon
           as={Hint}
@@ -32,9 +33,11 @@ export const InputLabel: FC<InputLabelProps> = (props) => {
         />
       </Tooltip>
       <FormLabel
-        mr={0}
-        mb={0}
+        mr="2px"
+        mb="0px"
         htmlFor={htmlFor}
+        fontSize={{ base: "small", lg: "medium" }}
+        lineHeight={{ base: "small", lg: "medium" }}
       >
         { label }
       </FormLabel>

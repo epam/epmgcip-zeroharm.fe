@@ -50,13 +50,10 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Divider
-        mb={4}
+        mb="16px"
         background="feedbackFormColor.divider"
       />
-      <FormControl
-        isInvalid={Boolean(errors.name)}
-        mb={2}
-      >
+      <FormControl isInvalid={Boolean(errors.name)}>
         <InputLabel
           tooltipText={t("pages.form.name.tip")}
           label={t("pages.form.name.label")}
@@ -70,29 +67,29 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             validate: {
               required,
               pattern: (value) => {
-                if (value && watchResponse && !/^[A-Za-z А-Яа-я-,'.]{2,50}$/.test(value)) return invalidInputErrorMessage;
+                if (value && watchResponse && !/^[A-Za-z А-Яа-я-,'.]{2,50}$/.test(value))
+                  return invalidInputErrorMessage;
               }
             }
           })}
         />
         <Box
-          minH="6"
-          pt="1"
+          minH={{ base: "18px", lg: "24px" }}
+          mt="2px"
+          mb="8px"
         >
           {
             <FormErrorMessage
-              mt="0"
-              fontSize="sm"
+              mt="0px"
+              fontSize={{ base: "small", lg: "medium" }}
+              lineHeight={{ base: "small", lg: "medium" }}
             >
               { errors.name && errors.name.message?.toString() }
             </FormErrorMessage>
           }
         </Box>
       </FormControl>
-      <FormControl
-        isInvalid={Boolean(errors.email)}
-        mb={2}
-      >
+      <FormControl isInvalid={Boolean(errors.email)}>
         <InputLabel
           tooltipText={t("pages.form.email.tip")}
           label={t("pages.form.email.label")}
@@ -106,32 +103,33 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             validate: {
               required,
               pattern: (value) => {
-                if (value && watchResponse && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value)) return invalidInputErrorMessage;
+                if (value && watchResponse && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value))
+                  return invalidInputErrorMessage;
               },
               length: (value) => {
-                if (watchResponse && value.length < 7 && value.length > 50) return invalidInputErrorMessage;
+                if (watchResponse && value.length < 7 && value.length > 50)
+                  return invalidInputErrorMessage;
               }
             }
           })}
         />
         <Box
-          minH="6"
-          pt="1"
+          minH={{ base: "18px", lg: "24px" }}
+          mt="2px"
+          mb="8px"
         >
           {
             <FormErrorMessage
               mt="0"
-              fontSize="sm"
+              fontSize={{ base: "small", lg: "medium" }}
+              lineHeight={{ base: "small", lg: "medium" }}
             >
               { errors.email && errors.email.message?.toString() }
             </FormErrorMessage>
           }
         </Box>
       </FormControl>
-      <FormControl
-        isInvalid={Boolean(errors.feedback)}
-        mb={2}
-      >
+      <FormControl isInvalid={Boolean(errors.feedback)}>
         <InputLabel
           tooltipText={t("pages.form.feedback.tip")}
           label={t("pages.form.feedback.label")}
@@ -139,10 +137,11 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           required
         />
         <Textarea
-          h={100}
+          h="100px"
+          p="12px"
           bgColor="feedbackFormColor.inputBg"
           color="feedbackFormColor.text"
-          border={0}
+          border="0"
           focusBorderColor="feedbackFormColor.borderFocus"
           id="feedback"
           placeholder={t("pages.form.feedback.placeholder")}
@@ -166,20 +165,22 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           })}
         />
         <Box
-          minH="6"
-          pt="1"
+          minH={{ base: "18px", lg: "24px" }}
+          mt="2px"
+          mb="8px"
         >
           <FormErrorMessage
             mt="0"
-            fontSize="sm"
+            fontSize={{ base: "small", lg: "medium" }}
+            lineHeight={{ base: "small", lg: "medium" }}
           >
             { errors.feedback && errors.feedback.message?.toString() }
           </FormErrorMessage>
         </Box>
       </FormControl>
-      <FormControl pb={4}>
+      <FormControl>
         <Flex
-          mb={2}
+          mb="16px"
           align="center"
         >
           <Tooltip
@@ -187,6 +188,7 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
             hasArrow
             placement="right-start"
             variant="light"
+            lineHeight="small"
           >
           <Icon
             as={Hint}
@@ -199,30 +201,33 @@ export const Form: FC<FormProps> = ({ submitForm, setIsSubmittedWithResponse }) 
           <Checkbox
             size="lg"
             spacing="20px"
-            mr="2"
+            mr="10px"
             id="isResponseRequired"
             {...register("isResponseRequired")}
           />
           <FormLabel
-            mr={0}
-            mb={0}
+            mr="0"
+            mb="0"
             htmlFor="isResponseRequired"
+            fontSize={{ base: "small", lg: "medium" }}
+            lineHeight={{ base: "small", lg: "medium" }}
           >
             { t("pages.form.checkbox.label") }
           </FormLabel>
         </Flex>
       </FormControl>
       <Divider
-        mb={4}
+        mb="16px"
         background="feedbackFormColor.divider"
       />
       <Button
         isLoading={isSubmitting}
         type="submit"
-        padding="16px 24px"
-        color="secondaryBgColor"
-        background="primaryColor"
-        _hover={{ background: "primaryColor" }}
+        w={{ base: "100%", md: "initial" }}
+        h="initial"
+        p={{ base: "13px 24px", lg: "16px 24px" }}
+        fontSize={{ base: "small", lg: "medium" }}
+        lineHeight={{ base: "small", lg: "medium" }}
       >
         { t("pages.form.button") }
       </Button>
