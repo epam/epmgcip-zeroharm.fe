@@ -60,6 +60,7 @@ export const semanticTokens = {
       listBgMd: { default: "gray.700", _light: "white" },
       itemBg: { default: "gray.600", _light: "navyBlue.100" },
       listBorder: { default: "gray.600", _light: "navyBlue.200" }
-    }
+    },
+    iconCirclesColor: { default: "gray.700", _light: "navyBlue.300" }
   }
 };
