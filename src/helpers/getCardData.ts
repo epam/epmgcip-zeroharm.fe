@@ -1,10 +1,10 @@
 import { CardData, type Parameter } from "@Constants";
-import { getParameterIndexGroupName } from "./getParameterIndexGroupName";
+import { getParameterGroupName } from "./getParameterGroupName";
 import { getParameterCardRawData } from "./getParameterCardData";
 import { resolveTranslationPath } from "./resolveTranslationPath";
 
 export const getCardData = (parameterValue: number, parameterName: Parameter): CardData | undefined => {
-  const groupName = getParameterIndexGroupName(parameterValue, parameterName);
+  const groupName = getParameterGroupName(parameterValue, parameterName);
 
   if (!groupName) return;
 

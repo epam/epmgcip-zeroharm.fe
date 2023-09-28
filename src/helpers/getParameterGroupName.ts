@@ -1,7 +1,7 @@
-import { parametersIndexGroupRanges, type Parameter } from "@Constants";
+import { parametersGroupsRanges, type Parameter } from "@Constants";
 
-export const getParameterIndexGroupName = (parameterValue: number, parameterName: Parameter) => {
-  const parameterGroupRanges = parametersIndexGroupRanges[parameterName];
+export const getParameterGroupName = (parameterValue: number, parameterName: Parameter) => {
+  const parameterGroupRanges = parametersGroupsRanges[parameterName];
 
   const firstGroup = parameterGroupRanges?.[0];
   if (parameterValue <= firstGroup.range.min && parameterValue >= 0) {

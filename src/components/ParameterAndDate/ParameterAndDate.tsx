@@ -2,23 +2,23 @@ import { FC } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { IndicatorWrapper } from "@UI";
-import { CardData, Parameter, indexGroupColorsMap, parametersIndexGroupRanges } from "@Constants";
+import { CardData, Parameter, parametersGroupColorsMap, parametersGroupsRanges } from "@Constants";
 import { useDataStore } from "@Store/useDataStore";
 import { TextWithTooltip } from "../TextWithTooltip/TextWithTooltip";
 import { ParameterProgress } from "./ParameterProgress";
 
-type ParameterIndexAndDateProps = {
+type ParameterAndDateProps = {
   cardData: CardData;
   currentParameter: Parameter;
   currentParameterValue: number;
 }
 
-export const ParameterIndexAndDate: FC<ParameterIndexAndDateProps> = ({ cardData, currentParameter, currentParameterValue }) => {
+export const ParameterAndDate: FC<ParameterAndDateProps> = ({ cardData, currentParameter, currentParameterValue }) => {
   const { t } = useTranslation();
   const { fetchingDate } = useDataStore();
 
   const { heading, cardColor } = cardData;
-  const indexGroups = parametersIndexGroupRanges[currentParameter];
+  const parameterGroupRange = parametersGroupsRanges[currentParameter];
 
   return (
     <IndicatorWrapper>
@@ -67,8 +67,8 @@ export const ParameterIndexAndDate: FC<ParameterIndexAndDateProps> = ({ cardData
           gap="5px"
         >
           {
-            indexGroups?.map(({ groupName, range: { max } }) => {
-              const color = indexGroupColorsMap[groupName];
+            parameterGroupRange?.map(({ groupName, range: { max } }) => {
+              const color = parametersGroupColorsMap[groupName];
               const isBiggerThanMax = currentParameterValue > max;
 
               return (

@@ -1,5 +1,5 @@
-export * from "./parameterIndexGroupData";
-export * from "./parametersIndexGroupRanges";
+export * from "./parametersGroupsData";
+export * from "./parametersGroupsRanges";
 export * from "./cardsData";
 export * from "./tabsData";
 export * from "./locationsData";

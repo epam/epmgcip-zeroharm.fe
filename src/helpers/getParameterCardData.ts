@@ -1,9 +1,9 @@
-import { parametersCardsRawData, IndexesGroupsNames, type Parameter } from "@Constants";
+import { parametersCardsRawData, ParametersGroupsNames, type Parameter } from "@Constants";
 
-export const getParameterCardRawData = (parameterName: Parameter, indexGroupName: IndexesGroupsNames) => {
+export const getParameterCardRawData = (parameterName: Parameter, parameterGroupName: ParametersGroupsNames) => {
   const parameterCardsRawData = parametersCardsRawData[parameterName];
 
-  const cardRawData = parameterCardsRawData.find(({ groupName }) => groupName === indexGroupName);
+  const cardRawData = parameterCardsRawData.find(({ groupName }) => groupName === parameterGroupName);
 
   return cardRawData;
 };

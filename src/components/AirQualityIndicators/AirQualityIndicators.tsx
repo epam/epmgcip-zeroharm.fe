@@ -2,9 +2,9 @@ import { FC } from "react";
 import { Flex, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { IndicatorWrapper } from "@UI";
-import { getParameterIndexGroupName } from "@Helpers";
+import { getParameterGroupName } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
-import { airComponentsNamesList, indexGroupColorsMap, IndexesGroupsNames, ParametersMap } from "@Constants";
+import { airComponentsNamesList, parametersGroupColorsMap, ParametersGroupsNames, ParametersMap } from "@Constants";
 import { Indicator } from "./Indicator";
 
 export const AirQualityIndicators: FC = () => {
@@ -27,11 +27,11 @@ export const AirQualityIndicators: FC = () => {
       >
         {
           airComponentsNamesList.map((airComponent) => {
-            const particleValue = airComponents[airComponent];
-            const groupName = getParameterIndexGroupName(particleValue, ParametersMap.AIR_QUALITY);
-            const color = indexGroupColorsMap[groupName as IndexesGroupsNames];
-            const roundedParticleValue = +particleValue.toFixed(3);
-            const value = isNaN(roundedParticleValue) ? 0 : roundedParticleValue;
+            const airComponentValue = airComponents[airComponent];
+            const groupName = getParameterGroupName(airComponentValue, ParametersMap.AIR_QUALITY);
+            const color = parametersGroupColorsMap[groupName as ParametersGroupsNames];
+            const roundedAirComponentValue = +airComponentValue.toFixed(3);
+            const value = isNaN(roundedAirComponentValue) ? 0 : roundedAirComponentValue;
 
             return (
               <Indicator

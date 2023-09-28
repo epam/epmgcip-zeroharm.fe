@@ -4,7 +4,7 @@ import { CardData, Parameter, ParametersMap } from "@Constants";
 import { GroupingCard} from "@UI";
 import { getCardData } from "@Helpers";
 import { useParameterData } from "@Hooks";
-import { ParameterIndexAndDate } from "../ParameterIndexAndDate/ParameterIndexAndDate";
+import { ParameterAndDate } from "../ParameterAndDate/ParameterAndDate";
 import { AirQualityIndicators } from "../AirQualityIndicators/AirQualityIndicators";
 
 type TabPanelProps = {
@@ -25,7 +25,7 @@ export const TabPanel: FC<TabPanelProps> = ({ currentParameter }) => {
       p="0"
     >
       <GroupingCard cardData={card} />
-      <ParameterIndexAndDate
+      <ParameterAndDate
         cardData={card}
         currentParameter={currentParameter}
         currentParameterValue={currentParameterValue}

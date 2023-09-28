@@ -1,5 +1,5 @@
 export * from "./getDate";
-export * from "./getParameterIndexGroupName";
+export * from "./getParameterGroupName";
 export * from "./getParameterCardData";
 export * from "./resolveTranslationPath";
 export * from "./getCardData";

@@ -1,5 +1,5 @@
 import { useDataStore } from "@Store/useDataStore";
-import { Parameter } from "../constants";
+import { type Parameter } from "@Constants";
 
 export const useParameterData = (currentParameter: Parameter) => {
   const { parameters } = useDataStore();
