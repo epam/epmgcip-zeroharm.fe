@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 export type Parameter = "air_quality" | "humidity" | "pressure";
 export type Parameters = Record<Parameter, number>;
 

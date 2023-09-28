@@ -1,20 +1,22 @@
-export enum ParametersGroupsNames {
-  GREEN = "green",
-  YELLOW = "yellow",
-  ORANGE = "orange",
-  LIGHT_RED = "light_red",
-  RED = "red",
-  PURPLE = "purple",
-  BLUE = "blue"
+export type ParameterGroupName = "GREEN" | "YELLOW" | "ORANGE" | "LIGHT_RED" | "RED" | "PURPLE" | "BLUE";
+
+export const parametersGroupsNames: Record<ParameterGroupName, ParameterGroupName> = {
+  GREEN: "GREEN",
+  YELLOW: "YELLOW",
+  ORANGE: "ORANGE",
+  LIGHT_RED: "LIGHT_RED",
+  RED: "RED",
+  PURPLE: "PURPLE",
+  BLUE: "BLUE"
 };
 
-export const parametersGroupColorsMap = {
-  [ParametersGroupsNames.GREEN]: "green",
-  [ParametersGroupsNames.YELLOW]: "yellow",
-  [ParametersGroupsNames.ORANGE]: "orange",
-  [ParametersGroupsNames.LIGHT_RED]: "red",
-  [ParametersGroupsNames.RED]: "ruby",
-  [ParametersGroupsNames.PURPLE]: "violet",
-  [ParametersGroupsNames.BLUE]: "blue"
+export const parametersGroupColorsMap: Record<ParameterGroupName, string> = {
+  GREEN: "green",
+  YELLOW: "yellow",
+  ORANGE: "orange",
+  LIGHT_RED: "red",
+  RED: "ruby",
+  PURPLE: "violet",
+  BLUE: "blue"
 };
 

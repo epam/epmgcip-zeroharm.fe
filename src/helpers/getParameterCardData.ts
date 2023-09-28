@@ -1,6 +1,6 @@
-import { parametersCardsRawData, ParametersGroupsNames, type Parameter } from "@Constants";
+import { parametersCardsRawData, type ParameterGroupName, type Parameter } from "@Constants";
 
-export const getParameterCardRawData = (parameterName: Parameter, parameterGroupName: ParametersGroupsNames) => {
+export const getParameterCardRawData = (parameterName: Parameter, parameterGroupName: ParameterGroupName) => {
   const parameterCardsRawData = parametersCardsRawData[parameterName];
 
   const cardRawData = parameterCardsRawData.find(({ groupName }) => groupName === parameterGroupName);

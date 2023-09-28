@@ -1,4 +1,4 @@
-import { ParametersGroupsNames, parametersGroupColorsMap } from "./parametersGroupsData";
+import { parametersGroupsNames, type ParameterGroupName, parametersGroupColorsMap } from "./parametersGroupsData";
 import { type Parameter, ParametersMap } from "./parametersData";
 
 type TranslationKeyType = {
@@ -6,7 +6,7 @@ type TranslationKeyType = {
 };
 
 type CardRawData = {
-  groupName: ParametersGroupsNames;
+  groupName: ParameterGroupName;
   iconName: string;
   cardColor: string;
   heading: TranslationKeyType;
@@ -15,10 +15,12 @@ type CardRawData = {
   text: TranslationKeyType;
 };
 
+const { GREEN, YELLOW, ORANGE, LIGHT_RED, RED, PURPLE, BLUE } = parametersGroupsNames;
+
 export type ParameterCardRawData = CardRawData & { parameter: Parameter }
 
 export type CardData = {
-  groupName: ParametersGroupsNames;
+  groupName: ParameterGroupName;
   iconName: string;
   cardColor: string;
   heading: string;
@@ -30,9 +32,9 @@ export type CardData = {
 
 export const cardsRawDataForAirQuality: CardRawData[] = [
   {
-    groupName: ParametersGroupsNames.GREEN,
+    groupName: GREEN,
     iconName: "harm-slightly-smiling-face",
-    cardColor: parametersGroupColorsMap[ParametersGroupsNames.GREEN],
+    cardColor: parametersGroupColorsMap[GREEN],
     tip: {
       translationPath: "tips.air_quality"
     },
@@ -47,8 +49,8 @@ export const cardsRawDataForAirQuality: CardRawData[] = [
     }
   },
   {
-    groupName: ParametersGroupsNames.YELLOW,
-    cardColor: parametersGroupColorsMap[ParametersGroupsNames.YELLOW],
+    groupName: YELLOW,
+    cardColor: parametersGroupColorsMap[YELLOW],
     iconName: "harm-neutral-face",
     tip: {
       translationPath: "tips.air_quality"
@@ -64,8 +66,8 @@ export const cardsRawDataForAirQuality: CardRawData[] = [
     }
   },
   {
-    groupName: ParametersGroupsNames.ORANGE,
-    cardColor: parametersGroupColorsMap[ParametersGroupsNames.ORANGE],
+    groupName: ORANGE,
+    cardColor: parametersGroupColorsMap[ORANGE],
     iconName: "harm-worried-face",
     tip: {
       translationPath: "tips.air_quality"
@@ -81,8 +83,8 @@ export const cardsRawDataForAirQuality: CardRawData[] = [
     }
   },
   {
-    groupName: ParametersGroupsNames.LIGHT_RED,
-    cardColor: parametersGroupColorsMap[ParametersGroupsNames.LIGHT_RED],
+    groupName: LIGHT_RED,
+    cardColor: parametersGroupColorsMap[LIGHT_RED],
     iconName: "harm-more-worried-face",
     tip: {
       translationPath: "tips.air_quality"
@@ -98,8 +100,8 @@ export const cardsRawDataForAirQuality: CardRawData[] = [
     }
   },
   {
-    groupName: ParametersGroupsNames.RED,
-    cardColor: parametersGroupColorsMap[ParametersGroupsNames.RED],
+    groupName: RED,
+    cardColor: parametersGroupColorsMap[RED],
     iconName: "harm-disappointed-face",
     tip: {
       translationPath: "tips.air_quality"
@@ -115,8 +117,8 @@ export const cardsRawDataForAirQuality: CardRawData[] = [
     }
   },
   {
-    groupName: ParametersGroupsNames.PURPLE,
-    cardColor: parametersGroupColorsMap[ParametersGroupsNames.PURPLE],
+    groupName: PURPLE,
+    cardColor: parametersGroupColorsMap[PURPLE],
     iconName: "harm-loudly-crying-face",
     tip: {
       translationPath: "tips.air_quality"
@@ -135,8 +137,8 @@ export const cardsRawDataForAirQuality: CardRawData[] = [
 
 export const cardsRawDataForAirPressure: CardRawData[] = [
   {
-    groupName: ParametersGroupsNames.BLUE,
-    cardColor: parametersGroupColorsMap[ParametersGroupsNames.BLUE],
+    groupName: BLUE,
+    cardColor: parametersGroupColorsMap[BLUE],
     iconName: "harm-disappointed-face",
     tip: {
       translationPath: "tips.pressure"
@@ -152,8 +154,8 @@ export const cardsRawDataForAirPressure: CardRawData[] = [
     }
   },
   {
-    groupName: ParametersGroupsNames.GREEN,
-    cardColor: parametersGroupColorsMap[ParametersGroupsNames.GREEN],
+    groupName: GREEN,
+    cardColor: parametersGroupColorsMap[GREEN],
     iconName: "harm-slightly-smiling-face",
     tip: {
       translationPath: "tips.pressure"
@@ -169,8 +171,8 @@ export const cardsRawDataForAirPressure: CardRawData[] = [
     }
   },
   {
-    groupName: ParametersGroupsNames.RED,
-    cardColor: parametersGroupColorsMap[ParametersGroupsNames.RED],
+    groupName: RED,
+    cardColor: parametersGroupColorsMap[RED],
     iconName: "harm-worried-face",
     tip: {
       translationPath: "tips.pressure"
@@ -189,8 +191,8 @@ export const cardsRawDataForAirPressure: CardRawData[] = [
 
 export const cardsRawDataForHumidity: CardRawData[] = [
   {
-    groupName: ParametersGroupsNames.RED,
-    cardColor: parametersGroupColorsMap[ParametersGroupsNames.RED],
+    groupName: RED,
+    cardColor: parametersGroupColorsMap[RED],
     iconName: "harm-disappointed-face",
     tip: {
       translationPath: "tips.humidity"
@@ -206,8 +208,8 @@ export const cardsRawDataForHumidity: CardRawData[] = [
     }
   },
   {
-    groupName: ParametersGroupsNames.GREEN,
-    cardColor: parametersGroupColorsMap[ParametersGroupsNames.GREEN],
+    groupName: GREEN,
+    cardColor: parametersGroupColorsMap[GREEN],
     iconName: "harm-slightly-smiling-face",
     tip: {
       translationPath: "tips.humidity"
@@ -223,8 +225,8 @@ export const cardsRawDataForHumidity: CardRawData[] = [
     }
   },
   {
-    groupName: ParametersGroupsNames.BLUE,
-    cardColor: parametersGroupColorsMap[ParametersGroupsNames.BLUE],
+    groupName: BLUE,
+    cardColor: parametersGroupColorsMap[BLUE],
     iconName: "harm-neutral-face",
     tip: {
       translationPath: "tips.humidity"

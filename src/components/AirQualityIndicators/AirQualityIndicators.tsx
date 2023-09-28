@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { IndicatorWrapper } from "@UI";
 import { getParameterGroupName } from "@Helpers";
 import { useDataStore } from "@Store/useDataStore";
-import { airComponentsNamesList, parametersGroupColorsMap, ParametersGroupsNames, ParametersMap } from "@Constants";
+import { airComponentsNamesList, parametersGroupColorsMap, type ParameterGroupName, ParametersMap } from "@Constants";
 import { Indicator } from "./Indicator";
 
 export const AirQualityIndicators: FC = () => {
@@ -29,7 +29,7 @@ export const AirQualityIndicators: FC = () => {
           airComponentsNamesList.map((airComponent) => {
             const airComponentValue = airComponents[airComponent];
             const groupName = getParameterGroupName(airComponentValue, ParametersMap.AIR_QUALITY);
-            const color = parametersGroupColorsMap[groupName as ParametersGroupsNames];
+            const color = parametersGroupColorsMap[groupName as ParameterGroupName];
             const roundedAirComponentValue = +airComponentValue.toFixed(3);
             const value = isNaN(roundedAirComponentValue) ? 0 : roundedAirComponentValue;
 
