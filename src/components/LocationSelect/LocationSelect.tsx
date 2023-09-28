@@ -41,8 +41,9 @@ export const LocationSelect: FC = () => {
       <InputLeftElement
         color="gray.400"
         zIndex="3"
-        children={<IconMapPoint />}
-      />
+      >
+        <IconMapPoint />
+      </InputLeftElement>
       <BaseSelect
         defaultValue={defaultAddress}
         options={locations}
