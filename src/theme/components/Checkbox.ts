@@ -4,16 +4,17 @@ export const Checkbox = defineStyleConfig({
   variants: {
     default: {
       control: {
+        borderColor: "primaryColor",
         _checked: {
-          bg: "white",
+          bg: "primaryColor",
           border: "none",
           _hover: {
-            bg: "white"
+            bg: "primaryColor"
           }
         }
       },
       icon: {
-        color: "black"
+        color: "primaryBgColor"
       }
     }
   },

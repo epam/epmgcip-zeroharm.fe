@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useDetectScrollVisibility, useDetectWidth } from "@Hooks";
+import { useDetectContentOverflow, useDetectWidth } from "@Hooks";
 import { resolveTranslationPath } from "@Helpers";
 import { tabsData } from "@Constants";
 import { Tabs } from "../Tabs/Tabs";
@@ -10,7 +10,7 @@ import { AsideLocationMenu } from "./AsideLocationMenu";
 import { AsideWrapper } from "./AsideWrapper";
 
 export const Aside: FC = () => {
-  const { ref, isScrollVisible } = useDetectScrollVisibility();
+  const { ref, isContentOverflowing } = useDetectContentOverflow("vertical");
   const { isLargerThan600 } = useDetectWidth();
 
   const tabs = tabsData.map((tabData) => resolveTranslationPath(tabData));
@@ -18,11 +18,11 @@ export const Aside: FC = () => {
   const isMobileWidth = !isLargerThan600;
 
   return (
-    <AsideWrapper isScrollVisible={isScrollVisible}>
+    <AsideWrapper isContentOverflowing={isContentOverflowing}>
       <AsideLocationMenu />
       <Tabs tabs={tabs}>
         <CustomScrollbarWrapper ref={ref}>
-          <TabPanelsContent isScrollVisible={isScrollVisible} tabs={tabs} />
+          <TabPanelsContent isContentOverflowing={isContentOverflowing} tabs={tabs} />
           { isMobileWidth && <MobileMapAndFooter /> }
         </CustomScrollbarWrapper>
       </Tabs>

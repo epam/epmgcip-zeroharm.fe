@@ -23,14 +23,14 @@ export const MainLayout: FC = () => {
       >
         <Header />
         <Box
+          flex="1"
           w="100%"
           pt={{ base: "var(--headerMobileHeight)", md: "var(--headerHeight)" }}
+          overflow={isMapPage ? "hidden" : "initial"}
         >
           <Outlet />
         </Box>
-        { shouldRenderFooter && (
-          <Footer variant={footerVariant} />
-        ) }
+        { shouldRenderFooter && <Footer variant={footerVariant} /> }
       </Flex>
       <FormModal />
       { !isLargerThan600 && <FeedbackButtonMobile /> }

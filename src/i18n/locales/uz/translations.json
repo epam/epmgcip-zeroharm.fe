@@ -18,7 +18,57 @@
       }
     },
     "about": {
-      "name": "Biz haqimizda"
+      "name": "Biz haqimizda",
+      "intro": {
+        "title": "Loyiha haqida",
+        "paragraphs": {
+          "one": "<1>ZeroHarm</1> — bu shahringizdagi havoning ifloslanish darajasini va uning namlik foizini, ultrabinafsha nurlanish indeksini, shovqin darajasini, shuningdek, atmosfera bosimini kuzatish imkonini beruvchi xizmatdir. Ushbu ko'rsatkichlarni o'z vaqtida kuzatib borish sizga salomatlik uchun salbiy ta’sirlarni oldini olishga hamda inson organizmiga kuchli ta'sir qiluvchi ob-havo yoki antropogen omillarga tayyorgarlik ko’rishga imkon beradi va aksincha, agar ko'rsatkichlar normal bo'lsa, biz sizga vaqtni ochiq havoda qanday qilib sog'liq uchun foydali tarzda o'tkazish haqida aytib beramiz."
+        }
+      },
+      "air_quality": {
+        "title": "Nima uchun biz nafas olayotgan havo sifatini kuzatish muhim?",
+        "paragraphs": {
+          "one": "<1>BMTning Yevropa iqtisodiy komissiyasi veb-saytida</1>, e'lon qilingan ma'lumotlarga ko'ra, havoning ifloslanishi hozirda inson salomatligiga atrof-muhit sharoitlari ta’siridagi eng jiddiy tahdid hisoblanadi va dunyo bo'ylab har yili 7 million kishining o'limiga sabab bo'ladi. Havoning ifloslanishi astma, o'pka va yurak kasalliklari, va hatto saraton kabi qator kasalliklarni keltirib chiqaradi va og’rigan insonlarni ahvolini og’irlashtiradi. Saratonni o'rganish bo'yicha xalqaro agentlik ifloslangan tashqi havoni va uning asosiy tarkibiy qismlaridan biri bo’lgan zarracha moddalarini inson uchun kanserogen sifatida tasniflaydi.",
+          "two": "Shunday qilib, <1>Jahon sog'liqni saqlash tashkilotining</1>, so'nggi hisob-kitoblariga ko'ra, havo ifloslanishi ta'siriga moyillik yuqumsiz kasalliklarning asosiy qismi uchun ilgari o'ylanganidan ko'ra muhimroq xavf omilidir. Havoning ifloslanishi ekologik kasalliklar yukining eng katta manbaidir.",
+          "three": "Har bir yirik shaharda biz nafas olayotgan havoni ifloslantiruvchi yuzlab manbalar mavjud. Biroq, ko'pchiligimiz havo sifatiga oid ma'lumotni o'z vaqtida ololmaymiz va havoning ifloslanish darajasi ko'pincha e’tiborsiz qoladi.",
+          "four": "Havoning ifloslanishini aniqlash va bu haqida sizni o'z vaqtida ogohlantirish uchun deyarli barcha shahar chiqindilarida mavjud bo'lgan faqat bitta ifloslanish markeri - PM2.5 (mayda tarqalgan aralash zarrachalar)ni aniqlash kifoya",
+          "five": "<1>PM2.5</1> — bu qurum, mineral tuzlar, kauchuk, qum va asfalt, og'ir metal birikmalari, kimyoviy chiqindilarning mikroskopik zarralari bo’lib, o'lchami 0,001 dan 2,5 mikrometrgacha (mkm), ya’ni inson sochidan (qalinligi 40 -120 mkm ) o'nlab marta yupqaroq, qon eritrotsitidan (diametri 7 mkm) kichikroqdir.",
+          "six": "‘EPAM Systems’ kompaniyasi va davlat sog'liqni saqlash tashkilotlarining  o'rtasidagi hamkorlikdagi sa'y-harakatlar orqali, ‘ZeroHarm’ havo sifatiga oid ma'lumotlarni va biz nafas olayotgan havodagi zararli moddalar kontsentratsiyasini aniqlaydi, shuningdek, bu borada nima qilish kerakligi haqida ko’rsatmalar beradi."
+        }
+      },
+      "ultraviolet_radiation": {
+        "title": "Nima uchun ultrabinafsha (UB) nurlanish darajasini kuzatish muhim?",
+        "paragraphs": {
+          "one": "<1>UB indeksi</1> jamoatchilikni quyoshdan himoya qiluvchi vositalardan foydalanish zarurligi haqida ogohlantiruvchi muhim vositadir. Dunyo bo'ylab ochiq rangli teriga ega odamlarda teri saratoni bilan kasallanish holatlari sonining sezilarli darajada o'sishi asosan quyosh ultrabinafsha nurlanishning haddan tashqari ta'siri va, katta ehtimol bilan, quyoshda toblanish effektini ta’minlovchi uskunalar kabi sun'iy nurlanish manbalarining ta'siri bilan bog'liq deb hisoblanmoqda. Kasallikning hozirgi kundagi ko'rsatkichlari shuni namoyon qiladiki, odamlarning bevosita quyosh nurlari ostida vaqt o’tkazish odatlari UB nurlanishining salbiy oqibatlariga olib keluvchi eng katta shaxsiy xavf omilidir.",
+          "two": "<1>UB indeksi</1> ultrabinafsha nurlanish darajasini tavsiflovchi ko'rsatkich bo'lib, nol va undan yuqori qiymatlarni qabul qiladi. UB indeksining qiymati qanchalik yuqori bo'lsa, inson terisi va ko'zlari uchun potentsial xavf shunchalik yuqori bo'ladi, sog'likka zarar yetkaziladigan bosqichgacha vaqt oralig’i esa shunchalik qisqaradi. UB indeksi aholining ultrabinafsha nurlanishining haddan tashqari ta'siri xavfi haqida xabardorligini oshirish va quyoshdan himoyalovchi vositalardan foydalanish zarurligi haqida ogohlantirishning muhim vositasidir."
+        }
+      },
+      "atmospheric_pressure": {
+        "title": "Atmosfera bosimini kuzatish nima uchun muhim?",
+        "paragraphs": {
+          "one": "Atmosfera bosimining pasayishining inson organizmiga bo’lgan salbiy ta'sirining asosiy ko'rinishlariga: nafas olish qiyinlishuvi, nafas qisilishi, havo yetishmasligi va umumiy bo’shashish kiradi. Bu atrofdagi havoda kislorod yetishmasligi bilan bog'liq. Ko'pincha siklon kelganida odamning bosh miya ichki bosimi oshadi, natijada kuchli bosh og’riqlari (migren) boshlanadi. Bundan tashqari, ichaklarda gaz hosil bo’lishining kuchayishi va shu sababli oshqozon-ichak faoliyati yomonlashishi mumkin.",
+          "two": "Atmosfera bosimining pasayishi odatda havo haroratining ko’tarilishi, bulutlilik, namlik va yog'ingarchiliklar bilan birga sodir bo’ladi. Past qon bosimi, nafas olish va chiqarish maromining buzilishi va yurak-qon tomir kasalliklari bilan og'rigan odamlar siklon ta'siriga o’ta sezuvchan bo’ladilar."
+        }
+      },
+      "ambient_noise": {
+        "title": "Atrofdagi shovqin darajasini kuzatish nima uchun muhim?",
+        "paragraphs": {
+          "one": "Hozirgi vaqtda shovqinning zararli ta'siri juda yaxshi o'rganilgan. Olimlar kuchli ovozning nafaqat eshitish organlariga, balki butun organizmga salbiy ta'sir ko'rsatishini isbotlaganlar. Ob'yektiv baholashlarga ko’ra, shovqinning ta'siri quyidagicha namoyon bo’ladi.",
+          "two": "65-90 dB uzoq muddatli tovush yuki asab tizimiga salbiy ta'sir ko'rsatib, bezovtalanish, asabiylashish va nevrozlarni keltirib chiqaradi.",
+          "three": "Baland shovqin fonli sharoitlarda charchab qolish hollari 15-25% ga oshadi, diqqatni jamlash qobiliyati va aqliy faoliyat samaradorligi pasayadi.",
+          "four": "Sanoat shovqinining inson organizmiga eng keng tarqalgan ta'siri teri va shilliq pardalarga kiradigan kapillyar tomirlarning torayishi bo'lib, bu periferik qon aylanishini buzilishiga olib kealdi.",
+          "five": "85 dB dan yuqori shovqin qon bosimining oshishiga olib keladi.",
+          "six": "Odamga shovqin va tebranishlarning doimiy ta'siri miyaning bioelektrik faolligining buzilishiga, inson reaksiyaning sekinlashishiga va EEG ko'rsatkichlarining yomonlashishiga olib keladi. Shu bilan birga, biokimyoviy testlar «stress gormonlari» deb ataluvchi kortizon, adrenalin va noradrenalin darajasining keskin oshishini ko'rsatadi. Ushbu gormonlarning yuqori darajasi hatto tungi uyqu paytida ham saqlanib qoladi. Uzoq muddatli stressli holat fiziologik ko'rsatkichlarning yomonlashishiga va hatto yurak, qon tomirlari, asab tizimi va boshqa organ hamda tizimlarning surunkali kasalliklarining rivojlanishiga olib kelishi mumkin. Shovqin inson salomatligiga jiddiy zarar yetkazadi."
+        }
+      },
+      "air_humidity": {
+        "title": "Havo namligi darajasini kuzatish nima uchun muhim?",
+        "paragraphs": {
+          "one": "Havoning namligi yetarli darajada bo’lmagan sharoitdan inson organizmi salbiy ta’sirlanadi. Namlikning bug'lanishi shilliq qavatning qurib ketishiga olib keladi va bu uning yorilishining asosiy sababi bo'lib, keyinchalik barcha turdagi patogenlar bilan ifloslanishiga olib keladi. Shuning uchun bunday sharoitli binolarda bo’lgan odamlarning shamollash ehtimoli ko'proq.",
+          "two": "Quruq havodan kelib chiqadigan xavf-xatarlari quyidagilardan iborat: <1>Dimog’da quruqlik hissi paydo bo’ladi va burundan qon ketish tez-tez sodir bo'ladi.</1> <2>Ko'zlarda «achishish» hissi kuzatilib, «quruq ko'z» sindromining paydo bo'lishiga olib keladi.</2> <3>Bronxial astma bilan og'rigan odamlar uchun quruq havo massalarining mavjudligi ayniqsa xavfli hisoblanadi: xurujlar tez-tez takrorlanishi kuzatiladi.</3> <4>Past namlik darajasi terining holatiga salbiy ta'sir qiladi - qichishish, quruq qatlam paydo bo'ladi va teri yorila boshlaydi.</4>",
+          "three": "Yosh bolalar yashaydigan uyda mikroiqlimni optimal darajada saqlash ayniqsa muhimdir. Aks holda, bolalarda ko'pincha yo'tal paydo bo'ladi va burun va o’pka shilliq qavatida tirnash xususiyati paydo bo'ladi."
+        }
+      }
     },
     "footer": {
       "sourceInfoText": "Barcha ma'lumotlar <1>O'zbekiston Respublikasi Gidrometeorologiya xizmati markazi</1> tomonidan taqdim etilgan.",
@@ -46,6 +96,7 @@
   },
   "lang": {
     "code": "O'zb",
+    "subject_name": "Til",
     "list": {
       "ru": "Rus",
       "en": "Ingliz",
@@ -187,13 +238,22 @@
     ],
     "pressure": [
       {
-        "icon": "harm-disappointed-face"
+        "icon": "harm-disappointed-face",
+        "title": "Atmosfera bosimi past",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Yurak-qon tomir tizimi, nafas olish yo'llari, tayanch-harakat tizimi, qandli diabet kasalliklari bilan og'riganlar, kasallik yoki jarrohlik amaliyotidan keyin tiklanish davridagi odamlar, ob-havo o'zgarishiga ta'sirchan va qon bosimi past bo'lgan odamlar bezovta bo'lishlari mumkin. Bunga qarshi tibbiy ko’rsatmalar mavjud bo’lmasa, yengil jismoniy mashqlar bajarish, bir oz piyoda sayr qilish, kontrastli dush qabul qilish tavsiya etiladi. Faol jismoniy mashg’ulotlar bilan  vaqtinchalik shug’ullanmang, kam uglevodli taomlarni qabul qilishga harakat qiling."
       },
       {
-        "icon": "harm-slightly-smiling-face"
+        "icon": "harm-slightly-smiling-face",
+        "title": "Normal atmosfera bosimi",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Ajoyib salomatlik holati – bundan bahramand bo’ling!"
       },
       {
-        "icon": "harm-worried-face"
+        "icon": "harm-worried-face",
+        "title": "Atmosfera bosimi yuqori",
+        "subtitle": "Nima qilish kerak va nima uchun?",
+        "text": "Allergiya, yurak-qon tomir kasalliklari, astma bilan og'rigan va qon bosimi baland bo’lgan odamlar, ayniqsa quruq, shamolsiz ob-havo sharoitlarida bezovta bo'lishlari mumkin. Kuchli jismoniy mashg’ulotlar bilan vaqtinchalik shug’ullanmang, ko'proq suv iching, iste’molingizga  tarkibida kaliy (K) va magniy (Mg) b’olgan mahsulot va vitaminlarni qo'shing."
       }
     ]
   },
@@ -220,7 +280,11 @@
     "pressure": "Havo bosimi ko'rsatkichi"
   },
   "tips": {
-    "air_quality": "Havo sifati"
+    "air_quality": "Havo sifati",
+    "uv": "UB faktori",
+    "noise_pollution": "Shovqin",
+    "humidity": "Namlik",
+    "pressure": "Bosim"
   },
   "indicators": "Boshqa parametrlar",
   "detailed_info": "Batafsil ma'lumot",

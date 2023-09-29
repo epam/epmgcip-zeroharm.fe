@@ -14,6 +14,7 @@ import { Progress } from "./components/Progress";
 import { Tooltip } from "./components/Tooltip";
 import { Divider } from "./components/Divider";
 import { Modal } from "./components/Modal";
+import { Drawer } from "./components/Drawer";
 import { Input } from "./components/Input";
 import { Checkbox } from "./components/Checkbox";
 import { Menu } from "./components/Menu";
@@ -38,7 +39,7 @@ const overrides = {
     Checkbox,
     Menu,
     Switch,
-    Drawer: Modal
+    Drawer
   }
 };
 

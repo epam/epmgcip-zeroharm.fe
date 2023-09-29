@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 const rootTranslationPath = "pages.about";
 const UN_ECONOMIC_COMMISSION_LINK = "https://unece.org/ru/air-pollution-and-health";
 const WORLD_HEALTH_ORGANIZATION_LINK = "https://unece.org/ru/air-pollution-and-health";
@@ -20,7 +18,7 @@ const enum MainPaths {
   ATMOSPHERIC_PRESSURE = "atmospheric_pressure",
   AMBIENT_NOISE = "ambient_noise",
   AIR_HUMIDITY = "air_humidity"
-};
+}
 
 const subPathsTypes = {
   title: "title",

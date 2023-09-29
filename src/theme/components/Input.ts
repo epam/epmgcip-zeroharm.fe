@@ -1,27 +1,29 @@
 import { inputAnatomy } from "@chakra-ui/anatomy";
 import { createMultiStyleConfigHelpers } from "@chakra-ui/react";
 
-const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
-  inputAnatomy.keys
-);
+const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(inputAnatomy.keys);
 
 export const Input = defineMultiStyleConfig({
   variants: {
-    gray: {
+    default: {
       field: {
+        height: { base: "44px", lg: "48px" },
+        padding: "12px",
+        borderRadius: "8px",
         _placeholder: {
-          color: "gray.300",
-          fontSize: "16px"
+          color: "feedbackFormColor.placeholder",
+          fontSize: { base: "small", lg: "medium" }
         },
-        backgroundColor: "gray.700",
+        backgroundColor: "feedbackFormColor.inputBg",
+        color: "feedbackFormColor.text",
         _focus: {
-          border: "1px"
+          border: "1px",
+          borderColor: "feedbackFormColor.borderFocus"
         }
       }
     }
   },
   defaultProps: {
-    size: "lg",
-    variant: "gray"
+    variant: "default"
   }
 });
