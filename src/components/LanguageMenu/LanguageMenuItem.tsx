@@ -8,7 +8,7 @@ type LanguageMenuItemProps = {
   languageOption: any;
 }
 
-export const LanguageMenuItem: FC<LanguageMenuItemProps> = ({ languageOption: { languageId, languageIconName, languageName} }) => {
+export const LanguageMenuItem: FC<LanguageMenuItemProps> = ({ languageOption: { languageId, languageIconName, languageName } }) => {
   const { setLanguage } = useDataStore();
   const { i18n } = useTranslation();
 
@@ -16,6 +16,7 @@ export const LanguageMenuItem: FC<LanguageMenuItemProps> = ({ languageOption: { 
 
   return (
       <MenuItem
+        as="li"
         onClick={handleClick}
         aria-selected={languageId === i18n.language}
         h="48px"

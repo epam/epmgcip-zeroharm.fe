@@ -12,6 +12,7 @@ export const LocationMenuItem: FC<LocationMenuItemProps> = ({ locationOption }) 
 
   return (
     <MenuItem
+      as="li"
       onClick={() => setLocationId(locationOption.locationId)}
       aria-selected={locationId === locationOption.locationId}
       h={{ base: "72px", md: "48px" }}

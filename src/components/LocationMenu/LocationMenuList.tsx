@@ -1,7 +1,8 @@
 import { FC } from "react";
 import { MenuList } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { Location } from "@Constants";
-import { menuListMotionVariants, menuListMotionVariantOptions } from "@Theme/transitions/menuListMotionVariants";
+import { menuListMotionVariants, menuListMotionVariantOptions, menuItemsMotionProps } from "@Theme/transitions/menuListMotionVariants";
 import { LocationMenuItem } from "./LocationMenuItem";
 
 type LocationMenuListProps = {
@@ -28,14 +29,16 @@ export const LocationMenuList: FC<LocationMenuListProps> = ({ locationsOptions, 
         animate: isOpen ? menuListMotionVariantOptions.ENTER : menuListMotionVariantOptions.EXIT
       }}
     >
-      {
-        locationsOptions.map((locationOption) => (
-          <LocationMenuItem
-            key={locationOption.locationId}
-            locationOption={locationOption}
-          />
-        ))
-      }
+      <motion.ul variants={menuItemsMotionProps}>
+        {
+          locationsOptions.map((locationOption) => (
+            <LocationMenuItem
+              key={locationOption.locationId}
+              locationOption={locationOption}
+            />
+          ))
+        }
+      </motion.ul>
     </MenuList>
   );
 };

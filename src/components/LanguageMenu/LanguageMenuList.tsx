@@ -1,8 +1,9 @@
 import { FC } from "react";
 import { MenuList } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { languagesData } from "@Constants";
 import { resolveTranslationPath } from "@Helpers";
-import { menuListMotionVariants, menuListMotionVariantOptions } from "@Theme/transitions/menuListMotionVariants";
+import { menuListMotionVariants, menuListMotionVariantOptions, menuItemsMotionProps } from "@Theme/transitions/menuListMotionVariants";
 import { LanguageMenuItem } from "./LanguageMenuItem";
 
 type LanguageMenuListProps = {
@@ -17,24 +18,23 @@ export const LanguageMenuList: FC<LanguageMenuListProps> = ({ isOpenOnMobile, is
     <MenuList
       minW={{ base: "100vw", md: "176px", lg: "240px" }}
       py="0"
-      mt={{ md: "12px" }}
+      mt={{ base: "8px", md: "12px" }}
       minH={isOpenOnMobile ? "calc(100vh - var(--headerMobileHeight))" : "initial"}
-      rootProps={{
-        sx: isOpenOnMobile ? { transform: "translate3d(0, var(--headerMobileHeight), 0) !important" } : undefined
-      }}
       motionProps={{
         variants: menuListMotionVariants,
         animate: isOpen ? menuListMotionVariantOptions.ENTER : menuListMotionVariantOptions.EXIT
       }}
     >
-      {
-        languagesOptions.map((languageOption) => (
-          <LanguageMenuItem
-            key={languageOption.languageId}
-            languageOption={languageOption}
-          />
-        ))
-      }
+      <motion.ul variants={menuItemsMotionProps}>
+        {
+          languagesOptions.map((languageOption) => (
+            <LanguageMenuItem
+              key={languageOption.languageId}
+              languageOption={languageOption}
+            />
+          ))
+        }
+      </motion.ul>
     </MenuList>
   );
 };
