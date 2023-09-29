@@ -32,11 +32,11 @@ export const styles = {
       lineHeight: "small",
       whiteSpace: "normal"
     },
-    ".leaflet-tooltip-left.leaflet-custom-tooltip::before": {
-      borderLeftColor: "gray.800"
-    },
     ".leaflet-tooltip-right.leaflet-custom-tooltip::before": {
       borderRightColor: "gray.800"
+    },
+    ".leaflet-tooltip-top.leaflet-custom-tooltip::before": {
+      borderTopColor: "gray.800"
     }
   }
 };
