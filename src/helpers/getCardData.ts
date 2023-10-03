@@ -1,20 +1,16 @@
-import { ParametersAliasesKeyType } from "@Constants";
-import { getParameterGroup } from "./getParameterGroup";
-import { getParameterCardConfig } from "./getParameterCardConfig";
+import { CardData, type Parameter } from "@Constants";
+import { getParameterGroupName } from "./getParameterGroupName";
+import { getParameterCardRawData } from "./getParameterCardData";
 import { resolveTranslationPath } from "./resolveTranslationPath";
 
-export const getCardData = (parameterValue: number, parameterName: ParametersAliasesKeyType) => {
-  const groupName = getParameterGroup(parameterValue, parameterName);
+export const getCardData = (parameterValue: number, parameterName: Parameter): CardData | undefined => {
+  const groupName = getParameterGroupName(parameterValue, parameterName);
 
-  let parameterCardConfig;
-  if (groupName) {
-    parameterCardConfig = getParameterCardConfig(parameterName, groupName);
-  }
+  if (!groupName) return;
 
-  let cardTranslations;
-  if (parameterCardConfig) {
-    cardTranslations = resolveTranslationPath(parameterCardConfig);
-  }
+  const parameterCardRawData = getParameterCardRawData(parameterName, groupName);
 
-  return cardTranslations;
+  if (!parameterCardRawData) return;
+
+  return resolveTranslationPath(parameterCardRawData);
 };

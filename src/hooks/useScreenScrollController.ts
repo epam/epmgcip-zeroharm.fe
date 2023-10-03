@@ -3,23 +3,23 @@ import { useEffect } from "react";
 export const useScreenScrollController = (isLockScrollCase: boolean, isUnlockScrollCase: boolean) => {
   const body = document.querySelector("body");
 
-  const lockBodyScroll = () => {
-    body!.style.overflow = "hidden";
-  };
-
-  const unlockBodyScroll = () => {
-    body!.style.overflow = "auto";
-  };
-
   useEffect(() => {
+    const lockBodyScroll = () => {
+      body!.style.overflow = "hidden";
+    };
+
     if (isLockScrollCase) {
       lockBodyScroll();
     }
-  }, [isLockScrollCase]);
+  }, [isLockScrollCase, body]);
 
   useEffect(() => {
+    const unlockBodyScroll = () => {
+      body!.style.overflow = "auto";
+    };
+
     if (isUnlockScrollCase) {
       unlockBodyScroll();
     }
-  }, [isUnlockScrollCase]);
+  }, [isUnlockScrollCase, body]);
 };

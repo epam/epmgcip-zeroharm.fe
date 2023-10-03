@@ -1,19 +1,21 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { useDataStore } from "@Store/useDataStore";
 import { Card, CardType } from "@UI";
 import { useDetectWidth } from "@Hooks";
+import { type Parameter } from "@Constants";
 import { ReactComponent as RightArrow } from "@Assets/icons/stroke/harm-arrow-right.svg";
 
 type SwiperItemDataT = CardType & {
   question: string;
   text: string;
-  parameter: string;
+  parameter: Parameter;
 };
 
 export const SwiperItem: FC<SwiperItemDataT> = (props) => {
+  const { t } = useTranslation();
   const { setParameter } = useDataStore();
 
   const { isLargerThan600 } = useDetectWidth();

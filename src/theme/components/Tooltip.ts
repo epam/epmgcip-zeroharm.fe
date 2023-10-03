@@ -5,30 +5,33 @@ const $arrowBg = cssVar("popper-arrow-bg");
 
 export const Tooltip = defineStyleConfig({
   baseStyle: {
-    lineHeight: "16px",
     p: "16px",
     borderRadius: "8px",
     borderWidth: "1px",
-    borderStyle: "solid",
-    borderColor: "gray.600",
-    fontSize: "small"
+    borderStyle: "solid"
   },
   variants: {
     default: {
-      bg: "gray.700",
-      color: "white"
+      fontSize: "tiny",
+      lineHeight: "tiny",
+      color: "white",
+      borderColor: "parameter.tooltipBorder",
+      bgColor: "parameter.tooltipBg",
+      [$arrowBg.variable]: "colors.parameter.tooltipBg"
     },
     light: {
+      fontSize: "small",
+      lineHeight: "small",
       background: "feedbackFormColor.tooltipBg",
       color: "feedbackFormColor.tooltipText",
       borderColor: "feedbackFormColor.tooltipBorder",
       [$arrowBg.variable]: "colors.feedbackFormColor.tooltipBg"
     },
     big: {
+      fontSize: "small",
+      lineHeight: "small",
       background: "gray.700",
       color: "white",
-      lineHeight: "18px",
-      fontSize: "small",
       [$arrowBg.variable]: $bg.reference
     }
   },
