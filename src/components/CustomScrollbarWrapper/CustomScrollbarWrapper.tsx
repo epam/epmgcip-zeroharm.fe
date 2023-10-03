@@ -13,13 +13,13 @@ const webkitBrowserScrollbarStyles = {
     w: "4px"
   },
   "::-webkit-scrollbar-thumb": {
-    bgColor: "gray.700",
+    bgColor: "scrollBar.thumb",
     borderRadius: "4px"
   },
   "::-webkit-scrollbar-track": {
     bgColor: {
       md: "transparent",
-      lg: "gray.800"
+      lg: "scrollBar.trackLg"
     },
     borderRadius: "4px"
   },
@@ -39,7 +39,6 @@ const styles = {
 };
 
 export const CustomScrollbarWrapper = forwardRef<HTMLDivElement, CustomScrollbarWrapperProps>(({ children }, ref) => {
-
   return (
     <Box
       w="100%"
@@ -53,7 +52,7 @@ export const CustomScrollbarWrapper = forwardRef<HTMLDivElement, CustomScrollbar
         overflowX="hidden"
         sx={{
           scrollbarWidth: "thin",
-          scrollbarColor: "#48494D transparent",
+          scrollbarColor: "var(--firefoxScrollbarColor)",
           ...styles
         }}
       >

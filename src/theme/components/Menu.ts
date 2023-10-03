@@ -37,7 +37,8 @@ export const Menu = defineStyleConfig({
       button: {
         borderRadius: "8px",
         overflow: "hidden",
-        bgColor: "menu.locationButtonBg"
+        bgColor: "menu.locationButtonBg",
+        boxShadow: "primary"
       },
       list: {
         boxShadow: "none",
