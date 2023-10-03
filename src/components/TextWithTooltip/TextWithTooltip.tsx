@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { Center, Flex, Tooltip, Text, FlexProps } from "@chakra-ui/react";
+import { Center, Flex, Tooltip, Text, FlexProps, Icon } from "@chakra-ui/react";
 import { useDetectWidth } from "@Hooks";
-import { ReactComponent as InfoFill } from "@Assets/icons/filled/harm-info-fill.svg";
+import { ReactComponent as InfoICon } from "@Assets/icons/filled/harm-info-fill.svg";
 
 type TextWithTooltipProps = FlexProps & {
   label: string;
@@ -21,11 +21,11 @@ export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, iconSiz
       closeOnScroll
       label={label}
       hasArrow
-      bg="gray.700"
       placement={placement}
       shouldWrapChildren
-      maxH="auto"
       sx={{
+        maxH: "auto",
+        minW: { base: "343px", md: "300px" },
         maxW: { base: "343px", md: "600px" },
         w: `${preferredNumberOfCharactersPerLine}ch`
       }}
@@ -42,9 +42,11 @@ export const TextWithTooltip: FC<TextWithTooltipProps> = ({ label, text, iconSiz
           w={iconSize}
           opacity=".5"
         >
-          <InfoFill
+          <Icon
+            as={InfoICon}
             width={iconSize}
             height={iconSize}
+            fill="parameter.icon"
           />
         </Center>
       </Flex>

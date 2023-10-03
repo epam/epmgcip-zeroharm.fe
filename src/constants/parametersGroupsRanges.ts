@@ -1,8 +1,16 @@
-import { indexesGroupsNames } from "./indexesGroupNames";
+import { type ParameterGroupName, parametersGroupsNames, type Parameter } from "@Constants";
 
-const { GREEN, YELLOW, ORANGE, LIGHT_RED, RED, PURPLE, BLUE } = indexesGroupsNames;
+type ParameterGroupRange = {
+  groupName: ParameterGroupName,
+  range: {
+    min: number;
+    max: number;
+  }
+}
 
-export const airQualityIndexConfig = [
+const { GREEN, YELLOW, ORANGE, LIGHT_RED, RED, PURPLE, BLUE } = parametersGroupsNames;
+
+export const airQualityGroupsRanges = [
   {
     groupName: GREEN,
     range: {
@@ -47,7 +55,7 @@ export const airQualityIndexConfig = [
   }
 ];
 
-export const airPressureIndexConfig = [
+export const airPressureGroupsRanges = [
   {
     groupName: BLUE,
     range: {
@@ -71,7 +79,7 @@ export const airPressureIndexConfig = [
   }
 ];
 
-export const humidityIndexConfig = [
+export const humidityGroupsRanges = [
   {
     groupName: RED,
     range: {
@@ -95,8 +103,8 @@ export const humidityIndexConfig = [
   }
 ];
 
-export const indexesConfig = {
-  air_quality: airQualityIndexConfig,
-  pressure: airPressureIndexConfig,
-  humidity: humidityIndexConfig
+export const parametersGroupsRanges: Record<Parameter, ParameterGroupRange[]> = {
+  air_quality: airQualityGroupsRanges,
+  pressure: airPressureGroupsRanges,
+  humidity: humidityGroupsRanges
 };

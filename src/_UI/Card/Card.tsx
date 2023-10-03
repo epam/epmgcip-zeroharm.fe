@@ -30,7 +30,8 @@ const CardBody = chakra(Flex, {
     flexDirection: "column",
     gap: "16px",
     borderRadius: "0 0 8px 8px",
-    color: "black",
+    color: "navyBlue.900",
+    boxShadow: "primary",
     padding: {
       base: "16px",
       md: "24px"
@@ -39,6 +40,7 @@ const CardBody = chakra(Flex, {
 });
 const CardText = chakra(Flex, {
   baseStyle: {
+    color: "white",
     flexDirection: "column",
     justifyContent: "space-between",
     flex: "1"
@@ -103,7 +105,7 @@ export const Card: FC<CardType> = ({
 }) => {
   return (
     <>
-      <CardHeader bg={`${color}.500`}>
+      <CardHeader bg={`parameter.groupColor.${color}`}>
         <CardText>
           <CardSubHeading>{ subheading }</CardSubHeading>
           <CardHeading>{ heading }</CardHeading>
@@ -116,7 +118,7 @@ export const Card: FC<CardType> = ({
         </CardIconBox>
       </CardHeader>
       <CardBody
-        bg={`${color}.50`}
+        bg={`parameter.groupColorAdditional.${color}`}
         {...props}
       >
         { children }
