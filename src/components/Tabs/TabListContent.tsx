@@ -87,6 +87,7 @@ export const TabListContent: FC<TabListContentProps> = ({ tabs }) => {
                     color: "primaryColor"
                   }}
                   _selected={{
+                    fontWeight: "700",
                     color: "primaryColor",
                     borderBottomWidth: "2px",
                     borderColor: "primaryColor"

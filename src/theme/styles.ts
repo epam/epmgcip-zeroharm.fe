@@ -1,11 +1,14 @@
+import { StyleFunctionProps } from "@chakra-ui/react";
+
 export const styles = {
-  global: {
+  global: ({ colorMode }: StyleFunctionProps) => ({
     html: {
       "--headerHeight": "64px",
       "--headerMobileHeight": "56px",
       "--footerMaxHeight": "87px",
       "--footerMargin": "16px",
-      "--maxContentWidth": "1440px"
+      "--maxContentWidth": "1440px",
+      "--firefoxScrollbarColor": colorMode === "dark" ? "#48494D transparent" : "white transparent"
     },
     "#root": {
       display: "flex",
@@ -38,5 +41,5 @@ export const styles = {
     ".leaflet-tooltip-top.leaflet-custom-tooltip::before": {
       borderTopColor: "gray.800"
     }
-  }
+  })
 };

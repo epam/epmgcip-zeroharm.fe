@@ -1,4 +1,12 @@
-export const mapParameterData = (data: any) => {
+import { AirComponents, Parameters } from "@Constants";
+
+type ParametersAndAirComponents = {
+  parameters: Parameters;
+  airComponents: AirComponents;
+  stationId: any;
+}
+
+export const mapParameterData = (data: any): ParametersAndAirComponents => {
   const {
     aqi,
     humidity,
@@ -17,6 +25,7 @@ export const mapParameterData = (data: any) => {
       "air_quality": aqi ?? 0,
       "humidity": humidity ?? 0,
       "pressure": air_pressure ?? 0
+
     },
     airComponents: {
       "PM2.5": pm2_5 ?? 0,

@@ -1,17 +1,17 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { TextWithTooltip } from "@Components";
-import { Progress } from "../Progress/Progress";
+import { Progress } from "@UI";
 
-type IndexDateType = {
+type IndicatorProps = {
   title: string;
-  children?: ReactNode;
-  color?: string;
-  value?: number;
+  color: string;
+  value: number;
 };
 
-export const Indicator: FC<IndexDateType> = ({ title, color, value }) => {
+export const Indicator: FC<IndicatorProps> = ({ title, color, value }) => {
+  const { t } = useTranslation();
   const hint = title.toLowerCase();
   const label = t(`hints.${hint}`);
 
@@ -35,12 +35,12 @@ export const Indicator: FC<IndexDateType> = ({ title, color, value }) => {
         w={{ base: "119px", md: "103px", lg: "168px" }}
       >
         <Progress
-          colorScheme={color}
+          color={color}
           value={value}
         />
       </Box>
       <Text
-        color="white"
+        color="primaryColor"
         fontWeight="700"
         fontSize="medium"
         display="inline-block"
@@ -50,7 +50,7 @@ export const Indicator: FC<IndexDateType> = ({ title, color, value }) => {
         <Text
           as="span"
           fontWeight="initial"
-          color="gray.400"
+          color="parameter.secondary"
           fontSize="tiny"
           ml="4px"
         >

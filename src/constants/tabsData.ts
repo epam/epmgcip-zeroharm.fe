@@ -1,20 +1,34 @@
-export const tabsData = [
+import { Parameter, ParametersMap } from "./parametersData";
+
+type TabsRawData = {
+  tabId: Parameter;
+  tabName: {
+    translationPath: string;
+  }
+}
+
+export type TabsData = {
+  tabId: Parameter;
+  tabName: string;
+}
+
+export const tabsData: TabsRawData[] = [
   {
-    tabId: "air_quality",
+    tabId: ParametersMap.AIR_QUALITY,
     tabName: {
-      translationPath: "tabs.air_quality"
+      translationPath: `tabs.${ParametersMap.AIR_QUALITY}`
     }
   },
   {
-    tabId: "humidity",
+    tabId: ParametersMap.HUMIDITY,
     tabName: {
-      translationPath: "tabs.humidity"
+      translationPath: `tabs.${ParametersMap.HUMIDITY}`
     }
   },
   {
-    tabId: "pressure",
+    tabId: ParametersMap.PRESSURE,
     tabName: {
-      translationPath: "tabs.pressure"
+      translationPath: `tabs.${ParametersMap.PRESSURE}`
     }
   }
 ];
