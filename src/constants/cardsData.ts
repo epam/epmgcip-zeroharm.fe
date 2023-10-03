@@ -139,7 +139,7 @@ export const cardsRawDataForAirPressure: CardRawData[] = [
   {
     groupName: BLUE,
     cardColor: parametersGroupColorsMap[BLUE],
-    iconName: "harm-disappointed-face",
+    iconName: "harm-pressure-low",
     tip: {
       translationPath: "tips.pressure"
     },
@@ -156,7 +156,7 @@ export const cardsRawDataForAirPressure: CardRawData[] = [
   {
     groupName: GREEN,
     cardColor: parametersGroupColorsMap[GREEN],
-    iconName: "harm-slightly-smiling-face",
+    iconName: "harm-pressure-normal",
     tip: {
       translationPath: "tips.pressure"
     },
@@ -173,7 +173,7 @@ export const cardsRawDataForAirPressure: CardRawData[] = [
   {
     groupName: RED,
     cardColor: parametersGroupColorsMap[RED],
-    iconName: "harm-worried-face",
+    iconName: "harm-pressure-high",
     tip: {
       translationPath: "tips.pressure"
     },

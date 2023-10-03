@@ -148,37 +148,31 @@
     ],
     "air_quality": [
       {
-        "icon": "harm-slightly-smiling-face",
         "title": "Sifati belgilangan me'yor doirasida",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Toza havo. Tashqarida bo'lish xavfsiz, nafas olish tizimi kasalliklariga duchor bo'lganlar uchun ham."
       },
       {
-        "icon": "harm-neutral-face",
         "title": "O'rtacha havo sifati",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Havo yetarli darajada toza, lekin ba'zi ko'rsatkichlar oshgan bo'lishi mumkin. Tashqarida bo'lish xavfsiz, ammo nafas olish muammolari va allergik reaksiyalari bo'lishi mumkin bo'lgan odamlar noqulaylik his qilishlari mumkin."
       },
       {
-        "icon": "harm-worried-face",
         "title": "Yuqori darajadagi havo ifloslanishi",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Ifloslanish indeksining bir yoki bir nechta ko'rstakichlari me'yordan oshgan. Nafas olish tizimi va allergik kasalliklarga chalingan odamlar nafas olish yo'llarini himoya qilishlari lozim."
       },
       {
-        "icon": "harm-more-worried-face",
         "title": "Yetarlicha xavfli darajadagi havo ifloslanishi",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Havoning ifloslanish darajasi o'rtachadan yuqori. Nafas olish tizimi va allergik kasalliklarga chalingan odamlar uchun yaxshi himoya vositalari va dori-darmonlar kerak. Sizda nafas olish tizimi va allergik kasalliklari bo'lmasa ham respiratordan foydalaning."
       },
       {
-        "icon": "harm-disappointed-face",
         "title": "Xavfli darajadagi havo ifloslanishi",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": " Xavfli darajadagi havo ifloslanishi. Bino ichiga kirishga harakat qiling yoki nafas yo'llarini himoya qiluvchi vositalar: respirator, niqob taqing.  Iloji boricha tashqariga chiqmang."
       },
       {
-        "icon": "harm-loudly-crying-face",
         "title": "Ekstremal darajadagi havo ifloslanishi",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Havodagi zararli moddalarning konsentratsiyasi maksimal darajada! Bino ichida qoling, shaxsiy himoya vositalari: tozalash klapanli, filtrlovchi yoki maxsus patronli respiratorlardan bino ichida ham foydalaning."
@@ -218,19 +212,16 @@
     ],
     "humidity": [
       {
-        "icon": "harm-neutral-face",
         "title": "Havo namligi oshgan",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Havo namligining oshishi yurak-qon tomir kassalliklari va ziqnafaslik hastaligigia uchragan insonlarning holatiga salbiy ta'sir ko'rsatishi mumkin. Iloji bo'lsa havo quritgichidan foydalaning. Xonani har soatda shamollating, pardalarni ochib qo'ying."
       },
       {
-        "icon": "harm-slightly-smiling-face",
         "title": "Havo namligi normal holatda",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Optimal darajadagi havo namligi! Ochiq havodagi sayrdan yoki bino ichida qulay haroratdan bahramand bo'ling!"
       },
       {
-        "icon": "harm-disappointed-face",
         "title": "Haddan tashqari quruq havo",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Haddan tashqari quruq havo shilliq qavatlarga salbiy ta'sir ko'rsatib, havodagi zararli moddalar konsentratsiyasini oshiradi. Nafas olish tizimi, allergik va bronx kasalliklariga chalingan odamlar noqulaylikni his qilishadi. Bino ichida havo namlagichidan foydalaning. Xona haroratidagi suvdan ko'proq iching. Havo namlagichi bo'lmagan hollarda matolarni ho'llab, xona ichida osib qo'ying. Havoning namlik darajasi past, harorati esa yuqori bo'lgan hollarda xona ichiga suv bilan to'ldirilgan idishlarni joylashtiring – ushbu suvning bug'lanishi xonadagi namlik darajasini oshiradi."
@@ -238,19 +229,16 @@
     ],
     "pressure": [
       {
-        "icon": "harm-disappointed-face",
         "title": "Atmosfera bosimi past",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Yurak-qon tomir tizimi, nafas olish yo'llari, tayanch-harakat tizimi, qandli diabet kasalliklari bilan og'riganlar, kasallik yoki jarrohlik amaliyotidan keyin tiklanish davridagi odamlar, ob-havo o'zgarishiga ta'sirchan va qon bosimi past bo'lgan odamlar bezovta bo'lishlari mumkin. Bunga qarshi tibbiy ko’rsatmalar mavjud bo’lmasa, yengil jismoniy mashqlar bajarish, bir oz piyoda sayr qilish, kontrastli dush qabul qilish tavsiya etiladi. Faol jismoniy mashg’ulotlar bilan  vaqtinchalik shug’ullanmang, kam uglevodli taomlarni qabul qilishga harakat qiling."
       },
       {
-        "icon": "harm-slightly-smiling-face",
         "title": "Normal atmosfera bosimi",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Ajoyib salomatlik holati – bundan bahramand bo’ling!"
       },
       {
-        "icon": "harm-worried-face",
         "title": "Atmosfera bosimi yuqori",
         "subtitle": "Nima qilish kerak va nima uchun?",
         "text": "Allergiya, yurak-qon tomir kasalliklari, astma bilan og'rigan va qon bosimi baland bo’lgan odamlar, ayniqsa quruq, shamolsiz ob-havo sharoitlarida bezovta bo'lishlari mumkin. Kuchli jismoniy mashg’ulotlar bilan vaqtinchalik shug’ullanmang, ko'proq suv iching, iste’molingizga  tarkibida kaliy (K) va magniy (Mg) b’olgan mahsulot va vitaminlarni qo'shing."
