@@ -16,8 +16,7 @@ export const Divider = defineStyleConfig({
       height: "2px"
     },
     gradient: {
-      background:
-        "linear-gradient(90deg, #339944 0%, #FFA01C 20%, #FC7753 40%, #E6484E 60%, #C53446 80%, #7D5BA6 100%)",
+      background: "borderGradientColor",
       height: "4px"
     }
   },

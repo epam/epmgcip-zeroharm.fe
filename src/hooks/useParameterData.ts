@@ -1,12 +1,13 @@
 import { useDataStore } from "@Store/useDataStore";
+import { type Parameter } from "@Constants";
 
-export const useParameterData = () => {
-  const { parameter, parameters } = useDataStore();
+export const useParameterData = (currentParameter: Parameter) => {
+  const { parameters } = useDataStore();
 
-  const currentParameterValue = Object.entries(parameters)?.find(([ key ]) => key === parameter)?.[1] ?? 0;
+  const currentParameterValue = currentParameter ? parameters[currentParameter] : 0;
 
   return {
-    parameter,
+    currentParameter,
     parameters,
     currentParameterValue
   };
