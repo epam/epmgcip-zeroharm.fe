@@ -94,7 +94,8 @@ export const semanticTokens = {
     scrollBar: {
       thumb: { default: "gray.700", _light: "white" },
       trackLg: { default: "gray.800", _light: "navyBlue.200" }
-    }
+    },
+    iconCirclesColor: { default: "gray.700", _light: "navyBlue.300" }
   },
   shadows: {
     primary: { _light: "0px 0px 15px 0px rgba(80, 116, 153, 0.25)" }
