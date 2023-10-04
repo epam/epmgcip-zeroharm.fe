@@ -193,7 +193,7 @@ export const cardsRawDataForHumidity: CardRawData[] = [
   {
     groupName: RED,
     cardColor: parametersGroupColorsMap[RED],
-    iconName: "harm-disappointed-face",
+    iconName: "harm-humidity-low",
     tip: {
       translationPath: "tips.humidity"
     },
@@ -210,7 +210,7 @@ export const cardsRawDataForHumidity: CardRawData[] = [
   {
     groupName: GREEN,
     cardColor: parametersGroupColorsMap[GREEN],
-    iconName: "harm-slightly-smiling-face",
+    iconName: "harm-humidity-normal",
     tip: {
       translationPath: "tips.humidity"
     },
@@ -227,7 +227,7 @@ export const cardsRawDataForHumidity: CardRawData[] = [
   {
     groupName: BLUE,
     cardColor: parametersGroupColorsMap[BLUE],
-    iconName: "harm-neutral-face",
+    iconName: "harm-humidity-high",
     tip: {
       translationPath: "tips.humidity"
     },
