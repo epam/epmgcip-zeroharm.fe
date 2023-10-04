@@ -13,5 +13,5 @@ export const resolveTranslationPath = (data: any) => {
       ...dataObj,
       [key]: value
     };
-  }, Object.assign({}, data));
+  }, {...data});
 };

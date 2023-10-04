@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { Button, Flex, Heading, Text, Box, Icon } from "@chakra-ui/react";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { Popup } from "@UI";
-import { LocationSelect } from "../LocationSelect/LocationSelect";
+import { LocationMenu } from "../LocationMenu/LocationMenu";
 import { ReactComponent as IconLocal } from "@Assets/icons/filled/harm-local.svg";
 
 export const Selector = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   return (
@@ -34,7 +35,7 @@ export const Selector = () => {
         { t("pages.home.protect") }
       </Heading>
       <Box mt="8px" w="100%">
-        <LocationSelect />
+        <LocationMenu/>
       </Box>
       <Flex
         width="100%"

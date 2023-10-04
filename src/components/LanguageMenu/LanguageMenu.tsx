@@ -1,25 +1,10 @@
 import { FC } from "react";
-import { chakra, Menu, Flex, useDisclosure } from "@chakra-ui/react";
+import { Menu, useDisclosure } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { useDetectWidth, useScreenScrollController } from "@Hooks";
 import { LanguageMenuList } from "./LanguageMenuList";
 import { LanguageMenuButton } from "./LanguageMenuButton";
-
-const MobileHeadingTip = chakra(Flex, {
-  baseStyle: {
-    w: "calc(100vw - var(--headerMobileHeight))",
-    h: "var(--headerMobileHeight)",
-    zIndex: "1",
-    bgColor: "secondaryBgColor",
-    color: "inherit",
-    pl: "8px",
-    pos: "fixed",
-    top: "0",
-    left: "var(--headerMobileHeight)",
-    alignItems: "center",
-    fontWeight: "bold"
-  }
-});
+import { MobileMenuHeadingTip } from "../MenuCommonComponents/MobileMenuHeadingTip";
 
 export const LanguageMenu: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -33,6 +18,7 @@ export const LanguageMenu: FC = () => {
 
   return (
     <Menu
+      variant="language"
       strategy="fixed"
       autoSelect={false}
       closeOnBlur={!isMobileWidth}
@@ -43,9 +29,9 @@ export const LanguageMenu: FC = () => {
       <LanguageMenuButton isOpenOnMobile={isOpenOnMobile} isOpen={isOpen} />
       {
         isOpenOnMobile && (
-          <MobileHeadingTip>
+          <MobileMenuHeadingTip fontWeight="bold">
             { t("lang.subject_name") }
-          </MobileHeadingTip>
+          </MobileMenuHeadingTip>
         )
       }
       <LanguageMenuList isOpenOnMobile={isOpenOnMobile} isOpen={isOpen} />

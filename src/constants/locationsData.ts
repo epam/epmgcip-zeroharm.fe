@@ -1,4 +1,18 @@
-export const locationsData = [
+export type Location = {
+  locationId: string;
+  locationName: string;
+}
+
+export type LocationRawData = {
+  locationId: string;
+  locationName: {
+    translationPath: string;
+  };
+};
+
+export const DEFAULT_LOCATION_ID = "tash_furkata";
+
+export const locationsData: LocationRawData[] = [
   {
     locationId: "tash_furkata",
     locationName: {
@@ -24,7 +38,7 @@ export const locationsData = [
     }
   },
   {
-    localtionId: "tash_szajnochy",
+    locationId: "tash_szajnochy",
     locationName: {
       translationPath: "locations.tash_szajnochy"
     }

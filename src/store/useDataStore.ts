@@ -1,16 +1,17 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { Parameter, Parameters, AirComponents } from "@Constants";
+import { type Parameter, type Parameters, type AirComponents, DEFAULT_LOCATION_ID } from "@Constants";
 
 interface IDataStore {
-  location: string;
+  locationId: string;
+  availableLocationIds: string[];
   language: string;
   isFormModalActive: boolean;
   parameter: Parameter | null;
   parameters: Parameters,
   airComponents: AirComponents;
   fetchingDate: string;
-  setLocation: (location: string) => void;
+  setLocationId: (locationId: string) => void;
   setLanguage: (language: string) => void;
   toggleIsFormModalActive: () => void;
   setParameter: (parameter: Parameter) => void;
@@ -23,7 +24,6 @@ const parametersInitial: Parameters = {
   "air_quality": 0,
   "humidity": 0,
   "pressure": 0
-
 };
 
 const airComponentsInitial: AirComponents = {
@@ -38,14 +38,15 @@ const airComponentsInitial: AirComponents = {
 export const useDataStore = create<IDataStore>()(
   persist(
     (set) => ({
-      location: "",
+      locationId: DEFAULT_LOCATION_ID,
+      availableLocationIds: [DEFAULT_LOCATION_ID],
       language: "",
       isFormModalActive: false,
       parameter: null,
       parameters: parametersInitial,
       airComponents: airComponentsInitial,
       fetchingDate: "",
-      setLocation: (location: string) => set({ location }),
+      setLocationId: (locationId) => set({ locationId }),
       setLanguage: (language: string) => set({ language }),
       toggleIsFormModalActive: () => set((state) => ({ isFormModalActive: !state.isFormModalActive })),
       setParameter: (parameter) => set({ parameter }),
