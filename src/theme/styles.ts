@@ -31,6 +31,7 @@ export const styles = {
       borderWidth: "1px",
       borderColor: "tooltip.primaryBorder",
       opacity: "1 !important",
+      boxShadow: "none",
       color: "white",
       p: "16px",
       borderRadius: "8px",
