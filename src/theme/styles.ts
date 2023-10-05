@@ -26,8 +26,11 @@ export const styles = {
     ".leaflet-custom-tooltip": {
       w: { base: "218px", lg: "292px" },
       h: "auto",
-      bg: "gray.800",
-      border: "none",
+      bg: "tooltip.primaryBg",
+      borderStyle: "solid",
+      borderWidth: "1px",
+      borderColor: "tooltip.primaryBorder",
+      opacity: "1 !important",
       color: "white",
       p: "16px",
       borderRadius: "8px",
@@ -36,10 +39,10 @@ export const styles = {
       whiteSpace: "normal"
     },
     ".leaflet-tooltip-right.leaflet-custom-tooltip::before": {
-      borderRightColor: "gray.800"
+      borderRightColor: "tooltip.primaryBg"
     },
     ".leaflet-tooltip-top.leaflet-custom-tooltip::before": {
-      borderTopColor: "gray.800"
+      borderTopColor: "tooltip.primaryBg"
     }
   })
 };
