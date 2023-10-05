@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
+import { StationMarker } from "./MapMarker";
 
 const styles = {
   height: "100%",
@@ -7,8 +8,10 @@ const styles = {
   zIndex: 1
 };
 
+const coordinates: [number, number] = [41.31286390094148, 69.24438328843463];
+const address = " Tashkent, 18 А Navoi Avenue (Landmark: Tech University)";
+
 export const Map: FC = () => {
-  const coordinates: [number, number] = [41.31286390094148, 69.24438328843463];
 
   return (
     <MapContainer
@@ -20,11 +23,7 @@ export const Map: FC = () => {
         attribution=""
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={coordinates}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
+      <StationMarker position={coordinates} address={address} />
     </MapContainer>
   );
 };
