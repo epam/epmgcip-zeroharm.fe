@@ -153,10 +153,10 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
   Tashkent: [
     {
       stationId: 1,
-      // ?????
-      latitude: 0,
-      // ?????
-      longitude: 0,
+      // TODO: change after providing correct latitude
+      latitude: 41.31286390094148,
+      // TODO: change after providing correct longitude
+      longitude: 69.24438328843463,
       address: {
         translationPath: `${uzbekistanMainTranslationPath}${Tashkent}.1`
       }
@@ -227,9 +227,9 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
     },
     {
       stationId: null,
-      // ?????
+      // TODO: change after providing latitude
       latitude: 0,
-      // ?????
+      // TODO: change after providing longitude
       longitude: 0,
       address: {
         translationPath: `${uzbekistanMainTranslationPath}${Tashkent}.10`
