@@ -109,6 +109,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
     },
     {
       stationId: -1,
+      // TODO: check coordinates. Now these coordinates belongs to Kazakhstan territory
       latitude: 52.921296,
       longitude: 65.364043,
       address: {
