@@ -1,5 +1,5 @@
 export type LocationRawData = {
-  stationId: number | null;
+  stationId: number;
   latitude: number;
   longitude: number;
   address: {
@@ -30,7 +30,7 @@ const { Bukhara, Jizzakh, Navoiy, Nukus, Samarqand, Tashkent, Termez, Urgench } 
 const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
   Bukhara: [
     {
-      stationId: null,
+      stationId: -1,
       latitude: 39.760278,
       longitude: 64.433204,
       address: {
@@ -38,7 +38,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 39.775941,
       longitude: 64.431379,
       address: {
@@ -46,7 +46,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 39.766192,
       longitude: 64.419429,
       address: {
@@ -56,7 +56,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
   ],
   Jizzakh: [
     {
-      stationId: null,
+      stationId: -1,
       latitude: 40.169166,
       longitude: 67.835548,
       address: {
@@ -66,7 +66,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
   ],
   Navoiy: [
     {
-      stationId: null,
+      stationId: -1,
       latitude: 40.0952857,
       longitude: 65.3799896,
       address: {
@@ -74,7 +74,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 40.100823,
       longitude: 65.367982,
       address: {
@@ -82,7 +82,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 40.117753,
       longitude: 65.374431,
       address: {
@@ -92,7 +92,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
   ],
   Nukus: [
     {
-      stationId: null,
+      stationId: -1,
       latitude: 42.448653,
       longitude: 59.640239,
       address: {
@@ -100,7 +100,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 42.461166,
       longitude: 59.604854,
       address: {
@@ -108,7 +108,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 52.921296,
       longitude: 65.364043,
       address: {
@@ -118,7 +118,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
   ],
   Samarqand: [
     {
-      stationId: null,
+      stationId: -1,
       latitude: 39.642737,
       longitude: 66.961508,
       address: {
@@ -126,7 +126,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 39.653036,
       longitude: 66.973132,
       address: {
@@ -134,7 +134,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 39.667987,
       longitude: 66.971621,
       address: {
@@ -142,7 +142,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 39.666760,
       longitude: 66.927593,
       address: {
@@ -162,7 +162,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 41.3270815,
       longitude: 69.2893541,
       address: {
@@ -170,7 +170,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 41.2830467,
       longitude: 69.2196999,
       address: {
@@ -178,7 +178,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 41.271171,
       longitude: 69.1728336,
       address: {
@@ -186,7 +186,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 41.317504,
       longitude: 69.295374,
       address: {
@@ -194,7 +194,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 41.3039969,
       longitude: 69.3003051,
       address: {
@@ -202,7 +202,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 41.278180,
       longitude: 69.302979,
       address: {
@@ -210,7 +210,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 41.281415,
       longitude: 69.339556,
       address: {
@@ -218,7 +218,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 41.318725,
       longitude: 69.283987,
       address: {
@@ -226,7 +226,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       // TODO: change after providing latitude
       latitude: 0,
       // TODO: change after providing longitude
@@ -236,7 +236,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 41.355456,
       longitude: 69.247434,
       address: {
@@ -246,7 +246,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
   ],
   Termez: [
     {
-      stationId: null,
+      stationId: -1,
       latitude: 37.238986,
       longitude: 67.245023,
       address: {
@@ -254,7 +254,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 37.280911,
       longitude: 67.318857,
       address: {
@@ -264,7 +264,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
   ],
   Urgench: [
     {
-      stationId: null,
+      stationId: -1,
       latitude: 41.560607,
       longitude: 60.611794,
       address: {
@@ -272,7 +272,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
       }
     },
     {
-      stationId: null,
+      stationId: -1,
       latitude: 41.543021,
       longitude: 60.638440,
       address: {
@@ -282,7 +282,7 @@ const uzbekistanLocationsData: Record<Location, LocationRawData[]> = {
   ]
 };
 
-export const locationsGeoData = [...Object.keys(uzbekistanLocationsData)]
+export const locationsGeoRawData = [...Object.keys(uzbekistanLocationsData)]
   .sort()
   .map((key) => uzbekistanLocationsData[key as Location])
   .flatMap((st) => st);
