@@ -3,7 +3,7 @@ export type Location = {
   locationName: string;
 }
 
-export type LocationRawData = {
+type LocationRawData = {
   locationId: string;
   locationName: {
     translationPath: string;

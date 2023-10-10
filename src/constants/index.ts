@@ -3,6 +3,7 @@ export * from "./parametersGroupsRanges";
 export * from "./cardsData";
 export * from "./tabsData";
 export * from "./locationsData";
+export * from "./locationsGeoData";
 export * from "./languagesData";
 export * from "./notificationData";
 export * from "./common";

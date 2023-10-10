@@ -23,7 +23,7 @@ export const StationMarker: FC<StationMarkerProps> = ({ position, address }) => 
         offset={isLargerThan600 ? [20, -5] : [0, -25]}
         direction={isLargerThan600 ? "right" : "top"}
         className="leaflet-custom-tooltip"
-      >
+              >
         { address }
       </Tooltip>
     </Marker>

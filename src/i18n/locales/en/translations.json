@@ -117,6 +117,53 @@
     "pressure": "Pressure"
   },
   "locations": {
+    "uzbekistan": {
+      "bukhara": {
+        "1": "Bukhara, Mustakillik str.",
+        "2": "Bukhara, Gizhduvoniy str.",
+        "3": "Bukhara, Muminova str."
+      },
+      "jizzakh": {
+        "1": "Jizzakh, Zilol Mahalla, Ovlaniy str, 2"
+      },
+      "navoiy": {
+        "1": "Navoi, 1, Zulfia str.",
+        "2": "Navoi, 15, Kyzylkum str.",
+        "3": "Navoi, 14, Me'morlar str."
+      },
+      "nukus": {
+        "1": "Nukus, 223, Almazar str.",
+        "2": "Nukus, Berdakh str.",
+        "3": "Qyzketken"
+      },
+      "samarqand": {
+        "1": "Samarqand, 17, University blvd.",
+        "2": "Samarqand, 7, Registan str.",
+        "3": "Samarqand, 151, Shahi Zinda str.",
+        "4": "Samarqand, 171, Abu Rayhon Beruniy"
+      },
+      "tashkent": {
+        "1": "TODO",
+        "2": "Tashkent, Uzhydromet",
+        "3": "Tashkent, Chilanzar, District 2",
+        "4": "Tashkent, Chilanzar, District 20",
+        "5": "Tashkent, Movaraunnahr str",
+        "6": "Tashkent, Mahmuda str.",
+        "7": "Tashkent, Jangizamon str.",
+        "8": "Tashkent, Slonima str.",
+        "9": "Tashkent, Crafers factory district",
+        "10": "Kibray, Tashkent Region",
+        "11": "Tashkent, Labzak District, Usta-Shirin str."
+      },
+      "termez": {
+        "1": "Termez, At-Termiziy str.",
+        "2": "Termez, Termez International Airport"
+      },
+      "urgench": {
+        "1": "Urgench, 2, Zh. Manguberdy str.",
+        "2": "Urgench, Hankinskaya str."
+      }
+    },
     "tash_furkata": "Tashkent, 8 Furkata str.",
     "tash_navoi": "Tashkent, 18 А Navoi Avenue (Landmark: Tech University)",
     "tash_skrajna": "Tashkent, 7 Skrajna str., Szczecin 70-886 (Landmark: Revera Restaurant)",

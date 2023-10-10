@@ -94,6 +94,10 @@ export const semanticTokens = {
       tooltipBg: { default: "gray.700", _light: "navyBlue.600" },
       tooltipBorder: { default: "gray.600", _light: "navyBlue.400" }
     },
+    tooltip: {
+      primaryBg: { default: "gray.700", _light: "navyBlue.600" },
+      primaryBorder: { default: "gray.600", _light: "navyBlue.400" }
+    },
     scrollBar: {
       thumb: { default: "gray.700", _light: "white" },
       trackLg: { default: "gray.800", _light: "navyBlue.200" }

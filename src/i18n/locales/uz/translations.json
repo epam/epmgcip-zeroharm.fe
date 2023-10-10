@@ -111,6 +111,53 @@
     "pressure": "Bosim"
   },
   "locations": {
+    "uzbekistan": {
+      "bukhara": {
+        "1": "Mustaqillik koʻchasi, Buxoro",
+        "2": "Abdulxoliq G'ijduvoniy ko'chasi, Buxoro",
+        "3": "Akademik Ibrohim Moʻminov koʻchasi, Buxoro"
+      },
+      "jizzakh": {
+        "1": "Zilol mahallasi, Jizzax"
+      },
+      "navoiy": {
+        "1": "Zulfiya ko'chasi, 1, Navoiy",
+        "2": "Qizilqum ko'chasi, 15, Navoiy",
+        "3": "Meʼmorlar koʻchasi, 14, Navoiy"
+      },
+      "nukus": {
+        "1": "Nukus, Almazar kóshesi, 223",
+        "2": "Nukus, Ernazar Alakóz kóshesi, 3",
+        "3": "Qyzketken aýyly, Qarasý aýdany"
+      },
+      "samarqand": {
+        "1": "Universitet xiyoboni, 17V, Samarqand",
+        "2": "Registon koʻchasi, 7, Samarqand",
+        "3": "Shohizinda ko'chasi, 151,  Samarqand",
+        "4": "Beruniy ko'chasi, 171, Samarqand"
+      },
+      "tashkent": {
+        "1": "TODO",
+        "2": "TODO",
+        "3": "2-mavze, Chilonzor dahasi, Chilonzor tumani, Toshkent",
+        "4": "20-mavze, Chilonzor dahasi, Chilonzor tumani, Toshkent",
+        "5": "Movarounnahr koʻchasi, Toshkent",
+        "6": "Yashnobod tumani, Pahlavon Mahmud ko'chasi, Toshkent",
+        "7": "Mirobod tumani, Yangizamon koʻchasi, Toshkent",
+        "8": "Yashnobod tumani, Asalobod ko'chasi, Toshkent",
+        "9": "Mirzo Ulugʻbek tumani, Toshkent",
+        "10": "Qibray shaharchasi, Toshkent viloyati",
+        "11": "Olmazor tumani, Labzak, Usta-Shirin ko'chasi, Toshkent"
+      },
+      "termez": {
+        "1": "Surxondaryo viloyati, Termiz, Doʻstlik bogʻi",
+        "2": "Termiz xalqaro aeroporti, Termiz tumani"
+      },
+      "urgench": {
+        "1": "Urganch, 2, Xorazm viloyati",
+        "2": "Urganch, Xanqa koʻchasi"
+      }
+    },
     "tash_navoi": "Toshkent, Navoiy shoh ko'chasi, 18 А (Mo'ljal uchun: Texnika universiteti)"
   },
   "cards": {
