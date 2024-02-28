@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import theme from "./theme";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/700.css";
+import "./firebase";
 
 const root = createRoot(
   document.getElementById("root") as HTMLElement
